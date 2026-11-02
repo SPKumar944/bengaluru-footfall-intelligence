@@ -3,6 +3,7 @@ import HeaderBar from './components/HeaderBar';
 import BottomTransectBar from './components/BottomTransectBar';
 import TopRightLegend from './components/TopRightLegend';
 import MapViewport from './components/MapViewport';
+import LayerControlWidget from './components/LayerControlWidget';
 import ApsaraDossierModal from './components/ApsaraDossierModal';
 import { Loader2 } from 'lucide-react';
 
@@ -22,6 +23,15 @@ export default function App() {
   const [streetFootfallData, setStreetFootfallData] = useState(null);
   const [catchmentsData, setCatchmentsData] = useState(null);
   const [apsaraStoresData, setApsaraStoresData] = useState([]);
+  const [competitorsData, setCompetitorsData] = useState(null);
+
+  // Active Layers Toggle State
+  const [activeLayers, setActiveLayers] = useState({
+    streetFootfall: true,
+    catchments: true,
+    apsaraStores: true,
+    competitors: false
+  });
 
   // Selected Entities
   const [selectedApsaraStore, setSelectedApsaraStore] = useState(null);
@@ -34,21 +44,23 @@ export default function App() {
 
   const [viewState, setViewState] = useState(INDIRANAGAR_2D_VIEW);
 
-  // Load All 13 Stores Footfall & Apsara Stores Datasets
+  // Load Datasets
   useEffect(() => {
     async function loadAllData() {
       try {
         setLoading(true);
         const b = import.meta.env.BASE_URL;
-        const [streetRes, catchmentsRes, apsaraRes] = await Promise.all([
+        const [streetRes, catchmentsRes, apsaraRes, competitorsRes] = await Promise.all([
           fetch(`${b}data/all_stores_street_footfall.geojson`).then(r => r.json()),
           fetch(`${b}data/apsara_store_footfall_catchments.geojson`).then(r => r.json()),
-          fetch(`${b}data/apsara_ice_cream_bangalore_footfall.json`).then(r => r.json())
+          fetch(`${b}data/apsara_ice_cream_bangalore_footfall.json`).then(r => r.json()),
+          fetch(`${b}data/layer5_competitors.geojson`).then(r => r.json()).catch(() => null)
         ]);
 
         setStreetFootfallData(streetRes);
         setCatchmentsData(catchmentsRes);
         setApsaraStoresData(apsaraRes);
+        if (competitorsRes) setCompetitorsData(competitorsRes);
 
         if (apsaraRes && apsaraRes.length > 0) {
           // Default selection to Indiranagar outlet
@@ -155,6 +167,8 @@ export default function App() {
           streetFootfallData={streetFootfallData}
           catchmentsData={catchmentsData}
           apsaraStoresData={apsaraStoresData}
+          competitorsData={competitorsData}
+          activeLayers={activeLayers}
           selectedApsaraStore={selectedApsaraStore}
           onSelectApsaraStore={handleSelectApsaraStore}
           viewState={viewState}
@@ -163,15 +177,24 @@ export default function App() {
           activeDayType={activeDayType}
         />
 
-        {/* 3. Top Right Floating Footfall Intensity Legend */}
-        <div className="absolute top-4 right-4 z-20 pointer-events-auto">
-          <TopRightLegend
-            viewState={viewState}
-            activeLayerName={`Footfall Density (${activeHour}:00)`}
-            minVal="Low (<200/hr)"
-            maxVal="Peak (>2.5k/hr)"
-            unit="flow"
+        {/* 3. Top Right Floating Controls: Layer Toggles & Footfall Legend */}
+        <div className="absolute top-4 right-4 z-20 pointer-events-auto flex flex-col items-end space-y-2">
+          {/* Layer Control Widget */}
+          <LayerControlWidget
+            activeLayers={activeLayers}
+            setActiveLayers={setActiveLayers}
           />
+
+          {/* Footfall Intensity Legend (Active when street footfall layer is visible) */}
+          {activeLayers.streetFootfall && (
+            <TopRightLegend
+              viewState={viewState}
+              activeLayerName={`Footfall Flow (${activeHour}:00)`}
+              minVal="Low (<400/hr)"
+              maxVal="Peak (>2.5k/hr)"
+              unit="flow"
+            />
+          )}
         </div>
 
         {/* 4. Simple 2D Zoom Controls */}

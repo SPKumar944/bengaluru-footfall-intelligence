@@ -27,6 +27,13 @@ export default function MapViewport({
   streetFootfallData,
   catchmentsData,
   apsaraStoresData = [],
+  competitorsData,
+  activeLayers = {
+    streetFootfall: true,
+    catchments: true,
+    apsaraStores: true,
+    competitors: false
+  },
   selectedApsaraStore,
   onSelectApsaraStore,
   viewState,
@@ -71,7 +78,7 @@ export default function MapViewport({
   // Deck.gl Layers
   const deckLayers = [
     // 1. High-Density 350m Pedestrian Catchment Zones for all 13 Outlets
-    catchmentsData?.features && new GeoJsonLayer({
+    activeLayers.catchments && catchmentsData?.features && new GeoJsonLayer({
       id: 'apsara-store-catchments-layer',
       data: catchmentsData,
       pickable: true,
@@ -86,7 +93,7 @@ export default function MapViewport({
     }),
 
     // 2. Comprehensive Street Network Footfall Across ALL 13 Locations
-    streetFootfallData?.features && new GeoJsonLayer({
+    activeLayers.streetFootfall && streetFootfallData?.features && new GeoJsonLayer({
       id: 'all-stores-street-footfall-layer',
       data: streetFootfallData,
       pickable: true,
@@ -116,8 +123,36 @@ export default function MapViewport({
       onHover: info => setHoverInfo(info)
     }),
 
-    // 3. Apsara Ice Cream Outlets Across Bangalore
-    apsaraStoresData.length > 0 && new ScatterplotLayer({
+    // 3. Competitor Ice Cream Parlors Across Bengaluru (108 Outlets)
+    activeLayers.competitors && competitorsData?.features && new ScatterplotLayer({
+      id: 'competitor-parlors-layer',
+      data: competitorsData.features,
+      pickable: true,
+      opacity: 0.95,
+      stroked: true,
+      filled: true,
+      radiusScale: 1,
+      radiusMinPixels: 6,
+      radiusMaxPixels: 13,
+      lineWidthUnits: 'pixels',
+      getLineWidth: 1.5,
+      getLineColor: [255, 255, 255, 255],
+      getFillColor: f => {
+        const b = (f.properties?.brand || '').toLowerCase();
+        if (b.includes('corner house')) return [147, 51, 234, 240]; // Purple
+        if (b.includes('natural')) return [16, 185, 129, 240]; // Emerald
+        if (b.includes('polar bear')) return [14, 165, 233, 240]; // Cyan
+        if (b.includes('milano')) return [245, 158, 11, 240]; // Amber
+        if (b.includes('stoner')) return [249, 115, 22, 240]; // Orange
+        if (b.includes('baskin')) return [236, 72, 153, 240]; // Pink
+        return [100, 116, 139, 220]; // Slate
+      },
+      getPosition: f => f.geometry.coordinates,
+      onHover: info => setHoverInfo(info)
+    }),
+
+    // 4. Apsara Ice Cream Outlets Across Bangalore
+    activeLayers.apsaraStores && apsaraStoresData.length > 0 && new ScatterplotLayer({
       id: 'apsara-icecream-stores-layer',
       data: apsaraStoresData,
       pickable: true,
@@ -143,8 +178,8 @@ export default function MapViewport({
       }
     }),
 
-    // 4. Pulsing Selection Ring for Selected Apsara Store
-    selectedApsaraStore && new ScatterplotLayer({
+    // 5. Pulsing Selection Ring for Selected Apsara Store
+    activeLayers.apsaraStores && selectedApsaraStore && new ScatterplotLayer({
       id: 'apsara-store-selected-pulse',
       data: [selectedApsaraStore],
       pickable: false,
@@ -293,7 +328,29 @@ export default function MapViewport({
                 );
               }
 
-              // Case B: Street Footfall Vector Segment
+              // Case B: Competitor Ice Cream Parlor
+              if (p.store_id && p.brand) {
+                return (
+                  <div className="space-y-1.5 min-w-[220px]">
+                    <div className="flex justify-between items-center border-b border-purple-200 pb-1">
+                      <span className="text-[10px] uppercase font-bold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded border border-purple-200">
+                        {p.brand}
+                      </span>
+                      <span className="text-[10px] font-bold text-emerald-700">
+                        {p.rating_proxy}★
+                      </span>
+                    </div>
+                    <div className="text-xs font-extrabold text-slate-900">{p.store_name}</div>
+                    <div className="text-[10px] text-slate-500 line-clamp-2">{p.address}</div>
+                    <div className="pt-1 border-t border-slate-100 flex justify-between text-[11px]">
+                      <span className="text-slate-500">Est. Monthly Volume:</span>
+                      <span className="text-purple-700 font-extrabold">~{p.monthly_cup_volume_est?.toLocaleString()} cups/mo</span>
+                    </div>
+                  </div>
+                );
+              }
+
+              // Case C: Street Footfall Vector Segment
               const hrVal = p.hourly_footfall?.[activeHour] || 100;
               const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
               const currentFlow = Math.round(hrVal * mult);
