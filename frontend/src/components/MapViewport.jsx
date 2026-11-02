@@ -63,6 +63,7 @@ export default function MapViewport({
   catchmentsData,
   apsaraStoresData = [],
   competitorsData,
+  kidsAttractionsData,
   techParksData,
   officeFootprintsData,
   wardDemographicsData,
@@ -74,6 +75,7 @@ export default function MapViewport({
     catchments: true,
     apsaraStores: true,
     competitors: false,
+    kidsAttractions: true,
     techParks: false,
     officeFootprints: false,
     wardDemographics: false
@@ -231,6 +233,32 @@ export default function MapViewport({
       getLineWidth: 2,
       getLineColor: [255, 255, 255, 240],
       getFillColor: [14, 165, 233, 235], // Tech Sky Blue
+      getPosition: f => f.geometry.coordinates,
+      onHover: info => setHoverInfo(info)
+    }),
+
+    // 2c. Kids & Family Footfall Magnets (Toy Stores, Play Arcades, Theatres, Parks)
+    activeLayers.kidsAttractions && kidsAttractionsData?.features && new ScatterplotLayer({
+      id: 'kids-attractions-layer',
+      data: kidsAttractionsData.features,
+      pickable: true,
+      opacity: 0.95,
+      stroked: true,
+      filled: true,
+      radiusScale: 1,
+      radiusMinPixels: 8,
+      radiusMaxPixels: 16,
+      lineWidthUnits: 'pixels',
+      getLineWidth: 2,
+      getLineColor: [255, 255, 255, 255],
+      getFillColor: f => {
+        const cat = f.properties?.category || '';
+        if (cat.includes('Toy Store')) return [245, 158, 11, 245]; // Amber / Gold
+        if (cat.includes('Play Arena') || cat.includes('Theme Park')) return [236, 72, 153, 245]; // Pink / Magenta
+        if (cat.includes('Theatre') || cat.includes('Multiplex')) return [99, 102, 241, 245]; // Indigo
+        if (cat.includes('Park') || cat.includes('Garden')) return [16, 185, 129, 245]; // Emerald
+        return [14, 165, 233, 245]; // Sky Blue (Science/Nature)
+      },
       getPosition: f => f.geometry.coordinates,
       onHover: info => setHoverInfo(info)
     }),
@@ -488,6 +516,43 @@ export default function MapViewport({
                     <div className="pt-1 border-t border-slate-100 flex justify-between text-[11px]">
                       <span className="text-slate-500">Est. Monthly Volume:</span>
                       <span className="text-purple-700 font-extrabold">~{p.monthly_cup_volume_est?.toLocaleString()} cups/mo</span>
+                    </div>
+                  </div>
+                );
+              }
+
+              // Case Kids & Family Footfall Magnet (Hamleys, Arcades, Theatres, Parks)
+              if (p.id?.startsWith('KIDS_')) {
+                return (
+                  <div className="space-y-1.5 min-w-[260px]">
+                    <div className="flex justify-between items-center border-b border-pink-200 pb-1">
+                      <span className="text-[10px] uppercase font-bold text-pink-700 bg-pink-50 px-1.5 py-0.5 rounded border border-pink-200">
+                        {p.category}
+                      </span>
+                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+                        Synergy: {p.ice_cream_attraction_score}/100
+                      </span>
+                    </div>
+                    <div className="text-xs font-extrabold text-slate-900">{p.name}</div>
+                    <div className="text-[10px] text-slate-500 font-semibold">{p.locality}</div>
+                    <div className="text-[9px] text-slate-400 line-clamp-1">{p.address}</div>
+
+                    <div className="pt-1 border-t border-slate-100 space-y-0.5 text-[11px]">
+                      <div className="flex justify-between">
+                        <span className="text-slate-500">Target Audience:</span>
+                        <span className="text-slate-800 font-semibold">{p.target_audience}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-500">Monthly Family Traffic:</span>
+                        <span className="text-pink-700 font-bold">~{p.est_monthly_family_footfall?.toLocaleString()} / mo</span>
+                      </div>
+                      <div className="flex justify-between text-[10px]">
+                        <span className="text-slate-400">Peak Footfall:</span>
+                        <span className="text-amber-800 font-semibold">{p.peak_window}</span>
+                      </div>
+                      <div className="pt-0.5 text-[10px] text-emerald-800 font-medium italic border-t border-slate-100">
+                        {p.ice_cream_synergy}
+                      </div>
                     </div>
                   </div>
                 );
