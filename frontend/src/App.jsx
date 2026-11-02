@@ -36,6 +36,8 @@ export default function App() {
   // Selected Entities
   const [selectedApsaraStore, setSelectedApsaraStore] = useState(null);
   const [showApsaraModal, setShowApsaraModal] = useState(false);
+  const [selectedBrandFilter, setSelectedBrandFilter] = useState('ALL');
+  const [selectedCompetitor, setSelectedCompetitor] = useState(null);
 
   // Temporal Dynamic State (24-Hour Diurnal Player)
   const [activeHour, setActiveHour] = useState(21); // Default 9:00 PM peak dessert window
@@ -106,7 +108,37 @@ export default function App() {
     }
   };
 
-  // Reset to Bangalore City View showing all 13 stores
+  // Change competitor brand filter and ensure clean store state
+  const handleSelectBrandFilter = (brand) => {
+    setSelectedBrandFilter(brand);
+    setActiveLayers(prev => ({ ...prev, competitors: true }));
+    if (selectedCompetitor && brand !== 'ALL' && selectedCompetitor.properties?.brand !== brand) {
+      setSelectedCompetitor(null);
+    }
+  };
+
+  // Select a competitor parlor and fly to its location
+  const handleSelectCompetitor = (competitor) => {
+    setSelectedCompetitor(competitor);
+    setActiveLayers(prev => ({ ...prev, competitors: true }));
+    if (competitor?.properties?.brand && selectedBrandFilter !== 'ALL' && selectedBrandFilter !== competitor.properties.brand) {
+      setSelectedBrandFilter(competitor.properties.brand);
+    }
+    if (competitor?.geometry?.coordinates) {
+      const [lng, lat] = competitor.geometry.coordinates;
+      setViewState(prev => ({
+        ...prev,
+        longitude: lng,
+        latitude: lat,
+        zoom: 15.6,
+        pitch: 0,
+        bearing: 0,
+        transitionDuration: 900
+      }));
+    }
+  };
+
+  // Reset to Bangalore City View showing all stores
   const resetCityView = () => {
     setViewState({
       longitude: 77.625,
@@ -123,8 +155,8 @@ export default function App() {
       <div className="h-screen w-screen bg-[#EBF0F5] flex flex-col items-center justify-center text-slate-700 font-mono space-y-3">
         <Loader2 className="w-8 h-8 text-amber-600 animate-spin" />
         <div className="text-center">
-          <p className="font-bold text-slate-900 text-sm">Loading Apsara Ice Cream Footfall Dynamics</p>
-          <p className="text-xs text-slate-500 mt-0.5">Fetching 13 Bangalore outlets & street network footfall...</p>
+          <p className="font-bold text-slate-900 text-sm">Loading Apsara & Competitor Footfall Intelligence</p>
+          <p className="text-xs text-slate-500 mt-0.5">Fetching Bangalore outlets, competitor parlors & street network...</p>
         </div>
       </div>
     );
@@ -149,7 +181,7 @@ export default function App() {
 
   return (
     <div className="flex flex-col h-screen w-screen bg-[#EBF0F5] overflow-hidden select-none">
-      {/* 1. Header Bar: Apsara Store Selector & Time Controls */}
+      {/* 1. Header Bar: Apsara & Competitor Store Selectors */}
       <HeaderBar
         activeHour={activeHour}
         activeDayType={activeDayType}
@@ -159,15 +191,25 @@ export default function App() {
         selectedApsaraStore={selectedApsaraStore}
         onSelectApsaraStore={handleSelectApsaraStore}
         onOpenApsaraModal={() => setShowApsaraModal(true)}
+        competitorsData={competitorsData}
+        selectedBrandFilter={selectedBrandFilter}
+        setSelectedBrandFilter={handleSelectBrandFilter}
+        selectedCompetitor={selectedCompetitor}
+        onSelectCompetitor={handleSelectCompetitor}
+        activeLayers={activeLayers}
+        setActiveLayers={setActiveLayers}
       />
 
-      {/* 2. Main 2D Map Canvas (Full screen, zero left card) */}
+      {/* 2. Main 2D Map Canvas */}
       <div className="relative flex-1 w-full overflow-hidden">
         <MapViewport
           streetFootfallData={streetFootfallData}
           catchmentsData={catchmentsData}
           apsaraStoresData={apsaraStoresData}
           competitorsData={competitorsData}
+          selectedBrandFilter={selectedBrandFilter}
+          selectedCompetitor={selectedCompetitor}
+          onSelectCompetitor={handleSelectCompetitor}
           activeLayers={activeLayers}
           selectedApsaraStore={selectedApsaraStore}
           onSelectApsaraStore={handleSelectApsaraStore}

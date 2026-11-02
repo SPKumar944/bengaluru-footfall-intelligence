@@ -28,6 +28,9 @@ export default function MapViewport({
   catchmentsData,
   apsaraStoresData = [],
   competitorsData,
+  selectedBrandFilter = 'ALL',
+  selectedCompetitor,
+  onSelectCompetitor,
   activeLayers = {
     streetFootfall: true,
     catchments: true,
@@ -74,6 +77,15 @@ export default function MapViewport({
       });
     }
   }, [viewState]);
+
+  // Filter competitor parlors by selected brand
+  const filteredCompetitors = useMemo(() => {
+    if (!competitorsData?.features) return [];
+    if (!selectedBrandFilter || selectedBrandFilter === 'ALL') {
+      return competitorsData.features;
+    }
+    return competitorsData.features.filter(f => f.properties?.brand === selectedBrandFilter);
+  }, [competitorsData, selectedBrandFilter]);
 
   // Deck.gl Layers
   const deckLayers = [
@@ -123,32 +135,63 @@ export default function MapViewport({
       onHover: info => setHoverInfo(info)
     }),
 
-    // 3. Competitor Ice Cream Parlors Across Bengaluru (108 Outlets)
-    activeLayers.competitors && competitorsData?.features && new ScatterplotLayer({
+    // 3. Competitor Ice Cream Parlors Across Bengaluru (Filtered by Brand if selected)
+    activeLayers.competitors && filteredCompetitors.length > 0 && new ScatterplotLayer({
       id: 'competitor-parlors-layer',
-      data: competitorsData.features,
+      data: filteredCompetitors,
       pickable: true,
       opacity: 0.95,
       stroked: true,
       filled: true,
       radiusScale: 1,
-      radiusMinPixels: 6,
-      radiusMaxPixels: 13,
+      radiusMinPixels: 7,
+      radiusMaxPixels: 14,
       lineWidthUnits: 'pixels',
-      getLineWidth: 1.5,
-      getLineColor: [255, 255, 255, 255],
+      getLineWidth: f => selectedCompetitor?.properties?.store_id === f.properties?.store_id ? 3 : 1.5,
+      getLineColor: f => selectedCompetitor?.properties?.store_id === f.properties?.store_id ? [255, 255, 255, 255] : [255, 255, 255, 230],
       getFillColor: f => {
         const b = (f.properties?.brand || '').toLowerCase();
-        if (b.includes('corner house')) return [147, 51, 234, 240]; // Purple
-        if (b.includes('natural')) return [16, 185, 129, 240]; // Emerald
-        if (b.includes('polar bear')) return [14, 165, 233, 240]; // Cyan
-        if (b.includes('milano')) return [245, 158, 11, 240]; // Amber
-        if (b.includes('stoner')) return [249, 115, 22, 240]; // Orange
-        if (b.includes('baskin')) return [236, 72, 153, 240]; // Pink
+        if (b.includes('corner house')) return [147, 51, 234, 245]; // Purple
+        if (b.includes('natural')) return [16, 185, 129, 245]; // Emerald
+        if (b.includes('polar bear')) return [14, 165, 233, 245]; // Cyan
+        if (b.includes('milano')) return [245, 158, 11, 245]; // Amber
+        if (b.includes('cream stone') || b.includes('stoner')) return [249, 115, 22, 245]; // Orange
+        if (b.includes('baskin')) return [236, 72, 153, 245]; // Pink
+        if (b.includes('ibaco')) return [99, 102, 241, 245]; // Indigo
+        if (b.includes('arun')) return [239, 68, 68, 245]; // Red
+        if (b.includes('amul')) return [59, 130, 246, 245]; // Blue
+        if (b.includes('pabrai')) return [20, 184, 166, 245]; // Teal
+        if (b.includes('kwality')) return [217, 70, 239, 245]; // Fuchsia
+        if (b.includes('nic')) return [34, 197, 94, 245]; // Green
         return [100, 116, 139, 220]; // Slate
       },
       getPosition: f => f.geometry.coordinates,
-      onHover: info => setHoverInfo(info)
+      updateTriggers: {
+        getLineWidth: [selectedCompetitor?.properties?.store_id],
+        getLineColor: [selectedCompetitor?.properties?.store_id]
+      },
+      onHover: info => setHoverInfo(info),
+      onClick: info => {
+        if (info.object && onSelectCompetitor) {
+          onSelectCompetitor(info.object);
+        }
+      }
+    }),
+
+    // 3b. Pulsing Selection Ring for Selected Competitor Parlor
+    activeLayers.competitors && selectedCompetitor?.geometry?.coordinates && new ScatterplotLayer({
+      id: 'competitor-selected-pulse',
+      data: [selectedCompetitor],
+      pickable: false,
+      stroked: true,
+      filled: false,
+      radiusScale: 1,
+      radiusMinPixels: 18,
+      radiusMaxPixels: 28,
+      lineWidthUnits: 'pixels',
+      getLineWidth: 2.5,
+      getLineColor: [147, 51, 234, 255], // Distinct vivid purple halo
+      getPosition: f => f.geometry.coordinates
     }),
 
     // 4. Apsara Ice Cream Outlets Across Bangalore
