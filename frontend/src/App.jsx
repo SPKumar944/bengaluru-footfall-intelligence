@@ -181,7 +181,7 @@ export default function App() {
 
   return (
     <div className="flex flex-col h-screen w-screen bg-[#EBF0F5] overflow-hidden select-none">
-      {/* 1. Header Bar: Apsara & Competitor Store Selectors */}
+      {/* 1. Header Bar: Apsara Store Selector & Controls */}
       <HeaderBar
         activeHour={activeHour}
         activeDayType={activeDayType}
@@ -191,13 +191,6 @@ export default function App() {
         selectedApsaraStore={selectedApsaraStore}
         onSelectApsaraStore={handleSelectApsaraStore}
         onOpenApsaraModal={() => setShowApsaraModal(true)}
-        competitorsData={competitorsData}
-        selectedBrandFilter={selectedBrandFilter}
-        setSelectedBrandFilter={handleSelectBrandFilter}
-        selectedCompetitor={selectedCompetitor}
-        onSelectCompetitor={handleSelectCompetitor}
-        activeLayers={activeLayers}
-        setActiveLayers={setActiveLayers}
       />
 
       {/* 2. Main 2D Map Canvas */}
@@ -219,12 +212,17 @@ export default function App() {
           activeDayType={activeDayType}
         />
 
-        {/* 3. Top Right Floating Controls: Layer Toggles & Footfall Legend */}
+        {/* 3. Top Right Floating Controls: Layer Toggles & In-Panel Competitor Selectors */}
         <div className="absolute top-4 right-4 z-20 pointer-events-auto flex flex-col items-end space-y-2">
-          {/* Layer Control Widget */}
+          {/* Layer Control Widget with embedded Conqueror Brand & Store selection */}
           <LayerControlWidget
             activeLayers={activeLayers}
             setActiveLayers={setActiveLayers}
+            competitorsData={competitorsData}
+            selectedBrandFilter={selectedBrandFilter}
+            setSelectedBrandFilter={handleSelectBrandFilter}
+            selectedCompetitor={selectedCompetitor}
+            onSelectCompetitor={handleSelectCompetitor}
           />
 
           {/* Footfall Intensity Legend (Active when street footfall layer is visible) */}

@@ -16,34 +16,9 @@ export default function HeaderBar({
   apsaraStores = [],
   selectedApsaraStore,
   onSelectApsaraStore,
-  onOpenApsaraModal,
-  competitorsData,
-  selectedBrandFilter = 'ALL',
-  setSelectedBrandFilter,
-  selectedCompetitor,
-  onSelectCompetitor,
-  activeLayers,
-  setActiveLayers
+  onOpenApsaraModal
 }) {
   const isPeak = activeHour >= 19 && activeHour <= 23;
-
-  // Extract unique competitor brands and counts
-  const competitorBrands = React.useMemo(() => {
-    if (!competitorsData?.features) return [];
-    const counts = {};
-    competitorsData.features.forEach(f => {
-      const b = f.properties?.brand;
-      if (b) counts[b] = (counts[b] || 0) + 1;
-    });
-    return Object.entries(counts).map(([name, count]) => ({ name, count }));
-  }, [competitorsData]);
-
-  // Stores corresponding to selected brand
-  const correspondingStores = React.useMemo(() => {
-    if (!competitorsData?.features) return [];
-    if (selectedBrandFilter === 'ALL') return competitorsData.features;
-    return competitorsData.features.filter(f => f.properties?.brand === selectedBrandFilter);
-  }, [competitorsData, selectedBrandFilter]);
 
   return (
     <header className="observatory-header relative z-30 px-4 py-2 flex items-center justify-between select-none bg-white border-b border-[#DCE3EC] gap-3">
@@ -73,19 +48,18 @@ export default function HeaderBar({
         </div>
       </div>
 
-      {/* Center: Apsara & Competitor Brand Dropdowns */}
-      <div className="flex items-center space-x-2 overflow-x-auto">
-        {/* 1. Apsara Store Selector Dropdown */}
-        <div className="flex items-center space-x-1 bg-amber-50/70 p-1 rounded-lg border border-amber-200 text-xs font-mono shrink-0">
+      {/* Center: Apsara Store Selector Dropdown */}
+      <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-1.5 bg-amber-50/80 p-1 rounded-lg border border-amber-200 text-xs font-mono shrink-0 shadow-2xs">
           <Store className="w-3.5 h-3.5 text-amber-600 ml-0.5" />
-          <span className="text-[10px] text-amber-800 font-bold hidden sm:inline">Apsara:</span>
+          <span className="text-[10px] text-amber-800 font-bold hidden sm:inline">Apsara Outlet:</span>
           <select
             value={selectedApsaraStore?.serial_no || ''}
             onChange={(e) => {
               const match = apsaraStores.find(s => s.serial_no === e.target.value);
               if (match) onSelectApsaraStore(match);
             }}
-            className="bg-white border border-amber-300 rounded px-1.5 py-1 text-xs font-bold text-slate-800 focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer max-w-[130px] md:max-w-[160px]"
+            className="bg-white border border-amber-300 rounded px-2 py-1 text-xs font-bold text-slate-800 focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer max-w-[150px] sm:max-w-[200px]"
           >
             <option value="">Apsara Outlets (13)...</option>
             {apsaraStores.map((s) => (
@@ -96,63 +70,11 @@ export default function HeaderBar({
           </select>
           <button
             onClick={onOpenApsaraModal}
-            className="px-1.5 py-1 rounded bg-amber-600 text-white hover:bg-amber-700 text-[10px] font-bold transition-all shadow-2xs"
+            className="px-2 py-1 rounded bg-amber-600 text-white hover:bg-amber-700 text-[10px] font-bold transition-all shadow-2xs"
             title="Open 13 Store Dossier"
           >
-            📋 13
+            📋 Dossier
           </button>
-        </div>
-
-        {/* 2. Competitor / Conqueror Brand & Store Selector */}
-        <div className="flex items-center space-x-1.5 bg-purple-50/90 p-1 rounded-lg border border-purple-200 text-xs font-mono shrink-0 shadow-2xs">
-          <span className="text-[10px] text-purple-800 font-extrabold ml-0.5 flex items-center gap-1 hidden sm:inline">
-            ⚔️ Conqueror:
-          </span>
-          
-          {/* Brand Dropdown */}
-          <select
-            value={selectedBrandFilter}
-            onChange={(e) => {
-              const brand = e.target.value;
-              setSelectedBrandFilter(brand);
-              if (setActiveLayers) {
-                setActiveLayers(prev => ({ ...prev, competitors: true }));
-              }
-            }}
-            className="bg-white border border-purple-300 rounded px-2 py-1 text-xs font-bold text-purple-900 focus:outline-none focus:ring-1 focus:ring-purple-500 cursor-pointer max-w-[130px] sm:max-w-[160px] md:max-w-[190px]"
-            title="Filter by Competitor / Conqueror Brand"
-          >
-            <option value="ALL">All Conquerors (108)...</option>
-            {competitorBrands.map(b => (
-              <option key={b.name} value={b.name}>
-                {b.name} ({b.count})
-              </option>
-            ))}
-          </select>
-
-          {/* Names Corresponding to Selected Brand Dropdown */}
-          <select
-            value={selectedCompetitor?.properties?.store_id || ''}
-            onChange={(e) => {
-              const match = competitorsData?.features?.find(f => f.properties?.store_id === e.target.value);
-              if (match && onSelectCompetitor) {
-                onSelectCompetitor(match);
-              }
-            }}
-            className="bg-white border border-purple-300 rounded px-2 py-1 text-xs font-bold text-slate-800 focus:outline-none focus:ring-1 focus:ring-purple-500 cursor-pointer max-w-[140px] sm:max-w-[180px] md:max-w-[220px]"
-            title="Select Specific Store Location"
-          >
-            <option value="">
-              {selectedBrandFilter === 'ALL' 
-                ? 'Select Store (108)...' 
-                : `${selectedBrandFilter} Stores (${correspondingStores.length})...`}
-            </option>
-            {correspondingStores.map(f => (
-              <option key={f.properties?.store_id} value={f.properties?.store_id}>
-                {f.properties?.store_name} — {f.properties?.locality} ({f.properties?.rating_proxy}★)
-              </option>
-            ))}
-          </select>
         </div>
       </div>
 
