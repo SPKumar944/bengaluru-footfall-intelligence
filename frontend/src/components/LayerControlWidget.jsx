@@ -21,7 +21,12 @@ export default function LayerControlWidget({
   selectedBrandFilter = 'ALL',
   setSelectedBrandFilter,
   selectedCompetitor,
-  onSelectCompetitor
+  onSelectCompetitor,
+  kidsAttractionsData,
+  selectedKidsCategory = 'ALL',
+  setSelectedKidsCategory,
+  selectedKidsAttraction,
+  onSelectKidsAttraction
 }) {
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -49,6 +54,26 @@ export default function LayerControlWidget({
     if (selectedBrandFilter === 'ALL') return competitorsData.features;
     return competitorsData.features.filter(f => f.properties?.brand === selectedBrandFilter);
   }, [competitorsData, selectedBrandFilter]);
+
+  // Extract unique kids attraction categories and counts
+  const kidsCategories = React.useMemo(() => {
+    if (!kidsAttractionsData?.features) return [];
+    const counts = {};
+    kidsAttractionsData.features.forEach(f => {
+      const c = f.properties?.category;
+      if (c) counts[c] = (counts[c] || 0) + 1;
+    });
+    return Object.entries(counts).map(([name, count]) => ({ name, count }));
+  }, [kidsAttractionsData]);
+
+  // Attractions corresponding to selected kids category
+  const correspondingKidsAttractions = React.useMemo(() => {
+    if (!kidsAttractionsData?.features) return [];
+    if (selectedKidsCategory === 'ALL') return kidsAttractionsData.features;
+    return kidsAttractionsData.features.filter(f => f.properties?.category === selectedKidsCategory);
+  }, [kidsAttractionsData, selectedKidsCategory]);
+
+  const totalKidsCount = kidsAttractionsData?.features?.length || 116;
 
   const activeCount = Object.values(activeLayers).filter(Boolean).length;
 
@@ -290,39 +315,129 @@ export default function LayerControlWidget({
             </span>
           </div>
 
-          {/* Layer 5: Kids & Family Footfall Magnets */}
+          {/* Layer 5: Kids & Family Footfall Magnets with Embedded Category & Location Filter */}
           <div 
-            onClick={() => toggleLayer('kidsAttractions')}
-            className={`flex items-start gap-2.5 p-2 rounded-lg cursor-pointer transition-all border ${
+            className={`p-2 rounded-lg transition-all border ${
               activeLayers.kidsAttractions 
                 ? 'bg-pink-50/80 border-pink-300 text-slate-900 shadow-2xs' 
                 : 'bg-slate-50/60 border-slate-200 text-slate-400 hover:bg-slate-100'
             }`}
           >
-            <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
-              activeLayers.kidsAttractions 
-                ? 'bg-pink-600 border-pink-700 text-white' 
-                : 'bg-white border-slate-300'
-            }`}>
-              {activeLayers.kidsAttractions && <Check className="w-3 h-3 stroke-[3]" />}
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center justify-between">
-                <span className="font-bold text-[11px] flex items-center gap-1.5">
-                  <Sparkles className="w-3 h-3 text-pink-600" />
-                  Kids & Family Magnets (31)
-                </span>
-                <div className="flex -space-x-1">
-                  <span className="w-2.5 h-2.5 rounded-full bg-amber-500 border border-white" title="Hamleys & Toys" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-pink-500 border border-white" title="Arcades & Play" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 border border-white" title="Theatres" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 border border-white" title="Parks & Gardens" />
-                </div>
+            {/* Clickable Header to Toggle Kids Layer */}
+            <div 
+              onClick={() => toggleLayer('kidsAttractions')}
+              className="flex items-start gap-2.5 cursor-pointer"
+            >
+              <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
+                activeLayers.kidsAttractions 
+                  ? 'bg-pink-600 border-pink-700 text-white' 
+                  : 'bg-white border-slate-300'
+              }`}>
+                {activeLayers.kidsAttractions && <Check className="w-3 h-3 stroke-[3]" />}
               </div>
-              <p className="text-[9px] text-slate-500 mt-0.5">
-                Hamleys, Arcades, Theatres, Parks & Zoos
-              </p>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-slate-900">
+                    <Sparkles className="w-3 h-3 text-pink-600" />
+                    Kids & Family Magnets ({totalKidsCount})
+                  </span>
+                  <div className="flex -space-x-1">
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500 border border-white" title="Hamleys & Toys" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-pink-500 border border-white" title="Arcades & Play" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 border border-white" title="Theatres" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 border border-white" title="Parks & Lakes" />
+                  </div>
+                </div>
+                <p className="text-[9px] text-slate-500 mt-0.5">
+                  Hamleys, Arcades, Theatres, Parks & Zoos
+                </p>
+              </div>
             </div>
+
+            {/* When Kids Layer is enabled, show Category tabs and Attraction dropdown right here */}
+            {activeLayers.kidsAttractions && (
+              <div 
+                onClick={(e) => e.stopPropagation()}
+                className="mt-2.5 pt-2 border-t border-pink-200 space-y-2 text-xs"
+              >
+                {/* 1. Category Filter Tabs / Selector */}
+                <div>
+                  <div className="flex items-center justify-between text-[10px] font-bold text-pink-900 mb-1">
+                    <span>Category Filter:</span>
+                    {selectedKidsCategory !== 'ALL' && (
+                      <button
+                        onClick={() => setSelectedKidsCategory && setSelectedKidsCategory('ALL')}
+                        className="text-[9px] text-pink-600 hover:text-pink-800 underline font-normal cursor-pointer"
+                      >
+                        Reset All ({totalKidsCount})
+                      </button>
+                    )}
+                  </div>
+                  <select
+                    value={selectedKidsCategory}
+                    onChange={(e) => setSelectedKidsCategory && setSelectedKidsCategory(e.target.value)}
+                    className="w-full bg-white border border-pink-300 rounded px-2 py-1.5 text-xs font-bold text-pink-900 focus:outline-none focus:ring-1 focus:ring-pink-500 cursor-pointer shadow-2xs"
+                  >
+                    <option value="ALL">All Categories ({totalKidsCount} Hotspots)</option>
+                    {kidsCategories.map(c => (
+                      <option key={c.name} value={c.name}>
+                        {c.name} ({c.count})
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* 2. Corresponding Attractions for Selected Category */}
+                <div>
+                  <label className="block text-[10px] font-bold text-slate-700 mb-1">
+                    {selectedKidsCategory === 'ALL' 
+                      ? `Select Hotspot (${totalKidsCount}):` 
+                      : `${selectedKidsCategory} (${correspondingKidsAttractions.length}):`}
+                  </label>
+                  <select
+                    value={selectedKidsAttraction?.properties?.id || ''}
+                    onChange={(e) => {
+                      const match = kidsAttractionsData?.features?.find(f => f.properties?.id === e.target.value);
+                      if (match && onSelectKidsAttraction) {
+                        onSelectKidsAttraction(match);
+                      }
+                    }}
+                    className="w-full bg-white border border-slate-300 rounded px-2 py-1.5 text-xs font-semibold text-slate-800 focus:outline-none focus:ring-1 focus:ring-pink-500 cursor-pointer shadow-2xs"
+                  >
+                    <option value="">
+                      {selectedKidsCategory === 'ALL' 
+                        ? 'Select children hotspot location...' 
+                        : `Select ${selectedKidsCategory} venue...`}
+                    </option>
+                    {correspondingKidsAttractions.map(f => (
+                      <option key={f.properties?.id} value={f.properties?.id}>
+                        {f.properties?.name} — {f.properties?.locality} (Synergy: {f.properties?.ice_cream_attraction_score}/100)
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* 3. Selected Kids Attraction Snapshot */}
+                {selectedKidsAttraction && (
+                  <div className="bg-pink-100/80 border border-pink-300 rounded-lg p-2 text-[10px] text-pink-950 space-y-1">
+                    <div className="font-extrabold flex items-center justify-between">
+                      <span className="truncate">{selectedKidsAttraction.properties?.name}</span>
+                      <span className="text-emerald-700 shrink-0 font-bold ml-1">
+                        Synergy: {selectedKidsAttraction.properties?.ice_cream_attraction_score}/100
+                      </span>
+                    </div>
+                    <div className="text-slate-600 line-clamp-1">{selectedKidsAttraction.properties?.address}</div>
+                    <div className="text-pink-800 font-bold flex justify-between pt-0.5 border-t border-pink-200">
+                      <span>Monthly Traffic:</span>
+                      <span>~{selectedKidsAttraction.properties?.est_monthly_family_footfall?.toLocaleString()} / mo</span>
+                    </div>
+                    <div className="text-[9px] text-amber-900 font-medium">
+                      Peak: {selectedKidsAttraction.properties?.peak_window}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           {/* Layer 6: Tech Parks & IT Campuses */}

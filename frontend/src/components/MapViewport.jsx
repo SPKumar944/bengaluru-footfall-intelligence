@@ -64,6 +64,9 @@ export default function MapViewport({
   apsaraStoresData = [],
   competitorsData,
   kidsAttractionsData,
+  selectedKidsCategory = 'ALL',
+  selectedKidsAttraction,
+  onSelectKidsAttraction,
   techParksData,
   officeFootprintsData,
   wardDemographicsData,
@@ -129,6 +132,15 @@ export default function MapViewport({
     }
     return competitorsData.features.filter(f => f.properties?.brand === selectedBrandFilter);
   }, [competitorsData, selectedBrandFilter]);
+
+  // Filter kids & family attractions by selected category
+  const filteredKidsAttractions = useMemo(() => {
+    if (!kidsAttractionsData?.features) return [];
+    if (!selectedKidsCategory || selectedKidsCategory === 'ALL') {
+      return kidsAttractionsData.features;
+    }
+    return kidsAttractionsData.features.filter(f => f.properties?.category === selectedKidsCategory);
+  }, [kidsAttractionsData, selectedKidsCategory]);
 
   // Deck.gl Layers
   const deckLayers = [
@@ -238,9 +250,9 @@ export default function MapViewport({
     }),
 
     // 2c. Kids & Family Footfall Magnets (Toy Stores, Play Arcades, Theatres, Parks)
-    activeLayers.kidsAttractions && kidsAttractionsData?.features && new ScatterplotLayer({
+    activeLayers.kidsAttractions && filteredKidsAttractions.length > 0 && new ScatterplotLayer({
       id: 'kids-attractions-layer',
-      data: kidsAttractionsData.features,
+      data: filteredKidsAttractions,
       pickable: true,
       opacity: 0.95,
       stroked: true,
@@ -249,18 +261,43 @@ export default function MapViewport({
       radiusMinPixels: 8,
       radiusMaxPixels: 16,
       lineWidthUnits: 'pixels',
-      getLineWidth: 2,
-      getLineColor: [255, 255, 255, 255],
+      getLineWidth: f => selectedKidsAttraction?.properties?.id === f.properties?.id ? 3.5 : 2,
+      getLineColor: f => selectedKidsAttraction?.properties?.id === f.properties?.id ? [255, 255, 255, 255] : [255, 255, 255, 240],
       getFillColor: f => {
         const cat = f.properties?.category || '';
         if (cat.includes('Toy Store')) return [245, 158, 11, 245]; // Amber / Gold
         if (cat.includes('Play Arena') || cat.includes('Theme Park')) return [236, 72, 153, 245]; // Pink / Magenta
         if (cat.includes('Theatre') || cat.includes('Multiplex')) return [99, 102, 241, 245]; // Indigo
-        if (cat.includes('Park') || cat.includes('Garden')) return [16, 185, 129, 245]; // Emerald
-        return [14, 165, 233, 245]; // Sky Blue (Science/Nature)
+        if (cat.includes('Park') || cat.includes('Garden') || cat.includes('Lake')) return [16, 185, 129, 245]; // Emerald
+        return [14, 165, 233, 245]; // Sky Blue (Science/Nature/Zoo)
       },
       getPosition: f => f.geometry.coordinates,
-      onHover: info => setHoverInfo(info)
+      updateTriggers: {
+        getLineWidth: [selectedKidsAttraction?.properties?.id],
+        getLineColor: [selectedKidsAttraction?.properties?.id]
+      },
+      onHover: info => setHoverInfo(info),
+      onClick: info => {
+        if (info.object && onSelectKidsAttraction) {
+          onSelectKidsAttraction(info.object);
+        }
+      }
+    }),
+
+    // 2d. Pulsing Selection Ring for Selected Kids Attraction
+    activeLayers.kidsAttractions && selectedKidsAttraction?.geometry?.coordinates && new ScatterplotLayer({
+      id: 'kids-attraction-selected-pulse',
+      data: [selectedKidsAttraction],
+      pickable: false,
+      stroked: true,
+      filled: false,
+      radiusScale: 1,
+      radiusMinPixels: 18,
+      radiusMaxPixels: 28,
+      lineWidthUnits: 'pixels',
+      getLineWidth: 2.5,
+      getLineColor: [244, 63, 94, 255], // Distinct vivid rose/pink halo
+      getPosition: f => f.geometry.coordinates
     }),
 
     // 3. Competitor Ice Cream Parlors Across Bengaluru (Filtered by Brand if selected)

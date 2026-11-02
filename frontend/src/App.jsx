@@ -48,6 +48,8 @@ export default function App() {
   const [showApsaraModal, setShowApsaraModal] = useState(false);
   const [selectedBrandFilter, setSelectedBrandFilter] = useState('ALL');
   const [selectedCompetitor, setSelectedCompetitor] = useState(null);
+  const [selectedKidsCategory, setSelectedKidsCategory] = useState('ALL');
+  const [selectedKidsAttraction, setSelectedKidsAttraction] = useState(null);
 
   // Temporal Dynamic State (24-Hour Diurnal Player)
   const [activeHour, setActiveHour] = useState(21); // Default 9:00 PM peak dessert window
@@ -174,6 +176,36 @@ export default function App() {
     }
   };
 
+  // Change kids category filter and ensure active layer
+  const handleSelectKidsCategory = (category) => {
+    setSelectedKidsCategory(category);
+    setActiveLayers(prev => ({ ...prev, kidsAttractions: true }));
+    if (selectedKidsAttraction && category !== 'ALL' && selectedKidsAttraction.properties?.category !== category) {
+      setSelectedKidsAttraction(null);
+    }
+  };
+
+  // Select a kids attraction and fly to its location
+  const handleSelectKidsAttraction = (attraction) => {
+    setSelectedKidsAttraction(attraction);
+    setActiveLayers(prev => ({ ...prev, kidsAttractions: true }));
+    if (attraction?.properties?.category && selectedKidsCategory !== 'ALL' && selectedKidsCategory !== attraction.properties.category) {
+      setSelectedKidsCategory(attraction.properties.category);
+    }
+    if (attraction?.geometry?.coordinates) {
+      const [lng, lat] = attraction.geometry.coordinates;
+      setViewState(prev => ({
+        ...prev,
+        longitude: lng,
+        latitude: lat,
+        zoom: 15.6,
+        pitch: 0,
+        bearing: 0,
+        transitionDuration: 900
+      }));
+    }
+  };
+
   // Reset to Bangalore City View showing all stores
   const resetCityView = () => {
     setViewState({
@@ -237,6 +269,9 @@ export default function App() {
           apsaraStoresData={apsaraStoresData}
           competitorsData={competitorsData}
           kidsAttractionsData={kidsAttractionsData}
+          selectedKidsCategory={selectedKidsCategory}
+          selectedKidsAttraction={selectedKidsAttraction}
+          onSelectKidsAttraction={handleSelectKidsAttraction}
           techParksData={techParksData}
           officeFootprintsData={officeFootprintsData}
           wardDemographicsData={wardDemographicsData}
@@ -252,9 +287,9 @@ export default function App() {
           activeDayType={activeDayType}
         />
 
-        {/* 3. Top Right Floating Controls: Layer Toggles & In-Panel Competitor Selectors */}
+        {/* 3. Top Right Floating Controls: Layer Toggles & In-Panel Competitor/Kids Selectors */}
         <div className="absolute top-4 right-4 z-20 pointer-events-auto flex flex-col items-end space-y-2">
-          {/* Layer Control Widget with embedded Conqueror Brand & Store selection */}
+          {/* Layer Control Widget with embedded Conqueror Brand & Kids Category selection */}
           <LayerControlWidget
             activeLayers={activeLayers}
             setActiveLayers={setActiveLayers}
@@ -263,6 +298,11 @@ export default function App() {
             setSelectedBrandFilter={handleSelectBrandFilter}
             selectedCompetitor={selectedCompetitor}
             onSelectCompetitor={handleSelectCompetitor}
+            kidsAttractionsData={kidsAttractionsData}
+            selectedKidsCategory={selectedKidsCategory}
+            setSelectedKidsCategory={handleSelectKidsCategory}
+            selectedKidsAttraction={selectedKidsAttraction}
+            onSelectKidsAttraction={handleSelectKidsAttraction}
           />
 
           {/* Footfall Intensity Legend (Active when street footfall layer is visible) */}

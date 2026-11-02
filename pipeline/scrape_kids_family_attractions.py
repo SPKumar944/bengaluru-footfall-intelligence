@@ -1,28 +1,25 @@
 #!/usr/bin/env python3
 """
-Kids & Family Footfall Magnets Scraper & GIS Compiler
-Scrapes and compiles premier children's and family attractions across Bengaluru:
-- Toy Stores (Hamleys, Lego, Kids Retail)
-- Play Arenas & Arcades (Timezone, Fun City, Smaaash, Amoeba, Play 'N' Learn)
-- Theatres & Multiplexes (PVR, INOX, Cinepolis, Gopalan)
-- Parks, Playgrounds & Green Spaces (Cubbon Park Bal Bhavan, Lalbagh, Sankey Tank)
-- Educational, Zoos, Aquariums & Planetariums (Nehru Planetarium, VITM, Snow City)
-
-Computes Ice Cream Retail Synergy Scores, peak family footfall windows,
-and exports GeoJSON for WebGL visualization in the dashboard.
+Comprehensive Kids & Family Footfall Magnets Dataset Compiler (115+ Locations)
+Covers all crucial kids and family footfall magnets across Bengaluru:
+1. Toy Stores & Kids Retail (Hamleys, Lego, Toys"R"Us, FirstCry flagships, Crossword Kids)
+2. Play Arenas, Trampolines & Arcades (Timezone, Fun City, Smaaash, Amoeba, Play 'N' Learn, Play Factory, Torq03)
+3. Theatres & Multiplexes (PVR, INOX, Cinepolis, Gopalan, Urvashi, Prasanna, Sandhya, etc.)
+4. Parks, Playgrounds & Lake Promenades (Bal Bhavan Cubbon Park, Lalbagh, Sankey Tank, Bugle Rock, Agara Lake, etc.)
+5. Zoos, Aquariums, Terrariums, Planetarium & Science Centres (Nehru Planetarium, VITM, Aquarium, Bannerghatta Zoo, Snow City, etc.)
 """
 
 import os
 import json
-import time
 
-KIDS_FAMILY_TARGETS = [
-    # 1. TOY STORES & KIDS RETAIL
+KIDS_FAMILY_LOCATIONS = [
+    # =========================================================================
+    # 1. TOY STORES & KIDS RETAIL (18 Locations)
+    # =========================================================================
     {
         "id": "KIDS_TOY_01",
         "name": "Hamleys — Phoenix Marketcity",
         "category": "Toy Store & Kids Retail",
-        "search_query": "Hamleys Phoenix Marketcity Bengaluru",
         "locality": "Mahadevapura / Whitefield",
         "address": "Lower Ground Floor, Phoenix Marketcity, Whitefield Main Rd, Mahadevapura, Bengaluru 560048",
         "coordinates": {"lat": 12.997705, "lng": 77.696965},
@@ -35,7 +32,6 @@ KIDS_FAMILY_TARGETS = [
         "id": "KIDS_TOY_02",
         "name": "Hamleys — Nexus Mall Koramangala",
         "category": "Toy Store & Kids Retail",
-        "search_query": "Hamleys The Forum Mall Koramangala Bengaluru",
         "locality": "Koramangala",
         "address": "2nd Floor, Nexus Mall, Hosur Road, Koramangala, Bengaluru 560095",
         "coordinates": {"lat": 12.9348, "lng": 77.6114},
@@ -48,7 +44,6 @@ KIDS_FAMILY_TARGETS = [
         "id": "KIDS_TOY_03",
         "name": "Hamleys — Phoenix Mall of Asia",
         "category": "Toy Store & Kids Retail",
-        "search_query": "Hamleys Phoenix Mall of Asia Bengaluru",
         "locality": "Hebbal / Byatarayanapura",
         "address": "Level 2, Phoenix Mall of Asia, Bellary Road, Byatarayanapura, Bengaluru 560092",
         "coordinates": {"lat": 13.0706, "lng": 77.5925},
@@ -61,9 +56,8 @@ KIDS_FAMILY_TARGETS = [
         "id": "KIDS_TOY_04",
         "name": "Hamleys — Orion Mall",
         "category": "Toy Store & Kids Retail",
-        "search_query": "Hamleys Orion Mall Rajajinagar Bengaluru",
         "locality": "Rajajinagar / Yeshwanthpur",
-        "address": "Level 1, Orion Mall, Brigade Gateway, 26/1 Dr Rajkumar Rd, Malleshwaram West, Bengaluru 560055",
+        "address": "Level 1, Orion Mall, Brigade Gateway, Dr Rajkumar Rd, Bengaluru 560055",
         "coordinates": {"lat": 13.0112, "lng": 77.5550},
         "target_audience": "Families with kids, Lakeside weekend visitors",
         "ice_cream_synergy": "Very High (Direct lakeside promenade stroll after store visit)",
@@ -74,7 +68,6 @@ KIDS_FAMILY_TARGETS = [
         "id": "KIDS_TOY_05",
         "name": "Hamleys — Forum South Bengaluru",
         "category": "Toy Store & Kids Retail",
-        "search_query": "Hamleys Forum South Bangalore Konanakunte",
         "locality": "Konanakunte / Kanakapura Road",
         "address": "Upper Ground, Forum South Bangalore, Konanakunte Cross, Kanakapura Rd, Bengaluru 560062",
         "coordinates": {"lat": 12.8885, "lng": 77.5458},
@@ -85,9 +78,20 @@ KIDS_FAMILY_TARGETS = [
     },
     {
         "id": "KIDS_TOY_06",
+        "name": "Hamleys — Mantri Square",
+        "category": "Toy Store & Kids Retail",
+        "locality": "Malleshwaram",
+        "address": "2nd Floor, Mantri Square Mall, Sampige Road, Malleshwaram, Bengaluru 560003",
+        "coordinates": {"lat": 12.9915, "lng": 77.5712},
+        "target_audience": "Malleshwaram & Rajajinagar families",
+        "ice_cream_synergy": "Very High (High density family retail mall)",
+        "peak_window": "Weekends 4:00 PM - 9:30 PM",
+        "est_monthly_family_footfall": 39000
+    },
+    {
+        "id": "KIDS_TOY_07",
         "name": "Lego Certified Store — Phoenix Marketcity",
         "category": "Toy Store & Kids Retail",
-        "search_query": "Lego Store Phoenix Marketcity Bengaluru",
         "locality": "Mahadevapura",
         "address": "Phoenix Marketcity, Whitefield Main Road, Mahadevapura, Bengaluru 560048",
         "coordinates": {"lat": 12.9972, "lng": 77.6968},
@@ -96,13 +100,146 @@ KIDS_FAMILY_TARGETS = [
         "peak_window": "Friday - Sunday 3:00 PM - 9:00 PM",
         "est_monthly_family_footfall": 32000
     },
+    {
+        "id": "KIDS_TOY_08",
+        "name": "Lego Certified Store — Phoenix Mall of Asia",
+        "category": "Toy Store & Kids Retail",
+        "locality": "Hebbal",
+        "address": "Ground Floor, Phoenix Mall of Asia, Bellary Road, Bengaluru 560092",
+        "coordinates": {"lat": 13.0704, "lng": 77.5923},
+        "target_audience": "Kids, builders, tech families",
+        "ice_cream_synergy": "Very High (Prime corridor facing central atrium kiosks)",
+        "peak_window": "Weekends 2:00 PM - 9:30 PM",
+        "est_monthly_family_footfall": 34000
+    },
+    {
+        "id": "KIDS_TOY_09",
+        "name": "Toys\"R\"Us — Phoenix Marketcity",
+        "category": "Toy Store & Kids Retail",
+        "locality": "Whitefield",
+        "address": "1st Floor, Phoenix Marketcity, Whitefield Main Road, Bengaluru 560048",
+        "coordinates": {"lat": 12.9975, "lng": 77.6972},
+        "target_audience": "All age kids, toddler play zones",
+        "ice_cream_synergy": "High (Large format destination toy retail)",
+        "peak_window": "Weekends 4:00 PM - 9:00 PM",
+        "est_monthly_family_footfall": 28000
+    },
+    {
+        "id": "KIDS_TOY_10",
+        "name": "Toys\"R\"Us — Nexus Shantiniketan",
+        "category": "Toy Store & Kids Retail",
+        "locality": "Whitefield / ITPL",
+        "address": "Nexus Shantiniketan Mall, Thigalarapalya, Hoodi, Bengaluru 560067",
+        "coordinates": {"lat": 12.9892, "lng": 77.7281},
+        "target_audience": "IT corridor resident families, toddlers",
+        "ice_cream_synergy": "Very High (Walking plaza destination for ITPL families)",
+        "peak_window": "Friday - Sunday 5:00 PM - 9:30 PM",
+        "est_monthly_family_footfall": 31000
+    },
+    {
+        "id": "KIDS_TOY_11",
+        "name": "FirstCry Flagship Store — Indiranagar",
+        "category": "Toy Store & Kids Retail",
+        "locality": "Indiranagar",
+        "address": "100 Feet Road, HAL 2nd Stage, Indiranagar, Bengaluru 560038",
+        "coordinates": {"lat": 12.9712, "lng": 77.6415},
+        "target_audience": "New parents, infants, toddlers, young kids",
+        "ice_cream_synergy": "High (High Street pedestrian corridor dessert stop)",
+        "peak_window": "Daily 4:30 PM - 8:30 PM",
+        "est_monthly_family_footfall": 22000
+    },
+    {
+        "id": "KIDS_TOY_12",
+        "name": "FirstCry Flagship Store — HSR Layout",
+        "category": "Toy Store & Kids Retail",
+        "locality": "HSR Layout",
+        "address": "27th Main Road, Sector 1, HSR Layout, Bengaluru 560102",
+        "coordinates": {"lat": 12.9118, "lng": 77.6524},
+        "target_audience": "Young techie parents & kids",
+        "ice_cream_synergy": "Very High (HSR 27th Main is a top evening food street)",
+        "peak_window": "Daily 5:00 PM - 9:30 PM",
+        "est_monthly_family_footfall": 26000
+    },
+    {
+        "id": "KIDS_TOY_13",
+        "name": "FirstCry Flagship Store — Jayanagar",
+        "category": "Toy Store & Kids Retail",
+        "locality": "Jayanagar 4th Block",
+        "address": "11th Main Road, 4th Block, Jayanagar, Bengaluru 560011",
+        "coordinates": {"lat": 12.9298, "lng": 77.5835},
+        "target_audience": "South Bangalore families, gifting shoppers",
+        "ice_cream_synergy": "Very High (Jayanagar 4th Block shopping complex hub)",
+        "peak_window": "Daily 4:30 PM - 9:00 PM",
+        "est_monthly_family_footfall": 25000
+    },
+    {
+        "id": "KIDS_TOY_14",
+        "name": "FirstCry Store — Malleshwaram",
+        "category": "Toy Store & Kids Retail",
+        "locality": "Malleshwaram",
+        "address": "Sampige Road, 7th Cross, Malleshwaram, Bengaluru 560003",
+        "coordinates": {"lat": 12.9982, "lng": 77.5718},
+        "target_audience": "Heritage Bangalore families, kids",
+        "ice_cream_synergy": "High (Sampige Road evening shopping promenade)",
+        "peak_window": "Daily 5:00 PM - 9:00 PM",
+        "est_monthly_family_footfall": 21000
+    },
+    {
+        "id": "KIDS_TOY_15",
+        "name": "FirstCry Store — Banashankari",
+        "category": "Toy Store & Kids Retail",
+        "locality": "Banashankari",
+        "address": "100 Feet Ring Road, 3rd Stage, Banashankari, Bengaluru 560085",
+        "coordinates": {"lat": 12.9248, "lng": 77.5512},
+        "target_audience": "Young residential families",
+        "ice_cream_synergy": "High (Kathriguppe commercial corridor footfall)",
+        "peak_window": "Daily 5:00 PM - 9:00 PM",
+        "est_monthly_family_footfall": 19000
+    },
+    {
+        "id": "KIDS_TOY_16",
+        "name": "Crossword Books & Children's Play Zone — Indiranagar",
+        "category": "Toy Store & Kids Retail",
+        "locality": "Indiranagar",
+        "address": "12th Main Rd, HAL 2nd Stage, Indiranagar, Bengaluru 560038",
+        "coordinates": {"lat": 12.9735, "lng": 77.6432},
+        "target_audience": "Reading families, children, board game lovers",
+        "ice_cream_synergy": "Very High (Indiranagar 12th Main dessert hub)",
+        "peak_window": "Weekends 3:00 PM - 9:00 PM",
+        "est_monthly_family_footfall": 23000
+    },
+    {
+        "id": "KIDS_TOY_17",
+        "name": "Crossword Books & Toys — Residency Road",
+        "category": "Toy Store & Kids Retail",
+        "locality": "Residency Road / CBD",
+        "address": "Residency Road, Shanthala Nagar, Ashok Nagar, Bengaluru 560025",
+        "coordinates": {"lat": 12.9698, "lng": 77.6012},
+        "target_audience": "CBD families, school kids (Bishop Cotton / Baldwin vicinity)",
+        "ice_cream_synergy": "High (School exit & weekend family reading visits)",
+        "peak_window": "Weekdays 3:30 PM - 7:00 PM, Weekends 3:00 PM - 8:30 PM",
+        "est_monthly_family_footfall": 20000
+    },
+    {
+        "id": "KIDS_TOY_18",
+        "name": "Sapna Book House & Kids World — Gandhinagar",
+        "category": "Toy Store & Kids Retail",
+        "locality": "Majestic / Gandhinagar",
+        "address": "3rd Main Road, Gandhinagar, Bengaluru 560009",
+        "coordinates": {"lat": 12.9778, "lng": 77.5785},
+        "target_audience": "Families, students, children from across city",
+        "ice_cream_synergy": "High (Major book & stationery destination)",
+        "peak_window": "Daily 2:00 PM - 8:00 PM",
+        "est_monthly_family_footfall": 35000
+    },
 
-    # 2. INDOOR PLAY ARENAS, ARCADES & THEME PARKS
+    # =========================================================================
+    # 2. PLAY ARENAS, ARCADES, TRAMPOLINES & ADVENTURE (28 Locations)
+    # =========================================================================
     {
         "id": "KIDS_PLAY_01",
         "name": "Timezone — Phoenix Marketcity",
         "category": "Play Arena & Arcade",
-        "search_query": "Timezone Phoenix Marketcity Bengaluru",
         "locality": "Mahadevapura / Whitefield",
         "address": "2nd Floor, Phoenix Marketcity, Whitefield Main Rd, Bengaluru 560048",
         "coordinates": {"lat": 12.996995, "lng": 77.696736},
@@ -115,7 +252,6 @@ KIDS_FAMILY_TARGETS = [
         "id": "KIDS_PLAY_02",
         "name": "Timezone — Orion Mall",
         "category": "Play Arena & Arcade",
-        "search_query": "Timezone Orion Mall Rajajinagar Bengaluru",
         "locality": "Rajajinagar",
         "address": "Level 3, Orion Mall, Brigade Gateway, Dr Rajkumar Rd, Bengaluru 560055",
         "coordinates": {"lat": 13.0114, "lng": 77.5552},
@@ -128,7 +264,6 @@ KIDS_FAMILY_TARGETS = [
         "id": "KIDS_PLAY_03",
         "name": "Timezone — Nexus Koramangala",
         "category": "Play Arena & Arcade",
-        "search_query": "Timezone Nexus Mall Koramangala Bengaluru",
         "locality": "Koramangala",
         "address": "Nexus Mall, Hosur Road, Chikku Lakshmaiah Layout, Koramangala, Bengaluru 560095",
         "coordinates": {"lat": 12.9345, "lng": 77.6113},
@@ -141,7 +276,6 @@ KIDS_FAMILY_TARGETS = [
         "id": "KIDS_PLAY_04",
         "name": "Timezone — Phoenix Mall of Asia",
         "category": "Play Arena & Arcade",
-        "search_query": "Timezone Phoenix Mall of Asia Hebbal Bengaluru",
         "locality": "Hebbal",
         "address": "Level 3, Phoenix Mall of Asia, Bellary Rd, Byatarayanapura, Bengaluru 560092",
         "coordinates": {"lat": 13.0708, "lng": 77.5927},
@@ -152,9 +286,32 @@ KIDS_FAMILY_TARGETS = [
     },
     {
         "id": "KIDS_PLAY_05",
+        "name": "Timezone — Forum South Bengaluru",
+        "category": "Play Arena & Arcade",
+        "locality": "Konanakunte Cross",
+        "address": "3rd Floor, Forum South Bangalore, Kanakapura Road, Bengaluru 560062",
+        "coordinates": {"lat": 12.8887, "lng": 77.5460},
+        "target_audience": "Kids, teens, birthday parties",
+        "ice_cream_synergy": "Very High (Large family weekend entertainment anchor)",
+        "peak_window": "Weekends 3:00 PM - 9:30 PM",
+        "est_monthly_family_footfall": 48000
+    },
+    {
+        "id": "KIDS_PLAY_06",
+        "name": "Timezone — Vega City Mall",
+        "category": "Play Arena & Arcade",
+        "locality": "Bannerghatta Road",
+        "address": "3rd Floor, Vega City Mall, Bannerghatta Main Rd, Bengaluru 560076",
+        "coordinates": {"lat": 12.9083, "lng": 77.5999},
+        "target_audience": "South Bangalore kids & gamers",
+        "ice_cream_synergy": "Very High (Pre/post movie and arcade treat footfall)",
+        "peak_window": "Weekends 3:00 PM - 9:30 PM",
+        "est_monthly_family_footfall": 46000
+    },
+    {
+        "id": "KIDS_PLAY_07",
         "name": "Fun City — VR Bengaluru",
         "category": "Play Arena & Arcade",
-        "search_query": "Fun City VR Bengaluru Whitefield",
         "locality": "Whitefield",
         "address": "3rd Floor, VR Bengaluru, ITPL Main Road, Mahadevapura, Bengaluru 560048",
         "coordinates": {"lat": 12.9962, "lng": 77.6953},
@@ -164,10 +321,21 @@ KIDS_FAMILY_TARGETS = [
         "est_monthly_family_footfall": 38000
     },
     {
-        "id": "KIDS_PLAY_06",
+        "id": "KIDS_PLAY_08",
+        "name": "Fun City — Orion Mall",
+        "category": "Play Arena & Arcade",
+        "locality": "Rajajinagar",
+        "address": "Level 3, Orion Mall, Dr Rajkumar Road, Bengaluru 560055",
+        "coordinates": {"lat": 13.0116, "lng": 77.5554},
+        "target_audience": "Toddlers and pre-school kids rides",
+        "ice_cream_synergy": "High (Kiddie rides and coin games)",
+        "peak_window": "Weekends 3:30 PM - 9:00 PM",
+        "est_monthly_family_footfall": 35000
+    },
+    {
+        "id": "KIDS_PLAY_09",
         "name": "Amoeba Bowling & Sports Bar — Church Street",
         "category": "Play Arena & Arcade",
-        "search_query": "Amoeba Church Street Bengaluru",
         "locality": "MG Road / Church Street",
         "address": "67, Church St, Shanthala Nagar, Ashok Nagar, Bengaluru 560001",
         "coordinates": {"lat": 12.9750, "lng": 77.6053},
@@ -177,10 +345,201 @@ KIDS_FAMILY_TARGETS = [
         "est_monthly_family_footfall": 75000
     },
     {
-        "id": "KIDS_PLAY_07",
-        "name": "Snow City & Fun World",
-        "category": "Theme Park & Amusement",
-        "search_query": "Snow City Jayamahal Bengaluru",
+        "id": "KIDS_PLAY_10",
+        "name": "Amoeba Family Entertainment — Forum Rex Walk",
+        "category": "Play Arena & Arcade",
+        "locality": "Brigade Road",
+        "address": "Forum Rex Walk, Brigade Road, Bengaluru 560001",
+        "coordinates": {"lat": 12.9733, "lng": 77.6073},
+        "target_audience": "Youth, weekend family shoppers",
+        "ice_cream_synergy": "Very High (Outdoor dining and dessert concourse)",
+        "peak_window": "Daily 5:00 PM - 10:30 PM",
+        "est_monthly_family_footfall": 42000
+    },
+    {
+        "id": "KIDS_PLAY_11",
+        "name": "Amoeba Bowling — Ascendas Park Square Mall",
+        "category": "Play Arena & Arcade",
+        "locality": "ITPL / Whitefield",
+        "address": "Park Square Mall, International Tech Park, Whitefield, Bengaluru 560066",
+        "coordinates": {"lat": 12.9868, "lng": 77.7382},
+        "target_audience": "IT professionals, weekend family leisure",
+        "ice_cream_synergy": "High (Bowling league nights and weekend family outings)",
+        "peak_window": "Friday - Sunday 4:00 PM - 9:30 PM",
+        "est_monthly_family_footfall": 34000
+    },
+    {
+        "id": "KIDS_PLAY_12",
+        "name": "Smaaash — Phoenix Marketcity",
+        "category": "Play Arena & Arcade",
+        "locality": "Mahadevapura",
+        "address": "2nd Floor, Phoenix Marketcity, Whitefield Main Road, Bengaluru 560048",
+        "coordinates": {"lat": 12.9968, "lng": 77.6970},
+        "target_audience": "Virtual reality sports, cricket sim, kids arcade",
+        "ice_cream_synergy": "Very High (High energy arcade sports leads to refreshments)",
+        "peak_window": "Weekends 2:00 PM - 9:30 PM",
+        "est_monthly_family_footfall": 39000
+    },
+    {
+        "id": "KIDS_PLAY_13",
+        "name": "Play 'N' Learn — Phoenix Mall of Asia",
+        "category": "Play Arena & Arcade",
+        "locality": "Hebbal",
+        "address": "Level 2, Phoenix Mall of Asia, Bellary Road, Bengaluru 560092",
+        "coordinates": {"lat": 13.0705, "lng": 77.5924},
+        "target_audience": "Active active play for kids (1-10 yrs)",
+        "ice_cream_synergy": "Very High (Sweaty, active kids begging for ice cream post-play)",
+        "peak_window": "Daily 11:00 AM - 8:30 PM (Heavy weekends)",
+        "est_monthly_family_footfall": 32000
+    },
+    {
+        "id": "KIDS_PLAY_14",
+        "name": "Play 'N' Learn — Nexus Koramangala",
+        "category": "Play Arena & Arcade",
+        "locality": "Koramangala",
+        "address": "Nexus Mall, Hosur Road, Koramangala, Bengaluru 560095",
+        "coordinates": {"lat": 12.9347, "lng": 77.6111},
+        "target_audience": "Toddler sensory play and ball pool",
+        "ice_cream_synergy": "High (Parents waiting outside buy ice cream)",
+        "peak_window": "Weekends 12:00 PM - 8:00 PM",
+        "est_monthly_family_footfall": 28000
+    },
+    {
+        "id": "KIDS_PLAY_15",
+        "name": "Torq03 E-Zone Club — Marathahalli",
+        "category": "Play Arena & Arcade",
+        "locality": "Marathahalli",
+        "address": "E-Zone Club, Outer Ring Road, Anand Nagar, Marathahalli, Bengaluru 560037",
+        "coordinates": {"lat": 12.9612, "lng": 77.7015},
+        "target_audience": "Go-karting, bowling, laser tag, family adventure",
+        "ice_cream_synergy": "Extreme (Top go-karting venue in East Bangalore)",
+        "peak_window": "Weekends 3:00 PM - 10:30 PM",
+        "est_monthly_family_footfall": 45000
+    },
+    {
+        "id": "KIDS_PLAY_16",
+        "name": "Play Factory — Electronic City",
+        "category": "Play Arena & Arcade",
+        "locality": "Electronic City / Hosur Road",
+        "address": "Opposite BMW, Hosur Main Road, Electronic City Phase 1, Bengaluru 560100",
+        "coordinates": {"lat": 12.8435, "lng": 77.6712},
+        "target_audience": "Trampoline park, indoor cricket, rope course, kids",
+        "ice_cream_synergy": "Very High (Major destination play venue in South Bangalore)",
+        "peak_window": "Weekends 11:00 AM - 9:00 PM",
+        "est_monthly_family_footfall": 41000
+    },
+    {
+        "id": "KIDS_PLAY_17",
+        "name": "Mystery Rooms — Indiranagar",
+        "category": "Play Arena & Arcade",
+        "locality": "Indiranagar",
+        "address": "1133, 100 Feet Rd, HAL 2nd Stage, Indiranagar, Bengaluru 560038",
+        "coordinates": {"lat": 12.9708, "lng": 77.6398},
+        "target_audience": "Teens, young families, corporate teams, puzzle solvers",
+        "ice_cream_synergy": "High (Post-escape room debrief dessert treat)",
+        "peak_window": "Daily 4:00 PM - 10:00 PM",
+        "est_monthly_family_footfall": 18000
+    },
+    {
+        "id": "KIDS_PLAY_18",
+        "name": "Mystery Rooms — Koramangala",
+        "category": "Play Arena & Arcade",
+        "locality": "Koramangala",
+        "address": "80 Feet Road, 6th Block, Koramangala, Bengaluru 560095",
+        "coordinates": {"lat": 12.9372, "lng": 77.6258},
+        "target_audience": "Teens, students, birthday parties",
+        "ice_cream_synergy": "High (Located right on Koramangala 80 Feet foodie street)",
+        "peak_window": "Daily 4:00 PM - 10:00 PM",
+        "est_monthly_family_footfall": 19000
+    },
+    {
+        "id": "KIDS_PLAY_19",
+        "name": "Kicks & Crawls Activity Center — HSR Layout",
+        "category": "Play Arena & Arcade",
+        "locality": "HSR Layout",
+        "address": "19th Main Road, Sector 1, HSR Layout, Bengaluru 560102",
+        "coordinates": {"lat": 12.9152, "lng": 77.6495},
+        "target_audience": "Infants, toddlers and young kids play gyms",
+        "ice_cream_synergy": "High (Mother-child community play dates)",
+        "peak_window": "Daily 10:30 AM - 7:00 PM",
+        "est_monthly_family_footfall": 16000
+    },
+    {
+        "id": "KIDS_PLAY_20",
+        "name": "Grip 'N' Climb / Play Arena — Sarjapur Road",
+        "category": "Play Arena & Arcade",
+        "locality": "Sarjapur Road / Kasavanahalli",
+        "address": "Silverwood Regency, Central Jail Road, Kasavanahalli, Bengaluru 560035",
+        "coordinates": {"lat": 12.8985, "lng": 77.6748},
+        "target_audience": "Skating, bowling, laser tag, climbing, sports kids",
+        "ice_cream_synergy": "Extreme (Largest multi-sport recreational complex in Sarjapur)",
+        "peak_window": "Weekends 9:00 AM - 9:30 PM",
+        "est_monthly_family_footfall": 54000
+    },
+    {
+        "id": "KIDS_PLAY_21",
+        "name": "Funky Monkeys Play Center — 1 MG-Lido Mall",
+        "category": "Play Arena & Arcade",
+        "locality": "Trinity / MG Road",
+        "address": "4th Floor, 1 MG-Lido Mall, Trinity Circle, MG Road, Bengaluru 560008",
+        "coordinates": {"lat": 12.9738, "lng": 77.6202},
+        "target_audience": "Toddlers and kids up to 10 yrs, birthday parties",
+        "ice_cream_synergy": "Very High (Children soft play centre)",
+        "peak_window": "Daily 11:00 AM - 8:00 PM",
+        "est_monthly_family_footfall": 26000
+    },
+    {
+        "id": "KIDS_PLAY_22",
+        "name": "Pupsik Kids Play Land — JP Nagar",
+        "category": "Play Arena & Arcade",
+        "locality": "JP Nagar 6th Phase",
+        "address": "24th Main Road, JP Nagar 6th Phase, Bengaluru 560078",
+        "coordinates": {"lat": 12.9038, "lng": 77.5845},
+        "target_audience": "Pre-schoolers, young children, weekend play",
+        "ice_cream_synergy": "High (Suburban South Bangalore family play venue)",
+        "peak_window": "Weekends 11:00 AM - 8:00 PM",
+        "est_monthly_family_footfall": 18000
+    },
+    {
+        "id": "KIDS_PLAY_23",
+        "name": "The Little Gym — Kalyan Nagar",
+        "category": "Play Arena & Arcade",
+        "locality": "Kalyan Nagar / HRBR",
+        "address": "HRBR Layout 2nd Block, Kalyan Nagar, Bengaluru 560043",
+        "coordinates": {"lat": 13.0185, "lng": 77.6435},
+        "target_audience": "Kids gymnastics, toddler movement classes",
+        "ice_cream_synergy": "High (Post-session rewards on CMR Main Road)",
+        "peak_window": "Evenings 4:00 PM - 7:30 PM, Sat/Sun mornings",
+        "est_monthly_family_footfall": 15000
+    },
+    {
+        "id": "KIDS_PLAY_24",
+        "name": "The Little Gym — Whitefield",
+        "category": "Play Arena & Arcade",
+        "locality": "Whitefield",
+        "address": "Varthur Main Road, Ramagondanahalli, Whitefield, Bengaluru 560066",
+        "coordinates": {"lat": 12.9615, "lng": 77.7312},
+        "target_audience": "Expats and techie children gymnastic sessions",
+        "ice_cream_synergy": "High (Family weekend treat ritual)",
+        "peak_window": "Weekends 10:00 AM - 6:00 PM",
+        "est_monthly_family_footfall": 14000
+    },
+    {
+        "id": "KIDS_PLAY_25",
+        "name": "Bumblebee Kids Play Zone — Malleshwaram",
+        "category": "Play Arena & Arcade",
+        "locality": "Malleshwaram",
+        "address": "Margosa Road, between 15th & 16th Cross, Malleshwaram, Bengaluru 560055",
+        "coordinates": {"lat": 13.0062, "lng": 77.5685},
+        "target_audience": "Local neighborhood kids & toddlers",
+        "ice_cream_synergy": "High (Close to Veena Stores and Margosa road dessert spots)",
+        "peak_window": "Daily 4:30 PM - 8:00 PM",
+        "est_monthly_family_footfall": 16000
+    },
+    {
+        "id": "KIDS_PLAY_26",
+        "name": "Snow City & Fun World Amusement Park",
+        "category": "Play Arena & Arcade",
         "locality": "Jayamahal / Palace Ground",
         "address": "Fun World Complex, Palace Ground, Jayamahal, Bengaluru 560006",
         "coordinates": {"lat": 13.0076, "lng": 77.5898},
@@ -189,13 +548,38 @@ KIDS_FAMILY_TARGETS = [
         "peak_window": "Weekends 11:00 AM - 7:30 PM",
         "est_monthly_family_footfall": 42000
     },
+    {
+        "id": "KIDS_PLAY_27",
+        "name": "Water World Amusement Park — Palace Ground",
+        "category": "Play Arena & Arcade",
+        "locality": "Palace Ground / Jayamahal",
+        "address": "Gate 1, Fun World, Palace Ground, Jayamahal, Bengaluru 560006",
+        "coordinates": {"lat": 13.0082, "lng": 77.5892},
+        "target_audience": "Summer holiday crowds, children, youth",
+        "ice_cream_synergy": "Extreme (Water park high-temperature cold dessert refreshment)",
+        "peak_window": "Daily 11:00 AM - 6:00 PM (Heavy summer)",
+        "est_monthly_family_footfall": 38000
+    },
+    {
+        "id": "KIDS_PLAY_28",
+        "name": "Kavade Hive (Traditional Board Games & Play)",
+        "category": "Play Arena & Arcade",
+        "locality": "Seshadripuram",
+        "address": "142, 1st Cross, Seshadripuram, Bengaluru 560020",
+        "coordinates": {"lat": 12.9895, "lng": 77.5768},
+        "target_audience": "Kids learning traditional Indian games, family bonding",
+        "ice_cream_synergy": "Medium (Heritage nostalgic afternoon relaxation)",
+        "peak_window": "Weekends 2:30 PM - 7:00 PM",
+        "est_monthly_family_footfall": 9000
+    },
 
-    # 3. MOVIE THEATRES & MULTIPLEXES (Family Dessert Spike Post-Movie)
+    # =========================================================================
+    # 3. THEATRES & MULTIPLEXES (32 Locations)
+    # =========================================================================
     {
         "id": "KIDS_CINE_01",
         "name": "PVR Superplex — Phoenix Mall of Asia",
         "category": "Theatre & Multiplex",
-        "search_query": "PVR Superplex Phoenix Mall of Asia Bengaluru",
         "locality": "Hebbal",
         "address": "4th Floor, Phoenix Mall of Asia, Bellary Road, Bengaluru 560092",
         "coordinates": {"lat": 13.0709, "lng": 77.5929},
@@ -208,7 +592,6 @@ KIDS_FAMILY_TARGETS = [
         "id": "KIDS_CINE_02",
         "name": "PVR Cinemas — Nexus Koramangala",
         "category": "Theatre & Multiplex",
-        "search_query": "PVR Cinemas Nexus Mall Koramangala Bengaluru",
         "locality": "Koramangala",
         "address": "3rd Floor, Nexus Mall, Hosur Road, Koramangala, Bengaluru 560095",
         "coordinates": {"lat": 12.934629, "lng": 77.611292},
@@ -221,7 +604,6 @@ KIDS_FAMILY_TARGETS = [
         "id": "KIDS_CINE_03",
         "name": "PVR Director's Cut & Gold — Forum Rex Walk",
         "category": "Theatre & Multiplex",
-        "search_query": "PVR Rex Brigade Road Bengaluru",
         "locality": "Brigade Road / MG Road",
         "address": "Forum Rex Walk, Brigade Rd, Shanthala Nagar, Ashok Nagar, Bengaluru 560001",
         "coordinates": {"lat": 12.9731, "lng": 77.6075},
@@ -232,9 +614,32 @@ KIDS_FAMILY_TARGETS = [
     },
     {
         "id": "KIDS_CINE_04",
+        "name": "PVR Cinemas — Orion Mall",
+        "category": "Theatre & Multiplex",
+        "locality": "Rajajinagar",
+        "address": "Level 4, Orion Mall, Brigade Gateway, Dr Rajkumar Road, Bengaluru 560055",
+        "coordinates": {"lat": 13.0118, "lng": 77.5548},
+        "target_audience": "North-West Bangalore moviegoers, families",
+        "ice_cream_synergy": "Extreme (11-screen multiplex with lakeside view)",
+        "peak_window": "Weekends 2:00 PM - 11:30 PM",
+        "est_monthly_family_footfall": 88000
+    },
+    {
+        "id": "KIDS_CINE_05",
+        "name": "PVR Cinemas — Phoenix Marketcity",
+        "category": "Theatre & Multiplex",
+        "locality": "Mahadevapura",
+        "address": "2nd Floor, Phoenix Marketcity, Whitefield Main Road, Bengaluru 560048",
+        "coordinates": {"lat": 12.9978, "lng": 77.6965},
+        "target_audience": "Whitefield IT crowd, family cinema weekends",
+        "ice_cream_synergy": "Extreme (High volume IMAX & 4DX exits)",
+        "peak_window": "Friday - Sunday 3:30 PM - 11:45 PM",
+        "est_monthly_family_footfall": 92000
+    },
+    {
+        "id": "KIDS_CINE_06",
         "name": "INOX Multiplex — Mantri Square",
         "category": "Theatre & Multiplex",
-        "search_query": "INOX Mantri Square Malleshwaram Bengaluru",
         "locality": "Malleshwaram",
         "address": "3rd Floor, Mantri Square, Sampige Rd, Malleshwaram, Bengaluru 560003",
         "coordinates": {"lat": 12.9918, "lng": 77.5714},
@@ -244,10 +649,21 @@ KIDS_FAMILY_TARGETS = [
         "est_monthly_family_footfall": 82000
     },
     {
-        "id": "KIDS_CINE_05",
+        "id": "KIDS_CINE_07",
+        "name": "INOX Multiplex — Garuda Mall",
+        "category": "Theatre & Multiplex",
+        "locality": "Ashok Nagar / Magrath Road",
+        "address": "4th Floor, Garuda Mall, Magrath Rd, Ashok Nagar, Bengaluru 560025",
+        "coordinates": {"lat": 12.9702, "lng": 77.6095},
+        "target_audience": "Central Bangalore shoppers, college youth, families",
+        "ice_cream_synergy": "Very High (Directly exits into food court & ice cream parlors)",
+        "peak_window": "Daily 5:00 PM - 11:00 PM",
+        "est_monthly_family_footfall": 72000
+    },
+    {
+        "id": "KIDS_CINE_08",
         "name": "PVR Cinemas — Vega City",
         "category": "Theatre & Multiplex",
-        "search_query": "PVR Vega City Bannerghatta Road Bengaluru",
         "locality": "Bannerghatta Road",
         "address": "4th Floor, Vega City Mall, Srinivas Bagalur, Bannerghatta Rd, Bengaluru 560076",
         "coordinates": {"lat": 12.9081, "lng": 77.5997},
@@ -257,10 +673,21 @@ KIDS_FAMILY_TARGETS = [
         "est_monthly_family_footfall": 78000
     },
     {
-        "id": "KIDS_CINE_06",
+        "id": "KIDS_CINE_09",
+        "name": "PVR Cinemas — Forum South Bengaluru",
+        "category": "Theatre & Multiplex",
+        "locality": "Konanakunte / Kanakapura Rd",
+        "address": "4th Floor, Forum South Bangalore, Konanakunte Cross, Bengaluru 560062",
+        "coordinates": {"lat": 12.8888, "lng": 77.5456},
+        "target_audience": "Suburban South Bangalore family moviegoers",
+        "ice_cream_synergy": "Very High (Brand new multiplex anchor)",
+        "peak_window": "Weekends 2:30 PM - 11:00 PM",
+        "est_monthly_family_footfall": 68000
+    },
+    {
+        "id": "KIDS_CINE_10",
         "name": "Cinepolis — Orion East Mall",
         "category": "Theatre & Multiplex",
-        "search_query": "Cinepolis Orion East Banaswadi Bengaluru",
         "locality": "Banaswadi / Frazer Town",
         "address": "Orion East Mall, Banaswadi Main Rd, Dodda Banaswadi, Bengaluru 560033",
         "coordinates": {"lat": 13.0035, "lng": 77.6322},
@@ -270,10 +697,33 @@ KIDS_FAMILY_TARGETS = [
         "est_monthly_family_footfall": 45000
     },
     {
-        "id": "KIDS_CINE_07",
+        "id": "KIDS_CINE_11",
+        "name": "Cinepolis — Nexus Shantiniketan",
+        "category": "Theatre & Multiplex",
+        "locality": "Whitefield",
+        "address": "Nexus Shantiniketan Mall, Thigalarapalya, Hoodi, Bengaluru 560067",
+        "coordinates": {"lat": 12.9895, "lng": 77.7285},
+        "target_audience": "Whitefield IT residents & children",
+        "ice_cream_synergy": "Very High (Expansive mall concourse with food options)",
+        "peak_window": "Weekends 3:00 PM - 11:00 PM",
+        "est_monthly_family_footfall": 60000
+    },
+    {
+        "id": "KIDS_CINE_12",
+        "name": "Cinepolis — Royal Meenakshi Mall",
+        "category": "Theatre & Multiplex",
+        "locality": "Hulimavu / Bannerghatta Rd",
+        "address": "Royal Meenakshi Mall, Opp Meenakshi Temple, Hulimavu, Bengaluru 560076",
+        "coordinates": {"lat": 12.8752, "lng": 77.5958},
+        "target_audience": "South Bannerghatta corridor families",
+        "ice_cream_synergy": "High (Temple & cinema weekend traffic)",
+        "peak_window": "Weekends 3:30 PM - 10:30 PM",
+        "est_monthly_family_footfall": 52000
+    },
+    {
+        "id": "KIDS_CINE_13",
         "name": "Gopalan Cinemas — Gopalan Signature Mall",
         "category": "Theatre & Multiplex",
-        "search_query": "Gopalan Signature Mall Old Madras Road Bengaluru",
         "locality": "Old Madras Road / CV Raman Nagar",
         "address": "Gopalan Signature Mall, Old Madras Rd, Nagavarapalya, Bengaluru 560093",
         "coordinates": {"lat": 12.9902, "lng": 77.6627},
@@ -282,13 +732,242 @@ KIDS_FAMILY_TARGETS = [
         "peak_window": "Weekends 3:00 PM - 9:30 PM",
         "est_monthly_family_footfall": 38000
     },
+    {
+        "id": "KIDS_CINE_14",
+        "name": "Gopalan Cinemas — Gopalan Arcade Mall",
+        "category": "Theatre & Multiplex",
+        "locality": "Rajarajeshwari Nagar",
+        "address": "Mysore Road, RR Nagar, Bengaluru 560039",
+        "coordinates": {"lat": 12.9348, "lng": 77.5142},
+        "target_audience": "West Bangalore families and university students",
+        "ice_cream_synergy": "High (Primary mall for RR Nagar & Kengeri catchments)",
+        "peak_window": "Weekends 3:00 PM - 10:00 PM",
+        "est_monthly_family_footfall": 36000
+    },
+    {
+        "id": "KIDS_CINE_15",
+        "name": "Gopalan Cinemas — Innovation Mall",
+        "category": "Theatre & Multiplex",
+        "locality": "Bannerghatta Road / JP Nagar",
+        "address": "Gopalan Innovation Mall, Bannerghatta Main Rd, JP Nagar Phase 3, Bengaluru 560076",
+        "coordinates": {"lat": 12.9125, "lng": 77.6012},
+        "target_audience": "Dense residential family audience",
+        "ice_cream_synergy": "High (Direct frontage on high-traffic corridor)",
+        "peak_window": "Weekends 4:00 PM - 10:30 PM",
+        "est_monthly_family_footfall": 42000
+    },
+    {
+        "id": "KIDS_CINE_16",
+        "name": "PVR Cinemas — VR Bengaluru",
+        "category": "Theatre & Multiplex",
+        "locality": "Whitefield",
+        "address": "VR Bengaluru, ITPL Main Road, Mahadevapura, Bengaluru 560048",
+        "coordinates": {"lat": 12.9965, "lng": 77.6955},
+        "target_audience": "Whitefield moviegoers, families with kids",
+        "ice_cream_synergy": "Very High (Adjacent to outdoor courtyard and ice cream stalls)",
+        "peak_window": "Friday - Sunday 4:00 PM - 11:30 PM",
+        "est_monthly_family_footfall": 56000
+    },
+    {
+        "id": "KIDS_CINE_17",
+        "name": "PVR Cinemas — Vaishnavi Sapphire Mall",
+        "category": "Theatre & Multiplex",
+        "locality": "Yeshwanthpur",
+        "address": "Tumkur Road, Yeshwanthpur, Bengaluru 560022",
+        "coordinates": {"lat": 13.0232, "lng": 77.5488},
+        "target_audience": "Yeshwanthpur and Peenya family residents",
+        "ice_cream_synergy": "Medium-High (Metro adjacent family entertainment hub)",
+        "peak_window": "Weekends 3:30 PM - 10:00 PM",
+        "est_monthly_family_footfall": 33000
+    },
+    {
+        "id": "KIDS_CINE_18",
+        "name": "PVR Cinemas — Soul Space Arena",
+        "category": "Theatre & Multiplex",
+        "locality": "Marathahalli",
+        "address": "Outer Ring Road, Mahadevapura, Marathahalli, Bengaluru 560037",
+        "coordinates": {"lat": 12.9812, "lng": 77.6978},
+        "target_audience": "Marathahalli IT families & youth",
+        "ice_cream_synergy": "High (ORR junction cinema destination)",
+        "peak_window": "Weekends 4:00 PM - 11:00 PM",
+        "est_monthly_family_footfall": 40000
+    },
+    {
+        "id": "KIDS_CINE_19",
+        "name": "INOX Multiplex — Brookefield",
+        "category": "Theatre & Multiplex",
+        "locality": "Brookefield / Kundalahalli",
+        "address": "Brookefield Mall, Kundalahalli Main Road, Bengaluru 560037",
+        "coordinates": {"lat": 12.9665, "lng": 77.7172},
+        "target_audience": "AECS Layout and Brookefield residential families",
+        "ice_cream_synergy": "High (High density family residential neighborhood)",
+        "peak_window": "Weekends 3:30 PM - 10:00 PM",
+        "est_monthly_family_footfall": 37000
+    },
+    {
+        "id": "KIDS_CINE_20",
+        "name": "INOX Multiplex — Garuda Swagath Mall",
+        "category": "Theatre & Multiplex",
+        "locality": "Jayanagar 4th Block / Tilak Nagar",
+        "address": "Tilak Nagar Main Rd, Jayanagar, Bengaluru 560041",
+        "coordinates": {"lat": 12.9245, "lng": 77.5928},
+        "target_audience": "Jayanagar and JP Nagar cinema goers",
+        "ice_cream_synergy": "Very High (Traditional dessert eating market)",
+        "peak_window": "Friday - Sunday 4:00 PM - 10:30 PM",
+        "est_monthly_family_footfall": 46000
+    },
+    {
+        "id": "KIDS_CINE_21",
+        "name": "Urvashi D-Cinema",
+        "category": "Theatre & Multiplex",
+        "locality": "Lalbagh Road",
+        "address": "40, Siddaiah Rd, Sudhama Nagar, Bengaluru 560027",
+        "coordinates": {"lat": 12.9575, "lng": 77.5892},
+        "target_audience": "Mass cinema lovers, blockbuster family audiences",
+        "ice_cream_synergy": "Extreme (One of Bangalore's most famous single screens with huge interval crowds)",
+        "peak_window": "Show intervals: 12:30 PM, 3:45 PM, 7:15 PM, 10:30 PM",
+        "est_monthly_family_footfall": 65000
+    },
+    {
+        "id": "KIDS_CINE_22",
+        "name": "Prasanna Theatre",
+        "category": "Theatre & Multiplex",
+        "locality": "Magadi Road",
+        "address": "Magadi Main Rd, Agrahara Dasarahalli, Rajajinagar, Bengaluru 560023",
+        "coordinates": {"lat": 12.9782, "lng": 77.5482},
+        "target_audience": "West Bangalore family cinema crowds",
+        "ice_cream_synergy": "High (Massive local community family footfall)",
+        "peak_window": "Daily 3:00 PM - 9:30 PM",
+        "est_monthly_family_footfall": 38000
+    },
+    {
+        "id": "KIDS_CINE_23",
+        "name": "Sandhya Digital 4K Theatre",
+        "category": "Theatre & Multiplex",
+        "locality": "Madiwala",
+        "address": "Maruthi Nagar Main Rd, Madiwala, Bengaluru 560068",
+        "coordinates": {"lat": 12.9225, "lng": 77.6185},
+        "target_audience": "Young professionals, local families",
+        "ice_cream_synergy": "High (High density evening residential street)",
+        "peak_window": "Evening shows 6:30 PM - 11:00 PM",
+        "est_monthly_family_footfall": 32000
+    },
+    {
+        "id": "KIDS_CINE_24",
+        "name": "Cauvery Theatre",
+        "category": "Theatre & Multiplex",
+        "locality": "Sankey Road / Sadashivanagar",
+        "address": "Sankey Road, Guttahalli, Bengaluru 560020",
+        "coordinates": {"lat": 12.9985, "lng": 77.5812},
+        "target_audience": "Sadashivanagar and Vasanth Nagar family audiences",
+        "ice_cream_synergy": "High (Near Sankey Tank recreation area)",
+        "peak_window": "Daily 4:00 PM - 10:00 PM",
+        "est_monthly_family_footfall": 29000
+    },
+    {
+        "id": "KIDS_CINE_25",
+        "name": "Balaji Digital Cinema",
+        "category": "Theatre & Multiplex",
+        "locality": "Tavarekere / BTM",
+        "address": "Tavarekere Main Rd, 1st Stage, BTM Layout, Bengaluru 560029",
+        "coordinates": {"lat": 12.9285, "lng": 77.6125},
+        "target_audience": "Students, young couples, local residents",
+        "ice_cream_synergy": "High (Very high evening street snacking zone)",
+        "peak_window": "Daily 5:00 PM - 11:00 PM",
+        "est_monthly_family_footfall": 34000
+    },
+    {
+        "id": "KIDS_CINE_26",
+        "name": "Mukunda Theatre",
+        "category": "Theatre & Multiplex",
+        "locality": "Banaswadi",
+        "address": "Maruthi Sevanagar, Banaswadi, Bengaluru 560033",
+        "coordinates": {"lat": 13.0012, "lng": 77.6258},
+        "target_audience": "Local neighborhood family moviegoers",
+        "ice_cream_synergy": "Medium-High (Traditional local theatre)",
+        "peak_window": "Weekends 3:30 PM - 9:30 PM",
+        "est_monthly_family_footfall": 26000
+    },
+    {
+        "id": "KIDS_CINE_27",
+        "name": "Vaibhav Theatre",
+        "category": "Theatre & Multiplex",
+        "locality": "Sanjay Nagar",
+        "address": "Geddalahalli, Sanjaynagar, Bengaluru 560094",
+        "coordinates": {"lat": 13.0365, "lng": 77.5752},
+        "target_audience": "North Bangalore family crowd",
+        "ice_cream_synergy": "High (Sanjay Nagar main commercial strip)",
+        "peak_window": "Weekends 4:00 PM - 10:00 PM",
+        "est_monthly_family_footfall": 27000
+    },
+    {
+        "id": "KIDS_CINE_28",
+        "name": "Navrang Theatre",
+        "category": "Theatre & Multiplex",
+        "locality": "Rajajinagar",
+        "address": "Dr Rajkumar Rd, 2nd Block, Rajajinagar, Bengaluru 560010",
+        "coordinates": {"lat": 12.9928, "lng": 77.5562},
+        "target_audience": "Rajajinagar heritage cinema crowds",
+        "ice_cream_synergy": "High (Navrang circle commercial junction)",
+        "peak_window": "Daily 3:30 PM - 10:30 PM",
+        "est_monthly_family_footfall": 35000
+    },
+    {
+        "id": "KIDS_CINE_29",
+        "name": "Sangeeth Theatre (Multiplex Redevelopment)",
+        "category": "Theatre & Multiplex",
+        "locality": "Shivajinagar",
+        "address": "Russell Market Road, Tasker Town, Shivajinagar, Bengaluru 560051",
+        "coordinates": {"lat": 12.9852, "lng": 77.6035},
+        "target_audience": "Cantonment & Central shopping crowds",
+        "ice_cream_synergy": "High (Commercial street and Russell Market crowd)",
+        "peak_window": "Daily 4:00 PM - 10:00 PM",
+        "est_monthly_family_footfall": 31000
+    },
+    {
+        "id": "KIDS_CINE_30",
+        "name": "PVR Cinemas — Elements Mall",
+        "category": "Theatre & Multiplex",
+        "locality": "Nagavara / Thanisandra",
+        "address": "Elements Mall, Thanisandra Main Rd, Nagavara, Bengaluru 560077",
+        "coordinates": {"lat": 13.0452, "lng": 77.6255},
+        "target_audience": "North-East Bangalore families, Manyata Tech park staff",
+        "ice_cream_synergy": "Very High (Dense residential family weekend traffic)",
+        "peak_window": "Weekends 3:00 PM - 10:30 PM",
+        "est_monthly_family_footfall": 52000
+    },
+    {
+        "id": "KIDS_CINE_31",
+        "name": "Cinepolis — SJR BTM Mall",
+        "category": "Theatre & Multiplex",
+        "locality": "BTM Layout",
+        "address": "BTM 2nd Stage, Outer Ring Road, Bengaluru 560076",
+        "coordinates": {"lat": 12.9158, "lng": 77.6102},
+        "target_audience": "BTM residential crowd & students",
+        "ice_cream_synergy": "High (ORR junction footfall)",
+        "peak_window": "Weekends 4:00 PM - 10:30 PM",
+        "est_monthly_family_footfall": 41000
+    },
+    {
+        "id": "KIDS_CINE_32",
+        "name": "Anjan Cinemas",
+        "category": "Theatre & Multiplex",
+        "locality": "Magadi Road / Dasarahalli",
+        "address": "Magadi Main Rd, Sunkadakatte, Bengaluru 560091",
+        "coordinates": {"lat": 12.9862, "lng": 77.5125},
+        "target_audience": "West peripheral family moviegoers",
+        "ice_cream_synergy": "Medium-High (Main market theatre)",
+        "peak_window": "Weekends 3:00 PM - 9:30 PM",
+        "est_monthly_family_footfall": 28000
+    },
 
-    # 4. PARKS, PLAYGROUNDS & OUTDOOR FAMILY GREEN SPACES
+    # =========================================================================
+    # 4. PARKS, PLAYGROUNDS & LAKE PROMENADES (26 Locations)
+    # =========================================================================
     {
         "id": "KIDS_PARK_01",
         "name": "Bal Bhavan & Jawahar Bal Bhavan — Cubbon Park",
-        "category": "Park, Garden & Playground",
-        "search_query": "Jawahar Bal Bhavan Cubbon Park Bengaluru",
+        "category": "Park, Garden & Lake",
         "locality": "Cubbon Park / Kasturba Road",
         "address": "Cubbon Park, Kasturba Road, Sampangi Rama Nagara, Bengaluru 560001",
         "coordinates": {"lat": 12.9739, "lng": 77.5968},
@@ -300,8 +979,7 @@ KIDS_FAMILY_TARGETS = [
     {
         "id": "KIDS_PARK_02",
         "name": "Lalbagh Botanical Garden & Lake Promenade",
-        "category": "Park, Garden & Playground",
-        "search_query": "Lalbagh Botanical Garden Bengaluru",
+        "category": "Park, Garden & Lake",
         "locality": "Lalbagh / Mavalli",
         "address": "Lalbagh, Mavalli, Bengaluru 560004",
         "coordinates": {"lat": 12.9507, "lng": 77.5848},
@@ -313,8 +991,7 @@ KIDS_FAMILY_TARGETS = [
     {
         "id": "KIDS_PARK_03",
         "name": "Sankey Tank & Children's Play Park",
-        "category": "Park, Garden & Playground",
-        "search_query": "Sankey Tank Sadashivanagar Bengaluru",
+        "category": "Park, Garden & Lake",
         "locality": "Sadashivanagar / Malleshwaram",
         "address": "11th Cross Rd, Sadashivanagar, Bengaluru 560080",
         "coordinates": {"lat": 13.0084, "lng": 77.5739},
@@ -326,8 +1003,7 @@ KIDS_FAMILY_TARGETS = [
     {
         "id": "KIDS_PARK_04",
         "name": "Madhavan Park & Children's Playground",
-        "category": "Park, Garden & Playground",
-        "search_query": "Madhavan Park Jayanagar Bengaluru",
+        "category": "Park, Garden & Lake",
         "locality": "Jayanagar 3rd Block",
         "address": "Madhavan Park, 10th Main Rd, 3rd Block, Jayanagar, Bengaluru 560011",
         "coordinates": {"lat": 12.9387, "lng": 77.5831},
@@ -339,8 +1015,7 @@ KIDS_FAMILY_TARGETS = [
     {
         "id": "KIDS_PARK_05",
         "name": "Bugle Rock Park & Bull Temple Promenade",
-        "category": "Park, Garden & Playground",
-        "search_query": "Bugle Rock Park Basavanagudi Bengaluru",
+        "category": "Park, Garden & Lake",
         "locality": "Basavanagudi",
         "address": "Bull Temple Road, Basavanagudi, Bengaluru 560004",
         "coordinates": {"lat": 12.9427, "lng": 77.5683},
@@ -352,8 +1027,7 @@ KIDS_FAMILY_TARGETS = [
     {
         "id": "KIDS_PARK_06",
         "name": "Coles Park (Freedom Park East)",
-        "category": "Park, Garden & Playground",
-        "search_query": "Coles Park Fraser Town Bengaluru",
+        "category": "Park, Garden & Lake",
         "locality": "Frazer Town / Pulakeshi Nagar",
         "address": "Promenade Rd, Cleveland Town, Pulakeshi Nagar, Bengaluru 560005",
         "coordinates": {"lat": 12.9975, "lng": 77.6148},
@@ -365,8 +1039,7 @@ KIDS_FAMILY_TARGETS = [
     {
         "id": "KIDS_PARK_07",
         "name": "Agara Lake Park & Children's Play Zone",
-        "category": "Park, Garden & Playground",
-        "search_query": "Agara Lake Park HSR Layout Bengaluru",
+        "category": "Park, Garden & Lake",
         "locality": "HSR Layout / Agara",
         "address": "Agara Lake Trail, Outer Ring Rd, HSR Layout, Bengaluru 560102",
         "coordinates": {"lat": 12.9221, "lng": 77.6508},
@@ -375,13 +1048,242 @@ KIDS_FAMILY_TARGETS = [
         "peak_window": "Sat/Sun 4:00 PM - 7:30 PM",
         "est_monthly_family_footfall": 58000
     },
+    {
+        "id": "KIDS_PARK_08",
+        "name": "Ulsoor Lake Park & Recreation Promenade",
+        "category": "Park, Garden & Lake",
+        "locality": "Ulsoor / Halasuru",
+        "address": "Sivanchetti Gardens, Halasuru, Bengaluru 560042",
+        "coordinates": {"lat": 12.9835, "lng": 77.6205},
+        "target_audience": "Central Bangalore walkers, families, boating visitors",
+        "ice_cream_synergy": "Very High (Lake view outdoor dessert consumption)",
+        "peak_window": "Daily 4:30 PM - 8:00 PM",
+        "est_monthly_family_footfall": 54000
+    },
+    {
+        "id": "KIDS_PARK_09",
+        "name": "Kaikondrahalli Lake & Play Park",
+        "category": "Park, Garden & Lake",
+        "locality": "Sarjapur Road",
+        "address": "Kaikondrahalli Trail, Sarjapur Main Road, Bengaluru 560035",
+        "coordinates": {"lat": 12.9102, "lng": 77.6782},
+        "target_audience": "Bellandur & Sarjapur Road techie families, children",
+        "ice_cream_synergy": "Very High (Dense gated community family evening walks)",
+        "peak_window": "Daily 4:30 PM - 7:30 PM",
+        "est_monthly_family_footfall": 48000
+    },
+    {
+        "id": "KIDS_PARK_10",
+        "name": "M.N. Krishna Rao Park",
+        "category": "Park, Garden & Lake",
+        "locality": "Basavanagudi",
+        "address": "Dewan Madhava Rao Rd, Basavanagudi, Bengaluru 560004",
+        "coordinates": {"lat": 12.9405, "lng": 77.5762},
+        "target_audience": "Heritage families, cricket play, kids roller skating",
+        "ice_cream_synergy": "High (Traditional South Bangalore weekend hub)",
+        "peak_window": "Daily 4:30 PM - 7:30 PM",
+        "est_monthly_family_footfall": 32000
+    },
+    {
+        "id": "KIDS_PARK_11",
+        "name": "JP Nagar Mini Forest & Children's Park",
+        "category": "Park, Garden & Lake",
+        "locality": "JP Nagar 3rd Phase",
+        "address": "15th Cross Rd, JP Nagar 3rd Phase, Bengaluru 560078",
+        "coordinates": {"lat": 12.9125, "lng": 77.5925},
+        "target_audience": "South Bangalore families, nature walkers, kids",
+        "ice_cream_synergy": "High (Lush green forest canopy with high residential boundary)",
+        "peak_window": "Daily 4:30 PM - 7:30 PM",
+        "est_monthly_family_footfall": 28000
+    },
+    {
+        "id": "KIDS_PARK_12",
+        "name": "Lumbini Gardens & Nagavara Lake",
+        "category": "Park, Garden & Lake",
+        "locality": "Nagavara / Outer Ring Road",
+        "address": "Nagavara Lake, Outer Ring Road, Hebbal, Bengaluru 560045",
+        "coordinates": {"lat": 13.0458, "lng": 77.6185},
+        "target_audience": "North Bangalore families, boating, children rides",
+        "ice_cream_synergy": "Very High (Dedicated amusement lake park)",
+        "peak_window": "Weekends 2:00 PM - 8:00 PM",
+        "est_monthly_family_footfall": 42000
+    },
+    {
+        "id": "KIDS_PARK_13",
+        "name": "Hebbal Lake Park",
+        "category": "Park, Garden & Lake",
+        "locality": "Hebbal Flyover Junction",
+        "address": "National Highway 44, Hebbal, Bengaluru 560024",
+        "coordinates": {"lat": 13.0402, "lng": 77.5902},
+        "target_audience": "Bird watchers, joggers, families",
+        "ice_cream_synergy": "High (High visibility intersection park)",
+        "peak_window": "Daily 4:00 PM - 7:00 PM",
+        "est_monthly_family_footfall": 25000
+    },
+    {
+        "id": "KIDS_PARK_14",
+        "name": "Cariappa Memorial Park",
+        "category": "Park, Garden & Lake",
+        "locality": "Cubbon Road / Shivaji Nagar",
+        "address": "Cubbon Road, Shivaji Nagar, Bengaluru 560001",
+        "coordinates": {"lat": 12.9772, "lng": 77.6122},
+        "target_audience": "Military history fans, families, children play maze",
+        "ice_cream_synergy": "High (Quiet oasis adjacent to commercial MG Road)",
+        "peak_window": "Weekends 3:30 PM - 7:00 PM",
+        "est_monthly_family_footfall": 22000
+    },
+    {
+        "id": "KIDS_PARK_15",
+        "name": "Indira Gandhi Musical Fountain Park",
+        "category": "Park, Garden & Lake",
+        "locality": "Raj Bhavan Road",
+        "address": "T. Chowdaiah Road, opposite Planetarium, Bengaluru 560052",
+        "coordinates": {"lat": 12.9838, "lng": 77.5885},
+        "target_audience": "Families watching laser fountain shows with kids",
+        "ice_cream_synergy": "Extreme (Night fountain show exits create massive ice cream demand)",
+        "peak_window": "Evenings 6:30 PM - 9:00 PM (Show times)",
+        "est_monthly_family_footfall": 38000
+    },
+    {
+        "id": "KIDS_PARK_16",
+        "name": "Saul Kere Lake Park & Butterfly Trail",
+        "category": "Park, Garden & Lake",
+        "locality": "Bellandur / Kaikondrahalli",
+        "address": "Saul Kere, Marathahalli-Sarjapur ORR, Bengaluru 560103",
+        "coordinates": {"lat": 12.9235, "lng": 77.6802},
+        "target_audience": "Bellandur tech families, weekend kids play",
+        "ice_cream_synergy": "High (Rapidly growing residential lake promenade)",
+        "peak_window": "Sat/Sun 4:30 PM - 7:30 PM",
+        "est_monthly_family_footfall": 24000
+    },
+    {
+        "id": "KIDS_PARK_17",
+        "name": "BTM Lake Park (Madiwala Kere)",
+        "category": "Park, Garden & Lake",
+        "locality": "BTM Layout 2nd Stage",
+        "address": "Madiwala Lake, Bannerghatta Road, BTM Layout, Bengaluru 560076",
+        "coordinates": {"lat": 12.9095, "lng": 77.6115},
+        "target_audience": "Children play park, boating, bird sanctuary",
+        "ice_cream_synergy": "Very High (High density middle class family recreation)",
+        "peak_window": "Daily 4:00 PM - 7:30 PM",
+        "est_monthly_family_footfall": 39000
+    },
+    {
+        "id": "KIDS_PARK_18",
+        "name": "Kengeri Lake & Children's Park",
+        "category": "Park, Garden & Lake",
+        "locality": "Kengeri Satellite Town",
+        "address": "Mysore Road, Kengeri, Bengaluru 560060",
+        "coordinates": {"lat": 12.9052, "lng": 77.4852},
+        "target_audience": "West Bangalore families, evening strolls",
+        "ice_cream_synergy": "High (Suburban community recreation park)",
+        "peak_window": "Daily 4:30 PM - 7:30 PM",
+        "est_monthly_family_footfall": 21000
+    },
+    {
+        "id": "KIDS_PARK_19",
+        "name": "Ranadheera Kanteerava Park",
+        "category": "Park, Garden & Lake",
+        "locality": "Jayanagar 3rd Block East",
+        "address": "12th Main Road, Jayanagar 3rd Block, Bengaluru 560011",
+        "coordinates": {"lat": 12.9355, "lng": 77.5875},
+        "target_audience": "Sculpture garden, kids playground, senior citizens",
+        "ice_cream_synergy": "High (South Bangalore evening family spot)",
+        "peak_window": "Daily 4:30 PM - 7:30 PM",
+        "est_monthly_family_footfall": 26000
+    },
+    {
+        "id": "KIDS_PARK_20",
+        "name": "Sir M. Visvesvaraya Park",
+        "category": "Park, Garden & Lake",
+        "locality": "Indiranagar",
+        "address": "8th Main Road, HAL 3rd Stage, Indiranagar, Bengaluru 560075",
+        "coordinates": {"lat": 12.9645, "lng": 77.6512},
+        "target_audience": "Local Indiranagar families, dog walkers, kids",
+        "ice_cream_synergy": "High (Close to 80 Feet Road dessert cafes)",
+        "peak_window": "Daily 5:00 PM - 7:30 PM",
+        "est_monthly_family_footfall": 20000
+    },
+    {
+        "id": "KIDS_PARK_21",
+        "name": "BTM Layout 1st Stage Children's Park",
+        "category": "Park, Garden & Lake",
+        "locality": "BTM 1st Stage",
+        "address": "Outer Ring Road, 1st Stage, BTM Layout, Bengaluru 560068",
+        "coordinates": {"lat": 12.9172, "lng": 77.6182},
+        "target_audience": "Local neighborhood kids playing in play pens",
+        "ice_cream_synergy": "Medium-High (Close to BTM food streets)",
+        "peak_window": "Daily 5:00 PM - 7:30 PM",
+        "est_monthly_family_footfall": 18000
+    },
+    {
+        "id": "KIDS_PARK_22",
+        "name": "Kalyan Nagar Park & Jogging Track",
+        "category": "Park, Garden & Lake",
+        "locality": "Kalyan Nagar",
+        "address": "5th Main Rd, HRBR Layout 2nd Block, Kalyan Nagar, Bengaluru 560043",
+        "coordinates": {"lat": 13.0205, "lng": 77.6412},
+        "target_audience": "North-East families, evening kids playtime",
+        "ice_cream_synergy": "High (Close to CMR Road food & dessert strip)",
+        "peak_window": "Daily 4:30 PM - 7:30 PM",
+        "est_monthly_family_footfall": 22000
+    },
+    {
+        "id": "KIDS_PARK_23",
+        "name": "Yelahanka Lake Promenade & Park",
+        "category": "Park, Garden & Lake",
+        "locality": "Yelahanka",
+        "address": "Yelahanka Old Town, Bengaluru 560064",
+        "coordinates": {"lat": 13.1042, "lng": 77.5952},
+        "target_audience": "North Bangalore family walkers, lake breeze",
+        "ice_cream_synergy": "High (Major leisure open space in Yelahanka)",
+        "peak_window": "Weekends 4:30 PM - 7:30 PM",
+        "est_monthly_family_footfall": 27000
+    },
+    {
+        "id": "KIDS_PARK_24",
+        "name": "Chinnapanahalli Lake Park",
+        "category": "Park, Garden & Lake",
+        "locality": "Marathahalli / Doddanekkundi",
+        "address": "AECS Layout, Brookefield, Bengaluru 560037",
+        "coordinates": {"lat": 12.9692, "lng": 77.7082},
+        "target_audience": "AECS Layout family community",
+        "ice_cream_synergy": "High (Active resident trust maintaining children play areas)",
+        "peak_window": "Daily 4:30 PM - 7:30 PM",
+        "est_monthly_family_footfall": 21000
+    },
+    {
+        "id": "KIDS_PARK_25",
+        "name": "Dharmambudhi Park & Kempegowda Tower",
+        "category": "Park, Garden & Lake",
+        "locality": "Majestic",
+        "address": "Subhash Nagar, Majestic, Bengaluru 560009",
+        "coordinates": {"lat": 12.9765, "lng": 77.5725},
+        "target_audience": "Transit families, central tourists",
+        "ice_cream_synergy": "High (High transit throughput)",
+        "peak_window": "Daily 11:00 AM - 7:00 PM",
+        "est_monthly_family_footfall": 35000
+    },
+    {
+        "id": "KIDS_PARK_26",
+        "name": "Kasturi Nagar Children's Park",
+        "category": "Park, Garden & Lake",
+        "locality": "Kasturi Nagar",
+        "address": "2nd Main Road, Kasturi Nagar, Bengaluru 560043",
+        "coordinates": {"lat": 13.0045, "lng": 77.6582},
+        "target_audience": "Residential neighborhood parents and toddlers",
+        "ice_cream_synergy": "Medium-High (Quiet evening playground)",
+        "peak_window": "Daily 5:00 PM - 7:30 PM",
+        "est_monthly_family_footfall": 16000
+    },
 
-    # 5. SCIENCE, NATURE, AQUARIUMS, ZOOS & PLANETARIUMS
+    # =========================================================================
+    # 5. ZOOS, AQUARIUMS, TERRARIUMS & SCIENCE CENTRES (12 Locations)
+    # =========================================================================
     {
         "id": "KIDS_EDU_01",
         "name": "Jawaharlal Nehru Planetarium",
-        "category": "Science, Edu & Planetarium",
-        "search_query": "Jawaharlal Nehru Planetarium Bengaluru",
+        "category": "Zoo, Aquarium & Science",
         "locality": "High Grounds / Raj Bhavan",
         "address": "Sri T. Choudaiah Road, High Grounds, Bengaluru 560001",
         "coordinates": {"lat": 12.984866, "lng": 77.589634},
@@ -393,8 +1295,7 @@ KIDS_FAMILY_TARGETS = [
     {
         "id": "KIDS_EDU_02",
         "name": "Visvesvaraya Industrial & Technological Museum (VITM)",
-        "category": "Science, Edu & Planetarium",
-        "search_query": "Visvesvaraya Industrial Technological Museum Bengaluru",
+        "category": "Zoo, Aquarium & Science",
         "locality": "Kasturba Road / Cubbon Park",
         "address": "Kasturba Road, near Chinnaswamy Stadium, Bengaluru 560001",
         "coordinates": {"lat": 12.975159, "lng": 77.596420},
@@ -406,8 +1307,7 @@ KIDS_FAMILY_TARGETS = [
     {
         "id": "KIDS_EDU_03",
         "name": "Bangalore Aquarium & Govt Museum",
-        "category": "Aquarium & Nature Attraction",
-        "search_query": "Bangalore Aquarium Kasturba Road Bengaluru",
+        "category": "Zoo, Aquarium & Science",
         "locality": "Kasturba Road",
         "address": "Cubbon Park Gate, Kasturba Road, Sampangi Rama Nagara, Bengaluru 560001",
         "coordinates": {"lat": 12.9760, "lng": 77.5950},
@@ -419,8 +1319,7 @@ KIDS_FAMILY_TARGETS = [
     {
         "id": "KIDS_EDU_04",
         "name": "Bannerghatta Biological Park (Zoo & Safari Hub)",
-        "category": "Zoo & Nature Safari",
-        "search_query": "Bannerghatta Biological Park Bengaluru",
+        "category": "Zoo, Aquarium & Science",
         "locality": "Bannerghatta",
         "address": "Bannerghatta Biological Park, Bannerghatta Main Rd, Bengaluru 560083",
         "coordinates": {"lat": 12.8009, "lng": 77.5777},
@@ -428,18 +1327,114 @@ KIDS_FAMILY_TARGETS = [
         "ice_cream_synergy": "Extreme (Full-day outdoor trek where cold desserts are in maximum demand)",
         "peak_window": "Daily 9:30 AM - 5:00 PM (Massive weekend lines)",
         "est_monthly_family_footfall": 120000
+    },
+    {
+        "id": "KIDS_EDU_05",
+        "name": "Bannerghatta Butterfly Park & Terrarium Pavilion",
+        "category": "Zoo, Aquarium & Science",
+        "locality": "Bannerghatta",
+        "address": "Inside Bannerghatta Biological Park, Bannerghatta, Bengaluru 560083",
+        "coordinates": {"lat": 12.8025, "lng": 77.5765},
+        "target_audience": "Children observing insect terrariums & live butterfly domes",
+        "ice_cream_synergy": "Very High (Covered warm dome exit refreshment point)",
+        "peak_window": "Weekends 10:00 AM - 4:30 PM",
+        "est_monthly_family_footfall": 45000
+    },
+    {
+        "id": "KIDS_EDU_06",
+        "name": "HAL Heritage Centre & Aerospace Museum",
+        "category": "Zoo, Aquarium & Science",
+        "locality": "HAL Old Airport Road",
+        "address": "Near HAL Police Station, Old Airport Rd, Marathahalli, Bengaluru 560037",
+        "coordinates": {"lat": 12.9545, "lng": 77.6822},
+        "target_audience": "Kids obsessed with fighter jets, aviation sim, flight models",
+        "ice_cream_synergy": "Very High (Expansive landscaped outdoor lawn with kiosks)",
+        "peak_window": "Daily 9:30 AM - 5:00 PM",
+        "est_monthly_family_footfall": 48000
+    },
+    {
+        "id": "KIDS_EDU_07",
+        "name": "Girias Children's Explorium",
+        "category": "Zoo, Aquarium & Science",
+        "locality": "Domlur / Amarjyoti Layout",
+        "address": "526, Inner Ring Rd, Amarjyoti Layout, Domlur, Bengaluru 560071",
+        "coordinates": {"lat": 12.9612, "lng": 77.6385},
+        "target_audience": "Interactive children's museum for kids under 10",
+        "ice_cream_synergy": "Very High (Children spend 3 hours exploring tactile exhibits)",
+        "peak_window": "Daily 10:30 AM - 7:30 PM",
+        "est_monthly_family_footfall": 28000
+    },
+    {
+        "id": "KIDS_EDU_08",
+        "name": "National Gallery of Modern Art (NGMA) Lawns & Art Workshops",
+        "category": "Zoo, Aquarium & Science",
+        "locality": "Palace Road",
+        "address": "49, Palace Rd, Manikyavelu Mansion, Vasanth Nagar, Bengaluru 560052",
+        "coordinates": {"lat": 12.9892, "lng": 77.5882},
+        "target_audience": "Creative families, weekend children painting workshops, cafe strollers",
+        "ice_cream_synergy": "High (Heritage tree shaded garden dessert cafe culture)",
+        "peak_window": "Weekends 11:00 AM - 6:00 PM",
+        "est_monthly_family_footfall": 22000
+    },
+    {
+        "id": "KIDS_EDU_09",
+        "name": "Jawahar Bal Bhavan Terrarium & Nature Pavilion",
+        "category": "Zoo, Aquarium & Science",
+        "locality": "Cubbon Park",
+        "address": "Inside Jawahar Bal Bhavan, Cubbon Park, Bengaluru 560001",
+        "coordinates": {"lat": 12.9742, "lng": 77.5972},
+        "target_audience": "Pre-school and primary school nature trips",
+        "ice_cream_synergy": "Extreme (Directly alongside toy train ride lines)",
+        "peak_window": "Sat/Sun 10:30 AM - 6:00 PM",
+        "est_monthly_family_footfall": 65000
+    },
+    {
+        "id": "KIDS_EDU_10",
+        "name": "Mini Zoo & Deer Park — Lalbagh",
+        "category": "Zoo, Aquarium & Science",
+        "locality": "Lalbagh West Gate",
+        "address": "Lalbagh Botanical Garden, Basavanagudi Gate, Bengaluru 560004",
+        "coordinates": {"lat": 12.9482, "lng": 77.5815},
+        "target_audience": "Toddlers observing deer and birds, morning and evening families",
+        "ice_cream_synergy": "Very High (High traffic walking entrance)",
+        "peak_window": "Daily 8:00 AM - 11:00 AM & 3:30 PM - 6:30 PM",
+        "est_monthly_family_footfall": 50000
+    },
+    {
+        "id": "KIDS_EDU_11",
+        "name": "Prani — The Pet Sanctuary",
+        "category": "Zoo, Aquarium & Science",
+        "locality": "Off Kanakapura Road",
+        "address": "Somanahalli Village, Off Kanakapura Road, Bengaluru 560082",
+        "coordinates": {"lat": 12.7952, "lng": 77.5125},
+        "target_audience": "Interactive animal petting farm for kids, hands-on learning",
+        "ice_cream_synergy": "High (Full weekend family drive destination)",
+        "peak_window": "Weekends 9:00 AM - 5:00 PM",
+        "est_monthly_family_footfall": 25000
+    },
+    {
+        "id": "KIDS_EDU_12",
+        "name": "Karnataka Folk Museum (Janapada Loka Outreach)",
+        "category": "Zoo, Aquarium & Science",
+        "locality": "Kumara Park / Seshadripuram",
+        "address": "Kumara Park East, Seshadripuram, Bengaluru 560001",
+        "coordinates": {"lat": 12.9912, "lng": 77.5815},
+        "target_audience": "Children puppet shows, pottery making, folk arts",
+        "ice_cream_synergy": "Medium-High (School holiday cultural workshops)",
+        "peak_window": "Weekends 10:30 AM - 5:30 PM",
+        "est_monthly_family_footfall": 18000
     }
 ]
 
-def build_kids_attractions_geojson():
-    print(f"Compiling {len(KIDS_FAMILY_TARGETS)} Kids & Family Footfall Magnets...")
+def build_kids_geojson():
+    print(f"Compiling {len(KIDS_FAMILY_LOCATIONS)} Kids & Family Footfall Magnets...")
 
     features = []
 
-    for item in KIDS_FAMILY_TARGETS:
+    for item in KIDS_FAMILY_LOCATIONS:
         # Compute Ice Cream Attraction Rating (1 to 100)
         footfall = item["est_monthly_family_footfall"]
-        synergy_mult = 1.2 if "Extreme" in item["ice_cream_synergy"] else (1.0 if "Very High" in item["ice_cream_synergy"] else 0.8)
+        synergy_mult = 1.25 if "Extreme" in item["ice_cream_synergy"] else (1.05 if "Very High" in item["ice_cream_synergy"] else 0.85)
         score = min(99, int((footfall / 120000.0) * 70 * synergy_mult + 25))
 
         feature = {
@@ -472,8 +1467,13 @@ def build_kids_attractions_geojson():
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(geojson_data, f, indent=2)
 
+    # Also sync into dist/data
+    os.makedirs("frontend/dist/data", exist_ok=True)
+    with open("frontend/dist/data/kids_family_attractions.geojson", "w", encoding="utf-8") as f:
+        json.dump(geojson_data, f, indent=2)
+
     print(f"Successfully generated {out_file} with {len(features)} verified locations.")
     return geojson_data
 
 if __name__ == "__main__":
-    build_kids_attractions_geojson()
+    build_kids_geojson()
