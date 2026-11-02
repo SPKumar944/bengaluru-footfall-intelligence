@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#EBF0F5] text-slate-800 font-sans antialiased overflow-hidden select-none;
+  }
+}
+
+/* Scientific Observatory UI Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.6);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.9);
+}
+
+.observatory-card {
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #DCE3EC;
+  box-shadow: 0 4px 16px -4px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.observatory-header {
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid #DCE3EC;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+}

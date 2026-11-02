@@ -1,0 +1,94 @@
+{
+  "client": "Polar Bear Ice Creams",
+  "timestamp_utc": "2026-10-31T22:15:10Z",
+  "bounding_box": [
+    77.45,
+    12.83,
+    77.78,
+    13.14
+  ],
+  "projected_crs": "EPSG:32643",
+  "web_crs": "EPSG:4326",
+  "layers": [
+    {
+      "layer_name": "Layer 1, 2, 3 (1km Grid)",
+      "file_path": "frontend/public/data/layer1_2_3_grid_1km.geojson",
+      "record_count": 1260,
+      "size_bytes": 949709,
+      "sha256": "52105a61f6f49225da99ee68777e70f02971bcc0fcb3f1a6e9a099730f0951b6",
+      "status": "VALID_NON_EMPTY"
+    },
+    {
+      "layer_name": "Layer 4 (150m Mobility Grid)",
+      "file_path": "frontend/public/data/layer4_mobility_150m.geojson",
+      "record_count": 4608,
+      "size_bytes": 2855205,
+      "sha256": "fcfab9a90a4d085014df02b2aef36a48e9ff42cb5a82a1c20ef3369bc5897a4d",
+      "status": "VALID_NON_EMPTY"
+    },
+    {
+      "layer_name": "Customer Origin Flows",
+      "file_path": "frontend/public/data/visitor_origin_flows.json",
+      "record_count": 65,
+      "size_bytes": 26593,
+      "sha256": "9477d3f89ef8f72bc7d40ffdb46be61a42aa09ef89c3d307fe1963e231a6df54",
+      "status": "VALID_NON_EMPTY"
+    },
+    {
+      "layer_name": "Layer 5 (Competitor Points)",
+      "file_path": "frontend/public/data/layer5_competitors.geojson",
+      "record_count": 108,
+      "size_bytes": 82248,
+      "sha256": "7d91a90604b12137626950e8418f6a43277e575dcab120f48dde396731d8b4d8",
+      "status": "VALID_NON_EMPTY"
+    },
+    {
+      "layer_name": "Layer 6 (Complementary Brands)",
+      "file_path": "frontend/public/data/layer6_complementary_brands.geojson",
+      "record_count": 146,
+      "size_bytes": 98742,
+      "sha256": "546477503a497478a6a8d3e5e6c802840da8a4dac59d2f49cb28d71185df5bdb",
+      "status": "VALID_NON_EMPTY"
+    },
+    {
+      "layer_name": "Layer 7 (Business Zones)",
+      "file_path": "frontend/public/data/layer7_business_zones.geojson",
+      "record_count": 18,
+      "size_bytes": 11425,
+      "sha256": "1da8f157f156e3891f39a5173fd9f06ba1c0e94d96d5da377600f766dbafc4fa",
+      "status": "VALID_NON_EMPTY"
+    },
+    {
+      "layer_name": "Layer 8 (Infra Amenities)",
+      "file_path": "frontend/public/data/layer8_infra_amenities.geojson",
+      "record_count": 42,
+      "size_bytes": 12015,
+      "sha256": "072da9aa2a4674863d81e25523ad45b9e5733387f2a2f3d8a11baf8a86442069",
+      "status": "VALID_NON_EMPTY"
+    },
+    {
+      "layer_name": "Bonus (Road Traffic)",
+      "file_path": "frontend/public/data/layer9_road_traffic_corridors.geojson",
+      "record_count": 12,
+      "size_bytes": 4593,
+      "sha256": "09474e1de9fe20dd45930a93158a8b95312b39b10659b99c88bbf2f877d6f44b",
+      "status": "VALID_NON_EMPTY"
+    },
+    {
+      "layer_name": "Top 5 Catchments",
+      "file_path": "frontend/public/data/top5_hotspot_catchments.geojson",
+      "record_count": 15,
+      "size_bytes": 36679,
+      "sha256": "d2dee61cb8c01490af93cae1148337629b664ccb4e937d4626864af0ffa7f3e5",
+      "status": "VALID_NON_EMPTY"
+    },
+    {
+      "layer_name": "Executive Reports Dossier",
+      "file_path": "frontend/public/data/polar_bear_executive_reports.json",
+      "record_count": 5,
+      "size_bytes": 7793,
+      "sha256": "1caaf8c874342bed9e2d153476a8f1b794b44d34d73d7344fa94c70824ce5672",
+      "status": "VALID_NON_EMPTY"
+    }
+  ]
+}

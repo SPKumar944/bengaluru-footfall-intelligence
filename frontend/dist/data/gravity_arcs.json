@@ -1,0 +1,2722 @@
+[
+  {
+    "source_h3": "88618925d7fffff",
+    "source_coords": [
+      77.59372886586442,
+      12.926110400092384
+    ],
+    "target_site_id": "jayanagar_4th",
+    "target_site_name": "Jayanagar 4th Block",
+    "target_coords": [
+      77.5833,
+      12.9298
+    ],
+    "distance_km": 1.2,
+    "arc_weight": 0.83,
+    "source_impi": 74.5
+  },
+  {
+    "source_h3": "8860145b25fffff",
+    "source_coords": [
+      77.58272639319945,
+      13.023412325449542
+    ],
+    "target_site_id": "hebbal_outer_ring",
+    "target_site_name": "Hebbal (Outer Ring Rd & Kempapura)",
+    "target_coords": [
+      77.597,
+      13.0358
+    ],
+    "distance_km": 2.07,
+    "arc_weight": 0.26,
+    "source_impi": 66.3
+  },
+  {
+    "source_h3": "886189258bfffff",
+    "source_coords": [
+      77.59806663617145,
+      12.933577317454247
+    ],
+    "target_site_id": "jayanagar_4th",
+    "target_site_name": "Jayanagar 4th Block",
+    "target_coords": [
+      77.5833,
+      12.9298
+    ],
+    "distance_km": 1.65,
+    "arc_weight": 0.47,
+    "source_impi": 66.3
+  },
+  {
+    "source_h3": "8860145ad9fffff",
+    "source_coords": [
+      77.48404481204311,
+      12.911533074703943
+    ],
+    "target_site_id": "kengeri_satellite",
+    "target_site_name": "Kengeri Satellite Town",
+    "target_coords": [
+      77.4839,
+      12.9177
+    ],
+    "distance_km": 0.68,
+    "arc_weight": 1.0,
+    "source_impi": 66.7
+  },
+  {
+    "source_h3": "8861892519fffff",
+    "source_coords": [
+      77.64428415039637,
+      12.925920310525122
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 1.69,
+    "arc_weight": 0.48,
+    "source_impi": 69.3
+  },
+  {
+    "source_h3": "8861892ee7fffff",
+    "source_coords": [
+      77.64989818456539,
+      13.0082291769594
+    ],
+    "target_site_id": "kammanahalli_hrbr",
+    "target_site_name": "Kammanahalli / Kalyan Nagar (HRBR Layout)",
+    "target_coords": [
+      77.6432,
+      13.0159
+    ],
+    "distance_km": 1.12,
+    "arc_weight": 1.0,
+    "source_impi": 67.5
+  },
+  {
+    "source_h3": "8861892ec1fffff",
+    "source_coords": [
+      77.64938907665191,
+      12.978293826573747
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 1.14,
+    "arc_weight": 0.98,
+    "source_impi": 65.5
+  },
+  {
+    "source_h3": "8860145a41fffff",
+    "source_coords": [
+      77.56004126112575,
+      12.926231666909041
+    ],
+    "target_site_id": "banashankari_3rd",
+    "target_site_name": "Banashankari 3rd Stage (Kathriguppe)",
+    "target_coords": [
+      77.5469,
+      12.9255
+    ],
+    "distance_km": 1.42,
+    "arc_weight": 0.43,
+    "source_impi": 73.7
+  },
+  {
+    "source_h3": "88618924a7fffff",
+    "source_coords": [
+      77.57254735078504,
+      12.918705298139068
+    ],
+    "target_site_id": "jayanagar_4th",
+    "target_site_name": "Jayanagar 4th Block",
+    "target_coords": [
+      77.5833,
+      12.9298
+    ],
+    "distance_km": 1.69,
+    "arc_weight": 0.45,
+    "source_impi": 68.7
+  },
+  {
+    "source_h3": "8861892435fffff",
+    "source_coords": [
+      77.61875001823373,
+      12.911049843298326
+    ],
+    "target_site_id": "btm_layout_2nd",
+    "target_site_name": "BTM Layout 2nd Stage",
+    "target_coords": [
+      77.6101,
+      12.9166
+    ],
+    "distance_km": 1.12,
+    "arc_weight": 1.0,
+    "source_impi": 76.1
+  },
+  {
+    "source_h3": "88618920b1fffff",
+    "source_coords": [
+      77.70381603022665,
+      12.95563266606493
+    ],
+    "target_site_id": "marathahalli_bridge",
+    "target_site_name": "Marathahalli Multiplex / Bridge",
+    "target_coords": [
+      77.7011,
+      12.9562
+    ],
+    "distance_km": 0.3,
+    "arc_weight": 1.0,
+    "source_impi": 67.3
+  },
+  {
+    "source_h3": "8861892cd3fffff",
+    "source_coords": [
+      77.5911519045836,
+      13.023386294619495
+    ],
+    "target_site_id": "hebbal_outer_ring",
+    "target_site_name": "Hebbal (Outer Ring Rd & Kempapura)",
+    "target_coords": [
+      77.597,
+      13.0358
+    ],
+    "distance_km": 1.52,
+    "arc_weight": 0.46,
+    "source_impi": 72.7
+  },
+  {
+    "source_h3": "88618925cbfffff",
+    "source_coords": [
+      77.61466373763236,
+      12.918549232873653
+    ],
+    "target_site_id": "btm_layout_2nd",
+    "target_site_name": "BTM Layout 2nd Stage",
+    "target_coords": [
+      77.6101,
+      12.9166
+    ],
+    "distance_km": 0.54,
+    "arc_weight": 1.0,
+    "source_impi": 79.3
+  },
+  {
+    "source_h3": "8861892559fffff",
+    "source_coords": [
+      77.66088719450711,
+      12.910884520651711
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 2.38,
+    "arc_weight": 0.26,
+    "source_impi": 67.4
+  },
+  {
+    "source_h3": "8861892533fffff",
+    "source_coords": [
+      77.63636391186299,
+      12.95588805928307
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 1.85,
+    "arc_weight": 0.41,
+    "source_impi": 80.4
+  },
+  {
+    "source_h3": "886189250dfffff",
+    "source_coords": [
+      77.66982805832893,
+      12.940792216476568
+    ],
+    "target_site_id": "bellandur_eco",
+    "target_site_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "target_coords": [
+      77.6762,
+      12.926
+    ],
+    "distance_km": 1.78,
+    "arc_weight": 0.39,
+    "source_impi": 70.7
+  },
+  {
+    "source_h3": "8861892edbfffff",
+    "source_coords": [
+      77.6238488983792,
+      12.963417125650698
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 2.1,
+    "arc_weight": 0.32,
+    "source_impi": 68.6
+  },
+  {
+    "source_h3": "88618924e7fffff",
+    "source_coords": [
+      77.58914013387081,
+      12.903679253798057
+    ],
+    "target_site_id": "jp_nagar_phase2",
+    "target_site_name": "JP Nagar 24th Main (Phase 2 & 7)",
+    "target_coords": [
+      77.5855,
+      12.9063
+    ],
+    "distance_km": 0.49,
+    "arc_weight": 1.0,
+    "source_impi": 76.2
+  },
+  {
+    "source_h3": "8861892467fffff",
+    "source_coords": [
+      77.64811675210724,
+      12.903450127165115
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 1.35,
+    "arc_weight": 0.72,
+    "source_impi": 70.5
+  },
+  {
+    "source_h3": "8861892429fffff",
+    "source_coords": [
+      77.63968913589218,
+      12.903483678051384
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 0.9,
+    "arc_weight": 1.0,
+    "source_impi": 87.5
+  },
+  {
+    "source_h3": "8861892033fffff",
+    "source_coords": [
+      77.75443842948029,
+      12.955429598015886
+    ],
+    "target_site_id": "whitefield_itpl",
+    "target_site_name": "Whitefield (ITPL & ECC Rd)",
+    "target_coords": [
+      77.7499,
+      12.9698
+    ],
+    "distance_km": 1.67,
+    "arc_weight": 0.4,
+    "source_impi": 67.8
+  },
+  {
+    "source_h3": "8860145a4dfffff",
+    "source_coords": [
+      77.56846196730865,
+      12.92620175933369
+    ],
+    "target_site_id": "jayanagar_4th",
+    "target_site_name": "Jayanagar 4th Block",
+    "target_coords": [
+      77.5833,
+      12.9298
+    ],
+    "distance_km": 1.65,
+    "arc_weight": 0.47,
+    "source_impi": 79.4
+  },
+  {
+    "source_h3": "8861892ea7fffff",
+    "source_coords": [
+      77.63329140639621,
+      13.023252021001463
+    ],
+    "target_site_id": "kammanahalli_hrbr",
+    "target_site_name": "Kammanahalli / Kalyan Nagar (HRBR Layout)",
+    "target_coords": [
+      77.6432,
+      13.0159
+    ],
+    "distance_km": 1.35,
+    "arc_weight": 0.8,
+    "source_impi": 74.0
+  },
+  {
+    "source_h3": "886014586dfffff",
+    "source_coords": [
+      77.54444769854591,
+      13.001088278217015
+    ],
+    "target_site_id": "rajajinagar_10th",
+    "target_site_name": "Rajajinagar (Dr Rajkumar Rd & 10th Main)",
+    "target_coords": [
+      77.553,
+      12.9982
+    ],
+    "distance_km": 0.98,
+    "arc_weight": 0.65,
+    "source_impi": 65.7
+  },
+  {
+    "source_h3": "88618925e5fffff",
+    "source_coords": [
+      77.62793597174607,
+      12.955918750503576
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 2.28,
+    "arc_weight": 0.28,
+    "source_impi": 68.1
+  },
+  {
+    "source_h3": "8860145b33fffff",
+    "source_coords": [
+      77.54878292418904,
+      13.008554904176677
+    ],
+    "target_site_id": "rajajinagar_10th",
+    "target_site_name": "Rajajinagar (Dr Rajkumar Rd & 10th Main)",
+    "target_coords": [
+      77.553,
+      12.9982
+    ],
+    "distance_km": 1.24,
+    "arc_weight": 0.43,
+    "source_impi": 67.6
+  },
+  {
+    "source_h3": "8861892599fffff",
+    "source_coords": [
+      77.5853057699289,
+      12.926141126000608
+    ],
+    "target_site_id": "jayanagar_4th",
+    "target_site_name": "Jayanagar 4th Block",
+    "target_coords": [
+      77.5833,
+      12.9298
+    ],
+    "distance_km": 0.46,
+    "arc_weight": 1.0,
+    "source_impi": 80.9
+  },
+  {
+    "source_h3": "8860145b0dfffff",
+    "source_coords": [
+      77.58222416562411,
+      12.993488799175896
+    ],
+    "target_site_id": "malleshwaram_8th",
+    "target_site_name": "Malleshwaram 8th Cross",
+    "target_coords": [
+      77.5701,
+      13.0031
+    ],
+    "distance_km": 1.69,
+    "arc_weight": 0.32,
+    "source_impi": 71.0
+  },
+  {
+    "source_h3": "886189254dfffff",
+    "source_coords": [
+      77.68643540717777,
+      12.925754385333322
+    ],
+    "target_site_id": "bellandur_eco",
+    "target_site_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "target_coords": [
+      77.6762,
+      12.926
+    ],
+    "distance_km": 1.11,
+    "arc_weight": 0.91,
+    "source_impi": 73.9
+  },
+  {
+    "source_h3": "8861892ea9fffff",
+    "source_coords": [
+      77.64146753530699,
+      13.008257830533163
+    ],
+    "target_site_id": "kammanahalli_hrbr",
+    "target_site_name": "Kammanahalli / Kalyan Nagar (HRBR Layout)",
+    "target_coords": [
+      77.6432,
+      13.0159
+    ],
+    "distance_km": 0.87,
+    "arc_weight": 1.0,
+    "source_impi": 74.2
+  },
+  {
+    "source_h3": "8861892e83fffff",
+    "source_coords": [
+      77.62435535566546,
+      12.993348891711562
+    ],
+    "target_site_id": "frazer_town_coles",
+    "target_site_name": "Frazer Town (Coles Road & Mosque Rd)",
+    "target_coords": [
+      77.6133,
+      12.9968
+    ],
+    "distance_km": 1.26,
+    "arc_weight": 0.69,
+    "source_impi": 73.9
+  },
+  {
+    "source_h3": "886189254bfffff",
+    "source_coords": [
+      77.67366007972026,
+      12.918319273844617
+    ],
+    "target_site_id": "bellandur_eco",
+    "target_site_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "target_coords": [
+      77.6762,
+      12.926
+    ],
+    "distance_km": 0.9,
+    "arc_weight": 1.0,
+    "source_impi": 75.6
+  },
+  {
+    "source_h3": "88618920e5fffff",
+    "source_coords": [
+      77.74599938292201,
+      12.955464129404143
+    ],
+    "target_site_id": "whitefield_itpl",
+    "target_site_name": "Whitefield (ITPL & ECC Rd)",
+    "target_coords": [
+      77.7499,
+      12.9698
+    ],
+    "distance_km": 1.65,
+    "arc_weight": 0.41,
+    "source_impi": 72.6
+  },
+  {
+    "source_h3": "8861892597fffff",
+    "source_coords": [
+      77.57713424231675,
+      12.94113451593992
+    ],
+    "target_site_id": "basavanagudi_bazaar",
+    "target_site_name": "Basavanagudi (Gandhi Bazaar)",
+    "target_coords": [
+      77.5739,
+      12.9422
+    ],
+    "distance_km": 0.37,
+    "arc_weight": 1.0,
+    "source_impi": 97.9
+  },
+  {
+    "source_h3": "8860145b31fffff",
+    "source_coords": [
+      77.55720481371395,
+      13.008529268490513
+    ],
+    "target_site_id": "rajajinagar_10th",
+    "target_site_name": "Rajajinagar (Dr Rajkumar Rd & 10th Main)",
+    "target_coords": [
+      77.553,
+      12.9982
+    ],
+    "distance_km": 1.23,
+    "arc_weight": 0.43,
+    "source_impi": 78.9
+  },
+  {
+    "source_h3": "8861892c53fffff",
+    "source_coords": [
+      77.65015277670068,
+      13.023196387718937
+    ],
+    "target_site_id": "kammanahalli_hrbr",
+    "target_site_name": "Kammanahalli / Kalyan Nagar (HRBR Layout)",
+    "target_coords": [
+      77.6432,
+      13.0159
+    ],
+    "distance_km": 1.11,
+    "arc_weight": 1.0,
+    "source_impi": 66.3
+  },
+  {
+    "source_h3": "886189258dfffff",
+    "source_coords": [
+      77.61082994895045,
+      12.941013871091936
+    ],
+    "target_site_id": "koramangala_5th",
+    "target_site_name": "Koramangala 5th Block",
+    "target_coords": [
+      77.6245,
+      12.9352
+    ],
+    "distance_km": 1.61,
+    "arc_weight": 0.51,
+    "source_impi": 74.1
+  },
+  {
+    "source_h3": "8860145b01fffff",
+    "source_coords": [
+      77.57380031692995,
+      12.993515958516584
+    ],
+    "target_site_id": "malleshwaram_8th",
+    "target_site_name": "Malleshwaram 8th Cross",
+    "target_coords": [
+      77.5701,
+      13.0031
+    ],
+    "distance_km": 1.14,
+    "arc_weight": 0.66,
+    "source_impi": 75.8
+  },
+  {
+    "source_h3": "8861892541fffff",
+    "source_coords": [
+      77.67800356819559,
+      12.92578811757826
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 4.51,
+    "arc_weight": 0.08,
+    "source_impi": 76.7
+  },
+  {
+    "source_h3": "886189251bfffff",
+    "source_coords": [
+      77.63585628174273,
+      12.925952675128206
+    ],
+    "target_site_id": "koramangala_5th",
+    "target_site_name": "Koramangala 5th Block",
+    "target_coords": [
+      77.6245,
+      12.9352
+    ],
+    "distance_km": 1.6,
+    "arc_weight": 0.52,
+    "source_impi": 67.0
+  },
+  {
+    "source_h3": "8861892ec3fffff",
+    "source_coords": [
+      77.64095929419824,
+      12.97832387916077
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 0.71,
+    "arc_weight": 1.0,
+    "source_impi": 82.0
+  },
+  {
+    "source_h3": "8860145a69fffff",
+    "source_coords": [
+      77.56871230666584,
+      12.941163994389338
+    ],
+    "target_site_id": "basavanagudi_bazaar",
+    "target_site_name": "Basavanagudi (Gandhi Bazaar)",
+    "target_coords": [
+      77.5739,
+      12.9422
+    ],
+    "distance_km": 0.57,
+    "arc_weight": 1.0,
+    "source_impi": 88.5
+  },
+  {
+    "source_h3": "8861892e9dfffff",
+    "source_coords": [
+      77.62001482567302,
+      12.985880539373692
+    ],
+    "target_site_id": "frazer_town_coles",
+    "target_site_name": "Frazer Town (Coles Road & Mosque Rd)",
+    "target_coords": [
+      77.6133,
+      12.9968
+    ],
+    "distance_km": 1.41,
+    "arc_weight": 0.56,
+    "source_impi": 73.3
+  },
+  {
+    "source_h3": "8860145a43fffff",
+    "source_coords": [
+      77.55162135202855,
+      12.926261301857247
+    ],
+    "target_site_id": "banashankari_3rd",
+    "target_site_name": "Banashankari 3rd Stage (Kathriguppe)",
+    "target_coords": [
+      77.5469,
+      12.9255
+    ],
+    "distance_km": 0.52,
+    "arc_weight": 1.0,
+    "source_impi": 78.5
+  },
+  {
+    "source_h3": "88618924a9fffff",
+    "source_coords": [
+      77.58071808509443,
+      12.903710895526437
+    ],
+    "target_site_id": "jp_nagar_phase2",
+    "target_site_name": "JP Nagar 24th Main (Phase 2 & 7)",
+    "target_coords": [
+      77.5855,
+      12.9063
+    ],
+    "distance_km": 0.59,
+    "arc_weight": 1.0,
+    "source_impi": 76.2
+  },
+  {
+    "source_h3": "8861892437fffff",
+    "source_coords": [
+      77.61032496774412,
+      12.911082088825882
+    ],
+    "target_site_id": "btm_layout_2nd",
+    "target_site_name": "BTM Layout 2nd Stage",
+    "target_coords": [
+      77.6101,
+      12.9166
+    ],
+    "distance_km": 0.61,
+    "arc_weight": 1.0,
+    "source_impi": 68.0
+  },
+  {
+    "source_h3": "88618925cdfffff",
+    "source_coords": [
+      77.62742920791247,
+      12.925984766427804
+    ],
+    "target_site_id": "koramangala_5th",
+    "target_site_name": "Koramangala 5th Block",
+    "target_coords": [
+      77.6245,
+      12.9352
+    ],
+    "distance_km": 1.07,
+    "arc_weight": 1.0,
+    "source_impi": 88.7
+  },
+  {
+    "source_h3": "886189255bfffff",
+    "source_coords": [
+      77.65245817024962,
+      12.91091813143185
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 1.47,
+    "arc_weight": 0.62,
+    "source_impi": 74.9
+  },
+  {
+    "source_h3": "8861892535fffff",
+    "source_coords": [
+      77.64913456086612,
+      12.963325691016143
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 1.28,
+    "arc_weight": 0.79,
+    "source_impi": 70.8
+  },
+  {
+    "source_h3": "88618921d7fffff",
+    "source_coords": [
+      77.74216907737423,
+      12.977945127621265
+    ],
+    "target_site_id": "whitefield_itpl",
+    "target_site_name": "Whitefield (ITPL & ECC Rd)",
+    "target_coords": [
+      77.7499,
+      12.9698
+    ],
+    "distance_km": 1.23,
+    "arc_weight": 0.69,
+    "source_impi": 67.8
+  },
+  {
+    "source_h3": "8861892eddfffff",
+    "source_coords": [
+      77.6366177649823,
+      12.970855297706498
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 0.51,
+    "arc_weight": 1.0,
+    "source_impi": 79.6
+  },
+  {
+    "source_h3": "8860145a5dfffff",
+    "source_coords": [
+      77.54728707676384,
+      12.918795665329196
+    ],
+    "target_site_id": "banashankari_3rd",
+    "target_site_name": "Banashankari 3rd Stage (Kathriguppe)",
+    "target_coords": [
+      77.5469,
+      12.9255
+    ],
+    "distance_km": 0.75,
+    "arc_weight": 1.0,
+    "source_impi": 78.7
+  },
+  {
+    "source_h3": "886189242bfffff",
+    "source_coords": [
+      77.63126231427,
+      12.90351695597619
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 1.22,
+    "arc_weight": 0.86,
+    "source_impi": 88.8
+  },
+  {
+    "source_h3": "8861892405fffff",
+    "source_coords": [
+      77.6353487530884,
+      12.896016094794405
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 1.77,
+    "arc_weight": 0.44,
+    "source_impi": 72.2
+  },
+  {
+    "source_h3": "8861892427fffff",
+    "source_coords": [
+      77.63151586206048,
+      12.918484896366222
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 1.11,
+    "arc_weight": 1.0,
+    "source_impi": 86.3
+  },
+  {
+    "source_h3": "88618925e7fffff",
+    "source_coords": [
+      77.61950882684387,
+      12.955949167990006
+    ],
+    "target_site_id": "koramangala_5th",
+    "target_site_name": "Koramangala 5th Block",
+    "target_coords": [
+      77.6245,
+      12.9352
+    ],
+    "distance_km": 2.37,
+    "arc_weight": 0.26,
+    "source_impi": 69.2
+  },
+  {
+    "source_h3": "88618925c1fffff",
+    "source_coords": [
+      77.61900292915767,
+      12.926016584498957
+    ],
+    "target_site_id": "koramangala_5th",
+    "target_site_name": "Koramangala 5th Block",
+    "target_coords": [
+      77.6245,
+      12.9352
+    ],
+    "distance_km": 1.18,
+    "arc_weight": 0.9,
+    "source_impi": 90.3
+  },
+  {
+    "source_h3": "8860145b35fffff",
+    "source_coords": [
+      77.56154107656299,
+      13.015996313789362
+    ],
+    "target_site_id": "malleshwaram_8th",
+    "target_site_name": "Malleshwaram 8th Cross",
+    "target_coords": [
+      77.5701,
+      13.0031
+    ],
+    "distance_km": 1.7,
+    "arc_weight": 0.32,
+    "source_impi": 66.3
+  },
+  {
+    "source_h3": "886189259bfffff",
+    "source_coords": [
+      77.57688347032665,
+      12.926171579055962
+    ],
+    "target_site_id": "jayanagar_4th",
+    "target_site_name": "Jayanagar 4th Block",
+    "target_coords": [
+      77.5833,
+      12.9298
+    ],
+    "distance_km": 0.8,
+    "arc_weight": 1.0,
+    "source_impi": 82.0
+  },
+  {
+    "source_h3": "8861892ed1fffff",
+    "source_coords": [
+      77.6281893916558,
+      12.970885288952775
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 1.41,
+    "arc_weight": 0.66,
+    "source_impi": 73.6
+  },
+  {
+    "source_h3": "8861892eabfffff",
+    "source_coords": [
+      77.6330376811286,
+      13.00828620937452
+    ],
+    "target_site_id": "kammanahalli_hrbr",
+    "target_site_name": "Kammanahalli / Kalyan Nagar (HRBR Layout)",
+    "target_coords": [
+      77.6432,
+      13.0159
+    ],
+    "distance_km": 1.39,
+    "arc_weight": 0.76,
+    "source_impi": 70.1
+  },
+  {
+    "source_h3": "8861892eb3fffff",
+    "source_coords": [
+      77.60775289159682,
+      13.008369698261506
+    ],
+    "target_site_id": "frazer_town_coles",
+    "target_site_name": "Frazer Town (Coles Road & Mosque Rd)",
+    "target_coords": [
+      77.6133,
+      12.9968
+    ],
+    "distance_km": 1.42,
+    "arc_weight": 0.55,
+    "source_impi": 67.1
+  },
+  {
+    "source_h3": "88618924e5fffff",
+    "source_coords": [
+      77.59756297875016,
+      12.903647339557619
+    ],
+    "target_site_id": "jp_nagar_phase2",
+    "target_site_name": "JP Nagar 24th Main (Phase 2 & 7)",
+    "target_coords": [
+      77.5855,
+      12.9063
+    ],
+    "distance_km": 1.34,
+    "arc_weight": 0.62,
+    "source_impi": 66.7
+  },
+  {
+    "source_h3": "8861892ed9fffff",
+    "source_coords": [
+      77.63227665750212,
+      12.963386921362435
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 1.35,
+    "arc_weight": 0.72,
+    "source_impi": 78.6
+  },
+  {
+    "source_h3": "886189250bfffff",
+    "source_coords": [
+      77.65705488267503,
+      12.93335608436538
+    ],
+    "target_site_id": "bellandur_eco",
+    "target_site_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "target_coords": [
+      77.6762,
+      12.926
+    ],
+    "distance_km": 2.23,
+    "arc_weight": 0.26,
+    "source_impi": 66.4
+  },
+  {
+    "source_h3": "88618921d3fffff",
+    "source_coords": [
+      77.73782018508273,
+      12.970474004357841
+    ],
+    "target_site_id": "whitefield_itpl",
+    "target_site_name": "Whitefield (ITPL & ECC Rd)",
+    "target_coords": [
+      77.7499,
+      12.9698
+    ],
+    "distance_km": 1.31,
+    "arc_weight": 0.62,
+    "source_impi": 73.2
+  },
+  {
+    "source_h3": "8861892531fffff",
+    "source_coords": [
+      77.64479264694246,
+      12.955857094253215
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 1.82,
+    "arc_weight": 0.42,
+    "source_impi": 74.9
+  },
+  {
+    "source_h3": "8861892601fffff",
+    "source_coords": [
+      77.6596121935727,
+      12.836028902024843
+    ],
+    "target_site_id": "electronic_city_p1",
+    "target_site_name": "Electronic City Phase 1",
+    "target_coords": [
+      77.6602,
+      12.8452
+    ],
+    "distance_km": 1.02,
+    "arc_weight": 1.0,
+    "source_impi": 65.5
+  },
+  {
+    "source_h3": "8861892557fffff",
+    "source_coords": [
+      77.65271281362102,
+      12.925887672543517
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 2.18,
+    "arc_weight": 0.3,
+    "source_impi": 70.7
+  },
+  {
+    "source_h3": "88618925dbfffff",
+    "source_coords": [
+      77.59347725354468,
+      12.911145761478814
+    ],
+    "target_site_id": "jp_nagar_phase2",
+    "target_site_name": "JP Nagar 24th Main (Phase 2 & 7)",
+    "target_coords": [
+      77.5855,
+      12.9063
+    ],
+    "distance_km": 1.02,
+    "arc_weight": 1.0,
+    "source_impi": 72.7
+  },
+  {
+    "source_h3": "8860145b03fffff",
+    "source_coords": [
+      77.56537726526012,
+      12.993542843983315
+    ],
+    "target_site_id": "malleshwaram_8th",
+    "target_site_name": "Malleshwaram 8th Cross",
+    "target_coords": [
+      77.5701,
+      13.0031
+    ],
+    "distance_km": 1.18,
+    "arc_weight": 0.62,
+    "source_impi": 68.9
+  },
+  {
+    "source_h3": "8861892569fffff",
+    "source_coords": [
+      77.68669180974028,
+      12.940726423001863
+    ],
+    "target_site_id": "bellandur_eco",
+    "target_site_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "target_coords": [
+      77.6762,
+      12.926
+    ],
+    "distance_km": 1.99,
+    "arc_weight": 0.32,
+    "source_impi": 67.4
+  },
+  {
+    "source_h3": "8860145b17fffff",
+    "source_coords": [
+      77.54853355399707,
+      12.99359579359819
+    ],
+    "target_site_id": "rajajinagar_10th",
+    "target_site_name": "Rajajinagar (Dr Rajkumar Rd & 10th Main)",
+    "target_coords": [
+      77.553,
+      12.9982
+    ],
+    "distance_km": 0.7,
+    "arc_weight": 1.0,
+    "source_impi": 70.6
+  },
+  {
+    "source_h3": "8861892543fffff",
+    "source_coords": [
+      77.66957252277341,
+      12.925821576145033
+    ],
+    "target_site_id": "bellandur_eco",
+    "target_site_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "target_coords": [
+      77.6762,
+      12.926
+    ],
+    "distance_km": 0.72,
+    "arc_weight": 1.0,
+    "source_impi": 82.9
+  },
+  {
+    "source_h3": "8860145b3dfffff",
+    "source_coords": [
+      77.56562750083489,
+      13.008503358830344
+    ],
+    "target_site_id": "malleshwaram_8th",
+    "target_site_name": "Malleshwaram 8th Cross",
+    "target_coords": [
+      77.5701,
+      13.0031
+    ],
+    "distance_km": 0.77,
+    "arc_weight": 1.0,
+    "source_impi": 83.3
+  },
+  {
+    "source_h3": "8860145a45fffff",
+    "source_coords": [
+      77.56437657300647,
+      12.933697726689793
+    ],
+    "target_site_id": "basavanagudi_bazaar",
+    "target_site_name": "Basavanagudi (Gandhi Bazaar)",
+    "target_coords": [
+      77.5739,
+      12.9422
+    ],
+    "distance_km": 1.4,
+    "arc_weight": 0.55,
+    "source_impi": 75.4
+  },
+  {
+    "source_h3": "88618925c9fffff",
+    "source_coords": [
+      77.6230894022631,
+      12.91851720115222
+    ],
+    "target_site_id": "btm_layout_2nd",
+    "target_site_name": "BTM Layout 2nd Stage",
+    "target_coords": [
+      77.6101,
+      12.9166
+    ],
+    "distance_km": 1.42,
+    "arc_weight": 0.66,
+    "source_impi": 79.1
+  },
+  {
+    "source_h3": "8861892cd7fffff",
+    "source_coords": [
+      77.59549085639546,
+      13.030854389313056
+    ],
+    "target_site_id": "hebbal_outer_ring",
+    "target_site_name": "Hebbal (Outer Ring Rd & Kempapura)",
+    "target_coords": [
+      77.597,
+      13.0358
+    ],
+    "distance_km": 0.57,
+    "arc_weight": 1.0,
+    "source_impi": 75.1
+  },
+  {
+    "source_h3": "8861892cd1fffff",
+    "source_coords": [
+      77.59957821262944,
+      13.023359989259543
+    ],
+    "target_site_id": "hebbal_outer_ring",
+    "target_site_name": "Hebbal (Outer Ring Rd & Kempapura)",
+    "target_coords": [
+      77.597,
+      13.0358
+    ],
+    "distance_km": 1.41,
+    "arc_weight": 0.53,
+    "source_impi": 69.3
+  },
+  {
+    "source_h3": "8861892c8bfffff",
+    "source_coords": [
+      77.59983023019029,
+      13.03832268752397
+    ],
+    "target_site_id": "hebbal_outer_ring",
+    "target_site_name": "Hebbal (Outer Ring Rd & Kempapura)",
+    "target_coords": [
+      77.597,
+      13.0358
+    ],
+    "distance_km": 0.41,
+    "arc_weight": 1.0,
+    "source_impi": 65.1
+  },
+  {
+    "source_h3": "8861892583fffff",
+    "source_coords": [
+      77.59398050332993,
+      12.941074739876615
+    ],
+    "target_site_id": "jayanagar_4th",
+    "target_site_name": "Jayanagar 4th Block",
+    "target_coords": [
+      77.5833,
+      12.9298
+    ],
+    "distance_km": 1.7,
+    "arc_weight": 0.44,
+    "source_impi": 68.1
+  },
+  {
+    "source_h3": "886189255dfffff",
+    "source_coords": [
+      77.66522964787347,
+      12.91835294507752
+    ],
+    "target_site_id": "bellandur_eco",
+    "target_site_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "target_coords": [
+      77.6762,
+      12.926
+    ],
+    "distance_km": 1.46,
+    "arc_weight": 0.55,
+    "source_impi": 77.0
+  },
+  {
+    "source_h3": "8861892537fffff",
+    "source_coords": [
+      77.64070521174853,
+      12.963356443176021
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 0.95,
+    "arc_weight": 1.0,
+    "source_impi": 86.9
+  },
+  {
+    "source_h3": "88618921d9fffff",
+    "source_coords": [
+      77.75034865813436,
+      12.962935267788069
+    ],
+    "target_site_id": "whitefield_itpl",
+    "target_site_name": "Whitefield (ITPL & ECC Rd)",
+    "target_coords": [
+      77.7499,
+      12.9698
+    ],
+    "distance_km": 0.76,
+    "arc_weight": 1.0,
+    "source_impi": 81.2
+  },
+  {
+    "source_h3": "8861892eb9fffff",
+    "source_coords": [
+      77.62026786302566,
+      13.000845765441035
+    ],
+    "target_site_id": "frazer_town_coles",
+    "target_site_name": "Frazer Town (Coles Road & Mosque Rd)",
+    "target_coords": [
+      77.6133,
+      12.9968
+    ],
+    "distance_km": 0.88,
+    "arc_weight": 1.0,
+    "source_impi": 75.2
+  },
+  {
+    "source_h3": "886189242dfffff",
+    "source_coords": [
+      77.64402994024117,
+      12.910951469011716
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 0.56,
+    "arc_weight": 1.0,
+    "source_impi": 82.8
+  },
+  {
+    "source_h3": "8861892407fffff",
+    "source_coords": [
+      77.62692254536819,
+      12.896049586345386
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 2.16,
+    "arc_weight": 0.31,
+    "source_impi": 72.6
+  },
+  {
+    "source_h3": "8861892037fffff",
+    "source_coords": [
+      77.75878831753252,
+      12.962900947131931
+    ],
+    "target_site_id": "whitefield_itpl",
+    "target_site_name": "Whitefield (ITPL & ECC Rd)",
+    "target_coords": [
+      77.7499,
+      12.9698
+    ],
+    "distance_km": 1.23,
+    "arc_weight": 0.7,
+    "source_impi": 70.3
+  },
+  {
+    "source_h3": "88618925e9fffff",
+    "source_coords": [
+      77.62768257716621,
+      12.940951908983829
+    ],
+    "target_site_id": "koramangala_5th",
+    "target_site_name": "Koramangala 5th Block",
+    "target_coords": [
+      77.6245,
+      12.9352
+    ],
+    "distance_km": 0.73,
+    "arc_weight": 1.0,
+    "source_impi": 89.1
+  },
+  {
+    "source_h3": "88618925c3fffff",
+    "source_coords": [
+      77.61057744573026,
+      12.926048129416692
+    ],
+    "target_site_id": "btm_layout_2nd",
+    "target_site_name": "BTM Layout 2nd Stage",
+    "target_coords": [
+      77.6101,
+      12.9166
+    ],
+    "distance_km": 1.05,
+    "arc_weight": 1.0,
+    "source_impi": 74.4
+  },
+  {
+    "source_h3": "886189259dfffff",
+    "source_coords": [
+      77.58964292576523,
+      12.933607829212727
+    ],
+    "target_site_id": "jayanagar_4th",
+    "target_site_name": "Jayanagar 4th Block",
+    "target_coords": [
+      77.5833,
+      12.9298
+    ],
+    "distance_km": 0.81,
+    "arc_weight": 1.0,
+    "source_impi": 83.5
+  },
+  {
+    "source_h3": "8861892551fffff",
+    "source_coords": [
+      77.65680000993144,
+      12.918386342871258
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 2.08,
+    "arc_weight": 0.33,
+    "source_impi": 75.5
+  },
+  {
+    "source_h3": "8861892ed3fffff",
+    "source_coords": [
+      77.61976181361369,
+      12.97091500621219
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 2.32,
+    "arc_weight": 0.27,
+    "source_impi": 66.3
+  },
+  {
+    "source_h3": "8861892eadfffff",
+    "source_coords": [
+      77.64580994508394,
+      13.015727007540047
+    ],
+    "target_site_id": "kammanahalli_hrbr",
+    "target_site_name": "Kammanahalli / Kalyan Nagar (HRBR Layout)",
+    "target_coords": [
+      77.6432,
+      13.0159
+    ],
+    "distance_km": 0.28,
+    "arc_weight": 1.0,
+    "source_impi": 80.4
+  },
+  {
+    "source_h3": "88618920e9fffff",
+    "source_coords": [
+      77.74573991770791,
+      12.94048751069616
+    ],
+    "target_site_id": "varthur_gunjur",
+    "target_site_name": "Varthur - Gunjur Tech Corridor",
+    "target_coords": [
+      77.741,
+      12.9388
+    ],
+    "distance_km": 0.55,
+    "arc_weight": 1.0,
+    "source_impi": 68.6
+  },
+  {
+    "source_h3": "8861892421fffff",
+    "source_coords": [
+      77.63560250473422,
+      12.910984533466165
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 0.36,
+    "arc_weight": 1.0,
+    "source_impi": 92.9
+  },
+  {
+    "source_h3": "88618924a5fffff",
+    "source_coords": [
+      77.58096903580913,
+      12.918674630614579
+    ],
+    "target_site_id": "jayanagar_4th",
+    "target_site_name": "Jayanagar 4th Block",
+    "target_coords": [
+      77.5833,
+      12.9298
+    ],
+    "distance_km": 1.26,
+    "arc_weight": 0.76,
+    "source_impi": 71.6
+  },
+  {
+    "source_h3": "8861892629fffff",
+    "source_coords": [
+      77.66829522806705,
+      12.85096392696063
+    ],
+    "target_site_id": "electronic_city_p1",
+    "target_site_name": "Electronic City Phase 1",
+    "target_coords": [
+      77.6602,
+      12.8452
+    ],
+    "distance_km": 1.08,
+    "arc_weight": 1.0,
+    "source_impi": 65.2
+  },
+  {
+    "source_h3": "8861892c99fffff",
+    "source_coords": [
+      77.5870647301248,
+      13.030880206874519
+    ],
+    "target_site_id": "hebbal_outer_ring",
+    "target_site_name": "Hebbal (Outer Ring Rd & Kempapura)",
+    "target_coords": [
+      77.597,
+      13.0358
+    ],
+    "distance_km": 1.21,
+    "arc_weight": 0.7,
+    "source_impi": 68.9
+  },
+  {
+    "source_h3": "88618925ddfffff",
+    "source_coords": [
+      77.60623886842005,
+      12.918580991605545
+    ],
+    "target_site_id": "btm_layout_2nd",
+    "target_site_name": "BTM Layout 2nd Stage",
+    "target_coords": [
+      77.6101,
+      12.9166
+    ],
+    "distance_km": 0.47,
+    "arc_weight": 1.0,
+    "source_impi": 76.5
+  },
+  {
+    "source_h3": "8860145b2bfffff",
+    "source_coords": [
+      77.57405098530111,
+      13.008477175120222
+    ],
+    "target_site_id": "malleshwaram_8th",
+    "target_site_name": "Malleshwaram 8th Cross",
+    "target_coords": [
+      77.5701,
+      13.0031
+    ],
+    "distance_km": 0.73,
+    "arc_weight": 1.0,
+    "source_impi": 76.8
+  },
+  {
+    "source_h3": "8861892591fffff",
+    "source_coords": [
+      77.5812200116016,
+      12.933638067954625
+    ],
+    "target_site_id": "jayanagar_4th",
+    "target_site_name": "Jayanagar 4th Block",
+    "target_coords": [
+      77.5833,
+      12.9298
+    ],
+    "distance_km": 0.48,
+    "arc_weight": 1.0,
+    "source_impi": 100.0
+  },
+  {
+    "source_h3": "8860145b05fffff",
+    "source_coords": [
+      77.57813758092794,
+      13.00098323539204
+    ],
+    "target_site_id": "malleshwaram_8th",
+    "target_site_name": "Malleshwaram 8th Cross",
+    "target_coords": [
+      77.5701,
+      13.0031
+    ],
+    "distance_km": 0.9,
+    "arc_weight": 1.0,
+    "source_impi": 78.3
+  },
+  {
+    "source_h3": "886189256bfffff",
+    "source_coords": [
+      77.67825953721992,
+      12.94075945670509
+    ],
+    "target_site_id": "bellandur_eco",
+    "target_site_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "target_coords": [
+      77.6762,
+      12.926
+    ],
+    "distance_km": 1.65,
+    "arc_weight": 0.44,
+    "source_impi": 74.4
+  },
+  {
+    "source_h3": "8861892545fffff",
+    "source_coords": [
+      77.68234747819845,
+      12.933257167422415
+    ],
+    "target_site_id": "bellandur_eco",
+    "target_site_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "target_coords": [
+      77.6762,
+      12.926
+    ],
+    "distance_km": 1.04,
+    "arc_weight": 1.0,
+    "source_impi": 80.4
+  },
+  {
+    "source_h3": "8861892517fffff",
+    "source_coords": [
+      77.63611008411773,
+      12.940920517745456
+    ],
+    "target_site_id": "koramangala_5th",
+    "target_site_name": "Koramangala 5th Block",
+    "target_coords": [
+      77.6245,
+      12.9352
+    ],
+    "distance_km": 1.41,
+    "arc_weight": 0.65,
+    "source_impi": 76.9
+  },
+  {
+    "source_h3": "8860145a6dfffff",
+    "source_coords": [
+      77.57304846211579,
+      12.948630469633484
+    ],
+    "target_site_id": "basavanagudi_bazaar",
+    "target_site_name": "Basavanagudi (Gandhi Bazaar)",
+    "target_coords": [
+      77.5739,
+      12.9422
+    ],
+    "distance_km": 0.72,
+    "arc_weight": 1.0,
+    "source_impi": 77.5
+  },
+  {
+    "source_h3": "8861892ea1fffff",
+    "source_coords": [
+      77.63737947662257,
+      13.015755173949385
+    ],
+    "target_site_id": "kammanahalli_hrbr",
+    "target_site_name": "Kammanahalli / Kalyan Nagar (HRBR Layout)",
+    "target_coords": [
+      77.6432,
+      13.0159
+    ],
+    "distance_km": 0.63,
+    "arc_weight": 1.0,
+    "source_impi": 73.5
+  },
+  {
+    "source_h3": "88618924adfffff",
+    "source_coords": [
+      77.58505459033769,
+      12.911177188754193
+    ],
+    "target_site_id": "jp_nagar_phase2",
+    "target_site_name": "JP Nagar 24th Main (Phase 2 & 7)",
+    "target_coords": [
+      77.5855,
+      12.9063
+    ],
+    "distance_km": 0.54,
+    "arc_weight": 1.0,
+    "source_impi": 67.3
+  },
+  {
+    "source_h3": "8860145b23fffff",
+    "source_coords": [
+      77.56996437878519,
+      13.015970618038208
+    ],
+    "target_site_id": "malleshwaram_8th",
+    "target_site_name": "Malleshwaram 8th Cross",
+    "target_coords": [
+      77.5701,
+      13.0031
+    ],
+    "distance_km": 1.43,
+    "arc_weight": 0.44,
+    "source_impi": 69.4
+  },
+  {
+    "source_h3": "8861892cd9fffff",
+    "source_coords": [
+      77.60366555771043,
+      13.015865092134923
+    ],
+    "target_site_id": "frazer_town_coles",
+    "target_site_name": "Frazer Town (Coles Road & Mosque Rd)",
+    "target_coords": [
+      77.6133,
+      12.9968
+    ],
+    "distance_km": 2.36,
+    "arc_weight": 0.22,
+    "source_impi": 70.1
+  },
+  {
+    "source_h3": "88618925d5fffff",
+    "source_coords": [
+      77.602152757882,
+      12.926079401256137
+    ],
+    "target_site_id": "btm_layout_2nd",
+    "target_site_name": "BTM Layout 2nd Stage",
+    "target_coords": [
+      77.6101,
+      12.9166
+    ],
+    "distance_km": 1.36,
+    "arc_weight": 0.72,
+    "source_impi": 69.9
+  },
+  {
+    "source_h3": "88618925d1fffff",
+    "source_coords": [
+      77.5978147948778,
+      12.91861247742296
+    ],
+    "target_site_id": "btm_layout_2nd",
+    "target_site_name": "BTM Layout 2nd Stage",
+    "target_coords": [
+      77.6101,
+      12.9166
+    ],
+    "distance_km": 1.35,
+    "arc_weight": 0.73,
+    "source_impi": 72.7
+  },
+  {
+    "source_h3": "8861892c91fffff",
+    "source_coords": [
+      77.5829775446413,
+      13.038373621640456
+    ],
+    "target_site_id": "hebbal_outer_ring",
+    "target_site_name": "Hebbal (Outer Ring Rd & Kempapura)",
+    "target_coords": [
+      77.597,
+      13.0358
+    ],
+    "distance_km": 1.54,
+    "arc_weight": 0.45,
+    "source_impi": 65.7
+  },
+  {
+    "source_h3": "88618921dbfffff",
+    "source_coords": [
+      77.74190979031044,
+      12.962969313494252
+    ],
+    "target_site_id": "whitefield_itpl",
+    "target_site_name": "Whitefield (ITPL & ECC Rd)",
+    "target_coords": [
+      77.7499,
+      12.9698
+    ],
+    "distance_km": 1.15,
+    "arc_weight": 0.79,
+    "source_impi": 78.7
+  },
+  {
+    "source_h3": "8861892513fffff",
+    "source_coords": [
+      77.63176943519348,
+      12.933452538750462
+    ],
+    "target_site_id": "koramangala_5th",
+    "target_site_name": "Koramangala 5th Block",
+    "target_coords": [
+      77.6245,
+      12.9352
+    ],
+    "distance_km": 0.81,
+    "arc_weight": 1.0,
+    "source_impi": 83.1
+  },
+  {
+    "source_h3": "8861892ebbfffff",
+    "source_coords": [
+      77.6118402142471,
+      13.000873807961767
+    ],
+    "target_site_id": "frazer_town_coles",
+    "target_site_name": "Frazer Town (Coles Road & Mosque Rd)",
+    "target_coords": [
+      77.6133,
+      12.9968
+    ],
+    "distance_km": 0.48,
+    "arc_weight": 1.0,
+    "source_impi": 66.2
+  },
+  {
+    "source_h3": "8860145a61fffff",
+    "source_coords": [
+      77.56462670857054,
+      12.94865946063545
+    ],
+    "target_site_id": "basavanagudi_bazaar",
+    "target_site_name": "Basavanagudi (Gandhi Bazaar)",
+    "target_coords": [
+      77.5739,
+      12.9422
+    ],
+    "distance_km": 1.23,
+    "arc_weight": 0.69,
+    "source_impi": 65.1
+  },
+  {
+    "source_h3": "8861892cddfffff",
+    "source_coords": [
+      77.60800531708547,
+      13.023333409293693
+    ],
+    "target_site_id": "hebbal_outer_ring",
+    "target_site_name": "Hebbal (Outer Ring Rd & Kempapura)",
+    "target_coords": [
+      77.597,
+      13.0358
+    ],
+    "distance_km": 1.83,
+    "arc_weight": 0.33,
+    "source_impi": 68.9
+  },
+  {
+    "source_h3": "8861892e95fffff",
+    "source_coords": [
+      77.61592752561967,
+      12.993377421558263
+    ],
+    "target_site_id": "frazer_town_coles",
+    "target_site_name": "Frazer Town (Coles Road & Mosque Rd)",
+    "target_coords": [
+      77.6133,
+      12.9968
+    ],
+    "distance_km": 0.47,
+    "arc_weight": 1.0,
+    "source_impi": 76.4
+  },
+  {
+    "source_h3": "88618924a1fffff",
+    "source_coords": [
+      77.57663272339414,
+      12.911208343428935
+    ],
+    "target_site_id": "jp_nagar_phase2",
+    "target_site_name": "JP Nagar 24th Main (Phase 2 & 7)",
+    "target_coords": [
+      77.5855,
+      12.9063
+    ],
+    "distance_km": 1.1,
+    "arc_weight": 0.88,
+    "source_impi": 67.7
+  },
+  {
+    "source_h3": "88618925ebfffff",
+    "source_coords": [
+      77.61925586535979,
+      12.94098302674093
+    ],
+    "target_site_id": "koramangala_5th",
+    "target_site_name": "Koramangala 5th Block",
+    "target_coords": [
+      77.6245,
+      12.9352
+    ],
+    "distance_km": 0.86,
+    "arc_weight": 1.0,
+    "source_impi": 88.9
+  },
+  {
+    "source_h3": "88618925c5fffff",
+    "source_coords": [
+      77.62334254233176,
+      12.933484143327219
+    ],
+    "target_site_id": "koramangala_5th",
+    "target_site_name": "Koramangala 5th Block",
+    "target_coords": [
+      77.6245,
+      12.9352
+    ],
+    "distance_km": 0.23,
+    "arc_weight": 1.0,
+    "source_impi": 95.3
+  },
+  {
+    "source_h3": "8860145b39fffff",
+    "source_coords": [
+      77.56129104486568,
+      13.00103630457673
+    ],
+    "target_site_id": "malleshwaram_8th",
+    "target_site_name": "Malleshwaram 8th Cross",
+    "target_coords": [
+      77.5701,
+      13.0031
+    ],
+    "distance_km": 0.98,
+    "arc_weight": 0.86,
+    "source_impi": 71.6
+  },
+  {
+    "source_h3": "8861892553fffff",
+    "source_coords": [
+      77.64837116614693,
+      12.918419467300698
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 1.27,
+    "arc_weight": 0.8,
+    "source_impi": 77.0
+  },
+  {
+    "source_h3": "8861892ed5fffff",
+    "source_coords": [
+      77.63253030668535,
+      12.978353657521334
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 1.18,
+    "arc_weight": 0.92,
+    "source_impi": 83.4
+  },
+  {
+    "source_h3": "8860145a55fffff",
+    "source_coords": [
+      77.5432022402675,
+      12.926290664253605
+    ],
+    "target_site_id": "banashankari_3rd",
+    "target_site_name": "Banashankari 3rd Stage (Kathriguppe)",
+    "target_coords": [
+      77.5469,
+      12.9255
+    ],
+    "distance_km": 0.41,
+    "arc_weight": 1.0,
+    "source_impi": 75.6
+  },
+  {
+    "source_h3": "8861892e89fffff",
+    "source_coords": [
+      77.63687164347948,
+      12.985822230981379
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 1.61,
+    "arc_weight": 0.52,
+    "source_impi": 77.7
+  },
+  {
+    "source_h3": "88618920ebfffff",
+    "source_coords": [
+      77.73730209688368,
+      12.940522464019228
+    ],
+    "target_site_id": "varthur_gunjur",
+    "target_site_name": "Varthur - Gunjur Tech Corridor",
+    "target_coords": [
+      77.741,
+      12.9388
+    ],
+    "distance_km": 0.44,
+    "arc_weight": 1.0,
+    "source_impi": 73.4
+  },
+  {
+    "source_h3": "8861892423fffff",
+    "source_coords": [
+      77.62717586398105,
+      12.911017324870063
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 1.27,
+    "arc_weight": 0.8,
+    "source_impi": 83.8
+  },
+  {
+    "source_h3": "88618920c5fffff",
+    "source_coords": [
+      77.74139129396549,
+      12.933016773244269
+    ],
+    "target_site_id": "varthur_gunjur",
+    "target_site_name": "Varthur - Gunjur Tech Corridor",
+    "target_coords": [
+      77.741,
+      12.9388
+    ],
+    "distance_km": 0.64,
+    "arc_weight": 1.0,
+    "source_impi": 67.6
+  },
+  {
+    "source_h3": "886189262bfffff",
+    "source_coords": [
+      77.65986714279211,
+      12.851000607807483
+    ],
+    "target_site_id": "electronic_city_p1",
+    "target_site_name": "Electronic City Phase 1",
+    "target_coords": [
+      77.6602,
+      12.8452
+    ],
+    "distance_km": 0.64,
+    "arc_weight": 1.0,
+    "source_impi": 65.2
+  },
+  {
+    "source_h3": "8861892605fffff",
+    "source_coords": [
+      77.66395350015405,
+      12.84349630968785
+    ],
+    "target_site_id": "electronic_city_p1",
+    "target_site_name": "Electronic City Phase 1",
+    "target_coords": [
+      77.6602,
+      12.8452
+    ],
+    "distance_km": 0.45,
+    "arc_weight": 1.0,
+    "source_impi": 72.5
+  },
+  {
+    "source_h3": "88618925b9fffff",
+    "source_coords": [
+      77.58989435939898,
+      12.948571668200072
+    ],
+    "target_site_id": "basavanagudi_bazaar",
+    "target_site_name": "Basavanagudi (Gandhi Bazaar)",
+    "target_coords": [
+      77.5739,
+      12.9422
+    ],
+    "distance_km": 1.87,
+    "arc_weight": 0.32,
+    "source_impi": 68.2
+  },
+  {
+    "source_h3": "8861892593fffff",
+    "source_coords": [
+      77.5727978939317,
+      12.933668033755216
+    ],
+    "target_site_id": "basavanagudi_bazaar",
+    "target_site_name": "Basavanagudi (Gandhi Bazaar)",
+    "target_coords": [
+      77.5739,
+      12.9422
+    ],
+    "distance_km": 0.95,
+    "arc_weight": 1.0,
+    "source_impi": 93.8
+  },
+  {
+    "source_h3": "8860145b07fffff",
+    "source_coords": [
+      77.56971391430439,
+      13.001009906965386
+    ],
+    "target_site_id": "malleshwaram_8th",
+    "target_site_name": "Malleshwaram 8th Cross",
+    "target_coords": [
+      77.5701,
+      13.0031
+    ],
+    "distance_km": 0.24,
+    "arc_weight": 1.0,
+    "source_impi": 84.9
+  },
+  {
+    "source_h3": "8860145a4bfffff",
+    "source_coords": [
+      77.55570637101178,
+      12.918765815421152
+    ],
+    "target_site_id": "banashankari_3rd",
+    "target_site_name": "Banashankari 3rd Stage (Kathriguppe)",
+    "target_coords": [
+      77.5469,
+      12.9255
+    ],
+    "distance_km": 1.21,
+    "arc_weight": 0.57,
+    "source_impi": 67.8
+  },
+  {
+    "source_h3": "8861892547fffff",
+    "source_coords": [
+      77.67391581921841,
+      12.933290413479257
+    ],
+    "target_site_id": "bellandur_eco",
+    "target_site_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "target_coords": [
+      77.6762,
+      12.926
+    ],
+    "distance_km": 0.85,
+    "arc_weight": 1.0,
+    "source_impi": 84.5
+  },
+  {
+    "source_h3": "8861892ea5fffff",
+    "source_coords": [
+      77.64172169397364,
+      13.023224341852867
+    ],
+    "target_site_id": "kammanahalli_hrbr",
+    "target_site_name": "Kammanahalli / Kalyan Nagar (HRBR Layout)",
+    "target_coords": [
+      77.6432,
+      13.0159
+    ],
+    "distance_km": 0.83,
+    "arc_weight": 1.0,
+    "source_impi": 75.1
+  },
+  {
+    "source_h3": "8861892ec9fffff",
+    "source_coords": [
+      77.65347689647938,
+      12.970794492951713
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 1.33,
+    "arc_weight": 0.74,
+    "source_impi": 70.1
+  },
+  {
+    "source_h3": "8861892ea3fffff",
+    "source_coords": [
+      77.62894980340226,
+      13.01578306553774
+    ],
+    "target_site_id": "kammanahalli_hrbr",
+    "target_site_name": "Kammanahalli / Kalyan Nagar (HRBR Layout)",
+    "target_coords": [
+      77.6432,
+      13.0159
+    ],
+    "distance_km": 1.54,
+    "arc_weight": 0.62,
+    "source_impi": 71.7
+  },
+  {
+    "source_h3": "8860145a49fffff",
+    "source_coords": [
+      77.5641264624357,
+      12.91873569304952
+    ],
+    "target_site_id": "jayanagar_4th",
+    "target_site_name": "Jayanagar 4th Block",
+    "target_coords": [
+      77.5833,
+      12.9298
+    ],
+    "distance_km": 2.41,
+    "arc_weight": 0.24,
+    "source_impi": 65.4
+  },
+  {
+    "source_h3": "8861892ecbfffff",
+    "source_coords": [
+      77.64504693334096,
+      12.970825032397936
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 0.43,
+    "arc_weight": 1.0,
+    "source_impi": 79.8
+  },
+  {
+    "source_h3": "886189243dfffff",
+    "source_coords": [
+      77.62283628749285,
+      12.90354996101433
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 1.95,
+    "arc_weight": 0.37,
+    "source_impi": 81.2
+  },
+  {
+    "source_h3": "8861892093fffff",
+    "source_coords": [
+      77.69077993064658,
+      12.933223647523121
+    ],
+    "target_site_id": "bellandur_eco",
+    "target_site_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "target_coords": [
+      77.6762,
+      12.926
+    ],
+    "distance_km": 1.77,
+    "arc_weight": 0.39,
+    "source_impi": 67.5
+  },
+  {
+    "source_h3": "8861892cdbfffff",
+    "source_coords": [
+      77.59523906797617,
+      13.015891885197476
+    ],
+    "target_site_id": "hebbal_outer_ring",
+    "target_site_name": "Hebbal (Outer Ring Rd & Kempapura)",
+    "target_coords": [
+      77.597,
+      13.0358
+    ],
+    "distance_km": 2.22,
+    "arc_weight": 0.23,
+    "source_impi": 67.7
+  },
+  {
+    "source_h3": "8861892549fffff",
+    "source_coords": [
+      77.68209130521892,
+      12.918285329097682
+    ],
+    "target_site_id": "bellandur_eco",
+    "target_site_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "target_coords": [
+      77.6762,
+      12.926
+    ],
+    "distance_km": 1.07,
+    "arc_weight": 0.97,
+    "source_impi": 65.2
+  },
+  {
+    "source_h3": "8860145b6dfffff",
+    "source_coords": [
+      77.60341336139636,
+      13.000901576141487
+    ],
+    "target_site_id": "frazer_town_coles",
+    "target_site_name": "Frazer Town (Coles Road & Mosque Rd)",
+    "target_coords": [
+      77.6133,
+      12.9968
+    ],
+    "distance_km": 1.16,
+    "arc_weight": 0.79,
+    "source_impi": 66.1
+  },
+  {
+    "source_h3": "88618925d3fffff",
+    "source_coords": [
+      77.58939151725708,
+      12.91864369040092
+    ],
+    "target_site_id": "jayanagar_4th",
+    "target_site_name": "Jayanagar 4th Block",
+    "target_coords": [
+      77.5833,
+      12.9298
+    ],
+    "distance_km": 1.4,
+    "arc_weight": 0.63,
+    "source_impi": 75.2
+  },
+  {
+    "source_h3": "8861892595fffff",
+    "source_coords": [
+      77.5855569746218,
+      12.941104764460778
+    ],
+    "target_site_id": "jayanagar_4th",
+    "target_site_name": "Jayanagar 4th Block",
+    "target_coords": [
+      77.5833,
+      12.9298
+    ],
+    "distance_km": 1.28,
+    "arc_weight": 0.74,
+    "source_impi": 90.3
+  },
+  {
+    "source_h3": "886189253bfffff",
+    "source_coords": [
+      77.64045115469686,
+      12.948388703037992
+    ],
+    "target_site_id": "koramangala_5th",
+    "target_site_name": "Koramangala 5th Block",
+    "target_coords": [
+      77.6245,
+      12.9352
+    ],
+    "distance_km": 2.26,
+    "arc_weight": 0.28,
+    "source_impi": 72.5
+  },
+  {
+    "source_h3": "88618921ddfffff",
+    "source_coords": [
+      77.75469835482372,
+      12.970406609465089
+    ],
+    "target_site_id": "whitefield_itpl",
+    "target_site_name": "Whitefield (ITPL & ECC Rd)",
+    "target_coords": [
+      77.7499,
+      12.9698
+    ],
+    "distance_km": 0.52,
+    "arc_weight": 1.0,
+    "source_impi": 78.0
+  },
+  {
+    "source_h3": "8861892515fffff",
+    "source_coords": [
+      77.64453838596219,
+      12.940888852950648
+    ],
+    "target_site_id": "koramangala_5th",
+    "target_site_name": "Koramangala 5th Block",
+    "target_coords": [
+      77.6245,
+      12.9352
+    ],
+    "distance_km": 2.26,
+    "arc_weight": 0.28,
+    "source_impi": 65.4
+  },
+  {
+    "source_h3": "88618925bbfffff",
+    "source_coords": [
+      77.58147101247559,
+      12.948601205513501
+    ],
+    "target_site_id": "basavanagudi_bazaar",
+    "target_site_name": "Basavanagudi (Gandhi Bazaar)",
+    "target_coords": [
+      77.5739,
+      12.9422
+    ],
+    "distance_km": 1.08,
+    "arc_weight": 0.86,
+    "source_impi": 85.1
+  },
+  {
+    "source_h3": "8861892e97fffff",
+    "source_coords": [
+      77.6075004913409,
+      12.993405677152367
+    ],
+    "target_site_id": "frazer_town_coles",
+    "target_site_name": "Frazer Town (Coles Road & Mosque Rd)",
+    "target_coords": [
+      77.6133,
+      12.9968
+    ],
+    "distance_km": 0.73,
+    "arc_weight": 1.0,
+    "source_impi": 65.3
+  },
+  {
+    "source_h3": "88618925e1fffff",
+    "source_coords": [
+      77.62359570770249,
+      12.948450785504795
+    ],
+    "target_site_id": "koramangala_5th",
+    "target_site_name": "Koramangala 5th Block",
+    "target_coords": [
+      77.6245,
+      12.9352
+    ],
+    "distance_km": 1.47,
+    "arc_weight": 0.6,
+    "source_impi": 81.1
+  },
+  {
+    "source_h3": "8861892c9dfffff",
+    "source_coords": [
+      77.59140348904998,
+      13.038348291973255
+    ],
+    "target_site_id": "hebbal_outer_ring",
+    "target_site_name": "Hebbal (Outer Ring Rd & Kempapura)",
+    "target_coords": [
+      77.597,
+      13.0358
+    ],
+    "distance_km": 0.67,
+    "arc_weight": 1.0,
+    "source_impi": 73.2
+  },
+  {
+    "source_h3": "88618925edfffff",
+    "source_coords": [
+      77.63202303367275,
+      12.948419881094058
+    ],
+    "target_site_id": "koramangala_5th",
+    "target_site_name": "Koramangala 5th Block",
+    "target_coords": [
+      77.6245,
+      12.9352
+    ],
+    "distance_km": 1.68,
+    "arc_weight": 0.48,
+    "source_impi": 80.0
+  },
+  {
+    "source_h3": "88618925c7fffff",
+    "source_coords": [
+      77.61491644470627,
+      12.933515474586674
+    ],
+    "target_site_id": "koramangala_5th",
+    "target_site_name": "Koramangala 5th Block",
+    "target_coords": [
+      77.6245,
+      12.9352
+    ],
+    "distance_km": 1.05,
+    "arc_weight": 1.0,
+    "source_impi": 86.6
+  },
+  {
+    "source_h3": "8860145b3bfffff",
+    "source_coords": [
+      77.55286897286263,
+      13.001062428301958
+    ],
+    "target_site_id": "rajajinagar_10th",
+    "target_site_name": "Rajajinagar (Dr Rajkumar Rd & 10th Main)",
+    "target_coords": [
+      77.553,
+      12.9982
+    ],
+    "distance_km": 0.32,
+    "arc_weight": 1.0,
+    "source_impi": 83.4
+  },
+  {
+    "source_h3": "8860145b15fffff",
+    "source_coords": [
+      77.55695501086561,
+      12.993569455651906
+    ],
+    "target_site_id": "rajajinagar_10th",
+    "target_site_name": "Rajajinagar (Dr Rajkumar Rd & 10th Main)",
+    "target_coords": [
+      77.553,
+      12.9982
+    ],
+    "distance_km": 0.67,
+    "arc_weight": 1.0,
+    "source_impi": 71.5
+  },
+  {
+    "source_h3": "8861892555fffff",
+    "source_coords": [
+      77.66114227116428,
+      12.925854761108479
+    ],
+    "target_site_id": "bellandur_eco",
+    "target_site_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "target_coords": [
+      77.6762,
+      12.926
+    ],
+    "distance_km": 1.63,
+    "arc_weight": 0.45,
+    "source_impi": 75.3
+  },
+  {
+    "source_h3": "88618921d1fffff",
+    "source_coords": [
+      77.74625887408513,
+      12.970440444431347
+    ],
+    "target_site_id": "whitefield_itpl",
+    "target_site_name": "Whitefield (ITPL & ECC Rd)",
+    "target_coords": [
+      77.7499,
+      12.9698
+    ],
+    "distance_km": 0.4,
+    "arc_weight": 1.0,
+    "source_impi": 78.6
+  },
+  {
+    "source_h3": "8861892509fffff",
+    "source_coords": [
+      77.6654849539596,
+      12.933323385768597
+    ],
+    "target_site_id": "bellandur_eco",
+    "target_site_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "target_coords": [
+      77.6762,
+      12.926
+    ],
+    "distance_km": 1.42,
+    "arc_weight": 0.59,
+    "source_impi": 73.9
+  },
+  {
+    "source_h3": "8861892ed7fffff",
+    "source_coords": [
+      77.62410211436558,
+      12.97838316173088
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 1.98,
+    "arc_weight": 0.36,
+    "source_impi": 77.3
+  },
+  {
+    "source_h3": "88618924e3fffff",
+    "source_coords": [
+      77.58480343584444,
+      12.896212954754896
+    ],
+    "target_site_id": "jp_nagar_phase2",
+    "target_site_name": "JP Nagar 24th Main (Phase 2 & 7)",
+    "target_coords": [
+      77.5855,
+      12.9063
+    ],
+    "distance_km": 1.12,
+    "arc_weight": 0.85,
+    "source_impi": 70.6
+  },
+  {
+    "source_h3": "8861892eb1fffff",
+    "source_coords": [
+      77.61618035902134,
+      13.008342143162947
+    ],
+    "target_site_id": "frazer_town_coles",
+    "target_site_name": "Frazer Town (Coles Road & Mosque Rd)",
+    "target_coords": [
+      77.6133,
+      12.9968
+    ],
+    "distance_km": 1.32,
+    "arc_weight": 0.63,
+    "source_impi": 68.3
+  },
+  {
+    "source_h3": "8861892e8bfffff",
+    "source_coords": [
+      77.62844283689921,
+      12.985851522297358
+    ],
+    "target_site_id": "indiranagar_100ft",
+    "target_site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "target_coords": [
+      77.6412,
+      12.9719
+    ],
+    "distance_km": 2.07,
+    "arc_weight": 0.33,
+    "source_impi": 69.5
+  },
+  {
+    "source_h3": "8861892425fffff",
+    "source_coords": [
+      77.63994311677249,
+      12.918452318440698
+    ],
+    "target_site_id": "hsr_sector_2",
+    "target_site_name": "HSR Layout Sector 2 (27th Main)",
+    "target_coords": [
+      77.6389,
+      12.9116
+    ],
+    "distance_km": 0.77,
+    "arc_weight": 1.0,
+    "source_impi": 79.0
+  },
+  {
+    "source_h3": "8861892737fffff",
+    "source_coords": [
+      77.66931701276107,
+      12.910850636596502
+    ],
+    "target_site_id": "bellandur_eco",
+    "target_site_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "target_coords": [
+      77.6762,
+      12.926
+    ],
+    "distance_km": 1.84,
+    "arc_weight": 0.37,
+    "source_impi": 66.5
+  }
+]

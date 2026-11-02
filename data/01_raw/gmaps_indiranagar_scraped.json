@@ -1,0 +1,181 @@
+[
+  {
+    "brand": "Corner House",
+    "store_name": "Corner House",
+    "google_place_id": "ChIJcUFZIqcXrjsRgmngcu1QQVk",
+    "google_rating": 4.5,
+    "google_review_count": 10043,
+    "formatted_address": "3283, 8th - Cross Rd, Appareddipalya, Indiranagar, Bengaluru, Karnataka 560008",
+    "coordinates": {
+      "lat": 12.9701059,
+      "lng": 77.63744439999999
+    },
+    "categories": [
+      "Ice cream shop"
+    ],
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "is_client_store": false,
+    "footfall_metrics": {
+      "review_velocity_proxy": 10043,
+      "est_monthly_customers": 26111,
+      "est_daily_cups": 870
+    }
+  },
+  {
+    "brand": "Milano Ice Cream",
+    "store_name": "Milano Ice Cream",
+    "google_place_id": "ChIJAVx0xK8WrjsR9EyNzDWuBKk",
+    "google_rating": 4.6,
+    "google_review_count": 14292,
+    "formatted_address": "460, Shri Krishna Temple Rd, Indira Nagar 1st Stage, Stage 1, Indiranagar, Bengaluru, Karnataka 560038",
+    "coordinates": {
+      "lat": 12.979034299999999,
+      "lng": 77.6440204
+    },
+    "categories": [
+      "Ice cream shop",
+      "Cafeteria",
+      "Cake shop"
+    ],
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "is_client_store": false,
+    "footfall_metrics": {
+      "review_velocity_proxy": 14292,
+      "est_monthly_customers": 37159,
+      "est_daily_cups": 1238
+    }
+  },
+  {
+    "brand": "Stoner",
+    "store_name": "Stoner Ice-creams in Indiranagar - Pizzas in Indiranagar, Bangalore",
+    "google_place_id": "ChIJmfKV7KUWrjsRPLIaeB5UMCw",
+    "google_rating": 4.3,
+    "google_review_count": 5624,
+    "formatted_address": "No. 50, Zatakia Centre, 100 Feet Rd, Defence Colony, Indiranagar, Bengaluru, Karnataka 560038",
+    "coordinates": {
+      "lat": 12.976307,
+      "lng": 77.64123099999999
+    },
+    "categories": [
+      "Ice cream shop",
+      "Beverage Store",
+      "Coffee shop",
+      "Coffee store",
+      "Family restaurant",
+      "Fast food restaurant",
+      "Pizza restaurant",
+      "Restaurant",
+      "Sundae restaurant"
+    ],
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "is_client_store": false,
+    "footfall_metrics": {
+      "review_velocity_proxy": 5624,
+      "est_monthly_customers": 14622,
+      "est_daily_cups": 487
+    }
+  },
+  {
+    "brand": "Natural Ice Cream",
+    "store_name": "Naturals Ice Cream",
+    "google_place_id": "ChIJpzjRXMsXrjsRW1gEouNvCSM",
+    "google_rating": 4.5,
+    "google_review_count": 5488,
+    "formatted_address": "2984, 12th Main Rd, near SBI, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560008",
+    "coordinates": {
+      "lat": 12.970271799999999,
+      "lng": 77.6445109
+    },
+    "categories": [
+      "Ice cream shop",
+      "Sweet shop",
+      "Dessert restaurant",
+      "Dessert shop",
+      "Frozen dessert supplier",
+      "Indian sweets shop"
+    ],
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "is_client_store": false,
+    "footfall_metrics": {
+      "review_velocity_proxy": 5488,
+      "est_monthly_customers": 14268,
+      "est_daily_cups": 475
+    }
+  },
+  {
+    "brand": "Ibaco",
+    "store_name": "ibaco - Indira Nagar, Bengaluru",
+    "google_place_id": "ChIJuTE9saQWrjsRm8sFbSrE79c",
+    "google_rating": 4.2,
+    "google_review_count": 1686,
+    "formatted_address": "884, 5th Main Rd, opposite Garden City University, Binnamangala, Stage 1, Indiranagar, Bengaluru, Karnataka 560038",
+    "coordinates": {
+      "lat": 12.9801527,
+      "lng": 77.6372549
+    },
+    "categories": [
+      "Ice cream shop",
+      "Bakery and Cake Shop",
+      "Cake shop",
+      "Dessert shop"
+    ],
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "is_client_store": false,
+    "footfall_metrics": {
+      "review_velocity_proxy": 1686,
+      "est_monthly_customers": 4383,
+      "est_daily_cups": 146
+    }
+  },
+  {
+    "brand": "Apsara Ice Creams",
+    "store_name": "Apsara Ice Creams",
+    "google_place_id": "ChIJO0NIGLsWrjsRsPXPM1e9D0k",
+    "google_rating": 4.4,
+    "google_review_count": 1243,
+    "formatted_address": "100/1B, 2nd Main Road, 10th Cross Rd, Indira Nagar 1st Stage, Bengaluru, Karnataka 560038",
+    "coordinates": {
+      "lat": 12.9821754,
+      "lng": 77.6385749
+    },
+    "categories": [
+      "Ice cream shop",
+      "Dessert restaurant",
+      "Frozen dessert supplier",
+      "Sundae restaurant"
+    ],
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "is_client_store": false,
+    "footfall_metrics": {
+      "review_velocity_proxy": 1243,
+      "est_monthly_customers": 3231,
+      "est_daily_cups": 107
+    }
+  },
+  {
+    "brand": "Polar Bear",
+    "store_name": "Polar Bear Ice Cream Sundaes - Koramangala",
+    "google_place_id": "ChIJRTw1d0UUrjsRtc3wuKPXLU8",
+    "google_rating": 4.7,
+    "google_review_count": 4557,
+    "formatted_address": "99, 5th Cross Rd, KHB Colony, 6th Block, Koramangala, Bengaluru, Karnataka 560095",
+    "coordinates": {
+      "lat": 12.937038,
+      "lng": 77.6201086
+    },
+    "categories": [
+      "Ice cream shop",
+      "Sweet shop",
+      "Confectionery store",
+      "Sweets and dessert buffet",
+      "Frozen yogurt shop"
+    ],
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "is_client_store": true,
+    "footfall_metrics": {
+      "review_velocity_proxy": 4557,
+      "est_monthly_customers": 11848,
+      "est_daily_cups": 394
+    }
+  }
+]

@@ -1,0 +1,15 @@
+# Virtual environment
+.venv/
+__pycache__/
+*.pyc
+
+# Node modules
+frontend/node_modules/
+node_modules/
+
+# Mac OS files
+.DS_Store
+
+# Logs
+logs/
+*.log

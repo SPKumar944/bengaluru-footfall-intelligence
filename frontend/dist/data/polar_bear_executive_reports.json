@@ -1,0 +1,227 @@
+[
+  {
+    "rank": 1,
+    "region_id": "HUB_13",
+    "region_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "zone": "East Corridor",
+    "hub_type": "Mega IT Corridor & Floating Pop",
+    "coordinates": {
+      "lat": 12.926,
+      "lon": 77.6762
+    },
+    "scores": {
+      "demand_score": 87.4,
+      "footfall_score": 87.4,
+      "synergy_score": 80.1,
+      "white_space_gap": 69.5,
+      "overall_suitability": 83.3
+    },
+    "suitability_score": 83.3,
+    "white_space_gap": 69.5,
+    "min_dist_to_existing_pb_km": 6.05,
+    "cannibalization_risk": "0.0% (Zero Existing Polar Bear within 1.2km)",
+    "avg_commercial_rent_sqft": 280,
+    "projected_daily_cups": 5289,
+    "projected_monthly_revenue_lakhs": 277.67,
+    "payback_period_months": 14.4,
+    "catchment_metrics": {
+      "walk_5min": {
+        "population": 12822,
+        "households": 3287,
+        "daily_cups_share": 2009
+      },
+      "drive_10min": {
+        "population": 767206,
+        "households": 196719,
+        "annual_fb_spend_cr": 7480.26,
+        "daily_cups_share": 1798
+      },
+      "delivery_15min": {
+        "population": 1553904,
+        "households": 398436,
+        "daily_cups_share": 1480
+      }
+    },
+    "strategic_rationale": "Bellandur (Ecospace & Outer Ring Rd) represents an exceptional unmet expansion corridor for Polar Bear. With zero existing Polar Bear stores within 6.05 km, it captures 767,206 residents in its 10-minute drive zone with high tech purchasing power and an estimated \u20b9277.67 Lakhs/month in top-line dessert revenue."
+  },
+  {
+    "rank": 2,
+    "region_id": "HUB_06",
+    "region_name": "Whitefield (ITPL Main Rd & Inner Circle)",
+    "zone": "East",
+    "hub_type": "Mega IT Corridor & Gated Communities",
+    "coordinates": {
+      "lat": 12.9698,
+      "lon": 77.7499
+    },
+    "scores": {
+      "demand_score": 88.6,
+      "footfall_score": 87.7,
+      "synergy_score": 82.8,
+      "white_space_gap": 61.0,
+      "overall_suitability": 83.0
+    },
+    "suitability_score": 83.0,
+    "white_space_gap": 61.0,
+    "min_dist_to_existing_pb_km": 11.57,
+    "cannibalization_risk": "0.0% (Zero Existing Polar Bear within 1.2km)",
+    "avg_commercial_rent_sqft": 250,
+    "projected_daily_cups": 5470,
+    "projected_monthly_revenue_lakhs": 287.18,
+    "payback_period_months": 16.5,
+    "catchment_metrics": {
+      "walk_5min": {
+        "population": 12655,
+        "households": 3244,
+        "daily_cups_share": 2078
+      },
+      "drive_10min": {
+        "population": 795788,
+        "households": 204048,
+        "annual_fb_spend_cr": 7758.93,
+        "daily_cups_share": 1859
+      },
+      "delivery_15min": {
+        "population": 1608651,
+        "households": 412474,
+        "daily_cups_share": 1531
+      }
+    },
+    "strategic_rationale": "Whitefield (ITPL Main Rd & Inner Circle) represents an exceptional unmet expansion corridor for Polar Bear. With zero existing Polar Bear stores within 11.57 km, it captures 795,788 residents in its 10-minute drive zone with high tech purchasing power and an estimated \u20b9287.18 Lakhs/month in top-line dessert revenue."
+  },
+  {
+    "rank": 3,
+    "region_id": "HUB_04",
+    "region_name": "JP Nagar (24th Main Phase 2 & 7)",
+    "zone": "South",
+    "hub_type": "Affluent Residential & Casual Dining",
+    "coordinates": {
+      "lat": 12.9063,
+      "lon": 77.5855
+    },
+    "scores": {
+      "demand_score": 88.3,
+      "footfall_score": 89.1,
+      "synergy_score": 80.3,
+      "white_space_gap": 52.5,
+      "overall_suitability": 81.5
+    },
+    "suitability_score": 81.5,
+    "white_space_gap": 52.5,
+    "min_dist_to_existing_pb_km": 2.5,
+    "cannibalization_risk": "0.0% (Zero Existing Polar Bear within 1.2km)",
+    "avg_commercial_rent_sqft": 240,
+    "projected_daily_cups": 5277,
+    "projected_monthly_revenue_lakhs": 277.04,
+    "payback_period_months": 14.5,
+    "catchment_metrics": {
+      "walk_5min": {
+        "population": 12292,
+        "households": 3151,
+        "daily_cups_share": 2005
+      },
+      "drive_10min": {
+        "population": 783383,
+        "households": 200867,
+        "annual_fb_spend_cr": 7637.98,
+        "daily_cups_share": 1794
+      },
+      "delivery_15min": {
+        "population": 1539850,
+        "households": 394833,
+        "daily_cups_share": 1477
+      }
+    },
+    "strategic_rationale": "JP Nagar (24th Main Phase 2 & 7) represents an exceptional unmet expansion corridor for Polar Bear. With zero existing Polar Bear stores within 2.5 km, it captures 783,383 residents in its 10-minute drive zone with high tech purchasing power and an estimated \u20b9277.04 Lakhs/month in top-line dessert revenue."
+  },
+  {
+    "rank": 4,
+    "region_id": "HUB_05",
+    "region_name": "HSR Layout (27th Main Sector 1 & 2)",
+    "zone": "South-East",
+    "hub_type": "Startup Corridor & Young Family Cluster",
+    "coordinates": {
+      "lat": 12.9116,
+      "lon": 77.6389
+    },
+    "scores": {
+      "demand_score": 86.0,
+      "footfall_score": 82.9,
+      "synergy_score": 89.1,
+      "white_space_gap": 44.0,
+      "overall_suitability": 79.4
+    },
+    "suitability_score": 79.4,
+    "white_space_gap": 44.0,
+    "min_dist_to_existing_pb_km": 3.22,
+    "cannibalization_risk": "0.0% (Zero Existing Polar Bear within 1.2km)",
+    "avg_commercial_rent_sqft": 260,
+    "projected_daily_cups": 5340,
+    "projected_monthly_revenue_lakhs": 280.35,
+    "payback_period_months": 17.7,
+    "catchment_metrics": {
+      "walk_5min": {
+        "population": 12811,
+        "households": 3284,
+        "daily_cups_share": 2029
+      },
+      "drive_10min": {
+        "population": 798965,
+        "households": 204862,
+        "annual_fb_spend_cr": 7789.91,
+        "daily_cups_share": 1815
+      },
+      "delivery_15min": {
+        "population": 1551315,
+        "households": 397773,
+        "daily_cups_share": 1495
+      }
+    },
+    "strategic_rationale": "HSR Layout (27th Main Sector 1 & 2) represents an exceptional unmet expansion corridor for Polar Bear. With zero existing Polar Bear stores within 3.22 km, it captures 798,965 residents in its 10-minute drive zone with high tech purchasing power and an estimated \u20b9280.35 Lakhs/month in top-line dessert revenue."
+  },
+  {
+    "rank": 5,
+    "region_id": "HUB_11",
+    "region_name": "Electronic City Phase 1 (Neeladri Rd)",
+    "zone": "South Outer",
+    "hub_type": "Tech Hub & High-Density PG/Apartment",
+    "coordinates": {
+      "lat": 12.8452,
+      "lon": 77.6602
+    },
+    "scores": {
+      "demand_score": 89.8,
+      "footfall_score": 85.1,
+      "synergy_score": 78.8,
+      "white_space_gap": 44.0,
+      "overall_suitability": 79.3
+    },
+    "suitability_score": 79.3,
+    "white_space_gap": 44.0,
+    "min_dist_to_existing_pb_km": 10.81,
+    "cannibalization_risk": "0.0% (Zero Existing Polar Bear within 1.2km)",
+    "avg_commercial_rent_sqft": 180,
+    "projected_daily_cups": 5521,
+    "projected_monthly_revenue_lakhs": 289.85,
+    "payback_period_months": 16.7,
+    "catchment_metrics": {
+      "walk_5min": {
+        "population": 12975,
+        "households": 3326,
+        "daily_cups_share": 2097
+      },
+      "drive_10min": {
+        "population": 793610,
+        "households": 203489,
+        "annual_fb_spend_cr": 7737.7,
+        "daily_cups_share": 1877
+      },
+      "delivery_15min": {
+        "population": 1629926,
+        "households": 417929,
+        "daily_cups_share": 1545
+      }
+    },
+    "strategic_rationale": "Electronic City Phase 1 (Neeladri Rd) represents an exceptional unmet expansion corridor for Polar Bear. With zero existing Polar Bear stores within 10.81 km, it captures 793,610 residents in its 10-minute drive zone with high tech purchasing power and an estimated \u20b9289.85 Lakhs/month in top-line dessert revenue."
+  }
+]

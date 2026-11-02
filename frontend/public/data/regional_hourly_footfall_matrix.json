@@ -1,0 +1,2004 @@
+[
+  {
+    "region_id": "HUB_INDIRANAGAR",
+    "region_name": "Indiranagar (100ft & 12th Main)",
+    "zone": "East Central",
+    "annual_unique_visitors": 18450000,
+    "avg_daily_footfall": 50548,
+    "weekday_daily_footfall": 41800,
+    "weekend_daily_footfall": 72400,
+    "weekend_surge_pct": 73.2,
+    "dwell_time_mins_mean": 68.5,
+    "footfall_driver_composition": {
+      "f_and_b_dining": 39.5,
+      "metro_transit": 31.0,
+      "retail_shopping": 17.5,
+      "office_commercial": 12.0
+    },
+    "prime_dessert_window": {
+      "time_window": "19:00 - 23:00 (7 PM - 11 PM)",
+      "weekday_dessert_window_visitors": 12564,
+      "weekend_dessert_window_visitors": 24168,
+      "dessert_window_share_pct": 41.2,
+      "peak_hourly_visitor_velocity": 6617
+    },
+    "corridors": [
+      {
+        "name": "100 Feet Road (Main Strip)",
+        "length_km": 2.8,
+        "daily_footfall": 23400,
+        "f_and_b_density": "Very High"
+      },
+      {
+        "name": "12th Main Road (Boutique & Dessert)",
+        "length_km": 1.4,
+        "daily_footfall": 15800,
+        "f_and_b_density": "Extreme"
+      },
+      {
+        "name": "CMH Road (Metro & Retail)",
+        "length_km": 1.9,
+        "daily_footfall": 11348,
+        "f_and_b_density": "High"
+      }
+    ],
+    "hourly_dynamics": [
+      {
+        "hour": "00:00",
+        "hour_num": 0,
+        "label": "00:00",
+        "weekday_visitors": 303,
+        "weekend_visitors": 1009,
+        "dessert_propensity_pct": 5.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "01:00",
+        "hour_num": 1,
+        "label": "01:00",
+        "weekday_visitors": 151,
+        "weekend_visitors": 448,
+        "dessert_propensity_pct": 1.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "02:00",
+        "hour_num": 2,
+        "label": "02:00",
+        "weekday_visitors": 75,
+        "weekend_visitors": 224,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "03:00",
+        "hour_num": 3,
+        "label": "03:00",
+        "weekday_visitors": 37,
+        "weekend_visitors": 112,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "04:00",
+        "hour_num": 4,
+        "label": "04:00",
+        "weekday_visitors": 75,
+        "weekend_visitors": 112,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "05:00",
+        "hour_num": 5,
+        "label": "05:00",
+        "weekday_visitors": 189,
+        "weekend_visitors": 224,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "06:00",
+        "hour_num": 6,
+        "label": "06:00",
+        "weekday_visitors": 569,
+        "weekend_visitors": 560,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "07:00",
+        "hour_num": 7,
+        "label": "07:00",
+        "weekday_visitors": 1442,
+        "weekend_visitors": 1233,
+        "dessert_propensity_pct": 2.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "08:00",
+        "hour_num": 8,
+        "label": "08:00",
+        "weekday_visitors": 2847,
+        "weekend_visitors": 2243,
+        "dessert_propensity_pct": 5.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "09:00",
+        "hour_num": 9,
+        "label": "09:00",
+        "weekday_visitors": 3113,
+        "weekend_visitors": 2916,
+        "dessert_propensity_pct": 8.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "10:00",
+        "hour_num": 10,
+        "label": "10:00",
+        "weekday_visitors": 2088,
+        "weekend_visitors": 3476,
+        "dessert_propensity_pct": 12.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "11:00",
+        "hour_num": 11,
+        "label": "11:00",
+        "weekday_visitors": 1822,
+        "weekend_visitors": 3925,
+        "dessert_propensity_pct": 20.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "12:00",
+        "hour_num": 12,
+        "label": "12:00",
+        "weekday_visitors": 2581,
+        "weekend_visitors": 4598,
+        "dessert_propensity_pct": 45.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "13:00",
+        "hour_num": 13,
+        "label": "13:00",
+        "weekday_visitors": 2961,
+        "weekend_visitors": 5047,
+        "dessert_propensity_pct": 55.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "14:00",
+        "hour_num": 14,
+        "label": "14:00",
+        "weekday_visitors": 1974,
+        "weekend_visitors": 4149,
+        "dessert_propensity_pct": 40.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "15:00",
+        "hour_num": 15,
+        "label": "15:00",
+        "weekday_visitors": 1594,
+        "weekend_visitors": 3645,
+        "dessert_propensity_pct": 35.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "16:00",
+        "hour_num": 16,
+        "label": "16:00",
+        "weekday_visitors": 1822,
+        "weekend_visitors": 4037,
+        "dessert_propensity_pct": 50.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "17:00",
+        "hour_num": 17,
+        "label": "17:00",
+        "weekday_visitors": 2467,
+        "weekend_visitors": 4766,
+        "dessert_propensity_pct": 65.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "18:00",
+        "hour_num": 18,
+        "label": "18:00",
+        "weekday_visitors": 3113,
+        "weekend_visitors": 5495,
+        "dessert_propensity_pct": 82.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "19:00",
+        "hour_num": 19,
+        "label": "19:00",
+        "weekday_visitors": 3606,
+        "weekend_visitors": 6449,
+        "dessert_propensity_pct": 95.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "20:00",
+        "hour_num": 20,
+        "label": "20:00",
+        "weekday_visitors": 3492,
+        "weekend_visitors": 6617,
+        "dessert_propensity_pct": 100.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "21:00",
+        "hour_num": 21,
+        "label": "21:00",
+        "weekday_visitors": 2733,
+        "weekend_visitors": 5495,
+        "dessert_propensity_pct": 88.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "22:00",
+        "hour_num": 22,
+        "label": "22:00",
+        "weekday_visitors": 1822,
+        "weekend_visitors": 3645,
+        "dessert_propensity_pct": 60.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "23:00",
+        "hour_num": 23,
+        "label": "23:00",
+        "weekday_visitors": 911,
+        "weekend_visitors": 1962,
+        "dessert_propensity_pct": 25.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Late Night Spillover"
+      }
+    ]
+  },
+  {
+    "region_id": "HUB_KORAMANGALA",
+    "region_name": "Koramangala (5th & 6th Block)",
+    "zone": "South East",
+    "annual_unique_visitors": 19200000,
+    "avg_daily_footfall": 52602,
+    "weekday_daily_footfall": 44100,
+    "weekend_daily_footfall": 73800,
+    "weekend_surge_pct": 67.3,
+    "dwell_time_mins_mean": 74.0,
+    "footfall_driver_composition": {
+      "f_and_b_dining": 42.0,
+      "metro_transit": 18.0,
+      "retail_shopping": 21.0,
+      "office_commercial": 19.0
+    },
+    "prime_dessert_window": {
+      "time_window": "19:00 - 23:00 (7 PM - 11 PM)",
+      "weekday_dessert_window_visitors": 13256,
+      "weekend_dessert_window_visitors": 24635,
+      "dessert_window_share_pct": 43.5,
+      "peak_hourly_visitor_velocity": 6745
+    },
+    "corridors": [
+      {
+        "name": "80 Feet Road (Dining & Pubs)",
+        "length_km": 2.1,
+        "daily_footfall": 21800,
+        "f_and_b_density": "Extreme"
+      },
+      {
+        "name": "100 Feet Intermediate Ring Road",
+        "length_km": 2.5,
+        "daily_footfall": 16900,
+        "f_and_b_density": "High"
+      },
+      {
+        "name": "5th Block High Street",
+        "length_km": 1.2,
+        "daily_footfall": 13902,
+        "f_and_b_density": "Extreme"
+      }
+    ],
+    "hourly_dynamics": [
+      {
+        "hour": "00:00",
+        "hour_num": 0,
+        "label": "00:00",
+        "weekday_visitors": 320,
+        "weekend_visitors": 1028,
+        "dessert_propensity_pct": 5.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "01:00",
+        "hour_num": 1,
+        "label": "01:00",
+        "weekday_visitors": 160,
+        "weekend_visitors": 457,
+        "dessert_propensity_pct": 1.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "02:00",
+        "hour_num": 2,
+        "label": "02:00",
+        "weekday_visitors": 80,
+        "weekend_visitors": 228,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "03:00",
+        "hour_num": 3,
+        "label": "03:00",
+        "weekday_visitors": 40,
+        "weekend_visitors": 114,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "04:00",
+        "hour_num": 4,
+        "label": "04:00",
+        "weekday_visitors": 80,
+        "weekend_visitors": 114,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "05:00",
+        "hour_num": 5,
+        "label": "05:00",
+        "weekday_visitors": 200,
+        "weekend_visitors": 228,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "06:00",
+        "hour_num": 6,
+        "label": "06:00",
+        "weekday_visitors": 600,
+        "weekend_visitors": 571,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "07:00",
+        "hour_num": 7,
+        "label": "07:00",
+        "weekday_visitors": 1522,
+        "weekend_visitors": 1257,
+        "dessert_propensity_pct": 2.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "08:00",
+        "hour_num": 8,
+        "label": "08:00",
+        "weekday_visitors": 3004,
+        "weekend_visitors": 2286,
+        "dessert_propensity_pct": 5.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "09:00",
+        "hour_num": 9,
+        "label": "09:00",
+        "weekday_visitors": 3284,
+        "weekend_visitors": 2972,
+        "dessert_propensity_pct": 8.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "10:00",
+        "hour_num": 10,
+        "label": "10:00",
+        "weekday_visitors": 2202,
+        "weekend_visitors": 3544,
+        "dessert_propensity_pct": 12.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "11:00",
+        "hour_num": 11,
+        "label": "11:00",
+        "weekday_visitors": 1922,
+        "weekend_visitors": 4001,
+        "dessert_propensity_pct": 20.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "12:00",
+        "hour_num": 12,
+        "label": "12:00",
+        "weekday_visitors": 2723,
+        "weekend_visitors": 4687,
+        "dessert_propensity_pct": 45.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "13:00",
+        "hour_num": 13,
+        "label": "13:00",
+        "weekday_visitors": 3124,
+        "weekend_visitors": 5144,
+        "dessert_propensity_pct": 55.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "14:00",
+        "hour_num": 14,
+        "label": "14:00",
+        "weekday_visitors": 2082,
+        "weekend_visitors": 4230,
+        "dessert_propensity_pct": 40.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "15:00",
+        "hour_num": 15,
+        "label": "15:00",
+        "weekday_visitors": 1682,
+        "weekend_visitors": 3715,
+        "dessert_propensity_pct": 35.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "16:00",
+        "hour_num": 16,
+        "label": "16:00",
+        "weekday_visitors": 1922,
+        "weekend_visitors": 4115,
+        "dessert_propensity_pct": 50.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "17:00",
+        "hour_num": 17,
+        "label": "17:00",
+        "weekday_visitors": 2603,
+        "weekend_visitors": 4859,
+        "dessert_propensity_pct": 65.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "18:00",
+        "hour_num": 18,
+        "label": "18:00",
+        "weekday_visitors": 3284,
+        "weekend_visitors": 5602,
+        "dessert_propensity_pct": 82.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "19:00",
+        "hour_num": 19,
+        "label": "19:00",
+        "weekday_visitors": 3805,
+        "weekend_visitors": 6573,
+        "dessert_propensity_pct": 95.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "20:00",
+        "hour_num": 20,
+        "label": "20:00",
+        "weekday_visitors": 3685,
+        "weekend_visitors": 6745,
+        "dessert_propensity_pct": 100.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "21:00",
+        "hour_num": 21,
+        "label": "21:00",
+        "weekday_visitors": 2883,
+        "weekend_visitors": 5602,
+        "dessert_propensity_pct": 88.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "22:00",
+        "hour_num": 22,
+        "label": "22:00",
+        "weekday_visitors": 1922,
+        "weekend_visitors": 3715,
+        "dessert_propensity_pct": 60.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "23:00",
+        "hour_num": 23,
+        "label": "23:00",
+        "weekday_visitors": 961,
+        "weekend_visitors": 2000,
+        "dessert_propensity_pct": 25.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Late Night Spillover"
+      }
+    ]
+  },
+  {
+    "region_id": "HUB_WHITEFIELD",
+    "region_name": "Whitefield (ITPL & Borewell Rd)",
+    "zone": "East Outer",
+    "annual_unique_visitors": 24800000,
+    "avg_daily_footfall": 67945,
+    "weekday_daily_footfall": 71200,
+    "weekend_daily_footfall": 59800,
+    "weekend_surge_pct": -16.0,
+    "dwell_time_mins_mean": 55.0,
+    "footfall_driver_composition": {
+      "f_and_b_dining": 34.0,
+      "metro_transit": 26.0,
+      "retail_shopping": 15.0,
+      "office_commercial": 25.0
+    },
+    "prime_dessert_window": {
+      "time_window": "19:00 - 23:00 (7 PM - 11 PM)",
+      "weekday_dessert_window_visitors": 21404,
+      "weekend_dessert_window_visitors": 19961,
+      "dessert_window_share_pct": 38.0,
+      "peak_hourly_visitor_velocity": 5465
+    },
+    "corridors": [
+      {
+        "name": "ITPL Main Road",
+        "length_km": 3.6,
+        "daily_footfall": 32100,
+        "f_and_b_density": "High"
+      },
+      {
+        "name": "Borewell Road Strip",
+        "length_km": 1.8,
+        "daily_footfall": 18445,
+        "f_and_b_density": "Very High"
+      },
+      {
+        "name": "Channasandra Metro Node",
+        "length_km": 1.5,
+        "daily_footfall": 17400,
+        "f_and_b_density": "Moderate"
+      }
+    ],
+    "hourly_dynamics": [
+      {
+        "hour": "00:00",
+        "hour_num": 0,
+        "label": "00:00",
+        "weekday_visitors": 517,
+        "weekend_visitors": 833,
+        "dessert_propensity_pct": 5.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "01:00",
+        "hour_num": 1,
+        "label": "01:00",
+        "weekday_visitors": 258,
+        "weekend_visitors": 370,
+        "dessert_propensity_pct": 1.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "02:00",
+        "hour_num": 2,
+        "label": "02:00",
+        "weekday_visitors": 129,
+        "weekend_visitors": 185,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "03:00",
+        "hour_num": 3,
+        "label": "03:00",
+        "weekday_visitors": 64,
+        "weekend_visitors": 92,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "04:00",
+        "hour_num": 4,
+        "label": "04:00",
+        "weekday_visitors": 129,
+        "weekend_visitors": 92,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "05:00",
+        "hour_num": 5,
+        "label": "05:00",
+        "weekday_visitors": 323,
+        "weekend_visitors": 185,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "06:00",
+        "hour_num": 6,
+        "label": "06:00",
+        "weekday_visitors": 970,
+        "weekend_visitors": 463,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "07:00",
+        "hour_num": 7,
+        "label": "07:00",
+        "weekday_visitors": 2457,
+        "weekend_visitors": 1019,
+        "dessert_propensity_pct": 2.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "08:00",
+        "hour_num": 8,
+        "label": "08:00",
+        "weekday_visitors": 4850,
+        "weekend_visitors": 1852,
+        "dessert_propensity_pct": 5.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "09:00",
+        "hour_num": 9,
+        "label": "09:00",
+        "weekday_visitors": 5302,
+        "weekend_visitors": 2408,
+        "dessert_propensity_pct": 8.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "10:00",
+        "hour_num": 10,
+        "label": "10:00",
+        "weekday_visitors": 3556,
+        "weekend_visitors": 2871,
+        "dessert_propensity_pct": 12.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "11:00",
+        "hour_num": 11,
+        "label": "11:00",
+        "weekday_visitors": 3104,
+        "weekend_visitors": 3242,
+        "dessert_propensity_pct": 20.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "12:00",
+        "hour_num": 12,
+        "label": "12:00",
+        "weekday_visitors": 4397,
+        "weekend_visitors": 3798,
+        "dessert_propensity_pct": 45.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "13:00",
+        "hour_num": 13,
+        "label": "13:00",
+        "weekday_visitors": 5044,
+        "weekend_visitors": 4168,
+        "dessert_propensity_pct": 55.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "14:00",
+        "hour_num": 14,
+        "label": "14:00",
+        "weekday_visitors": 3362,
+        "weekend_visitors": 3427,
+        "dessert_propensity_pct": 40.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "15:00",
+        "hour_num": 15,
+        "label": "15:00",
+        "weekday_visitors": 2716,
+        "weekend_visitors": 3010,
+        "dessert_propensity_pct": 35.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "16:00",
+        "hour_num": 16,
+        "label": "16:00",
+        "weekday_visitors": 3104,
+        "weekend_visitors": 3335,
+        "dessert_propensity_pct": 50.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "17:00",
+        "hour_num": 17,
+        "label": "17:00",
+        "weekday_visitors": 4203,
+        "weekend_visitors": 3937,
+        "dessert_propensity_pct": 65.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "18:00",
+        "hour_num": 18,
+        "label": "18:00",
+        "weekday_visitors": 5302,
+        "weekend_visitors": 4539,
+        "dessert_propensity_pct": 82.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "19:00",
+        "hour_num": 19,
+        "label": "19:00",
+        "weekday_visitors": 6143,
+        "weekend_visitors": 5326,
+        "dessert_propensity_pct": 95.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "20:00",
+        "hour_num": 20,
+        "label": "20:00",
+        "weekday_visitors": 5949,
+        "weekend_visitors": 5465,
+        "dessert_propensity_pct": 100.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "21:00",
+        "hour_num": 21,
+        "label": "21:00",
+        "weekday_visitors": 4656,
+        "weekend_visitors": 4539,
+        "dessert_propensity_pct": 88.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "22:00",
+        "hour_num": 22,
+        "label": "22:00",
+        "weekday_visitors": 3104,
+        "weekend_visitors": 3010,
+        "dessert_propensity_pct": 60.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "23:00",
+        "hour_num": 23,
+        "label": "23:00",
+        "weekday_visitors": 1552,
+        "weekend_visitors": 1621,
+        "dessert_propensity_pct": 25.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Late Night Spillover"
+      }
+    ]
+  },
+  {
+    "region_id": "HUB_BELLANDUR",
+    "region_name": "Bellandur (Outer Ring Road Corridor)",
+    "zone": "South East",
+    "annual_unique_visitors": 23500000,
+    "avg_daily_footfall": 64383,
+    "weekday_daily_footfall": 68900,
+    "weekend_daily_footfall": 53100,
+    "weekend_surge_pct": -22.9,
+    "dwell_time_mins_mean": 52.0,
+    "footfall_driver_composition": {
+      "f_and_b_dining": 36.5,
+      "metro_transit": 22.0,
+      "retail_shopping": 14.5,
+      "office_commercial": 27.0
+    },
+    "prime_dessert_window": {
+      "time_window": "19:00 - 23:00 (7 PM - 11 PM)",
+      "weekday_dessert_window_visitors": 20711,
+      "weekend_dessert_window_visitors": 17725,
+      "dessert_window_share_pct": 37.5,
+      "peak_hourly_visitor_velocity": 4853
+    },
+    "corridors": [
+      {
+        "name": "Outer Ring Road Tech Strip",
+        "length_km": 3.8,
+        "daily_footfall": 34500,
+        "f_and_b_density": "High"
+      },
+      {
+        "name": "Green Glen Layout Strip",
+        "length_km": 1.6,
+        "daily_footfall": 16883,
+        "f_and_b_density": "Extreme"
+      },
+      {
+        "name": "Ecospace / Pritech Access",
+        "length_km": 1.4,
+        "daily_footfall": 13000,
+        "f_and_b_density": "High"
+      }
+    ],
+    "hourly_dynamics": [
+      {
+        "hour": "00:00",
+        "hour_num": 0,
+        "label": "00:00",
+        "weekday_visitors": 500,
+        "weekend_visitors": 740,
+        "dessert_propensity_pct": 5.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "01:00",
+        "hour_num": 1,
+        "label": "01:00",
+        "weekday_visitors": 250,
+        "weekend_visitors": 329,
+        "dessert_propensity_pct": 1.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "02:00",
+        "hour_num": 2,
+        "label": "02:00",
+        "weekday_visitors": 125,
+        "weekend_visitors": 164,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "03:00",
+        "hour_num": 3,
+        "label": "03:00",
+        "weekday_visitors": 62,
+        "weekend_visitors": 82,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "04:00",
+        "hour_num": 4,
+        "label": "04:00",
+        "weekday_visitors": 125,
+        "weekend_visitors": 82,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "05:00",
+        "hour_num": 5,
+        "label": "05:00",
+        "weekday_visitors": 312,
+        "weekend_visitors": 164,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "06:00",
+        "hour_num": 6,
+        "label": "06:00",
+        "weekday_visitors": 938,
+        "weekend_visitors": 411,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "07:00",
+        "hour_num": 7,
+        "label": "07:00",
+        "weekday_visitors": 2378,
+        "weekend_visitors": 904,
+        "dessert_propensity_pct": 2.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "08:00",
+        "hour_num": 8,
+        "label": "08:00",
+        "weekday_visitors": 4693,
+        "weekend_visitors": 1645,
+        "dessert_propensity_pct": 5.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "09:00",
+        "hour_num": 9,
+        "label": "09:00",
+        "weekday_visitors": 5131,
+        "weekend_visitors": 2138,
+        "dessert_propensity_pct": 8.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "10:00",
+        "hour_num": 10,
+        "label": "10:00",
+        "weekday_visitors": 3441,
+        "weekend_visitors": 2550,
+        "dessert_propensity_pct": 12.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "11:00",
+        "hour_num": 11,
+        "label": "11:00",
+        "weekday_visitors": 3003,
+        "weekend_visitors": 2879,
+        "dessert_propensity_pct": 20.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "12:00",
+        "hour_num": 12,
+        "label": "12:00",
+        "weekday_visitors": 4255,
+        "weekend_visitors": 3372,
+        "dessert_propensity_pct": 45.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "13:00",
+        "hour_num": 13,
+        "label": "13:00",
+        "weekday_visitors": 4881,
+        "weekend_visitors": 3701,
+        "dessert_propensity_pct": 55.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "14:00",
+        "hour_num": 14,
+        "label": "14:00",
+        "weekday_visitors": 3254,
+        "weekend_visitors": 3043,
+        "dessert_propensity_pct": 40.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "15:00",
+        "hour_num": 15,
+        "label": "15:00",
+        "weekday_visitors": 2628,
+        "weekend_visitors": 2673,
+        "dessert_propensity_pct": 35.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "16:00",
+        "hour_num": 16,
+        "label": "16:00",
+        "weekday_visitors": 3003,
+        "weekend_visitors": 2961,
+        "dessert_propensity_pct": 50.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "17:00",
+        "hour_num": 17,
+        "label": "17:00",
+        "weekday_visitors": 4067,
+        "weekend_visitors": 3496,
+        "dessert_propensity_pct": 65.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "18:00",
+        "hour_num": 18,
+        "label": "18:00",
+        "weekday_visitors": 5131,
+        "weekend_visitors": 4030,
+        "dessert_propensity_pct": 82.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "19:00",
+        "hour_num": 19,
+        "label": "19:00",
+        "weekday_visitors": 5945,
+        "weekend_visitors": 4730,
+        "dessert_propensity_pct": 95.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "20:00",
+        "hour_num": 20,
+        "label": "20:00",
+        "weekday_visitors": 5757,
+        "weekend_visitors": 4853,
+        "dessert_propensity_pct": 100.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "21:00",
+        "hour_num": 21,
+        "label": "21:00",
+        "weekday_visitors": 4505,
+        "weekend_visitors": 4030,
+        "dessert_propensity_pct": 88.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "22:00",
+        "hour_num": 22,
+        "label": "22:00",
+        "weekday_visitors": 3003,
+        "weekend_visitors": 2673,
+        "dessert_propensity_pct": 60.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "23:00",
+        "hour_num": 23,
+        "label": "23:00",
+        "weekday_visitors": 1501,
+        "weekend_visitors": 1439,
+        "dessert_propensity_pct": 25.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Late Night Spillover"
+      }
+    ]
+  },
+  {
+    "region_id": "HUB_HSR_LAYOUT",
+    "region_name": "HSR Layout (27th Main & 19th Main)",
+    "zone": "South",
+    "annual_unique_visitors": 17900000,
+    "avg_daily_footfall": 49041,
+    "weekday_daily_footfall": 40500,
+    "weekend_daily_footfall": 70400,
+    "weekend_surge_pct": 73.8,
+    "dwell_time_mins_mean": 64.0,
+    "footfall_driver_composition": {
+      "f_and_b_dining": 41.0,
+      "metro_transit": 14.0,
+      "retail_shopping": 23.0,
+      "office_commercial": 22.0
+    },
+    "prime_dessert_window": {
+      "time_window": "19:00 - 23:00 (7 PM - 11 PM)",
+      "weekday_dessert_window_visitors": 12173,
+      "weekend_dessert_window_visitors": 23501,
+      "dessert_window_share_pct": 42.8,
+      "peak_hourly_visitor_velocity": 6434
+    },
+    "corridors": [
+      {
+        "name": "27th Main High Street",
+        "length_km": 2.2,
+        "daily_footfall": 24200,
+        "f_and_b_density": "Extreme"
+      },
+      {
+        "name": "19th Main Commercial Strip",
+        "length_km": 1.7,
+        "daily_footfall": 14341,
+        "f_and_b_density": "Very High"
+      },
+      {
+        "name": "Agara Lake Promenade Access",
+        "length_km": 1.1,
+        "daily_footfall": 10500,
+        "f_and_b_density": "Moderate"
+      }
+    ],
+    "hourly_dynamics": [
+      {
+        "hour": "00:00",
+        "hour_num": 0,
+        "label": "00:00",
+        "weekday_visitors": 294,
+        "weekend_visitors": 981,
+        "dessert_propensity_pct": 5.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "01:00",
+        "hour_num": 1,
+        "label": "01:00",
+        "weekday_visitors": 147,
+        "weekend_visitors": 436,
+        "dessert_propensity_pct": 1.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "02:00",
+        "hour_num": 2,
+        "label": "02:00",
+        "weekday_visitors": 73,
+        "weekend_visitors": 218,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "03:00",
+        "hour_num": 3,
+        "label": "03:00",
+        "weekday_visitors": 36,
+        "weekend_visitors": 109,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "04:00",
+        "hour_num": 4,
+        "label": "04:00",
+        "weekday_visitors": 73,
+        "weekend_visitors": 109,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "05:00",
+        "hour_num": 5,
+        "label": "05:00",
+        "weekday_visitors": 183,
+        "weekend_visitors": 218,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "06:00",
+        "hour_num": 6,
+        "label": "06:00",
+        "weekday_visitors": 551,
+        "weekend_visitors": 545,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "07:00",
+        "hour_num": 7,
+        "label": "07:00",
+        "weekday_visitors": 1397,
+        "weekend_visitors": 1199,
+        "dessert_propensity_pct": 2.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "08:00",
+        "hour_num": 8,
+        "label": "08:00",
+        "weekday_visitors": 2758,
+        "weekend_visitors": 2181,
+        "dessert_propensity_pct": 5.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "09:00",
+        "hour_num": 9,
+        "label": "09:00",
+        "weekday_visitors": 3016,
+        "weekend_visitors": 2835,
+        "dessert_propensity_pct": 8.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "10:00",
+        "hour_num": 10,
+        "label": "10:00",
+        "weekday_visitors": 2023,
+        "weekend_visitors": 3380,
+        "dessert_propensity_pct": 12.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "11:00",
+        "hour_num": 11,
+        "label": "11:00",
+        "weekday_visitors": 1765,
+        "weekend_visitors": 3817,
+        "dessert_propensity_pct": 20.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "12:00",
+        "hour_num": 12,
+        "label": "12:00",
+        "weekday_visitors": 2501,
+        "weekend_visitors": 4471,
+        "dessert_propensity_pct": 45.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "13:00",
+        "hour_num": 13,
+        "label": "13:00",
+        "weekday_visitors": 2869,
+        "weekend_visitors": 4907,
+        "dessert_propensity_pct": 55.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "14:00",
+        "hour_num": 14,
+        "label": "14:00",
+        "weekday_visitors": 1912,
+        "weekend_visitors": 4035,
+        "dessert_propensity_pct": 40.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "15:00",
+        "hour_num": 15,
+        "label": "15:00",
+        "weekday_visitors": 1544,
+        "weekend_visitors": 3544,
+        "dessert_propensity_pct": 35.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "16:00",
+        "hour_num": 16,
+        "label": "16:00",
+        "weekday_visitors": 1765,
+        "weekend_visitors": 3926,
+        "dessert_propensity_pct": 50.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "17:00",
+        "hour_num": 17,
+        "label": "17:00",
+        "weekday_visitors": 2391,
+        "weekend_visitors": 4635,
+        "dessert_propensity_pct": 65.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "18:00",
+        "hour_num": 18,
+        "label": "18:00",
+        "weekday_visitors": 3016,
+        "weekend_visitors": 5344,
+        "dessert_propensity_pct": 82.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "19:00",
+        "hour_num": 19,
+        "label": "19:00",
+        "weekday_visitors": 3494,
+        "weekend_visitors": 6271,
+        "dessert_propensity_pct": 95.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "20:00",
+        "hour_num": 20,
+        "label": "20:00",
+        "weekday_visitors": 3384,
+        "weekend_visitors": 6434,
+        "dessert_propensity_pct": 100.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "21:00",
+        "hour_num": 21,
+        "label": "21:00",
+        "weekday_visitors": 2648,
+        "weekend_visitors": 5344,
+        "dessert_propensity_pct": 88.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "22:00",
+        "hour_num": 22,
+        "label": "22:00",
+        "weekday_visitors": 1765,
+        "weekend_visitors": 3544,
+        "dessert_propensity_pct": 60.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "23:00",
+        "hour_num": 23,
+        "label": "23:00",
+        "weekday_visitors": 882,
+        "weekend_visitors": 1908,
+        "dessert_propensity_pct": 25.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Late Night Spillover"
+      }
+    ]
+  },
+  {
+    "region_id": "HUB_JP_NAGAR",
+    "region_name": "JP Nagar (Phase 2 & 3 Dining Hub)",
+    "zone": "South",
+    "annual_unique_visitors": 16100000,
+    "avg_daily_footfall": 44109,
+    "weekday_daily_footfall": 37200,
+    "weekend_daily_footfall": 61400,
+    "weekend_surge_pct": 65.1,
+    "dwell_time_mins_mean": 61.0,
+    "footfall_driver_composition": {
+      "f_and_b_dining": 39.0,
+      "metro_transit": 20.0,
+      "retail_shopping": 26.0,
+      "office_commercial": 15.0
+    },
+    "prime_dessert_window": {
+      "time_window": "19:00 - 23:00 (7 PM - 11 PM)",
+      "weekday_dessert_window_visitors": 11180,
+      "weekend_dessert_window_visitors": 20496,
+      "dessert_window_share_pct": 40.5,
+      "peak_hourly_visitor_velocity": 5612
+    },
+    "corridors": [
+      {
+        "name": "24th Main Road Strip",
+        "length_km": 2.0,
+        "daily_footfall": 20109,
+        "f_and_b_density": "Extreme"
+      },
+      {
+        "name": "15th Cross Commercial Node",
+        "length_km": 1.5,
+        "daily_footfall": 13800,
+        "f_and_b_density": "Very High"
+      },
+      {
+        "name": "Ranga Shankara Cultural Hub",
+        "length_km": 0.9,
+        "daily_footfall": 10200,
+        "f_and_b_density": "High"
+      }
+    ],
+    "hourly_dynamics": [
+      {
+        "hour": "00:00",
+        "hour_num": 0,
+        "label": "00:00",
+        "weekday_visitors": 270,
+        "weekend_visitors": 856,
+        "dessert_propensity_pct": 5.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "01:00",
+        "hour_num": 1,
+        "label": "01:00",
+        "weekday_visitors": 135,
+        "weekend_visitors": 380,
+        "dessert_propensity_pct": 1.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "02:00",
+        "hour_num": 2,
+        "label": "02:00",
+        "weekday_visitors": 67,
+        "weekend_visitors": 190,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "03:00",
+        "hour_num": 3,
+        "label": "03:00",
+        "weekday_visitors": 33,
+        "weekend_visitors": 95,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "04:00",
+        "hour_num": 4,
+        "label": "04:00",
+        "weekday_visitors": 67,
+        "weekend_visitors": 95,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "05:00",
+        "hour_num": 5,
+        "label": "05:00",
+        "weekday_visitors": 168,
+        "weekend_visitors": 190,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "06:00",
+        "hour_num": 6,
+        "label": "06:00",
+        "weekday_visitors": 506,
+        "weekend_visitors": 475,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "07:00",
+        "hour_num": 7,
+        "label": "07:00",
+        "weekday_visitors": 1283,
+        "weekend_visitors": 1046,
+        "dessert_propensity_pct": 2.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "08:00",
+        "hour_num": 8,
+        "label": "08:00",
+        "weekday_visitors": 2534,
+        "weekend_visitors": 1902,
+        "dessert_propensity_pct": 5.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "09:00",
+        "hour_num": 9,
+        "label": "09:00",
+        "weekday_visitors": 2770,
+        "weekend_visitors": 2473,
+        "dessert_propensity_pct": 8.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "10:00",
+        "hour_num": 10,
+        "label": "10:00",
+        "weekday_visitors": 1858,
+        "weekend_visitors": 2948,
+        "dessert_propensity_pct": 12.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "11:00",
+        "hour_num": 11,
+        "label": "11:00",
+        "weekday_visitors": 1621,
+        "weekend_visitors": 3329,
+        "dessert_propensity_pct": 20.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "12:00",
+        "hour_num": 12,
+        "label": "12:00",
+        "weekday_visitors": 2297,
+        "weekend_visitors": 3899,
+        "dessert_propensity_pct": 45.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "13:00",
+        "hour_num": 13,
+        "label": "13:00",
+        "weekday_visitors": 2635,
+        "weekend_visitors": 4280,
+        "dessert_propensity_pct": 55.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "14:00",
+        "hour_num": 14,
+        "label": "14:00",
+        "weekday_visitors": 1756,
+        "weekend_visitors": 3519,
+        "dessert_propensity_pct": 40.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "15:00",
+        "hour_num": 15,
+        "label": "15:00",
+        "weekday_visitors": 1419,
+        "weekend_visitors": 3091,
+        "dessert_propensity_pct": 35.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "16:00",
+        "hour_num": 16,
+        "label": "16:00",
+        "weekday_visitors": 1621,
+        "weekend_visitors": 3424,
+        "dessert_propensity_pct": 50.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "17:00",
+        "hour_num": 17,
+        "label": "17:00",
+        "weekday_visitors": 2196,
+        "weekend_visitors": 4042,
+        "dessert_propensity_pct": 65.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "18:00",
+        "hour_num": 18,
+        "label": "18:00",
+        "weekday_visitors": 2770,
+        "weekend_visitors": 4660,
+        "dessert_propensity_pct": 82.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "19:00",
+        "hour_num": 19,
+        "label": "19:00",
+        "weekday_visitors": 3209,
+        "weekend_visitors": 5469,
+        "dessert_propensity_pct": 95.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "20:00",
+        "hour_num": 20,
+        "label": "20:00",
+        "weekday_visitors": 3108,
+        "weekend_visitors": 5612,
+        "dessert_propensity_pct": 100.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "21:00",
+        "hour_num": 21,
+        "label": "21:00",
+        "weekday_visitors": 2432,
+        "weekend_visitors": 4660,
+        "dessert_propensity_pct": 88.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "22:00",
+        "hour_num": 22,
+        "label": "22:00",
+        "weekday_visitors": 1621,
+        "weekend_visitors": 3091,
+        "dessert_propensity_pct": 60.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "23:00",
+        "hour_num": 23,
+        "label": "23:00",
+        "weekday_visitors": 810,
+        "weekend_visitors": 1664,
+        "dessert_propensity_pct": 25.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Late Night Spillover"
+      }
+    ]
+  },
+  {
+    "region_id": "HUB_JAYANAGAR",
+    "region_name": "Jayanagar (4th Block Complex)",
+    "zone": "South Central",
+    "annual_unique_visitors": 16800000,
+    "avg_daily_footfall": 46027,
+    "weekday_daily_footfall": 41000,
+    "weekend_daily_footfall": 58600,
+    "weekend_surge_pct": 42.9,
+    "dwell_time_mins_mean": 66.0,
+    "footfall_driver_composition": {
+      "f_and_b_dining": 35.0,
+      "metro_transit": 28.0,
+      "retail_shopping": 27.0,
+      "office_commercial": 10.0
+    },
+    "prime_dessert_window": {
+      "time_window": "19:00 - 23:00 (7 PM - 11 PM)",
+      "weekday_dessert_window_visitors": 12323,
+      "weekend_dessert_window_visitors": 19561,
+      "dessert_window_share_pct": 39.0,
+      "peak_hourly_visitor_velocity": 5356
+    },
+    "corridors": [
+      {
+        "name": "4th Block Shopping Complex",
+        "length_km": 1.2,
+        "daily_footfall": 22100,
+        "f_and_b_density": "High"
+      },
+      {
+        "name": "11th Main / 30th Cross Dining",
+        "length_km": 1.6,
+        "daily_footfall": 14927,
+        "f_and_b_density": "Very High"
+      },
+      {
+        "name": "Jayanagar Metro Plaza",
+        "length_km": 0.8,
+        "daily_footfall": 9000,
+        "f_and_b_density": "Moderate"
+      }
+    ],
+    "hourly_dynamics": [
+      {
+        "hour": "00:00",
+        "hour_num": 0,
+        "label": "00:00",
+        "weekday_visitors": 297,
+        "weekend_visitors": 817,
+        "dessert_propensity_pct": 5.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "01:00",
+        "hour_num": 1,
+        "label": "01:00",
+        "weekday_visitors": 148,
+        "weekend_visitors": 363,
+        "dessert_propensity_pct": 1.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "02:00",
+        "hour_num": 2,
+        "label": "02:00",
+        "weekday_visitors": 74,
+        "weekend_visitors": 181,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "03:00",
+        "hour_num": 3,
+        "label": "03:00",
+        "weekday_visitors": 37,
+        "weekend_visitors": 90,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "04:00",
+        "hour_num": 4,
+        "label": "04:00",
+        "weekday_visitors": 74,
+        "weekend_visitors": 90,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "05:00",
+        "hour_num": 5,
+        "label": "05:00",
+        "weekday_visitors": 186,
+        "weekend_visitors": 181,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Late Night / Closed"
+      },
+      {
+        "hour": "06:00",
+        "hour_num": 6,
+        "label": "06:00",
+        "weekday_visitors": 558,
+        "weekend_visitors": 453,
+        "dessert_propensity_pct": 0.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "07:00",
+        "hour_num": 7,
+        "label": "07:00",
+        "weekday_visitors": 1415,
+        "weekend_visitors": 998,
+        "dessert_propensity_pct": 2.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "08:00",
+        "hour_num": 8,
+        "label": "08:00",
+        "weekday_visitors": 2792,
+        "weekend_visitors": 1815,
+        "dessert_propensity_pct": 5.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "09:00",
+        "hour_num": 9,
+        "label": "09:00",
+        "weekday_visitors": 3053,
+        "weekend_visitors": 2360,
+        "dessert_propensity_pct": 8.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "10:00",
+        "hour_num": 10,
+        "label": "10:00",
+        "weekday_visitors": 2048,
+        "weekend_visitors": 2814,
+        "dessert_propensity_pct": 12.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "11:00",
+        "hour_num": 11,
+        "label": "11:00",
+        "weekday_visitors": 1787,
+        "weekend_visitors": 3177,
+        "dessert_propensity_pct": 20.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Morning Transit & Office"
+      },
+      {
+        "hour": "12:00",
+        "hour_num": 12,
+        "label": "12:00",
+        "weekday_visitors": 2532,
+        "weekend_visitors": 3722,
+        "dessert_propensity_pct": 45.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "13:00",
+        "hour_num": 13,
+        "label": "13:00",
+        "weekday_visitors": 2904,
+        "weekend_visitors": 4085,
+        "dessert_propensity_pct": 55.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "14:00",
+        "hour_num": 14,
+        "label": "14:00",
+        "weekday_visitors": 1936,
+        "weekend_visitors": 3358,
+        "dessert_propensity_pct": 40.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "15:00",
+        "hour_num": 15,
+        "label": "15:00",
+        "weekday_visitors": 1564,
+        "weekend_visitors": 2950,
+        "dessert_propensity_pct": 35.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Lunch & Afternoon"
+      },
+      {
+        "hour": "16:00",
+        "hour_num": 16,
+        "label": "16:00",
+        "weekday_visitors": 1787,
+        "weekend_visitors": 3268,
+        "dessert_propensity_pct": 50.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "17:00",
+        "hour_num": 17,
+        "label": "17:00",
+        "weekday_visitors": 2420,
+        "weekend_visitors": 3858,
+        "dessert_propensity_pct": 65.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "18:00",
+        "hour_num": 18,
+        "label": "18:00",
+        "weekday_visitors": 3053,
+        "weekend_visitors": 4448,
+        "dessert_propensity_pct": 82.0,
+        "is_peak_dessert_window": false,
+        "activity_phase": "Evening High-Street Retail"
+      },
+      {
+        "hour": "19:00",
+        "hour_num": 19,
+        "label": "19:00",
+        "weekday_visitors": 3537,
+        "weekend_visitors": 5219,
+        "dessert_propensity_pct": 95.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "20:00",
+        "hour_num": 20,
+        "label": "20:00",
+        "weekday_visitors": 3425,
+        "weekend_visitors": 5356,
+        "dessert_propensity_pct": 100.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "21:00",
+        "hour_num": 21,
+        "label": "21:00",
+        "weekday_visitors": 2681,
+        "weekend_visitors": 4448,
+        "dessert_propensity_pct": 88.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "22:00",
+        "hour_num": 22,
+        "label": "22:00",
+        "weekday_visitors": 1787,
+        "weekend_visitors": 2950,
+        "dessert_propensity_pct": 60.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Prime Post-Dinner Dessert Peak"
+      },
+      {
+        "hour": "23:00",
+        "hour_num": 23,
+        "label": "23:00",
+        "weekday_visitors": 893,
+        "weekend_visitors": 1588,
+        "dessert_propensity_pct": 25.0,
+        "is_peak_dessert_window": true,
+        "activity_phase": "Late Night Spillover"
+      }
+    ]
+  }
+]

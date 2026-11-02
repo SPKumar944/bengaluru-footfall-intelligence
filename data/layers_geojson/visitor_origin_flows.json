@@ -1,0 +1,1172 @@
+[
+  {
+    "flow_id": "FLOW_0001",
+    "dest_hub_id": "HUB_01",
+    "dest_hub_name": "Indiranagar (100ft & 12th Main)",
+    "dest_coords": [
+      77.6412,
+      12.9719
+    ],
+    "origin_locality_name": "Domlur / EGL",
+    "origin_coords": [
+      77.6387,
+      12.9609
+    ],
+    "distance_km": 1.25,
+    "avg_travel_time_min": 3.4,
+    "visitor_flow_volume": 32940,
+    "flow_intensity": 0.73
+  },
+  {
+    "flow_id": "FLOW_0002",
+    "dest_hub_id": "HUB_01",
+    "dest_hub_name": "Indiranagar (100ft & 12th Main)",
+    "dest_coords": [
+      77.6412,
+      12.9719
+    ],
+    "origin_locality_name": "CV Raman Nagar",
+    "origin_coords": [
+      77.663,
+      12.985
+    ],
+    "distance_km": 2.77,
+    "avg_travel_time_min": 7.4,
+    "visitor_flow_volume": 22278,
+    "flow_intensity": 0.5
+  },
+  {
+    "flow_id": "FLOW_0003",
+    "dest_hub_id": "HUB_01",
+    "dest_hub_name": "Indiranagar (100ft & 12th Main)",
+    "dest_coords": [
+      77.6412,
+      12.9719
+    ],
+    "origin_locality_name": "Cooke Town / Richards Town",
+    "origin_coords": [
+      77.625,
+      12.998
+    ],
+    "distance_km": 3.39,
+    "avg_travel_time_min": 9.8,
+    "visitor_flow_volume": 18763,
+    "flow_intensity": 0.42
+  },
+  {
+    "flow_id": "FLOW_0004",
+    "dest_hub_id": "HUB_01",
+    "dest_hub_name": "Indiranagar (100ft & 12th Main)",
+    "dest_coords": [
+      77.6412,
+      12.9719
+    ],
+    "origin_locality_name": "Koramangala 1st Block",
+    "origin_coords": [
+      77.632,
+      12.923
+    ],
+    "distance_km": 5.52,
+    "avg_travel_time_min": 15.7,
+    "visitor_flow_volume": 7129,
+    "flow_intensity": 0.16
+  },
+  {
+    "flow_id": "FLOW_0005",
+    "dest_hub_id": "HUB_02",
+    "dest_hub_name": "Koramangala 5th & 7th Block",
+    "dest_coords": [
+      77.6245,
+      12.9352
+    ],
+    "origin_locality_name": "Koramangala 1st Block",
+    "origin_coords": [
+      77.632,
+      12.923
+    ],
+    "distance_km": 1.58,
+    "avg_travel_time_min": 4.5,
+    "visitor_flow_volume": 36481,
+    "flow_intensity": 0.81
+  },
+  {
+    "flow_id": "FLOW_0006",
+    "dest_hub_id": "HUB_02",
+    "dest_hub_name": "Koramangala 5th & 7th Block",
+    "dest_coords": [
+      77.6245,
+      12.9352
+    ],
+    "origin_locality_name": "Tavarekere / SG Palya",
+    "origin_coords": [
+      77.608,
+      12.928
+    ],
+    "distance_km": 1.96,
+    "avg_travel_time_min": 6.2,
+    "visitor_flow_volume": 30169,
+    "flow_intensity": 0.67
+  },
+  {
+    "flow_id": "FLOW_0007",
+    "dest_hub_id": "HUB_02",
+    "dest_hub_name": "Koramangala 5th & 7th Block",
+    "dest_coords": [
+      77.6245,
+      12.9352
+    ],
+    "origin_locality_name": "BTM Layout 2nd Stage",
+    "origin_coords": [
+      77.6101,
+      12.9166
+    ],
+    "distance_km": 2.59,
+    "avg_travel_time_min": 6.9,
+    "visitor_flow_volume": 24109,
+    "flow_intensity": 0.54
+  },
+  {
+    "flow_id": "FLOW_0008",
+    "dest_hub_id": "HUB_02",
+    "dest_hub_name": "Koramangala 5th & 7th Block",
+    "dest_coords": [
+      77.6245,
+      12.9352
+    ],
+    "origin_locality_name": "Domlur / EGL",
+    "origin_coords": [
+      77.6387,
+      12.9609
+    ],
+    "distance_km": 3.24,
+    "avg_travel_time_min": 10.9,
+    "visitor_flow_volume": 6172,
+    "flow_intensity": 0.14
+  },
+  {
+    "flow_id": "FLOW_0009",
+    "dest_hub_id": "HUB_03",
+    "dest_hub_name": "Jayanagar 4th Block",
+    "dest_coords": [
+      77.5833,
+      12.9298
+    ],
+    "origin_locality_name": "Basavanagudi Gandhi Bazaar",
+    "origin_coords": [
+      77.5739,
+      12.9422
+    ],
+    "distance_km": 1.71,
+    "avg_travel_time_min": 5.9,
+    "visitor_flow_volume": 15644,
+    "flow_intensity": 0.35
+  },
+  {
+    "flow_id": "FLOW_0010",
+    "dest_hub_id": "HUB_03",
+    "dest_hub_name": "Jayanagar 4th Block",
+    "dest_coords": [
+      77.5833,
+      12.9298
+    ],
+    "origin_locality_name": "Tavarekere / SG Palya",
+    "origin_coords": [
+      77.608,
+      12.928
+    ],
+    "distance_km": 2.68,
+    "avg_travel_time_min": 8.1,
+    "visitor_flow_volume": 24756,
+    "flow_intensity": 0.55
+  },
+  {
+    "flow_id": "FLOW_0011",
+    "dest_hub_id": "HUB_03",
+    "dest_hub_name": "Jayanagar 4th Block",
+    "dest_coords": [
+      77.5833,
+      12.9298
+    ],
+    "origin_locality_name": "BTM Layout 2nd Stage",
+    "origin_coords": [
+      77.6101,
+      12.9166
+    ],
+    "distance_km": 3.25,
+    "avg_travel_time_min": 9.9,
+    "visitor_flow_volume": 7214,
+    "flow_intensity": 0.16
+  },
+  {
+    "flow_id": "FLOW_0012",
+    "dest_hub_id": "HUB_03",
+    "dest_hub_name": "Jayanagar 4th Block",
+    "dest_coords": [
+      77.5833,
+      12.9298
+    ],
+    "origin_locality_name": "Kumaraswamy Layout",
+    "origin_coords": [
+      77.558,
+      12.905
+    ],
+    "distance_km": 3.88,
+    "avg_travel_time_min": 14.0,
+    "visitor_flow_volume": 8133,
+    "flow_intensity": 0.18
+  },
+  {
+    "flow_id": "FLOW_0013",
+    "dest_hub_id": "HUB_04",
+    "dest_hub_name": "JP Nagar (24th Main Phase 2 & 7)",
+    "dest_coords": [
+      77.5855,
+      12.9063
+    ],
+    "origin_locality_name": "BTM Layout 2nd Stage",
+    "origin_coords": [
+      77.6101,
+      12.9166
+    ],
+    "distance_km": 2.9,
+    "avg_travel_time_min": 10.0,
+    "visitor_flow_volume": 15663,
+    "flow_intensity": 0.35
+  },
+  {
+    "flow_id": "FLOW_0014",
+    "dest_hub_id": "HUB_04",
+    "dest_hub_name": "JP Nagar (24th Main Phase 2 & 7)",
+    "dest_coords": [
+      77.5855,
+      12.9063
+    ],
+    "origin_locality_name": "Kumaraswamy Layout",
+    "origin_coords": [
+      77.558,
+      12.905
+    ],
+    "distance_km": 2.98,
+    "avg_travel_time_min": 8.7,
+    "visitor_flow_volume": 23539,
+    "flow_intensity": 0.52
+  },
+  {
+    "flow_id": "FLOW_0015",
+    "dest_hub_id": "HUB_04",
+    "dest_hub_name": "JP Nagar (24th Main Phase 2 & 7)",
+    "dest_coords": [
+      77.5855,
+      12.9063
+    ],
+    "origin_locality_name": "Tavarekere / SG Palya",
+    "origin_coords": [
+      77.608,
+      12.928
+    ],
+    "distance_km": 3.42,
+    "avg_travel_time_min": 9.2,
+    "visitor_flow_volume": 16531,
+    "flow_intensity": 0.37
+  },
+  {
+    "flow_id": "FLOW_0016",
+    "dest_hub_id": "HUB_04",
+    "dest_hub_name": "JP Nagar (24th Main Phase 2 & 7)",
+    "dest_coords": [
+      77.5855,
+      12.9063
+    ],
+    "origin_locality_name": "Basavanagudi Gandhi Bazaar",
+    "origin_coords": [
+      77.5739,
+      12.9422
+    ],
+    "distance_km": 4.18,
+    "avg_travel_time_min": 12.7,
+    "visitor_flow_volume": 19272,
+    "flow_intensity": 0.43
+  },
+  {
+    "flow_id": "FLOW_0017",
+    "dest_hub_id": "HUB_05",
+    "dest_hub_name": "HSR Layout (27th Main Sector 1 & 2)",
+    "dest_coords": [
+      77.6389,
+      12.9116
+    ],
+    "origin_locality_name": "Koramangala 1st Block",
+    "origin_coords": [
+      77.632,
+      12.923
+    ],
+    "distance_km": 1.47,
+    "avg_travel_time_min": 4.4,
+    "visitor_flow_volume": 37711,
+    "flow_intensity": 0.84
+  },
+  {
+    "flow_id": "FLOW_0018",
+    "dest_hub_id": "HUB_05",
+    "dest_hub_name": "HSR Layout (27th Main Sector 1 & 2)",
+    "dest_coords": [
+      77.6389,
+      12.9116
+    ],
+    "origin_locality_name": "Harlur Road / Sarjapur",
+    "origin_coords": [
+      77.668,
+      12.91
+    ],
+    "distance_km": 3.15,
+    "avg_travel_time_min": 9.9,
+    "visitor_flow_volume": 23800,
+    "flow_intensity": 0.53
+  },
+  {
+    "flow_id": "FLOW_0019",
+    "dest_hub_id": "HUB_05",
+    "dest_hub_name": "HSR Layout (27th Main Sector 1 & 2)",
+    "dest_coords": [
+      77.6389,
+      12.9116
+    ],
+    "origin_locality_name": "BTM Layout 2nd Stage",
+    "origin_coords": [
+      77.6101,
+      12.9166
+    ],
+    "distance_km": 3.17,
+    "avg_travel_time_min": 11.3,
+    "visitor_flow_volume": 20981,
+    "flow_intensity": 0.47
+  },
+  {
+    "flow_id": "FLOW_0020",
+    "dest_hub_id": "HUB_05",
+    "dest_hub_name": "HSR Layout (27th Main Sector 1 & 2)",
+    "dest_coords": [
+      77.6389,
+      12.9116
+    ],
+    "origin_locality_name": "Tavarekere / SG Palya",
+    "origin_coords": [
+      77.608,
+      12.928
+    ],
+    "distance_km": 3.81,
+    "avg_travel_time_min": 10.9,
+    "visitor_flow_volume": 7326,
+    "flow_intensity": 0.16
+  },
+  {
+    "flow_id": "FLOW_0021",
+    "dest_hub_id": "HUB_06",
+    "dest_hub_name": "Whitefield (ITPL Main Rd & Inner Circle)",
+    "dest_coords": [
+      77.7499,
+      12.9698
+    ],
+    "origin_locality_name": "Hope Farm / Channasandra",
+    "origin_coords": [
+      77.755,
+      12.985
+    ],
+    "distance_km": 1.78,
+    "avg_travel_time_min": 6.3,
+    "visitor_flow_volume": 19410,
+    "flow_intensity": 0.43
+  },
+  {
+    "flow_id": "FLOW_0022",
+    "dest_hub_id": "HUB_06",
+    "dest_hub_name": "Whitefield (ITPL Main Rd & Inner Circle)",
+    "dest_coords": [
+      77.7499,
+      12.9698
+    ],
+    "origin_locality_name": "Kadugodi / Belathur",
+    "origin_coords": [
+      77.76,
+      12.998
+    ],
+    "distance_km": 3.32,
+    "avg_travel_time_min": 11.5,
+    "visitor_flow_volume": 13244,
+    "flow_intensity": 0.29
+  },
+  {
+    "flow_id": "FLOW_0023",
+    "dest_hub_id": "HUB_07",
+    "dest_hub_name": "Malleshwaram (8th Cross & Sampige Rd)",
+    "dest_coords": [
+      77.5701,
+      13.0031
+    ],
+    "origin_locality_name": "Sadashivanagar",
+    "origin_coords": [
+      77.58,
+      13.008
+    ],
+    "distance_km": 1.2,
+    "avg_travel_time_min": 3.3,
+    "visitor_flow_volume": 22659,
+    "flow_intensity": 0.5
+  },
+  {
+    "flow_id": "FLOW_0024",
+    "dest_hub_id": "HUB_07",
+    "dest_hub_name": "Malleshwaram (8th Cross & Sampige Rd)",
+    "dest_coords": [
+      77.5701,
+      13.0031
+    ],
+    "origin_locality_name": "Vyalikaval / Palace Guttahalli",
+    "origin_coords": [
+      77.582,
+      13.001
+    ],
+    "distance_km": 1.31,
+    "avg_travel_time_min": 3.5,
+    "visitor_flow_volume": 22069,
+    "flow_intensity": 0.49
+  },
+  {
+    "flow_id": "FLOW_0025",
+    "dest_hub_id": "HUB_07",
+    "dest_hub_name": "Malleshwaram (8th Cross & Sampige Rd)",
+    "dest_coords": [
+      77.5701,
+      13.0031
+    ],
+    "origin_locality_name": "Cooke Town / Richards Town",
+    "origin_coords": [
+      77.625,
+      12.998
+    ],
+    "distance_km": 5.96,
+    "avg_travel_time_min": 20.2,
+    "visitor_flow_volume": 8922,
+    "flow_intensity": 0.2
+  },
+  {
+    "flow_id": "FLOW_0026",
+    "dest_hub_id": "HUB_07",
+    "dest_hub_name": "Malleshwaram (8th Cross & Sampige Rd)",
+    "dest_coords": [
+      77.5701,
+      13.0031
+    ],
+    "origin_locality_name": "Sahakar Nagar / Judicial Layout",
+    "origin_coords": [
+      77.588,
+      13.06
+    ],
+    "distance_km": 6.61,
+    "avg_travel_time_min": 20.9,
+    "visitor_flow_volume": 9433,
+    "flow_intensity": 0.21
+  },
+  {
+    "flow_id": "FLOW_0027",
+    "dest_hub_id": "HUB_08",
+    "dest_hub_name": "Rajajinagar (Dr. Rajkumar Rd)",
+    "dest_coords": [
+      77.553,
+      12.9982
+    ],
+    "origin_locality_name": "Sadashivanagar",
+    "origin_coords": [
+      77.58,
+      13.008
+    ],
+    "distance_km": 3.12,
+    "avg_travel_time_min": 10.1,
+    "visitor_flow_volume": 25472,
+    "flow_intensity": 0.57
+  },
+  {
+    "flow_id": "FLOW_0028",
+    "dest_hub_id": "HUB_08",
+    "dest_hub_name": "Rajajinagar (Dr. Rajkumar Rd)",
+    "dest_coords": [
+      77.553,
+      12.9982
+    ],
+    "origin_locality_name": "Vyalikaval / Palace Guttahalli",
+    "origin_coords": [
+      77.582,
+      13.001
+    ],
+    "distance_km": 3.15,
+    "avg_travel_time_min": 9.3,
+    "visitor_flow_volume": 6763,
+    "flow_intensity": 0.15
+  },
+  {
+    "flow_id": "FLOW_0029",
+    "dest_hub_id": "HUB_08",
+    "dest_hub_name": "Rajajinagar (Dr. Rajkumar Rd)",
+    "dest_coords": [
+      77.553,
+      12.9982
+    ],
+    "origin_locality_name": "Basavanagudi Gandhi Bazaar",
+    "origin_coords": [
+      77.5739,
+      12.9422
+    ],
+    "distance_km": 6.61,
+    "avg_travel_time_min": 19.5,
+    "visitor_flow_volume": 8095,
+    "flow_intensity": 0.18
+  },
+  {
+    "flow_id": "FLOW_0030",
+    "dest_hub_id": "HUB_08",
+    "dest_hub_name": "Rajajinagar (Dr. Rajkumar Rd)",
+    "dest_coords": [
+      77.553,
+      12.9982
+    ],
+    "origin_locality_name": "Cooke Town / Richards Town",
+    "origin_coords": [
+      77.625,
+      12.998
+    ],
+    "distance_km": 7.79,
+    "avg_travel_time_min": 22.9,
+    "visitor_flow_volume": 11634,
+    "flow_intensity": 0.26
+  },
+  {
+    "flow_id": "FLOW_0031",
+    "dest_hub_id": "HUB_09",
+    "dest_hub_name": "Banashankari 3rd Stage (Kathriguppe)",
+    "dest_coords": [
+      77.5469,
+      12.9255
+    ],
+    "origin_locality_name": "Kumaraswamy Layout",
+    "origin_coords": [
+      77.558,
+      12.905
+    ],
+    "distance_km": 2.57,
+    "avg_travel_time_min": 8.1,
+    "visitor_flow_volume": 13174,
+    "flow_intensity": 0.29
+  },
+  {
+    "flow_id": "FLOW_0032",
+    "dest_hub_id": "HUB_09",
+    "dest_hub_name": "Banashankari 3rd Stage (Kathriguppe)",
+    "dest_coords": [
+      77.5469,
+      12.9255
+    ],
+    "origin_locality_name": "Basavanagudi Gandhi Bazaar",
+    "origin_coords": [
+      77.5739,
+      12.9422
+    ],
+    "distance_km": 3.46,
+    "avg_travel_time_min": 12.1,
+    "visitor_flow_volume": 23442,
+    "flow_intensity": 0.52
+  },
+  {
+    "flow_id": "FLOW_0033",
+    "dest_hub_id": "HUB_09",
+    "dest_hub_name": "Banashankari 3rd Stage (Kathriguppe)",
+    "dest_coords": [
+      77.5469,
+      12.9255
+    ],
+    "origin_locality_name": "Tavarekere / SG Palya",
+    "origin_coords": [
+      77.608,
+      12.928
+    ],
+    "distance_km": 6.62,
+    "avg_travel_time_min": 19.5,
+    "visitor_flow_volume": 11535,
+    "flow_intensity": 0.26
+  },
+  {
+    "flow_id": "FLOW_0034",
+    "dest_hub_id": "HUB_09",
+    "dest_hub_name": "Banashankari 3rd Stage (Kathriguppe)",
+    "dest_coords": [
+      77.5469,
+      12.9255
+    ],
+    "origin_locality_name": "BTM Layout 2nd Stage",
+    "origin_coords": [
+      77.6101,
+      12.9166
+    ],
+    "distance_km": 6.91,
+    "avg_travel_time_min": 20.9,
+    "visitor_flow_volume": 13125,
+    "flow_intensity": 0.29
+  },
+  {
+    "flow_id": "FLOW_0035",
+    "dest_hub_id": "HUB_10",
+    "dest_hub_name": "Kengeri Satellite Town",
+    "dest_coords": [
+      77.4839,
+      12.9177
+    ],
+    "origin_locality_name": "Kumaraswamy Layout",
+    "origin_coords": [
+      77.558,
+      12.905
+    ],
+    "distance_km": 8.14,
+    "avg_travel_time_min": 27.2,
+    "visitor_flow_volume": 10540,
+    "flow_intensity": 0.23
+  },
+  {
+    "flow_id": "FLOW_0036",
+    "dest_hub_id": "HUB_11",
+    "dest_hub_name": "Electronic City Phase 1 (Neeladri Rd)",
+    "dest_coords": [
+      77.6602,
+      12.8452
+    ],
+    "origin_locality_name": "Electronic City Phase 2",
+    "origin_coords": [
+      77.678,
+      12.842
+    ],
+    "distance_km": 1.96,
+    "avg_travel_time_min": 7.3,
+    "visitor_flow_volume": 11003,
+    "flow_intensity": 0.24
+  },
+  {
+    "flow_id": "FLOW_0037",
+    "dest_hub_id": "HUB_11",
+    "dest_hub_name": "Electronic City Phase 1 (Neeladri Rd)",
+    "dest_coords": [
+      77.6602,
+      12.8452
+    ],
+    "origin_locality_name": "Kasavanahalli Tech Pockets",
+    "origin_coords": [
+      77.682,
+      12.895
+    ],
+    "distance_km": 6.01,
+    "avg_travel_time_min": 18.9,
+    "visitor_flow_volume": 13317,
+    "flow_intensity": 0.3
+  },
+  {
+    "flow_id": "FLOW_0038",
+    "dest_hub_id": "HUB_11",
+    "dest_hub_name": "Electronic City Phase 1 (Neeladri Rd)",
+    "dest_coords": [
+      77.6602,
+      12.8452
+    ],
+    "origin_locality_name": "Harlur Road / Sarjapur",
+    "origin_coords": [
+      77.668,
+      12.91
+    ],
+    "distance_km": 7.24,
+    "avg_travel_time_min": 22.5,
+    "visitor_flow_volume": 9170,
+    "flow_intensity": 0.2
+  },
+  {
+    "flow_id": "FLOW_0039",
+    "dest_hub_id": "HUB_11",
+    "dest_hub_name": "Electronic City Phase 1 (Neeladri Rd)",
+    "dest_coords": [
+      77.6602,
+      12.8452
+    ],
+    "origin_locality_name": "Koramangala 1st Block",
+    "origin_coords": [
+      77.632,
+      12.923
+    ],
+    "distance_km": 9.16,
+    "avg_travel_time_min": 31.6,
+    "visitor_flow_volume": 6728,
+    "flow_intensity": 0.15
+  },
+  {
+    "flow_id": "FLOW_0040",
+    "dest_hub_id": "HUB_12",
+    "dest_hub_name": "Marathahalli (Multiplex / ORR Junction)",
+    "dest_coords": [
+      77.7011,
+      12.9562
+    ],
+    "origin_locality_name": "CV Raman Nagar",
+    "origin_coords": [
+      77.663,
+      12.985
+    ],
+    "distance_km": 5.22,
+    "avg_travel_time_min": 13.9,
+    "visitor_flow_volume": 9145,
+    "flow_intensity": 0.2
+  },
+  {
+    "flow_id": "FLOW_0041",
+    "dest_hub_id": "HUB_12",
+    "dest_hub_name": "Marathahalli (Multiplex / ORR Junction)",
+    "dest_coords": [
+      77.7011,
+      12.9562
+    ],
+    "origin_locality_name": "Harlur Road / Sarjapur",
+    "origin_coords": [
+      77.668,
+      12.91
+    ],
+    "distance_km": 6.25,
+    "avg_travel_time_min": 21.2,
+    "visitor_flow_volume": 5441,
+    "flow_intensity": 0.12
+  },
+  {
+    "flow_id": "FLOW_0042",
+    "dest_hub_id": "HUB_12",
+    "dest_hub_name": "Marathahalli (Multiplex / ORR Junction)",
+    "dest_coords": [
+      77.7011,
+      12.9562
+    ],
+    "origin_locality_name": "Hope Farm / Channasandra",
+    "origin_coords": [
+      77.755,
+      12.985
+    ],
+    "distance_km": 6.65,
+    "avg_travel_time_min": 24.4,
+    "visitor_flow_volume": 11966,
+    "flow_intensity": 0.27
+  },
+  {
+    "flow_id": "FLOW_0043",
+    "dest_hub_id": "HUB_12",
+    "dest_hub_name": "Marathahalli (Multiplex / ORR Junction)",
+    "dest_coords": [
+      77.7011,
+      12.9562
+    ],
+    "origin_locality_name": "Domlur / EGL",
+    "origin_coords": [
+      77.6387,
+      12.9609
+    ],
+    "distance_km": 6.77,
+    "avg_travel_time_min": 18.1,
+    "visitor_flow_volume": 8531,
+    "flow_intensity": 0.19
+  },
+  {
+    "flow_id": "FLOW_0044",
+    "dest_hub_id": "HUB_13",
+    "dest_hub_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "dest_coords": [
+      77.6762,
+      12.926
+    ],
+    "origin_locality_name": "Harlur Road / Sarjapur",
+    "origin_coords": [
+      77.668,
+      12.91
+    ],
+    "distance_km": 1.99,
+    "avg_travel_time_min": 7.0,
+    "visitor_flow_volume": 7936,
+    "flow_intensity": 0.18
+  },
+  {
+    "flow_id": "FLOW_0045",
+    "dest_hub_id": "HUB_13",
+    "dest_hub_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "dest_coords": [
+      77.6762,
+      12.926
+    ],
+    "origin_locality_name": "Kasavanahalli Tech Pockets",
+    "origin_coords": [
+      77.682,
+      12.895
+    ],
+    "distance_km": 3.5,
+    "avg_travel_time_min": 11.4,
+    "visitor_flow_volume": 8260,
+    "flow_intensity": 0.18
+  },
+  {
+    "flow_id": "FLOW_0046",
+    "dest_hub_id": "HUB_13",
+    "dest_hub_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "dest_coords": [
+      77.6762,
+      12.926
+    ],
+    "origin_locality_name": "Koramangala 1st Block",
+    "origin_coords": [
+      77.632,
+      12.923
+    ],
+    "distance_km": 4.79,
+    "avg_travel_time_min": 16.5,
+    "visitor_flow_volume": 18788,
+    "flow_intensity": 0.42
+  },
+  {
+    "flow_id": "FLOW_0047",
+    "dest_hub_id": "HUB_13",
+    "dest_hub_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "dest_coords": [
+      77.6762,
+      12.926
+    ],
+    "origin_locality_name": "Domlur / EGL",
+    "origin_coords": [
+      77.6387,
+      12.9609
+    ],
+    "distance_km": 5.61,
+    "avg_travel_time_min": 17.8,
+    "visitor_flow_volume": 8317,
+    "flow_intensity": 0.18
+  },
+  {
+    "flow_id": "FLOW_0048",
+    "dest_hub_id": "HUB_14",
+    "dest_hub_name": "Kalyan Nagar (HRBR Layout 80ft Rd)",
+    "dest_coords": [
+      77.6432,
+      13.0159
+    ],
+    "origin_locality_name": "Cooke Town / Richards Town",
+    "origin_coords": [
+      77.625,
+      12.998
+    ],
+    "distance_km": 2.8,
+    "avg_travel_time_min": 8.6,
+    "visitor_flow_volume": 6851,
+    "flow_intensity": 0.15
+  },
+  {
+    "flow_id": "FLOW_0049",
+    "dest_hub_id": "HUB_14",
+    "dest_hub_name": "Kalyan Nagar (HRBR Layout 80ft Rd)",
+    "dest_coords": [
+      77.6432,
+      13.0159
+    ],
+    "origin_locality_name": "CV Raman Nagar",
+    "origin_coords": [
+      77.663,
+      12.985
+    ],
+    "distance_km": 4.04,
+    "avg_travel_time_min": 14.4,
+    "visitor_flow_volume": 5514,
+    "flow_intensity": 0.12
+  },
+  {
+    "flow_id": "FLOW_0050",
+    "dest_hub_id": "HUB_14",
+    "dest_hub_name": "Kalyan Nagar (HRBR Layout 80ft Rd)",
+    "dest_coords": [
+      77.6432,
+      13.0159
+    ],
+    "origin_locality_name": "Domlur / EGL",
+    "origin_coords": [
+      77.6387,
+      12.9609
+    ],
+    "distance_km": 6.12,
+    "avg_travel_time_min": 16.4,
+    "visitor_flow_volume": 12424,
+    "flow_intensity": 0.28
+  },
+  {
+    "flow_id": "FLOW_0051",
+    "dest_hub_id": "HUB_14",
+    "dest_hub_name": "Kalyan Nagar (HRBR Layout 80ft Rd)",
+    "dest_coords": [
+      77.6432,
+      13.0159
+    ],
+    "origin_locality_name": "Vyalikaval / Palace Guttahalli",
+    "origin_coords": [
+      77.582,
+      13.001
+    ],
+    "distance_km": 6.82,
+    "avg_travel_time_min": 19.8,
+    "visitor_flow_volume": 4444,
+    "flow_intensity": 0.1
+  },
+  {
+    "flow_id": "FLOW_0052",
+    "dest_hub_id": "HUB_15",
+    "dest_hub_name": "Kammanahalli Main Road",
+    "dest_coords": [
+      77.636,
+      13.0095
+    ],
+    "origin_locality_name": "Cooke Town / Richards Town",
+    "origin_coords": [
+      77.625,
+      12.998
+    ],
+    "distance_km": 1.74,
+    "avg_travel_time_min": 4.8,
+    "visitor_flow_volume": 36031,
+    "flow_intensity": 0.8
+  },
+  {
+    "flow_id": "FLOW_0053",
+    "dest_hub_id": "HUB_15",
+    "dest_hub_name": "Kammanahalli Main Road",
+    "dest_coords": [
+      77.636,
+      13.0095
+    ],
+    "origin_locality_name": "Kalyan Nagar Babusapalya",
+    "origin_coords": [
+      77.652,
+      13.022
+    ],
+    "distance_km": 2.22,
+    "avg_travel_time_min": 7.4,
+    "visitor_flow_volume": 22923,
+    "flow_intensity": 0.51
+  },
+  {
+    "flow_id": "FLOW_0054",
+    "dest_hub_id": "HUB_15",
+    "dest_hub_name": "Kammanahalli Main Road",
+    "dest_coords": [
+      77.636,
+      13.0095
+    ],
+    "origin_locality_name": "CV Raman Nagar",
+    "origin_coords": [
+      77.663,
+      12.985
+    ],
+    "distance_km": 3.99,
+    "avg_travel_time_min": 14.8,
+    "visitor_flow_volume": 18690,
+    "flow_intensity": 0.42
+  },
+  {
+    "flow_id": "FLOW_0055",
+    "dest_hub_id": "HUB_15",
+    "dest_hub_name": "Kammanahalli Main Road",
+    "dest_coords": [
+      77.636,
+      13.0095
+    ],
+    "origin_locality_name": "Domlur / EGL",
+    "origin_coords": [
+      77.6387,
+      12.9609
+    ],
+    "distance_km": 5.4,
+    "avg_travel_time_min": 16.6,
+    "visitor_flow_volume": 3520,
+    "flow_intensity": 0.08
+  },
+  {
+    "flow_id": "FLOW_0056",
+    "dest_hub_id": "HUB_16",
+    "dest_hub_name": "Yelahanka New Town (Major Unnikrishnan Rd)",
+    "dest_coords": [
+      77.5963,
+      13.1007
+    ],
+    "origin_locality_name": "Sahakar Nagar / Judicial Layout",
+    "origin_coords": [
+      77.588,
+      13.06
+    ],
+    "distance_km": 4.61,
+    "avg_travel_time_min": 14.6,
+    "visitor_flow_volume": 19485,
+    "flow_intensity": 0.43
+  },
+  {
+    "flow_id": "FLOW_0057",
+    "dest_hub_id": "HUB_16",
+    "dest_hub_name": "Yelahanka New Town (Major Unnikrishnan Rd)",
+    "dest_coords": [
+      77.5963,
+      13.1007
+    ],
+    "origin_locality_name": "Vidyaranyapura",
+    "origin_coords": [
+      77.555,
+      13.08
+    ],
+    "distance_km": 5.02,
+    "avg_travel_time_min": 14.3,
+    "visitor_flow_volume": 11005,
+    "flow_intensity": 0.24
+  },
+  {
+    "flow_id": "FLOW_0058",
+    "dest_hub_id": "HUB_17",
+    "dest_hub_name": "Hebbal (Kempapura / Esteem Mall Node)",
+    "dest_coords": [
+      77.597,
+      13.0358
+    ],
+    "origin_locality_name": "Sahakar Nagar / Judicial Layout",
+    "origin_coords": [
+      77.588,
+      13.06
+    ],
+    "distance_km": 2.86,
+    "avg_travel_time_min": 7.9,
+    "visitor_flow_volume": 12144,
+    "flow_intensity": 0.27
+  },
+  {
+    "flow_id": "FLOW_0059",
+    "dest_hub_id": "HUB_17",
+    "dest_hub_name": "Hebbal (Kempapura / Esteem Mall Node)",
+    "dest_coords": [
+      77.597,
+      13.0358
+    ],
+    "origin_locality_name": "Sadashivanagar",
+    "origin_coords": [
+      77.58,
+      13.008
+    ],
+    "distance_km": 3.59,
+    "avg_travel_time_min": 12.3,
+    "visitor_flow_volume": 8989,
+    "flow_intensity": 0.2
+  },
+  {
+    "flow_id": "FLOW_0060",
+    "dest_hub_id": "HUB_17",
+    "dest_hub_name": "Hebbal (Kempapura / Esteem Mall Node)",
+    "dest_coords": [
+      77.597,
+      13.0358
+    ],
+    "origin_locality_name": "Vyalikaval / Palace Guttahalli",
+    "origin_coords": [
+      77.582,
+      13.001
+    ],
+    "distance_km": 4.19,
+    "avg_travel_time_min": 13.6,
+    "visitor_flow_volume": 6378,
+    "flow_intensity": 0.14
+  },
+  {
+    "flow_id": "FLOW_0061",
+    "dest_hub_id": "HUB_17",
+    "dest_hub_name": "Hebbal (Kempapura / Esteem Mall Node)",
+    "dest_coords": [
+      77.597,
+      13.0358
+    ],
+    "origin_locality_name": "Cooke Town / Richards Town",
+    "origin_coords": [
+      77.625,
+      12.998
+    ],
+    "distance_km": 5.17,
+    "avg_travel_time_min": 14.4,
+    "visitor_flow_volume": 13528,
+    "flow_intensity": 0.3
+  },
+  {
+    "flow_id": "FLOW_0062",
+    "dest_hub_id": "HUB_18",
+    "dest_hub_name": "MG Road / Brigade Road / Church Street",
+    "dest_coords": [
+      77.608,
+      12.9738
+    ],
+    "origin_locality_name": "Cooke Town / Richards Town",
+    "origin_coords": [
+      77.625,
+      12.998
+    ],
+    "distance_km": 3.26,
+    "avg_travel_time_min": 9.9,
+    "visitor_flow_volume": 8186,
+    "flow_intensity": 0.18
+  },
+  {
+    "flow_id": "FLOW_0063",
+    "dest_hub_id": "HUB_18",
+    "dest_hub_name": "MG Road / Brigade Road / Church Street",
+    "dest_coords": [
+      77.608,
+      12.9738
+    ],
+    "origin_locality_name": "Domlur / EGL",
+    "origin_coords": [
+      77.6387,
+      12.9609
+    ],
+    "distance_km": 3.62,
+    "avg_travel_time_min": 11.6,
+    "visitor_flow_volume": 19190,
+    "flow_intensity": 0.43
+  },
+  {
+    "flow_id": "FLOW_0064",
+    "dest_hub_id": "HUB_18",
+    "dest_hub_name": "MG Road / Brigade Road / Church Street",
+    "dest_coords": [
+      77.608,
+      12.9738
+    ],
+    "origin_locality_name": "Vyalikaval / Palace Guttahalli",
+    "origin_coords": [
+      77.582,
+      13.001
+    ],
+    "distance_km": 4.13,
+    "avg_travel_time_min": 13.9,
+    "visitor_flow_volume": 9860,
+    "flow_intensity": 0.22
+  },
+  {
+    "flow_id": "FLOW_0065",
+    "dest_hub_id": "HUB_18",
+    "dest_hub_name": "MG Road / Brigade Road / Church Street",
+    "dest_coords": [
+      77.608,
+      12.9738
+    ],
+    "origin_locality_name": "Sadashivanagar",
+    "origin_coords": [
+      77.58,
+      13.008
+    ],
+    "distance_km": 4.86,
+    "avg_travel_time_min": 15.0,
+    "visitor_flow_volume": 10194,
+    "flow_intensity": 0.23
+  }
+]

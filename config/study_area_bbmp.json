@@ -1,0 +1,199 @@
+{
+  "project_name": "Bengaluru Ice Cream Spatial Intelligence & Market Expansion Engine",
+  "study_area": {
+    "region_name": "Bengaluru BBMP Metropolitan Region",
+    "bounding_box": {
+      "min_lon": 77.45,
+      "min_lat": 12.83,
+      "max_lon": 77.78,
+      "max_lat": 13.14
+    },
+    "projected_crs": "EPSG:32643",
+    "geographic_crs": "EPSG:4326",
+    "utm_zone": "43N",
+    "h3_resolution_macro": 8,
+    "h3_resolution_micro": 9
+  },
+  "key_micro_markets": [
+    {
+      "id": "indiranagar_100ft",
+      "name": "Indiranagar (100ft Rd & 12th Main)",
+      "lat": 12.9719,
+      "lon": 77.6412,
+      "zone": "East",
+      "type": "High Street & Dining Hub",
+      "avg_ticket_size_inr": 280
+    },
+    {
+      "id": "koramangala_5th",
+      "name": "Koramangala 5th Block",
+      "lat": 12.9352,
+      "lon": 77.6245,
+      "zone": "South-East",
+      "type": "Youth & High-Density Nightlife Hub",
+      "avg_ticket_size_inr": 260
+    },
+    {
+      "id": "jayanagar_4th",
+      "name": "Jayanagar 4th Block",
+      "lat": 12.9298,
+      "lon": 77.5833,
+      "zone": "South",
+      "type": "Heritage Affluent Family Corridor",
+      "avg_ticket_size_inr": 220
+    },
+    {
+      "id": "hsr_sector_2",
+      "name": "HSR Layout Sector 2 (27th Main)",
+      "lat": 12.9116,
+      "lon": 77.6389,
+      "zone": "South-East",
+      "type": "Startup Corridor & Young Family Cluster",
+      "avg_ticket_size_inr": 240
+    },
+    {
+      "id": "whitefield_itpl",
+      "name": "Whitefield (ITPL & ECC Rd)",
+      "lat": 12.9698,
+      "lon": 77.7499,
+      "zone": "East",
+      "type": "Tech Park & Gated Community Sprawl",
+      "avg_ticket_size_inr": 250
+    },
+    {
+      "id": "malleshwaram_8th",
+      "name": "Malleshwaram 8th Cross",
+      "lat": 13.0031,
+      "lon": 77.5701,
+      "zone": "North-West",
+      "type": "Traditional High-Footfall Commercial St",
+      "avg_ticket_size_inr": 200
+    },
+    {
+      "id": "jp_nagar_phase2",
+      "name": "JP Nagar 24th Main (Phase 2 & 7)",
+      "lat": 12.9063,
+      "lon": 77.5855,
+      "zone": "South",
+      "type": "Affluent Residential & Casual Dining",
+      "avg_ticket_size_inr": 230
+    },
+    {
+      "id": "bellandur_eco",
+      "name": "Bellandur (Ecospace & Outer Ring Rd)",
+      "lat": 12.9260,
+      "lon": 77.6762,
+      "zone": "East Corridor",
+      "type": "Mega IT Corridor & Young Tech Floating Pop",
+      "avg_ticket_size_inr": 260
+    },
+    {
+      "id": "kammanahalli_hrbr",
+      "name": "Kammanahalli / Kalyan Nagar (HRBR Layout)",
+      "lat": 13.0159,
+      "lon": 77.6432,
+      "zone": "North-East",
+      "type": "Cosmopolitan Cafe & Food Strip",
+      "avg_ticket_size_inr": 220
+    },
+    {
+      "id": "yelahanka_new_town",
+      "name": "Yelahanka New Town",
+      "lat": 13.1007,
+      "lon": 77.5963,
+      "zone": "North",
+      "type": "Aerospace & Emerging Premium Residential",
+      "avg_ticket_size_inr": 210
+    },
+    {
+      "id": "electronic_city_p1",
+      "name": "Electronic City Phase 1",
+      "lat": 12.8452,
+      "lon": 77.6602,
+      "zone": "South Outer",
+      "type": "Tech Hub & Student Cluster",
+      "avg_ticket_size_inr": 200
+    },
+    {
+      "id": "basavanagudi_bazaar",
+      "name": "Basavanagudi (Gandhi Bazaar)",
+      "lat": 12.9422,
+      "lon": 77.5739,
+      "zone": "South-Central",
+      "type": "Cultural Food Destination & Family Hub",
+      "avg_ticket_size_inr": 210
+    },
+    {
+      "id": "kengeri_satellite",
+      "name": "Kengeri Satellite Town",
+      "lat": 12.9177,
+      "lon": 77.4839,
+      "zone": "West",
+      "type": "Emerging Metro Terminal & College Hub",
+      "avg_ticket_size_inr": 180
+    },
+    {
+      "id": "marathahalli_bridge",
+      "name": "Marathahalli Multiplex / Bridge",
+      "lat": 12.9562,
+      "lon": 77.7011,
+      "zone": "East",
+      "type": "High Density Transit & Retail Node",
+      "avg_ticket_size_inr": 210
+    },
+    {
+      "id": "frazer_town_coles",
+      "name": "Frazer Town (Coles Road & Mosque Rd)",
+      "lat": 12.9968,
+      "lon": 77.6133,
+      "zone": "Central North",
+      "type": "Historic Gourmet & Late Night Dessert Hub",
+      "avg_ticket_size_inr": 250
+    },
+    {
+      "id": "banashankari_3rd",
+      "name": "Banashankari 3rd Stage (Kathriguppe)",
+      "lat": 12.9255,
+      "lon": 77.5469,
+      "zone": "South-West",
+      "type": "Dense Residential & Institutional Cluster",
+      "avg_ticket_size_inr": 190
+    },
+    {
+      "id": "rajajinagar_10th",
+      "name": "Rajajinagar (Dr Rajkumar Rd & 10th Main)",
+      "lat": 12.9982,
+      "lon": 77.5530,
+      "zone": "West",
+      "type": "Commercial Corridor & High-Net-Worth Residential",
+      "avg_ticket_size_inr": 220
+    },
+    {
+      "id": "btm_layout_2nd",
+      "name": "BTM Layout 2nd Stage",
+      "lat": 12.9166,
+      "lon": 77.6101,
+      "zone": "South",
+      "type": "Co-living & Young Tech Density",
+      "avg_ticket_size_inr": 210
+    },
+    {
+      "id": "hebbal_outer_ring",
+      "name": "Hebbal (Outer Ring Rd & Kempapura)",
+      "lat": 13.0358,
+      "lon": 77.5970,
+      "zone": "North Gateway",
+      "type": "Lakeside Luxury Gated Towers & Corporate Parks",
+      "avg_ticket_size_inr": 260
+    },
+    {
+      "id": "varthur_gunjur",
+      "name": "Varthur - Gunjur Tech Corridor",
+      "lat": 12.9388,
+      "lon": 77.7410,
+      "zone": "East Emerging",
+      "type": "High-Growth Premium Residential Expansion",
+      "avg_ticket_size_inr": 240
+    }
+  ]
+}

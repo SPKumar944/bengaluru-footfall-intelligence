@@ -1,0 +1,45 @@
+# MCDA & Huff Gravity Scoring Model Parameters
+# Ice Cream Market Potential Index (IMPI)
+
+mcda_weights:
+  pop_density_weight: 0.30       # w1: Resident & daytime floating population
+  footfall_synergy_weight: 0.35  # w2: Complementary dining, cafe, transit & evening footfall
+  youth_affluence_weight: 0.20   # w3: Tech corridor, student & gated apartment density
+  competitor_penalty_weight: 0.15 # w4: Over-saturation penalty (rewards white-space)
+
+gravity_parameters:
+  distance_decay_exponent: 1.8   # Beta parameter for spatial friction
+  max_catchment_distance_km: 7.5 # Maximum interaction radius
+  tier1_attractiveness_weight: 1.5
+  tier2_attractiveness_weight: 0.8
+  storefront_base_attractiveness: 1.2
+
+isochrone_speeds:
+  walk_kmh: 4.5       # 5-minute walk catchment
+  drive_kmh: 22.0     # 10-minute urban traffic peak drive
+  delivery_kmh: 25.0  # 15-minute Swiggy/Zomato rider radius
+
+brand_classification:
+  tier_1_destination:
+    - "corner house"
+    - "natural"
+    - "naturals"
+    - "baskin robbins"
+    - "milano"
+    - "pabrai"
+    - "polar bear"
+    - "ibaco"
+    - "haagen-dazs"
+    - "cold stone"
+    - "cream stone"
+    - "lakeview"
+    - "artiscoop"
+  tier_2_mass:
+    - "amul"
+    - "arun"
+    - "kwality wall"
+    - "havmor"
+    - "vadilal"
+    - "creambell"
+    - "dinshaw"
+    - "rollick"

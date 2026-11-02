@@ -1,0 +1,802 @@
+[
+  {
+    "rank": 1,
+    "site_id": "kammanahalli_hrbr",
+    "site_name": "Kammanahalli / Kalyan Nagar (HRBR Layout)",
+    "zone": "North-East",
+    "site_type": "Cosmopolitan Cafe & Food Strip",
+    "lat": 13.0159,
+    "lon": 77.6432,
+    "avg_ticket_inr": 220,
+    "projected_daily_cups": 8190,
+    "projected_monthly_revenue_lakhs": 540.54,
+    "cannibalization_risk_pct": 45.0,
+    "white_space_score": 27.2,
+    "catchment_5min_walk": {
+      "catchment_population": 13531,
+      "competitors": 0,
+      "dining_pois": 1,
+      "daily_cup_share": 187
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 1102649,
+      "competitors": 26,
+      "tier1_competitors": 6,
+      "dining_pois": 14,
+      "metro_stations": 10,
+      "daily_cup_share": 1653
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 2886735,
+      "competitors": 66,
+      "daily_cup_share": 6350
+    },
+    "radar_profile": {
+      "footfall_synergy": 13.4,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 27.2
+    }
+  },
+  {
+    "rank": 2,
+    "site_id": "btm_layout_2nd",
+    "site_name": "BTM Layout 2nd Stage",
+    "zone": "South",
+    "site_type": "Co-living & Young Tech Density",
+    "lat": 12.9166,
+    "lon": 77.6101,
+    "avg_ticket_inr": 210,
+    "projected_daily_cups": 10486,
+    "projected_monthly_revenue_lakhs": 660.62,
+    "cannibalization_risk_pct": 85.0,
+    "white_space_score": 24.9,
+    "catchment_5min_walk": {
+      "catchment_population": 16706,
+      "competitors": 2,
+      "dining_pois": 3,
+      "daily_cup_share": 275
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 1504437,
+      "competitors": 52,
+      "tier1_competitors": 21,
+      "dining_pois": 41,
+      "metro_stations": 21,
+      "daily_cup_share": 2256
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 3616331,
+      "competitors": 82,
+      "daily_cup_share": 7955
+    },
+    "radar_profile": {
+      "footfall_synergy": 31.2,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 24.9
+    }
+  },
+  {
+    "rank": 3,
+    "site_id": "indiranagar_100ft",
+    "site_name": "Indiranagar (100ft Rd & 12th Main)",
+    "zone": "East",
+    "site_type": "High Street & Dining Hub",
+    "lat": 12.9719,
+    "lon": 77.6412,
+    "avg_ticket_inr": 280,
+    "projected_daily_cups": 10249,
+    "projected_monthly_revenue_lakhs": 860.92,
+    "cannibalization_risk_pct": 67.5,
+    "white_space_score": 24.7,
+    "catchment_5min_walk": {
+      "catchment_population": 15207,
+      "competitors": 1,
+      "dining_pois": 0,
+      "daily_cup_share": 182
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 1365017,
+      "competitors": 25,
+      "tier1_competitors": 7,
+      "dining_pois": 17,
+      "metro_stations": 13,
+      "daily_cup_share": 2047
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 3645742,
+      "competitors": 91,
+      "daily_cup_share": 8020
+    },
+    "radar_profile": {
+      "footfall_synergy": 18.7,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 24.7
+    }
+  },
+  {
+    "rank": 4,
+    "site_id": "hsr_sector_2",
+    "site_name": "HSR Layout Sector 2 (27th Main)",
+    "zone": "South-East",
+    "site_type": "Startup Corridor & Young Family Cluster",
+    "lat": 12.9116,
+    "lon": 77.6389,
+    "avg_ticket_inr": 240,
+    "projected_daily_cups": 9367,
+    "projected_monthly_revenue_lakhs": 674.42,
+    "cannibalization_risk_pct": 75.0,
+    "white_space_score": 24.6,
+    "catchment_5min_walk": {
+      "catchment_population": 16040,
+      "competitors": 2,
+      "dining_pois": 1,
+      "daily_cup_share": 217
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 1292016,
+      "competitors": 25,
+      "tier1_competitors": 8,
+      "dining_pois": 23,
+      "metro_stations": 12,
+      "daily_cup_share": 1938
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 3278473,
+      "competitors": 64,
+      "daily_cup_share": 7212
+    },
+    "radar_profile": {
+      "footfall_synergy": 20.6,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 24.6
+    }
+  },
+  {
+    "rank": 5,
+    "site_id": "koramangala_5th",
+    "site_name": "Koramangala 5th Block",
+    "zone": "South-East",
+    "site_type": "Youth & High-Density Nightlife Hub",
+    "lat": 12.9352,
+    "lon": 77.6245,
+    "avg_ticket_inr": 260,
+    "projected_daily_cups": 10857,
+    "projected_monthly_revenue_lakhs": 846.85,
+    "cannibalization_risk_pct": 85.0,
+    "white_space_score": 24.2,
+    "catchment_5min_walk": {
+      "catchment_population": 16527,
+      "competitors": 1,
+      "dining_pois": 1,
+      "daily_cup_share": 223
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 1494881,
+      "competitors": 36,
+      "tier1_competitors": 14,
+      "dining_pois": 25,
+      "metro_stations": 15,
+      "daily_cup_share": 2242
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 3814640,
+      "competitors": 93,
+      "daily_cup_share": 8392
+    },
+    "radar_profile": {
+      "footfall_synergy": 26.1,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 24.2
+    }
+  },
+  {
+    "rank": 6,
+    "site_id": "electronic_city_p1",
+    "site_name": "Electronic City Phase 1",
+    "zone": "South Outer",
+    "site_type": "Tech Hub & Student Cluster",
+    "lat": 12.8452,
+    "lon": 77.6602,
+    "avg_ticket_inr": 200,
+    "projected_daily_cups": 6318,
+    "projected_monthly_revenue_lakhs": 379.08,
+    "cannibalization_risk_pct": 52.5,
+    "white_space_score": 24.1,
+    "catchment_5min_walk": {
+      "catchment_population": 10372,
+      "competitors": 1,
+      "dining_pois": 0,
+      "daily_cup_share": 124
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 743029,
+      "competitors": 12,
+      "tier1_competitors": 7,
+      "dining_pois": 7,
+      "metro_stations": 2,
+      "daily_cup_share": 1114
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 2309196,
+      "competitors": 23,
+      "daily_cup_share": 5080
+    },
+    "radar_profile": {
+      "footfall_synergy": 8.0,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 76.0,
+      "white_space_yield": 24.1
+    }
+  },
+  {
+    "rank": 7,
+    "site_id": "jayanagar_4th",
+    "site_name": "Jayanagar 4th Block",
+    "zone": "South",
+    "site_type": "Heritage Affluent Family Corridor",
+    "lat": 12.9298,
+    "lon": 77.5833,
+    "avg_ticket_inr": 220,
+    "projected_daily_cups": 10559,
+    "projected_monthly_revenue_lakhs": 696.89,
+    "cannibalization_risk_pct": 85.0,
+    "white_space_score": 23.1,
+    "catchment_5min_walk": {
+      "catchment_population": 15543,
+      "competitors": 1,
+      "dining_pois": 1,
+      "daily_cup_share": 211
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 1462520,
+      "competitors": 52,
+      "tier1_competitors": 23,
+      "dining_pois": 36,
+      "metro_stations": 22,
+      "daily_cup_share": 2193
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 3707030,
+      "competitors": 97,
+      "daily_cup_share": 8155
+    },
+    "radar_profile": {
+      "footfall_synergy": 32.6,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 23.1
+    }
+  },
+  {
+    "rank": 8,
+    "site_id": "bellandur_eco",
+    "site_name": "Bellandur (Ecospace & Outer Ring Rd)",
+    "zone": "East Corridor",
+    "site_type": "Mega IT Corridor & Young Tech Floating Pop",
+    "lat": 12.926,
+    "lon": 77.6762,
+    "avg_ticket_inr": 260,
+    "projected_daily_cups": 8773,
+    "projected_monthly_revenue_lakhs": 684.29,
+    "cannibalization_risk_pct": 75.0,
+    "white_space_score": 21.9,
+    "catchment_5min_walk": {
+      "catchment_population": 13680,
+      "competitors": 1,
+      "dining_pois": 0,
+      "daily_cup_share": 164
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 1140339,
+      "competitors": 21,
+      "tier1_competitors": 8,
+      "dining_pois": 10,
+      "metro_stations": 6,
+      "daily_cup_share": 1710
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 3135959,
+      "competitors": 72,
+      "daily_cup_share": 6899
+    },
+    "radar_profile": {
+      "footfall_synergy": 14.7,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 21.9
+    }
+  },
+  {
+    "rank": 9,
+    "site_id": "jp_nagar_phase2",
+    "site_name": "JP Nagar 24th Main (Phase 2 & 7)",
+    "zone": "South",
+    "site_type": "Affluent Residential & Casual Dining",
+    "lat": 12.9063,
+    "lon": 77.5855,
+    "avg_ticket_inr": 230,
+    "projected_daily_cups": 8980,
+    "projected_monthly_revenue_lakhs": 619.62,
+    "cannibalization_risk_pct": 85.0,
+    "white_space_score": 21.0,
+    "catchment_5min_walk": {
+      "catchment_population": 16134,
+      "competitors": 2,
+      "dining_pois": 2,
+      "daily_cup_share": 243
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 1283149,
+      "competitors": 49,
+      "tier1_competitors": 23,
+      "dining_pois": 29,
+      "metro_stations": 17,
+      "daily_cup_share": 1924
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 3096986,
+      "competitors": 91,
+      "daily_cup_share": 6813
+    },
+    "radar_profile": {
+      "footfall_synergy": 29.7,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 21.0
+    }
+  },
+  {
+    "rank": 10,
+    "site_id": "frazer_town_coles",
+    "site_name": "Frazer Town (Coles Road & Mosque Rd)",
+    "zone": "Central North",
+    "site_type": "Historic Gourmet & Late Night Dessert Hub",
+    "lat": 12.9968,
+    "lon": 77.6133,
+    "avg_ticket_inr": 250,
+    "projected_daily_cups": 10215,
+    "projected_monthly_revenue_lakhs": 766.12,
+    "cannibalization_risk_pct": 85.0,
+    "white_space_score": 20.7,
+    "catchment_5min_walk": {
+      "catchment_population": 15664,
+      "competitors": 3,
+      "dining_pois": 0,
+      "daily_cup_share": 187
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 1408982,
+      "competitors": 36,
+      "tier1_competitors": 16,
+      "dining_pois": 15,
+      "metro_stations": 14,
+      "daily_cup_share": 2113
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 3597985,
+      "competitors": 85,
+      "daily_cup_share": 7915
+    },
+    "radar_profile": {
+      "footfall_synergy": 20.2,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 20.7
+    }
+  },
+  {
+    "rank": 11,
+    "site_id": "whitefield_itpl",
+    "site_name": "Whitefield (ITPL & ECC Rd)",
+    "zone": "East",
+    "site_type": "Tech Park & Gated Community Sprawl",
+    "lat": 12.9698,
+    "lon": 77.7499,
+    "avg_ticket_inr": 250,
+    "projected_daily_cups": 7088,
+    "projected_monthly_revenue_lakhs": 531.6,
+    "cannibalization_risk_pct": 75.0,
+    "white_space_score": 20.2,
+    "catchment_5min_walk": {
+      "catchment_population": 13614,
+      "competitors": 2,
+      "dining_pois": 0,
+      "daily_cup_share": 163
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 974309,
+      "competitors": 20,
+      "tier1_competitors": 6,
+      "dining_pois": 9,
+      "metro_stations": 6,
+      "daily_cup_share": 1461
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 2483683,
+      "competitors": 39,
+      "daily_cup_share": 5464
+    },
+    "radar_profile": {
+      "footfall_synergy": 14.0,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 92.0,
+      "white_space_yield": 20.2
+    }
+  },
+  {
+    "rank": 12,
+    "site_id": "basavanagudi_bazaar",
+    "site_name": "Basavanagudi (Gandhi Bazaar)",
+    "zone": "South-Central",
+    "site_type": "Cultural Food Destination & Family Hub",
+    "lat": 12.9422,
+    "lon": 77.5739,
+    "avg_ticket_inr": 210,
+    "projected_daily_cups": 10182,
+    "projected_monthly_revenue_lakhs": 641.47,
+    "cannibalization_risk_pct": 85.0,
+    "white_space_score": 20.0,
+    "catchment_5min_walk": {
+      "catchment_population": 16058,
+      "competitors": 2,
+      "dining_pois": 2,
+      "daily_cup_share": 242
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 1408514,
+      "competitors": 38,
+      "tier1_competitors": 18,
+      "dining_pois": 31,
+      "metro_stations": 14,
+      "daily_cup_share": 2112
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 3558452,
+      "competitors": 100,
+      "daily_cup_share": 7828
+    },
+    "radar_profile": {
+      "footfall_synergy": 27.2,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 20.0
+    }
+  },
+  {
+    "rank": 13,
+    "site_id": "varthur_gunjur",
+    "site_name": "Varthur - Gunjur Tech Corridor",
+    "zone": "East Emerging",
+    "site_type": "High-Growth Premium Residential Expansion",
+    "lat": 12.9388,
+    "lon": 77.741,
+    "avg_ticket_inr": 240,
+    "projected_daily_cups": 7053,
+    "projected_monthly_revenue_lakhs": 507.82,
+    "cannibalization_risk_pct": 60.0,
+    "white_space_score": 19.8,
+    "catchment_5min_walk": {
+      "catchment_population": 12990,
+      "competitors": 0,
+      "dining_pois": 0,
+      "daily_cup_share": 155
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 1034879,
+      "competitors": 19,
+      "tier1_competitors": 8,
+      "dining_pois": 10,
+      "metro_stations": 5,
+      "daily_cup_share": 1552
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 2430227,
+      "competitors": 44,
+      "daily_cup_share": 5346
+    },
+    "radar_profile": {
+      "footfall_synergy": 13.4,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 19.8
+    }
+  },
+  {
+    "rank": 14,
+    "site_id": "kengeri_satellite",
+    "site_name": "Kengeri Satellite Town",
+    "zone": "West",
+    "site_type": "Emerging Metro Terminal & College Hub",
+    "lat": 12.9177,
+    "lon": 77.4839,
+    "avg_ticket_inr": 180,
+    "projected_daily_cups": 5544,
+    "projected_monthly_revenue_lakhs": 299.38,
+    "cannibalization_risk_pct": 30.0,
+    "white_space_score": 19.6,
+    "catchment_5min_walk": {
+      "catchment_population": 10119,
+      "competitors": 0,
+      "dining_pois": 1,
+      "daily_cup_share": 146
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 706181,
+      "competitors": 15,
+      "tier1_competitors": 4,
+      "dining_pois": 12,
+      "metro_stations": 4,
+      "daily_cup_share": 1059
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 1972488,
+      "competitors": 35,
+      "daily_cup_share": 4339
+    },
+    "radar_profile": {
+      "footfall_synergy": 6.3,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 19.6
+    }
+  },
+  {
+    "rank": 15,
+    "site_id": "hebbal_outer_ring",
+    "site_name": "Hebbal (Outer Ring Rd & Kempapura)",
+    "zone": "North Gateway",
+    "site_type": "Lakeside Luxury Gated Towers & Corporate Parks",
+    "lat": 13.0358,
+    "lon": 77.597,
+    "avg_ticket_inr": 260,
+    "projected_daily_cups": 8437,
+    "projected_monthly_revenue_lakhs": 658.09,
+    "cannibalization_risk_pct": 82.5,
+    "white_space_score": 19.5,
+    "catchment_5min_walk": {
+      "catchment_population": 13465,
+      "competitors": 1,
+      "dining_pois": 0,
+      "daily_cup_share": 161
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 1160672,
+      "competitors": 31,
+      "tier1_competitors": 9,
+      "dining_pois": 17,
+      "metro_stations": 12,
+      "daily_cup_share": 1741
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 2970502,
+      "competitors": 77,
+      "daily_cup_share": 6535
+    },
+    "radar_profile": {
+      "footfall_synergy": 15.6,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 19.5
+    }
+  },
+  {
+    "rank": 16,
+    "site_id": "malleshwaram_8th",
+    "site_name": "Malleshwaram 8th Cross",
+    "zone": "North-West",
+    "site_type": "Traditional High-Footfall Commercial St",
+    "lat": 13.0031,
+    "lon": 77.5701,
+    "avg_ticket_inr": 200,
+    "projected_daily_cups": 8854,
+    "projected_monthly_revenue_lakhs": 531.24,
+    "cannibalization_risk_pct": 85.0,
+    "white_space_score": 16.6,
+    "catchment_5min_walk": {
+      "catchment_population": 15676,
+      "competitors": 0,
+      "dining_pois": 0,
+      "daily_cup_share": 188
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 1281826,
+      "competitors": 34,
+      "tier1_competitors": 15,
+      "dining_pois": 18,
+      "metro_stations": 9,
+      "daily_cup_share": 1922
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 3065510,
+      "competitors": 74,
+      "daily_cup_share": 6744
+    },
+    "radar_profile": {
+      "footfall_synergy": 18.5,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 16.6
+    }
+  },
+  {
+    "rank": 17,
+    "site_id": "marathahalli_bridge",
+    "site_name": "Marathahalli Multiplex / Bridge",
+    "zone": "East",
+    "site_type": "High Density Transit & Retail Node",
+    "lat": 12.9562,
+    "lon": 77.7011,
+    "avg_ticket_inr": 210,
+    "projected_daily_cups": 8399,
+    "projected_monthly_revenue_lakhs": 529.14,
+    "cannibalization_risk_pct": 85.0,
+    "white_space_score": 16.4,
+    "catchment_5min_walk": {
+      "catchment_population": 14101,
+      "competitors": 1,
+      "dining_pois": 0,
+      "daily_cup_share": 169
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 1094878,
+      "competitors": 25,
+      "tier1_competitors": 11,
+      "dining_pois": 10,
+      "metro_stations": 7,
+      "daily_cup_share": 1642
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 2994758,
+      "competitors": 69,
+      "daily_cup_share": 6588
+    },
+    "radar_profile": {
+      "footfall_synergy": 14.0,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 16.4
+    }
+  },
+  {
+    "rank": 18,
+    "site_id": "banashankari_3rd",
+    "site_name": "Banashankari 3rd Stage (Kathriguppe)",
+    "zone": "South-West",
+    "site_type": "Dense Residential & Institutional Cluster",
+    "lat": 12.9255,
+    "lon": 77.5469,
+    "avg_ticket_inr": 190,
+    "projected_daily_cups": 8390,
+    "projected_monthly_revenue_lakhs": 478.23,
+    "cannibalization_risk_pct": 85.0,
+    "white_space_score": 16.2,
+    "catchment_5min_walk": {
+      "catchment_population": 14978,
+      "competitors": 0,
+      "dining_pois": 0,
+      "daily_cup_share": 179
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 1142846,
+      "competitors": 41,
+      "tier1_competitors": 17,
+      "dining_pois": 19,
+      "metro_stations": 14,
+      "daily_cup_share": 1714
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 2953207,
+      "competitors": 81,
+      "daily_cup_share": 6497
+    },
+    "radar_profile": {
+      "footfall_synergy": 21.6,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 16.2
+    }
+  },
+  {
+    "rank": 19,
+    "site_id": "yelahanka_new_town",
+    "site_name": "Yelahanka New Town",
+    "zone": "North",
+    "site_type": "Aerospace & Emerging Premium Residential",
+    "lat": 13.1007,
+    "lon": 77.5963,
+    "avg_ticket_inr": 210,
+    "projected_daily_cups": 5110,
+    "projected_monthly_revenue_lakhs": 321.93,
+    "cannibalization_risk_pct": 60.0,
+    "white_space_score": 14.4,
+    "catchment_5min_walk": {
+      "catchment_population": 10034,
+      "competitors": 1,
+      "dining_pois": 1,
+      "daily_cup_share": 145
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 686676,
+      "competitors": 16,
+      "tier1_competitors": 6,
+      "dining_pois": 7,
+      "metro_stations": 6,
+      "daily_cup_share": 1030
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 1788838,
+      "competitors": 28,
+      "daily_cup_share": 3935
+    },
+    "radar_profile": {
+      "footfall_synergy": 7.2,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 76.0,
+      "white_space_yield": 14.4
+    }
+  },
+  {
+    "rank": 20,
+    "site_id": "rajajinagar_10th",
+    "site_name": "Rajajinagar (Dr Rajkumar Rd & 10th Main)",
+    "zone": "West",
+    "site_type": "Commercial Corridor & High-Net-Worth Residential",
+    "lat": 12.9982,
+    "lon": 77.553,
+    "avg_ticket_inr": 220,
+    "projected_daily_cups": 8392,
+    "projected_monthly_revenue_lakhs": 553.87,
+    "cannibalization_risk_pct": 85.0,
+    "white_space_score": 12.5,
+    "catchment_5min_walk": {
+      "catchment_population": 15134,
+      "competitors": 1,
+      "dining_pois": 3,
+      "daily_cup_share": 256
+    },
+    "catchment_10min_drive": {
+      "catchment_population": 1143434,
+      "competitors": 24,
+      "tier1_competitors": 12,
+      "dining_pois": 17,
+      "metro_stations": 5,
+      "daily_cup_share": 1715
+    },
+    "catchment_15min_delivery": {
+      "catchment_population": 2919022,
+      "competitors": 71,
+      "daily_cup_share": 6421
+    },
+    "radar_profile": {
+      "footfall_synergy": 13.7,
+      "demographics": 100.0,
+      "transit_accessibility": 100.0,
+      "dining_density": 100.0,
+      "white_space_yield": 12.5
+    }
+  }
+]

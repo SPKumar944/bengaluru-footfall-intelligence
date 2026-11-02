@@ -1,0 +1,216 @@
+{
+  "study_area": {
+    "region_name": "Bengaluru Urban (BBMP Limits)",
+    "bounding_box": {
+      "min_lon": 77.45,
+      "min_lat": 12.83,
+      "max_lon": 77.78,
+      "max_lat": 13.14
+    },
+    "projected_crs": "EPSG:32643",
+    "geographic_crs": "EPSG:4326",
+    "utm_zone": "43N",
+    "grid_macro_size_m": 1000,
+    "grid_micro_size_m": 150
+  },
+  "commercial_hubs": [
+    {
+      "hub_id": "HUB_01",
+      "name": "Indiranagar (100ft & 12th Main)",
+      "lat": 12.9719,
+      "lon": 77.6412,
+      "zone": "East",
+      "type": "High Street Retail & Nightlife",
+      "avg_commercial_rent_sqft": 340,
+      "existing_polar_bear_nearby": true,
+      "polar_bear_dist_km": 0.85
+    },
+    {
+      "hub_id": "HUB_02",
+      "name": "Koramangala 5th & 7th Block",
+      "lat": 12.9352,
+      "lon": 77.6245,
+      "zone": "South-East",
+      "type": "High Street Dining & Student Hub",
+      "avg_commercial_rent_sqft": 310,
+      "existing_polar_bear_nearby": true,
+      "polar_bear_dist_km": 0.95
+    },
+    {
+      "hub_id": "HUB_03",
+      "name": "Jayanagar 4th Block",
+      "lat": 12.9298,
+      "lon": 77.5833,
+      "zone": "South",
+      "type": "Heritage Family Commercial Hub",
+      "avg_commercial_rent_sqft": 280,
+      "existing_polar_bear_nearby": true,
+      "polar_bear_dist_km": 1.10
+    },
+    {
+      "hub_id": "HUB_04",
+      "name": "JP Nagar (24th Main Phase 2 & 7)",
+      "lat": 12.9063,
+      "lon": 77.5855,
+      "zone": "South",
+      "type": "Affluent Residential & Casual Dining",
+      "avg_commercial_rent_sqft": 240,
+      "existing_polar_bear_nearby": false,
+      "polar_bear_dist_km": 2.40
+    },
+    {
+      "hub_id": "HUB_05",
+      "name": "HSR Layout (27th Main Sector 1 & 2)",
+      "lat": 12.9116,
+      "lon": 77.6389,
+      "zone": "South-East",
+      "type": "Startup Corridor & Young Family Cluster",
+      "avg_commercial_rent_sqft": 260,
+      "existing_polar_bear_nearby": false,
+      "polar_bear_dist_km": 1.85
+    },
+    {
+      "hub_id": "HUB_06",
+      "name": "Whitefield (ITPL Main Rd & Inner Circle)",
+      "lat": 12.9698,
+      "lon": 77.7499,
+      "zone": "East",
+      "type": "Mega IT Corridor & Gated Communities",
+      "avg_commercial_rent_sqft": 250,
+      "existing_polar_bear_nearby": false,
+      "polar_bear_dist_km": 3.20
+    },
+    {
+      "hub_id": "HUB_07",
+      "name": "Malleshwaram (8th Cross & Sampige Rd)",
+      "lat": 13.0031,
+      "lon": 77.5701,
+      "zone": "North-West",
+      "type": "Traditional High-Density High Street",
+      "avg_commercial_rent_sqft": 260,
+      "existing_polar_bear_nearby": true,
+      "polar_bear_dist_km": 0.70
+    },
+    {
+      "hub_id": "HUB_08",
+      "name": "Rajajinagar (Dr. Rajkumar Rd)",
+      "lat": 12.9982,
+      "lon": 77.5530,
+      "zone": "West",
+      "type": "Commercial Highway & Affluent Residential",
+      "avg_commercial_rent_sqft": 240,
+      "existing_polar_bear_nearby": false,
+      "polar_bear_dist_km": 2.10
+    },
+    {
+      "hub_id": "HUB_09",
+      "name": "Banashankari 3rd Stage (Kathriguppe)",
+      "lat": 12.9255,
+      "lon": 77.5469,
+      "zone": "South-West",
+      "type": "Dense Residential & Institutional",
+      "avg_commercial_rent_sqft": 190,
+      "existing_polar_bear_nearby": false,
+      "polar_bear_dist_km": 2.80
+    },
+    {
+      "hub_id": "HUB_10",
+      "name": "Kengeri Satellite Town",
+      "lat": 12.9177,
+      "lon": 77.4839,
+      "zone": "West Outer",
+      "type": "Emerging Metro Terminal & College Hub",
+      "avg_commercial_rent_sqft": 150,
+      "existing_polar_bear_nearby": false,
+      "polar_bear_dist_km": 4.50
+    },
+    {
+      "hub_id": "HUB_11",
+      "name": "Electronic City Phase 1 (Neeladri Rd)",
+      "lat": 12.8452,
+      "lon": 77.6602,
+      "zone": "South Outer",
+      "type": "Tech Hub & High-Density PG/Apartment",
+      "avg_commercial_rent_sqft": 180,
+      "existing_polar_bear_nearby": false,
+      "polar_bear_dist_km": 3.80
+    },
+    {
+      "hub_id": "HUB_12",
+      "name": "Marathahalli (Multiplex / ORR Junction)",
+      "lat": 12.9562,
+      "lon": 77.7011,
+      "zone": "East",
+      "type": "High Density Transit & Retail Node",
+      "avg_commercial_rent_sqft": 220,
+      "existing_polar_bear_nearby": false,
+      "polar_bear_dist_km": 2.60
+    },
+    {
+      "hub_id": "HUB_13",
+      "name": "Bellandur (Ecospace & Outer Ring Rd)",
+      "lat": 12.9260,
+      "lon": 77.6762,
+      "zone": "East Corridor",
+      "type": "Mega IT Corridor & Floating Pop",
+      "avg_commercial_rent_sqft": 280,
+      "existing_polar_bear_nearby": false,
+      "polar_bear_dist_km": 2.90
+    },
+    {
+      "hub_id": "HUB_14",
+      "name": "Kalyan Nagar (HRBR Layout 80ft Rd)",
+      "lat": 13.0159,
+      "lon": 77.6432,
+      "zone": "North-East",
+      "type": "Cosmopolitan Cafe & Food Strip",
+      "avg_commercial_rent_sqft": 230,
+      "existing_polar_bear_nearby": false,
+      "polar_bear_dist_km": 2.10
+    },
+    {
+      "hub_id": "HUB_15",
+      "name": "Kammanahalli Main Road",
+      "lat": 13.0095,
+      "lon": 77.6360,
+      "zone": "North-East",
+      "type": "Youth & Multi-Cuisine High Street",
+      "avg_commercial_rent_sqft": 210,
+      "existing_polar_bear_nearby": true,
+      "polar_bear_dist_km": 0.65
+    },
+    {
+      "hub_id": "HUB_16",
+      "name": "Yelahanka New Town (Major Unnikrishnan Rd)",
+      "lat": 13.1007,
+      "lon": 77.5963,
+      "zone": "North",
+      "type": "Emerging Premium Residential & Colleges",
+      "avg_commercial_rent_sqft": 170,
+      "existing_polar_bear_nearby": false,
+      "polar_bear_dist_km": 3.90
+    },
+    {
+      "hub_id": "HUB_17",
+      "name": "Hebbal (Kempapura / Esteem Mall Node)",
+      "lat": 13.0358,
+      "lon": 77.5970,
+      "zone": "North Gateway",
+      "type": "Lakeside Corporate Parks & Gated Towers",
+      "avg_commercial_rent_sqft": 240,
+      "existing_polar_bear_nearby": false,
+      "polar_bear_dist_km": 2.70
+    },
+    {
+      "hub_id": "HUB_18",
+      "name": "MG Road / Brigade Road / Church Street",
+      "lat": 12.9738,
+      "lon": 77.6080,
+      "zone": "CBD",
+      "type": "Metropolitan Central Business & Tourist CBD",
+      "avg_commercial_rent_sqft": 450,
+      "existing_polar_bear_nearby": true,
+      "polar_bear_dist_km": 1.05
+    }
+  ]
+}
