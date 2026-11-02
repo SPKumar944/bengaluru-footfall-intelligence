@@ -1,0 +1,431 @@
+[
+  {
+    "serial_no": "APSARA_BLR_01",
+    "brand": "Apsara Ice Creams",
+    "store_name": "Apsara Ice Creams",
+    "locality": "HSR Layout",
+    "corridor_name": "19th Main & 27th Main High Street",
+    "zone": "South East",
+    "google_place_id": "ChIJ532fHoUUrjsRsX5WXnMcBR8",
+    "google_rating": 4.4,
+    "google_review_count": 1556,
+    "address": "1705, 19th Main Rd, Garden Layout, Sector 2, HSR Layout, Bengaluru, Karnataka 560102",
+    "coordinates": {
+      "lat": 12.9056099,
+      "lng": 77.6445964
+    },
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "store_footfall": {
+      "est_monthly_customers": 4045,
+      "est_daily_cups": 134,
+      "est_evening_peak_cups": 54,
+      "avg_ticket_size_inr": 180
+    },
+    "regional_footfall": {
+      "corridor_zone": "19th Main & 27th Main High Street",
+      "annual_unique_visitors": 17900000,
+      "weekday_daily_footfall": 49041,
+      "weekend_daily_footfall": 70400,
+      "weekend_surge_pct": 43.6,
+      "peak_evening_hourly_flow": 7216,
+      "f_and_b_share_pct": 39.5,
+      "mean_dwell_time_mins": 65.0
+    }
+  },
+  {
+    "serial_no": "APSARA_BLR_02",
+    "brand": "Apsara Ice Creams",
+    "store_name": "Apsara Ice Creams",
+    "locality": "Indiranagar",
+    "corridor_name": "100 Feet Rd & 12th Main Strip",
+    "zone": "East Central",
+    "google_place_id": "ChIJO0NIGLsWrjsRsPXPM1e9D0k",
+    "google_rating": 4.4,
+    "google_review_count": 1243,
+    "address": "100/1B, 2nd Main Road, 10th Cross Rd, Indira Nagar 1st Stage, Bengaluru, Karnataka 560038",
+    "coordinates": {
+      "lat": 12.9821754,
+      "lng": 77.6385749
+    },
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "store_footfall": {
+      "est_monthly_customers": 3231,
+      "est_daily_cups": 107,
+      "est_evening_peak_cups": 43,
+      "avg_ticket_size_inr": 180
+    },
+    "regional_footfall": {
+      "corridor_zone": "100 Feet Rd & 12th Main Strip",
+      "annual_unique_visitors": 18450000,
+      "weekday_daily_footfall": 50548,
+      "weekend_daily_footfall": 72400,
+      "weekend_surge_pct": 43.2,
+      "peak_evening_hourly_flow": 7421,
+      "f_and_b_share_pct": 39.5,
+      "mean_dwell_time_mins": 65.0
+    }
+  },
+  {
+    "serial_no": "APSARA_BLR_03",
+    "brand": "Apsara Ice Creams",
+    "store_name": "Apsara Ice Creams",
+    "locality": "JP Nagar",
+    "corridor_name": "24th Main Road Commercial Strip (Phase 5)",
+    "zone": "South",
+    "google_place_id": "ChIJ3-XsPQ0VrjsR1cnHonDZ6ZE",
+    "google_rating": 4.4,
+    "google_review_count": 918,
+    "address": "No 15/A, 24th main road katha no 311 JP Nagar 5th phase, B.B, Puttenahalli, M.P south, Bommanahalli, Bengaluru, Karnataka 560078",
+    "coordinates": {
+      "lat": 12.897316799999999,
+      "lng": 77.5860521
+    },
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "store_footfall": {
+      "est_monthly_customers": 2386,
+      "est_daily_cups": 79,
+      "est_evening_peak_cups": 32,
+      "avg_ticket_size_inr": 180
+    },
+    "regional_footfall": {
+      "corridor_zone": "24th Main Road Commercial Strip (Phase 5)",
+      "annual_unique_visitors": 16100000,
+      "weekday_daily_footfall": 44109,
+      "weekend_daily_footfall": 61400,
+      "weekend_surge_pct": 39.2,
+      "peak_evening_hourly_flow": 6293,
+      "f_and_b_share_pct": 39.5,
+      "mean_dwell_time_mins": 65.0
+    }
+  },
+  {
+    "serial_no": "APSARA_BLR_04",
+    "brand": "Apsara Ice Creams",
+    "store_name": "Apsara Ice Creams",
+    "locality": "Whitefield",
+    "corridor_name": "Varthur Main Rd & Siddhapura Commercial Node",
+    "zone": "East Outer",
+    "google_place_id": "ChIJY6d3QWwTrjsR2JPaB1U43I0",
+    "google_rating": 4.5,
+    "google_review_count": 809,
+    "address": "Shop No.4, S.H.R. Complex, Siddhapura, Varthur Main Rd, Whitefield, Bengaluru, Karnataka 560066",
+    "coordinates": {
+      "lat": 12.9562441,
+      "lng": 77.72966269999999
+    },
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "store_footfall": {
+      "est_monthly_customers": 2103,
+      "est_daily_cups": 70,
+      "est_evening_peak_cups": 28,
+      "avg_ticket_size_inr": 180
+    },
+    "regional_footfall": {
+      "corridor_zone": "Varthur Main Rd & Siddhapura Commercial Node",
+      "annual_unique_visitors": 24800000,
+      "weekday_daily_footfall": 67945,
+      "weekend_daily_footfall": 59800,
+      "weekend_surge_pct": -12.0,
+      "peak_evening_hourly_flow": 6129,
+      "f_and_b_share_pct": 39.5,
+      "mean_dwell_time_mins": 65.0
+    }
+  },
+  {
+    "serial_no": "APSARA_BLR_05",
+    "brand": "Apsara Ice Creams",
+    "store_name": "Apsara Ice Creams",
+    "locality": "Hennur / Kothanur",
+    "corridor_name": "Hennur Main Road & Petra Complex Node",
+    "zone": "North East",
+    "google_place_id": "ChIJE3-Kw6oZrjsR-bxgzSWEWrg",
+    "google_rating": 4.5,
+    "google_review_count": 626,
+    "address": "Shop No, Petra Complex, G 8 & 9, Hennur Main Rd, Kothanur, Bengaluru, Karnataka 560077",
+    "coordinates": {
+      "lat": 13.062492899999999,
+      "lng": 77.64951099999999
+    },
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "store_footfall": {
+      "est_monthly_customers": 1627,
+      "est_daily_cups": 54,
+      "est_evening_peak_cups": 22,
+      "avg_ticket_size_inr": 180
+    },
+    "regional_footfall": {
+      "corridor_zone": "Hennur Main Road & Petra Complex Node",
+      "annual_unique_visitors": 13400000,
+      "weekday_daily_footfall": 36712,
+      "weekend_daily_footfall": 51200,
+      "weekend_surge_pct": 39.5,
+      "peak_evening_hourly_flow": 5248,
+      "f_and_b_share_pct": 39.5,
+      "mean_dwell_time_mins": 65.0
+    }
+  },
+  {
+    "serial_no": "APSARA_BLR_06",
+    "brand": "Apsara Ice Creams",
+    "store_name": "Apsara Ice Creams",
+    "locality": "Bellandur",
+    "corridor_name": "Green Glen Layout Dining Strip",
+    "zone": "South East",
+    "google_place_id": "ChIJNcPsF98TrjsRZnC9DXzBlgg",
+    "google_rating": 4.4,
+    "google_review_count": 615,
+    "address": "Sobha Lakeview Club House, 1134, road, Green Glen Layout, Bellandur, Bengaluru, Karnataka 560103",
+    "coordinates": {
+      "lat": 12.928492199999999,
+      "lng": 77.67188279999999
+    },
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "store_footfall": {
+      "est_monthly_customers": 1599,
+      "est_daily_cups": 53,
+      "est_evening_peak_cups": 21,
+      "avg_ticket_size_inr": 180
+    },
+    "regional_footfall": {
+      "corridor_zone": "Green Glen Layout Dining Strip",
+      "annual_unique_visitors": 23500000,
+      "weekday_daily_footfall": 64383,
+      "weekend_daily_footfall": 53100,
+      "weekend_surge_pct": -17.5,
+      "peak_evening_hourly_flow": 5442,
+      "f_and_b_share_pct": 39.5,
+      "mean_dwell_time_mins": 65.0
+    }
+  },
+  {
+    "serial_no": "APSARA_BLR_07",
+    "brand": "Apsara Ice Creams",
+    "store_name": "Apsara Ice Creams",
+    "locality": "Koramangala",
+    "corridor_name": "1st A Main Rd & 80 Feet Road (7th Block)",
+    "zone": "South East",
+    "google_place_id": "ChIJv26l_CIVrjsRkX9qXoWgFCk",
+    "google_rating": 4.5,
+    "google_review_count": 594,
+    "address": "Building no 10, ground floor, 1st A Main Road, KHB Colony, 7th Block, Koramangala, Bengaluru, Karnataka 560095",
+    "coordinates": {
+      "lat": 12.9363338,
+      "lng": 77.61547999999999
+    },
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "store_footfall": {
+      "est_monthly_customers": 1544,
+      "est_daily_cups": 51,
+      "est_evening_peak_cups": 20,
+      "avg_ticket_size_inr": 180
+    },
+    "regional_footfall": {
+      "corridor_zone": "1st A Main Rd & 80 Feet Road (7th Block)",
+      "annual_unique_visitors": 19200000,
+      "weekday_daily_footfall": 52602,
+      "weekend_daily_footfall": 73800,
+      "weekend_surge_pct": 40.3,
+      "peak_evening_hourly_flow": 7564,
+      "f_and_b_share_pct": 39.5,
+      "mean_dwell_time_mins": 65.0
+    }
+  },
+  {
+    "serial_no": "APSARA_BLR_08",
+    "brand": "Apsara Ice Creams",
+    "store_name": "Apsara Ice Creams",
+    "locality": "Yelahanka",
+    "corridor_name": "Mother Dairy Road (Yelahanka New Town)",
+    "zone": "North",
+    "google_place_id": "ChIJawAKGBQZrjsRTecdaQZM9IY",
+    "google_rating": 4.6,
+    "google_review_count": 330,
+    "address": "G.V.K Castle, 800, M.I.G, Mother Dairy Road, Yelahanka Rd, Yelahanka New Town, Bengaluru, Karnataka 560064",
+    "coordinates": {
+      "lat": 13.099830299999999,
+      "lng": 77.5793059
+    },
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "store_footfall": {
+      "est_monthly_customers": 858,
+      "est_daily_cups": 35,
+      "est_evening_peak_cups": 14,
+      "avg_ticket_size_inr": 180
+    },
+    "regional_footfall": {
+      "corridor_zone": "Mother Dairy Road (Yelahanka New Town)",
+      "annual_unique_visitors": 14200000,
+      "weekday_daily_footfall": 38904,
+      "weekend_daily_footfall": 54600,
+      "weekend_surge_pct": 40.3,
+      "peak_evening_hourly_flow": 5596,
+      "f_and_b_share_pct": 39.5,
+      "mean_dwell_time_mins": 65.0
+    }
+  },
+  {
+    "serial_no": "APSARA_BLR_09",
+    "brand": "Apsara Ice Creams",
+    "store_name": "Apsara Ice Creams",
+    "locality": "Malleshwaram",
+    "corridor_name": "Sampige Road & Margosa Road Strip",
+    "zone": "West Central",
+    "google_place_id": "ChIJnXuhLKQXrjsRwI5-38wA1KQ",
+    "google_rating": 4.4,
+    "google_review_count": 241,
+    "address": "2nd Main Road, Main Road, Sampige Rd, Opp Joyalukkas, Malleshwaram, Bengaluru, Karnataka 560003",
+    "coordinates": {
+      "lat": 12.994491499999999,
+      "lng": 77.5713988
+    },
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "store_footfall": {
+      "est_monthly_customers": 626,
+      "est_daily_cups": 35,
+      "est_evening_peak_cups": 14,
+      "avg_ticket_size_inr": 180
+    },
+    "regional_footfall": {
+      "corridor_zone": "Sampige Road & Margosa Road Strip",
+      "annual_unique_visitors": 15800000,
+      "weekday_daily_footfall": 43287,
+      "weekend_daily_footfall": 58900,
+      "weekend_surge_pct": 36.1,
+      "peak_evening_hourly_flow": 6037,
+      "f_and_b_share_pct": 39.5,
+      "mean_dwell_time_mins": 65.0
+    }
+  },
+  {
+    "serial_no": "APSARA_BLR_10",
+    "brand": "Apsara Ice Creams",
+    "store_name": "Apsara Ice Creams",
+    "locality": "Vidyaranyapura",
+    "corridor_name": "Nanjappa - Thindlu Road (BEL Layout 2nd Block)",
+    "zone": "North West",
+    "google_place_id": "ChIJLz-MZGUjrjsRNnzhlh0TAs0",
+    "google_rating": 4.7,
+    "google_review_count": 154,
+    "address": "Ground Floor, Shop No 5, 1070 & 1071, Nanjappa - Thindlu Rd, BEL Layout 2nd Block, BEL Layout, Vidyaranyapura, Bengaluru, Karnataka 560097",
+    "coordinates": {
+      "lat": 13.069075199999999,
+      "lng": 77.55785
+    },
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "store_footfall": {
+      "est_monthly_customers": 400,
+      "est_daily_cups": 35,
+      "est_evening_peak_cups": 14,
+      "avg_ticket_size_inr": 180
+    },
+    "regional_footfall": {
+      "corridor_zone": "Nanjappa - Thindlu Road (BEL Layout 2nd Block)",
+      "annual_unique_visitors": 11800000,
+      "weekday_daily_footfall": 32328,
+      "weekend_daily_footfall": 44800,
+      "weekend_surge_pct": 38.6,
+      "peak_evening_hourly_flow": 4592,
+      "f_and_b_share_pct": 39.5,
+      "mean_dwell_time_mins": 65.0
+    }
+  },
+  {
+    "serial_no": "APSARA_BLR_11",
+    "brand": "Apsara Ice Creams",
+    "store_name": "Apsara Ice Creams",
+    "locality": "Banashankari",
+    "corridor_name": "80 Feet 30th Main Road (Kathreguppe 3rd Stage)",
+    "zone": "South West",
+    "google_place_id": "ChIJayYUyP4_rjsRBgsAl0xZhm0",
+    "google_rating": 4.3,
+    "google_review_count": 146,
+    "address": "No. 609, Ground Floor, 80 Feet, 30th Main Rd, 7 Block, Kathreguppe, Banashankari 3rd Stage, Banashankari, Bengaluru, Karnataka 560085",
+    "coordinates": {
+      "lat": 12.9226215,
+      "lng": 77.5602414
+    },
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "store_footfall": {
+      "est_monthly_customers": 379,
+      "est_daily_cups": 35,
+      "est_evening_peak_cups": 14,
+      "avg_ticket_size_inr": 180
+    },
+    "regional_footfall": {
+      "corridor_zone": "80 Feet 30th Main Road (Kathreguppe 3rd Stage)",
+      "annual_unique_visitors": 14900000,
+      "weekday_daily_footfall": 40821,
+      "weekend_daily_footfall": 57100,
+      "weekend_surge_pct": 39.9,
+      "peak_evening_hourly_flow": 5852,
+      "f_and_b_share_pct": 39.5,
+      "mean_dwell_time_mins": 65.0
+    }
+  },
+  {
+    "serial_no": "APSARA_BLR_12",
+    "brand": "Apsara Ice Creams",
+    "store_name": "Apsara Ice Creams",
+    "locality": "Jayanagar",
+    "corridor_name": "30th Cross Road & 11th Main (4th Block Shopping Hub)",
+    "zone": "South Central",
+    "google_place_id": "ChIJMbSwQD0VrjsRhg-KHoJ1qVo",
+    "google_rating": 4.4,
+    "google_review_count": 116,
+    "address": "# 146/C, 6th C Main Road, 30th Cross Rd, opp. to Maiyas, 4th Block, Jayanagar, Bengaluru, Karnataka 560011",
+    "coordinates": {
+      "lat": 12.928948199999999,
+      "lng": 77.5816667
+    },
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "store_footfall": {
+      "est_monthly_customers": 301,
+      "est_daily_cups": 35,
+      "est_evening_peak_cups": 14,
+      "avg_ticket_size_inr": 180
+    },
+    "regional_footfall": {
+      "corridor_zone": "30th Cross Road & 11th Main (4th Block Shopping Hub)",
+      "annual_unique_visitors": 16800000,
+      "weekday_daily_footfall": 46027,
+      "weekend_daily_footfall": 58600,
+      "weekend_surge_pct": 27.3,
+      "peak_evening_hourly_flow": 6006,
+      "f_and_b_share_pct": 39.5,
+      "mean_dwell_time_mins": 65.0
+    }
+  },
+  {
+    "serial_no": "APSARA_BLR_13",
+    "brand": "Apsara Ice Creams",
+    "store_name": "Apsara Ice Creams",
+    "locality": "Basavanagudi",
+    "corridor_name": "Gandhi Bazaar Main Road & Anjaneya Temple St",
+    "zone": "South Central",
+    "google_place_id": "ChIJzzN6KrUVrjsRc_ZIsKXQJwQ",
+    "google_rating": 4.9,
+    "google_review_count": 19,
+    "address": "No. 92, SNSKM Building, Shop No, 1 & 2(A, E Anjaneya Temple St, Gandhi Bazaar, Basavanagudi, Bengaluru, Karnataka 560004",
+    "coordinates": {
+      "lat": 12.9450896,
+      "lng": 77.57024179999999
+    },
+    "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+    "store_footfall": {
+      "est_monthly_customers": 49,
+      "est_daily_cups": 35,
+      "est_evening_peak_cups": 14,
+      "avg_ticket_size_inr": 180
+    },
+    "regional_footfall": {
+      "corridor_zone": "Gandhi Bazaar Main Road & Anjaneya Temple St",
+      "annual_unique_visitors": 15200000,
+      "weekday_daily_footfall": 41643,
+      "weekend_daily_footfall": 59400,
+      "weekend_surge_pct": 42.6,
+      "peak_evening_hourly_flow": 6088,
+      "f_and_b_share_pct": 39.5,
+      "mean_dwell_time_mins": 65.0
+    }
+  }
+]

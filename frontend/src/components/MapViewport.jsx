@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 import DeckGL from '@deck.gl/react';
-import { GeoJsonLayer } from '@deck.gl/layers';
+import { GeoJsonLayer, ScatterplotLayer } from '@deck.gl/layers';
 import maplibregl from 'maplibre-gl';
 
 const CARTO_POSITRON = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
 
 // InSAR / Scientific Yellow-Orange-Red Color Ramp
-// Low: Yellow [#FEF08A] -> Moderate: Amber [#F97316] -> High: Crimson Red [#DC2626]
 function getScientificRampColor(val, min = 0, max = 2500, alpha = 230) {
   const norm = Math.max(0, Math.min(1, (val - min) / (max - min || 1)));
   if (norm < 0.45) {
@@ -26,6 +25,9 @@ function getScientificRampColor(val, min = 0, max = 2500, alpha = 230) {
 
 export default function MapViewport({
   streetFootfallData,
+  apsaraStoresData = [],
+  selectedApsaraStore,
+  onSelectApsaraStore,
   viewState,
   setViewState,
   activeHour = 21,
@@ -65,8 +67,9 @@ export default function MapViewport({
     }
   }, [viewState]);
 
-  // Deck.gl Layer: Actual Indiranagar Street Network Footfall
+  // Deck.gl Layers
   const deckLayers = [
+    // 1. Indiranagar Street Network Footfall
     streetFootfallData?.features && new GeoJsonLayer({
       id: 'indiranagar-street-footfall-layer',
       data: streetFootfallData,
@@ -95,6 +98,49 @@ export default function MapViewport({
         getLineWidth: [activeHour]
       },
       onHover: info => setHoverInfo(info)
+    }),
+
+    // 2. Apsara Ice Cream Outlets Across Bangalore
+    apsaraStoresData.length > 0 && new ScatterplotLayer({
+      id: 'apsara-icecream-stores-layer',
+      data: apsaraStoresData,
+      pickable: true,
+      opacity: 1,
+      stroked: true,
+      filled: true,
+      radiusScale: 1,
+      radiusMinPixels: 8,
+      radiusMaxPixels: 15,
+      lineWidthUnits: 'pixels',
+      getLineWidth: 2.5,
+      getLineColor: [255, 255, 255, 255],
+      getFillColor: d => selectedApsaraStore?.serial_no === d.serial_no ? [220, 38, 38, 255] : [245, 158, 11, 240],
+      getPosition: d => [d.coordinates.lng, d.coordinates.lat],
+      updateTriggers: {
+        getFillColor: [selectedApsaraStore?.serial_no]
+      },
+      onHover: info => setHoverInfo(info),
+      onClick: info => {
+        if (info.object && onSelectApsaraStore) {
+          onSelectApsaraStore(info.object);
+        }
+      }
+    }),
+
+    // 3. Pulsing Selection Ring for Selected Apsara Store
+    selectedApsaraStore && new ScatterplotLayer({
+      id: 'apsara-store-selected-pulse',
+      data: [selectedApsaraStore],
+      pickable: false,
+      stroked: true,
+      filled: false,
+      radiusScale: 1,
+      radiusMinPixels: 18,
+      radiusMaxPixels: 26,
+      lineWidthUnits: 'pixels',
+      getLineWidth: 2,
+      getLineColor: [220, 38, 38, 240],
+      getPosition: d => [d.coordinates.lng, d.coordinates.lat]
     })
   ].filter(Boolean);
 
@@ -130,46 +176,90 @@ export default function MapViewport({
         <span className="mx-2">|</span>
         <span>ZOOM: {viewState.zoom.toFixed(1)}</span>
         <span className="mx-2">|</span>
-        <span className="text-red-700 font-bold">ACTIVE TIME: {activeHour}:00 ({activeDayType})</span>
+        <span className="text-red-700 font-bold">TIME: {activeHour}:00 ({activeDayType})</span>
       </div>
 
-      {/* 4. Street Footfall Inspection Tooltip */}
+      {/* 4. Inspection Tooltips */}
       {hoverInfo?.object && (
         <div
-          className="absolute z-30 pointer-events-none observatory-card p-2.5 rounded-lg shadow-2xl text-xs font-mono border border-slate-300 bg-white"
+          className="absolute z-30 pointer-events-none observatory-card p-3 rounded-xl shadow-2xl text-xs font-mono border border-slate-300 bg-white min-w-[240px]"
           style={{ left: hoverInfo.x + 14, top: hoverInfo.y + 14 }}
         >
-          {hoverInfo.object.properties && (() => {
-            const p = hoverInfo.object.properties;
-            const hrVal = p.hourly_footfall?.[activeHour] || 100;
-            const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
-            const currentFlow = Math.round(hrVal * mult);
-            return (
-              <div className="space-y-1 min-w-[210px]">
-                <div className="flex justify-between items-center border-b border-slate-200 pb-1">
-                  <span className="text-[10px] uppercase font-bold text-red-700">Indiranagar Street Corridor</span>
-                  <span className="text-[9px] font-mono bg-amber-100 text-amber-900 px-1.5 py-0.2 rounded font-bold">
-                    {activeHour}:00 {activeDayType === 'weekend' ? 'Wknd' : 'Wkd'}
+          {/* Apsara Store Tooltip */}
+          {hoverInfo.object.serial_no ? (
+            <div className="space-y-1.5">
+              <div className="flex justify-between items-center border-b border-slate-200 pb-1">
+                <span className="text-[10px] uppercase font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">
+                  {hoverInfo.object.serial_no}
+                </span>
+                <span className="text-[10px] font-bold text-emerald-700">
+                  {hoverInfo.object.google_rating}★ ({hoverInfo.object.google_review_count} rev)
+                </span>
+              </div>
+              <div className="text-sm font-extrabold text-slate-900">
+                Apsara Ice Creams — {hoverInfo.object.locality}
+              </div>
+              <div className="text-[10px] text-slate-500 line-clamp-2">
+                {hoverInfo.object.address}
+              </div>
+
+              <div className="pt-1.5 border-t border-slate-100 space-y-1">
+                <div className="flex justify-between">
+                  <span className="text-slate-500">Est. Daily Footfall:</span>
+                  <span className="text-red-700 font-extrabold text-xs">
+                    ~{hoverInfo.object.store_footfall.est_daily_cups} cups/day
                   </span>
                 </div>
-                <div className="text-xs font-extrabold text-slate-900">{p.street_name}</div>
-                <div className="text-[10px] text-slate-500">{p.corridor_zone}</div>
-                
-                <div className="flex justify-between pt-1 border-t border-slate-100">
-                  <span className="text-slate-500">Live Hourly Footfall:</span>
-                  <span className="text-red-700 font-extrabold text-xs">~{currentFlow.toLocaleString()} visitors/hr</span>
+                <div className="flex justify-between">
+                  <span className="text-slate-500">Monthly Customers:</span>
+                  <span className="text-slate-800 font-bold">
+                    ~{hoverInfo.object.store_footfall.est_monthly_customers.toLocaleString()} / mo
+                  </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Total Daily Traffic:</span>
-                  <span className="text-slate-800 font-semibold">{p.daily_footfall?.toLocaleString()} / day</span>
+                  <span className="text-slate-500">Prime Evening Flow:</span>
+                  <span className="text-amber-700 font-bold">
+                    🔥 ~{hoverInfo.object.regional_footfall.peak_evening_hourly_flow.toLocaleString()}/hr (7-11 PM)
+                  </span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Peak Window Volume:</span>
-                  <span className="text-amber-700 font-bold">~{p.peak_hourly_footfall?.toLocaleString()} / hr (20:00-22:00)</span>
+                <div className="flex justify-between text-[10px]">
+                  <span className="text-slate-400">Corridor Weekend Traffic:</span>
+                  <span className="text-slate-600 font-semibold">
+                    ~{(hoverInfo.object.regional_footfall.weekend_daily_footfall / 1000).toFixed(1)}k / day
+                  </span>
                 </div>
               </div>
-            );
-          })()}
+            </div>
+          ) : hoverInfo.object.properties ? (
+            /* Street Footfall Tooltip */
+            (() => {
+              const p = hoverInfo.object.properties;
+              const hrVal = p.hourly_footfall?.[activeHour] || 100;
+              const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
+              const currentFlow = Math.round(hrVal * mult);
+              return (
+                <div className="space-y-1 min-w-[210px]">
+                  <div className="flex justify-between items-center border-b border-slate-200 pb-1">
+                    <span className="text-[10px] uppercase font-bold text-red-700">Street Corridor</span>
+                    <span className="text-[9px] font-mono bg-amber-100 text-amber-900 px-1.5 py-0.2 rounded font-bold">
+                      {activeHour}:00 {activeDayType === 'weekend' ? 'Wknd' : 'Wkd'}
+                    </span>
+                  </div>
+                  <div className="text-xs font-extrabold text-slate-900">{p.street_name}</div>
+                  <div className="text-[10px] text-slate-500">{p.corridor_zone}</div>
+                  
+                  <div className="flex justify-between pt-1 border-t border-slate-100">
+                    <span className="text-slate-500">Live Hourly Flow:</span>
+                    <span className="text-red-700 font-extrabold text-xs">~{currentFlow.toLocaleString()} visitors/hr</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-500">Total Daily Traffic:</span>
+                    <span className="text-slate-800 font-semibold">{p.daily_footfall?.toLocaleString()} / day</span>
+                  </div>
+                </div>
+              );
+            })()
+          ) : null}
         </div>
       )}
     </div>
