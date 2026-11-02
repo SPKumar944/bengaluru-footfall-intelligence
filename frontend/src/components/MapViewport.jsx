@@ -25,6 +25,7 @@ function getScientificRampColor(val, min = 0, max = 2500, alpha = 230) {
 
 export default function MapViewport({
   streetFootfallData,
+  catchmentsData,
   apsaraStoresData = [],
   selectedApsaraStore,
   onSelectApsaraStore,
@@ -69,9 +70,24 @@ export default function MapViewport({
 
   // Deck.gl Layers
   const deckLayers = [
-    // 1. Indiranagar Street Network Footfall
+    // 1. High-Density 350m Pedestrian Catchment Zones for all 13 Outlets
+    catchmentsData?.features && new GeoJsonLayer({
+      id: 'apsara-store-catchments-layer',
+      data: catchmentsData,
+      pickable: true,
+      stroked: true,
+      filled: true,
+      extruded: false, // Strict 2D
+      lineWidthUnits: 'pixels',
+      getLineWidth: 1.5,
+      getLineColor: [217, 119, 6, 160], // Amber-600 perimeter
+      getFillColor: [245, 158, 11, 28], // Soft amber translucent glow
+      onHover: info => setHoverInfo(info)
+    }),
+
+    // 2. Comprehensive Street Network Footfall Across ALL 13 Locations
     streetFootfallData?.features && new GeoJsonLayer({
-      id: 'indiranagar-street-footfall-layer',
+      id: 'all-stores-street-footfall-layer',
       data: streetFootfallData,
       pickable: true,
       stroked: true,
@@ -100,7 +116,7 @@ export default function MapViewport({
       onHover: info => setHoverInfo(info)
     }),
 
-    // 2. Apsara Ice Cream Outlets Across Bangalore
+    // 3. Apsara Ice Cream Outlets Across Bangalore
     apsaraStoresData.length > 0 && new ScatterplotLayer({
       id: 'apsara-icecream-stores-layer',
       data: apsaraStoresData,
@@ -127,7 +143,7 @@ export default function MapViewport({
       }
     }),
 
-    // 3. Pulsing Selection Ring for Selected Apsara Store
+    // 4. Pulsing Selection Ring for Selected Apsara Store
     selectedApsaraStore && new ScatterplotLayer({
       id: 'apsara-store-selected-pulse',
       data: [selectedApsaraStore],
@@ -231,9 +247,53 @@ export default function MapViewport({
               </div>
             </div>
           ) : hoverInfo.object.properties ? (
-            /* Street Footfall Tooltip */
             (() => {
               const p = hoverInfo.object.properties;
+              
+              // Case A: 350m High-Density Footfall Catchment Zone
+              if (p.weekend_daily_footfall && p.store_name) {
+                return (
+                  <div className="space-y-1.5 min-w-[230px]">
+                    <div className="flex justify-between items-center border-b border-amber-200 pb-1">
+                      <span className="text-[10px] uppercase font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">
+                        350m Pedestrian Zone
+                      </span>
+                      <span className="text-[10px] font-bold text-slate-800">
+                        {p.serial_no}
+                      </span>
+                    </div>
+                    <div className="text-xs font-extrabold text-slate-900">
+                      {p.store_name} — {p.locality}
+                    </div>
+                    <div className="text-[10px] text-slate-500 line-clamp-1">
+                      {p.corridor_name}
+                    </div>
+
+                    <div className="pt-1 border-t border-slate-100 space-y-0.5 text-[11px]">
+                      <div className="flex justify-between">
+                        <span className="text-slate-500">Peak Evening Flow:</span>
+                        <span className="text-red-700 font-extrabold">
+                          ~{p.peak_evening_hourly_flow?.toLocaleString()} visitors/hr
+                        </span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-500">Weekend Footfall:</span>
+                        <span className="text-amber-800 font-bold">
+                          ~{p.weekend_daily_footfall?.toLocaleString()} / day
+                        </span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-500">Est. Store Daily Cups:</span>
+                        <span className="text-emerald-700 font-bold">
+                          ~{p.est_daily_cups} cups/day
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              // Case B: Street Footfall Vector Segment
               const hrVal = p.hourly_footfall?.[activeHour] || 100;
               const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
               const currentFlow = Math.round(hrVal * mult);
@@ -246,7 +306,7 @@ export default function MapViewport({
                     </span>
                   </div>
                   <div className="text-xs font-extrabold text-slate-900">{p.street_name}</div>
-                  <div className="text-[10px] text-slate-500">{p.corridor_zone}</div>
+                  <div className="text-[10px] text-slate-500">{p.locality || p.corridor_name || p.corridor_zone}</div>
                   
                   <div className="flex justify-between pt-1 border-t border-slate-100">
                     <span className="text-slate-500">Live Hourly Flow:</span>
@@ -256,6 +316,12 @@ export default function MapViewport({
                     <span className="text-slate-500">Total Daily Traffic:</span>
                     <span className="text-slate-800 font-semibold">{p.daily_footfall?.toLocaleString()} / day</span>
                   </div>
+                  {p.highway_type && (
+                    <div className="flex justify-between text-[9px] text-slate-400">
+                      <span>Highway Class:</span>
+                      <span className="capitalize">{p.highway_type}</span>
+                    </div>
+                  )}
                 </div>
               );
             })()

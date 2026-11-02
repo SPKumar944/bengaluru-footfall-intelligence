@@ -20,6 +20,7 @@ export default function App() {
 
   // Datasets
   const [streetFootfallData, setStreetFootfallData] = useState(null);
+  const [catchmentsData, setCatchmentsData] = useState(null);
   const [apsaraStoresData, setApsaraStoresData] = useState([]);
 
   // Selected Entities
@@ -33,18 +34,20 @@ export default function App() {
 
   const [viewState, setViewState] = useState(INDIRANAGAR_2D_VIEW);
 
-  // Load Indiranagar Footfall & Apsara Stores Datasets
+  // Load All 13 Stores Footfall & Apsara Stores Datasets
   useEffect(() => {
     async function loadAllData() {
       try {
         setLoading(true);
         const b = import.meta.env.BASE_URL;
-        const [streetRes, apsaraRes] = await Promise.all([
-          fetch(`${b}data/indiranagar_street_footfall.geojson`).then(r => r.json()),
+        const [streetRes, catchmentsRes, apsaraRes] = await Promise.all([
+          fetch(`${b}data/all_stores_street_footfall.geojson`).then(r => r.json()),
+          fetch(`${b}data/apsara_store_footfall_catchments.geojson`).then(r => r.json()),
           fetch(`${b}data/apsara_ice_cream_bangalore_footfall.json`).then(r => r.json())
         ]);
 
         setStreetFootfallData(streetRes);
+        setCatchmentsData(catchmentsRes);
         setApsaraStoresData(apsaraRes);
 
         if (apsaraRes && apsaraRes.length > 0) {
@@ -150,6 +153,7 @@ export default function App() {
       <div className="relative flex-1 w-full overflow-hidden">
         <MapViewport
           streetFootfallData={streetFootfallData}
+          catchmentsData={catchmentsData}
           apsaraStoresData={apsaraStoresData}
           selectedApsaraStore={selectedApsaraStore}
           onSelectApsaraStore={handleSelectApsaraStore}
