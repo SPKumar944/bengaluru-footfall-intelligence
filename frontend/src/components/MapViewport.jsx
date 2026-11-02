@@ -316,6 +316,12 @@ export default function MapViewport({
                     <span className="text-slate-500">Total Daily Traffic:</span>
                     <span className="text-slate-800 font-semibold">{p.daily_footfall?.toLocaleString()} / day</span>
                   </div>
+                  {p.corridor_tier && (
+                    <div className="flex justify-between text-[9px] text-amber-700 font-semibold">
+                      <span>Corridor Tier:</span>
+                      <span>{p.corridor_tier}</span>
+                    </div>
+                  )}
                   {p.highway_type && (
                     <div className="flex justify-between text-[9px] text-slate-400">
                       <span>Highway Class:</span>
