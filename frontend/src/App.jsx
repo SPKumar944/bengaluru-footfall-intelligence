@@ -229,10 +229,8 @@ export default function App() {
           {activeLayers.streetFootfall && (
             <TopRightLegend
               viewState={viewState}
-              activeLayerName={`Footfall Flow (${activeHour}:00)`}
-              minVal="Low (<400/hr)"
-              maxVal="Peak (>2.5k/hr)"
-              unit="flow"
+              activeHour={activeHour}
+              activeDayType={activeDayType}
             />
           )}
         </div>

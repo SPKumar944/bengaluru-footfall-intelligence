@@ -5,22 +5,57 @@ import maplibregl from 'maplibre-gl';
 
 const CARTO_POSITRON = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
 
-// InSAR / Scientific Yellow-Orange-Red Color Ramp
-function getScientificRampColor(val, min = 0, max = 2500, alpha = 230) {
-  const norm = Math.max(0, Math.min(1, (val - min) / (max - min || 1)));
-  if (norm < 0.45) {
-    const t = norm / 0.45;
-    const r = Math.round(254 + t * (249 - 254));
-    const g = Math.round(240 + t * (115 - 240));
-    const b = Math.round(138 + t * (22 - 138));
-    return [r, g, b, alpha];
+// Diurnal Thermal Footfall Ramp
+// Shifts from night cool slate -> dawn pale gold -> midday warm amber -> peak evening incandescent crimson
+export function getDiurnalStreetColor(flow) {
+  if (flow < 40) {
+    // Night quiet baseline: very subtle cool slate
+    return [148, 163, 184, 75];
+  } else if (flow < 150) {
+    // Early dawn / low residential flow: soft warm transition into yellow
+    const t = (flow - 40) / 110.0;
+    return [
+      Math.round(148 + t * (250 - 148)),
+      Math.round(163 + t * (204 - 163)),
+      Math.round(184 + t * (21 - 184)),
+      Math.round(75 + t * (190 - 75))
+    ];
+  } else if (flow < 500) {
+    // Moderate daytime flow: bright golden yellow to warm amber
+    const t = (flow - 150) / 350.0;
+    return [
+      Math.round(250 + t * (249 - 250)),
+      Math.round(204 + t * (115 - 204)),
+      Math.round(21 + t * (22 - 21)),
+      Math.round(190 + t * (230 - 190))
+    ];
+  } else if (flow < 1500) {
+    // Heavy commercial flow: vibrant radiant orange to vermilion
+    const t = (flow - 500) / 1000.0;
+    return [
+      Math.round(249 + t * (220 - 249)),
+      Math.round(115 + t * (38 - 115)),
+      Math.round(22 + t * (38 - 22)),
+      245
+    ];
   } else {
-    const t = (norm - 0.45) / 0.55;
-    const r = Math.round(249 + t * (220 - 249));
-    const g = Math.round(115 + t * (38 - 115));
-    const b = Math.round(22 + t * (38 - 22));
-    return [r, g, b, 255];
+    // Prime peak corridors: deep incandescent crimson red
+    const t = Math.min(1.0, (flow - 1500) / 2500.0);
+    return [
+      Math.round(220 + t * (153 - 220)),
+      Math.round(38 + t * (0 - 38)),
+      Math.round(38 + t * (0 - 38)),
+      255
+    ];
   }
+}
+
+export function getDiurnalStreetWidth(flow, isPrime) {
+  if (flow < 40) return 1.0;
+  if (flow < 150) return 1.3;
+  if (flow < 500) return isPrime ? 2.8 : 1.8;
+  if (flow < 1500) return isPrime ? 4.2 : 2.8;
+  return isPrime ? 5.8 : 4.0;
 }
 
 export default function MapViewport({
@@ -116,21 +151,20 @@ export default function MapViewport({
       getLineWidth: f => {
         const isPrime = f.properties.is_prime_corridor;
         const hrVal = f.properties.hourly_footfall?.[activeHour] || 100;
-        if (isPrime) {
-          return hrVal > 1500 ? 5.5 : 4.0;
-        }
-        return hrVal > 400 ? 2.5 : 1.5;
+        const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
+        const flow = Math.round(hrVal * mult);
+        return getDiurnalStreetWidth(flow, isPrime);
       },
       getLineColor: f => {
         const hourly = f.properties.hourly_footfall;
         const hrVal = hourly ? hourly[activeHour] : 100;
         const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
-        const scaled = hrVal * mult;
-        return getScientificRampColor(scaled, 30, 2400, 230);
+        const flow = Math.round(hrVal * mult);
+        return getDiurnalStreetColor(flow);
       },
       updateTriggers: {
         getLineColor: [activeHour, activeDayType],
-        getLineWidth: [activeHour]
+        getLineWidth: [activeHour, activeDayType]
       },
       onHover: info => setHoverInfo(info)
     }),
