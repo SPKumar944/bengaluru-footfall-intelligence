@@ -16,3 +16,7 @@ logs/
 
 # Cache
 cache/
+
+# Raw downloads & archives
+*.zip
+extracted_drive_data/

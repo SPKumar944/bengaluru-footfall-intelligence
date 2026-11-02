@@ -25,12 +25,22 @@ export default function App() {
   const [apsaraStoresData, setApsaraStoresData] = useState([]);
   const [competitorsData, setCompetitorsData] = useState(null);
 
-  // Active Layers Toggle State
+  // New Ice Cream Market Influencer Datasets
+  const [recommendedHubsData, setRecommendedHubsData] = useState(null);
+  const [techParksData, setTechParksData] = useState(null);
+  const [officeFootprintsData, setOfficeFootprintsData] = useState(null);
+  const [wardDemographicsData, setWardDemographicsData] = useState(null);
+
+  // Active Layers Toggle State (with all market influencer layers)
   const [activeLayers, setActiveLayers] = useState({
     streetFootfall: true,
     catchments: true,
     apsaraStores: true,
-    competitors: false
+    competitors: false,
+    recommendedHubs: true,   // Recommended Expansion Target Hubs (Top 6 + 13 Backups)
+    techParks: false,        // 95 Tech Parks & IT Campuses
+    officeFootprints: false, // 3,137 Commercial Office Buildings
+    wardDemographics: false  // 369 BBMP Ward Demographics & Density
   });
 
   // Selected Entities
@@ -46,23 +56,27 @@ export default function App() {
 
   const [viewState, setViewState] = useState(INDIRANAGAR_2D_VIEW);
 
-  // Load Datasets
+  // Load Initial Datasets
   useEffect(() => {
     async function loadAllData() {
       try {
         setLoading(true);
         const b = import.meta.env.BASE_URL;
-        const [streetRes, catchmentsRes, apsaraRes, competitorsRes] = await Promise.all([
+        const [streetRes, catchmentsRes, apsaraRes, competitorsRes, recRes, tpRes] = await Promise.all([
           fetch(`${b}data/all_stores_street_footfall.geojson`).then(r => r.json()),
           fetch(`${b}data/apsara_store_footfall_catchments.geojson`).then(r => r.json()),
           fetch(`${b}data/apsara_ice_cream_bangalore_footfall.json`).then(r => r.json()),
-          fetch(`${b}data/layer5_competitors.geojson`).then(r => r.json()).catch(() => null)
+          fetch(`${b}data/layer5_competitors.geojson`).then(r => r.json()).catch(() => null),
+          fetch(`${b}data/recommended_expansion_hubs.geojson`).then(r => r.json()).catch(() => null),
+          fetch(`${b}data/mapped_tech_parks.geojson`).then(r => r.json()).catch(() => null)
         ]);
 
         setStreetFootfallData(streetRes);
         setCatchmentsData(catchmentsRes);
         setApsaraStoresData(apsaraRes);
         if (competitorsRes) setCompetitorsData(competitorsRes);
+        if (recRes) setRecommendedHubsData(recRes);
+        if (tpRes) setTechParksData(tpRes);
 
         if (apsaraRes && apsaraRes.length > 0) {
           // Default selection to Indiranagar outlet
@@ -80,6 +94,28 @@ export default function App() {
 
     loadAllData();
   }, []);
+
+  // On-demand lazy load for heavy commercial office footprints
+  useEffect(() => {
+    if (activeLayers.officeFootprints && !officeFootprintsData) {
+      const b = import.meta.env.BASE_URL;
+      fetch(`${b}data/office_floor_parts.geojson`)
+        .then(r => r.json())
+        .then(d => setOfficeFootprintsData(d))
+        .catch(err => console.error('Failed to load office footprints:', err));
+    }
+  }, [activeLayers.officeFootprints, officeFootprintsData]);
+
+  // On-demand lazy load for BBMP ward demographics
+  useEffect(() => {
+    if (activeLayers.wardDemographics && !wardDemographicsData) {
+      const b = import.meta.env.BASE_URL;
+      fetch(`${b}data/wards_demographics.geojson`)
+        .then(r => r.json())
+        .then(d => setWardDemographicsData(d))
+        .catch(err => console.error('Failed to load ward demographics:', err));
+    }
+  }, [activeLayers.wardDemographics, wardDemographicsData]);
 
   // Automatic 24-Hour Diurnal Timeline Animation Loop
   useEffect(() => {
@@ -200,6 +236,10 @@ export default function App() {
           catchmentsData={catchmentsData}
           apsaraStoresData={apsaraStoresData}
           competitorsData={competitorsData}
+          recommendedHubsData={recommendedHubsData}
+          techParksData={techParksData}
+          officeFootprintsData={officeFootprintsData}
+          wardDemographicsData={wardDemographicsData}
           selectedBrandFilter={selectedBrandFilter}
           selectedCompetitor={selectedCompetitor}
           onSelectCompetitor={handleSelectCompetitor}

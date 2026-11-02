@@ -63,6 +63,10 @@ export default function MapViewport({
   catchmentsData,
   apsaraStoresData = [],
   competitorsData,
+  recommendedHubsData,
+  techParksData,
+  officeFootprintsData,
+  wardDemographicsData,
   selectedBrandFilter = 'ALL',
   selectedCompetitor,
   onSelectCompetitor,
@@ -70,7 +74,11 @@ export default function MapViewport({
     streetFootfall: true,
     catchments: true,
     apsaraStores: true,
-    competitors: false
+    competitors: false,
+    recommendedHubs: true,
+    techParks: false,
+    officeFootprints: false,
+    wardDemographics: false
   },
   selectedApsaraStore,
   onSelectApsaraStore,
@@ -124,6 +132,47 @@ export default function MapViewport({
 
   // Deck.gl Layers
   const deckLayers = [
+    // 0a. BBMP Ward Demographics & Population Density Choropleth (Base Layer)
+    activeLayers.wardDemographics && wardDemographicsData?.features && new GeoJsonLayer({
+      id: 'ward-demographics-layer',
+      data: wardDemographicsData,
+      pickable: true,
+      stroked: true,
+      filled: true,
+      extruded: false,
+      lineWidthUnits: 'pixels',
+      getLineWidth: 1.2,
+      getLineColor: [16, 185, 129, 140], // Emerald border
+      getFillColor: f => {
+        const pop = f.properties?.population_2011 || 0;
+        if (pop < 25000) return [16, 185, 129, 30];
+        if (pop < 50000) return [16, 185, 129, 55];
+        if (pop < 75000) return [5, 150, 105, 80];
+        return [4, 120, 87, 115]; // Dense population
+      },
+      onHover: info => setHoverInfo(info)
+    }),
+
+    // 0b. Commercial Office Building Footprints (3,137 Polygons)
+    activeLayers.officeFootprints && officeFootprintsData?.features && new GeoJsonLayer({
+      id: 'office-footprints-layer',
+      data: officeFootprintsData,
+      pickable: true,
+      stroked: true,
+      filled: true,
+      extruded: false,
+      lineWidthUnits: 'pixels',
+      getLineWidth: 1,
+      getLineColor: [79, 70, 229, 180], // Indigo outline
+      getFillColor: f => {
+        const fl = f.properties?.floor_m2 || 1000;
+        if (fl > 20000) return [99, 102, 241, 140]; // High corporate density
+        if (fl > 8000) return [129, 140, 248, 110];
+        return [165, 180, 252, 85];
+      },
+      onHover: info => setHoverInfo(info)
+    }),
+
     // 1. High-Density 350m Pedestrian Catchment Zones for all 13 Outlets
     activeLayers.catchments && catchmentsData?.features && new GeoJsonLayer({
       id: 'apsara-store-catchments-layer',
@@ -166,6 +215,50 @@ export default function MapViewport({
         getLineColor: [activeHour, activeDayType],
         getLineWidth: [activeHour, activeDayType]
       },
+      onHover: info => setHoverInfo(info)
+    }),
+
+    // 2b. Tech Parks & IT Campuses (95 Hubs across Bengaluru)
+    activeLayers.techParks && techParksData?.features && new ScatterplotLayer({
+      id: 'tech-parks-layer',
+      data: techParksData.features,
+      pickable: true,
+      opacity: 0.95,
+      stroked: true,
+      filled: true,
+      radiusScale: 1,
+      radiusMinPixels: 7,
+      radiusMaxPixels: 14,
+      lineWidthUnits: 'pixels',
+      getLineWidth: 2,
+      getLineColor: [255, 255, 255, 240],
+      getFillColor: [14, 165, 233, 235], // Tech Sky Blue
+      getPosition: f => f.geometry.coordinates,
+      onHover: info => setHoverInfo(info)
+    }),
+
+    // 2c. Target Expansion Hubs (19 Strategic Outlets: Top 6 Recommended + 13 Backups)
+    activeLayers.recommendedHubs && recommendedHubsData?.features && new ScatterplotLayer({
+      id: 'recommended-hubs-layer',
+      data: recommendedHubsData.features,
+      pickable: true,
+      opacity: 1,
+      stroked: true,
+      filled: true,
+      radiusScale: 1,
+      radiusMinPixels: 9,
+      radiusMaxPixels: 17,
+      lineWidthUnits: 'pixels',
+      getLineWidth: 2.5,
+      getLineColor: [255, 255, 255, 255],
+      getFillColor: f => {
+        const isRec = f.properties?.role === 'recommended';
+        const isP1 = f.properties?.priority === 'Priority 1';
+        if (isRec && isP1) return [217, 119, 6, 250]; // Gold/Amber (Priority 1)
+        if (isRec) return [16, 185, 129, 250]; // Emerald (Priority 2 Recommended)
+        return [100, 116, 139, 220]; // Slate (Backup Targets)
+      },
+      getPosition: f => f.geometry.coordinates,
       onHover: info => setHoverInfo(info)
     }),
 
@@ -427,7 +520,132 @@ export default function MapViewport({
                 );
               }
 
-              // Case C: Street Footfall Vector Segment
+              // Case C: Target Expansion Hub (High-Value Market Prospect)
+              if (p.role && p.priority && p.residents_14min !== undefined) {
+                const isRec = p.role === 'recommended';
+                return (
+                  <div className="space-y-1.5 min-w-[250px]">
+                    <div className="flex justify-between items-center border-b border-amber-200 pb-1">
+                      <span className={`text-[10px] uppercase font-bold px-1.5 py-0.5 rounded border ${
+                        isRec ? 'bg-amber-100 text-amber-900 border-amber-300' : 'bg-slate-100 text-slate-700 border-slate-300'
+                      }`}>
+                        {isRec ? `Target Hub • ${p.priority}` : `Backup Hub • ${p.priority}`}
+                      </span>
+                      <span className="text-[10px] font-bold text-slate-600 font-mono">
+                        {p.origin_id?.substring(0, 8)}
+                      </span>
+                    </div>
+                    <div className="text-sm font-extrabold text-slate-900">
+                      {p.locality}
+                    </div>
+                    <div className="text-[10px] text-slate-500 line-clamp-1">
+                      {p.road}
+                    </div>
+                    <div className="pt-1 border-t border-slate-100 space-y-0.5 text-[11px]">
+                      <div className="flex justify-between">
+                        <span className="text-slate-500">14-Min Catchment Pop:</span>
+                        <span className="text-amber-800 font-bold">{p.residents_14min?.toLocaleString()}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-500">Daytime Workers:</span>
+                        <span className="text-blue-700 font-bold">{p.estimated_workers_14min?.toLocaleString()}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-500">Corporate Office Space:</span>
+                        <span className="text-slate-700 font-semibold">{Math.round(p.office_floor_m2_14min / 1000)}k m²</span>
+                      </div>
+                      {p.new_residents_added > 0 && (
+                        <div className="flex justify-between pt-0.5 border-t border-slate-100 text-emerald-700 font-bold">
+                          <span>Net New Reach:</span>
+                          <span>+{p.new_residents_added?.toLocaleString()}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              }
+
+              // Case D: Tech Park / IT SEZ Campus
+              if (p.kind === 'park' && p.name) {
+                return (
+                  <div className="space-y-1.5 min-w-[210px]">
+                    <div className="flex justify-between items-center border-b border-sky-200 pb-1">
+                      <span className="text-[10px] uppercase font-bold text-sky-800 bg-sky-50 px-1.5 py-0.5 rounded border border-sky-200">
+                        Tech Park & IT Campus
+                      </span>
+                      <span className="text-[9px] font-bold text-sky-600">
+                        Corporate Hub
+                      </span>
+                    </div>
+                    <div className="text-xs font-extrabold text-slate-900">
+                      {p.name}
+                    </div>
+                    <div className="text-[10px] text-slate-500">
+                      High-density daytime corporate dessert & bulk catering demand
+                    </div>
+                  </div>
+                );
+              }
+
+              // Case E: Commercial Office Building Footprint
+              if (p.floor_m2 !== undefined && p.levels !== undefined) {
+                const estWorkers = Math.round(p.floor_m2 / 12); // ~12 sqm per desk standard
+                return (
+                  <div className="space-y-1 min-w-[200px]">
+                    <div className="flex justify-between items-center border-b border-indigo-200 pb-1">
+                      <span className="text-[10px] uppercase font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-200">
+                        Commercial Office
+                      </span>
+                      <span className="text-[9px] font-mono text-indigo-800 font-bold">
+                        {p.levels} Floors
+                      </span>
+                    </div>
+                    <div className="flex justify-between pt-1">
+                      <span className="text-slate-500">Total Floor Space:</span>
+                      <span className="text-indigo-900 font-bold">{Math.round(p.floor_m2)?.toLocaleString()} m²</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-500">Est. Desk Capacity:</span>
+                      <span className="text-emerald-700 font-bold">~{estWorkers.toLocaleString()} staff</span>
+                    </div>
+                  </div>
+                );
+              }
+
+              // Case F: BBMP Ward Demographics & Census Density
+              if (p.kind === 'ward' && p.population_2011 !== undefined) {
+                return (
+                  <div className="space-y-1.5 min-w-[220px]">
+                    <div className="flex justify-between items-center border-b border-emerald-200 pb-1">
+                      <span className="text-[10px] uppercase font-bold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+                        BBMP Ward • {p.corporation || 'Bangalore'}
+                      </span>
+                      <span className="text-[10px] font-mono text-slate-500">
+                        {p.zone_id}
+                      </span>
+                    </div>
+                    <div className="text-xs font-extrabold text-slate-900">
+                      {p.name}
+                    </div>
+                    <div className="pt-1 border-t border-slate-100 space-y-0.5 text-[11px]">
+                      <div className="flex justify-between">
+                        <span className="text-slate-500">Ward Population:</span>
+                        <span className="text-emerald-800 font-bold">
+                          {p.population_2011?.toLocaleString()}
+                        </span>
+                      </div>
+                      {p.male_2011 && p.female_2011 && (
+                        <div className="flex justify-between text-[10px] text-slate-400">
+                          <span>Gender Split:</span>
+                          <span>{p.male_2011?.toLocaleString()} M / {p.female_2011?.toLocaleString()} F</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              }
+
+              // Case G: Street Footfall Vector Segment
               const hrVal = p.hourly_footfall?.[activeHour] || 100;
               const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
               const currentFlow = Math.round(hrVal * mult);
