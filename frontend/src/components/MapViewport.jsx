@@ -63,7 +63,6 @@ export default function MapViewport({
   catchmentsData,
   apsaraStoresData = [],
   competitorsData,
-  recommendedHubsData,
   techParksData,
   officeFootprintsData,
   wardDemographicsData,
@@ -75,7 +74,6 @@ export default function MapViewport({
     catchments: true,
     apsaraStores: true,
     competitors: false,
-    recommendedHubs: true,
     techParks: false,
     officeFootprints: false,
     wardDemographics: false
@@ -233,31 +231,6 @@ export default function MapViewport({
       getLineWidth: 2,
       getLineColor: [255, 255, 255, 240],
       getFillColor: [14, 165, 233, 235], // Tech Sky Blue
-      getPosition: f => f.geometry.coordinates,
-      onHover: info => setHoverInfo(info)
-    }),
-
-    // 2c. Target Expansion Hubs (19 Strategic Outlets: Top 6 Recommended + 13 Backups)
-    activeLayers.recommendedHubs && recommendedHubsData?.features && new ScatterplotLayer({
-      id: 'recommended-hubs-layer',
-      data: recommendedHubsData.features,
-      pickable: true,
-      opacity: 1,
-      stroked: true,
-      filled: true,
-      radiusScale: 1,
-      radiusMinPixels: 9,
-      radiusMaxPixels: 17,
-      lineWidthUnits: 'pixels',
-      getLineWidth: 2.5,
-      getLineColor: [255, 255, 255, 255],
-      getFillColor: f => {
-        const isRec = f.properties?.role === 'recommended';
-        const isP1 = f.properties?.priority === 'Priority 1';
-        if (isRec && isP1) return [217, 119, 6, 250]; // Gold/Amber (Priority 1)
-        if (isRec) return [16, 185, 129, 250]; // Emerald (Priority 2 Recommended)
-        return [100, 116, 139, 220]; // Slate (Backup Targets)
-      },
       getPosition: f => f.geometry.coordinates,
       onHover: info => setHoverInfo(info)
     }),
@@ -520,52 +493,7 @@ export default function MapViewport({
                 );
               }
 
-              // Case C: Target Expansion Hub (High-Value Market Prospect)
-              if (p.role && p.priority && p.residents_14min !== undefined) {
-                const isRec = p.role === 'recommended';
-                return (
-                  <div className="space-y-1.5 min-w-[250px]">
-                    <div className="flex justify-between items-center border-b border-amber-200 pb-1">
-                      <span className={`text-[10px] uppercase font-bold px-1.5 py-0.5 rounded border ${
-                        isRec ? 'bg-amber-100 text-amber-900 border-amber-300' : 'bg-slate-100 text-slate-700 border-slate-300'
-                      }`}>
-                        {isRec ? `Target Hub • ${p.priority}` : `Backup Hub • ${p.priority}`}
-                      </span>
-                      <span className="text-[10px] font-bold text-slate-600 font-mono">
-                        {p.origin_id?.substring(0, 8)}
-                      </span>
-                    </div>
-                    <div className="text-sm font-extrabold text-slate-900">
-                      {p.locality}
-                    </div>
-                    <div className="text-[10px] text-slate-500 line-clamp-1">
-                      {p.road}
-                    </div>
-                    <div className="pt-1 border-t border-slate-100 space-y-0.5 text-[11px]">
-                      <div className="flex justify-between">
-                        <span className="text-slate-500">14-Min Catchment Pop:</span>
-                        <span className="text-amber-800 font-bold">{p.residents_14min?.toLocaleString()}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-slate-500">Daytime Workers:</span>
-                        <span className="text-blue-700 font-bold">{p.estimated_workers_14min?.toLocaleString()}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-slate-500">Corporate Office Space:</span>
-                        <span className="text-slate-700 font-semibold">{Math.round(p.office_floor_m2_14min / 1000)}k m²</span>
-                      </div>
-                      {p.new_residents_added > 0 && (
-                        <div className="flex justify-between pt-0.5 border-t border-slate-100 text-emerald-700 font-bold">
-                          <span>Net New Reach:</span>
-                          <span>+{p.new_residents_added?.toLocaleString()}</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                );
-              }
-
-              // Case D: Tech Park / IT SEZ Campus
+              // Case C: Tech Park / IT SEZ Campus
               if (p.kind === 'park' && p.name) {
                 return (
                   <div className="space-y-1.5 min-w-[210px]">

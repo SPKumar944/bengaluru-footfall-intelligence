@@ -26,18 +26,16 @@ export default function App() {
   const [competitorsData, setCompetitorsData] = useState(null);
 
   // New Ice Cream Market Influencer Datasets
-  const [recommendedHubsData, setRecommendedHubsData] = useState(null);
   const [techParksData, setTechParksData] = useState(null);
   const [officeFootprintsData, setOfficeFootprintsData] = useState(null);
   const [wardDemographicsData, setWardDemographicsData] = useState(null);
 
-  // Active Layers Toggle State (with all market influencer layers)
+  // Active Layers Toggle State (with real market influencer layers)
   const [activeLayers, setActiveLayers] = useState({
     streetFootfall: true,
     catchments: true,
     apsaraStores: true,
     competitors: false,
-    recommendedHubs: true,   // Recommended Expansion Target Hubs (Top 6 + 13 Backups)
     techParks: false,        // 95 Tech Parks & IT Campuses
     officeFootprints: false, // 3,137 Commercial Office Buildings
     wardDemographics: false  // 369 BBMP Ward Demographics & Density
@@ -62,12 +60,11 @@ export default function App() {
       try {
         setLoading(true);
         const b = import.meta.env.BASE_URL;
-        const [streetRes, catchmentsRes, apsaraRes, competitorsRes, recRes, tpRes] = await Promise.all([
+        const [streetRes, catchmentsRes, apsaraRes, competitorsRes, tpRes] = await Promise.all([
           fetch(`${b}data/all_stores_street_footfall.geojson`).then(r => r.json()),
           fetch(`${b}data/apsara_store_footfall_catchments.geojson`).then(r => r.json()),
           fetch(`${b}data/apsara_ice_cream_bangalore_footfall.json`).then(r => r.json()),
           fetch(`${b}data/layer5_competitors.geojson`).then(r => r.json()).catch(() => null),
-          fetch(`${b}data/recommended_expansion_hubs.geojson`).then(r => r.json()).catch(() => null),
           fetch(`${b}data/mapped_tech_parks.geojson`).then(r => r.json()).catch(() => null)
         ]);
 
@@ -75,7 +72,6 @@ export default function App() {
         setCatchmentsData(catchmentsRes);
         setApsaraStoresData(apsaraRes);
         if (competitorsRes) setCompetitorsData(competitorsRes);
-        if (recRes) setRecommendedHubsData(recRes);
         if (tpRes) setTechParksData(tpRes);
 
         if (apsaraRes && apsaraRes.length > 0) {
@@ -236,7 +232,6 @@ export default function App() {
           catchmentsData={catchmentsData}
           apsaraStoresData={apsaraStoresData}
           competitorsData={competitorsData}
-          recommendedHubsData={recommendedHubsData}
           techParksData={techParksData}
           officeFootprintsData={officeFootprintsData}
           wardDemographicsData={wardDemographicsData}

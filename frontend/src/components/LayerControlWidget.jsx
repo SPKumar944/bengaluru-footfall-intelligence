@@ -8,7 +8,6 @@ import {
   MapPin, 
   Store, 
   Check,
-  Target,
   Cpu,
   Building2,
   Users
@@ -286,44 +285,11 @@ export default function LayerControlWidget({
           {/* Section Divider: Market Influencers */}
           <div className="pt-2 pb-0.5 border-t border-slate-200">
             <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
-              Market Drivers & Expansion
+              Market Influencers & Density
             </span>
           </div>
 
-          {/* Layer 5: Target Expansion Hubs */}
-          <div 
-            onClick={() => toggleLayer('recommendedHubs')}
-            className={`flex items-start gap-2.5 p-2 rounded-lg cursor-pointer transition-all border ${
-              activeLayers.recommendedHubs 
-                ? 'bg-amber-50/80 border-amber-300 text-slate-900 shadow-2xs' 
-                : 'bg-slate-50/60 border-slate-200 text-slate-400 hover:bg-slate-100'
-            }`}
-          >
-            <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
-              activeLayers.recommendedHubs 
-                ? 'bg-amber-600 border-amber-700 text-white' 
-                : 'bg-white border-slate-300'
-            }`}>
-              {activeLayers.recommendedHubs && <Check className="w-3 h-3 stroke-[3]" />}
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center justify-between">
-                <span className="font-bold text-[11px] flex items-center gap-1.5">
-                  <Target className="w-3 h-3 text-amber-600" />
-                  Target Expansion Hubs (19)
-                </span>
-                <div className="flex -space-x-1">
-                  <span className="w-2.5 h-2.5 rounded-full bg-amber-600 border border-white" title="Priority 1" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 border border-white" title="Priority 2" />
-                </div>
-              </div>
-              <p className="text-[9px] text-slate-500 mt-0.5">
-                Top 6 priority hubs + 13 backups
-              </p>
-            </div>
-          </div>
-
-          {/* Layer 6: Tech Parks & IT Campuses */}
+          {/* Layer 5: Tech Parks & IT Campuses */}
           <div 
             onClick={() => toggleLayer('techParks')}
             className={`flex items-start gap-2.5 p-2 rounded-lg cursor-pointer transition-all border ${
