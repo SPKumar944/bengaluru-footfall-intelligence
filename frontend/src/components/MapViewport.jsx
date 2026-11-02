@@ -1,33 +1,31 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 import DeckGL from '@deck.gl/react';
-import { GeoJsonLayer, ArcLayer } from '@deck.gl/layers';
+import { GeoJsonLayer } from '@deck.gl/layers';
 import maplibregl from 'maplibre-gl';
 
 const CARTO_POSITRON = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
 
-// InSAR / Scientific Yellow-Orange-Red Color Ramp matching user reference screenshot
-// Low (0): Pale Yellow [#FEF9C3] -> Med (50): Amber Orange [#F97316] -> High (100): Crimson Red [#DC2626]
-function getScientificRampColor(val, min = 0, max = 100, alpha = 185) {
+// InSAR / Scientific Yellow-Orange-Red Color Ramp
+// Low: Yellow [#FEF08A] -> Moderate: Amber [#F97316] -> High: Crimson Red [#DC2626]
+function getScientificRampColor(val, min = 0, max = 2500, alpha = 230) {
   const norm = Math.max(0, Math.min(1, (val - min) / (max - min || 1)));
-  if (norm < 0.5) {
-    const t = norm / 0.5;
+  if (norm < 0.45) {
+    const t = norm / 0.45;
     const r = Math.round(254 + t * (249 - 254));
-    const g = Math.round(249 + t * (115 - 249));
-    const b = Math.round(195 + t * (22 - 195));
+    const g = Math.round(240 + t * (115 - 240));
+    const b = Math.round(138 + t * (22 - 138));
     return [r, g, b, alpha];
   } else {
-    const t = (norm - 0.5) / 0.5;
+    const t = (norm - 0.45) / 0.55;
     const r = Math.round(249 + t * (220 - 249));
     const g = Math.round(115 + t * (38 - 115));
     const b = Math.round(22 + t * (38 - 22));
-    return [r, g, b, alpha + 25];
+    return [r, g, b, 255];
   }
 }
 
 export default function MapViewport({
-  mobility150mData,
-  originFlowsData,
-  selectedRegion,
+  streetFootfallData,
   viewState,
   setViewState,
   activeHour = 21,
@@ -67,53 +65,35 @@ export default function MapViewport({
     }
   }, [viewState]);
 
-  // Filter Origin Footfall Flows for active corridor
-  const filteredFlows = useMemo(() => {
-    if (!originFlowsData) return [];
-    if (!selectedRegion) return originFlowsData.slice(0, 30);
-    return originFlowsData.filter(f => 
-      f.dest_hub_id === selectedRegion.region_id ||
-      selectedRegion.region_name.toLowerCase().includes(f.dest_hub_name?.toLowerCase())
-    );
-  }, [originFlowsData, selectedRegion]);
-
-  // Pure 2D Footfall Deck.gl Layers (Zero 1km grid, Zero points)
+  // Deck.gl Layer: Actual Indiranagar Street Network Footfall
   const deckLayers = [
-    // 1. 150m x 150m Micro-Mobility Footfall Grid (Dynamic 24-Hour Diurnal Scaling)
-    mobility150mData?.features && new GeoJsonLayer({
-      id: 'layer-150m-mobility-footfall-2d',
-      data: mobility150mData,
+    streetFootfallData?.features && new GeoJsonLayer({
+      id: 'indiranagar-street-footfall-layer',
+      data: streetFootfallData,
       pickable: true,
       stroked: true,
-      filled: true,
+      filled: false,
       extruded: false, // Strict 2D
       lineWidthUnits: 'pixels',
-      getLineWidth: 0.35,
-      getLineColor: [210, 218, 226, 85],
-      getFillColor: f => {
-        const base = f.properties.unique_visitors_annual || 300000;
-        const factors = f.properties.hourly_factors;
-        const factor = (factors && factors[activeHour] !== undefined) ? factors[activeHour] : 1.0;
-        const dayMult = activeDayType === 'weekend' ? 1.42 : 0.88;
-        const dynamicVal = base * factor * dayMult;
-        return getScientificRampColor(dynamicVal, 150000, 1600000, 185);
+      getLineWidth: f => {
+        const isPrime = f.properties.is_prime_corridor;
+        const hrVal = f.properties.hourly_footfall?.[activeHour] || 100;
+        if (isPrime) {
+          return hrVal > 1500 ? 5.5 : 4.0;
+        }
+        return hrVal > 400 ? 2.5 : 1.5;
+      },
+      getLineColor: f => {
+        const hourly = f.properties.hourly_footfall;
+        const hrVal = hourly ? hourly[activeHour] : 100;
+        const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
+        const scaled = hrVal * mult;
+        return getScientificRampColor(scaled, 30, 2400, 230);
       },
       updateTriggers: {
-        getFillColor: [activeHour, activeDayType]
+        getLineColor: [activeHour, activeDayType],
+        getLineWidth: [activeHour]
       },
-      onHover: info => setHoverInfo(info)
-    }),
-
-    // 2. Customer Footfall Inflow Arcs (2D Inflow Trajectories)
-    filteredFlows.length > 0 && new ArcLayer({
-      id: 'origin-flows-arc-layer-2d',
-      data: filteredFlows,
-      pickable: true,
-      getWidth: 2.2,
-      getSourcePosition: d => d.origin_coords,
-      getTargetPosition: d => d.dest_coords,
-      getSourceColor: [249, 115, 22, 170], // Orange
-      getTargetColor: [220, 38, 38, 240], // Red
       onHover: info => setHoverInfo(info)
     })
   ].filter(Boolean);
@@ -127,7 +107,6 @@ export default function MapViewport({
       <DeckGL
         viewState={viewState}
         onViewStateChange={({ viewState: newViewState }) => {
-          // Strict 2D planar enforcement
           setViewState({
             ...newViewState,
             pitch: 0,
@@ -143,77 +122,54 @@ export default function MapViewport({
         className="absolute inset-0 z-10"
       />
 
-      {/* 3. Floating Scientific Coordinate & Zoom HUD */}
-      <div className="absolute bottom-4 left-4 z-20 observatory-card px-2.5 py-1 rounded text-[10px] font-mono text-slate-500 border border-slate-300 pointer-events-none">
+      {/* 3. Floating Coordinate & Time HUD */}
+      <div className="absolute bottom-4 left-4 z-20 observatory-card px-3 py-1.5 rounded-lg text-[10px] font-mono text-slate-600 border border-slate-300 pointer-events-none shadow-sm bg-white/95 backdrop-blur">
         <span>LAT: {viewState.latitude.toFixed(4)}°N</span>
         <span className="mx-2">|</span>
         <span>LON: {viewState.longitude.toFixed(4)}°E</span>
         <span className="mx-2">|</span>
         <span>ZOOM: {viewState.zoom.toFixed(1)}</span>
         <span className="mx-2">|</span>
-        <span className="text-red-700 font-bold">{activeHour}:00 ({activeDayType})</span>
+        <span className="text-red-700 font-bold">ACTIVE TIME: {activeHour}:00 ({activeDayType})</span>
       </div>
 
-      {/* 4. Footfall Inspection Tooltip */}
+      {/* 4. Street Footfall Inspection Tooltip */}
       {hoverInfo?.object && (
         <div
-          className="absolute z-30 pointer-events-none observatory-card p-2.5 rounded-lg shadow-xl text-xs font-mono border border-slate-300"
-          style={{ left: hoverInfo.x + 12, top: hoverInfo.y + 12 }}
+          className="absolute z-30 pointer-events-none observatory-card p-2.5 rounded-lg shadow-2xl text-xs font-mono border border-slate-300 bg-white"
+          style={{ left: hoverInfo.x + 14, top: hoverInfo.y + 14 }}
         >
-          {/* 150m Mobility Cell Tooltip */}
-          {hoverInfo.object.properties?.cell_id_150m && (() => {
+          {hoverInfo.object.properties && (() => {
             const p = hoverInfo.object.properties;
-            const factor = p.hourly_factors?.[activeHour] ?? 1.0;
-            const dayMult = activeDayType === 'weekend' ? 1.42 : 0.88;
-            const hourlyVisitors = Math.round((p.unique_visitors_annual / 365.0) * factor * dayMult / 12.0);
+            const hrVal = p.hourly_footfall?.[activeHour] || 100;
+            const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
+            const currentFlow = Math.round(hrVal * mult);
             return (
               <div className="space-y-1 min-w-[210px]">
                 <div className="flex justify-between items-center border-b border-slate-200 pb-1">
-                  <span className="text-[10px] uppercase font-bold text-red-700">150m Footfall Node</span>
+                  <span className="text-[10px] uppercase font-bold text-red-700">Indiranagar Street Corridor</span>
                   <span className="text-[9px] font-mono bg-amber-100 text-amber-900 px-1.5 py-0.2 rounded font-bold">
                     {activeHour}:00 {activeDayType === 'weekend' ? 'Wknd' : 'Wkd'}
                   </span>
                 </div>
-                <div className="text-xs font-bold text-slate-900">{p.hub_name}</div>
-                <div className="flex justify-between pt-0.5">
-                  <span className="text-slate-500">Live Hourly Flow:</span>
-                  <span className="text-red-700 font-bold font-mono">~{hourlyVisitors.toLocaleString()} visitors/hr</span>
+                <div className="text-xs font-extrabold text-slate-900">{p.street_name}</div>
+                <div className="text-[10px] text-slate-500">{p.corridor_zone}</div>
+                
+                <div className="flex justify-between pt-1 border-t border-slate-100">
+                  <span className="text-slate-500">Live Hourly Footfall:</span>
+                  <span className="text-red-700 font-extrabold text-xs">~{currentFlow.toLocaleString()} visitors/hr</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Annual Footfall:</span>
-                  <span className="text-slate-700 font-semibold">{p.unique_visitors_annual?.toLocaleString()}</span>
+                  <span className="text-slate-500">Total Daily Traffic:</span>
+                  <span className="text-slate-800 font-semibold">{p.daily_footfall?.toLocaleString()} / day</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Evening Peak Share:</span>
-                  <span className="text-emerald-700 font-bold">{p.evening_footfall_share_pct}%</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Distance to Strip:</span>
-                  <span className="text-slate-600">{p.dist_to_hub_m}m</span>
+                  <span className="text-slate-500">Peak Window Volume:</span>
+                  <span className="text-amber-700 font-bold">~{p.peak_hourly_footfall?.toLocaleString()} / hr (20:00-22:00)</span>
                 </div>
               </div>
             );
           })()}
-
-          {/* Footfall Flow Arc Tooltip */}
-          {hoverInfo.object?.origin_name && (
-            <div className="space-y-0.5 min-w-[180px]">
-              <div className="text-[10px] font-bold text-amber-700 border-b border-slate-200 pb-0.5">
-                Visitor Inflow Trajectory
-              </div>
-              <div className="text-xs text-slate-800">
-                <span className="font-semibold">{hoverInfo.object.origin_name}</span> → <span className="font-bold text-red-700">{hoverInfo.object.dest_hub_name}</span>
-              </div>
-              <div className="flex justify-between text-[10px] pt-0.5">
-                <span className="text-slate-500">Travel Distance:</span>
-                <span className="font-semibold text-slate-800">{hoverInfo.object.distance_km} km</span>
-              </div>
-              <div className="flex justify-between text-[10px]">
-                <span className="text-slate-500">Trip Volume Share:</span>
-                <span className="font-bold text-red-700">{hoverInfo.object.trip_volume_index}%</span>
-              </div>
-            </div>
-          )}
         </div>
       )}
     </div>
