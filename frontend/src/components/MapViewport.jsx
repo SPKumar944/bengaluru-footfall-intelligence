@@ -287,7 +287,7 @@ export default function MapViewport({
                   {hoverInfo.object.serial_no}
                 </span>
                 <span className="text-[10px] font-bold text-emerald-700">
-                  {hoverInfo.object.google_rating}★ ({hoverInfo.object.google_review_count} rev)
+                  Rating: {hoverInfo.object.google_rating} / 5.0 ({hoverInfo.object.google_review_count} reviews)
                 </span>
               </div>
               <div className="text-sm font-extrabold text-slate-900">
@@ -313,7 +313,7 @@ export default function MapViewport({
                 <div className="flex justify-between">
                   <span className="text-slate-500">Prime Evening Flow:</span>
                   <span className="text-amber-700 font-bold">
-                    🔥 ~{hoverInfo.object.regional_footfall.peak_evening_hourly_flow.toLocaleString()}/hr (7-11 PM)
+                    ~{hoverInfo.object.regional_footfall.peak_evening_hourly_flow.toLocaleString()} visitors/hr (7–11 PM)
                   </span>
                 </div>
                 <div className="flex justify-between text-[10px]">
@@ -380,7 +380,7 @@ export default function MapViewport({
                         {p.brand}
                       </span>
                       <span className="text-[10px] font-bold text-emerald-700">
-                        {p.rating_proxy}★
+                        Rating: {p.rating_proxy} / 5.0
                       </span>
                     </div>
                     <div className="text-xs font-extrabold text-slate-900">{p.store_name}</div>

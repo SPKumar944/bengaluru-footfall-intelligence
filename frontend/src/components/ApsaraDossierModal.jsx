@@ -68,15 +68,15 @@ export default function ApsaraDossierModal({
                     <td className="p-2.5 whitespace-nowrap">
                       <div className="flex items-center gap-1 text-slate-900 font-bold">
                         <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-500" />
-                        <span>{s.google_rating}★</span>
+                        <span>{s.google_rating}</span>
                         <span className="text-slate-400 font-normal text-[10px]">
-                          ({s.google_review_count.toLocaleString()} rev)
+                          ({s.google_review_count.toLocaleString()} reviews)
                         </span>
                       </div>
                     </td>
                     <td className="p-2.5 text-right whitespace-nowrap">
                       <span className="text-red-700 font-bold block text-xs">
-                        ~{s.store_footfall.est_daily_cups} cups/d
+                        ~{s.store_footfall.est_daily_cups} cups/day
                       </span>
                       <span className="text-[9px] text-slate-400 block">
                         ~{s.store_footfall.est_monthly_customers.toLocaleString()}/mo
@@ -84,10 +84,10 @@ export default function ApsaraDossierModal({
                     </td>
                     <td className="p-2.5 text-right whitespace-nowrap">
                       <span className="font-bold text-slate-800 block text-xs">
-                        ~{s.regional_footfall.weekend_daily_footfall.toLocaleString()}/d
+                        ~{s.regional_footfall.weekend_daily_footfall.toLocaleString()}/day
                       </span>
                       <span className="text-[9px] text-amber-700 font-semibold block">
-                        🔥 ~{s.regional_footfall.peak_evening_hourly_flow.toLocaleString()}/hr (7-11 PM)
+                        ~{s.regional_footfall.peak_evening_hourly_flow.toLocaleString()}/hr (7–11 PM)
                       </span>
                     </td>
                     <td className="p-2.5 text-center whitespace-nowrap">

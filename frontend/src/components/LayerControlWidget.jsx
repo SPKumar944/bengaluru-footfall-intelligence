@@ -198,18 +198,16 @@ export default function LayerControlWidget({
               </div>
             </div>
 
-            {/* When Competitor Layer is enabled, show the Conqueror Brand and Store dropdowns right here! */}
+            {/* When Competitor Layer is enabled, show the Brand and Store dropdowns right here */}
             {activeLayers.competitors && (
               <div 
                 onClick={(e) => e.stopPropagation()}
                 className="mt-2.5 pt-2 border-t border-purple-200 space-y-2 text-xs"
               >
-                {/* 1. Brand / Conqueror Selector */}
+                {/* 1. Brand Filter Selector */}
                 <div>
                   <div className="flex items-center justify-between text-[10px] font-bold text-purple-900 mb-1">
-                    <span className="flex items-center gap-1">
-                      <span>⚔️</span> Conqueror Brand:
-                    </span>
+                    <span>Brand Filter:</span>
                     {selectedBrandFilter !== 'ALL' && (
                       <button
                         onClick={() => setSelectedBrandFilter && setSelectedBrandFilter('ALL')}
@@ -224,7 +222,7 @@ export default function LayerControlWidget({
                     onChange={(e) => setSelectedBrandFilter && setSelectedBrandFilter(e.target.value)}
                     className="w-full bg-white border border-purple-300 rounded px-2 py-1.5 text-xs font-bold text-purple-900 focus:outline-none focus:ring-1 focus:ring-purple-500 cursor-pointer shadow-2xs"
                   >
-                    <option value="ALL">All Conqueror Brands (108 Outlets)</option>
+                    <option value="ALL">All Competitor Brands (108 Outlets)</option>
                     {competitorBrands.map(b => (
                       <option key={b.name} value={b.name}>
                         {b.name} ({b.count} outlets)
@@ -236,8 +234,8 @@ export default function LayerControlWidget({
                 {/* 2. Corresponding Stores for Selected Brand */}
                 <div>
                   <label className="block text-[10px] font-bold text-slate-700 mb-1">
-                    📍 {selectedBrandFilter === 'ALL' 
-                      ? 'Select Store Name (108):' 
+                    {selectedBrandFilter === 'ALL' 
+                      ? 'Select Store Location (108):' 
                       : `${selectedBrandFilter} Stores (${correspondingStores.length}):`}
                   </label>
                   <select
@@ -257,7 +255,7 @@ export default function LayerControlWidget({
                     </option>
                     {correspondingStores.map(f => (
                       <option key={f.properties?.store_id} value={f.properties?.store_id}>
-                        {f.properties?.store_name} — {f.properties?.locality} ({f.properties?.rating_proxy}★)
+                        {f.properties?.store_name} — {f.properties?.locality} (Rating: {f.properties?.rating_proxy})
                       </option>
                     ))}
                   </select>
@@ -268,7 +266,7 @@ export default function LayerControlWidget({
                   <div className="bg-purple-100/80 border border-purple-300 rounded-lg p-2 text-[10px] text-purple-950 space-y-1">
                     <div className="font-extrabold flex items-center justify-between">
                       <span className="truncate">{selectedCompetitor.properties?.store_name}</span>
-                      <span className="text-emerald-700 shrink-0 font-bold ml-1">{selectedCompetitor.properties?.rating_proxy}★</span>
+                      <span className="text-emerald-700 shrink-0 font-bold ml-1">Rating: {selectedCompetitor.properties?.rating_proxy}</span>
                     </div>
                     <div className="text-slate-600 line-clamp-1">{selectedCompetitor.properties?.address}</div>
                     <div className="text-purple-800 font-bold flex justify-between pt-0.5 border-t border-purple-200">

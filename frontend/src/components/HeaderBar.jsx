@@ -39,10 +39,10 @@ export default function HeaderBar({
             Footfall Intelligence
             <span className={`text-[9px] font-mono font-bold px-1.5 py-0.2 rounded border ${
               isPeak 
-                ? 'bg-red-50 text-red-700 border-red-300 animate-pulse'
+                ? 'bg-red-50 text-red-700 border-red-300'
                 : 'bg-slate-100 text-slate-700 border-slate-300'
             }`}>
-              {isPeak ? '🔥 7-11 PM Peak' : 'Day Flow'}
+              {isPeak ? '7–11 PM Peak' : 'Day Flow'}
             </span>
           </h1>
         </div>
@@ -64,7 +64,7 @@ export default function HeaderBar({
             <option value="">Apsara Outlets (13)...</option>
             {apsaraStores.map((s) => (
               <option key={s.serial_no} value={s.serial_no}>
-                #{s.serial_no.split('_')[2]} {s.locality} ({s.google_rating}★)
+                #{s.serial_no.split('_')[2]} {s.locality} (Rating: {s.google_rating})
               </option>
             ))}
           </select>
@@ -73,7 +73,7 @@ export default function HeaderBar({
             className="px-2 py-1 rounded bg-amber-600 text-white hover:bg-amber-700 text-[10px] font-bold transition-all shadow-2xs"
             title="Open 13 Store Dossier"
           >
-            📋 Dossier
+            Dossier
           </button>
         </div>
       </div>
