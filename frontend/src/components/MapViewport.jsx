@@ -1,9 +1,123 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 import DeckGL from '@deck.gl/react';
 import { GeoJsonLayer, ScatterplotLayer } from '@deck.gl/layers';
+import { H3HexagonLayer } from '@deck.gl/geo-layers';
+import { Hexagon } from 'lucide-react';
 import maplibregl from 'maplibre-gl';
 
 const CARTO_POSITRON = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
+
+// Helper for extracting demographic metric based on selected Gender and Age filters
+export function getHexDemographicMetricValue(d, genderFilter = 'all', ageFilter = 'all') {
+  if (!d) return 0;
+  if (ageFilter === 'kids') {
+    if (genderFilter === 'male') return d.mk || 0;
+    if (genderFilter === 'female') return d.fk || 0;
+    return d.k || 0;
+  }
+  if (ageFilter === 'youth') {
+    if (genderFilter === 'male') return d.my || 0;
+    if (genderFilter === 'female') return d.fy || 0;
+    return d.y || 0;
+  }
+  if (ageFilter === 'adults') {
+    if (genderFilter === 'male') return d.mw || 0;
+    if (genderFilter === 'female') return d.fw || 0;
+    return d.w || 0;
+  }
+  if (ageFilter === 'seniors') {
+    if (genderFilter === 'male') return d.ms || 0;
+    if (genderFilter === 'female') return d.fs || 0;
+    return d.s || 0;
+  }
+  // ageFilter === 'all'
+  if (genderFilter === 'male') return d.m || 0;
+  if (genderFilter === 'female') return d.f || 0;
+  return d.pop || 0;
+}
+
+// Color scale for Hexagon Demographics layer based on selected gender & age
+export function getHexDemographicColor(d, genderFilter = 'all', ageFilter = 'all') {
+  let val = 0;
+  let maxRef = 1000;
+
+  if (ageFilter === 'kids') {
+    maxRef = (genderFilter === 'all') ? 280 : 145;
+    if (genderFilter === 'male') val = d.mk || 0;
+    else if (genderFilter === 'female') val = d.fk || 0;
+    else val = d.k || 0;
+  } else if (ageFilter === 'youth') {
+    maxRef = (genderFilter === 'all') ? 250 : 130;
+    if (genderFilter === 'male') val = d.my || 0;
+    else if (genderFilter === 'female') val = d.fy || 0;
+    else val = d.y || 0;
+  } else if (ageFilter === 'adults') {
+    maxRef = (genderFilter === 'all') ? 650 : 330;
+    if (genderFilter === 'male') val = d.mw || 0;
+    else if (genderFilter === 'female') val = d.fw || 0;
+    else val = d.w || 0;
+  } else if (ageFilter === 'seniors') {
+    maxRef = (genderFilter === 'all') ? 250 : 130;
+    if (genderFilter === 'male') val = d.ms || 0;
+    else if (genderFilter === 'female') val = d.fs || 0;
+    else val = d.s || 0;
+  } else {
+    // ageFilter === 'all'
+    maxRef = (genderFilter === 'all') ? 1400 : 700;
+    if (genderFilter === 'male') val = d.m || 0;
+    else if (genderFilter === 'female') val = d.f || 0;
+    else val = d.pop || 0;
+  }
+
+  const ratio = Math.min(1.0, Math.max(0.0, val / Math.max(1, maxRef)));
+
+  // Female Segment: Rose / Crimson gradient
+  if (genderFilter === 'female') {
+    if (ratio < 0.15) return [251, 113, 133, 40];
+    if (ratio < 0.35) return [244, 63, 94, 85];
+    if (ratio < 0.65) return [225, 29, 72, 140];
+    return [190, 18, 60, 200];
+  }
+
+  // Male Segment: Azure / Sky gradient
+  if (genderFilter === 'male') {
+    if (ratio < 0.15) return [56, 189, 248, 40];
+    if (ratio < 0.35) return [14, 165, 233, 85];
+    if (ratio < 0.65) return [2, 132, 199, 140];
+    return [3, 105, 161, 200];
+  }
+
+  // All Genders:
+  // If Kids filter is selected -> Warm Amber/Orange (ice cream family footfall magnet!)
+  if (ageFilter === 'kids') {
+    if (ratio < 0.15) return [251, 191, 36, 45];
+    if (ratio < 0.35) return [245, 158, 11, 95];
+    if (ratio < 0.65) return [217, 119, 6, 150];
+    return [180, 83, 9, 215];
+  }
+
+  // If Youth filter is selected -> Indigo
+  if (ageFilter === 'youth') {
+    if (ratio < 0.15) return [165, 180, 252, 45];
+    if (ratio < 0.35) return [129, 140, 248, 95];
+    if (ratio < 0.65) return [99, 102, 241, 150];
+    return [67, 56, 202, 215];
+  }
+
+  // If Seniors filter is selected -> Teal
+  if (ageFilter === 'seniors') {
+    if (ratio < 0.15) return [94, 234, 212, 45];
+    if (ratio < 0.35) return [45, 212, 191, 95];
+    if (ratio < 0.65) return [13, 148, 136, 150];
+    return [17, 94, 89, 215];
+  }
+
+  // Default All Ages / Adults -> Emerald
+  if (ratio < 0.15) return [110, 231, 183, 40];
+  if (ratio < 0.35) return [52, 211, 153, 85];
+  if (ratio < 0.65) return [16, 185, 129, 140];
+  return [4, 120, 87, 200];
+}
 
 // Diurnal Thermal Footfall Ramp
 // Shifts from night cool slate -> dawn pale gold -> midday warm amber -> peak evening incandescent crimson
@@ -70,6 +184,9 @@ export default function MapViewport({
   techParksData,
   officeFootprintsData,
   wardDemographicsData,
+  hexDemographicsData,
+  demographicGender = 'all',
+  demographicAge = 'all',
   selectedBrandFilter = 'ALL',
   selectedCompetitor,
   onSelectCompetitor,
@@ -81,7 +198,7 @@ export default function MapViewport({
     kidsAttractions: true,
     techParks: false,
     officeFootprints: false,
-    wardDemographics: false
+    hexDemographics: false
   },
   selectedApsaraStore,
   onSelectApsaraStore,
@@ -144,23 +261,19 @@ export default function MapViewport({
 
   // Deck.gl Layers
   const deckLayers = [
-    // 0a. BBMP Ward Demographics & Population Density Choropleth (Base Layer)
-    activeLayers.wardDemographics && wardDemographicsData?.features && new GeoJsonLayer({
-      id: 'ward-demographics-layer',
-      data: wardDemographicsData,
+    // 0a. Hexagon Demographics & Population Grid (H3 Res 9 Honeycomb Cells)
+    (activeLayers.hexDemographics || activeLayers.wardDemographics) && hexDemographicsData && new H3HexagonLayer({
+      id: 'hex-demographics-layer',
+      data: hexDemographicsData,
       pickable: true,
-      stroked: true,
+      wireframe: false,
       filled: true,
       extruded: false,
-      lineWidthUnits: 'pixels',
-      getLineWidth: 1.2,
-      getLineColor: [16, 185, 129, 140], // Emerald border
-      getFillColor: f => {
-        const pop = f.properties?.population_2011 || 0;
-        if (pop < 25000) return [16, 185, 129, 30];
-        if (pop < 50000) return [16, 185, 129, 55];
-        if (pop < 75000) return [5, 150, 105, 80];
-        return [4, 120, 87, 115]; // Dense population
+      coverage: 0.92,
+      getHexagon: d => d.h,
+      getFillColor: d => getHexDemographicColor(d, demographicGender, demographicAge),
+      updateTriggers: {
+        getFillColor: [demographicGender, demographicAge]
       },
       onHover: info => setHoverInfo(info)
     }),
@@ -642,32 +755,109 @@ export default function MapViewport({
                 );
               }
 
-              // Case F: BBMP Ward Demographics & Census Density
-              if (p.kind === 'ward' && p.population_2011 !== undefined) {
+              // Case F: Hexagon Demographics & Population Grid (H3 Res 9)
+              if (p.h && p.pop !== undefined) {
+                const activeVal = getHexDemographicMetricValue(p, demographicGender, demographicAge);
+                const pctMale = p.pop > 0 ? Math.round((p.m / p.pop) * 100) : 50;
+                const pctFemale = 100 - pctMale;
+
+                const genderLabels = { all: 'All Genders', male: 'Male Only', female: 'Female Only' };
+                const ageLabels = {
+                  all: 'All Ages',
+                  kids: 'Kids (0–14 yrs)',
+                  youth: 'Youth (15–24 yrs)',
+                  adults: 'Working Adults (25–54 yrs)',
+                  seniors: 'Seniors (55+ yrs)'
+                };
+
                 return (
-                  <div className="space-y-1.5 min-w-[220px]">
+                  <div className="space-y-2 min-w-[250px]">
                     <div className="flex justify-between items-center border-b border-emerald-200 pb-1">
-                      <span className="text-[10px] uppercase font-bold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
-                        BBMP Ward • {p.corporation || 'Bangalore'}
+                      <span className="text-[10px] uppercase font-bold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+                        <Hexagon className="w-2.5 h-2.5 text-emerald-600" />
+                        H3 Res 9 Hexagon
                       </span>
-                      <span className="text-[10px] font-mono text-slate-500">
-                        {p.zone_id}
+                      <span className="text-[10px] font-mono text-slate-400">
+                        {p.h.slice(0, 10)}...
                       </span>
                     </div>
-                    <div className="text-xs font-extrabold text-slate-900">
-                      {p.name}
-                    </div>
-                    <div className="pt-1 border-t border-slate-100 space-y-0.5 text-[11px]">
-                      <div className="flex justify-between">
-                        <span className="text-slate-500">Ward Population:</span>
-                        <span className="text-emerald-800 font-bold">
-                          {p.population_2011?.toLocaleString()}
-                        </span>
+
+                    <div>
+                      <div className="text-xs font-bold text-slate-900">
+                        {p.w_name ? `${p.w_name} Ward` : 'Greater Bengaluru Metropolitan Area'}
                       </div>
-                      {p.male_2011 && p.female_2011 && (
-                        <div className="flex justify-between text-[10px] text-slate-400">
-                          <span>Gender Split:</span>
-                          <span>{p.male_2011?.toLocaleString()} M / {p.female_2011?.toLocaleString()} F</span>
+                      {p.corp && (
+                        <div className="text-[10px] text-slate-500 font-medium">
+                          BBMP Corporation: {p.corp}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Active Filter Metric Highlight */}
+                    <div className="bg-emerald-50/70 border border-emerald-200 p-1.5 rounded text-[11px] flex justify-between items-center">
+                      <div className="text-emerald-950 font-medium">
+                        <span>{ageLabels[demographicAge] || 'All Ages'}</span>
+                        <span className="text-slate-500 text-[10px]"> • {genderLabels[demographicGender] || 'All'}</span>
+                      </div>
+                      <span className="font-extrabold text-emerald-700 text-xs">
+                        {activeVal.toLocaleString()} residents
+                      </span>
+                    </div>
+
+                    {/* Total Cell Population & Gender Breakdown */}
+                    <div className="space-y-1 pt-1 border-t border-slate-100 text-[11px]">
+                      <div className="flex justify-between font-bold text-slate-800">
+                        <span>Total Cell Population:</span>
+                        <span>{p.pop.toLocaleString()}</span>
+                      </div>
+
+                      {/* Male / Female split bar */}
+                      <div className="space-y-0.5">
+                        <div className="flex justify-between text-[10px]">
+                          <span className="text-sky-700 font-semibold">Male: {p.m} ({pctMale}%)</span>
+                          <span className="text-rose-600 font-semibold">Female: {p.f} ({pctFemale}%)</span>
+                        </div>
+                        <div className="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden flex">
+                          <div className="bg-sky-500 h-full" style={{ width: `${pctMale}%` }} />
+                          <div className="bg-rose-400 h-full" style={{ width: `${pctFemale}%` }} />
+                        </div>
+                      </div>
+
+                      {/* Age Cohort Breakdown */}
+                      <div className="pt-1.5 space-y-0.5 text-[10px]">
+                        <div className="flex justify-between text-slate-600">
+                          <span className="flex items-center gap-1 font-medium">
+                            <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                            Kids & Children (0–14):
+                          </span>
+                          <span className="font-bold text-slate-800">{p.k} ({p.pop > 0 ? Math.round(p.k/p.pop*100) : 0}%)</span>
+                        </div>
+                        <div className="flex justify-between text-slate-600">
+                          <span className="flex items-center gap-1 font-medium">
+                            <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+                            Youth & Students (15–24):
+                          </span>
+                          <span className="font-bold text-slate-800">{p.y} ({p.pop > 0 ? Math.round(p.y/p.pop*100) : 0}%)</span>
+                        </div>
+                        <div className="flex justify-between text-slate-600">
+                          <span className="flex items-center gap-1 font-medium">
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                            Working Adults (25–54):
+                          </span>
+                          <span className="font-bold text-slate-800">{p.w} ({p.pop > 0 ? Math.round(p.w/p.pop*100) : 0}%)</span>
+                        </div>
+                        <div className="flex justify-between text-slate-600">
+                          <span className="flex items-center gap-1 font-medium">
+                            <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
+                            Mature & Seniors (55+):
+                          </span>
+                          <span className="font-bold text-slate-800">{p.s} ({p.pop > 0 ? Math.round(p.s/p.pop*100) : 0}%)</span>
+                        </div>
+                      </div>
+
+                      {p.k >= 80 && (
+                        <div className="mt-1 text-[9px] font-semibold text-amber-900 bg-amber-50 p-1 rounded border border-amber-200">
+                          High Child Density — Prime Target for Ice Cream Parlor & Kiosk
                         </div>
                       )}
                     </div>

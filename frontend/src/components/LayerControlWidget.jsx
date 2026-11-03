@@ -11,7 +11,8 @@ import {
   Sparkles,
   Cpu,
   Building2,
-  Users
+  Users,
+  Hexagon
 } from 'lucide-react';
 
 export default function LayerControlWidget({
@@ -26,7 +27,11 @@ export default function LayerControlWidget({
   selectedKidsCategory = 'ALL',
   setSelectedKidsCategory,
   selectedKidsAttraction,
-  onSelectKidsAttraction
+  onSelectKidsAttraction,
+  demographicGender = 'all',
+  setDemographicGender,
+  demographicAge = 'all',
+  setDemographicAge
 }) {
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -500,34 +505,156 @@ export default function LayerControlWidget({
             </div>
           </div>
 
-          {/* Layer 8: BBMP Ward Demographics */}
+          {/* Layer 8: Hexagon Demographics & Population Grid */}
           <div 
-            onClick={() => toggleLayer('wardDemographics')}
-            className={`flex items-start gap-2.5 p-2 rounded-lg cursor-pointer transition-all border ${
-              activeLayers.wardDemographics 
+            className={`p-2 rounded-lg transition-all border ${
+              (activeLayers.hexDemographics || activeLayers.wardDemographics)
                 ? 'bg-emerald-50/80 border-emerald-300 text-slate-900 shadow-2xs' 
                 : 'bg-slate-50/60 border-slate-200 text-slate-400 hover:bg-slate-100'
             }`}
           >
-            <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
-              activeLayers.wardDemographics 
-                ? 'bg-emerald-600 border-emerald-700 text-white' 
-                : 'bg-white border-slate-300'
-            }`}>
-              {activeLayers.wardDemographics && <Check className="w-3 h-3 stroke-[3]" />}
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center justify-between">
-                <span className="font-bold text-[11px] flex items-center gap-1.5">
-                  <Users className="w-3 h-3 text-emerald-600" />
-                  Ward Demographics (369)
-                </span>
-                <span className="w-2.5 h-2.5 rounded-xs bg-emerald-500/70 border border-emerald-600" />
+            <div 
+              onClick={() => toggleLayer('hexDemographics')}
+              className="flex items-start gap-2.5 cursor-pointer"
+            >
+              <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
+                (activeLayers.hexDemographics || activeLayers.wardDemographics)
+                  ? 'bg-emerald-600 border-emerald-700 text-white' 
+                  : 'bg-white border-slate-300'
+              }`}>
+                {(activeLayers.hexDemographics || activeLayers.wardDemographics) && <Check className="w-3 h-3 stroke-[3]" />}
               </div>
-              <p className="text-[9px] text-slate-500 mt-0.5">
-                BBMP census population choropleth
-              </p>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-[11px] flex items-center gap-1.5">
+                    <Hexagon className="w-3 h-3 text-emerald-600" />
+                    Hexagon Demographics (19.5k)
+                  </span>
+                  <span className="w-2.5 h-2.5 rounded-xs bg-emerald-500/70 border border-emerald-600" />
+                </div>
+                <p className="text-[9px] text-slate-500 mt-0.5">
+                  H3 micro-honeycomb population & gender grid
+                </p>
+              </div>
             </div>
+
+            {/* In-Panel Controls: Gender Toggle & Age Determination Filter */}
+            {(activeLayers.hexDemographics || activeLayers.wardDemographics) && (
+              <div 
+                className="mt-2.5 pt-2 border-t border-emerald-200/80 space-y-2"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* 1. Gender Segment Toggle */}
+                <div>
+                  <div className="flex justify-between items-center text-[10px] text-slate-700 font-semibold mb-1">
+                    <span>Gender Segment:</span>
+                    <span className="text-[9px] text-slate-500 font-mono">
+                      {demographicGender === 'male' ? '4.42M (50.7%)' : demographicGender === 'female' ? '4.29M (49.3%)' : '8.70M Total'}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-3 gap-1 bg-white p-0.5 rounded border border-slate-200 text-[10px]">
+                    <button
+                      type="button"
+                      onClick={() => setDemographicGender && setDemographicGender('all')}
+                      className={`py-1 rounded font-bold transition-all text-center ${
+                        demographicGender === 'all'
+                          ? 'bg-emerald-600 text-white shadow-2xs'
+                          : 'text-slate-600 hover:bg-slate-100'
+                      }`}
+                    >
+                      All Pop
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setDemographicGender && setDemographicGender('male')}
+                      className={`py-1 rounded font-bold transition-all text-center ${
+                        demographicGender === 'male'
+                          ? 'bg-sky-600 text-white shadow-2xs'
+                          : 'text-slate-600 hover:bg-slate-100'
+                      }`}
+                    >
+                      Male
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setDemographicGender && setDemographicGender('female')}
+                      className={`py-1 rounded font-bold transition-all text-center ${
+                        demographicGender === 'female'
+                          ? 'bg-rose-500 text-white shadow-2xs'
+                          : 'text-slate-600 hover:bg-slate-100'
+                      }`}
+                    >
+                      Female
+                    </button>
+                  </div>
+                </div>
+
+                {/* 2. Age Determination Filter */}
+                <div>
+                  <div className="flex justify-between items-center text-[10px] text-slate-700 font-semibold mb-1">
+                    <span>Age Determination:</span>
+                    {demographicAge === 'kids' && (
+                      <span className="text-[9px] bg-amber-100 text-amber-800 px-1 rounded font-bold border border-amber-300">
+                        Primary Target
+                      </span>
+                    )}
+                  </div>
+                  <select
+                    value={demographicAge}
+                    onChange={(e) => setDemographicAge && setDemographicAge(e.target.value)}
+                    className="w-full text-[11px] font-semibold bg-white border border-slate-300 rounded px-2 py-1 text-slate-800 focus:outline-hidden focus:ring-1 focus:ring-emerald-500 cursor-pointer"
+                  >
+                    <option value="all">All Ages (0–90+ yrs) • 8.70M</option>
+                    <option value="kids">Kids & Children (0–14 yrs) • 1.72M [Ice Cream Target]</option>
+                    <option value="youth">Youth & Students (15–24 yrs) • 1.51M</option>
+                    <option value="adults">Working Adults (25–54 yrs) • 3.99M</option>
+                    <option value="seniors">Mature & Seniors (55+ yrs) • 1.48M</option>
+                  </select>
+                </div>
+
+                {/* 3. Active Metric & Color Legend */}
+                <div className="bg-white/80 rounded p-1.5 border border-emerald-200 text-[10px] space-y-1">
+                  <div className="flex justify-between text-slate-600 font-medium">
+                    <span>Active Target:</span>
+                    <span className="font-bold text-slate-800">
+                      {(() => {
+                        const labels = {
+                          all: { all: '8.70M Residents', male: '4.42M Males', female: '4.29M Females' },
+                          kids: { all: '1.72M Kids (0–14)', male: '881k Male Kids', female: '840k Female Kids' },
+                          youth: { all: '1.51M Youth (15–24)', male: '782k Male Youth', female: '723k Female Youth' },
+                          adults: { all: '3.99M Adults (25–54)', male: '2.05M Male Adults', female: '1.94M Female Adults' },
+                          seniors: { all: '1.48M Seniors (55+)', male: '708k Male Seniors', female: '776k Female Seniors' }
+                        };
+                        return labels[demographicAge]?.[demographicGender] || '8.70M Total';
+                      })()}
+                    </span>
+                  </div>
+                  {/* Visual gradient bar */}
+                  <div className="space-y-0.5">
+                    <div className="flex justify-between text-[8px] text-slate-400 font-mono">
+                      <span>Low Density</span>
+                      <span>High Density</span>
+                    </div>
+                    <div 
+                      className="w-full h-2 rounded-sm"
+                      style={{
+                        background: demographicGender === 'female'
+                          ? 'linear-gradient(to right, rgba(251, 113, 133, 0.35), rgba(190, 18, 60, 0.95))'
+                          : demographicGender === 'male'
+                          ? 'linear-gradient(to right, rgba(56, 189, 248, 0.35), rgba(3, 105, 161, 0.95))'
+                          : demographicAge === 'kids'
+                          ? 'linear-gradient(to right, rgba(251, 191, 36, 0.4), rgba(180, 83, 9, 0.95))'
+                          : demographicAge === 'youth'
+                          ? 'linear-gradient(to right, rgba(165, 180, 252, 0.4), rgba(67, 56, 202, 0.95))'
+                          : demographicAge === 'seniors'
+                          ? 'linear-gradient(to right, rgba(94, 234, 212, 0.4), rgba(17, 94, 89, 0.95))'
+                          : 'linear-gradient(to right, rgba(110, 231, 183, 0.4), rgba(4, 120, 87, 0.95))'
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}

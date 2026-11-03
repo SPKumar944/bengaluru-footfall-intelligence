@@ -29,7 +29,9 @@ export default function App() {
   const [kidsAttractionsData, setKidsAttractionsData] = useState(null);
   const [techParksData, setTechParksData] = useState(null);
   const [officeFootprintsData, setOfficeFootprintsData] = useState(null);
-  const [wardDemographicsData, setWardDemographicsData] = useState(null);
+  const [hexDemographicsData, setHexDemographicsData] = useState(null);
+  const [demographicGender, setDemographicGender] = useState('all'); // 'all' | 'male' | 'female'
+  const [demographicAge, setDemographicAge] = useState('all'); // 'all' | 'kids' | 'youth' | 'adults' | 'seniors'
 
   // Active Layers Toggle State (with real market influencer layers)
   const [activeLayers, setActiveLayers] = useState({
@@ -37,10 +39,10 @@ export default function App() {
     catchments: true,
     apsaraStores: true,
     competitors: false,
-    kidsAttractions: true,   // 31 Kids & Family Footfall Magnets
+    kidsAttractions: true,   // 116 Kids & Family Footfall Magnets
     techParks: false,        // 95 Tech Parks & IT Campuses
     officeFootprints: false, // 3,137 Commercial Office Buildings
-    wardDemographics: false  // 369 BBMP Ward Demographics & Density
+    hexDemographics: false   // 19.5k H3 Hexagon Demographics & Density
   });
 
   // Selected Entities
@@ -108,16 +110,16 @@ export default function App() {
     }
   }, [activeLayers.officeFootprints, officeFootprintsData]);
 
-  // On-demand lazy load for BBMP ward demographics
+  // On-demand lazy load for Hexagon Demographics (19.5k H3 Res 9 cells)
   useEffect(() => {
-    if (activeLayers.wardDemographics && !wardDemographicsData) {
+    if (activeLayers.hexDemographics && !hexDemographicsData) {
       const b = import.meta.env.BASE_URL;
-      fetch(`${b}data/wards_demographics.geojson`)
+      fetch(`${b}data/hexagon_demographics.json`)
         .then(r => r.json())
-        .then(d => setWardDemographicsData(d))
-        .catch(err => console.error('Failed to load ward demographics:', err));
+        .then(d => setHexDemographicsData(d))
+        .catch(err => console.error('Failed to load hex demographics:', err));
     }
-  }, [activeLayers.wardDemographics, wardDemographicsData]);
+  }, [activeLayers.hexDemographics, hexDemographicsData]);
 
   // Automatic 24-Hour Diurnal Timeline Animation Loop
   useEffect(() => {
@@ -274,7 +276,9 @@ export default function App() {
           onSelectKidsAttraction={handleSelectKidsAttraction}
           techParksData={techParksData}
           officeFootprintsData={officeFootprintsData}
-          wardDemographicsData={wardDemographicsData}
+          hexDemographicsData={hexDemographicsData}
+          demographicGender={demographicGender}
+          demographicAge={demographicAge}
           selectedBrandFilter={selectedBrandFilter}
           selectedCompetitor={selectedCompetitor}
           onSelectCompetitor={handleSelectCompetitor}
@@ -303,6 +307,10 @@ export default function App() {
             setSelectedKidsCategory={handleSelectKidsCategory}
             selectedKidsAttraction={selectedKidsAttraction}
             onSelectKidsAttraction={handleSelectKidsAttraction}
+            demographicGender={demographicGender}
+            setDemographicGender={setDemographicGender}
+            demographicAge={demographicAge}
+            setDemographicAge={setDemographicAge}
           />
 
           {/* Footfall Intensity Legend (Active when street footfall layer is visible) */}
