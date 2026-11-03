@@ -526,14 +526,14 @@ export default function LayerControlWidget({
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-[11px] flex items-center gap-1.5">
-                    <Hexagon className="w-3 h-3 text-emerald-600" />
-                    Hexagon Demographics (19.5k)
+                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-slate-900">
+                    <Users className="w-3.5 h-3.5 text-emerald-600" />
+                    Demographics Information
                   </span>
                   <span className="w-2.5 h-2.5 rounded-xs bg-emerald-500/70 border border-emerald-600" />
                 </div>
                 <p className="text-[9px] text-slate-500 mt-0.5">
-                  H3 micro-honeycomb population & gender grid
+                  Census population, age & gender distribution
                 </p>
               </div>
             </div>
@@ -612,46 +612,21 @@ export default function LayerControlWidget({
                   </select>
                 </div>
 
-                {/* 3. Active Metric & Color Legend */}
-                <div className="bg-white/80 rounded p-1.5 border border-emerald-200 text-[10px] space-y-1">
-                  <div className="flex justify-between text-slate-600 font-medium">
-                    <span>Active Target:</span>
-                    <span className="font-bold text-slate-800">
-                      {(() => {
-                        const labels = {
-                          all: { all: '8.70M Residents', male: '4.42M Males', female: '4.29M Females' },
-                          kids: { all: '1.72M Kids (0–14)', male: '881k Male Kids', female: '840k Female Kids' },
-                          youth: { all: '1.51M Youth (15–24)', male: '782k Male Youth', female: '723k Female Youth' },
-                          adults: { all: '3.99M Adults (25–54)', male: '2.05M Male Adults', female: '1.94M Female Adults' },
-                          seniors: { all: '1.48M Seniors (55+)', male: '708k Male Seniors', female: '776k Female Seniors' }
-                        };
-                        return labels[demographicAge]?.[demographicGender] || '8.70M Total';
-                      })()}
-                    </span>
-                  </div>
-                  {/* Visual gradient bar */}
-                  <div className="space-y-0.5">
-                    <div className="flex justify-between text-[8px] text-slate-400 font-mono">
-                      <span>Low Density</span>
-                      <span>High Density</span>
-                    </div>
-                    <div 
-                      className="w-full h-2 rounded-sm"
-                      style={{
-                        background: demographicGender === 'female'
-                          ? 'linear-gradient(to right, rgba(251, 113, 133, 0.35), rgba(190, 18, 60, 0.95))'
-                          : demographicGender === 'male'
-                          ? 'linear-gradient(to right, rgba(56, 189, 248, 0.35), rgba(3, 105, 161, 0.95))'
-                          : demographicAge === 'kids'
-                          ? 'linear-gradient(to right, rgba(251, 191, 36, 0.4), rgba(180, 83, 9, 0.95))'
-                          : demographicAge === 'youth'
-                          ? 'linear-gradient(to right, rgba(165, 180, 252, 0.4), rgba(67, 56, 202, 0.95))'
-                          : demographicAge === 'seniors'
-                          ? 'linear-gradient(to right, rgba(94, 234, 212, 0.4), rgba(17, 94, 89, 0.95))'
-                          : 'linear-gradient(to right, rgba(110, 231, 183, 0.4), rgba(4, 120, 87, 0.95))'
-                      }}
-                    />
-                  </div>
+                {/* 3. Active Metric Summary */}
+                <div className="bg-white/90 rounded p-1.5 border border-emerald-200 text-[10px] flex justify-between items-center">
+                  <span className="text-slate-500 font-medium">Selected Cohort:</span>
+                  <span className="font-bold text-emerald-800 font-mono">
+                    {(() => {
+                      const labels = {
+                        all: { all: '8.70M Residents', male: '4.42M Males', female: '4.29M Females' },
+                        kids: { all: '1.72M Kids (0–14)', male: '881k Male Kids', female: '840k Female Kids' },
+                        youth: { all: '1.51M Youth (15–24)', male: '782k Male Youth', female: '723k Female Youth' },
+                        adults: { all: '3.99M Adults (25–54)', male: '2.05M Male Adults', female: '1.94M Female Adults' },
+                        seniors: { all: '1.48M Seniors (55+)', male: '708k Male Seniors', female: '776k Female Seniors' }
+                      };
+                      return labels[demographicAge]?.[demographicGender] || '8.70M Total';
+                    })()}
+                  </span>
                 </div>
               </div>
             )}

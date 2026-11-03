@@ -261,21 +261,33 @@ export default function MapViewport({
 
   // Deck.gl Layers
   const deckLayers = [
-    // 0a. Hexagon Demographics & Population Grid (H3 Res 9 Honeycomb Cells)
+    // 0a. Demographics Information (H3 Hexagon Grid with constant thin hairline border)
     (activeLayers.hexDemographics || activeLayers.wardDemographics) && hexDemographicsData && new H3HexagonLayer({
       id: 'hex-demographics-layer',
       data: hexDemographicsData,
       pickable: true,
       wireframe: false,
       filled: true,
+      stroked: true,
       extruded: false,
-      coverage: 0.92,
+      coverage: 1.0,
+      lineWidthUnits: 'pixels',
+      lineWidthMinPixels: 0.5,
+      lineWidthMaxPixels: 1.0,
+      getLineWidth: 0.75,
+      getLineColor: [255, 255, 255, 90], // Constantly maintained crisp thin hairline
       getHexagon: d => d.h,
       getFillColor: d => getHexDemographicColor(d, demographicGender, demographicAge),
       updateTriggers: {
         getFillColor: [demographicGender, demographicAge]
       },
-      onHover: info => setHoverInfo(info)
+      onHover: info => {
+        if (!info?.object) {
+          setHoverInfo(null);
+        } else {
+          setHoverInfo(info);
+        }
+      }
     }),
 
     // 0b. Commercial Office Building Footprints (3,137 Polygons)
@@ -524,7 +536,10 @@ export default function MapViewport({
       {/* 2. Deck.gl WebGL Canvas */}
       <DeckGL
         viewState={viewState}
-        onViewStateChange={({ viewState: newViewState }) => {
+        onViewStateChange={({ viewState: newViewState, interactionState }) => {
+          if (interactionState?.isDragging) {
+            setHoverInfo(null);
+          }
           setViewState({
             ...newViewState,
             pitch: 0,
