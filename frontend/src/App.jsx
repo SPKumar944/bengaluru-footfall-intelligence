@@ -177,10 +177,55 @@ export default function App() {
         ...prev,
         longitude: store.coordinates.lng,
         latitude: store.coordinates.lat,
-        zoom: 15.2,
+        zoom: 13.8, // Calibrated to frame pedestrian streets and 5-10 min isochrones
         pitch: 0,
         bearing: 0,
         transitionDuration: 900
+      }));
+    }
+  };
+
+  // Handle Isochrone Duration selection with responsive camera zoom
+  const handleSelectIsochroneDuration = (duration) => {
+    setSelectedIsochroneDuration(duration);
+    setActiveLayers(prev => ({ ...prev, isochrones: true, catchments: true }));
+    if (selectedApsaraStore?.coordinates) {
+      const zoomMap = {
+        5: 14.2,
+        10: 13.2,
+        20: 12.2,
+        30: 11.5,
+        ALL: 12.6
+      };
+      setViewState(prev => ({
+        ...prev,
+        longitude: selectedApsaraStore.coordinates.lng,
+        latitude: selectedApsaraStore.coordinates.lat,
+        zoom: zoomMap[duration] || 12.6,
+        transitionDuration: 650
+      }));
+    }
+  };
+
+  // Handle Isochrone Scope selection (active store vs all 13 stores)
+  const handleSelectIsochroneScope = (scopeActive) => {
+    setIsochroneScopeStore(scopeActive);
+    setActiveLayers(prev => ({ ...prev, isochrones: true, catchments: true }));
+    if (!scopeActive) {
+      setViewState(prev => ({
+        ...prev,
+        longitude: 77.625,
+        latitude: 12.975,
+        zoom: 11.2,
+        transitionDuration: 850
+      }));
+    } else if (selectedApsaraStore?.coordinates) {
+      setViewState(prev => ({
+        ...prev,
+        longitude: selectedApsaraStore.coordinates.lng,
+        latitude: selectedApsaraStore.coordinates.lat,
+        zoom: 12.8,
+        transitionDuration: 750
       }));
     }
   };
@@ -440,9 +485,9 @@ export default function App() {
             activeDayType={activeDayType}
             trafficIsochronesData={trafficIsochronesData}
             selectedIsochroneDuration={selectedIsochroneDuration}
-            setSelectedIsochroneDuration={setSelectedIsochroneDuration}
+            setSelectedIsochroneDuration={handleSelectIsochroneDuration}
             isochroneScopeStore={isochroneScopeStore}
-            setIsochroneScopeStore={setIsochroneScopeStore}
+            setIsochroneScopeStore={handleSelectIsochroneScope}
           />
 
           {/* Footfall Intensity Legend (Active when street footfall layer is visible) */}

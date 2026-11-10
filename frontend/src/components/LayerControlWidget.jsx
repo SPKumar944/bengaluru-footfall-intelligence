@@ -93,10 +93,20 @@ export default function LayerControlWidget({
   const [isExpanded, setIsExpanded] = useState(true);
 
   const toggleLayer = (key) => {
-    setActiveLayers(prev => ({
-      ...prev,
-      [key]: !prev[key]
-    }));
+    setActiveLayers(prev => {
+      if (key === 'isochrones') {
+        const next = !prev.isochrones;
+        return {
+          ...prev,
+          isochrones: next,
+          catchments: next
+        };
+      }
+      return {
+        ...prev,
+        [key]: !prev[key]
+      };
+    });
   };
 
   // Extract unique competitor brands and counts

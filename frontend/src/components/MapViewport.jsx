@@ -332,7 +332,12 @@ export default function MapViewport({
 
       // 3. Store scope filter
       if (isochroneScopeStore && selectedApsaraStore) {
-        if (p.store_serial !== selectedApsaraStore.serial_no && p.store_id !== selectedApsaraStore.store_id) {
+        const targetSerial = selectedApsaraStore.serial_no || selectedApsaraStore.store_id;
+        const matchesStore = (
+          p.store_id === targetSerial ||
+          (p.locality && selectedApsaraStore.locality && p.locality.toLowerCase() === selectedApsaraStore.locality.toLowerCase())
+        );
+        if (!matchesStore) {
           return false;
         }
       }
@@ -353,7 +358,8 @@ export default function MapViewport({
     selectedIsochroneDuration,
     isochroneScopeStore,
     selectedApsaraStore?.serial_no,
-    selectedApsaraStore?.store_id
+    selectedApsaraStore?.store_id,
+    selectedApsaraStore?.locality
   ]);
 
   // Deck.gl Layers
@@ -408,7 +414,7 @@ export default function MapViewport({
     }),
 
     // 0c. Traffic-Based Dynamic Travel-Time Isochrones (5, 10, 20, 30 Mins for Mon-Sun)
-    activeLayers.catchments && filteredIsochronesData?.features?.length > 0 && new GeoJsonLayer({
+    (activeLayers.isochrones || activeLayers.catchments) && filteredIsochronesData?.features?.length > 0 && new GeoJsonLayer({
       id: 'traffic-isochrones-layer',
       data: filteredIsochronesData,
       pickable: true,
@@ -416,20 +422,21 @@ export default function MapViewport({
       filled: true,
       extruded: false, // Strict 2D
       lineWidthUnits: 'pixels',
-      getLineWidth: f => f.properties?.line_width || 1.5,
+      lineWidthMinPixels: 2,
+      getLineWidth: f => f.properties?.line_width ? Math.max(f.properties.line_width, 2) : 2.5,
       getLineColor: f => {
         const rgb = f.properties?.rgb || [16, 185, 129];
-        return [...rgb, 210]; // Crisp outer contour border
+        return [...rgb, 230]; // High-contrast, sharp outer contour border
       },
       getFillColor: f => {
         const rgb = f.properties?.rgb || [16, 185, 129];
         const alpha = Math.round((f.properties?.fill_opacity || 0.18) * 255);
-        return [...rgb, alpha];
+        return [...rgb, Math.max(alpha, 40)]; // Clearly discernible translucent fill
       },
       updateTriggers: {
-        getFillColor: [activeDay, selectedIsochroneDuration, isochroneScopeStore, selectedApsaraStore?.serial_no],
-        getLineColor: [activeDay, selectedIsochroneDuration, isochroneScopeStore, selectedApsaraStore?.serial_no],
-        getLineWidth: [activeDay, selectedIsochroneDuration, isochroneScopeStore, selectedApsaraStore?.serial_no]
+        getFillColor: [activeDay, selectedIsochroneDuration, isochroneScopeStore, selectedApsaraStore?.serial_no, selectedApsaraStore?.locality],
+        getLineColor: [activeDay, selectedIsochroneDuration, isochroneScopeStore, selectedApsaraStore?.serial_no, selectedApsaraStore?.locality],
+        getLineWidth: [activeDay, selectedIsochroneDuration, isochroneScopeStore, selectedApsaraStore?.serial_no, selectedApsaraStore?.locality]
       },
       onHover: info => setHoverInfo(info)
     }),
