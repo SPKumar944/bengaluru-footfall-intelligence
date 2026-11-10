@@ -61,6 +61,10 @@ export default function App() {
   const [selectedComplementarySpectrum, setSelectedComplementarySpectrum] = useState('ALL');
   const [selectedComplementaryBrand, setSelectedComplementaryBrand] = useState(null);
 
+  // Footfall Range Level Filter & Radius Circle Scope
+  const [selectedFootfallRange, setSelectedFootfallRange] = useState('ALL');
+  const [scopeToRadiusCircle, setScopeToRadiusCircle] = useState(true);
+
   // Temporal Dynamic State (24-Hour Diurnal Player)
   const [activeHour, setActiveHour] = useState(21); // Default 9:00 PM peak dessert window
   const [activeDayType, setActiveDayType] = useState('weekend'); // 'weekend' | 'weekday'
@@ -369,6 +373,8 @@ export default function App() {
           setViewState={setViewState}
           activeHour={activeHour}
           activeDayType={activeDayType}
+          selectedFootfallRange={selectedFootfallRange}
+          scopeToRadiusCircle={scopeToRadiusCircle}
         />
 
         {/* 3. Top Right Floating Controls: Layer Toggles & In-Panel Competitor/Kids Selectors */}
@@ -401,6 +407,14 @@ export default function App() {
             setDemographicGender={setDemographicGender}
             demographicAge={demographicAge}
             setDemographicAge={setDemographicAge}
+            selectedFootfallRange={selectedFootfallRange}
+            setSelectedFootfallRange={setSelectedFootfallRange}
+            scopeToRadiusCircle={scopeToRadiusCircle}
+            setScopeToRadiusCircle={setScopeToRadiusCircle}
+            streetFootfallData={streetFootfallData}
+            selectedApsaraStore={selectedApsaraStore}
+            activeHour={activeHour}
+            activeDayType={activeDayType}
           />
 
           {/* Footfall Intensity Legend (Active when street footfall layer is visible) */}
@@ -409,6 +423,8 @@ export default function App() {
               viewState={viewState}
               activeHour={activeHour}
               activeDayType={activeDayType}
+              selectedFootfallRange={selectedFootfallRange}
+              onSelectFootfallRange={setSelectedFootfallRange}
             />
           )}
         </div>

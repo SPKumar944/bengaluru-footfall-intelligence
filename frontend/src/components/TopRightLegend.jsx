@@ -5,13 +5,16 @@ import { ChevronDown, ChevronUp, Layers } from 'lucide-react';
 export default function TopRightLegend({
   viewState,
   activeHour = 21,
-  activeDayType = 'weekend'
+  activeDayType = 'weekend',
+  selectedFootfallRange = 'ALL',
+  onSelectFootfallRange
 }) {
   const [showFullScale, setShowFullScale] = useState(false);
   const [hoveredTier, setHoveredTier] = useState(null);
 
   const isPeak = activeHour >= 19 && activeHour <= 23;
   const isNight = activeHour <= 5;
+  const activeSelectedTier = FOOTFALL_INDEX_TIERS.find(t => t.displayLevel === selectedFootfallRange);
 
   return (
     <div className="observatory-card rounded-xl p-2.5 px-3 text-xs font-mono shadow-[0_1px_2px_rgba(13,21,33,0.04),0_10px_28px_-20px_rgba(13,21,33,0.18)] border border-ink-950/[0.1] min-w-[270px] max-w-[310px] bg-white/95 backdrop-blur-md select-none transition-all">
@@ -35,23 +38,34 @@ export default function TopRightLegend({
       {/* 1–10+ Segmented Color Ramp Bar */}
       <div>
         <div className="flex items-center justify-between text-[9px] font-bold text-ink-500 mb-1">
-          <span>Scale: 1 (Quiet)</span>
-          <span className="text-azure-700">10+ (Peak Arterial)</span>
+          <span>Click tier to filter: 1</span>
+          <span className="text-azure-700">10+ (Peak)</span>
         </div>
 
         <div className="grid grid-cols-11 gap-0.5 p-0.5 bg-paper-100 rounded-md border border-ink-950/[0.12] shadow-2xs">
           {FOOTFALL_INDEX_TIERS.map((tier) => {
             const isHovered = hoveredTier?.level === tier.level;
+            const isSelected = selectedFootfallRange === tier.displayLevel;
+
             return (
               <div
                 key={tier.level}
+                onClick={() => {
+                  if (onSelectFootfallRange) {
+                    onSelectFootfallRange(isSelected ? 'ALL' : tier.displayLevel);
+                  }
+                }}
                 onMouseEnter={() => setHoveredTier(tier)}
                 onMouseLeave={() => setHoveredTier(null)}
                 style={{ backgroundColor: tier.hex }}
                 className={`h-6 rounded-xs flex items-center justify-center cursor-pointer transition-all ${
-                  isHovered ? 'scale-110 z-10 shadow-sm ring-2 ring-ink-950' : 'hover:opacity-90'
+                  isSelected
+                    ? 'scale-110 z-20 shadow-md ring-2 ring-ink-950'
+                    : isHovered
+                    ? 'scale-110 z-10 shadow-sm ring-1 ring-ink-950/60'
+                    : 'hover:opacity-90'
                 }`}
-                title={`Index ${tier.displayLevel || tier.level}/10: ${tier.label} (${tier.rangeLabel})`}
+                title={`Click to filter Index ${tier.displayLevel || tier.level}/10: ${tier.label} (${tier.rangeLabel})`}
               >
                 <span 
                   style={{ color: tier.textColor || '#ffffff' }}
@@ -64,8 +78,38 @@ export default function TopRightLegend({
           })}
         </div>
 
-        {/* Hovered / Active Tier Dynamic Callout */}
-        {hoveredTier ? (
+        {/* Active Selection or Hover Dynamic Callout */}
+        {activeSelectedTier ? (
+          <div 
+            className="mt-1.5 p-1 px-2 rounded border text-[9.5px] font-mono flex items-center justify-between transition-all"
+            style={{ 
+              backgroundColor: `${activeSelectedTier.hex}18`, 
+              borderColor: `${activeSelectedTier.hex}60` 
+            }}
+          >
+            <div className="flex items-center gap-1.5 truncate">
+              <span 
+                className="w-4 h-4 rounded font-black text-[9px] flex items-center justify-center shrink-0"
+                style={{ 
+                  backgroundColor: activeSelectedTier.hex,
+                  color: activeSelectedTier.textColor || '#ffffff'
+                }}
+              >
+                {activeSelectedTier.displayLevel}
+              </span>
+              <span className="font-bold text-ink-950 truncate">
+                Level {activeSelectedTier.displayLevel} in Radius Circle
+              </span>
+            </div>
+            <button
+              onClick={() => onSelectFootfallRange && onSelectFootfallRange('ALL')}
+              className="text-[9px] text-ink-600 hover:text-ink-950 font-bold ml-1 cursor-pointer shrink-0"
+              title="Clear level filter"
+            >
+              Clear ✕
+            </button>
+          </div>
+        ) : hoveredTier ? (
           <div 
             className="mt-1.5 p-1 px-2 rounded border text-[9.5px] font-mono flex items-center justify-between transition-all"
             style={{ 

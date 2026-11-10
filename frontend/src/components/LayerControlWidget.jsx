@@ -41,6 +41,7 @@ import {
   EveningTiffinIcon,
   BuildingIcon
 } from './IconMCP';
+import FootfallRangeSelector from './FootfallRangeSelector';
 import { 
   formatMonthlyCupVolumeRange, 
   formatVenueTrafficRange, 
@@ -73,7 +74,15 @@ export default function LayerControlWidget({
   demographicGender = 'all',
   setDemographicGender,
   demographicAge = 'all',
-  setDemographicAge
+  setDemographicAge,
+  selectedFootfallRange = 'ALL',
+  setSelectedFootfallRange,
+  scopeToRadiusCircle = true,
+  setScopeToRadiusCircle,
+  streetFootfallData,
+  selectedApsaraStore,
+  activeHour = 21,
+  activeDayType = 'weekend'
 }) {
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -190,34 +199,57 @@ export default function LayerControlWidget({
       {/* Layer Checkboxes & Controls */}
       {isExpanded && (
         <div className="mt-2 space-y-2">
-          {/* Layer 1: Street Footfall Network */}
+          {/* Layer 1: Street Footfall Network with Embedded 11-Color Range Selector */}
           <div 
-            onClick={() => toggleLayer('streetFootfall')}
-            className={`flex items-start gap-2.5 p-2 rounded-lg cursor-pointer transition-all border ${
+            className={`p-2 rounded-lg transition-all border ${
               activeLayers.streetFootfall 
-                ? 'bg-azure-50/70 border-azure-300 text-ink-950 shadow-2xs' 
-                : 'bg-paper-50/80 border-ink-950/[0.08] text-ink-500 hover:bg-paper-100 hover:text-ink-800'
+                ? 'bg-paper-50 border-ink-950/[0.14] text-ink-950 shadow-2xs' 
+                : 'bg-paper-50/70 border-ink-950/[0.08] text-ink-500 hover:bg-paper-100 hover:text-ink-800'
             }`}
           >
-            <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
-              activeLayers.streetFootfall 
-                ? 'bg-ink-950 border-ink-950 text-white' 
-                : 'bg-white border-ink-950/[0.2]'
-            }`}>
-              {activeLayers.streetFootfall && <Check className="w-3 h-3 stroke-[3]" />}
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center justify-between">
-                <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
-                  <Footprints className="w-3.5 h-3.5 text-azure-600" />
-                  Street Footfall Flow
-                </span>
-                <span className="w-8 h-1.5 rounded-full bg-gradient-to-r from-azure-400 via-azure-500 to-violet-500" />
+            <div 
+              onClick={() => toggleLayer('streetFootfall')}
+              className="flex items-start gap-2.5 cursor-pointer"
+            >
+              <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
+                activeLayers.streetFootfall 
+                  ? 'bg-ink-950 border-ink-950 text-white' 
+                  : 'bg-white border-ink-950/[0.2]'
+              }`}>
+                {activeLayers.streetFootfall && <Check className="w-3 h-3 stroke-[3]" />}
               </div>
-              <p className="text-[9px] text-ink-500 mt-0.5">
-                47k real roads • 24-hr diurnal flow
-              </p>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
+                    <Footprints className="w-3.5 h-3.5 text-azure-600" />
+                    Street Footfall Flow
+                  </span>
+                  <span className="w-8 h-1.5 rounded-full bg-gradient-to-r from-[#001f4d] via-[#29b6f6] to-[#7b0000]" />
+                </div>
+                <p className="text-[9px] text-ink-500 mt-0.5">
+                  47k real roads • 11-step index (1 to 10+)
+                </p>
+              </div>
             </div>
+
+            {/* Embedded Footfall Range Filter & Radius Circle Controls */}
+            {activeLayers.streetFootfall && (
+              <div 
+                onClick={(e) => e.stopPropagation()}
+                className="mt-2 pt-2 border-t border-ink-950/[0.08]"
+              >
+                <FootfallRangeSelector
+                  selectedFootfallRange={selectedFootfallRange}
+                  onSelectFootfallRange={setSelectedFootfallRange}
+                  scopeToRadiusCircle={scopeToRadiusCircle}
+                  onToggleScopeToRadiusCircle={setScopeToRadiusCircle}
+                  streetFootfallData={streetFootfallData}
+                  selectedApsaraStore={selectedApsaraStore}
+                  activeHour={activeHour}
+                  activeDayType={activeDayType}
+                />
+              </div>
+            )}
           </div>
 
           {/* Layer 2: 350m Catchments */}

@@ -188,7 +188,9 @@ export default function MapViewport({
   viewState,
   setViewState,
   activeHour = 21,
-  activeDayType = 'weekend'
+  activeDayType = 'weekend',
+  selectedFootfallRange = 'ALL',
+  scopeToRadiusCircle = true
 }) {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
@@ -260,6 +262,54 @@ export default function MapViewport({
     return educationPoisData.features.filter(f => f.properties?.category === selectedEducationCategory);
   }, [educationPoisData, selectedEducationCategory]);
 
+  // Filter street footfall data by selected footfall index level and 350m radius circle
+  const filteredStreetFootfallData = useMemo(() => {
+    if (!streetFootfallData?.features) return null;
+
+    const isFiltered = selectedFootfallRange && selectedFootfallRange !== 'ALL';
+    const isRadiusScoped = scopeToRadiusCircle || isFiltered;
+    const targetSerial = selectedApsaraStore?.serial_no;
+    const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
+
+    // If completely unfiltered, return full dataset
+    if (!isFiltered && !isRadiusScoped) {
+      return streetFootfallData;
+    }
+
+    const filtered = streetFootfallData.features.filter(f => {
+      // 1. Radius circle check (within 380m of store)
+      if (isRadiusScoped) {
+        if (f.properties.dist_to_store_m > 380) return false;
+        if (targetSerial && f.properties.serial_no !== targetSerial) return false;
+      }
+
+      // 2. Footfall Level check
+      if (!isFiltered) return true;
+
+      const hrVal = f.properties.hourly_footfall?.[activeHour] || 100;
+      const flow = Math.round(hrVal * mult);
+      const tier = getFootfallTier(flow);
+
+      if (selectedFootfallRange === 'HIGH_7_PLUS') {
+        return tier.level >= 7;
+      }
+
+      return tier.displayLevel === selectedFootfallRange;
+    });
+
+    return {
+      type: 'FeatureCollection',
+      features: filtered
+    };
+  }, [
+    streetFootfallData, 
+    selectedFootfallRange, 
+    scopeToRadiusCircle, 
+    selectedApsaraStore?.serial_no, 
+    activeHour, 
+    activeDayType
+  ]);
+
   // Deck.gl Layers
   const deckLayers = [
     // 0a. Demographics Information (H3 Hexagon Grid with constant thin hairline border)
@@ -320,16 +370,48 @@ export default function MapViewport({
       filled: true,
       extruded: false, // Strict 2D
       lineWidthUnits: 'pixels',
-      getLineWidth: 1.5,
-      getLineColor: [217, 119, 6, 160], // Amber-600 perimeter
-      getFillColor: [245, 158, 11, 28], // Soft amber translucent glow
+      getLineWidth: f => {
+        const isSelected = selectedApsaraStore && f.properties.serial_no === selectedApsaraStore.serial_no;
+        if (isSelected && selectedFootfallRange !== 'ALL') return 3;
+        if (isSelected) return 2.2;
+        return 1.4;
+      },
+      getLineColor: f => {
+        const isSelected = selectedApsaraStore && f.properties.serial_no === selectedApsaraStore.serial_no;
+        if (isSelected && selectedFootfallRange !== 'ALL') {
+          const activeTier = FOOTFALL_INDEX_TIERS.find(t => t.displayLevel === selectedFootfallRange);
+          if (activeTier) {
+            return activeTier.rgb.slice(0, 3).concat(250);
+          }
+          return [30, 136, 229, 240];
+        }
+        if (isSelected) return [30, 136, 229, 200];
+        return [217, 119, 6, 160]; // Amber-600 perimeter
+      },
+      getFillColor: f => {
+        const isSelected = selectedApsaraStore && f.properties.serial_no === selectedApsaraStore.serial_no;
+        if (isSelected && selectedFootfallRange !== 'ALL') {
+          const activeTier = FOOTFALL_INDEX_TIERS.find(t => t.displayLevel === selectedFootfallRange);
+          if (activeTier) {
+            return activeTier.rgb.slice(0, 3).concat(32);
+          }
+          return [30, 136, 229, 30];
+        }
+        if (isSelected) return [30, 136, 229, 25];
+        return [245, 158, 11, 26]; // Soft amber translucent glow
+      },
+      updateTriggers: {
+        getLineWidth: [selectedApsaraStore?.serial_no, selectedFootfallRange],
+        getLineColor: [selectedApsaraStore?.serial_no, selectedFootfallRange],
+        getFillColor: [selectedApsaraStore?.serial_no, selectedFootfallRange]
+      },
       onHover: info => setHoverInfo(info)
     }),
 
     // 2. Comprehensive Street Network Footfall Across ALL 13 Locations
-    activeLayers.streetFootfall && streetFootfallData?.features && new GeoJsonLayer({
+    activeLayers.streetFootfall && filteredStreetFootfallData?.features && new GeoJsonLayer({
       id: 'all-stores-street-footfall-layer',
-      data: streetFootfallData,
+      data: filteredStreetFootfallData,
       pickable: true,
       stroked: true,
       filled: false,
@@ -340,7 +422,8 @@ export default function MapViewport({
         const hrVal = f.properties.hourly_footfall?.[activeHour] || 100;
         const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
         const flow = Math.round(hrVal * mult);
-        return getDiurnalStreetWidth(flow, isPrime);
+        const baseWidth = getDiurnalStreetWidth(flow, isPrime);
+        return selectedFootfallRange !== 'ALL' ? Math.max(baseWidth, 3.2) : baseWidth;
       },
       getLineColor: f => {
         const hourly = f.properties.hourly_footfall;
@@ -350,8 +433,8 @@ export default function MapViewport({
         return getDiurnalStreetColor(flow);
       },
       updateTriggers: {
-        getLineColor: [activeHour, activeDayType],
-        getLineWidth: [activeHour, activeDayType]
+        getLineColor: [activeHour, activeDayType, selectedFootfallRange],
+        getLineWidth: [activeHour, activeDayType, selectedFootfallRange]
       },
       onHover: info => setHoverInfo(info)
     }),
@@ -1063,6 +1146,14 @@ export default function MapViewport({
                       <div className="flex justify-between text-[10px] text-ink-600 font-medium">
                         <span className="text-ink-400">Corridor Tier:</span>
                         <span className="text-ink-800 font-semibold">{p.corridor_tier}</span>
+                      </div>
+                    )}
+                    {p.dist_to_store_m !== undefined && (
+                      <div className="flex justify-between items-center text-[10px]">
+                        <span className="text-ink-400">Distance to Outlet:</span>
+                        <span className={`font-mono font-bold ${p.dist_to_store_m <= 380 ? 'text-azure-700' : 'text-ink-700'}`}>
+                          {Math.round(p.dist_to_store_m)}m {p.dist_to_store_m <= 380 ? '(Inside 350m Circle)' : ''}
+                        </span>
                       </div>
                     )}
                     {p.highway_type && (
