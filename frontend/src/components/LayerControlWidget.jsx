@@ -396,14 +396,15 @@ export default function LayerControlWidget({
                     Complementary Brands ({totalComplementaryCount})
                   </span>
                   <div className="flex -space-x-1">
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-500 border border-white" title="🔥 Hot & Spicy Meals (Biryani)" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500 border border-white" title="🍔 Youth Fast Casual (Burgers)" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-purple-600 border border-white" title="🍺 Late-Night Pubs & Breweries" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 border border-white" title="☕ Evening Tiffin & Cafes" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-sky-500 border border-white" title="🚇 Metro & Transit" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-fuchsia-500 border border-white" title="🛍️ Malls & Retail" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 border border-white" title="🎭 Cinemas & Auditoriums" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-400 border border-white" title="🌟 Street Walkways" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-500 border border-white" title="🔥 Spicy Biryani" />
                   </div>
                 </div>
                 <p className="text-[9px] text-slate-500 mt-0.5">
-                  Biryani, burgers, late-night pubs & evening tiffins
+                  Metro, Malls, Cinemas, Walkways, Biryani, Burgers & Pubs
                 </p>
               </div>
             </div>
@@ -417,7 +418,7 @@ export default function LayerControlWidget({
                 {/* 1. Synergy Spectrum Pillar Selector */}
                 <div>
                   <div className="flex items-center justify-between text-[10px] font-bold text-orange-950 mb-1">
-                    <span>Synergy Spectrum Pillar:</span>
+                    <span>Category / Hotspot Type:</span>
                     {selectedComplementarySpectrum !== 'ALL' && (
                       <button
                         onClick={() => setSelectedComplementarySpectrum && setSelectedComplementarySpectrum('ALL')}
@@ -432,25 +433,41 @@ export default function LayerControlWidget({
                     onChange={(e) => setSelectedComplementarySpectrum && setSelectedComplementarySpectrum(e.target.value)}
                     className="w-full bg-white border border-orange-300 rounded px-2 py-1.5 text-xs font-bold text-orange-950 focus:outline-none focus:ring-1 focus:ring-orange-500 cursor-pointer shadow-2xs"
                   >
-                    <option value="ALL">All 4 Synergy Pillars ({totalComplementaryCount} Venues)</option>
-                    <option value="Hot & Spicy Meals">🔥 Hot & Spicy Meals (Capsaicin Relief) ({complementarySpectrums.find(s => s[0] === 'Hot & Spicy Meals')?.[1] || 21})</option>
-                    <option value="Youth Fast Casual">🍔 Youth Fast Casual (Student Cohorts) ({complementarySpectrums.find(s => s[0] === 'Youth Fast Casual')?.[1] || 80})</option>
-                    <option value="Late-Night Pubs & Breweries">🍺 Late-Night Pubs & Breweries (Midnight Craving) ({complementarySpectrums.find(s => s[0] === 'Late-Night Pubs & Breweries')?.[1] || 17})</option>
-                    <option value="Evening Tiffin & Heritage Cafes">☕ Evening Tiffin & Heritage Cafes (Family Stroll) ({complementarySpectrums.find(s => s[0] === 'Evening Tiffin & Heritage Cafes')?.[1] || 53})</option>
+                    <option value="ALL">All Categories & Hotspots ({totalComplementaryCount} Venues)</option>
+                    <option value="Metro Stations & Transit Terminals">🚇 Metro & Transit Terminals ({complementarySpectrums.find(s => s[0] === 'Metro Stations & Transit Terminals')?.[1] || 47})</option>
+                    <option value="Shopping Malls & Retail Hubs">🛍️ Shopping Malls & Retail Hubs ({complementarySpectrums.find(s => s[0] === 'Shopping Malls & Retail Hubs')?.[1] || 18})</option>
+                    <option value="Cinemas & Cultural Auditoriums">🎭 Cinemas & Cultural Auditoriums ({complementarySpectrums.find(s => s[0] === 'Cinemas & Cultural Auditoriums')?.[1] || 11})</option>
+                    <option value="Street Walkways & Buzzing Hotspots">🌟 Street Walkways & Hotspots ({complementarySpectrums.find(s => s[0] === 'Street Walkways & Buzzing Hotspots')?.[1] || 14})</option>
+                    <option value="Hot & Spicy Meals">🔥 Hot & Spicy Meals (Biryani) ({complementarySpectrums.find(s => s[0] === 'Hot & Spicy Meals')?.[1] || 21})</option>
+                    <option value="Youth Fast Casual">🍔 Youth Fast Casual (Burgers & Pizza) ({complementarySpectrums.find(s => s[0] === 'Youth Fast Casual')?.[1] || 80})</option>
+                    <option value="Late-Night Pubs & Breweries">🍺 Late-Night Pubs & Breweries ({complementarySpectrums.find(s => s[0] === 'Late-Night Pubs & Breweries')?.[1] || 17})</option>
+                    <option value="Evening Tiffin & Heritage Cafes">☕ Evening Tiffin & Heritage Cafes ({complementarySpectrums.find(s => s[0] === 'Evening Tiffin & Heritage Cafes')?.[1] || 53})</option>
                   </select>
                 </div>
 
                 {/* 2. Visual Spectrum Pillar Explanation Badge */}
                 <div className="p-1.5 rounded bg-white/90 border border-orange-200 text-[10px] space-y-0.5">
                   <div className="font-extrabold text-orange-950">
-                    {selectedComplementarySpectrum === 'Hot & Spicy Meals' ? '🔥 Capsaicin Relief & Milk Fat Need' :
+                    {selectedComplementarySpectrum === 'Metro Stations & Transit Terminals' ? '🚇 Commuter Transit & Quick-Grab Impulse' :
+                     selectedComplementarySpectrum === 'Shopping Malls & Retail Hubs' ? '🛍️ All-Weather Family Leisure & Retail Footfall' :
+                     selectedComplementarySpectrum === 'Cinemas & Cultural Auditoriums' ? '🎭 Pre/Post Show Crowd Spillover & Theatre Strolls' :
+                     selectedComplementarySpectrum === 'Street Walkways & Buzzing Hotspots' ? '🌟 High-Density Pedestrian Strolls & Leisure Strolls' :
+                     selectedComplementarySpectrum === 'Hot & Spicy Meals' ? '🔥 Capsaicin Relief & Milk Fat Need' :
                      selectedComplementarySpectrum === 'Youth Fast Casual' ? '🍔 Extended Hangout & Student Cohort' :
                      selectedComplementarySpectrum === 'Late-Night Pubs & Breweries' ? '🍺 Post-Alcohol Sweet Tooth & Midnight Craving' :
                      selectedComplementarySpectrum === 'Evening Tiffin & Heritage Cafes' ? '☕ Family Weekend Tradition & Evening Walkers' :
-                     '⚡ High Dessert Synergy Spectrum (4 Core Pillars)'}
+                     '⚡ High Dessert Synergy Landscape (8 Core Hub Pillars)'}
                   </div>
                   <p className="text-[9px] text-slate-600 leading-tight">
-                    {selectedComplementarySpectrum === 'Hot & Spicy Meals' 
+                    {selectedComplementarySpectrum === 'Metro Stations & Transit Terminals'
+                      ? 'Namma metro stations, railway junctions & bus terminals funneling hundreds of thousands of commuters into grab-and-go dessert kiosks.' :
+                     selectedComplementarySpectrum === 'Shopping Malls & Retail Hubs'
+                      ? 'Destination shopping malls (Phoenix, Orion, Nexus, Mall of Asia) with massive weekend family shopping, multiplex and food court spillovers.' :
+                     selectedComplementarySpectrum === 'Cinemas & Cultural Auditoriums'
+                      ? 'Ranga Shankara, Chowdiah Hall & multiplex audiences pouring out after evening plays and concerts seeking post-performance dessert.' :
+                     selectedComplementarySpectrum === 'Street Walkways & Buzzing Hotspots'
+                      ? 'Church St, Commercial St, VV Puram & Gandhi Bazaar pedestrian walkways where strolling with an ice cream is the primary social activity.' :
+                     selectedComplementarySpectrum === 'Hot & Spicy Meals' 
                       ? 'Fiery Andhra chilli & pepper gravies create biological casein/milk fat cravings to soothe TRPV1 oral receptors.' :
                      selectedComplementarySpectrum === 'Youth Fast Casual' 
                       ? 'Gen Z & student friend groups finishing burgers/rolls step out onto the sidewalk to extend their outing with dessert.' :
@@ -458,7 +475,7 @@ export default function LayerControlWidget({
                       ? 'Post-alcohol glucose dip drives intense late-night sweet tooth cravings between 10:00 PM and 1:30 AM.' :
                      selectedComplementarySpectrum === 'Evening Tiffin & Heritage Cafes' 
                       ? 'Warm crispy ghee butter dosas & filter coffee followed by multi-generational family evening dessert stroll.' :
-                     'Spicy biryani diners, burger queues, microbreweries & tiffin crowds driving immediate secondary dessert walk-ins.'}
+                     'High-impact transit terminals, shopping malls, cultural auditoriums, pedestrian walkways, and dining anchors driving peak dessert sales.'}
                   </p>
                 </div>
 
@@ -481,7 +498,7 @@ export default function LayerControlWidget({
                   >
                     <option value="">
                       {selectedComplementarySpectrum === 'ALL' 
-                        ? 'Select biryani, burger, pub or tiffin landmark...' 
+                        ? 'Select metro, mall, cinema, hotspot or dining landmark...' 
                         : `Select ${selectedComplementarySpectrum}...`}
                     </option>
                     {correspondingComplementaryVenues.map(f => (

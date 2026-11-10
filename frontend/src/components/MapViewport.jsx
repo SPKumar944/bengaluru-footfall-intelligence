@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 import DeckGL from '@deck.gl/react';
-import { GeoJsonLayer, ScatterplotLayer } from '@deck.gl/layers';
+import { GeoJsonLayer, ScatterplotLayer, TextLayer } from '@deck.gl/layers';
 import { H3HexagonLayer } from '@deck.gl/geo-layers';
 import { Hexagon } from 'lucide-react';
 import maplibregl from 'maplibre-gl';
@@ -503,7 +503,7 @@ export default function MapViewport({
       getPosition: f => f.geometry.coordinates
     }),
 
-    // 2g. Complementary Dining Brands (Biryani, Burgers, Late-Night Pubs, Evening Tiffins)
+    // 2g. Complementary Brands & High-Footfall Transit / Retail Hubs
     activeLayers.complementaryBrands && filteredComplementaryBrands.length > 0 && new ScatterplotLayer({
       id: 'complementary-dining-brands-layer',
       data: filteredComplementaryBrands,
@@ -512,13 +512,17 @@ export default function MapViewport({
       stroked: true,
       filled: true,
       radiusScale: 1,
-      radiusMinPixels: 8,
-      radiusMaxPixels: 16,
+      radiusMinPixels: 13,
+      radiusMaxPixels: 20,
       lineWidthUnits: 'pixels',
-      getLineWidth: f => selectedComplementaryBrand?.properties?.id === f.properties?.id ? 3.5 : 2,
-      getLineColor: f => selectedComplementaryBrand?.properties?.id === f.properties?.id ? [255, 255, 255, 255] : [255, 255, 255, 240],
+      getLineWidth: f => selectedComplementaryBrand?.properties?.id === f.properties?.id ? 4 : 2,
+      getLineColor: f => selectedComplementaryBrand?.properties?.id === f.properties?.id ? [255, 255, 255, 255] : [255, 255, 255, 235],
       getFillColor: f => {
         const cat = f.properties?.spectrum_category;
+        if (cat === 'Metro Stations & Transit Terminals') return [14, 165, 233, 245]; // Transit Sky Blue
+        if (cat === 'Shopping Malls & Retail Hubs') return [217, 70, 239, 245]; // Magenta / Fuchsia
+        if (cat === 'Cinemas & Cultural Auditoriums') return [99, 102, 241, 245]; // Indigo / Violet
+        if (cat === 'Street Walkways & Buzzing Hotspots') return [234, 179, 8, 245]; // Golden Sun
         if (cat === 'Hot & Spicy Meals') return [239, 68, 68, 245]; // Fiery Red
         if (cat === 'Youth Fast Casual') return [245, 158, 11, 245]; // Warm Amber
         if (cat === 'Late-Night Pubs & Breweries') return [147, 51, 234, 245]; // Royal Purple
@@ -527,13 +531,31 @@ export default function MapViewport({
       getPosition: f => f.geometry.coordinates,
       updateTriggers: {
         getLineWidth: [selectedComplementaryBrand?.properties?.id],
-        getLineColor: [selectedComplementaryBrand?.properties?.id]
+        getLineColor: [selectedComplementaryBrand?.properties?.id],
+        getFillColor: [selectedComplementarySpectrum]
       },
       onHover: info => setHoverInfo(info),
       onClick: info => {
         if (info.object && onSelectComplementaryBrand) {
           onSelectComplementaryBrand(info.object);
         }
+      }
+    }),
+
+    // 2g-ii. Complementary Brands Icon Text Layer (Emoji pins for visual differentiation)
+    activeLayers.complementaryBrands && filteredComplementaryBrands.length > 0 && new TextLayer({
+      id: 'complementary-brands-icon-layer',
+      data: filteredComplementaryBrands,
+      pickable: false,
+      getPosition: f => f.geometry.coordinates,
+      getText: f => f.properties?.spectrum_icon || '📍',
+      getSize: f => selectedComplementaryBrand?.properties?.id === f.properties?.id ? 15 : 12,
+      sizeUnits: 'pixels',
+      getTextAnchor: 'middle',
+      getAlignmentBaseline: 'center',
+      fontFamily: '"Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", sans-serif',
+      updateTriggers: {
+        getSize: [selectedComplementaryBrand?.properties?.id]
       }
     }),
 
@@ -896,11 +918,15 @@ export default function MapViewport({
                 );
               }
 
-              // Case Complementary Dining Brand (Synergy Spectrum: Biryani, Burgers, Pubs, Tiffins)
+              // Case Complementary Brand / High-Footfall Hub (Synergy Spectrum)
               if (p.id?.startsWith('COMP_') || p.spectrum_category) {
                 const badgeStyle = 
+                  p.spectrum_category === 'Metro Stations & Transit Terminals' ? 'text-sky-800 bg-sky-50 border-sky-300' :
+                  p.spectrum_category === 'Shopping Malls & Retail Hubs' ? 'text-fuchsia-800 bg-fuchsia-50 border-fuchsia-300' :
+                  p.spectrum_category === 'Cinemas & Cultural Auditoriums' ? 'text-indigo-800 bg-indigo-50 border-indigo-300' :
+                  p.spectrum_category === 'Street Walkways & Buzzing Hotspots' ? 'text-amber-800 bg-amber-50 border-amber-300' :
                   p.spectrum_category === 'Hot & Spicy Meals' ? 'text-red-800 bg-red-50 border-red-300' :
-                  p.spectrum_category === 'Youth Fast Casual' ? 'text-amber-800 bg-amber-50 border-amber-300' :
+                  p.spectrum_category === 'Youth Fast Casual' ? 'text-orange-800 bg-orange-50 border-orange-300' :
                   p.spectrum_category === 'Late-Night Pubs & Breweries' ? 'text-purple-800 bg-purple-50 border-purple-300' :
                   'text-emerald-800 bg-emerald-50 border-emerald-300';
 
@@ -915,7 +941,9 @@ export default function MapViewport({
                       </span>
                     </div>
                     <div className="text-xs font-extrabold text-slate-900">{p.name}</div>
-                    <div className="text-[10px] text-slate-600 font-semibold">{p.locality}</div>
+                    <div className="text-[10px] text-slate-600 font-semibold">
+                      {p.locality} {p.sub_category ? `• ${p.sub_category}` : ''}
+                    </div>
                     <div className="text-[9px] text-slate-400 line-clamp-1">{p.address}</div>
 
                     <div className="pt-1 border-t border-slate-100 space-y-0.5 text-[11px]">
@@ -923,11 +951,11 @@ export default function MapViewport({
                         Pillar: {p.spectrum_pillar}
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Peak Dessert Spillover:</span>
+                        <span className="text-slate-500">Peak Footfall / Spillover:</span>
                         <span className="text-orange-900 font-bold">{p.peak_window}</span>
                       </div>
                       <div className="flex justify-between text-[10px]">
-                        <span className="text-slate-400">Daily Customer Volume:</span>
+                        <span className="text-slate-400">Daily Footfall Volume:</span>
                         <span className="text-slate-700 font-semibold">~{p.daily_customer_footfall?.toLocaleString()} / day</span>
                       </div>
                       <div className="pt-0.5 text-[10px] text-emerald-800 font-medium italic border-t border-slate-100">

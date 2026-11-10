@@ -1,14 +1,18 @@
 {
   "type": "FeatureCollection",
-  "name": "Bengaluru_Complementary_Dining_Brands_Synergy_Spectrum",
+  "name": "Bengaluru_High_Dessert_Synergy_Complementary_Landscape",
   "metadata": {
-    "description": "High Dessert Synergy Complementary Dining Brands across Bengaluru",
-    "total_venues": 171,
+    "description": "High Dessert Synergy Landscape across Bengaluru (Dining, Transit, Malls, Auditoriums & Hotspots)",
+    "total_venues": 261,
     "spectrum_pillars": [
       "Hot & Spicy Meals (Capsaicin Relief & Milk Fat Need)",
       "Youth Fast Casual (Extended Hangout & Student Cohort)",
       "Late-Night Pubs & Breweries (Post-Alcohol Sweet Tooth & Midnight Craving)",
-      "Evening Tiffin & Heritage Cafes (Family Weekend Tradition & Evening Walkers)"
+      "Evening Tiffin & Heritage Cafes (Family Weekend Tradition & Evening Walkers)",
+      "Metro Stations & Transit Terminals (Commuter Transit & Quick-Grab Impulse)",
+      "Shopping Malls & Retail Hubs (All-Weather Family Leisure & Retail Footfall)",
+      "Cinemas & Cultural Auditoriums (Pre/Post Show Crowd Spillover)",
+      "Street Walkways & Buzzing Hotspots (High-Density Pedestrian Strolls & Leisure Strolls)"
     ]
   },
   "features": [
@@ -6183,6 +6187,2256 @@
         "peak_window": "3:30 PM \u2013 8:30 PM",
         "synergy_score": 94,
         "synergy_reason": "Post-Lalbagh garden walking crowd paired with historic pure ghee rava idlis and traditional treats."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5726,
+          12.9757
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_172",
+        "name": "Kempegowda Metro Station (Majestic Interchange)",
+        "brand": "Kempegowda Metro Station (Majestic Interchange)",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Majestic / City Center",
+        "address": "Kempegowda Metro Station (Majestic Interchange), Majestic / City Center, Bengaluru",
+        "daily_customer_footfall": 160000,
+        "peak_window": "7:00 AM \u2013 10:30 PM",
+        "synergy_score": 98,
+        "synergy_reason": "Primary interchange of Purple & Green lines; 160k+ commuters transit daily. Grab-and-go cups and cones capture rushing commuters."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6384,
+          12.9783
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_173",
+        "name": "Indiranagar Metro Station",
+        "brand": "Indiranagar Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Indiranagar CMH Road",
+        "address": "Indiranagar Metro Station, Indiranagar CMH Road, Bengaluru",
+        "daily_customer_footfall": 38000,
+        "peak_window": "8:00 AM \u2013 10:30 PM",
+        "synergy_score": 99,
+        "synergy_reason": "Heart of CMH Road & 100ft Rd; massive evening spillover into Indiranagar's prime ice cream and dining promenade."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.607,
+          12.9755
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_174",
+        "name": "MG Road Metro Station",
+        "brand": "MG Road Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "MG Road / Church Street",
+        "address": "MG Road Metro Station, MG Road / Church Street, Bengaluru",
+        "daily_customer_footfall": 45000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 99,
+        "synergy_reason": "Gateway to Church Street and Brigade Road; heavy weekend student, youth and shopper pedestrian volume."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6171,
+          12.9729
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_175",
+        "name": "Trinity Metro Station",
+        "brand": "Trinity Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Trinity Circle / MG Road",
+        "address": "Trinity Metro Station, Trinity Circle / MG Road, Bengaluru",
+        "daily_customer_footfall": 22000,
+        "peak_window": "9:00 AM \u2013 9:30 PM",
+        "synergy_score": 92,
+        "synergy_reason": "Direct proximity to 1 MG Lido Mall and premium corporate offices."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6265,
+          12.976
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_176",
+        "name": "Halasuru Metro Station",
+        "brand": "Halasuru Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Old Madras Road",
+        "address": "Halasuru Metro Station, Old Madras Road, Bengaluru",
+        "daily_customer_footfall": 18000,
+        "peak_window": "8:00 AM \u2013 9:00 PM",
+        "synergy_score": 88,
+        "synergy_reason": "Dense commercial residential junction with school and hospital spillover."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.638,
+          12.9815
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_177",
+        "name": "Swami Vivekananda Road Metro",
+        "brand": "Swami Vivekananda Road Metro",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Old Madras Road",
+        "address": "Swami Vivekananda Road Metro, Old Madras Road, Bengaluru",
+        "daily_customer_footfall": 16000,
+        "peak_window": "8:00 AM \u2013 9:00 PM",
+        "synergy_score": 87,
+        "synergy_reason": "Major park-and-ride facility with high daily commuter dispersal."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6521,
+          12.9908
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_178",
+        "name": "Baiyappanahalli Metro Station",
+        "brand": "Baiyappanahalli Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Old Madras Road / C.V. Raman Nagar",
+        "address": "Baiyappanahalli Metro Station, Old Madras Road / C.V. Raman Nagar, Bengaluru",
+        "daily_customer_footfall": 32000,
+        "peak_window": "7:30 AM \u2013 10:00 PM",
+        "synergy_score": 93,
+        "synergy_reason": "Key east-bound suburban transit node linking Namma Metro to railway lines."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5996,
+          12.981
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_179",
+        "name": "Cubbon Park Metro Station",
+        "brand": "Cubbon Park Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Chinnaswamy Stadium / GPO",
+        "address": "Cubbon Park Metro Station, Chinnaswamy Stadium / GPO, Bengaluru",
+        "daily_customer_footfall": 28000,
+        "peak_window": "9:00 AM \u2013 8:30 PM",
+        "synergy_score": 94,
+        "synergy_reason": "Steps away from Chinnaswamy Cricket Stadium, Cubbon Park and government offices."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5925,
+          12.9797
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_180",
+        "name": "Vidhana Soudha Metro Station",
+        "brand": "Vidhana Soudha Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Ambedkar Veedhi",
+        "address": "Vidhana Soudha Metro Station, Ambedkar Veedhi, Bengaluru",
+        "daily_customer_footfall": 24000,
+        "peak_window": "9:00 AM \u2013 7:30 PM",
+        "synergy_score": 90,
+        "synergy_reason": "Secretariat and high court staff transit with midday refreshment demand."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5855,
+          12.9739
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_181",
+        "name": "Sir M. Visvesvaraya Central College Metro",
+        "brand": "Sir M. Visvesvaraya Central College Metro",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "KR Circle / Avenue Rd",
+        "address": "Sir M. Visvesvaraya Central College Metro, KR Circle / Avenue Rd, Bengaluru",
+        "daily_customer_footfall": 26000,
+        "peak_window": "8:30 AM \u2013 8:00 PM",
+        "synergy_score": 91,
+        "synergy_reason": "Adjacent to historic Avenue Road retail, colleges and commercial markets."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5675,
+          12.9782
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_182",
+        "name": "Krantivira Sangolli Rayanna Railway Metro",
+        "brand": "Krantivira Sangolli Rayanna Railway Metro",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Majestic Station",
+        "address": "Krantivira Sangolli Rayanna Railway Metro, Majestic Station, Bengaluru",
+        "daily_customer_footfall": 35000,
+        "peak_window": "7:00 AM \u2013 10:30 PM",
+        "synergy_score": 94,
+        "synergy_reason": "Direct subway link into KSR Central Railway Station."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5375,
+          12.9698
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_183",
+        "name": "Vijayanagar Metro Station",
+        "brand": "Vijayanagar Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Vijayanagar Club Road",
+        "address": "Vijayanagar Metro Station, Vijayanagar Club Road, Bengaluru",
+        "daily_customer_footfall": 30000,
+        "peak_window": "8:00 AM \u2013 9:30 PM",
+        "synergy_score": 93,
+        "synergy_reason": "Dense West Bangalore commercial high street and coaching hub."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5278,
+          12.962
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_184",
+        "name": "Attiguppe Metro Station",
+        "brand": "Attiguppe Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Vijayanagar South",
+        "address": "Attiguppe Metro Station, Vijayanagar South, Bengaluru",
+        "daily_customer_footfall": 19000,
+        "peak_window": "8:00 AM \u2013 9:00 PM",
+        "synergy_score": 88,
+        "synergy_reason": "Residential families and evening walkers."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5365,
+          12.9525
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_185",
+        "name": "Deepanjali Nagar Metro Station",
+        "brand": "Deepanjali Nagar Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Mysore Road",
+        "address": "Deepanjali Nagar Metro Station, Mysore Road, Bengaluru",
+        "daily_customer_footfall": 18000,
+        "peak_window": "8:00 AM \u2013 9:00 PM",
+        "synergy_score": 86,
+        "synergy_reason": "Mysore Road commercial hub."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5204,
+          12.9465
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_186",
+        "name": "Mysore Road Metro Station",
+        "brand": "Mysore Road Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Nayandahalli",
+        "address": "Mysore Road Metro Station, Nayandahalli, Bengaluru",
+        "daily_customer_footfall": 26000,
+        "peak_window": "7:30 AM \u2013 9:30 PM",
+        "synergy_score": 89,
+        "synergy_reason": "Transit interchange for south-west suburbs and industrial corridors."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.4835,
+          12.908
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_187",
+        "name": "Kengeri Bus Terminal Metro Station",
+        "brand": "Kengeri Bus Terminal Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Kengeri Satellite Town",
+        "address": "Kengeri Bus Terminal Metro Station, Kengeri Satellite Town, Bengaluru",
+        "daily_customer_footfall": 24000,
+        "peak_window": "7:30 AM \u2013 9:30 PM",
+        "synergy_score": 91,
+        "synergy_reason": "Direct bridge to Kengeri KSRTC interstate bus terminal."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.761,
+          12.9985
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_188",
+        "name": "Whitefield (Kadugodi) Metro Station",
+        "brand": "Whitefield (Kadugodi) Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Whitefield Main Rd",
+        "address": "Whitefield (Kadugodi) Metro Station, Whitefield Main Rd, Bengaluru",
+        "daily_customer_footfall": 32000,
+        "peak_window": "8:00 AM \u2013 10:00 PM",
+        "synergy_score": 95,
+        "synergy_reason": "Terminal station for IT corridors; heavy evening techie dispersal."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7512,
+          12.9845
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_189",
+        "name": "Hopefarm Channasandra Metro",
+        "brand": "Hopefarm Channasandra Metro",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Whitefield",
+        "address": "Hopefarm Channasandra Metro, Whitefield, Bengaluru",
+        "daily_customer_footfall": 21000,
+        "peak_window": "8:00 AM \u2013 9:30 PM",
+        "synergy_score": 91,
+        "synergy_reason": "Hopefarm commercial junction connecting residential townships."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7125,
+          12.9715
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_190",
+        "name": "Kundalahalli Metro Station",
+        "brand": "Kundalahalli Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "ITPL Main Road",
+        "address": "Kundalahalli Metro Station, ITPL Main Road, Bengaluru",
+        "daily_customer_footfall": 25000,
+        "peak_window": "8:00 AM \u2013 9:30 PM",
+        "synergy_score": 93,
+        "synergy_reason": "AECS Layout and Brookfield tech residential hub."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7015,
+          12.981
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_191",
+        "name": "Seetharampalya Metro Station",
+        "brand": "Seetharampalya Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Hoodi / Whitefield",
+        "address": "Seetharampalya Metro Station, Hoodi / Whitefield, Bengaluru",
+        "daily_customer_footfall": 22000,
+        "peak_window": "8:00 AM \u2013 9:30 PM",
+        "synergy_score": 90,
+        "synergy_reason": "Large IT park cluster with intense lunch and evening snack demand."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.678,
+          12.998
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_192",
+        "name": "KR Puram (Krishnarajapuram) Metro Station",
+        "brand": "KR Puram (Krishnarajapuram) Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Tin Factory / ORR",
+        "address": "KR Puram (Krishnarajapuram) Metro Station, Tin Factory / ORR, Bengaluru",
+        "daily_customer_footfall": 36000,
+        "peak_window": "7:30 AM \u2013 10:00 PM",
+        "synergy_score": 96,
+        "synergy_reason": "Massive Outer Ring Road multimodal transit interchange linking railway, bus and metro."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5715,
+          12.9912
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_193",
+        "name": "Sampige Road Metro Station",
+        "brand": "Sampige Road Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Malleshwaram",
+        "address": "Sampige Road Metro Station, Malleshwaram, Bengaluru",
+        "daily_customer_footfall": 28000,
+        "peak_window": "8:30 AM \u2013 9:30 PM",
+        "synergy_score": 95,
+        "synergy_reason": "Direct covered footbridge into Mantri Square Mall; heavy weekend family shopping flow."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.563,
+          12.9965
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_194",
+        "name": "Srirampura Metro Station",
+        "brand": "Srirampura Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Srirampura",
+        "address": "Srirampura Metro Station, Srirampura, Bengaluru",
+        "daily_customer_footfall": 18000,
+        "peak_window": "8:00 AM \u2013 9:00 PM",
+        "synergy_score": 87,
+        "synergy_reason": "High-density residential and retail zone."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5535,
+          13.0005
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_195",
+        "name": "Rajajinagar Metro Station",
+        "brand": "Rajajinagar Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Rajajinagar 1st Block",
+        "address": "Rajajinagar Metro Station, Rajajinagar 1st Block, Bengaluru",
+        "daily_customer_footfall": 26000,
+        "peak_window": "8:00 AM \u2013 9:30 PM",
+        "synergy_score": 92,
+        "synergy_reason": "Commercial corridor with hospitals, academies and retail stores."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5485,
+          13.0085
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_196",
+        "name": "Mahalakshmi Metro Station",
+        "brand": "Mahalakshmi Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Mahalakshmi Layout",
+        "address": "Mahalakshmi Metro Station, Mahalakshmi Layout, Bengaluru",
+        "daily_customer_footfall": 25000,
+        "peak_window": "8:00 AM \u2013 9:30 PM",
+        "synergy_score": 93,
+        "synergy_reason": "Adjacent to ISKCON Temple and Orion Mall; massive weekend pilgrim and family volume."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.548,
+          13.0145
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_197",
+        "name": "Sandal Soap Factory Metro Station",
+        "brand": "Sandal Soap Factory Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Yeshwanthpur",
+        "address": "Sandal Soap Factory Metro Station, Yeshwanthpur, Bengaluru",
+        "daily_customer_footfall": 22000,
+        "peak_window": "8:00 AM \u2013 9:30 PM",
+        "synergy_score": 91,
+        "synergy_reason": "Links to Brigade Gateway, Sheraton Grand, and World Trade Center."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5495,
+          13.0235
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_198",
+        "name": "Yesvantpur Metro Station",
+        "brand": "Yesvantpur Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Yesvantpur Junction",
+        "address": "Yesvantpur Metro Station, Yesvantpur Junction, Bengaluru",
+        "daily_customer_footfall": 38000,
+        "peak_window": "7:00 AM \u2013 10:30 PM",
+        "synergy_score": 96,
+        "synergy_reason": "Skywalk connected to Yesvantpur Railway Station; continuous arrival crowd."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5735,
+          12.9515
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_199",
+        "name": "National College Metro Station",
+        "brand": "National College Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Basavanagudi",
+        "address": "National College Metro Station, Basavanagudi, Bengaluru",
+        "daily_customer_footfall": 24000,
+        "peak_window": "8:00 AM \u2013 9:00 PM",
+        "synergy_score": 94,
+        "synergy_reason": "Basavanagudi student hub and cultural institutions."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.58,
+          12.946
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_200",
+        "name": "Lalbagh Metro Station",
+        "brand": "Lalbagh Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Lalbagh West Gate",
+        "address": "Lalbagh Metro Station, Lalbagh West Gate, Bengaluru",
+        "daily_customer_footfall": 28000,
+        "peak_window": "8:00 AM \u2013 8:30 PM",
+        "synergy_score": 95,
+        "synergy_reason": "Direct exit to Lalbagh Botanical Gardens; peak flower show and morning/weekend family surge."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5805,
+          12.9375
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_201",
+        "name": "South End Circle Metro Station",
+        "brand": "South End Circle Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Jayanagar 1st Block",
+        "address": "South End Circle Metro Station, Jayanagar 1st Block, Bengaluru",
+        "daily_customer_footfall": 21000,
+        "peak_window": "8:00 AM \u2013 9:00 PM",
+        "synergy_score": 92,
+        "synergy_reason": "High-density South Bangalore residential and dining junction."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.58,
+          12.93
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_202",
+        "name": "Jayanagar Metro Station",
+        "brand": "Jayanagar Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "4th Block Jayanagar",
+        "address": "Jayanagar Metro Station, 4th Block Jayanagar, Bengaluru",
+        "daily_customer_footfall": 34000,
+        "peak_window": "8:00 AM \u2013 9:30 PM",
+        "synergy_score": 98,
+        "synergy_reason": "Opens into the iconic 4th Block Jayanagar shopping complex; premier dessert stroll location."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5802,
+          12.9215
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_203",
+        "name": "Rashtreeya Vidyalaya Road (RV Road) Metro",
+        "brand": "Rashtreeya Vidyalaya Road (RV Road) Metro",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Jayanagar / Banashankari",
+        "address": "Rashtreeya Vidyalaya Road (RV Road) Metro, Jayanagar / Banashankari, Bengaluru",
+        "daily_customer_footfall": 22000,
+        "peak_window": "8:00 AM \u2013 9:00 PM",
+        "synergy_score": 91,
+        "synergy_reason": "Interchange station for Yellow Line (Electronics City)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5735,
+          12.915
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_204",
+        "name": "Banashankari Metro Station",
+        "brand": "Banashankari Metro Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Banashankari TTMC",
+        "address": "Banashankari Metro Station, Banashankari TTMC, Bengaluru",
+        "daily_customer_footfall": 42000,
+        "peak_window": "7:30 AM \u2013 10:00 PM",
+        "synergy_score": 97,
+        "synergy_reason": "Integrated with Banashankari Temple and BMTC TTMC; massive daily transfer crowd."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.574,
+          12.9075
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_205",
+        "name": "Jaya Prakash Nagar (JP Nagar) Metro",
+        "brand": "Jaya Prakash Nagar (JP Nagar) Metro",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Metro Station",
+        "locality": "Sarakki Junction",
+        "address": "Jaya Prakash Nagar (JP Nagar) Metro, Sarakki Junction, Bengaluru",
+        "daily_customer_footfall": 26000,
+        "peak_window": "8:00 AM \u2013 9:30 PM",
+        "synergy_score": 92,
+        "synergy_reason": "Sarakki commercial hub and residential layout transit."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.57,
+          12.9778
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_206",
+        "name": "KSR Bengaluru City Railway Station (Majestic)",
+        "brand": "KSR Bengaluru City Railway Station (Majestic)",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Railway Station",
+        "locality": "Majestic Station Road",
+        "address": "KSR Bengaluru City Railway Station (Majestic), Majestic Station Road, Bengaluru",
+        "daily_customer_footfall": 180000,
+        "peak_window": "24 Hours (Round-the-clock)",
+        "synergy_score": 99,
+        "synergy_reason": "Karnataka's largest rail hub; 180k+ passengers daily. Continuous demand for packaged cups, cones, and quick refreshments."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.55,
+          13.0238
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_207",
+        "name": "Yesvantpur Junction Railway Station",
+        "brand": "Yesvantpur Junction Railway Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Railway Station",
+        "locality": "Yesvantpur Market Rd",
+        "address": "Yesvantpur Junction Railway Station, Yesvantpur Market Rd, Bengaluru",
+        "daily_customer_footfall": 95000,
+        "peak_window": "24 Hours (Round-the-clock)",
+        "synergy_score": 97,
+        "synergy_reason": "Major terminus for North/West bound trains; massive passenger footfall."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5985,
+          12.9935
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_208",
+        "name": "Bangalore Cantonment Railway Station",
+        "brand": "Bangalore Cantonment Railway Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Railway Station",
+        "locality": "Cantonment / Vasanth Nagar",
+        "address": "Bangalore Cantonment Railway Station, Cantonment / Vasanth Nagar, Bengaluru",
+        "daily_customer_footfall": 45000,
+        "peak_window": "24 Hours",
+        "synergy_score": 93,
+        "synergy_reason": "CBD railway hub serving central, Frazer Town and Benson Town neighborhoods."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6545,
+          13.0035
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_209",
+        "name": "Sir M. Visvesvaraya Terminal (SMVT Baiyappanahalli)",
+        "brand": "Sir M. Visvesvaraya Terminal (SMVT Baiyappanahalli)",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Railway Station",
+        "locality": "Baiyappanahalli",
+        "address": "Sir M. Visvesvaraya Terminal (SMVT Baiyappanahalli), Baiyappanahalli, Bengaluru",
+        "daily_customer_footfall": 65000,
+        "peak_window": "24 Hours",
+        "synergy_score": 96,
+        "synergy_reason": "India's premier air-conditioned airport-style railway terminal; rapidly growing passenger footfall."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6765,
+          13.001
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_210",
+        "name": "Krishnarajapuram (KR Puram) Railway Station",
+        "brand": "Krishnarajapuram (KR Puram) Railway Station",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Railway Station",
+        "locality": "Old Madras Rd, KR Puram",
+        "address": "Krishnarajapuram (KR Puram) Railway Station, Old Madras Rd, KR Puram, Bengaluru",
+        "daily_customer_footfall": 55000,
+        "peak_window": "24 Hours",
+        "synergy_score": 95,
+        "synergy_reason": "Key halting station for interstate IT commuters and Eastern corridor trains."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5715,
+          12.9765
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_211",
+        "name": "Kempegowda Bus Station (Majestic BMTC/KSRTC)",
+        "brand": "Kempegowda Bus Station (Majestic BMTC/KSRTC)",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Bus Terminal",
+        "locality": "Majestic / Gubbi Thotadappa Rd",
+        "address": "Kempegowda Bus Station (Majestic BMTC/KSRTC), Majestic / Gubbi Thotadappa Rd, Bengaluru",
+        "daily_customer_footfall": 250000,
+        "peak_window": "24 Hours (Round-the-clock)",
+        "synergy_score": 100,
+        "synergy_reason": "Highest footfall geographic point in South India; 250,000+ daily commuters. Unmatched ice cream impulse purchase rate."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5955,
+          12.955
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_212",
+        "name": "Shantinagar Bus Station (KSRTC Terminal)",
+        "brand": "Shantinagar Bus Station (KSRTC Terminal)",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Bus Terminal",
+        "locality": "Shantinagar Double Rd",
+        "address": "Shantinagar Bus Station (KSRTC Terminal), Shantinagar Double Rd, Bengaluru",
+        "daily_customer_footfall": 65000,
+        "peak_window": "24 Hours",
+        "synergy_score": 94,
+        "synergy_reason": "Terminal for Tamil Nadu and Kerala interstate express buses."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.573,
+          12.9155
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_213",
+        "name": "Banashankari BMTC TTMC",
+        "brand": "Banashankari BMTC TTMC",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Bus Terminal",
+        "locality": "Banashankari 2nd Stage",
+        "address": "Banashankari BMTC TTMC, Banashankari 2nd Stage, Bengaluru",
+        "daily_customer_footfall": 75000,
+        "peak_window": "6:00 AM \u2013 11:00 PM",
+        "synergy_score": 96,
+        "synergy_reason": "Major south interchange linking BMTC buses to Metro Green Line."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6025,
+          12.9865
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_214",
+        "name": "Shivajinagar BMTC Bus Terminal",
+        "brand": "Shivajinagar BMTC Bus Terminal",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Bus Terminal",
+        "locality": "Shivajinagar Market",
+        "address": "Shivajinagar BMTC Bus Terminal, Shivajinagar Market, Bengaluru",
+        "daily_customer_footfall": 80000,
+        "peak_window": "6:00 AM \u2013 11:00 PM",
+        "synergy_score": 95,
+        "synergy_reason": "Central shopping and transit node with high street crowds pouring through Russell Market."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6375,
+          12.961
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_215",
+        "name": "Domlur BMTC TTMC",
+        "brand": "Domlur BMTC TTMC",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Bus Terminal",
+        "locality": "Domlur Inner Ring Road",
+        "address": "Domlur BMTC TTMC, Domlur Inner Ring Road, Bengaluru",
+        "daily_customer_footfall": 35000,
+        "peak_window": "7:00 AM \u2013 10:30 PM",
+        "synergy_score": 91,
+        "synergy_reason": "Transit interchange connecting Indiranagar to Embassy GolfLinks and Koramangala."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5815,
+          12.929
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_216",
+        "name": "Jayanagar 4th Block BMTC TTMC",
+        "brand": "Jayanagar 4th Block BMTC TTMC",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Bus Terminal",
+        "locality": "Jayanagar 4th Block",
+        "address": "Jayanagar 4th Block BMTC TTMC, Jayanagar 4th Block, Bengaluru",
+        "daily_customer_footfall": 48000,
+        "peak_window": "7:00 AM \u2013 10:30 PM",
+        "synergy_score": 96,
+        "synergy_reason": "Directly facing Jayanagar BDA Shopping Complex and food street."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.538,
+          12.9695
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_217",
+        "name": "Vijayanagar BMTC TTMC",
+        "brand": "Vijayanagar BMTC TTMC",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Bus Terminal",
+        "locality": "Vijayanagar Main Rd",
+        "address": "Vijayanagar BMTC TTMC, Vijayanagar Main Rd, Bengaluru",
+        "daily_customer_footfall": 40000,
+        "peak_window": "7:00 AM \u2013 10:30 PM",
+        "synergy_score": 92,
+        "synergy_reason": "High-density West Bangalore transit terminal with strong youth street traffic."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5915,
+          13.0385
+        ]
+      },
+      "properties": {
+        "id": "COMP_TRANSIT_218",
+        "name": "Hebbal Flyover BMTC Bus Junction",
+        "brand": "Hebbal Flyover BMTC Bus Junction",
+        "spectrum_category": "Metro Stations & Transit Terminals",
+        "spectrum_icon": "\ud83d\ude87",
+        "spectrum_pillar": "Commuter Transit & Quick-Grab Impulse",
+        "sub_category": "Bus Terminal",
+        "locality": "Hebbal / Bellary Rd",
+        "address": "Hebbal Flyover BMTC Bus Junction, Hebbal / Bellary Rd, Bengaluru",
+        "daily_customer_footfall": 60000,
+        "peak_window": "6:30 AM \u2013 11:00 PM",
+        "synergy_score": 93,
+        "synergy_reason": "Key North Bangalore multimodal junction linking airport transit, Manyata Tech Park and Outer Ring Road."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6975,
+          12.996
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_219",
+        "name": "Phoenix Marketcity",
+        "brand": "Phoenix Marketcity",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Whitefield Road, Mahadevapura",
+        "address": "Phoenix Marketcity, Whitefield Road, Mahadevapura, Bengaluru",
+        "daily_customer_footfall": 45000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 99,
+        "synergy_reason": "Bengaluru's largest destination mall; 45,000+ daily visitors. Enormous ice cream kiosk and parlour conversion from multiplex and shopping shoppers."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.699,
+          12.9965
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_220",
+        "name": "VR Bengaluru (Black Mulberry Mall)",
+        "brand": "VR Bengaluru (Black Mulberry Mall)",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Whitefield Road, Mahadevapura",
+        "address": "VR Bengaluru (Black Mulberry Mall), Whitefield Road, Mahadevapura, Bengaluru",
+        "daily_customer_footfall": 28000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 96,
+        "synergy_reason": "Premium lifestyle mall with PVR Gold Class, Waverly Hotel, and outdoor open-air community events."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.555,
+          13.011
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_221",
+        "name": "Orion Mall (Brigade Gateway)",
+        "brand": "Orion Mall (Brigade Gateway)",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Dr. Rajkumar Rd, Rajajinagar",
+        "address": "Orion Mall (Brigade Gateway), Dr. Rajkumar Rd, Rajajinagar, Bengaluru",
+        "daily_customer_footfall": 42000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 99,
+        "synergy_reason": "Lakefront promenade, PVR IMAX, WTC corporate campus; prime multi-generational family dessert walks around the lake."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.611,
+          12.9355
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_222",
+        "name": "Nexus Koramangala (The Forum Mall)",
+        "brand": "Nexus Koramangala (The Forum Mall)",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Hosur Road, Koramangala 7th Block",
+        "address": "Nexus Koramangala (The Forum Mall), Hosur Road, Koramangala 7th Block, Bengaluru",
+        "daily_customer_footfall": 38000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 98,
+        "synergy_reason": "Bengaluru's iconic first modern shopping mall; massive student, youth and family dining footfall."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5935,
+          13.0645
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_223",
+        "name": "Phoenix Mall of Asia",
+        "brand": "Phoenix Mall of Asia",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Bellary Road, Byatarayanapura, Hebbal",
+        "address": "Phoenix Mall of Asia, Bellary Road, Byatarayanapura, Hebbal, Bengaluru",
+        "daily_customer_footfall": 55000,
+        "peak_window": "11:00 AM \u2013 11:00 PM",
+        "synergy_score": 100,
+        "synergy_reason": "South India's most lavish luxury mall; 50k+ weekend shoppers, Eden Garden atrium, massive dessert kiosk demand."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5565,
+          12.978
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_224",
+        "name": "LuLu Mall Bengaluru (Global Malls)",
+        "brand": "LuLu Mall Bengaluru (Global Malls)",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Gopalapura, Rajajinagar",
+        "address": "LuLu Mall Bengaluru (Global Malls), Gopalapura, Rajajinagar, Bengaluru",
+        "daily_customer_footfall": 45000,
+        "peak_window": "10:30 AM \u2013 10:30 PM",
+        "synergy_score": 98,
+        "synergy_reason": "Funtura family entertainment center and LuLu Hypermarket; massive family basket size with children."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5715,
+          12.992
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_225",
+        "name": "Mantri Square Mall",
+        "brand": "Mantri Square Mall",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Sampige Road, Malleshwaram",
+        "address": "Mantri Square Mall, Sampige Road, Malleshwaram, Bengaluru",
+        "daily_customer_footfall": 40000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 97,
+        "synergy_reason": "Directly connected to Namma Metro Sampige Rd station; 250+ retail stores with traditional family crowd."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.601,
+          12.9135
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_226",
+        "name": "Vega City Mall",
+        "brand": "Vega City Mall",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Bannerghatta Main Rd, BTM 2nd Stage",
+        "address": "Vega City Mall, Bannerghatta Main Rd, BTM 2nd Stage, Bengaluru",
+        "daily_customer_footfall": 30000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 96,
+        "synergy_reason": "PVR Superplex 12 screens and extensive food court; huge South Bangalore family footfall."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5975,
+          12.8765
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_227",
+        "name": "Royal Meenakshi Mall",
+        "brand": "Royal Meenakshi Mall",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Bannerghatta Rd, Hulimavu",
+        "address": "Royal Meenakshi Mall, Bannerghatta Rd, Hulimavu, Bengaluru",
+        "daily_customer_footfall": 24000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 94,
+        "synergy_reason": "Dense residential catchment covering Hulimavu, Arekere and Gottigere."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.596,
+          12.9565
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_228",
+        "name": "Nexus Shantinagar (The Forum Neighbourhood)",
+        "brand": "Nexus Shantinagar (The Forum Neighbourhood)",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Hosur Rd, Shantinagar",
+        "address": "Nexus Shantinagar (The Forum Neighbourhood), Hosur Rd, Shantinagar, Bengaluru",
+        "daily_customer_footfall": 26000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 93,
+        "synergy_reason": "Central location with multiplex cinema and corporate IT crowd."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7475,
+          12.9595
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_229",
+        "name": "Nexus Whitefield (Forum Neighbourhood Mall)",
+        "brand": "Nexus Whitefield (Forum Neighbourhood Mall)",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Whitefield Main Rd, Prestige Ozone",
+        "address": "Nexus Whitefield (Forum Neighbourhood Mall), Whitefield Main Rd, Prestige Ozone, Bengaluru",
+        "daily_customer_footfall": 22000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 92,
+        "synergy_reason": "Core community mall for Whitefield villa and gated society families."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6095,
+          12.9705
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_230",
+        "name": "Garuda Mall",
+        "brand": "Garuda Mall",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Magrath Road, Ashok Nagar / Brigade Rd",
+        "address": "Garuda Mall, Magrath Road, Ashok Nagar / Brigade Rd, Bengaluru",
+        "daily_customer_footfall": 32000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 97,
+        "synergy_reason": "Historic CBD shopping mall adjacent to Brigade Road; heavy teen and youth squad footfall."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.62,
+          12.973
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_231",
+        "name": "1 MG-Lido Mall",
+        "brand": "1 MG-Lido Mall",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Trinity Circle, MG Road / Halasuru",
+        "address": "1 MG-Lido Mall, Trinity Circle, MG Road / Halasuru, Bengaluru",
+        "daily_customer_footfall": 20000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 93,
+        "synergy_reason": "High-end dining and retail with Inox Lido cinema; affluent residential CBD crowd."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5535,
+          12.8875
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_232",
+        "name": "Forum South Bangalore",
+        "brand": "Forum South Bangalore",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Kanakapura Road, Konanakunte Cross",
+        "address": "Forum South Bangalore, Kanakapura Road, Konanakunte Cross, Bengaluru",
+        "daily_customer_footfall": 36000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 97,
+        "synergy_reason": "Connected to Konanakunte Cross Metro; largest mall in South-West Bengaluru with huge weekend crowds."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6325,
+          13.045
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_233",
+        "name": "Elements Mall",
+        "brand": "Elements Mall",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Thanisandra Main Rd, Nagavara",
+        "address": "Elements Mall, Thanisandra Main Rd, Nagavara, Bengaluru",
+        "daily_customer_footfall": 25000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 93,
+        "synergy_reason": "North-East Bengaluru anchor mall serving Manyata Tech Park residential zones."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6645,
+          12.993
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_234",
+        "name": "Gopalan Signature Mall",
+        "brand": "Gopalan Signature Mall",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Old Madras Road, Rahat Bagh",
+        "address": "Gopalan Signature Mall, Old Madras Road, Rahat Bagh, Bengaluru",
+        "daily_customer_footfall": 20000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 91,
+        "synergy_reason": "Convenient cinema and bowling destination for Indiranagar and KR Puram residents."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5985,
+          12.919
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_235",
+        "name": "Gopalan Innovation Mall",
+        "brand": "Gopalan Innovation Mall",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Bannerghatta Road, JP Nagar 3rd Phase",
+        "address": "Gopalan Innovation Mall, Bannerghatta Road, JP Nagar 3rd Phase, Bengaluru",
+        "daily_customer_footfall": 18000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 90,
+        "synergy_reason": "Historic movie hub with 4 screens and family dining outlets."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6415,
+          13.078
+        ]
+      },
+      "properties": {
+        "id": "COMP_MALL_236",
+        "name": "Bhartiya Mall of Bengaluru",
+        "brand": "Bhartiya Mall of Bengaluru",
+        "spectrum_category": "Shopping Malls & Retail Hubs",
+        "spectrum_icon": "\ud83d\udecd\ufe0f",
+        "spectrum_pillar": "All-Weather Family Leisure & Retail Footfall",
+        "sub_category": "Shopping Mall",
+        "locality": "Thanisandra Main Rd, Bhartiya City",
+        "address": "Bhartiya Mall of Bengaluru, Thanisandra Main Rd, Bhartiya City, Bengaluru",
+        "daily_customer_footfall": 24000,
+        "peak_window": "11:00 AM \u2013 10:30 PM",
+        "synergy_score": 93,
+        "synergy_reason": "Integrated township mall with massive open central plaza and kids play zones."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5895,
+          12.9125
+        ]
+      },
+      "properties": {
+        "id": "COMP_AUD_237",
+        "name": "Ranga Shankara (Iconic Theatre)",
+        "brand": "Ranga Shankara (Iconic Theatre)",
+        "spectrum_category": "Cinemas & Cultural Auditoriums",
+        "spectrum_icon": "\ud83c\udfad",
+        "spectrum_pillar": "Pre/Post Show Crowd Spillover",
+        "sub_category": "Auditorium & Theatre",
+        "locality": "JP Nagar 2nd Phase",
+        "address": "Ranga Shankara (Iconic Theatre), JP Nagar 2nd Phase, Bengaluru",
+        "daily_customer_footfall": 3500,
+        "peak_window": "6:00 PM \u2013 10:30 PM (Evening Play Shows)",
+        "synergy_score": 99,
+        "synergy_reason": "Bengaluru's cultural theatre soul; 700+ audience members pour onto 8th Cross JP Nagar after plays craving ice cream and coffee."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5795,
+          13.0075
+        ]
+      },
+      "properties": {
+        "id": "COMP_AUD_238",
+        "name": "Chowdiah Memorial Hall",
+        "brand": "Chowdiah Memorial Hall",
+        "spectrum_category": "Cinemas & Cultural Auditoriums",
+        "spectrum_icon": "\ud83c\udfad",
+        "spectrum_pillar": "Pre/Post Show Crowd Spillover",
+        "sub_category": "Auditorium & Theatre",
+        "locality": "Malleshwaram / Vyalikaval",
+        "address": "Chowdiah Memorial Hall, Malleshwaram / Vyalikaval, Bengaluru",
+        "daily_customer_footfall": 4000,
+        "peak_window": "5:30 PM \u2013 10:00 PM (Music & Classical Concerts)",
+        "synergy_score": 97,
+        "synergy_reason": "Historic violin-shaped auditorium; affluent classical music and dance crowds stroll into Sankey Tank and Margosa Rd."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5855,
+          12.962
+        ]
+      },
+      "properties": {
+        "id": "COMP_AUD_239",
+        "name": "Ravindra Kalakshetra",
+        "brand": "Ravindra Kalakshetra",
+        "spectrum_category": "Cinemas & Cultural Auditoriums",
+        "spectrum_icon": "\ud83c\udfad",
+        "spectrum_pillar": "Pre/Post Show Crowd Spillover",
+        "sub_category": "Auditorium & Theatre",
+        "locality": "JC Road, Kalasipalya",
+        "address": "Ravindra Kalakshetra, JC Road, Kalasipalya, Bengaluru",
+        "daily_customer_footfall": 3500,
+        "peak_window": "5:00 PM \u2013 9:30 PM",
+        "synergy_score": 95,
+        "synergy_reason": "Karnataka's landmark cultural hall hosting state theatre festivals and dance performances."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5955,
+          12.992
+        ]
+      },
+      "properties": {
+        "id": "COMP_AUD_240",
+        "name": "Dr. B.R. Ambedkar Bhavan",
+        "brand": "Dr. B.R. Ambedkar Bhavan",
+        "spectrum_category": "Cinemas & Cultural Auditoriums",
+        "spectrum_icon": "\ud83c\udfad",
+        "spectrum_pillar": "Pre/Post Show Crowd Spillover",
+        "sub_category": "Auditorium & Theatre",
+        "locality": "Millers Road, Vasanth Nagar",
+        "address": "Dr. B.R. Ambedkar Bhavan, Millers Road, Vasanth Nagar, Bengaluru",
+        "daily_customer_footfall": 4500,
+        "peak_window": "5:00 PM \u2013 10:00 PM",
+        "synergy_score": 94,
+        "synergy_reason": "High-capacity convention hall hosting corporate summits, public talks and wedding receptions."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6205,
+          12.931
+        ]
+      },
+      "properties": {
+        "id": "COMP_AUD_241",
+        "name": "St. John's Auditorium",
+        "brand": "St. John's Auditorium",
+        "spectrum_category": "Cinemas & Cultural Auditoriums",
+        "spectrum_icon": "\ud83c\udfad",
+        "spectrum_pillar": "Pre/Post Show Crowd Spillover",
+        "sub_category": "Auditorium & Theatre",
+        "locality": "Koramangala 100ft Rd / Sarjapur Rd",
+        "address": "St. John's Auditorium, Koramangala 100ft Rd / Sarjapur Rd, Bengaluru",
+        "daily_customer_footfall": 5000,
+        "peak_window": "4:30 PM \u2013 10:00 PM",
+        "synergy_score": 96,
+        "synergy_reason": "Massive 2,000-seat auditorium hosting national college fests, rock concerts, and stand-up comedy shows."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7125,
+          12.989
+        ]
+      },
+      "properties": {
+        "id": "COMP_AUD_242",
+        "name": "MLR Convention Centre",
+        "brand": "MLR Convention Centre",
+        "spectrum_category": "Cinemas & Cultural Auditoriums",
+        "spectrum_icon": "\ud83c\udfad",
+        "spectrum_pillar": "Pre/Post Show Crowd Spillover",
+        "sub_category": "Auditorium & Theatre",
+        "locality": "Whitefield (Brigade Metropolis)",
+        "address": "MLR Convention Centre, Whitefield (Brigade Metropolis), Bengaluru",
+        "daily_customer_footfall": 3000,
+        "peak_window": "5:00 PM \u2013 10:30 PM",
+        "synergy_score": 93,
+        "synergy_reason": "High-ticket corporate cultural events and theatrical productions."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6395,
+          12.9635
+        ]
+      },
+      "properties": {
+        "id": "COMP_AUD_243",
+        "name": "Bangalore International Centre (BIC)",
+        "brand": "Bangalore International Centre (BIC)",
+        "spectrum_category": "Cinemas & Cultural Auditoriums",
+        "spectrum_icon": "\ud83c\udfad",
+        "spectrum_pillar": "Pre/Post Show Crowd Spillover",
+        "sub_category": "Auditorium & Theatre",
+        "locality": "Domlur 2nd Stage",
+        "address": "Bangalore International Centre (BIC), Domlur 2nd Stage, Bengaluru",
+        "daily_customer_footfall": 2500,
+        "peak_window": "5:30 PM \u2013 9:30 PM",
+        "synergy_score": 96,
+        "synergy_reason": "Intellectual and arts hub; affluent Domlur/Indiranagar audience stepping out into evening dessert strolls."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6075,
+          12.9735
+        ]
+      },
+      "properties": {
+        "id": "COMP_AUD_244",
+        "name": "PVR Director's Cut & IMAX (Forum Rex Walk)",
+        "brand": "PVR Director's Cut & IMAX (Forum Rex Walk)",
+        "spectrum_category": "Cinemas & Cultural Auditoriums",
+        "spectrum_icon": "\ud83c\udfad",
+        "spectrum_pillar": "Pre/Post Show Crowd Spillover",
+        "sub_category": "Auditorium & Theatre",
+        "locality": "Brigade Road, Ashok Nagar",
+        "address": "PVR Director's Cut & IMAX (Forum Rex Walk), Brigade Road, Ashok Nagar, Bengaluru",
+        "daily_customer_footfall": 6000,
+        "peak_window": "1:00 PM \u2013 11:30 PM",
+        "synergy_score": 98,
+        "synergy_reason": "Ultra-luxury movie experience on Brigade Road; high-disposable-income movie-goers seeking premium gelato and artisanal cups."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.589,
+          12.9585
+        ]
+      },
+      "properties": {
+        "id": "COMP_AUD_245",
+        "name": "Urvashi Theatre (4K Laser Single Screen)",
+        "brand": "Urvashi Theatre (4K Laser Single Screen)",
+        "spectrum_category": "Cinemas & Cultural Auditoriums",
+        "spectrum_icon": "\ud83c\udfad",
+        "spectrum_pillar": "Pre/Post Show Crowd Spillover",
+        "sub_category": "Auditorium & Theatre",
+        "locality": "Lalbagh Road, Sudhama Nagar",
+        "address": "Urvashi Theatre (4K Laser Single Screen), Lalbagh Road, Sudhama Nagar, Bengaluru",
+        "daily_customer_footfall": 5500,
+        "peak_window": "11:30 AM \u2013 11:30 PM (Massive Blockbuster Shows)",
+        "synergy_score": 96,
+        "synergy_reason": "Bengaluru's single-screen cinema titan; 1,100 seats per show pouring onto Lalbagh Road seeking cold dessert treats."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7345,
+          12.958
+        ]
+      },
+      "properties": {
+        "id": "COMP_AUD_246",
+        "name": "Jagriti Theatre",
+        "brand": "Jagriti Theatre",
+        "spectrum_category": "Cinemas & Cultural Auditoriums",
+        "spectrum_icon": "\ud83c\udfad",
+        "spectrum_pillar": "Pre/Post Show Crowd Spillover",
+        "sub_category": "Auditorium & Theatre",
+        "locality": "Whitefield (Ramagondanahalli)",
+        "address": "Jagriti Theatre, Whitefield (Ramagondanahalli), Bengaluru",
+        "daily_customer_footfall": 1800,
+        "peak_window": "6:00 PM \u2013 10:00 PM",
+        "synergy_score": 93,
+        "synergy_reason": "Intimate cultural theatre and performing arts community in Whitefield."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.586,
+          12.9625
+        ]
+      },
+      "properties": {
+        "id": "COMP_AUD_247",
+        "name": "ADA Rangamandira",
+        "brand": "ADA Rangamandira",
+        "spectrum_category": "Cinemas & Cultural Auditoriums",
+        "spectrum_icon": "\ud83c\udfad",
+        "spectrum_pillar": "Pre/Post Show Crowd Spillover",
+        "sub_category": "Auditorium & Theatre",
+        "locality": "JC Road, Opp. Ravindra Kalakshetra",
+        "address": "ADA Rangamandira, JC Road, Opp. Ravindra Kalakshetra, Bengaluru",
+        "daily_customer_footfall": 2200,
+        "peak_window": "5:30 PM \u2013 9:30 PM",
+        "synergy_score": 92,
+        "synergy_reason": "Renowned Kannada amateur theatre and musical dramas."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6045,
+          12.9745
+        ]
+      },
+      "properties": {
+        "id": "COMP_STREET_248",
+        "name": "Church Street Pedestrian Promenade",
+        "brand": "Church Street Pedestrian Promenade",
+        "spectrum_category": "Street Walkways & Buzzing Hotspots",
+        "spectrum_icon": "\ud83c\udf1f",
+        "spectrum_pillar": "High-Density Pedestrian Strolls & Leisure Strolls",
+        "sub_category": "Street Walkway",
+        "locality": "Church St / Brigade Rd to St. Marks Rd",
+        "address": "Church Street Pedestrian Promenade, Church St / Brigade Rd to St. Marks Rd, Bengaluru",
+        "daily_customer_footfall": 40000,
+        "peak_window": "3:00 PM \u2013 11:30 PM (Peak Friday\u2013Sunday)",
+        "synergy_score": 100,
+        "synergy_reason": "Bengaluru's #1 pedestrian walking street; paved cobblestones, bookshops, live street artists and massive youth dessert strolls."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.608,
+          12.973
+        ]
+      },
+      "properties": {
+        "id": "COMP_STREET_249",
+        "name": "Brigade Road Shopping Promenade",
+        "brand": "Brigade Road Shopping Promenade",
+        "spectrum_category": "Street Walkways & Buzzing Hotspots",
+        "spectrum_icon": "\ud83c\udf1f",
+        "spectrum_pillar": "High-Density Pedestrian Strolls & Leisure Strolls",
+        "sub_category": "Street Walkway",
+        "locality": "Brigade Rd / MG Road to Hosur Rd",
+        "address": "Brigade Road Shopping Promenade, Brigade Rd / MG Road to Hosur Rd, Bengaluru",
+        "daily_customer_footfall": 48000,
+        "peak_window": "12:00 PM \u2013 11:00 PM",
+        "synergy_score": 100,
+        "synergy_reason": "Historic shopping strip with the highest density of walkers, youth squads, and impulse dessert buyers in the city."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.611,
+          12.9825
+        ]
+      },
+      "properties": {
+        "id": "COMP_STREET_250",
+        "name": "Commercial Street Retail Promenade",
+        "brand": "Commercial Street Retail Promenade",
+        "spectrum_category": "Street Walkways & Buzzing Hotspots",
+        "spectrum_icon": "\ud83c\udf1f",
+        "spectrum_pillar": "High-Density Pedestrian Strolls & Leisure Strolls",
+        "sub_category": "Street Walkway",
+        "locality": "Commercial St, Tasker Town, Shivajinagar",
+        "address": "Commercial Street Retail Promenade, Commercial St, Tasker Town, Shivajinagar, Bengaluru",
+        "daily_customer_footfall": 50000,
+        "peak_window": "11:30 AM \u2013 9:30 PM",
+        "synergy_score": 99,
+        "synergy_reason": "Legendary pedestrian fashion bazaar; multi-generational family crowds shopping for hours seeking refreshing fruit and milk ice creams."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5785,
+          12.952
+        ]
+      },
+      "properties": {
+        "id": "COMP_STREET_251",
+        "name": "VV Puram Food Street (Thindi Beedi)",
+        "brand": "VV Puram Food Street (Thindi Beedi)",
+        "spectrum_category": "Street Walkways & Buzzing Hotspots",
+        "spectrum_icon": "\ud83c\udf1f",
+        "spectrum_pillar": "High-Density Pedestrian Strolls & Leisure Strolls",
+        "sub_category": "Street Walkway",
+        "locality": "Old Taluk Cutchery Rd, Sajjan Rao Circle",
+        "address": "VV Puram Food Street (Thindi Beedi), Old Taluk Cutchery Rd, Sajjan Rao Circle, Bengaluru",
+        "daily_customer_footfall": 25000,
+        "peak_window": "6:30 PM \u2013 11:30 PM (Evening Vegetarian Night Market)",
+        "synergy_score": 99,
+        "synergy_reason": "South India's most famous street food lane; hot paddus, dosas and bhajjis followed by immediate kulfi, ice cream and dessert demand."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.571,
+          12.943
+        ]
+      },
+      "properties": {
+        "id": "COMP_STREET_252",
+        "name": "DVG Road Promenade (Gandhi Bazaar)",
+        "brand": "DVG Road Promenade (Gandhi Bazaar)",
+        "spectrum_category": "Street Walkways & Buzzing Hotspots",
+        "spectrum_icon": "\ud83c\udf1f",
+        "spectrum_pillar": "High-Density Pedestrian Strolls & Leisure Strolls",
+        "sub_category": "Street Walkway",
+        "locality": "DVG Rd, Basavanagudi",
+        "address": "DVG Road Promenade (Gandhi Bazaar), DVG Rd, Basavanagudi, Bengaluru",
+        "daily_customer_footfall": 35000,
+        "peak_window": "10:30 AM \u2013 9:30 PM",
+        "synergy_score": 98,
+        "synergy_reason": "Historic tree-lined pedestrian shopping strip; traditional South Bangalore families strolling for evening snacks and artisanal ice cream."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.641,
+          12.9715
+        ]
+      },
+      "properties": {
+        "id": "COMP_STREET_253",
+        "name": "12th Main Road Indiranagar Promenade",
+        "brand": "12th Main Road Indiranagar Promenade",
+        "spectrum_category": "Street Walkways & Buzzing Hotspots",
+        "spectrum_icon": "\ud83c\udf1f",
+        "spectrum_pillar": "High-Density Pedestrian Strolls & Leisure Strolls",
+        "sub_category": "Street Walkway",
+        "locality": "12th Main, HAL 2nd Stage, Indiranagar",
+        "address": "12th Main Road Indiranagar Promenade, 12th Main, HAL 2nd Stage, Indiranagar, Bengaluru",
+        "daily_customer_footfall": 32000,
+        "peak_window": "1:00 PM \u2013 11:30 PM",
+        "synergy_score": 99,
+        "synergy_reason": "Bengaluru's gourmet food mile; highest concentration of cafes, boutiques and dessert parlours in Indiranagar."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6495,
+          12.9125
+        ]
+      },
+      "properties": {
+        "id": "COMP_STREET_254",
+        "name": "27th Main Road HSR Layout Food Strip",
+        "brand": "27th Main Road HSR Layout Food Strip",
+        "spectrum_category": "Street Walkways & Buzzing Hotspots",
+        "spectrum_icon": "\ud83c\udf1f",
+        "spectrum_pillar": "High-Density Pedestrian Strolls & Leisure Strolls",
+        "sub_category": "Street Walkway",
+        "locality": "27th Main Rd, 1st Sector, HSR",
+        "address": "27th Main Road HSR Layout Food Strip, 27th Main Rd, 1st Sector, HSR, Bengaluru",
+        "daily_customer_footfall": 30000,
+        "peak_window": "1:00 PM \u2013 11:30 PM",
+        "synergy_score": 98,
+        "synergy_reason": "Startup capital's dining lifeline; hundreds of techies and college squads walking the street for dinner and late-night dessert."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6185,
+          12.9345
+        ]
+      },
+      "properties": {
+        "id": "COMP_STREET_255",
+        "name": "Jyoti Nivas College (JNC) Road",
+        "brand": "Jyoti Nivas College (JNC) Road",
+        "spectrum_category": "Street Walkways & Buzzing Hotspots",
+        "spectrum_icon": "\ud83c\udf1f",
+        "spectrum_pillar": "High-Density Pedestrian Strolls & Leisure Strolls",
+        "sub_category": "Street Walkway",
+        "locality": "JNC Rd, 5th Block, Koramangala",
+        "address": "Jyoti Nivas College (JNC) Road, JNC Rd, 5th Block, Koramangala, Bengaluru",
+        "daily_customer_footfall": 35000,
+        "peak_window": "11:30 AM \u2013 11:30 PM",
+        "synergy_score": 99,
+        "synergy_reason": "Vibrant Gen Z cafe alley; thousands of college students, foodies and youth hanging out continuously."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5695,
+          13.002
+        ]
+      },
+      "properties": {
+        "id": "COMP_STREET_256",
+        "name": "8th Cross Malleshwaram Retail Street",
+        "brand": "8th Cross Malleshwaram Retail Street",
+        "spectrum_category": "Street Walkways & Buzzing Hotspots",
+        "spectrum_icon": "\ud83c\udf1f",
+        "spectrum_pillar": "High-Density Pedestrian Strolls & Leisure Strolls",
+        "sub_category": "Street Walkway",
+        "locality": "8th Cross Rd, Malleshwaram",
+        "address": "8th Cross Malleshwaram Retail Street, 8th Cross Rd, Malleshwaram, Bengaluru",
+        "daily_customer_footfall": 30000,
+        "peak_window": "10:30 AM \u2013 9:30 PM",
+        "synergy_score": 97,
+        "synergy_reason": "Traditional silk, flower, and handicraft market with massive evening family footfall."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5745,
+          13.009
+        ]
+      },
+      "properties": {
+        "id": "COMP_STREET_257",
+        "name": "Sankey Tank Sunset Promenade",
+        "brand": "Sankey Tank Sunset Promenade",
+        "spectrum_category": "Street Walkways & Buzzing Hotspots",
+        "spectrum_icon": "\ud83c\udf1f",
+        "spectrum_pillar": "High-Density Pedestrian Strolls & Leisure Strolls",
+        "sub_category": "Street Walkway",
+        "locality": "Sankey Tank, Sadashivanagar",
+        "address": "Sankey Tank Sunset Promenade, Sankey Tank, Sadashivanagar, Bengaluru",
+        "daily_customer_footfall": 12000,
+        "peak_window": "4:30 PM \u2013 8:30 PM",
+        "synergy_score": 95,
+        "synergy_reason": "Serene lakefront park where thousands of health walkers and families exit directly onto Margosa Road dessert parlours."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.636,
+          12.923
+        ]
+      },
+      "properties": {
+        "id": "COMP_STREET_258",
+        "name": "Agara Lake Park Promenade",
+        "brand": "Agara Lake Park Promenade",
+        "spectrum_category": "Street Walkways & Buzzing Hotspots",
+        "spectrum_icon": "\ud83c\udf1f",
+        "spectrum_pillar": "High-Density Pedestrian Strolls & Leisure Strolls",
+        "sub_category": "Street Walkway",
+        "locality": "Agara Lake, HSR / Koramangala",
+        "address": "Agara Lake Park Promenade, Agara Lake, HSR / Koramangala, Bengaluru",
+        "daily_customer_footfall": 15000,
+        "peak_window": "4:30 PM \u2013 8:30 PM",
+        "synergy_score": 94,
+        "synergy_reason": "Largest lake park in South-East Bengaluru; high-income tech families and weekend evening walkers."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.593,
+          12.976
+        ]
+      },
+      "properties": {
+        "id": "COMP_STREET_259",
+        "name": "Cubbon Park Bandstand & Walking Avenue",
+        "brand": "Cubbon Park Bandstand & Walking Avenue",
+        "spectrum_category": "Street Walkways & Buzzing Hotspots",
+        "spectrum_icon": "\ud83c\udf1f",
+        "spectrum_pillar": "High-Density Pedestrian Strolls & Leisure Strolls",
+        "sub_category": "Street Walkway",
+        "locality": "Cubbon Park Central",
+        "address": "Cubbon Park Bandstand & Walking Avenue, Cubbon Park Central, Bengaluru",
+        "daily_customer_footfall": 30000,
+        "peak_window": "6:00 AM \u2013 7:30 PM (Massive Sunday Traffic)",
+        "synergy_score": 97,
+        "synergy_reason": "Weekend vehicle-free park with pet owners, fitness squads and family picnics looking for sweet treats at park gates."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5695,
+          13.0315
+        ]
+      },
+      "properties": {
+        "id": "COMP_STREET_260",
+        "name": "New BEL Road Hangout Strip",
+        "brand": "New BEL Road Hangout Strip",
+        "spectrum_category": "Street Walkways & Buzzing Hotspots",
+        "spectrum_icon": "\ud83c\udf1f",
+        "spectrum_pillar": "High-Density Pedestrian Strolls & Leisure Strolls",
+        "sub_category": "Street Walkway",
+        "locality": "New BEL Rd, Chikkamaranahalli",
+        "address": "New BEL Road Hangout Strip, New BEL Rd, Chikkamaranahalli, Bengaluru",
+        "daily_customer_footfall": 24000,
+        "peak_window": "1:00 PM \u2013 11:00 PM",
+        "synergy_score": 95,
+        "synergy_reason": "Major student and dining corridor in North-West Bengaluru serving MSRIT and IISc students."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6475,
+          13.0145
+        ]
+      },
+      "properties": {
+        "id": "COMP_STREET_261",
+        "name": "HRBR Layout 80 Feet Road (Kalyan Nagar)",
+        "brand": "HRBR Layout 80 Feet Road (Kalyan Nagar)",
+        "spectrum_category": "Street Walkways & Buzzing Hotspots",
+        "spectrum_icon": "\ud83c\udf1f",
+        "spectrum_pillar": "High-Density Pedestrian Strolls & Leisure Strolls",
+        "sub_category": "Street Walkway",
+        "locality": "80 Feet Rd, HRBR Layout 2nd Block",
+        "address": "HRBR Layout 80 Feet Road (Kalyan Nagar), 80 Feet Rd, HRBR Layout 2nd Block, Bengaluru",
+        "daily_customer_footfall": 26000,
+        "peak_window": "1:00 PM \u2013 11:30 PM",
+        "synergy_score": 96,
+        "synergy_reason": "East Bengaluru's primary dining and nightlife high street; dense residential footfall."
       }
     }
   ]
