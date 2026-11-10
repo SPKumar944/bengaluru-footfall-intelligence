@@ -38,11 +38,11 @@ export default function HeaderBar({
             <img 
               src="./brand/agt-mark-ink.png" 
               alt="AGT Intelligence" 
-              className="h-6 w-auto object-contain transition duration-200 group-hover:brightness-95" 
+              className="h-7 w-auto object-contain transition duration-200 group-hover:brightness-95" 
             />
             <div className="flex flex-col">
-              <span className="text-[15px] font-semibold tracking-tight text-ink-950 font-sans leading-none">
-                AGT<span className="ml-[0.2em] text-[0.93em] font-normal uppercase tracking-[0.06em] text-ink-500">Intelligence</span>
+              <span className="text-[16px] font-bold tracking-tight text-ink-950 font-sans leading-none">
+                AGT<span className="ml-[0.2em] text-[0.93em] font-medium uppercase tracking-[0.06em] text-ink-500">Intelligence</span>
               </span>
             </div>
           </a>

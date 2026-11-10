@@ -171,8 +171,8 @@ export default function LayerControlWidget({
         className="flex items-center justify-between cursor-pointer select-none pb-1.5 border-b border-ink-950/[0.08]"
       >
         <div className="flex items-center gap-2">
-          <Layers className="w-4 h-4 text-ink-950" />
-          <span className="font-bold text-ink-950 text-xs tracking-tight">DATA LAYERS</span>
+          <img src="./brand/icon.png" alt="AGT" className="w-4 h-4 object-contain rounded shrink-0" />
+          <span className="font-bold text-ink-950 text-xs tracking-tight">AGT DATA LAYERS</span>
           <span className="text-[10px] bg-azure-500/[0.08] text-azure-700 font-bold px-2 py-0.5 rounded-full border border-azure-500/30">
             {activeCount} Active
           </span>
