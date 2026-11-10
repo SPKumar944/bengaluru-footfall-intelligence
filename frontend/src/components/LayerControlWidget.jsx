@@ -82,6 +82,7 @@ export default function LayerControlWidget({
   streetFootfallData,
   selectedApsaraStore,
   activeHour = 21,
+  activeDay = 'saturday',
   activeDayType = 'weekend'
 }) {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -246,6 +247,7 @@ export default function LayerControlWidget({
                   streetFootfallData={streetFootfallData}
                   selectedApsaraStore={selectedApsaraStore}
                   activeHour={activeHour}
+                  activeDay={activeDay}
                   activeDayType={activeDayType}
                 />
               </div>

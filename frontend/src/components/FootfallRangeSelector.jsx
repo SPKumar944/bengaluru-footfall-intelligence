@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { ChevronDown, Check, RotateCcw, CircleDot, Filter, Footprints } from 'lucide-react';
-import { FOOTFALL_INDEX_TIERS, getFootfallTier } from '../utils/footfallFormatters';
+import { FOOTFALL_INDEX_TIERS, getFootfallTier, getDayMultiplier } from '../utils/footfallFormatters';
 
 export default function FootfallRangeSelector({
   selectedFootfallRange = 'ALL',
@@ -10,6 +10,7 @@ export default function FootfallRangeSelector({
   streetFootfallData,
   selectedApsaraStore,
   activeHour = 21,
+  activeDay = 'saturday',
   activeDayType = 'weekend',
   compact = false
 }) {
@@ -43,7 +44,7 @@ export default function FootfallRangeSelector({
 
     if (!streetFootfallData?.features) return counts;
 
-    const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
+    const mult = getDayMultiplier(activeDay, activeDayType);
     const targetSerial = selectedApsaraStore?.serial_no;
 
     streetFootfallData.features.forEach(f => {
@@ -64,7 +65,7 @@ export default function FootfallRangeSelector({
     });
 
     return counts;
-  }, [streetFootfallData, selectedApsaraStore?.serial_no, activeHour, activeDayType]);
+  }, [streetFootfallData, selectedApsaraStore?.serial_no, activeHour, activeDay, activeDayType]);
 
   const activeTier = FOOTFALL_INDEX_TIERS.find(t => t.displayLevel === selectedFootfallRange);
 

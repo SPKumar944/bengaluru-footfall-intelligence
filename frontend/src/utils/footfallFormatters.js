@@ -354,3 +354,31 @@ export function formatKidsMonthlyTrafficRange(monthlyFootfall) {
   if (val < 55000) return '35,000 – 55,000 / mo';
   return '45,000 – 70,000 / mo';
 }
+
+/**
+ * 7 Days of the Week configuration with realistic diurnal multipliers for Bengaluru retail corridors.
+ */
+export const DAYS_OF_WEEK = [
+  { id: 'monday', label: 'Monday', type: 'weekday', short: 'Mon', mult: 0.88, tag: 'Weekday Normal' },
+  { id: 'tuesday', label: 'Tuesday', type: 'weekday', short: 'Tue', mult: 0.88, tag: 'Weekday Normal' },
+  { id: 'wednesday', label: 'Wednesday', type: 'weekday', short: 'Wed', mult: 0.92, tag: 'Midweek Flow' },
+  { id: 'thursday', label: 'Thursday', type: 'weekday', short: 'Thu', mult: 0.96, tag: 'Pre-Weekend' },
+  { id: 'friday', label: 'Friday', type: 'weekday', short: 'Fri', mult: 1.18, tag: 'Evening Surge (+18%)' },
+  { id: 'saturday', label: 'Saturday', type: 'weekend', short: 'Sat', mult: 1.38, tag: 'Weekend Peak (+73%)' },
+  { id: 'sunday', label: 'Sunday', type: 'weekend', short: 'Sun', mult: 1.35, tag: 'Family Peak (+70%)' }
+];
+
+/**
+ * Get diurnal footfall multiplier for a specific day or day type.
+ * @param {string} activeDay - 'monday'..'sunday'
+ * @param {string} activeDayType - 'weekend' | 'weekday'
+ * @returns {number}
+ */
+export function getDayMultiplier(activeDay = 'saturday', activeDayType = 'weekend') {
+  if (activeDay) {
+    const match = DAYS_OF_WEEK.find(d => d.id === activeDay.toLowerCase());
+    if (match) return match.mult;
+  }
+  return activeDayType === 'weekend' ? 1.35 : 0.9;
+}
+

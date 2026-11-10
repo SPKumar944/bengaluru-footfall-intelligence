@@ -3,7 +3,8 @@ import { Play, Pause, Clock, Footprints, ChevronLeft, ChevronRight } from 'lucid
 import { 
   formatHourlyFootfallRange, 
   formatHourlyCompactRange,
-  getFootfallTier 
+  getFootfallTier,
+  getDayMultiplier
 } from '../utils/footfallFormatters';
 
 const HOURLY_FLOW_PROFILE = [
@@ -42,13 +43,14 @@ function getBarColor(itemFlow, mult) {
 export default function BottomTransectBar({
   activeHour = 21,
   setActiveHour,
+  activeDay = 'saturday',
   activeDayType = 'weekend',
   isPlayingHour = false,
   setIsPlayingHour
 }) {
   const containerRef = useRef(null);
   const isPeak = activeHour >= 19 && activeHour <= 23;
-  const mult = activeDayType === 'weekend' ? 1.15 : 0.9;
+  const mult = getDayMultiplier(activeDay, activeDayType);
 
   const currentProfile = HOURLY_FLOW_PROFILE[activeHour] || HOURLY_FLOW_PROFILE[21];
   const currentTotalRate = Math.round(currentProfile.flow * mult);
@@ -128,16 +130,21 @@ export default function BottomTransectBar({
             </span>
           </div>
 
-          {/* Phase Badge */}
-          <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold tracking-tight border hidden md:inline-flex items-center ${
-            isPeak
-              ? 'bg-azure-500/[0.08] text-azure-700 border-azure-500/30'
-              : activeHour <= 5
-              ? 'bg-paper-100 text-ink-600 border-ink-950/[0.08]'
-              : 'bg-paper-50 text-ink-700 border-ink-950/[0.1]'
-          }`}>
-            {currentProfile.phase}
-          </span>
+          {/* Day & Phase Badge */}
+          <div className="hidden md:inline-flex items-center gap-1">
+            <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold tracking-tight border bg-white text-ink-900 border-ink-950/[0.12] shadow-2xs capitalize">
+              {activeDay}
+            </span>
+            <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold tracking-tight border items-center ${
+              isPeak
+                ? 'bg-azure-500/[0.08] text-azure-700 border-azure-500/30'
+                : activeHour <= 5
+                ? 'bg-paper-100 text-ink-600 border-ink-950/[0.08]'
+                : 'bg-paper-50 text-ink-700 border-ink-950/[0.1]'
+            }`}>
+              {currentProfile.phase}
+            </span>
+          </div>
         </div>
 
         {/* Center / Hint: Scroller Indicator */}

@@ -5,6 +5,7 @@ import { ChevronDown, ChevronUp, Layers } from 'lucide-react';
 export default function TopRightLegend({
   viewState,
   activeHour = 21,
+  activeDay = 'saturday',
   activeDayType = 'weekend',
   selectedFootfallRange = 'ALL',
   onSelectFootfallRange
@@ -15,6 +16,7 @@ export default function TopRightLegend({
   const isPeak = activeHour >= 19 && activeHour <= 23;
   const isNight = activeHour <= 5;
   const activeSelectedTier = FOOTFALL_INDEX_TIERS.find(t => t.displayLevel === selectedFootfallRange);
+  const dayDisplay = activeDay ? activeDay.slice(0, 3).toUpperCase() : (activeDayType === 'weekend' ? 'WKND' : 'WKD');
 
   return (
     <div className="observatory-card rounded-xl p-2.5 px-3 text-xs font-mono shadow-[0_1px_2px_rgba(13,21,33,0.04),0_10px_28px_-20px_rgba(13,21,33,0.18)] border border-ink-950/[0.1] min-w-[270px] max-w-[310px] bg-white/95 backdrop-blur-md select-none transition-all">
@@ -31,7 +33,7 @@ export default function TopRightLegend({
             ? 'bg-paper-100 text-ink-600 border-ink-950/[0.08]' 
             : 'bg-paper-50 text-ink-700 border-ink-950/[0.1]'
         }`}>
-          {activeHour.toString().padStart(2, '0')}:00 {activeDayType === 'weekend' ? 'Wknd' : 'Wkd'}
+          {activeHour.toString().padStart(2, '0')}:00 {dayDisplay}
         </span>
       </div>
 

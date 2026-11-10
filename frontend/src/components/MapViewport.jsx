@@ -26,7 +26,8 @@ import {
   formatStoreMonthlyCustomersRange,
   formatMonthlyCupVolumeRange,
   formatVenueTrafficRange,
-  formatKidsMonthlyTrafficRange
+  formatKidsMonthlyTrafficRange,
+  getDayMultiplier
 } from '../utils/footfallFormatters';
 
 const CARTO_POSITRON = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
@@ -188,6 +189,7 @@ export default function MapViewport({
   viewState,
   setViewState,
   activeHour = 21,
+  activeDay = 'saturday',
   activeDayType = 'weekend',
   selectedFootfallRange = 'ALL',
   scopeToRadiusCircle = true
@@ -269,7 +271,7 @@ export default function MapViewport({
     const isFiltered = selectedFootfallRange && selectedFootfallRange !== 'ALL';
     const isRadiusScoped = scopeToRadiusCircle || isFiltered;
     const targetSerial = selectedApsaraStore?.serial_no;
-    const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
+    const mult = getDayMultiplier(activeDay, activeDayType);
 
     // If completely unfiltered, return full dataset
     if (!isFiltered && !isRadiusScoped) {
@@ -307,6 +309,7 @@ export default function MapViewport({
     scopeToRadiusCircle, 
     selectedApsaraStore?.serial_no, 
     activeHour, 
+    activeDay,
     activeDayType
   ]);
 
@@ -420,7 +423,7 @@ export default function MapViewport({
       getLineWidth: f => {
         const isPrime = f.properties.is_prime_corridor;
         const hrVal = f.properties.hourly_footfall?.[activeHour] || 100;
-        const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
+        const mult = getDayMultiplier(activeDay, activeDayType);
         const flow = Math.round(hrVal * mult);
         const baseWidth = getDiurnalStreetWidth(flow, isPrime);
         return selectedFootfallRange !== 'ALL' ? Math.max(baseWidth, 3.2) : baseWidth;
@@ -428,13 +431,13 @@ export default function MapViewport({
       getLineColor: f => {
         const hourly = f.properties.hourly_footfall;
         const hrVal = hourly ? hourly[activeHour] : 100;
-        const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
+        const mult = getDayMultiplier(activeDay, activeDayType);
         const flow = Math.round(hrVal * mult);
         return getDiurnalStreetColor(flow);
       },
       updateTriggers: {
-        getLineColor: [activeHour, activeDayType, selectedFootfallRange],
-        getLineWidth: [activeHour, activeDayType, selectedFootfallRange]
+        getLineColor: [activeHour, activeDay, activeDayType, selectedFootfallRange],
+        getLineWidth: [activeHour, activeDay, activeDayType, selectedFootfallRange]
       },
       onHover: info => setHoverInfo(info)
     }),
@@ -1087,9 +1090,10 @@ export default function MapViewport({
 
               // Case G: Street Footfall Vector Segment
               const hrVal = p.hourly_footfall?.[activeHour] || 100;
-              const mult = activeDayType === 'weekend' ? 1.15 : 0.9;
+              const mult = getDayMultiplier(activeDay, activeDayType);
               const currentFlow = Math.round(hrVal * mult);
               const tier = getFootfallTier(currentFlow);
+              const dayLabel = activeDay ? activeDay.charAt(0).toUpperCase() + activeDay.slice(1, 3) : (activeDayType === 'weekend' ? 'Wknd' : 'Wkd');
               return (
                 <div className="space-y-2 min-w-[250px]">
                   <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1.5">
@@ -1108,7 +1112,7 @@ export default function MapViewport({
                       </span>
                     </div>
                     <span className="text-[9px] font-mono bg-paper-100 text-ink-700 px-1.5 py-0.5 rounded border border-ink-950/[0.08] font-bold">
-                      {activeHour.toString().padStart(2, '0')}:00 {activeDayType === 'weekend' ? 'Wknd' : 'Wkd'}
+                      {activeHour.toString().padStart(2, '0')}:00 {dayLabel}
                     </span>
                   </div>
 

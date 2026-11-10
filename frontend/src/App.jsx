@@ -6,6 +6,7 @@ import MapViewport from './components/MapViewport';
 import LayerControlWidget from './components/LayerControlWidget';
 import ApsaraDossierModal from './components/ApsaraDossierModal';
 import { Loader2 } from 'lucide-react';
+import { DAYS_OF_WEEK } from './utils/footfallFormatters';
 
 const INDIRANAGAR_2D_VIEW = {
   longitude: 77.6386,
@@ -65,10 +66,21 @@ export default function App() {
   const [selectedFootfallRange, setSelectedFootfallRange] = useState('ALL');
   const [scopeToRadiusCircle, setScopeToRadiusCircle] = useState(true);
 
-  // Temporal Dynamic State (24-Hour Diurnal Player)
+  // Temporal Dynamic State (24-Hour Diurnal Player + Day of Week)
   const [activeHour, setActiveHour] = useState(21); // Default 9:00 PM peak dessert window
+  const [activeDay, setActiveDay] = useState('saturday'); // 'monday'..'sunday'
   const [activeDayType, setActiveDayType] = useState('weekend'); // 'weekend' | 'weekday'
   const [isPlayingHour, setIsPlayingHour] = useState(false);
+
+  const handleSelectDay = (dayId) => {
+    setActiveDay(dayId);
+    const dayObj = DAYS_OF_WEEK.find(d => d.id === dayId);
+    if (dayObj) {
+      setActiveDayType(dayObj.type);
+    } else {
+      setActiveDayType((dayId === 'saturday' || dayId === 'sunday') ? 'weekend' : 'weekday');
+    }
+  };
 
   const [viewState, setViewState] = useState(INDIRANAGAR_2D_VIEW);
 
@@ -327,16 +339,13 @@ export default function App() {
 
   return (
     <div className="flex flex-col h-screen w-screen bg-[#EBF0F5] overflow-hidden select-none">
-      {/* 1. Header Bar: Apsara Store Selector & Controls */}
+      {/* 1. Header Bar: Apsara Store Selector & Day Selection */}
       <HeaderBar
-        activeHour={activeHour}
-        activeDayType={activeDayType}
-        setActiveDayType={setActiveDayType}
-        onResetCityView={resetCityView}
         apsaraStores={apsaraStoresData}
         selectedApsaraStore={selectedApsaraStore}
         onSelectApsaraStore={handleSelectApsaraStore}
-        onOpenApsaraModal={() => setShowApsaraModal(true)}
+        activeDay={activeDay}
+        onSelectDay={handleSelectDay}
       />
 
       {/* 2. Main 2D Map Canvas */}
@@ -372,6 +381,7 @@ export default function App() {
           viewState={viewState}
           setViewState={setViewState}
           activeHour={activeHour}
+          activeDay={activeDay}
           activeDayType={activeDayType}
           selectedFootfallRange={selectedFootfallRange}
           scopeToRadiusCircle={scopeToRadiusCircle}
@@ -414,6 +424,7 @@ export default function App() {
             streetFootfallData={streetFootfallData}
             selectedApsaraStore={selectedApsaraStore}
             activeHour={activeHour}
+            activeDay={activeDay}
             activeDayType={activeDayType}
           />
 
@@ -422,6 +433,7 @@ export default function App() {
             <TopRightLegend
               viewState={viewState}
               activeHour={activeHour}
+              activeDay={activeDay}
               activeDayType={activeDayType}
               selectedFootfallRange={selectedFootfallRange}
               onSelectFootfallRange={setSelectedFootfallRange}
@@ -453,6 +465,7 @@ export default function App() {
         <BottomTransectBar
           activeHour={activeHour}
           setActiveHour={setActiveHour}
+          activeDay={activeDay}
           activeDayType={activeDayType}
           isPlayingHour={isPlayingHour}
           setIsPlayingHour={setIsPlayingHour}
