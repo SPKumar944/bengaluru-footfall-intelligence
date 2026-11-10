@@ -345,7 +345,7 @@ export default function MapViewport({
       return true;
     });
 
-    // Sort descending by duration_min (30m first, then 20m, 10m, 5m on top)
+    // Sort descending by duration_min (10m first, then 5m on top)
     const sorted = [...filtered].sort((a, b) => (b.properties?.duration_min || 0) - (a.properties?.duration_min || 0));
 
     return {
@@ -1165,13 +1165,11 @@ export default function MapViewport({
                 );
               }
 
-              // Case H: Traffic Travel-Time Isochrone Catchment (5m, 10m, 20m, 30m)
+              // Case H: Traffic Travel-Time Isochrone Catchment (5m, 10m)
               if (p.duration_min && p.store_id) {
                 const badgeColors = {
                   5: 'bg-emerald-500/15 text-emerald-800 border-emerald-500/30',
-                  10: 'bg-azure-500/15 text-azure-800 border-azure-500/30',
-                  20: 'bg-amber-500/15 text-amber-800 border-amber-500/30',
-                  30: 'bg-rose-500/15 text-rose-800 border-rose-500/30',
+                  10: 'bg-azure-500/15 text-azure-800 border-azure-500/30'
                 };
                 const badgeStyle = badgeColors[p.duration_min] || 'bg-azure-500/15 text-azure-800 border-azure-500/30';
 
@@ -1209,7 +1207,7 @@ export default function MapViewport({
                         <div className="text-[8.5px] text-ink-600 leading-tight">{p.traffic_condition}</div>
                       </div>
                       <div className="text-right shrink-0 pl-2">
-                        <div className="text-xs font-mono font-black text-ink-950">~{p.base_radius_km} km</div>
+                        <div className="text-xs font-mono font-black text-ink-950">~{p.base_radius_km || (p.cutoff_distance_m ? (p.cutoff_distance_m / 1000).toFixed(1) : '1.0')} km</div>
                         <div className="text-[8px] uppercase tracking-wider text-ink-400 font-mono">Radial Reach</div>
                       </div>
                     </div>
