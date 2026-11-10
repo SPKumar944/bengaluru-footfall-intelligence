@@ -39,7 +39,8 @@ export default function App() {
   // Active Layers Toggle State (with real market influencer layers)
   const [activeLayers, setActiveLayers] = useState({
     streetFootfall: true,
-    catchments: true,
+    isochrones: true,           // 5, 10, 20, 30-min Traffic-based Isochrones
+    catchments: true,           // 350m High-Density Pedestrian Walksheds
     apsaraStores: true,
     competitors: false,
     kidsAttractions: true,      // 116 Kids & Family Footfall Magnets
@@ -53,6 +54,7 @@ export default function App() {
   // Selected Entities
   const [selectedApsaraStore, setSelectedApsaraStore] = useState(null);
   const [showApsaraModal, setShowApsaraModal] = useState(false);
+
   const [selectedBrandFilter, setSelectedBrandFilter] = useState('ALL');
   const [selectedCompetitor, setSelectedCompetitor] = useState(null);
   const [selectedKidsCategory, setSelectedKidsCategory] = useState('ALL');
@@ -61,6 +63,11 @@ export default function App() {
   const [selectedEducationPoi, setSelectedEducationPoi] = useState(null);
   const [selectedComplementarySpectrum, setSelectedComplementarySpectrum] = useState('ALL');
   const [selectedComplementaryBrand, setSelectedComplementaryBrand] = useState(null);
+
+  // Traffic Isochrones & Catchments
+  const [trafficIsochronesData, setTrafficIsochronesData] = useState(null);
+  const [selectedIsochroneDuration, setSelectedIsochroneDuration] = useState('ALL'); // 'ALL' | 5 | 10 | 20 | 30
+  const [isochroneScopeStore, setIsochroneScopeStore] = useState(true); // true = active store only, false = all stores
 
   // Footfall Range Level Filter & Radius Circle Scope
   const [selectedFootfallRange, setSelectedFootfallRange] = useState('ALL');
@@ -90,7 +97,7 @@ export default function App() {
       try {
         setLoading(true);
         const b = import.meta.env.BASE_URL;
-        const [streetRes, catchmentsRes, apsaraRes, competitorsRes, tpRes, kidsRes, eduRes, compRes] = await Promise.all([
+        const [streetRes, catchmentsRes, apsaraRes, competitorsRes, tpRes, kidsRes, eduRes, compRes, isoRes] = await Promise.all([
           fetch(`${b}data/all_stores_street_footfall.geojson`).then(r => r.json()),
           fetch(`${b}data/apsara_store_footfall_catchments.geojson`).then(r => r.json()),
           fetch(`${b}data/apsara_ice_cream_bangalore_footfall.json`).then(r => r.json()),
@@ -98,7 +105,8 @@ export default function App() {
           fetch(`${b}data/mapped_tech_parks.geojson`).then(r => r.json()).catch(() => null),
           fetch(`${b}data/kids_family_attractions.geojson`).then(r => r.json()).catch(() => null),
           fetch(`${b}data/education_youth_pois.geojson`).then(r => r.json()).catch(() => null),
-          fetch(`${b}data/layer6_complementary_brands.geojson`).then(r => r.json()).catch(() => null)
+          fetch(`${b}data/layer6_complementary_brands.geojson`).then(r => r.json()).catch(() => null),
+          fetch(`${b}data/apsara_traffic_isochrones.geojson`).then(r => r.json()).catch(() => null)
         ]);
 
         setStreetFootfallData(streetRes);
@@ -109,6 +117,7 @@ export default function App() {
         if (kidsRes) setKidsAttractionsData(kidsRes);
         if (eduRes) setEducationPoisData(eduRes);
         if (compRes) setComplementaryBrandsData(compRes);
+        if (isoRes) setTrafficIsochronesData(isoRes);
 
         if (apsaraRes && apsaraRes.length > 0) {
           // Default selection to Indiranagar outlet
@@ -385,6 +394,9 @@ export default function App() {
           activeDayType={activeDayType}
           selectedFootfallRange={selectedFootfallRange}
           scopeToRadiusCircle={scopeToRadiusCircle}
+          trafficIsochronesData={trafficIsochronesData}
+          selectedIsochroneDuration={selectedIsochroneDuration}
+          isochroneScopeStore={isochroneScopeStore}
         />
 
         {/* 3. Top Right Floating Controls: Layer Toggles & In-Panel Competitor/Kids Selectors */}
@@ -426,6 +438,11 @@ export default function App() {
             activeHour={activeHour}
             activeDay={activeDay}
             activeDayType={activeDayType}
+            trafficIsochronesData={trafficIsochronesData}
+            selectedIsochroneDuration={selectedIsochroneDuration}
+            setSelectedIsochroneDuration={setSelectedIsochroneDuration}
+            isochroneScopeStore={isochroneScopeStore}
+            setIsochroneScopeStore={setIsochroneScopeStore}
           />
 
           {/* Footfall Intensity Legend (Active when street footfall layer is visible) */}
