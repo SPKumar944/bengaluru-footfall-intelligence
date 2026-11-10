@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <filter id="pinShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <circle cx="32" cy="32" r="26" fill="#ffffff" stroke="#0f172a" stroke-width="2.2" filter="url(#pinShadow)"/>
+  
+  <g transform="translate(16, 16) scale(2)" color="#0f172a" fill="none" stroke="#0f172a" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3.25" width="7.75" height="9.5" rx="2"/>
+    <path d="M10.75 5.5 L12.3 5.5 C12.963 5.5 13.5 6.037 13.5 6.7 L13.5 8.8 C13.5 9.463 12.963 10 12.3 10 L10.75 10"/>
+    <line x1="3" y1="5.75" x2="10.75" y2="5.75"/>
+    <line x1="5.5" y1="8" x2="5.5" y2="10.5"/>
+    <line x1="8.25" y1="8" x2="8.25" y2="10.5"/>
+  </g>
+</svg>
