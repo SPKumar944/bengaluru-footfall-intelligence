@@ -4,7 +4,8 @@ import {
   formatStoreCupVolumeRange, 
   formatStoreMonthlyCustomersRange, 
   formatCatchmentDailyRange, 
-  formatHourlyFootfallRange 
+  formatHourlyFootfallRange,
+  getFootfallTier
 } from '../utils/footfallFormatters';
 
 export default function ApsaraDossierModal({
@@ -101,12 +102,27 @@ export default function ApsaraDossierModal({
                       </span>
                     </td>
                     <td className="p-2.5 text-right whitespace-nowrap">
-                      <span className="font-bold text-ink-900 block text-xs font-mono">
-                        {formatCatchmentDailyRange(s.regional_footfall?.weekend_daily_footfall)}
-                      </span>
-                      <span className="text-[9px] text-azure-700 font-semibold block font-mono">
-                        {formatHourlyFootfallRange(s.regional_footfall?.peak_evening_hourly_flow)}
-                      </span>
+                      {(() => {
+                        const regionalTier = getFootfallTier(s.regional_footfall?.peak_evening_hourly_flow);
+                        return (
+                          <>
+                            <span className="font-bold text-ink-900 block text-xs font-mono">
+                              {formatCatchmentDailyRange(s.regional_footfall?.weekend_daily_footfall)}
+                            </span>
+                            <div className="flex items-center justify-end gap-1 mt-0.5">
+                              <span 
+                                className="text-[8.5px] px-1 py-0.2 rounded font-mono font-black text-white"
+                                style={{ backgroundColor: regionalTier.hex }}
+                              >
+                                Index {regionalTier.level}
+                              </span>
+                              <span className="text-[9px] text-ink-600 font-semibold font-mono">
+                                {regionalTier.rangeLabel}
+                              </span>
+                            </div>
+                          </>
+                        );
+                      })()}
                     </td>
                     <td className="p-2.5 text-center whitespace-nowrap">
                       <button

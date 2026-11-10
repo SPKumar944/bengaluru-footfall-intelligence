@@ -1,6 +1,10 @@
 import React, { useRef } from 'react';
 import { Play, Pause, Clock, Footprints, ChevronLeft, ChevronRight } from 'lucide-react';
-import { formatHourlyFootfallRange, formatHourlyCompactRange } from '../utils/footfallFormatters';
+import { 
+  formatHourlyFootfallRange, 
+  formatHourlyCompactRange,
+  getFootfallTier 
+} from '../utils/footfallFormatters';
 
 const HOURLY_FLOW_PROFILE = [
   { hour: 0, flow: 220, phase: 'Late Night Transit' },
@@ -29,14 +33,10 @@ const HOURLY_FLOW_PROFILE = [
   { hour: 23, flow: 950, phase: 'Late Night Commercial Winding' }
 ];
 
-// Returns thermal bar color based on hour flow
-function getBarColor(hour) {
-  if (hour <= 4) return '#94A3B8'; // Cool slate
-  if (hour <= 7) return '#CBD5E1'; // Soft gray-blue
-  if (hour <= 11) return '#EAB308'; // Golden yellow
-  if (hour <= 17) return '#F97316'; // Radiant orange
-  if (hour <= 22) return '#DC2626'; // Incandescent crimson red
-  return '#EA580C'; // Warm orange
+// Returns thermal bar color based on 1-10 footfall index
+function getBarColor(itemFlow, mult) {
+  const flow = Math.round(itemFlow * mult);
+  return getFootfallTier(flow).hex;
 }
 
 export default function BottomTransectBar({
@@ -52,6 +52,7 @@ export default function BottomTransectBar({
 
   const currentProfile = HOURLY_FLOW_PROFILE[activeHour] || HOURLY_FLOW_PROFILE[21];
   const currentTotalRate = Math.round(currentProfile.flow * mult);
+  const currentTier = getFootfallTier(currentTotalRate);
   const maxProfileFlow = Math.max(...HOURLY_FLOW_PROFILE.map(p => p.flow));
 
   // Wheel / Trackpad Scroll handler to smoothly change time
@@ -145,13 +146,26 @@ export default function BottomTransectBar({
         </div>
 
         {/* Right: Live Corridor Flow Metric */}
-        <div className="flex items-center gap-2 font-mono bg-paper-50 px-2.5 py-1 rounded-lg border border-ink-950/[0.1] shrink-0">
-          <Footprints className="w-4 h-4 text-azure-600" />
+        <div className="flex items-center gap-2.5 font-mono bg-paper-50 px-2.5 py-1 rounded-lg border border-ink-950/[0.1] shrink-0">
+          <span 
+            className="w-6 h-6 rounded-md font-mono font-black text-white text-xs flex items-center justify-center shrink-0 shadow-2xs"
+            style={{ backgroundColor: currentTier.hex }}
+          >
+            {currentTier.level}
+          </span>
           <div>
-            <span className="text-[9px] text-ink-500 uppercase block leading-none">Corridor Hourly Flow:</span>
-            <span className="text-xs md:text-sm font-extrabold text-azure-700 font-mono leading-tight">
-              {formatHourlyFootfallRange(currentTotalRate)}
-            </span>
+            <div className="flex items-center gap-1.5 leading-none mb-0.5">
+              <span className="text-[9px] text-ink-500 uppercase font-bold">Footfall Index:</span>
+              <span 
+                className="text-[9px] font-black font-mono text-white px-1 py-0.2 rounded" 
+                style={{ backgroundColor: currentTier.hex }}
+              >
+                {currentTier.level}/10 • {currentTier.tag}
+              </span>
+            </div>
+            <div className="text-xs md:text-sm font-extrabold text-ink-950 font-mono leading-tight">
+              {currentTier.rangeLabel} <span className="text-[10px] text-ink-500 font-semibold font-sans">({currentTier.label})</span>
+            </div>
           </div>
         </div>
       </div>
@@ -161,25 +175,26 @@ export default function BottomTransectBar({
         {HOURLY_FLOW_PROFILE.map((item) => {
           const isSelected = item.hour === activeHour;
           const barHeightPercent = Math.max(18, Math.round((item.flow / maxProfileFlow) * 100));
-          const color = getBarColor(item.hour);
+          const tier = getFootfallTier(Math.round(item.flow * mult));
+          const color = tier.hex;
 
           return (
             <div
               key={item.hour}
               onClick={() => setActiveHour && setActiveHour(item.hour)}
               className="flex-1 flex flex-col items-center justify-end h-full cursor-pointer group relative"
-              title={`${item.hour.toString().padStart(2, '0')}:00 — ${formatHourlyCompactRange(Math.round(item.flow * mult))} (${item.phase})`}
+              title={`Index ${tier.level}/10: ${tier.label} (${tier.rangeLabel}) — ${item.hour.toString().padStart(2, '0')}:00 ${item.phase}`}
             >
               {/* Active Hour Indicator Pin */}
               {isSelected && (
-                <div className="absolute -top-1.5 w-1.5 h-1.5 rounded-full bg-azure-600 ring-2 ring-white z-10" />
+                <div className="absolute -top-1.5 w-1.5 h-1.5 rounded-full bg-ink-950 ring-2 ring-white z-10" />
               )}
               {/* Histogram Bar */}
               <div
                 style={{
                   height: `${barHeightPercent}%`,
                   backgroundColor: color,
-                  opacity: isSelected ? 1 : 0.65
+                  opacity: isSelected ? 1 : 0.68
                 }}
                 className={`w-full rounded-t-xs transition-all ${
                   isSelected ? 'ring-2 ring-ink-950 ring-offset-0.5 shadow-xs' : 'group-hover:opacity-90'

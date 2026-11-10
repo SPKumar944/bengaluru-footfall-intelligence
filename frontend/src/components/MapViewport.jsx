@@ -14,6 +14,11 @@ import { H3HexagonLayer } from '@deck.gl/geo-layers';
 import { Hexagon } from 'lucide-react';
 import maplibregl from 'maplibre-gl';
 import { 
+  FOOTFALL_INDEX_TIERS,
+  getFootfallTier,
+  getFootfallIndex,
+  getDiurnalStreetColor,
+  getDiurnalStreetWidth,
   formatHourlyFootfallRange, 
   formatDailyFootfallRange, 
   formatCatchmentDailyRange,
@@ -138,58 +143,7 @@ export function getHexDemographicColor(d, genderFilter = 'all', ageFilter = 'all
   return [4, 120, 87, 200];
 }
 
-// Diurnal Thermal Footfall Ramp
-// Shifts from night cool slate -> dawn pale gold -> midday warm amber -> peak evening incandescent crimson
-export function getDiurnalStreetColor(flow) {
-  if (flow < 40) {
-    // Night quiet baseline: very subtle cool slate
-    return [148, 163, 184, 75];
-  } else if (flow < 150) {
-    // Early dawn / low residential flow: soft warm transition into yellow
-    const t = (flow - 40) / 110.0;
-    return [
-      Math.round(148 + t * (250 - 148)),
-      Math.round(163 + t * (204 - 163)),
-      Math.round(184 + t * (21 - 184)),
-      Math.round(75 + t * (190 - 75))
-    ];
-  } else if (flow < 500) {
-    // Moderate daytime flow: bright golden yellow to warm amber
-    const t = (flow - 150) / 350.0;
-    return [
-      Math.round(250 + t * (249 - 250)),
-      Math.round(204 + t * (115 - 204)),
-      Math.round(21 + t * (22 - 21)),
-      Math.round(190 + t * (230 - 190))
-    ];
-  } else if (flow < 1500) {
-    // Heavy commercial flow: vibrant radiant orange to vermilion
-    const t = (flow - 500) / 1000.0;
-    return [
-      Math.round(249 + t * (220 - 249)),
-      Math.round(115 + t * (38 - 115)),
-      Math.round(22 + t * (38 - 22)),
-      245
-    ];
-  } else {
-    // Prime peak corridors: deep incandescent crimson red
-    const t = Math.min(1.0, (flow - 1500) / 2500.0);
-    return [
-      Math.round(220 + t * (153 - 220)),
-      Math.round(38 + t * (0 - 38)),
-      Math.round(38 + t * (0 - 38)),
-      255
-    ];
-  }
-}
 
-export function getDiurnalStreetWidth(flow, isPrime) {
-  if (flow < 40) return 1.0;
-  if (flow < 150) return 1.3;
-  if (flow < 500) return isPrime ? 2.8 : 1.8;
-  if (flow < 1500) return isPrime ? 4.2 : 2.8;
-  return isPrime ? 5.8 : 4.0;
-}
 
 export default function MapViewport({
   streetFootfallData,
@@ -1052,28 +1006,52 @@ export default function MapViewport({
               const hrVal = p.hourly_footfall?.[activeHour] || 100;
               const mult = activeDayType === 'weekend' ? 1.15 : 0.9;
               const currentFlow = Math.round(hrVal * mult);
+              const tier = getFootfallTier(currentFlow);
               return (
-                <div className="space-y-1.5 min-w-[230px]">
-                  <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1">
-                    <span className="text-[10px] uppercase font-bold text-azure-700 bg-azure-500/[0.08] px-1.5 py-0.5 rounded border border-azure-500/30 font-mono">
-                      Street Corridor
-                    </span>
+                <div className="space-y-2 min-w-[250px]">
+                  <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1.5">
+                    <div className="flex items-center gap-1.5">
+                      <span 
+                        className="w-5 h-5 rounded-md font-mono font-black text-white text-[11px] flex items-center justify-center shrink-0 shadow-2xs"
+                        style={{ backgroundColor: tier.hex }}
+                      >
+                        {tier.level}
+                      </span>
+                      <span className="text-[10px] uppercase font-bold text-ink-950 font-mono tracking-tight">
+                        Index: {tier.level}/10 • {tier.tag}
+                      </span>
+                    </div>
                     <span className="text-[9px] font-mono bg-paper-100 text-ink-700 px-1.5 py-0.5 rounded border border-ink-950/[0.08] font-bold">
                       {activeHour.toString().padStart(2, '0')}:00 {activeDayType === 'weekend' ? 'Wknd' : 'Wkd'}
                     </span>
                   </div>
-                  <div className="text-xs font-extrabold text-ink-950">{p.street_name || 'Corridor Segment'}</div>
-                  <div className="text-[10px] text-ink-500 font-medium">{p.locality || p.corridor_name || p.corridor_zone}</div>
+
+                  <div>
+                    <div className="text-xs font-extrabold text-ink-950">{p.street_name || 'Corridor Segment'}</div>
+                    <div className="text-[10px] text-ink-500 font-medium">{p.locality || p.corridor_name || p.corridor_zone}</div>
+                  </div>
+
+                  {/* Index Tier Visual Highlight Banner */}
+                  <div 
+                    className="p-1.5 rounded-lg border flex items-center justify-between"
+                    style={{ 
+                      backgroundColor: `${tier.hex}14`,
+                      borderColor: `${tier.hex}40`
+                    }}
+                  >
+                    <div>
+                      <div className="text-[10px] font-bold text-ink-950">{tier.label}</div>
+                      <div className="text-[8.5px] text-ink-500 leading-tight">{tier.description}</div>
+                    </div>
+                    <div className="text-right shrink-0 pl-2">
+                      <div className="text-xs font-mono font-black text-ink-950">{tier.rangeLabel}</div>
+                      <div className="text-[8px] uppercase tracking-wider text-ink-400 font-mono">Pedestrians</div>
+                    </div>
+                  </div>
                   
                   <div className="space-y-1 pt-1 border-t border-ink-950/[0.06] text-[11px]">
                     <div className="flex justify-between items-center">
-                      <span className="text-ink-500">Live Hourly Flow:</span>
-                      <span className="text-azure-700 font-extrabold text-xs font-mono">
-                        {formatHourlyFootfallRange(currentFlow)}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-ink-500">Daily Pedestrian Traffic:</span>
+                      <span className="text-ink-500">Daily Cumulative:</span>
                       <span className="text-ink-900 font-bold font-mono">
                         {formatDailyFootfallRange(p.daily_footfall)}
                       </span>

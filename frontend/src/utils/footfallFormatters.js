@@ -1,37 +1,186 @@
 /**
- * AGT Intelligence Footfall Range Formatting Utilities
- * Standardizes urban pedestrian kinematics into credible human-readable ranges.
- * Eliminates misleading pinpoint numbers (e.g. replaces ~11,948 or ~10,000 with realistic bands).
+ * AGT Intelligence 1–10 Footfall Activity Index Tiers
+ * Calibrated for Bangalore urban pedestrian kinematics.
+ * Provides a standardized 10-point scale and vibrant color ramp for roads.
  */
+export const FOOTFALL_INDEX_TIERS = [
+  {
+    level: 1,
+    minFlow: 0,
+    maxFlow: 50,
+    label: 'Quiet Access',
+    rangeLabel: '< 50 / hr',
+    hex: '#94A3B8',
+    rgb: [148, 163, 184, 110],
+    width: 1.1,
+    tag: 'Calm',
+    description: 'Minimal pedestrian presence, quiet residential lanes & cul-de-sacs'
+  },
+  {
+    level: 2,
+    minFlow: 50,
+    maxFlow: 120,
+    label: 'Low Residential',
+    rangeLabel: '50 – 120 / hr',
+    hex: '#06B6D4',
+    rgb: [6, 182, 212, 150],
+    width: 1.4,
+    tag: 'Residential',
+    description: 'Internal residential cross streets with light neighborhood walking'
+  },
+  {
+    level: 3,
+    minFlow: 120,
+    maxFlow: 250,
+    label: 'Neighborhood Flow',
+    rangeLabel: '120 – 250 / hr',
+    hex: '#0284C7',
+    rgb: [2, 132, 199, 175],
+    width: 1.8,
+    tag: 'Community',
+    description: 'Community connector streets with convenience grocers & steady foot traffic'
+  },
+  {
+    level: 4,
+    minFlow: 250,
+    maxFlow: 450,
+    label: 'Secondary Feeder',
+    rangeLabel: '250 – 450 / hr',
+    hex: '#10B981',
+    rgb: [16, 185, 129, 195],
+    width: 2.2,
+    tag: 'Feeder',
+    description: 'Feeder avenues connecting residential pockets to local market nodes'
+  },
+  {
+    level: 5,
+    minFlow: 450,
+    maxFlow: 700,
+    label: 'Moderate Retail',
+    rangeLabel: '450 – 700 / hr',
+    hex: '#84CC16',
+    rgb: [132, 204, 22, 215],
+    width: 2.7,
+    tag: 'Retail',
+    description: 'Active mixed-use retail streets, cafes, bakeries & daily errand footfall'
+  },
+  {
+    level: 6,
+    minFlow: 700,
+    maxFlow: 1050,
+    label: 'Active Commercial',
+    rangeLabel: '700 – 1,050 / hr',
+    hex: '#F59E0B',
+    rgb: [245, 158, 11, 230],
+    width: 3.3,
+    tag: 'Commercial',
+    description: 'High-density commercial avenues with sustained dining & evening crowds'
+  },
+  {
+    level: 7,
+    minFlow: 1050,
+    maxFlow: 1450,
+    label: 'High Commercial',
+    rangeLabel: '1,050 – 1,450 / hr',
+    hex: '#F97316',
+    rgb: [249, 115, 22, 245],
+    width: 3.9,
+    tag: 'High Street',
+    description: 'Premier retail shopping corridors (e.g. CMH Road, 12th Main, New BEL Road)'
+  },
+  {
+    level: 8,
+    minFlow: 1450,
+    maxFlow: 1850,
+    label: 'Dense Corridor',
+    rangeLabel: '1,450 – 1,850 / hr',
+    hex: '#EA580C',
+    rgb: [234, 88, 12, 250],
+    width: 4.6,
+    tag: 'Dense Hub',
+    description: 'Heavy pedestrian commercial arteries with high dining and leisure gravity'
+  },
+  {
+    level: 9,
+    minFlow: 1850,
+    maxFlow: 2300,
+    label: 'Prime Dessert Window',
+    rangeLabel: '1,800 – 2,300 / hr',
+    hex: '#DC2626',
+    rgb: [220, 38, 38, 255],
+    width: 5.3,
+    tag: 'Prime Peak',
+    description: 'Signature F&B high streets at peak dessert impulse window (Indiranagar 100ft, Koramangala 80ft)'
+  },
+  {
+    level: 10,
+    minFlow: 2300,
+    maxFlow: Infinity,
+    label: 'Peak Urban Arterial',
+    rangeLabel: '2,300+ / hr',
+    hex: '#9333EA',
+    rgb: [147, 51, 234, 255],
+    width: 6.0,
+    tag: 'Ultra-Peak',
+    description: 'Maximal pedestrian density corridors adjacent to premier metro/mall intersections'
+  }
+];
 
 /**
- * Format hourly pedestrian footfall into a professional range band.
+ * Get the full 1-10 Footfall Activity Index tier for a given flow rate.
+ * @param {number} flow
+ * @returns {object} Tier definition
+ */
+export function getFootfallTier(flow) {
+  if (flow === null || flow === undefined || isNaN(flow)) return FOOTFALL_INDEX_TIERS[0];
+  const val = Math.max(0, Math.round(flow));
+  for (let i = FOOTFALL_INDEX_TIERS.length - 1; i >= 0; i--) {
+    if (val >= FOOTFALL_INDEX_TIERS[i].minFlow) {
+      return FOOTFALL_INDEX_TIERS[i];
+    }
+  }
+  return FOOTFALL_INDEX_TIERS[0];
+}
+
+/**
+ * Get integer index score (1 to 10).
+ * @param {number} flow
+ * @returns {number} 1..10
+ */
+export function getFootfallIndex(flow) {
+  return getFootfallTier(flow).level;
+}
+
+/**
+ * Deck.gl RGBA color accessor for street network based on the 1–10 color ramp.
+ * @param {number} flow
+ * @returns {[number, number, number, number]}
+ */
+export function getDiurnalStreetColor(flow) {
+  const tier = getFootfallTier(flow);
+  return tier.rgb;
+}
+
+/**
+ * Deck.gl line width accessor for street network based on index and prime status.
+ * @param {number} flow
+ * @param {boolean} isPrime
+ * @returns {number}
+ */
+export function getDiurnalStreetWidth(flow, isPrime = false) {
+  const tier = getFootfallTier(flow);
+  return isPrime ? tier.width * 1.35 : tier.width;
+}
+
+/**
+ * Format hourly pedestrian footfall into a professional range band with Index score.
  * @param {number} flow - Estimated hourly pedestrian count
- * @returns {string} - e.g. "1,200 – 1,800 / hr (High Commercial)"
+ * @returns {string} - e.g. "Index: 8/10 • Dense Corridor (1,450 – 1,850 / hr)"
  */
 export function formatHourlyFootfallRange(flow) {
   if (flow === null || flow === undefined || isNaN(flow)) return 'Data Unavailable';
-  const val = Math.round(flow);
-
-  if (val < 50) {
-    return '< 50 / hr (Calm / Residential)';
-  } else if (val < 120) {
-    return '50 – 120 / hr (Low Residential)';
-  } else if (val < 250) {
-    return '120 – 250 / hr (Neighborhood Flow)';
-  } else if (val < 500) {
-    return '250 – 500 / hr (Moderate Flow)';
-  } else if (val < 850) {
-    return '500 – 850 / hr (Active Commercial)';
-  } else if (val < 1300) {
-    return '850 – 1,300 / hr (Heavy Commercial)';
-  } else if (val < 1800) {
-    return '1,300 – 1,800 / hr (High Street Peak)';
-  } else if (val < 2400) {
-    return '1,800 – 2,400 / hr (Prime Dessert Window)';
-  } else {
-    return '2,000 – 2,600 / hr (Ultra-High Corridor)';
-  }
+  const tier = getFootfallTier(flow);
+  return `Index: ${tier.level}/10 • ${tier.label} (${tier.rangeLabel})`;
 }
 
 /**
