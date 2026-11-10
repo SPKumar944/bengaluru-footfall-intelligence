@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 import DeckGL from '@deck.gl/react';
-import { GeoJsonLayer, ScatterplotLayer, TextLayer } from '@deck.gl/layers';
+import { GeoJsonLayer, ScatterplotLayer, TextLayer, IconLayer } from '@deck.gl/layers';
+import { getComplementaryPinIcon } from '../utils/iconMcpPins';
+import { getSpectrumIcon } from './IconMCP';
 import { H3HexagonLayer } from '@deck.gl/geo-layers';
 import { Hexagon } from 'lucide-react';
 import maplibregl from 'maplibre-gl';
@@ -503,59 +505,25 @@ export default function MapViewport({
       getPosition: f => f.geometry.coordinates
     }),
 
-    // 2g. Complementary Brands & High-Footfall Transit / Retail Hubs
-    activeLayers.complementaryBrands && filteredComplementaryBrands.length > 0 && new ScatterplotLayer({
-      id: 'complementary-dining-brands-layer',
+    // 2g. Complementary Brands & High-Footfall Transit / Retail Hubs (IconMCP Vector Pins)
+    activeLayers.complementaryBrands && filteredComplementaryBrands.length > 0 && new IconLayer({
+      id: 'complementary-brands-iconmcp-layer',
       data: filteredComplementaryBrands,
       pickable: true,
-      opacity: 0.95,
-      stroked: true,
-      filled: true,
-      radiusScale: 1,
-      radiusMinPixels: 13,
-      radiusMaxPixels: 20,
-      lineWidthUnits: 'pixels',
-      getLineWidth: f => selectedComplementaryBrand?.properties?.id === f.properties?.id ? 4 : 2,
-      getLineColor: f => selectedComplementaryBrand?.properties?.id === f.properties?.id ? [255, 255, 255, 255] : [255, 255, 255, 235],
-      getFillColor: f => {
-        const cat = f.properties?.spectrum_category;
-        if (cat === 'Metro Stations & Transit Terminals') return [14, 165, 233, 245]; // Transit Sky Blue
-        if (cat === 'Shopping Malls & Retail Hubs') return [217, 70, 239, 245]; // Magenta / Fuchsia
-        if (cat === 'Cinemas & Cultural Auditoriums') return [99, 102, 241, 245]; // Indigo / Violet
-        if (cat === 'Street Walkways & Buzzing Hotspots') return [234, 179, 8, 245]; // Golden Sun
-        if (cat === 'Hot & Spicy Meals') return [239, 68, 68, 245]; // Fiery Red
-        if (cat === 'Youth Fast Casual') return [245, 158, 11, 245]; // Warm Amber
-        if (cat === 'Late-Night Pubs & Breweries') return [147, 51, 234, 245]; // Royal Purple
-        return [16, 185, 129, 245]; // Emerald for Evening Tiffin
-      },
       getPosition: f => f.geometry.coordinates,
+      getIcon: f => getComplementaryPinIcon(f.properties?.spectrum_category),
+      getSize: f => selectedComplementaryBrand?.properties?.id === f.properties?.id ? 36 : 28,
+      sizeUnits: 'pixels',
+      sizeScale: 1,
       updateTriggers: {
-        getLineWidth: [selectedComplementaryBrand?.properties?.id],
-        getLineColor: [selectedComplementaryBrand?.properties?.id],
-        getFillColor: [selectedComplementarySpectrum]
+        getSize: [selectedComplementaryBrand?.properties?.id],
+        getIcon: [selectedComplementarySpectrum]
       },
       onHover: info => setHoverInfo(info),
       onClick: info => {
         if (info.object && onSelectComplementaryBrand) {
           onSelectComplementaryBrand(info.object);
         }
-      }
-    }),
-
-    // 2g-ii. Complementary Brands Icon Text Layer (Emoji pins for visual differentiation)
-    activeLayers.complementaryBrands && filteredComplementaryBrands.length > 0 && new TextLayer({
-      id: 'complementary-brands-icon-layer',
-      data: filteredComplementaryBrands,
-      pickable: false,
-      getPosition: f => f.geometry.coordinates,
-      getText: f => f.properties?.spectrum_icon || '📍',
-      getSize: f => selectedComplementaryBrand?.properties?.id === f.properties?.id ? 15 : 12,
-      sizeUnits: 'pixels',
-      getTextAnchor: 'middle',
-      getAlignmentBaseline: 'center',
-      fontFamily: '"Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", sans-serif',
-      updateTriggers: {
-        getSize: [selectedComplementaryBrand?.properties?.id]
       }
     }),
 
@@ -933,8 +901,9 @@ export default function MapViewport({
                 return (
                   <div className="space-y-1.5 min-w-[280px]">
                     <div className="flex justify-between items-center border-b border-slate-200 pb-1">
-                      <span className={`text-[10px] uppercase font-bold px-1.5 py-0.5 rounded border ${badgeStyle}`}>
-                        {p.spectrum_icon || '🍽️'} {p.spectrum_category}
+                      <span className={`text-[10px] uppercase font-bold px-1.5 py-0.5 rounded border flex items-center gap-1.5 ${badgeStyle}`}>
+                        {getSpectrumIcon(p.spectrum_category, { size: 12, className: 'shrink-0' })}
+                        <span>{p.spectrum_category}</span>
                       </span>
                       <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
                         Synergy: {p.synergy_score}/100

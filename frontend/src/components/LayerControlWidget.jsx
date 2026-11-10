@@ -16,6 +16,17 @@ import {
   GraduationCap,
   UtensilsCrossed
 } from 'lucide-react';
+import { 
+  getSpectrumIcon,
+  MetroIcon, 
+  ShoppingMallsIcon, 
+  CinemasIcon, 
+  WalkwaysIcon, 
+  HotSpicyIcon,
+  YouthFastCasualIcon,
+  LateNightPubsIcon,
+  EveningTiffinIcon
+} from './IconMCP';
 
 export default function LayerControlWidget({
   activeLayers,
@@ -396,11 +407,21 @@ export default function LayerControlWidget({
                     Complementary Brands ({totalComplementaryCount})
                   </span>
                   <div className="flex -space-x-1">
-                    <span className="w-2.5 h-2.5 rounded-full bg-sky-500 border border-white" title="🚇 Metro & Transit" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-fuchsia-500 border border-white" title="🛍️ Malls & Retail" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 border border-white" title="🎭 Cinemas & Auditoriums" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-amber-400 border border-white" title="🌟 Street Walkways" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-500 border border-white" title="🔥 Spicy Biryani" />
+                    <span className="w-4 h-4 rounded-full bg-sky-500 border border-white flex items-center justify-center text-white shadow-2xs" title="Metro & Transit">
+                      <MetroIcon size={10} />
+                    </span>
+                    <span className="w-4 h-4 rounded-full bg-fuchsia-500 border border-white flex items-center justify-center text-white shadow-2xs" title="Shopping Malls">
+                      <ShoppingMallsIcon size={10} />
+                    </span>
+                    <span className="w-4 h-4 rounded-full bg-indigo-500 border border-white flex items-center justify-center text-white shadow-2xs" title="Cinemas & Auditoriums">
+                      <CinemasIcon size={10} />
+                    </span>
+                    <span className="w-4 h-4 rounded-full bg-amber-500 border border-white flex items-center justify-center text-white shadow-2xs" title="Street Walkways">
+                      <WalkwaysIcon size={10} />
+                    </span>
+                    <span className="w-4 h-4 rounded-full bg-red-500 border border-white flex items-center justify-center text-white shadow-2xs" title="Spicy Biryani">
+                      <HotSpicyIcon size={10} />
+                    </span>
                   </div>
                 </div>
                 <p className="text-[9px] text-slate-500 mt-0.5">
@@ -447,16 +468,21 @@ export default function LayerControlWidget({
 
                 {/* 2. Visual Spectrum Pillar Explanation Badge */}
                 <div className="p-1.5 rounded bg-white/90 border border-orange-200 text-[10px] space-y-0.5">
-                  <div className="font-extrabold text-orange-950">
-                    {selectedComplementarySpectrum === 'Metro Stations & Transit Terminals' ? '🚇 Commuter Transit & Quick-Grab Impulse' :
-                     selectedComplementarySpectrum === 'Shopping Malls & Retail Hubs' ? '🛍️ All-Weather Family Leisure & Retail Footfall' :
-                     selectedComplementarySpectrum === 'Cinemas & Cultural Auditoriums' ? '🎭 Pre/Post Show Crowd Spillover & Theatre Strolls' :
-                     selectedComplementarySpectrum === 'Street Walkways & Buzzing Hotspots' ? '🌟 High-Density Pedestrian Strolls & Leisure Strolls' :
-                     selectedComplementarySpectrum === 'Hot & Spicy Meals' ? '🔥 Capsaicin Relief & Milk Fat Need' :
-                     selectedComplementarySpectrum === 'Youth Fast Casual' ? '🍔 Extended Hangout & Student Cohort' :
-                     selectedComplementarySpectrum === 'Late-Night Pubs & Breweries' ? '🍺 Post-Alcohol Sweet Tooth & Midnight Craving' :
-                     selectedComplementarySpectrum === 'Evening Tiffin & Heritage Cafes' ? '☕ Family Weekend Tradition & Evening Walkers' :
-                     '⚡ High Dessert Synergy Landscape (8 Core Hub Pillars)'}
+                  <div className="font-extrabold text-orange-950 flex items-center gap-1.5">
+                    <span className="shrink-0 text-orange-600">
+                      {getSpectrumIcon(selectedComplementarySpectrum, { size: 14 })}
+                    </span>
+                    <span>
+                      {selectedComplementarySpectrum === 'Metro Stations & Transit Terminals' ? 'Commuter Transit & Quick-Grab Impulse' :
+                       selectedComplementarySpectrum === 'Shopping Malls & Retail Hubs' ? 'All-Weather Family Leisure & Retail Footfall' :
+                       selectedComplementarySpectrum === 'Cinemas & Cultural Auditoriums' ? 'Pre/Post Show Crowd Spillover & Theatre Strolls' :
+                       selectedComplementarySpectrum === 'Street Walkways & Buzzing Hotspots' ? 'High-Density Pedestrian Strolls & Leisure Strolls' :
+                       selectedComplementarySpectrum === 'Hot & Spicy Meals' ? 'Capsaicin Relief & Milk Fat Need' :
+                       selectedComplementarySpectrum === 'Youth Fast Casual' ? 'Extended Hangout & Student Cohort' :
+                       selectedComplementarySpectrum === 'Late-Night Pubs & Breweries' ? 'Post-Alcohol Sweet Tooth & Midnight Craving' :
+                       selectedComplementarySpectrum === 'Evening Tiffin & Heritage Cafes' ? 'Family Weekend Tradition & Evening Walkers' :
+                       'High Dessert Synergy Landscape (8 Core Hub Pillars)'}
+                    </span>
                   </div>
                   <p className="text-[9px] text-slate-600 leading-tight">
                     {selectedComplementarySpectrum === 'Metro Stations & Transit Terminals'
@@ -519,8 +545,9 @@ export default function LayerControlWidget({
                       </span>
                     </div>
                     <div className="flex items-center gap-1.5 text-[9px] text-slate-600 font-semibold">
-                      <span className="px-1 py-0.2 rounded bg-orange-200 text-orange-900 font-bold">
-                        {selectedComplementaryBrand.properties?.spectrum_category}
+                      <span className="px-1.5 py-0.5 rounded bg-orange-200 text-orange-950 font-bold flex items-center gap-1">
+                        {getSpectrumIcon(selectedComplementaryBrand.properties?.spectrum_category, { size: 11, className: 'shrink-0' })}
+                        <span>{selectedComplementaryBrand.properties?.spectrum_category}</span>
                       </span>
                       <span className="truncate">{selectedComplementaryBrand.properties?.locality}</span>
                     </div>
