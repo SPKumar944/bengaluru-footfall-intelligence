@@ -13,7 +13,8 @@ import {
   Building2,
   Users,
   Hexagon,
-  GraduationCap
+  GraduationCap,
+  UtensilsCrossed
 } from 'lucide-react';
 
 export default function LayerControlWidget({
@@ -29,6 +30,11 @@ export default function LayerControlWidget({
   setSelectedKidsCategory,
   selectedKidsAttraction,
   onSelectKidsAttraction,
+  complementaryBrandsData,
+  selectedComplementarySpectrum = 'ALL',
+  setSelectedComplementarySpectrum,
+  selectedComplementaryBrand,
+  onSelectComplementaryBrand,
   educationPoisData,
   selectedEducationCategory = 'ALL',
   setSelectedEducationCategory,
@@ -107,6 +113,28 @@ export default function LayerControlWidget({
   }, [educationPoisData, selectedEducationCategory]);
 
   const totalEducationCount = educationPoisData?.features?.length || 102;
+
+  // Extract unique complementary dining spectrum categories and counts
+  const complementarySpectrums = React.useMemo(() => {
+    if (!complementaryBrandsData?.features) return [];
+    const counts = {};
+    complementaryBrandsData.features.forEach(f => {
+      const s = f.properties?.spectrum_category;
+      if (s) counts[s] = (counts[s] || 0) + 1;
+    });
+    return Object.entries(counts).map(([name, count]) => ({ name, count }));
+  }, [complementaryBrandsData]);
+
+  // Venues corresponding to selected complementary spectrum category
+  const correspondingComplementaryVenues = React.useMemo(() => {
+    if (!complementaryBrandsData?.features) return [];
+    const list = selectedComplementarySpectrum === 'ALL' 
+      ? complementaryBrandsData.features 
+      : complementaryBrandsData.features.filter(f => f.properties?.spectrum_category === selectedComplementarySpectrum);
+    return [...list].sort((a, b) => (a.properties?.name || '').localeCompare(b.properties?.name || ''));
+  }, [complementaryBrandsData, selectedComplementarySpectrum]);
+
+  const totalComplementaryCount = complementaryBrandsData?.features?.length || 171;
 
   const activeCount = Object.values(activeLayers).filter(Boolean).length;
 
@@ -334,6 +362,162 @@ export default function LayerControlWidget({
                     <div className="text-purple-800 font-bold flex justify-between pt-0.5 border-t border-purple-200">
                       <span>Monthly Volume:</span>
                       <span>~{selectedCompetitor.properties?.monthly_cup_volume_est?.toLocaleString()} cups/mo</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+
+          {/* Layer: Complementary Dining Brands (High Dessert Synergy Spectrum) */}
+          <div 
+            className={`p-2 rounded-lg transition-all border ${
+              activeLayers.complementaryBrands 
+                ? 'bg-orange-50/80 border-orange-300 text-slate-900 shadow-2xs' 
+                : 'bg-slate-50/60 border-slate-200 text-slate-400 hover:bg-slate-100'
+            }`}
+          >
+            {/* Clickable Header to Toggle Complementary Brands */}
+            <div 
+              onClick={() => toggleLayer('complementaryBrands')}
+              className="flex items-start gap-2.5 cursor-pointer"
+            >
+              <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
+                activeLayers.complementaryBrands 
+                  ? 'bg-orange-600 border-orange-700 text-white' 
+                  : 'bg-white border-slate-300'
+              }`}>
+                {activeLayers.complementaryBrands && <Check className="w-3 h-3 stroke-[3]" />}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-slate-900">
+                    <UtensilsCrossed className="w-3.5 h-3.5 text-orange-600" />
+                    Complementary Brands ({totalComplementaryCount})
+                  </span>
+                  <div className="flex -space-x-1">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-500 border border-white" title="🔥 Hot & Spicy Meals (Biryani)" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500 border border-white" title="🍔 Youth Fast Casual (Burgers)" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-purple-600 border border-white" title="🍺 Late-Night Pubs & Breweries" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 border border-white" title="☕ Evening Tiffin & Cafes" />
+                  </div>
+                </div>
+                <p className="text-[9px] text-slate-500 mt-0.5">
+                  Biryani, burgers, late-night pubs & evening tiffins
+                </p>
+              </div>
+            </div>
+
+            {/* When Layer is enabled, show the Synergy Spectrum and Venue Selector */}
+            {activeLayers.complementaryBrands && (
+              <div 
+                onClick={(e) => e.stopPropagation()}
+                className="mt-2.5 pt-2 border-t border-orange-200/80 space-y-2 text-xs"
+              >
+                {/* 1. Synergy Spectrum Pillar Selector */}
+                <div>
+                  <div className="flex items-center justify-between text-[10px] font-bold text-orange-950 mb-1">
+                    <span>Synergy Spectrum Pillar:</span>
+                    {selectedComplementarySpectrum !== 'ALL' && (
+                      <button
+                        onClick={() => setSelectedComplementarySpectrum && setSelectedComplementarySpectrum('ALL')}
+                        className="text-[9px] text-orange-700 hover:text-orange-900 underline font-normal cursor-pointer"
+                      >
+                        Reset All ({totalComplementaryCount})
+                      </button>
+                    )}
+                  </div>
+                  <select
+                    value={selectedComplementarySpectrum}
+                    onChange={(e) => setSelectedComplementarySpectrum && setSelectedComplementarySpectrum(e.target.value)}
+                    className="w-full bg-white border border-orange-300 rounded px-2 py-1.5 text-xs font-bold text-orange-950 focus:outline-none focus:ring-1 focus:ring-orange-500 cursor-pointer shadow-2xs"
+                  >
+                    <option value="ALL">All 4 Synergy Pillars ({totalComplementaryCount} Venues)</option>
+                    <option value="Hot & Spicy Meals">🔥 Hot & Spicy Meals (Capsaicin Relief) ({complementarySpectrums.find(s => s[0] === 'Hot & Spicy Meals')?.[1] || 21})</option>
+                    <option value="Youth Fast Casual">🍔 Youth Fast Casual (Student Cohorts) ({complementarySpectrums.find(s => s[0] === 'Youth Fast Casual')?.[1] || 80})</option>
+                    <option value="Late-Night Pubs & Breweries">🍺 Late-Night Pubs & Breweries (Midnight Craving) ({complementarySpectrums.find(s => s[0] === 'Late-Night Pubs & Breweries')?.[1] || 17})</option>
+                    <option value="Evening Tiffin & Heritage Cafes">☕ Evening Tiffin & Heritage Cafes (Family Stroll) ({complementarySpectrums.find(s => s[0] === 'Evening Tiffin & Heritage Cafes')?.[1] || 53})</option>
+                  </select>
+                </div>
+
+                {/* 2. Visual Spectrum Pillar Explanation Badge */}
+                <div className="p-1.5 rounded bg-white/90 border border-orange-200 text-[10px] space-y-0.5">
+                  <div className="font-extrabold text-orange-950">
+                    {selectedComplementarySpectrum === 'Hot & Spicy Meals' ? '🔥 Capsaicin Relief & Milk Fat Need' :
+                     selectedComplementarySpectrum === 'Youth Fast Casual' ? '🍔 Extended Hangout & Student Cohort' :
+                     selectedComplementarySpectrum === 'Late-Night Pubs & Breweries' ? '🍺 Post-Alcohol Sweet Tooth & Midnight Craving' :
+                     selectedComplementarySpectrum === 'Evening Tiffin & Heritage Cafes' ? '☕ Family Weekend Tradition & Evening Walkers' :
+                     '⚡ High Dessert Synergy Spectrum (4 Core Pillars)'}
+                  </div>
+                  <p className="text-[9px] text-slate-600 leading-tight">
+                    {selectedComplementarySpectrum === 'Hot & Spicy Meals' 
+                      ? 'Fiery Andhra chilli & pepper gravies create biological casein/milk fat cravings to soothe TRPV1 oral receptors.' :
+                     selectedComplementarySpectrum === 'Youth Fast Casual' 
+                      ? 'Gen Z & student friend groups finishing burgers/rolls step out onto the sidewalk to extend their outing with dessert.' :
+                     selectedComplementarySpectrum === 'Late-Night Pubs & Breweries' 
+                      ? 'Post-alcohol glucose dip drives intense late-night sweet tooth cravings between 10:00 PM and 1:30 AM.' :
+                     selectedComplementarySpectrum === 'Evening Tiffin & Heritage Cafes' 
+                      ? 'Warm crispy ghee butter dosas & filter coffee followed by multi-generational family evening dessert stroll.' :
+                     'Spicy biryani diners, burger queues, microbreweries & tiffin crowds driving immediate secondary dessert walk-ins.'}
+                  </p>
+                </div>
+
+                {/* 3. Specific Brand / Venue Selector Dropdown */}
+                <div>
+                  <label className="block text-[10px] font-bold text-slate-700 mb-1">
+                    {selectedComplementarySpectrum === 'ALL'
+                      ? `Select Complementary Venue (${correspondingComplementaryVenues.length}):`
+                      : `${selectedComplementarySpectrum} (${correspondingComplementaryVenues.length}):`}
+                  </label>
+                  <select
+                    value={selectedComplementaryBrand?.properties?.id || ''}
+                    onChange={(e) => {
+                      const match = complementaryBrandsData?.features?.find(f => f.properties?.id === e.target.value);
+                      if (match && onSelectComplementaryBrand) {
+                        onSelectComplementaryBrand(match);
+                      }
+                    }}
+                    className="w-full bg-white border border-slate-300 rounded px-2 py-1.5 text-xs font-semibold text-slate-800 focus:outline-none focus:ring-1 focus:ring-orange-500 cursor-pointer shadow-2xs"
+                  >
+                    <option value="">
+                      {selectedComplementarySpectrum === 'ALL' 
+                        ? 'Select biryani, burger, pub or tiffin landmark...' 
+                        : `Select ${selectedComplementarySpectrum}...`}
+                    </option>
+                    {correspondingComplementaryVenues.map(f => (
+                      <option key={f.properties?.id} value={f.properties?.id}>
+                        {f.properties?.name} — {f.properties?.locality} (Synergy: {f.properties?.synergy_score}/100)
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* 4. Selected Complementary Venue Snapshot Card */}
+                {selectedComplementaryBrand && (
+                  <div className="bg-orange-100/90 border border-orange-300 rounded-lg p-2 text-[10px] text-orange-950 space-y-1">
+                    <div className="font-extrabold flex items-center justify-between">
+                      <span className="truncate">{selectedComplementaryBrand.properties?.name}</span>
+                      <span className="text-emerald-700 shrink-0 font-bold ml-1 bg-emerald-100 px-1 rounded border border-emerald-300">
+                        Synergy: {selectedComplementaryBrand.properties?.synergy_score}/100
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-[9px] text-slate-600 font-semibold">
+                      <span className="px-1 py-0.2 rounded bg-orange-200 text-orange-900 font-bold">
+                        {selectedComplementaryBrand.properties?.spectrum_category}
+                      </span>
+                      <span className="truncate">{selectedComplementaryBrand.properties?.locality}</span>
+                    </div>
+                    <div className="text-slate-600 line-clamp-1">{selectedComplementaryBrand.properties?.address}</div>
+                    <div className="text-slate-800 font-bold flex justify-between pt-0.5 border-t border-orange-200">
+                      <span>Peak Spillover:</span>
+                      <span className="text-orange-900 font-extrabold">{selectedComplementaryBrand.properties?.peak_window}</span>
+                    </div>
+                    <div className="text-[9px] text-slate-700 flex justify-between">
+                      <span>Est. Daily Traffic:</span>
+                      <span>~{selectedComplementaryBrand.properties?.daily_customer_footfall?.toLocaleString()} diners/day</span>
+                    </div>
+                    <div className="text-[9px] text-emerald-800 font-medium italic border-t border-orange-200/60 pt-0.5">
+                      {selectedComplementaryBrand.properties?.synergy_reason}
                     </div>
                   </div>
                 )}

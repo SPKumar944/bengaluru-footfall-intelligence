@@ -181,6 +181,10 @@ export default function MapViewport({
   selectedKidsCategory = 'ALL',
   selectedKidsAttraction,
   onSelectKidsAttraction,
+  complementaryBrandsData,
+  selectedComplementarySpectrum = 'ALL',
+  selectedComplementaryBrand,
+  onSelectComplementaryBrand,
   educationPoisData,
   selectedEducationCategory = 'ALL',
   selectedEducationPoi,
@@ -200,6 +204,7 @@ export default function MapViewport({
     apsaraStores: true,
     competitors: false,
     kidsAttractions: true,
+    complementaryBrands: true,
     techParks: false,
     officeFootprints: false,
     hexDemographics: false,
@@ -263,6 +268,15 @@ export default function MapViewport({
     }
     return kidsAttractionsData.features.filter(f => f.properties?.category === selectedKidsCategory);
   }, [kidsAttractionsData, selectedKidsCategory]);
+
+  // Filter complementary dining brands by selected spectrum category
+  const filteredComplementaryBrands = useMemo(() => {
+    if (!complementaryBrandsData?.features) return [];
+    if (!selectedComplementarySpectrum || selectedComplementarySpectrum === 'ALL') {
+      return complementaryBrandsData.features;
+    }
+    return complementaryBrandsData.features.filter(f => f.properties?.spectrum_category === selectedComplementarySpectrum);
+  }, [complementaryBrandsData, selectedComplementarySpectrum]);
 
   // Filter education & youth institutions by selected category
   const filteredEducationPois = useMemo(() => {
@@ -486,6 +500,56 @@ export default function MapViewport({
       lineWidthUnits: 'pixels',
       getLineWidth: 2.5,
       getLineColor: [245, 158, 11, 255], // Distinct vivid amber halo
+      getPosition: f => f.geometry.coordinates
+    }),
+
+    // 2g. Complementary Dining Brands (Biryani, Burgers, Late-Night Pubs, Evening Tiffins)
+    activeLayers.complementaryBrands && filteredComplementaryBrands.length > 0 && new ScatterplotLayer({
+      id: 'complementary-dining-brands-layer',
+      data: filteredComplementaryBrands,
+      pickable: true,
+      opacity: 0.95,
+      stroked: true,
+      filled: true,
+      radiusScale: 1,
+      radiusMinPixels: 8,
+      radiusMaxPixels: 16,
+      lineWidthUnits: 'pixels',
+      getLineWidth: f => selectedComplementaryBrand?.properties?.id === f.properties?.id ? 3.5 : 2,
+      getLineColor: f => selectedComplementaryBrand?.properties?.id === f.properties?.id ? [255, 255, 255, 255] : [255, 255, 255, 240],
+      getFillColor: f => {
+        const cat = f.properties?.spectrum_category;
+        if (cat === 'Hot & Spicy Meals') return [239, 68, 68, 245]; // Fiery Red
+        if (cat === 'Youth Fast Casual') return [245, 158, 11, 245]; // Warm Amber
+        if (cat === 'Late-Night Pubs & Breweries') return [147, 51, 234, 245]; // Royal Purple
+        return [16, 185, 129, 245]; // Emerald for Evening Tiffin
+      },
+      getPosition: f => f.geometry.coordinates,
+      updateTriggers: {
+        getLineWidth: [selectedComplementaryBrand?.properties?.id],
+        getLineColor: [selectedComplementaryBrand?.properties?.id]
+      },
+      onHover: info => setHoverInfo(info),
+      onClick: info => {
+        if (info.object && onSelectComplementaryBrand) {
+          onSelectComplementaryBrand(info.object);
+        }
+      }
+    }),
+
+    // 2h. Pulsing Selection Ring for Selected Complementary Brand
+    activeLayers.complementaryBrands && selectedComplementaryBrand?.geometry?.coordinates && new ScatterplotLayer({
+      id: 'complementary-brand-selected-pulse',
+      data: [selectedComplementaryBrand],
+      pickable: false,
+      stroked: true,
+      filled: false,
+      radiusScale: 1,
+      radiusMinPixels: 18,
+      radiusMaxPixels: 28,
+      lineWidthUnits: 'pixels',
+      getLineWidth: 2.5,
+      getLineColor: [249, 115, 22, 255], // Distinct vivid orange halo
       getPosition: f => f.geometry.coordinates
     }),
 
@@ -826,6 +890,48 @@ export default function MapViewport({
                       </div>
                       <div className="pt-0.5 text-[10px] text-emerald-800 font-medium italic border-t border-slate-100">
                         {p.dessert_synergy_reason}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              // Case Complementary Dining Brand (Synergy Spectrum: Biryani, Burgers, Pubs, Tiffins)
+              if (p.id?.startsWith('COMP_') || p.spectrum_category) {
+                const badgeStyle = 
+                  p.spectrum_category === 'Hot & Spicy Meals' ? 'text-red-800 bg-red-50 border-red-300' :
+                  p.spectrum_category === 'Youth Fast Casual' ? 'text-amber-800 bg-amber-50 border-amber-300' :
+                  p.spectrum_category === 'Late-Night Pubs & Breweries' ? 'text-purple-800 bg-purple-50 border-purple-300' :
+                  'text-emerald-800 bg-emerald-50 border-emerald-300';
+
+                return (
+                  <div className="space-y-1.5 min-w-[280px]">
+                    <div className="flex justify-between items-center border-b border-slate-200 pb-1">
+                      <span className={`text-[10px] uppercase font-bold px-1.5 py-0.5 rounded border ${badgeStyle}`}>
+                        {p.spectrum_icon || '🍽️'} {p.spectrum_category}
+                      </span>
+                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+                        Synergy: {p.synergy_score}/100
+                      </span>
+                    </div>
+                    <div className="text-xs font-extrabold text-slate-900">{p.name}</div>
+                    <div className="text-[10px] text-slate-600 font-semibold">{p.locality}</div>
+                    <div className="text-[9px] text-slate-400 line-clamp-1">{p.address}</div>
+
+                    <div className="pt-1 border-t border-slate-100 space-y-0.5 text-[11px]">
+                      <div className="text-[10px] font-bold text-orange-900">
+                        Pillar: {p.spectrum_pillar}
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-500">Peak Dessert Spillover:</span>
+                        <span className="text-orange-900 font-bold">{p.peak_window}</span>
+                      </div>
+                      <div className="flex justify-between text-[10px]">
+                        <span className="text-slate-400">Daily Customer Volume:</span>
+                        <span className="text-slate-700 font-semibold">~{p.daily_customer_footfall?.toLocaleString()} / day</span>
+                      </div>
+                      <div className="pt-0.5 text-[10px] text-emerald-800 font-medium italic border-t border-slate-100">
+                        {p.synergy_reason}
                       </div>
                     </div>
                   </div>

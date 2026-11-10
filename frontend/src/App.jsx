@@ -31,6 +31,7 @@ export default function App() {
   const [officeFootprintsData, setOfficeFootprintsData] = useState(null);
   const [hexDemographicsData, setHexDemographicsData] = useState(null);
   const [educationPoisData, setEducationPoisData] = useState(null);
+  const [complementaryBrandsData, setComplementaryBrandsData] = useState(null);
   const [demographicGender, setDemographicGender] = useState('all'); // 'all' | 'male' | 'female'
   const [demographicAge, setDemographicAge] = useState('all'); // 'all' | 'kids' | 'youth' | 'adults' | 'seniors'
 
@@ -40,11 +41,12 @@ export default function App() {
     catchments: true,
     apsaraStores: true,
     competitors: false,
-    kidsAttractions: true,   // 116 Kids & Family Footfall Magnets
-    techParks: false,        // 95 Tech Parks & IT Campuses
-    officeFootprints: false, // 3,137 Commercial Office Buildings
-    hexDemographics: false,  // 19.5k H3 Hexagon Demographics & Density
-    educationPois: true      // 102 Schools, Colleges & Coaching Institutes
+    kidsAttractions: true,      // 116 Kids & Family Footfall Magnets
+    complementaryBrands: true,  // 171 Complementary Dining Brands (Biryani, Burgers, Breweries, Tiffins)
+    educationPois: true,        // 102 Schools, Colleges & Coaching Institutes
+    techParks: false,           // 95 Tech Parks & IT Campuses
+    officeFootprints: false,    // 3,137 Commercial Office Buildings
+    hexDemographics: false      // 19.5k H3 Hexagon Demographics & Density
   });
 
   // Selected Entities
@@ -56,6 +58,8 @@ export default function App() {
   const [selectedKidsAttraction, setSelectedKidsAttraction] = useState(null);
   const [selectedEducationCategory, setSelectedEducationCategory] = useState('ALL');
   const [selectedEducationPoi, setSelectedEducationPoi] = useState(null);
+  const [selectedComplementarySpectrum, setSelectedComplementarySpectrum] = useState('ALL');
+  const [selectedComplementaryBrand, setSelectedComplementaryBrand] = useState(null);
 
   // Temporal Dynamic State (24-Hour Diurnal Player)
   const [activeHour, setActiveHour] = useState(21); // Default 9:00 PM peak dessert window
@@ -70,14 +74,15 @@ export default function App() {
       try {
         setLoading(true);
         const b = import.meta.env.BASE_URL;
-        const [streetRes, catchmentsRes, apsaraRes, competitorsRes, tpRes, kidsRes, eduRes] = await Promise.all([
+        const [streetRes, catchmentsRes, apsaraRes, competitorsRes, tpRes, kidsRes, eduRes, compRes] = await Promise.all([
           fetch(`${b}data/all_stores_street_footfall.geojson`).then(r => r.json()),
           fetch(`${b}data/apsara_store_footfall_catchments.geojson`).then(r => r.json()),
           fetch(`${b}data/apsara_ice_cream_bangalore_footfall.json`).then(r => r.json()),
           fetch(`${b}data/layer5_competitors.geojson`).then(r => r.json()).catch(() => null),
           fetch(`${b}data/mapped_tech_parks.geojson`).then(r => r.json()).catch(() => null),
           fetch(`${b}data/kids_family_attractions.geojson`).then(r => r.json()).catch(() => null),
-          fetch(`${b}data/education_youth_pois.geojson`).then(r => r.json()).catch(() => null)
+          fetch(`${b}data/education_youth_pois.geojson`).then(r => r.json()).catch(() => null),
+          fetch(`${b}data/layer6_complementary_brands.geojson`).then(r => r.json()).catch(() => null)
         ]);
 
         setStreetFootfallData(streetRes);
@@ -87,6 +92,7 @@ export default function App() {
         if (tpRes) setTechParksData(tpRes);
         if (kidsRes) setKidsAttractionsData(kidsRes);
         if (eduRes) setEducationPoisData(eduRes);
+        if (compRes) setComplementaryBrandsData(compRes);
 
         if (apsaraRes && apsaraRes.length > 0) {
           // Default selection to Indiranagar outlet
@@ -244,6 +250,36 @@ export default function App() {
     }
   };
 
+  // Change complementary spectrum category filter and ensure active layer
+  const handleSelectComplementarySpectrum = (spectrum) => {
+    setSelectedComplementarySpectrum(spectrum);
+    setActiveLayers(prev => ({ ...prev, complementaryBrands: true }));
+    if (selectedComplementaryBrand && spectrum !== 'ALL' && selectedComplementaryBrand.properties?.spectrum_category !== spectrum) {
+      setSelectedComplementaryBrand(null);
+    }
+  };
+
+  // Select a complementary brand venue and fly to its location
+  const handleSelectComplementaryBrand = (venue) => {
+    setSelectedComplementaryBrand(venue);
+    setActiveLayers(prev => ({ ...prev, complementaryBrands: true }));
+    if (venue?.properties?.spectrum_category && selectedComplementarySpectrum !== 'ALL' && selectedComplementarySpectrum !== venue.properties.spectrum_category) {
+      setSelectedComplementarySpectrum(venue.properties.spectrum_category);
+    }
+    if (venue?.geometry?.coordinates) {
+      const [lng, lat] = venue.geometry.coordinates;
+      setViewState(prev => ({
+        ...prev,
+        longitude: lng,
+        latitude: lat,
+        zoom: 15.6,
+        pitch: 0,
+        bearing: 0,
+        transitionDuration: 900
+      }));
+    }
+  };
+
   // Reset to Bangalore City View showing all stores
   const resetCityView = () => {
     setViewState({
@@ -310,6 +346,10 @@ export default function App() {
           selectedKidsCategory={selectedKidsCategory}
           selectedKidsAttraction={selectedKidsAttraction}
           onSelectKidsAttraction={handleSelectKidsAttraction}
+          complementaryBrandsData={complementaryBrandsData}
+          selectedComplementarySpectrum={selectedComplementarySpectrum}
+          selectedComplementaryBrand={selectedComplementaryBrand}
+          onSelectComplementaryBrand={handleSelectComplementaryBrand}
           educationPoisData={educationPoisData}
           selectedEducationCategory={selectedEducationCategory}
           selectedEducationPoi={selectedEducationPoi}
@@ -347,6 +387,11 @@ export default function App() {
             setSelectedKidsCategory={handleSelectKidsCategory}
             selectedKidsAttraction={selectedKidsAttraction}
             onSelectKidsAttraction={handleSelectKidsAttraction}
+            complementaryBrandsData={complementaryBrandsData}
+            selectedComplementarySpectrum={selectedComplementarySpectrum}
+            setSelectedComplementarySpectrum={handleSelectComplementarySpectrum}
+            selectedComplementaryBrand={selectedComplementaryBrand}
+            onSelectComplementaryBrand={handleSelectComplementaryBrand}
             educationPoisData={educationPoisData}
             selectedEducationCategory={selectedEducationCategory}
             setSelectedEducationCategory={handleSelectEducationCategory}
