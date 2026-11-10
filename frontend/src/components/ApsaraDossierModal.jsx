@@ -111,10 +111,13 @@ export default function ApsaraDossierModal({
                             </span>
                             <div className="flex items-center justify-end gap-1 mt-0.5">
                               <span 
-                                className="text-[8.5px] px-1 py-0.2 rounded font-mono font-black text-white"
-                                style={{ backgroundColor: regionalTier.hex }}
+                                className="text-[8.5px] px-1 py-0.2 rounded font-mono font-black"
+                                style={{ 
+                                  backgroundColor: regionalTier.hex,
+                                  color: regionalTier.textColor || '#ffffff'
+                                }}
                               >
-                                Index {regionalTier.level}
+                                Index {regionalTier.displayLevel || regionalTier.level}
                               </span>
                               <span className="text-[9px] text-ink-600 font-semibold font-mono">
                                 {regionalTier.rangeLabel}

@@ -1012,13 +1012,16 @@ export default function MapViewport({
                   <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1.5">
                     <div className="flex items-center gap-1.5">
                       <span 
-                        className="w-5 h-5 rounded-md font-mono font-black text-white text-[11px] flex items-center justify-center shrink-0 shadow-2xs"
-                        style={{ backgroundColor: tier.hex }}
+                        className="w-5 h-5 rounded-md font-mono font-black text-[11px] flex items-center justify-center shrink-0 shadow-2xs"
+                        style={{ 
+                          backgroundColor: tier.hex,
+                          color: tier.textColor || '#ffffff'
+                        }}
                       >
-                        {tier.level}
+                        {tier.displayLevel || tier.level}
                       </span>
                       <span className="text-[10px] uppercase font-bold text-ink-950 font-mono tracking-tight">
-                        Index: {tier.level}/10 • {tier.tag}
+                        Index: {tier.displayLevel || tier.level}/10 • {tier.tag}
                       </span>
                     </div>
                     <span className="text-[9px] font-mono bg-paper-100 text-ink-700 px-1.5 py-0.5 rounded border border-ink-950/[0.08] font-bold">

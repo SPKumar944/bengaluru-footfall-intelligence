@@ -148,19 +148,25 @@ export default function BottomTransectBar({
         {/* Right: Live Corridor Flow Metric */}
         <div className="flex items-center gap-2.5 font-mono bg-paper-50 px-2.5 py-1 rounded-lg border border-ink-950/[0.1] shrink-0">
           <span 
-            className="w-6 h-6 rounded-md font-mono font-black text-white text-xs flex items-center justify-center shrink-0 shadow-2xs"
-            style={{ backgroundColor: currentTier.hex }}
+            className="w-6 h-6 rounded-md font-mono font-black text-xs flex items-center justify-center shrink-0 shadow-2xs"
+            style={{ 
+              backgroundColor: currentTier.hex,
+              color: currentTier.textColor || '#ffffff'
+            }}
           >
-            {currentTier.level}
+            {currentTier.displayLevel || currentTier.level}
           </span>
           <div>
             <div className="flex items-center gap-1.5 leading-none mb-0.5">
               <span className="text-[9px] text-ink-500 uppercase font-bold">Footfall Index:</span>
               <span 
-                className="text-[9px] font-black font-mono text-white px-1 py-0.2 rounded" 
-                style={{ backgroundColor: currentTier.hex }}
+                className="text-[9px] font-black font-mono px-1 py-0.2 rounded" 
+                style={{ 
+                  backgroundColor: currentTier.hex,
+                  color: currentTier.textColor || '#ffffff'
+                }}
               >
-                {currentTier.level}/10 • {currentTier.tag}
+                {currentTier.displayLevel || currentTier.level}/10 • {currentTier.tag}
               </span>
             </div>
             <div className="text-xs md:text-sm font-extrabold text-ink-950 font-mono leading-tight">
@@ -183,7 +189,7 @@ export default function BottomTransectBar({
               key={item.hour}
               onClick={() => setActiveHour && setActiveHour(item.hour)}
               className="flex-1 flex flex-col items-center justify-end h-full cursor-pointer group relative"
-              title={`Index ${tier.level}/10: ${tier.label} (${tier.rangeLabel}) — ${item.hour.toString().padStart(2, '0')}:00 ${item.phase}`}
+              title={`Index ${tier.displayLevel || tier.level}/10: ${tier.label} (${tier.rangeLabel}) — ${item.hour.toString().padStart(2, '0')}:00 ${item.phase}`}
             >
               {/* Active Hour Indicator Pin */}
               {isSelected && (

@@ -32,14 +32,14 @@ export default function TopRightLegend({
         </span>
       </div>
 
-      {/* 1–10 Segmented Color Ramp Bar */}
+      {/* 1–10+ Segmented Color Ramp Bar */}
       <div>
         <div className="flex items-center justify-between text-[9px] font-bold text-ink-500 mb-1">
-          <span>Scale: 1 (Calm)</span>
-          <span className="text-azure-700">10 (Peak Arterial)</span>
+          <span>Scale: 1 (Quiet)</span>
+          <span className="text-azure-700">10+ (Peak Arterial)</span>
         </div>
 
-        <div className="grid grid-cols-10 gap-0.5 p-0.5 bg-paper-100 rounded-md border border-ink-950/[0.12] shadow-2xs">
+        <div className="grid grid-cols-11 gap-0.5 p-0.5 bg-paper-100 rounded-md border border-ink-950/[0.12] shadow-2xs">
           {FOOTFALL_INDEX_TIERS.map((tier) => {
             const isHovered = hoveredTier?.level === tier.level;
             return (
@@ -51,10 +51,13 @@ export default function TopRightLegend({
                 className={`h-6 rounded-xs flex items-center justify-center cursor-pointer transition-all ${
                   isHovered ? 'scale-110 z-10 shadow-sm ring-2 ring-ink-950' : 'hover:opacity-90'
                 }`}
-                title={`Index ${tier.level}/10: ${tier.label} (${tier.rangeLabel})`}
+                title={`Index ${tier.displayLevel || tier.level}/10: ${tier.label} (${tier.rangeLabel})`}
               >
-                <span className="text-[10px] font-mono font-black text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
-                  {tier.level}
+                <span 
+                  style={{ color: tier.textColor || '#ffffff' }}
+                  className="text-[9px] font-mono font-black drop-shadow-[0_0.5px_1px_rgba(0,0,0,0.3)]"
+                >
+                  {tier.displayLevel || tier.level}
                 </span>
               </div>
             );
@@ -72,10 +75,13 @@ export default function TopRightLegend({
           >
             <div className="flex items-center gap-1.5">
               <span 
-                className="w-3.5 h-3.5 rounded font-black text-white text-[9px] flex items-center justify-center shrink-0"
-                style={{ backgroundColor: hoveredTier.hex }}
+                className="w-4 h-4 rounded font-black text-[9px] flex items-center justify-center shrink-0"
+                style={{ 
+                  backgroundColor: hoveredTier.hex,
+                  color: hoveredTier.textColor || '#ffffff'
+                }}
               >
-                {hoveredTier.level}
+                {hoveredTier.displayLevel || hoveredTier.level}
               </span>
               <span className="font-bold text-ink-950 truncate">{hoveredTier.label}</span>
             </div>
@@ -84,8 +90,8 @@ export default function TopRightLegend({
         ) : (
           <div className="flex justify-between text-[8.5px] text-ink-400 mt-1 font-mono">
             <span>&lt; 50/hr</span>
-            <span>450 – 700</span>
-            <span className="text-azure-700 font-bold">2,300+/hr</span>
+            <span>650 – 900</span>
+            <span className="text-azure-700 font-bold">2,350+/hr</span>
           </div>
         )}
       </div>
@@ -95,11 +101,11 @@ export default function TopRightLegend({
         onClick={() => setShowFullScale(prev => !prev)}
         className="mt-2 w-full py-1 px-2 rounded bg-paper-50 hover:bg-paper-100 border border-ink-950/[0.08] text-[9px] text-ink-600 font-semibold flex items-center justify-between cursor-pointer transition-colors"
       >
-        <span>{showFullScale ? 'Hide Scale Guide' : 'View 1–10 Index Guide'}</span>
+        <span>{showFullScale ? 'Hide Scale Guide' : 'View 1–10+ Index Guide'}</span>
         {showFullScale ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
       </button>
 
-      {/* Expanded 10-Tier Details Drawer */}
+      {/* Expanded 11-Tier Details Drawer */}
       {showFullScale && (
         <div className="mt-2 pt-2 border-t border-ink-950/[0.08] space-y-1 max-h-48 overflow-y-auto pr-0.5">
           {FOOTFALL_INDEX_TIERS.map((tier) => (
@@ -109,10 +115,13 @@ export default function TopRightLegend({
             >
               <div className="flex items-center gap-1.5 min-w-0">
                 <span 
-                  className="w-3.5 h-3.5 rounded text-[8.5px] font-black text-white flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: tier.hex }}
+                  className="w-4 h-4 rounded text-[8.5px] font-black flex items-center justify-center shrink-0"
+                  style={{ 
+                    backgroundColor: tier.hex,
+                    color: tier.textColor || '#ffffff'
+                  }}
                 >
-                  {tier.level}
+                  {tier.displayLevel || tier.level}
                 </span>
                 <span className="font-bold text-ink-800 truncate">{tier.label}</span>
               </div>
