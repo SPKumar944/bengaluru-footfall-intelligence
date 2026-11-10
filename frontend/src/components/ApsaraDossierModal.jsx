@@ -1,5 +1,11 @@
 import React from 'react';
 import { X, MapPin, Star, Footprints, ExternalLink } from 'lucide-react';
+import { 
+  formatStoreCupVolumeRange, 
+  formatStoreMonthlyCustomersRange, 
+  formatCatchmentDailyRange, 
+  formatHourlyFootfallRange 
+} from '../utils/footfallFormatters';
 
 export default function ApsaraDossierModal({
   apsaraStores = [],
@@ -88,18 +94,18 @@ export default function ApsaraDossierModal({
                     </td>
                     <td className="p-2.5 text-right whitespace-nowrap">
                       <span className="text-azure-700 font-bold block text-xs font-mono">
-                        ~{s.store_footfall.est_daily_cups} cups/day
+                        {formatStoreCupVolumeRange(s.store_footfall?.est_daily_cups)}
                       </span>
                       <span className="text-[9px] text-ink-400 block font-mono">
-                        ~{s.store_footfall.est_monthly_customers.toLocaleString()}/mo
+                        {formatStoreMonthlyCustomersRange(s.store_footfall?.est_monthly_customers)}
                       </span>
                     </td>
                     <td className="p-2.5 text-right whitespace-nowrap">
                       <span className="font-bold text-ink-900 block text-xs font-mono">
-                        ~{s.regional_footfall.weekend_daily_footfall.toLocaleString()}/day
+                        {formatCatchmentDailyRange(s.regional_footfall?.weekend_daily_footfall)}
                       </span>
                       <span className="text-[9px] text-azure-700 font-semibold block font-mono">
-                        ~{s.regional_footfall.peak_evening_hourly_flow.toLocaleString()}/hr (7–11 PM)
+                        {formatHourlyFootfallRange(s.regional_footfall?.peak_evening_hourly_flow)}
                       </span>
                     </td>
                     <td className="p-2.5 text-center whitespace-nowrap">

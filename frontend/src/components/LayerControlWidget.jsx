@@ -41,6 +41,11 @@ import {
   EveningTiffinIcon,
   BuildingIcon
 } from './IconMCP';
+import { 
+  formatMonthlyCupVolumeRange, 
+  formatVenueTrafficRange, 
+  formatKidsMonthlyTrafficRange 
+} from '../utils/footfallFormatters';
 
 export default function LayerControlWidget({
   activeLayers,
@@ -393,7 +398,7 @@ export default function LayerControlWidget({
                     <div className="text-ink-500 line-clamp-1">{selectedCompetitor.properties?.address}</div>
                     <div className="text-ink-800 font-semibold flex justify-between pt-1 border-t border-ink-950/[0.08]">
                       <span>Monthly Volume:</span>
-                      <span className="font-bold font-mono">~{selectedCompetitor.properties?.monthly_cup_volume_est?.toLocaleString()} cups/mo</span>
+                      <span className="font-bold font-mono">{formatMonthlyCupVolumeRange(selectedCompetitor.properties?.monthly_cup_volume_est)}</span>
                     </div>
                   </div>
                 )}
@@ -584,7 +589,7 @@ export default function LayerControlWidget({
                     </div>
                     <div className="text-[9px] text-slate-600 flex justify-between">
                       <span>Est. Daily Traffic:</span>
-                      <span className="font-bold">~{selectedComplementaryBrand.properties?.daily_customer_footfall?.toLocaleString()} diners/day</span>
+                      <span className="font-bold">{formatVenueTrafficRange(selectedComplementaryBrand.properties?.daily_customer_footfall, selectedComplementaryBrand.properties?.spectrum_category)}</span>
                     </div>
                     <div className="text-[9px] text-slate-700 font-medium italic border-t border-slate-200 pt-1">
                       {selectedComplementaryBrand.properties?.synergy_reason}
@@ -729,7 +734,7 @@ export default function LayerControlWidget({
                     <div className="text-ink-500 line-clamp-1">{selectedKidsAttraction.properties?.address}</div>
                     <div className="text-ink-800 font-semibold flex justify-between pt-1 border-t border-ink-950/[0.08]">
                       <span>Monthly Traffic:</span>
-                      <span className="font-bold font-mono">~{selectedKidsAttraction.properties?.est_monthly_family_footfall?.toLocaleString()} / mo</span>
+                      <span className="font-bold font-mono">{formatKidsMonthlyTrafficRange(selectedKidsAttraction.properties?.est_monthly_family_footfall)}</span>
                     </div>
                     <div className="text-[9px] text-ink-600 font-medium flex items-center justify-between">
                       <span>Category: {selectedKidsAttraction.properties?.category}</span>

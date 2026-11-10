@@ -5,26 +5,25 @@ export default function TopRightLegend({
   activeHour = 21,
   activeDayType = 'weekend'
 }) {
-  const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
   const isPeak = activeHour >= 19 && activeHour <= 23;
   const isNight = activeHour <= 5;
 
-  let minRange = '< 40';
-  let midRange = '300 - 600';
-  let maxRange = '> 2,500';
+  let minRange = '100 – 200';
+  let midRange = '400 – 800';
+  let maxRange = '1,400 – 2,200 / hr';
 
   if (isNight) {
-    minRange = '< 15';
-    midRange = '~35';
-    maxRange = '~90 / hr';
+    minRange = '< 30';
+    midRange = '40 – 90';
+    maxRange = '100 – 200 / hr';
   } else if (activeHour <= 10) {
-    minRange = '~100';
-    midRange = '~400';
-    maxRange = '~2.8k / hr';
+    minRange = '60 – 150';
+    midRange = '300 – 650';
+    maxRange = '1,000 – 1,600 / hr';
   } else if (isPeak) {
-    minRange = '~250';
-    midRange = '~900';
-    maxRange = '> 4.5k / hr';
+    minRange = '150 – 350';
+    midRange = '700 – 1,300';
+    maxRange = '1,800 – 2,400 / hr';
   }
 
   return (

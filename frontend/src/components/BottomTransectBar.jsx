@@ -1,31 +1,32 @@
 import React, { useRef } from 'react';
 import { Play, Pause, Clock, Footprints, ChevronLeft, ChevronRight } from 'lucide-react';
+import { formatHourlyFootfallRange, formatHourlyCompactRange } from '../utils/footfallFormatters';
 
 const HOURLY_FLOW_PROFILE = [
-  { hour: 0, flow: 540, phase: 'Late Night Transit' },
-  { hour: 1, flow: 260, phase: 'Quiet Night Hours' },
-  { hour: 2, flow: 130, phase: 'Quiet Night Hours' },
-  { hour: 3, flow: 90, phase: 'Quiet Night Hours' },
-  { hour: 4, flow: 120, phase: 'Quiet Night Hours' },
-  { hour: 5, flow: 280, phase: 'Early Morning Transit' },
-  { hour: 6, flow: 750, phase: 'Morning Transit Opening' },
-  { hour: 7, flow: 1850, phase: 'Morning Transit Commute' },
-  { hour: 8, flow: 3900, phase: 'Morning Commercial Flow' },
-  { hour: 9, flow: 4800, phase: 'Morning Retail Activation' },
-  { hour: 10, flow: 3700, phase: 'Commercial Daytime' },
-  { hour: 11, flow: 3400, phase: 'Commercial Daytime' },
-  { hour: 12, flow: 4400, phase: 'Lunch Period' },
-  { hour: 13, flow: 5100, phase: 'Lunch Peak Rush' },
-  { hour: 14, flow: 4100, phase: 'Afternoon Retail' },
-  { hour: 15, flow: 3500, phase: 'Afternoon Retail' },
-  { hour: 16, flow: 4200, phase: 'Evening Transition' },
-  { hour: 17, flow: 5400, phase: 'Evening Commute Transit' },
-  { hour: 18, flow: 6800, phase: 'High Street Evening Demand' },
-  { hour: 19, flow: 7900, phase: 'Prime Evening Peak Window' },
-  { hour: 20, flow: 8540, phase: 'Prime Evening Peak Window' },
-  { hour: 21, flow: 8850, phase: 'Prime Evening Dessert Peak (41% Volume)' },
-  { hour: 22, flow: 7200, phase: 'Late Evening Dining' },
-  { hour: 23, flow: 4500, phase: 'Late Night Commercial Winding' }
+  { hour: 0, flow: 220, phase: 'Late Night Transit' },
+  { hour: 1, flow: 110, phase: 'Quiet Night Hours' },
+  { hour: 2, flow: 60, phase: 'Quiet Night Hours' },
+  { hour: 3, flow: 40, phase: 'Quiet Night Hours' },
+  { hour: 4, flow: 50, phase: 'Quiet Night Hours' },
+  { hour: 5, flow: 110, phase: 'Early Morning Transit' },
+  { hour: 6, flow: 280, phase: 'Morning Transit Opening' },
+  { hour: 7, flow: 650, phase: 'Morning Transit Commute' },
+  { hour: 8, flow: 1100, phase: 'Morning Commercial Flow' },
+  { hour: 9, flow: 1250, phase: 'Morning Retail Activation' },
+  { hour: 10, flow: 850, phase: 'Commercial Daytime' },
+  { hour: 11, flow: 780, phase: 'Commercial Daytime' },
+  { hour: 12, flow: 1100, phase: 'Lunch Period' },
+  { hour: 13, flow: 1350, phase: 'Lunch Peak Rush' },
+  { hour: 14, flow: 1050, phase: 'Afternoon Retail' },
+  { hour: 15, flow: 820, phase: 'Afternoon Retail' },
+  { hour: 16, flow: 980, phase: 'Evening Transition' },
+  { hour: 17, flow: 1300, phase: 'Evening Commute Transit' },
+  { hour: 18, flow: 1550, phase: 'High Street Evening Demand' },
+  { hour: 19, flow: 1750, phase: 'Prime Evening Peak Window' },
+  { hour: 20, flow: 1880, phase: 'Prime Evening Peak Window' },
+  { hour: 21, flow: 1950, phase: 'Prime Dessert Peak (41% Volume)' },
+  { hour: 22, flow: 1600, phase: 'Late Evening Dining' },
+  { hour: 23, flow: 950, phase: 'Late Night Commercial Winding' }
 ];
 
 // Returns thermal bar color based on hour flow
@@ -47,7 +48,7 @@ export default function BottomTransectBar({
 }) {
   const containerRef = useRef(null);
   const isPeak = activeHour >= 19 && activeHour <= 23;
-  const mult = activeDayType === 'weekend' ? 1.35 : 0.85;
+  const mult = activeDayType === 'weekend' ? 1.15 : 0.9;
 
   const currentProfile = HOURLY_FLOW_PROFILE[activeHour] || HOURLY_FLOW_PROFILE[21];
   const currentTotalRate = Math.round(currentProfile.flow * mult);
@@ -149,7 +150,7 @@ export default function BottomTransectBar({
           <div>
             <span className="text-[9px] text-ink-500 uppercase block leading-none">Corridor Hourly Flow:</span>
             <span className="text-xs md:text-sm font-extrabold text-azure-700 font-mono leading-tight">
-              ~{currentTotalRate.toLocaleString()} visitors / hr
+              {formatHourlyFootfallRange(currentTotalRate)}
             </span>
           </div>
         </div>
@@ -167,7 +168,7 @@ export default function BottomTransectBar({
               key={item.hour}
               onClick={() => setActiveHour && setActiveHour(item.hour)}
               className="flex-1 flex flex-col items-center justify-end h-full cursor-pointer group relative"
-              title={`${item.hour.toString().padStart(2, '0')}:00 — ~${Math.round(item.flow * mult).toLocaleString()} pedestrians/hr (${item.phase})`}
+              title={`${item.hour.toString().padStart(2, '0')}:00 — ${formatHourlyCompactRange(Math.round(item.flow * mult))} (${item.phase})`}
             >
               {/* Active Hour Indicator Pin */}
               {isSelected && (

@@ -24,10 +24,10 @@
     "regional_footfall": {
       "corridor_zone": "19th Main & 27th Main High Street",
       "annual_unique_visitors": 17900000,
-      "weekday_daily_footfall": 49041,
-      "weekend_daily_footfall": 70400,
+      "weekday_daily_footfall": 12751,
+      "weekend_daily_footfall": 18304,
       "weekend_surge_pct": 43.6,
-      "peak_evening_hourly_flow": 7216,
+      "peak_evening_hourly_flow": 1876,
       "f_and_b_share_pct": 39.5,
       "mean_dwell_time_mins": 65.0
     }
@@ -57,10 +57,10 @@
     "regional_footfall": {
       "corridor_zone": "100 Feet Rd & 12th Main Strip",
       "annual_unique_visitors": 18450000,
-      "weekday_daily_footfall": 50548,
-      "weekend_daily_footfall": 72400,
+      "weekday_daily_footfall": 13142,
+      "weekend_daily_footfall": 18824,
       "weekend_surge_pct": 43.2,
-      "peak_evening_hourly_flow": 7421,
+      "peak_evening_hourly_flow": 1929,
       "f_and_b_share_pct": 39.5,
       "mean_dwell_time_mins": 65.0
     }
@@ -90,10 +90,10 @@
     "regional_footfall": {
       "corridor_zone": "24th Main Road Commercial Strip (Phase 5)",
       "annual_unique_visitors": 16100000,
-      "weekday_daily_footfall": 44109,
-      "weekend_daily_footfall": 61400,
+      "weekday_daily_footfall": 11468,
+      "weekend_daily_footfall": 15964,
       "weekend_surge_pct": 39.2,
-      "peak_evening_hourly_flow": 6293,
+      "peak_evening_hourly_flow": 1636,
       "f_and_b_share_pct": 39.5,
       "mean_dwell_time_mins": 65.0
     }
@@ -123,10 +123,10 @@
     "regional_footfall": {
       "corridor_zone": "Varthur Main Rd & Siddhapura Commercial Node",
       "annual_unique_visitors": 24800000,
-      "weekday_daily_footfall": 67945,
-      "weekend_daily_footfall": 59800,
+      "weekday_daily_footfall": 17666,
+      "weekend_daily_footfall": 15548,
       "weekend_surge_pct": -12.0,
-      "peak_evening_hourly_flow": 6129,
+      "peak_evening_hourly_flow": 1594,
       "f_and_b_share_pct": 39.5,
       "mean_dwell_time_mins": 65.0
     }
@@ -156,10 +156,10 @@
     "regional_footfall": {
       "corridor_zone": "Hennur Main Road & Petra Complex Node",
       "annual_unique_visitors": 13400000,
-      "weekday_daily_footfall": 36712,
-      "weekend_daily_footfall": 51200,
+      "weekday_daily_footfall": 9545,
+      "weekend_daily_footfall": 13312,
       "weekend_surge_pct": 39.5,
-      "peak_evening_hourly_flow": 5248,
+      "peak_evening_hourly_flow": 1364,
       "f_and_b_share_pct": 39.5,
       "mean_dwell_time_mins": 65.0
     }
@@ -189,10 +189,10 @@
     "regional_footfall": {
       "corridor_zone": "Green Glen Layout Dining Strip",
       "annual_unique_visitors": 23500000,
-      "weekday_daily_footfall": 64383,
-      "weekend_daily_footfall": 53100,
+      "weekday_daily_footfall": 16740,
+      "weekend_daily_footfall": 13806,
       "weekend_surge_pct": -17.5,
-      "peak_evening_hourly_flow": 5442,
+      "peak_evening_hourly_flow": 1415,
       "f_and_b_share_pct": 39.5,
       "mean_dwell_time_mins": 65.0
     }
@@ -222,10 +222,10 @@
     "regional_footfall": {
       "corridor_zone": "1st A Main Rd & 80 Feet Road (7th Block)",
       "annual_unique_visitors": 19200000,
-      "weekday_daily_footfall": 52602,
-      "weekend_daily_footfall": 73800,
+      "weekday_daily_footfall": 13677,
+      "weekend_daily_footfall": 19188,
       "weekend_surge_pct": 40.3,
-      "peak_evening_hourly_flow": 7564,
+      "peak_evening_hourly_flow": 1967,
       "f_and_b_share_pct": 39.5,
       "mean_dwell_time_mins": 65.0
     }
@@ -255,10 +255,10 @@
     "regional_footfall": {
       "corridor_zone": "Mother Dairy Road (Yelahanka New Town)",
       "annual_unique_visitors": 14200000,
-      "weekday_daily_footfall": 38904,
-      "weekend_daily_footfall": 54600,
+      "weekday_daily_footfall": 10115,
+      "weekend_daily_footfall": 14196,
       "weekend_surge_pct": 40.3,
-      "peak_evening_hourly_flow": 5596,
+      "peak_evening_hourly_flow": 1455,
       "f_and_b_share_pct": 39.5,
       "mean_dwell_time_mins": 65.0
     }
@@ -288,10 +288,10 @@
     "regional_footfall": {
       "corridor_zone": "Sampige Road & Margosa Road Strip",
       "annual_unique_visitors": 15800000,
-      "weekday_daily_footfall": 43287,
-      "weekend_daily_footfall": 58900,
+      "weekday_daily_footfall": 11255,
+      "weekend_daily_footfall": 15314,
       "weekend_surge_pct": 36.1,
-      "peak_evening_hourly_flow": 6037,
+      "peak_evening_hourly_flow": 1570,
       "f_and_b_share_pct": 39.5,
       "mean_dwell_time_mins": 65.0
     }
@@ -321,10 +321,10 @@
     "regional_footfall": {
       "corridor_zone": "Nanjappa - Thindlu Road (BEL Layout 2nd Block)",
       "annual_unique_visitors": 11800000,
-      "weekday_daily_footfall": 32328,
-      "weekend_daily_footfall": 44800,
+      "weekday_daily_footfall": 8405,
+      "weekend_daily_footfall": 11648,
       "weekend_surge_pct": 38.6,
-      "peak_evening_hourly_flow": 4592,
+      "peak_evening_hourly_flow": 1194,
       "f_and_b_share_pct": 39.5,
       "mean_dwell_time_mins": 65.0
     }
@@ -354,10 +354,10 @@
     "regional_footfall": {
       "corridor_zone": "80 Feet 30th Main Road (Kathreguppe 3rd Stage)",
       "annual_unique_visitors": 14900000,
-      "weekday_daily_footfall": 40821,
-      "weekend_daily_footfall": 57100,
+      "weekday_daily_footfall": 10613,
+      "weekend_daily_footfall": 14846,
       "weekend_surge_pct": 39.9,
-      "peak_evening_hourly_flow": 5852,
+      "peak_evening_hourly_flow": 1522,
       "f_and_b_share_pct": 39.5,
       "mean_dwell_time_mins": 65.0
     }
@@ -387,10 +387,10 @@
     "regional_footfall": {
       "corridor_zone": "30th Cross Road & 11th Main (4th Block Shopping Hub)",
       "annual_unique_visitors": 16800000,
-      "weekday_daily_footfall": 46027,
-      "weekend_daily_footfall": 58600,
+      "weekday_daily_footfall": 11967,
+      "weekend_daily_footfall": 15236,
       "weekend_surge_pct": 27.3,
-      "peak_evening_hourly_flow": 6006,
+      "peak_evening_hourly_flow": 1562,
       "f_and_b_share_pct": 39.5,
       "mean_dwell_time_mins": 65.0
     }
@@ -420,10 +420,10 @@
     "regional_footfall": {
       "corridor_zone": "Gandhi Bazaar Main Road & Anjaneya Temple St",
       "annual_unique_visitors": 15200000,
-      "weekday_daily_footfall": 41643,
-      "weekend_daily_footfall": 59400,
+      "weekday_daily_footfall": 10827,
+      "weekend_daily_footfall": 15444,
       "weekend_surge_pct": 42.6,
-      "peak_evening_hourly_flow": 6088,
+      "peak_evening_hourly_flow": 1583,
       "f_and_b_share_pct": 39.5,
       "mean_dwell_time_mins": 65.0
     }

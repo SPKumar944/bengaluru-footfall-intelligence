@@ -13,6 +13,16 @@ import {
 import { H3HexagonLayer } from '@deck.gl/geo-layers';
 import { Hexagon } from 'lucide-react';
 import maplibregl from 'maplibre-gl';
+import { 
+  formatHourlyFootfallRange, 
+  formatDailyFootfallRange, 
+  formatCatchmentDailyRange,
+  formatStoreCupVolumeRange,
+  formatStoreMonthlyCustomersRange,
+  formatMonthlyCupVolumeRange,
+  formatVenueTrafficRange,
+  formatKidsMonthlyTrafficRange
+} from '../utils/footfallFormatters';
 
 const CARTO_POSITRON = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
 
@@ -670,25 +680,25 @@ export default function MapViewport({
                 <div className="flex justify-between">
                   <span className="text-ink-500">Est. Daily Footfall:</span>
                   <span className="text-azure-700 font-extrabold text-xs font-mono">
-                    ~{hoverInfo.object.store_footfall.est_daily_cups} cups/day
+                    {formatStoreCupVolumeRange(hoverInfo.object.store_footfall.est_daily_cups)}
                   </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-ink-500">Monthly Customers:</span>
                   <span className="text-ink-900 font-bold font-mono">
-                    ~{hoverInfo.object.store_footfall.est_monthly_customers.toLocaleString()} / mo
+                    {formatStoreMonthlyCustomersRange(hoverInfo.object.store_footfall.est_monthly_customers)}
                   </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-ink-500">Prime Evening Flow:</span>
                   <span className="text-ink-950 font-bold font-mono">
-                    ~{hoverInfo.object.regional_footfall.peak_evening_hourly_flow.toLocaleString()} visitors/hr (7–11 PM)
+                    {formatHourlyFootfallRange(hoverInfo.object.regional_footfall.peak_evening_hourly_flow)}
                   </span>
                 </div>
                 <div className="flex justify-between text-[10px]">
                   <span className="text-ink-400">Corridor Weekend Traffic:</span>
                   <span className="text-ink-600 font-semibold font-mono">
-                    ~{(hoverInfo.object.regional_footfall.weekend_daily_footfall / 1000).toFixed(1)}k / day
+                    {formatCatchmentDailyRange(hoverInfo.object.regional_footfall.weekend_daily_footfall)}
                   </span>
                 </div>
               </div>
@@ -720,19 +730,19 @@ export default function MapViewport({
                       <div className="flex justify-between">
                         <span className="text-ink-500">Peak Evening Flow:</span>
                         <span className="text-azure-700 font-extrabold font-mono">
-                          ~{p.peak_evening_hourly_flow?.toLocaleString()} visitors/hr
+                          {formatHourlyFootfallRange(p.peak_evening_hourly_flow)}
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-ink-500">Weekend Footfall:</span>
+                        <span className="text-ink-500">Weekend Walkshed:</span>
                         <span className="text-ink-900 font-bold font-mono">
-                          ~{p.weekend_daily_footfall?.toLocaleString()} / day
+                          {formatCatchmentDailyRange(p.weekend_daily_footfall)}
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-ink-500">Est. Store Daily Cups:</span>
+                        <span className="text-ink-500">Est. Store Volume:</span>
                         <span className="text-azure-700 font-bold font-mono">
-                          ~{p.est_daily_cups} cups/day
+                          {formatStoreCupVolumeRange(p.est_daily_cups)}
                         </span>
                       </div>
                     </div>
@@ -757,7 +767,7 @@ export default function MapViewport({
                     <div className="text-[10px] text-ink-400 line-clamp-2">{p.address}</div>
                     <div className="pt-1 border-t border-ink-950/[0.08] flex justify-between text-[11px]">
                       <span className="text-ink-500">Est. Monthly Volume:</span>
-                      <span className="text-ink-950 font-extrabold font-mono">~{p.monthly_cup_volume_est?.toLocaleString()} cups/mo</span>
+                      <span className="text-ink-950 font-extrabold font-mono">{formatMonthlyCupVolumeRange(p.monthly_cup_volume_est)}</span>
                     </div>
                   </div>
                 );
@@ -787,7 +797,7 @@ export default function MapViewport({
                       </div>
                       <div className="flex justify-between">
                         <span className="text-ink-500">Monthly Family Traffic:</span>
-                        <span className="text-ink-950 font-bold font-mono">~{p.est_monthly_family_footfall?.toLocaleString()} / mo</span>
+                        <span className="text-ink-950 font-bold font-mono">{formatKidsMonthlyTrafficRange(p.est_monthly_family_footfall)}</span>
                       </div>
                       <div className="flex justify-between text-[10px]">
                         <span className="text-ink-400">Peak Footfall:</span>
@@ -870,7 +880,7 @@ export default function MapViewport({
                       </div>
                       <div className="flex justify-between text-[10px]">
                         <span className="text-ink-400">Daily Footfall Volume:</span>
-                        <span className="text-ink-800 font-semibold font-mono">~{p.daily_customer_footfall?.toLocaleString()} / day</span>
+                        <span className="text-ink-800 font-semibold font-mono">{formatVenueTrafficRange(p.daily_customer_footfall, p.spectrum_category || p.category)}</span>
                       </div>
                       <div className="pt-0.5 text-[10px] text-ink-700 font-medium italic border-t border-ink-950/[0.06]">
                         {p.synergy_reason}
@@ -1040,39 +1050,47 @@ export default function MapViewport({
 
               // Case G: Street Footfall Vector Segment
               const hrVal = p.hourly_footfall?.[activeHour] || 100;
-              const mult = activeDayType === 'weekend' ? 1.35 : 0.9;
+              const mult = activeDayType === 'weekend' ? 1.15 : 0.9;
               const currentFlow = Math.round(hrVal * mult);
               return (
-                <div className="space-y-1 min-w-[210px]">
-                  <div className="flex justify-between items-center border-b border-slate-200 pb-1">
-                    <span className="text-[10px] uppercase font-bold text-red-700">Street Corridor</span>
-                    <span className="text-[9px] font-mono bg-amber-100 text-amber-900 px-1.5 py-0.2 rounded font-bold">
-                      {activeHour}:00 {activeDayType === 'weekend' ? 'Wknd' : 'Wkd'}
+                <div className="space-y-1.5 min-w-[230px]">
+                  <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1">
+                    <span className="text-[10px] uppercase font-bold text-azure-700 bg-azure-500/[0.08] px-1.5 py-0.5 rounded border border-azure-500/30 font-mono">
+                      Street Corridor
+                    </span>
+                    <span className="text-[9px] font-mono bg-paper-100 text-ink-700 px-1.5 py-0.5 rounded border border-ink-950/[0.08] font-bold">
+                      {activeHour.toString().padStart(2, '0')}:00 {activeDayType === 'weekend' ? 'Wknd' : 'Wkd'}
                     </span>
                   </div>
-                  <div className="text-xs font-extrabold text-slate-900">{p.street_name}</div>
-                  <div className="text-[10px] text-slate-500">{p.locality || p.corridor_name || p.corridor_zone}</div>
+                  <div className="text-xs font-extrabold text-ink-950">{p.street_name || 'Corridor Segment'}</div>
+                  <div className="text-[10px] text-ink-500 font-medium">{p.locality || p.corridor_name || p.corridor_zone}</div>
                   
-                  <div className="flex justify-between pt-1 border-t border-slate-100">
-                    <span className="text-slate-500">Live Hourly Flow:</span>
-                    <span className="text-red-700 font-extrabold text-xs">~{currentFlow.toLocaleString()} visitors/hr</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-500">Total Daily Traffic:</span>
-                    <span className="text-slate-800 font-semibold">{p.daily_footfall?.toLocaleString()} / day</span>
-                  </div>
-                  {p.corridor_tier && (
-                    <div className="flex justify-between text-[9px] text-amber-700 font-semibold">
-                      <span>Corridor Tier:</span>
-                      <span>{p.corridor_tier}</span>
+                  <div className="space-y-1 pt-1 border-t border-ink-950/[0.06] text-[11px]">
+                    <div className="flex justify-between items-center">
+                      <span className="text-ink-500">Live Hourly Flow:</span>
+                      <span className="text-azure-700 font-extrabold text-xs font-mono">
+                        {formatHourlyFootfallRange(currentFlow)}
+                      </span>
                     </div>
-                  )}
-                  {p.highway_type && (
-                    <div className="flex justify-between text-[9px] text-slate-400">
-                      <span>Highway Class:</span>
-                      <span className="capitalize">{p.highway_type}</span>
+                    <div className="flex justify-between items-center">
+                      <span className="text-ink-500">Daily Pedestrian Traffic:</span>
+                      <span className="text-ink-900 font-bold font-mono">
+                        {formatDailyFootfallRange(p.daily_footfall)}
+                      </span>
                     </div>
-                  )}
+                    {p.corridor_tier && (
+                      <div className="flex justify-between text-[10px] text-ink-600 font-medium">
+                        <span className="text-ink-400">Corridor Tier:</span>
+                        <span className="text-ink-800 font-semibold">{p.corridor_tier}</span>
+                      </div>
+                    )}
+                    {p.highway_type && (
+                      <div className="flex justify-between text-[10px] text-ink-400">
+                        <span>Road Classification:</span>
+                        <span className="capitalize text-ink-600 font-medium">{p.highway_type}</span>
+                      </div>
+                    )}
+                  </div>
                 </div>
               );
             })()
