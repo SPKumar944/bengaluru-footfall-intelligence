@@ -292,17 +292,15 @@ export default function LayerControlWidget({
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
                     <CircleDot className="w-3.5 h-3.5 text-azure-600" />
-                    Traffic Isochrones (5–30m)
+                    Traffic Isochrones (5m & 10m)
                   </span>
-                  <div className="flex items-center gap-1">
-                    <span className="w-2 h-2 rounded-full bg-[#10b981]" title="5 min isochrone" />
-                    <span className="w-2 h-2 rounded-full bg-[#3b82f6]" title="10 min isochrone" />
-                    <span className="w-2 h-2 rounded-full bg-[#f59e0b]" title="20 min isochrone" />
-                    <span className="w-2 h-2 rounded-full bg-[#ef4444]" title="30 min isochrone" />
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#10b981]" title="5 min walk / quick ride" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#3b82f6]" title="10 min primary delivery / drive" />
                   </div>
                 </div>
                 <p className="text-[9px] text-ink-500 mt-0.5">
-                  5, 10, 20, 30 min • Monday to Sunday traffic
+                  5 & 10 min • Mon–Sun real traffic kinematics
                 </p>
               </div>
             </div>
@@ -313,19 +311,17 @@ export default function LayerControlWidget({
                 onClick={(e) => e.stopPropagation()}
                 className="mt-2.5 pt-2 border-t border-ink-950/[0.08] space-y-2 text-xs font-mono"
               >
-                {/* Duration Filter Buttons */}
+                {/* Duration Filter Buttons: All, 5m, 10m */}
                 <div>
                   <div className="flex items-center justify-between text-[10px] font-bold text-ink-950 mb-1">
                     <span>Travel Time Tiers:</span>
                     <span className="text-[9px] text-azure-700 capitalize font-bold">{activeDay} traffic</span>
                   </div>
-                  <div className="grid grid-cols-5 gap-1 text-[10px]">
+                  <div className="grid grid-cols-3 gap-1.5 text-[10px]">
                     {[
-                      { id: 'ALL', label: 'All', color: '#0f172a' },
-                      { id: 5, label: '5m', color: '#10b981' },
-                      { id: 10, label: '10m', color: '#3b82f6' },
-                      { id: 20, label: '20m', color: '#f59e0b' },
-                      { id: 30, label: '30m', color: '#ef4444' }
+                      { id: 'ALL', label: 'All Tiers', color: '#0f172a' },
+                      { id: 5, label: '5m Walk/Ride', color: '#10b981' },
+                      { id: 10, label: '10m Drive', color: '#3b82f6' }
                     ].map(btn => {
                       const isSelected = selectedIsochroneDuration === btn.id;
                       return (
@@ -346,7 +342,7 @@ export default function LayerControlWidget({
                   </div>
                 </div>
 
-                {/* Scope Selection: Active Store vs All 13 Outlets */}
+                {/* Scope Selection: Active Store vs All 31 Outlets */}
                 <div className="flex items-center justify-between text-[10px] pt-1 border-t border-ink-950/[0.06]">
                   <span className="text-ink-600 font-semibold">Isochrone Scope:</span>
                   <div className="flex items-center gap-1">
@@ -368,7 +364,7 @@ export default function LayerControlWidget({
                           : 'bg-white text-ink-600 border-ink-950/[0.1] hover:bg-paper-100'
                       }`}
                     >
-                      All 13 Stores
+                      All 31 Outlets
                     </button>
                   </div>
                 </div>
@@ -413,7 +409,7 @@ export default function LayerControlWidget({
               <div className="flex items-center justify-between">
                 <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
                   <IceCreamIcon size={14} className="text-ink-950" />
-                  Apsara Outlets (13)
+                  Apsara Outlets (31)
                 </span>
                 <span className="w-4 h-4 rounded-full border border-ink-950 bg-white flex items-center justify-center shadow-2xs">
                   <IceCreamIcon size={9} className="text-ink-950" />

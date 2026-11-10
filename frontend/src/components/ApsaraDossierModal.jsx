@@ -34,7 +34,7 @@ export default function ApsaraDossierModal({
                   AGT · Client Dossier
                 </span>
                 <h2 className="font-sans text-base font-extrabold text-ink-950">
-                  Apsara Ice Cream — Bengaluru Store Register (13 Locations)
+                  Apsara Ice Cream — Bengaluru Store Register ({apsaraStores.length} Outlets)
                 </h2>
               </div>
               <p className="text-xs font-mono text-ink-500 mt-0.5">
@@ -148,8 +148,10 @@ export default function ApsaraDossierModal({
 
         {/* Footer */}
         <div className="p-3 px-6 bg-paper-50 border-t border-ink-950/[0.08] flex items-center justify-between text-xs font-mono text-ink-500">
-          <span>13 Active Outlets in Bengaluru Urban</span>
-          <span className="text-azure-700 font-semibold">Total Tracked Reviews: 6,857 | Network Volume: ~730 cups/day</span>
+          <span>{apsaraStores.length} Verified Outlets in Bengaluru Urban</span>
+          <span className="text-azure-700 font-semibold">
+            Total Tracked Reviews: {apsaraStores.reduce((acc, s) => acc + (s.google_review_count || 0), 0).toLocaleString()} | Network Volume: ~{apsaraStores.reduce((acc, s) => acc + (s.store_footfall?.est_daily_cups || 0), 0).toLocaleString()} cups/day
+          </span>
         </div>
       </div>
     </div>

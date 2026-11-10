@@ -191,17 +191,15 @@ export default function App() {
     setActiveLayers(prev => ({ ...prev, isochrones: true, catchments: true }));
     if (selectedApsaraStore?.coordinates) {
       const zoomMap = {
-        5: 14.2,
-        10: 13.2,
-        20: 12.2,
-        30: 11.5,
-        ALL: 12.6
+        5: 14.8,
+        10: 13.8,
+        ALL: 13.6
       };
       setViewState(prev => ({
         ...prev,
         longitude: selectedApsaraStore.coordinates.lng,
         latitude: selectedApsaraStore.coordinates.lat,
-        zoom: zoomMap[duration] || 12.6,
+        zoom: zoomMap[duration] || 13.6,
         transitionDuration: 650
       }));
     }
