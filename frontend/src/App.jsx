@@ -30,6 +30,7 @@ export default function App() {
   const [techParksData, setTechParksData] = useState(null);
   const [officeFootprintsData, setOfficeFootprintsData] = useState(null);
   const [hexDemographicsData, setHexDemographicsData] = useState(null);
+  const [educationPoisData, setEducationPoisData] = useState(null);
   const [demographicGender, setDemographicGender] = useState('all'); // 'all' | 'male' | 'female'
   const [demographicAge, setDemographicAge] = useState('all'); // 'all' | 'kids' | 'youth' | 'adults' | 'seniors'
 
@@ -42,7 +43,8 @@ export default function App() {
     kidsAttractions: true,   // 116 Kids & Family Footfall Magnets
     techParks: false,        // 95 Tech Parks & IT Campuses
     officeFootprints: false, // 3,137 Commercial Office Buildings
-    hexDemographics: false   // 19.5k H3 Hexagon Demographics & Density
+    hexDemographics: false,  // 19.5k H3 Hexagon Demographics & Density
+    educationPois: true      // 102 Schools, Colleges & Coaching Institutes
   });
 
   // Selected Entities
@@ -52,6 +54,8 @@ export default function App() {
   const [selectedCompetitor, setSelectedCompetitor] = useState(null);
   const [selectedKidsCategory, setSelectedKidsCategory] = useState('ALL');
   const [selectedKidsAttraction, setSelectedKidsAttraction] = useState(null);
+  const [selectedEducationCategory, setSelectedEducationCategory] = useState('ALL');
+  const [selectedEducationPoi, setSelectedEducationPoi] = useState(null);
 
   // Temporal Dynamic State (24-Hour Diurnal Player)
   const [activeHour, setActiveHour] = useState(21); // Default 9:00 PM peak dessert window
@@ -66,13 +70,14 @@ export default function App() {
       try {
         setLoading(true);
         const b = import.meta.env.BASE_URL;
-        const [streetRes, catchmentsRes, apsaraRes, competitorsRes, tpRes, kidsRes] = await Promise.all([
+        const [streetRes, catchmentsRes, apsaraRes, competitorsRes, tpRes, kidsRes, eduRes] = await Promise.all([
           fetch(`${b}data/all_stores_street_footfall.geojson`).then(r => r.json()),
           fetch(`${b}data/apsara_store_footfall_catchments.geojson`).then(r => r.json()),
           fetch(`${b}data/apsara_ice_cream_bangalore_footfall.json`).then(r => r.json()),
           fetch(`${b}data/layer5_competitors.geojson`).then(r => r.json()).catch(() => null),
           fetch(`${b}data/mapped_tech_parks.geojson`).then(r => r.json()).catch(() => null),
-          fetch(`${b}data/kids_family_attractions.geojson`).then(r => r.json()).catch(() => null)
+          fetch(`${b}data/kids_family_attractions.geojson`).then(r => r.json()).catch(() => null),
+          fetch(`${b}data/education_youth_pois.geojson`).then(r => r.json()).catch(() => null)
         ]);
 
         setStreetFootfallData(streetRes);
@@ -81,6 +86,7 @@ export default function App() {
         if (competitorsRes) setCompetitorsData(competitorsRes);
         if (tpRes) setTechParksData(tpRes);
         if (kidsRes) setKidsAttractionsData(kidsRes);
+        if (eduRes) setEducationPoisData(eduRes);
 
         if (apsaraRes && apsaraRes.length > 0) {
           // Default selection to Indiranagar outlet
@@ -208,6 +214,36 @@ export default function App() {
     }
   };
 
+  // Change education category filter and ensure active layer
+  const handleSelectEducationCategory = (category) => {
+    setSelectedEducationCategory(category);
+    setActiveLayers(prev => ({ ...prev, educationPois: true }));
+    if (selectedEducationPoi && category !== 'ALL' && selectedEducationPoi.properties?.category !== category) {
+      setSelectedEducationPoi(null);
+    }
+  };
+
+  // Select an education institution and fly to its location
+  const handleSelectEducationPoi = (poi) => {
+    setSelectedEducationPoi(poi);
+    setActiveLayers(prev => ({ ...prev, educationPois: true }));
+    if (poi?.properties?.category && selectedEducationCategory !== 'ALL' && selectedEducationCategory !== poi.properties.category) {
+      setSelectedEducationCategory(poi.properties.category);
+    }
+    if (poi?.geometry?.coordinates) {
+      const [lng, lat] = poi.geometry.coordinates;
+      setViewState(prev => ({
+        ...prev,
+        longitude: lng,
+        latitude: lat,
+        zoom: 15.6,
+        pitch: 0,
+        bearing: 0,
+        transitionDuration: 900
+      }));
+    }
+  };
+
   // Reset to Bangalore City View showing all stores
   const resetCityView = () => {
     setViewState({
@@ -274,6 +310,10 @@ export default function App() {
           selectedKidsCategory={selectedKidsCategory}
           selectedKidsAttraction={selectedKidsAttraction}
           onSelectKidsAttraction={handleSelectKidsAttraction}
+          educationPoisData={educationPoisData}
+          selectedEducationCategory={selectedEducationCategory}
+          selectedEducationPoi={selectedEducationPoi}
+          onSelectEducationPoi={handleSelectEducationPoi}
           techParksData={techParksData}
           officeFootprintsData={officeFootprintsData}
           hexDemographicsData={hexDemographicsData}
@@ -307,6 +347,11 @@ export default function App() {
             setSelectedKidsCategory={handleSelectKidsCategory}
             selectedKidsAttraction={selectedKidsAttraction}
             onSelectKidsAttraction={handleSelectKidsAttraction}
+            educationPoisData={educationPoisData}
+            selectedEducationCategory={selectedEducationCategory}
+            setSelectedEducationCategory={handleSelectEducationCategory}
+            selectedEducationPoi={selectedEducationPoi}
+            onSelectEducationPoi={handleSelectEducationPoi}
             demographicGender={demographicGender}
             setDemographicGender={setDemographicGender}
             demographicAge={demographicAge}

@@ -1,0 +1,1930 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7368,
+          12.8942
+        ]
+      },
+      "properties": {
+        "id": "SCH_01",
+        "name": "Greenwood High International School",
+        "category": "School",
+        "sub_category": "IB / IGCSE / ICSE",
+        "locality": "Sarjapur Road / Varthur",
+        "zone": "South-East",
+        "address": "Chikkawadayarapura, Gunjur Post, Varthur - Sarjapur Rd, Bengaluru 560087",
+        "student_capacity": 4500,
+        "target_age_group": "Kids & Teens (3\u201318 yrs)",
+        "peak_window": "2:00 PM \u2013 4:00 PM (Dispersal)",
+        "synergy_score": 98,
+        "dessert_synergy_reason": "Massive affluent family cluster; daily parent carpool pickup and school bus transit.",
+        "nearest_hub": "Sarjapur - Varthur Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7578,
+          12.8682
+        ]
+      },
+      "properties": {
+        "id": "SCH_02",
+        "name": "The International School Bangalore (TISB)",
+        "category": "School",
+        "sub_category": "IB World School",
+        "locality": "Sarjapur Circle",
+        "zone": "South-East",
+        "address": "NAFL Valley, Whitefield - Sarjapur Road, Near Dommasandra Circle, Bengaluru 562125",
+        "student_capacity": 1800,
+        "target_age_group": "Kids & Teens (4\u201318 yrs)",
+        "peak_window": "3:00 PM \u2013 4:30 PM (Campus Exit)",
+        "synergy_score": 92,
+        "dessert_synergy_reason": "Elite residential boarding & day-school community with premium dessert spending.",
+        "nearest_hub": "Sarjapur - Varthur Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7392,
+          12.8875
+        ]
+      },
+      "properties": {
+        "id": "SCH_03",
+        "name": "Inventure Academy",
+        "category": "School",
+        "sub_category": "CIS / IGCSE / A Levels",
+        "locality": "Sarjapur Road",
+        "zone": "South-East",
+        "address": "Near Dommasandra Circle, Whitefield-Sarjapur Rd, Bengaluru 562125",
+        "student_capacity": 2200,
+        "target_age_group": "Kids & Teens (3\u201318 yrs)",
+        "peak_window": "2:30 PM \u2013 4:00 PM (Afternoon Dispersal)",
+        "synergy_score": 95,
+        "dessert_synergy_reason": "High-income IT leadership parent demographic; afternoon refreshment trips.",
+        "nearest_hub": "Sarjapur - Varthur Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6985,
+          12.9038
+        ]
+      },
+      "properties": {
+        "id": "SCH_04",
+        "name": "Delhi Public School (DPS) Bangalore East",
+        "category": "School",
+        "sub_category": "CBSE K-12",
+        "locality": "Doddakannelli / Sarjapur Rd",
+        "zone": "South-East",
+        "address": "Survey No. 43/1B & 45, Sulikunte Village, Dommasandra Post, Sarjapur Rd, Bengaluru 560035",
+        "student_capacity": 6500,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "1:30 PM \u2013 3:30 PM (Major Dispersal)",
+        "synergy_score": 99,
+        "dessert_synergy_reason": "Largest single K-12 student body in East Bengaluru; huge family transit volume.",
+        "nearest_hub": "Bellandur & Outer Ring Rd"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5425,
+          12.8715
+        ]
+      },
+      "properties": {
+        "id": "SCH_05",
+        "name": "Delhi Public School (DPS) Bangalore South",
+        "category": "School",
+        "sub_category": "CBSE K-12",
+        "locality": "Kanakapura Road",
+        "zone": "South",
+        "address": "11th KM, Bikashipura, Post, Doddakallasandra, Kanakapura Rd, Bengaluru 560062",
+        "student_capacity": 5800,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "1:30 PM \u2013 3:30 PM (Dispersal)",
+        "synergy_score": 98,
+        "dessert_synergy_reason": "Primary institutional anchor on Kanakapura Rd next to Metro Green Line.",
+        "nearest_hub": "JP Nagar & Kanakapura Rd"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6085,
+          13.1228
+        ]
+      },
+      "properties": {
+        "id": "SCH_06",
+        "name": "Delhi Public School (DPS) Bangalore North",
+        "category": "School",
+        "sub_category": "CBSE K-12",
+        "locality": "Yelahanka / Bagalur",
+        "zone": "North",
+        "address": "Survey No. 35/1A, Sathnur Village, Bagalur Post, Off Bellary Rd, Bengaluru 562149",
+        "student_capacity": 5500,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "1:30 PM \u2013 3:30 PM (Dispersal)",
+        "synergy_score": 96,
+        "dessert_synergy_reason": "Highest footfall school campus in North Bengaluru aerospace & residential belt.",
+        "nearest_hub": "Yelahanka New Town"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5358,
+          12.8612
+        ]
+      },
+      "properties": {
+        "id": "SCH_07",
+        "name": "The Kumarans Children's Home (CBSE & ICSE)",
+        "category": "School",
+        "sub_category": "CBSE / ICSE K-12",
+        "locality": "Mallasandra / Kanakapura Rd",
+        "zone": "South",
+        "address": "Survey No. 44-50, Mallasandra Village, Uttarahalli Hobli, Off Kanakapura Rd, Bengaluru 560062",
+        "student_capacity": 4200,
+        "target_age_group": "Kids & Teens (3\u201317 yrs)",
+        "peak_window": "2:00 PM \u2013 4:00 PM (Afternoon Pickup)",
+        "synergy_score": 97,
+        "dessert_synergy_reason": "Prestigious legacy institution with high-density family car travel.",
+        "nearest_hub": "JP Nagar & Kanakapura Rd"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6432,
+          12.9715
+        ]
+      },
+      "properties": {
+        "id": "SCH_08",
+        "name": "National Public School (NPS) Indiranagar",
+        "category": "School",
+        "sub_category": "CBSE K-12",
+        "locality": "Indiranagar",
+        "zone": "East",
+        "address": "12th A Main Rd, HAL 2nd Stage, Indiranagar, Bengaluru 560008",
+        "student_capacity": 3200,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "1:30 PM \u2013 3:30 PM (School Exit)",
+        "synergy_score": 97,
+        "dessert_synergy_reason": "Direct pedestrian adjacency to 100ft Road and 12th Main gourmet dessert strip.",
+        "nearest_hub": "Indiranagar 100ft Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6288,
+          12.9348
+        ]
+      },
+      "properties": {
+        "id": "SCH_09",
+        "name": "National Public School (NPS) Koramangala",
+        "category": "School",
+        "sub_category": "CBSE K-12",
+        "locality": "Koramangala 4th Block",
+        "zone": "South-East",
+        "address": "National Games Village Complex, 80 Feet Rd, Koramangala 4th Block, Bengaluru 560047",
+        "student_capacity": 2800,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "1:30 PM \u2013 3:30 PM (Dispersal)",
+        "synergy_score": 96,
+        "dessert_synergy_reason": "Center of Koramangala family and youth residential quarter.",
+        "nearest_hub": "Koramangala 5th Block"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5532,
+          12.9885
+        ]
+      },
+      "properties": {
+        "id": "SCH_10",
+        "name": "National Public School (NPS) Rajajinagar",
+        "category": "School",
+        "sub_category": "CBSE K-12",
+        "locality": "Rajajinagar",
+        "zone": "West",
+        "address": "Chord Road, 5th Block, Rajajinagar, Bengaluru 560010",
+        "student_capacity": 3000,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "1:30 PM \u2013 3:30 PM (Dispersal)",
+        "synergy_score": 95,
+        "dessert_synergy_reason": "Oldest NPS flagship campus; high concentration of multi-generational families.",
+        "nearest_hub": "Rajajinagar Dr Rajkumar Rd"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6358,
+          12.9152
+        ]
+      },
+      "properties": {
+        "id": "SCH_11",
+        "name": "National Public School (NPS) HSR Layout",
+        "category": "School",
+        "sub_category": "CBSE K-12",
+        "locality": "HSR Layout Sector 4",
+        "zone": "South-East",
+        "address": "17th Cross, 9th Main, Sector 4, HSR Layout, Bengaluru 560102",
+        "student_capacity": 2600,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "1:30 PM \u2013 3:30 PM (Dispersal)",
+        "synergy_score": 96,
+        "dessert_synergy_reason": "Direct feeder into HSR 27th Main commercial and coaching corridor.",
+        "nearest_hub": "HSR Layout Sector 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6015,
+          12.9698
+        ]
+      },
+      "properties": {
+        "id": "SCH_12",
+        "name": "Bishop Cotton Boys' School",
+        "category": "School",
+        "sub_category": "ICSE / ISC K-12",
+        "locality": "St. Mark's Road / Ashok Nagar",
+        "zone": "Central",
+        "address": "15, St Mark's Rd, Ashok Nagar, Bengaluru 560001",
+        "student_capacity": 4800,
+        "target_age_group": "Kids & Teens (5\u201318 yrs)",
+        "peak_window": "2:30 PM \u2013 4:00 PM (Dispersal)",
+        "synergy_score": 96,
+        "dessert_synergy_reason": "Prime central Bengaluru footfall; students flood Church Street & Brigade Rd cafes.",
+        "nearest_hub": "Central CBD & MG Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6002,
+          12.9682
+        ]
+      },
+      "properties": {
+        "id": "SCH_13",
+        "name": "Bishop Cotton Girls' School",
+        "category": "School",
+        "sub_category": "ICSE / ISC K-12",
+        "locality": "St. Mark's Road / Residency Rd",
+        "zone": "Central",
+        "address": "St. Mark's Road, Residency Rd, Shantala Nagar, Bengaluru 560025",
+        "student_capacity": 4200,
+        "target_age_group": "Kids & Teens (4\u201318 yrs)",
+        "peak_window": "2:30 PM \u2013 4:00 PM (Dispersal)",
+        "synergy_score": 95,
+        "dessert_synergy_reason": "Historic high-footfall campus in CBD dining & dessert quadrant.",
+        "nearest_hub": "Central CBD & MG Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6045,
+          12.9725
+        ]
+      },
+      "properties": {
+        "id": "SCH_14",
+        "name": "St. Joseph's Boys' High School",
+        "category": "School",
+        "sub_category": "ICSE / ISC",
+        "locality": "Museum Road",
+        "zone": "Central",
+        "address": "27, Museum Rd, Shanthala Nagar, Ashok Nagar, Bengaluru 560025",
+        "student_capacity": 3500,
+        "target_age_group": "Kids & Teens (5\u201318 yrs)",
+        "peak_window": "2:30 PM \u2013 4:00 PM (Dispersal)",
+        "synergy_score": 94,
+        "dessert_synergy_reason": "Direct pedestrian access to Church St ice cream & fast casual cafes.",
+        "nearest_hub": "Central CBD & MG Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7472,
+          12.9678
+        ]
+      },
+      "properties": {
+        "id": "SCH_15",
+        "name": "The Deens Academy",
+        "category": "School",
+        "sub_category": "CBSE K-12",
+        "locality": "Whitefield ECC Road",
+        "zone": "East",
+        "address": "ECC Rd, Dodsworth Layout, Whitefield, Bengaluru 560066",
+        "student_capacity": 3400,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "2:00 PM \u2013 3:45 PM (Dispersal)",
+        "synergy_score": 95,
+        "dessert_synergy_reason": "High-density tech family residential belt near ITPL.",
+        "nearest_hub": "Whitefield (ITPL & ECC Rd)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7285,
+          12.9772
+        ]
+      },
+      "properties": {
+        "id": "SCH_16",
+        "name": "Vydehi School of Excellence",
+        "category": "School",
+        "sub_category": "CBSE K-12",
+        "locality": "Whitefield EPIP Zone",
+        "zone": "East",
+        "address": "82, EPIP Area, Whitefield, Near Vydehi Hospital, Bengaluru 560066",
+        "student_capacity": 3800,
+        "target_age_group": "Kids & Teens (3\u201317 yrs)",
+        "peak_window": "2:00 PM \u2013 3:30 PM (Dispersal)",
+        "synergy_score": 94,
+        "dessert_synergy_reason": "Surrounded by tech parks and major gated apartments.",
+        "nearest_hub": "Whitefield (ITPL & ECC Rd)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7612,
+          12.9852
+        ]
+      },
+      "properties": {
+        "id": "SCH_17",
+        "name": "Whitefield Global School",
+        "category": "School",
+        "sub_category": "CBSE K-12",
+        "locality": "Channasandra / Whitefield",
+        "zone": "East",
+        "address": "KRS Garden, Channasandra Main Rd, Whitefield, Bengaluru 560067",
+        "student_capacity": 2900,
+        "target_age_group": "Kids & Teens (3\u201317 yrs)",
+        "peak_window": "2:00 PM \u2013 3:45 PM (Dispersal)",
+        "synergy_score": 91,
+        "dessert_synergy_reason": "Growing residential corridor on Kadugodi - Hope Farm axis.",
+        "nearest_hub": "Whitefield (ITPL & ECC Rd)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5842,
+          13.0988
+        ]
+      },
+      "properties": {
+        "id": "SCH_18",
+        "name": "Mallya Aditi International School",
+        "category": "School",
+        "sub_category": "ICSE / IGCSE",
+        "locality": "Yelahanka New Town",
+        "zone": "North",
+        "address": "Behind Yelahanka Police Station, Yelahanka New Town, Bengaluru 560064",
+        "student_capacity": 1500,
+        "target_age_group": "Kids & Teens (4\u201318 yrs)",
+        "peak_window": "2:30 PM \u2013 4:00 PM (Afternoon Exit)",
+        "synergy_score": 93,
+        "dessert_synergy_reason": "High-affluence student and parent base in North Bengaluru.",
+        "nearest_hub": "Yelahanka New Town"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6025,
+          13.1165
+        ]
+      },
+      "properties": {
+        "id": "SCH_19",
+        "name": "Canadian International School",
+        "category": "School",
+        "sub_category": "IB / Canadian Curriculum",
+        "locality": "Yelahanka / Kogilu",
+        "zone": "North",
+        "address": "4 & 20, Manchenahalli, Yelahanka, Bengaluru 560064",
+        "student_capacity": 1400,
+        "target_age_group": "Kids & Teens (3\u201318 yrs)",
+        "peak_window": "3:00 PM \u2013 4:30 PM (Campus Exit)",
+        "synergy_score": 92,
+        "dessert_synergy_reason": "Expat and HNI parent base with regular cafe & dessert visits.",
+        "nearest_hub": "Yelahanka New Town"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6012,
+          13.0858
+        ]
+      },
+      "properties": {
+        "id": "SCH_20",
+        "name": "Vidyashilp Academy",
+        "category": "School",
+        "sub_category": "ICSE / Cambridge",
+        "locality": "Jakkur / Yelahanka",
+        "zone": "North",
+        "address": "42/3, Srirampura Village, Jakkur Post, Bellary Rd, Bengaluru 560064",
+        "student_capacity": 2600,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "2:30 PM \u2013 4:00 PM (Dispersal)",
+        "synergy_score": 94,
+        "dessert_synergy_reason": "Prime residential academy on North Bangalore expansion spine.",
+        "nearest_hub": "Hebbal & Kempapura"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6185,
+          12.9432
+        ]
+      },
+      "properties": {
+        "id": "SCH_21",
+        "name": "Bethany High School",
+        "category": "School",
+        "sub_category": "ICSE K-12",
+        "locality": "Koramangala 8th Block",
+        "zone": "South-East",
+        "address": "CA-12, 20th Main, Koramangala 8th Block, Bengaluru 560095",
+        "student_capacity": 3100,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "1:45 PM \u2013 3:30 PM (Dispersal)",
+        "synergy_score": 95,
+        "dessert_synergy_reason": "High-density pedestrian pickup zone near Sony World Signal.",
+        "nearest_hub": "Koramangala 5th Block"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5968,
+          12.8778
+        ]
+      },
+      "properties": {
+        "id": "SCH_22",
+        "name": "BGS National Public School",
+        "category": "School",
+        "sub_category": "CBSE K-12",
+        "locality": "Hulimavu / Bannerghatta Rd",
+        "zone": "South",
+        "address": "Ramagondanahalli, Hulimavu, Bannerghatta Rd, Bengaluru 560076",
+        "student_capacity": 4000,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "1:30 PM \u2013 3:30 PM (Dispersal)",
+        "synergy_score": 95,
+        "dessert_synergy_reason": "Anchor campus on Bannerghatta Rd surrounded by Royal Meenakshi Mall footfall.",
+        "nearest_hub": "JP Nagar & Kanakapura Rd"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5752,
+          12.8945
+        ]
+      },
+      "properties": {
+        "id": "SCH_23",
+        "name": "The Brigade School",
+        "category": "School",
+        "sub_category": "CBSE / ICSE K-12",
+        "locality": "JP Nagar 7th Phase",
+        "zone": "South",
+        "address": "Brigade Millennium Campus, 7th Phase, JP Nagar, Bengaluru 560078",
+        "student_capacity": 2400,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "2:00 PM \u2013 3:45 PM (Dispersal)",
+        "synergy_score": 96,
+        "dessert_synergy_reason": "Integrated into 22-acre Brigade Millennium apartment complex.",
+        "nearest_hub": "JP Nagar 24th Main"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7485,
+          12.9285
+        ]
+      },
+      "properties": {
+        "id": "SCH_24",
+        "name": "Oakridge International School",
+        "category": "School",
+        "sub_category": "IB World School",
+        "locality": "Varthur",
+        "zone": "East",
+        "address": "Varthur Rd, Near Dommasandra Circle, Gunjur, Bengaluru 560087",
+        "student_capacity": 2100,
+        "target_age_group": "Kids & Teens (3\u201318 yrs)",
+        "peak_window": "2:30 PM \u2013 4:00 PM (Campus Exit)",
+        "synergy_score": 93,
+        "dessert_synergy_reason": "High-spending IT household student base in Varthur township corridor.",
+        "nearest_hub": "Varthur - Gunjur Tech Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7425,
+          12.9342
+        ]
+      },
+      "properties": {
+        "id": "SCH_25",
+        "name": "Chrysalis High",
+        "category": "School",
+        "sub_category": "ICSE / CBSE",
+        "locality": "Varthur / Gunjur",
+        "zone": "East",
+        "address": "No. 219/3, Gunjur - Palya Rd, Off Sarjapur-Varthur Rd, Bengaluru 560087",
+        "student_capacity": 2800,
+        "target_age_group": "Kids & Teens (3\u201317 yrs)",
+        "peak_window": "1:45 PM \u2013 3:30 PM (Dispersal)",
+        "synergy_score": 92,
+        "dessert_synergy_reason": "Surrounded by modern villa layouts and young tech families.",
+        "nearest_hub": "Varthur - Gunjur Tech Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6235,
+          12.9782
+        ]
+      },
+      "properties": {
+        "id": "SCH_26",
+        "name": "Frank Anthony Public School",
+        "category": "School",
+        "sub_category": "ICSE K-12",
+        "locality": "Ulsoor / Halasuru",
+        "zone": "Central",
+        "address": "12, Cambridge Rd, Udani Layout, Halasuru, Bengaluru 560008",
+        "student_capacity": 3100,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "1:30 PM \u2013 3:30 PM (Dispersal)",
+        "synergy_score": 93,
+        "dessert_synergy_reason": "Historic central school with intense midday and afternoon pedestrian pickup.",
+        "nearest_hub": "Indiranagar 100ft Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5878,
+          12.9912
+        ]
+      },
+      "properties": {
+        "id": "SCH_27",
+        "name": "Sophia High School",
+        "category": "School",
+        "sub_category": "ICSE K-12",
+        "locality": "Palace Road / Vasanth Nagar",
+        "zone": "Central",
+        "address": "70, Palace Rd, High Grounds, Vasanth Nagar, Bengaluru 560001",
+        "student_capacity": 2700,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "1:30 PM \u2013 3:30 PM (Dispersal)",
+        "synergy_score": 94,
+        "dessert_synergy_reason": "High-affluence girls' convent school next to Bangalore Golf Club.",
+        "nearest_hub": "Central CBD & MG Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5142,
+          12.8345
+        ]
+      },
+      "properties": {
+        "id": "SCH_28",
+        "name": "The Valley School (KFI)",
+        "category": "School",
+        "sub_category": "Alternative / ICSE",
+        "locality": "Kanakapura Road / Thataguni",
+        "zone": "South",
+        "address": "Haridvanam, Thataguni Post, Kanakapura Rd, Bengaluru 560062",
+        "student_capacity": 650,
+        "target_age_group": "Kids & Teens (6\u201318 yrs)",
+        "peak_window": "2:30 PM \u2013 4:00 PM (Departure)",
+        "synergy_score": 88,
+        "dessert_synergy_reason": "Prestigious progressive school with highly dedicated parent carpool trips.",
+        "nearest_hub": "JP Nagar & Kanakapura Rd"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5912,
+          12.8385
+        ]
+      },
+      "properties": {
+        "id": "SCH_29",
+        "name": "Sherwood High",
+        "category": "School",
+        "sub_category": "ICSE / ISC",
+        "locality": "Bannerghatta Road / Basavanapura",
+        "zone": "South",
+        "address": "No. 7, Basavanapura, Nice Road Junction, Bannerghatta Rd, Bengaluru 560083",
+        "student_capacity": 2200,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "2:00 PM \u2013 3:45 PM (Dispersal)",
+        "synergy_score": 91,
+        "dessert_synergy_reason": "Suburban southern family hub with dedicated family transit routes.",
+        "nearest_hub": "JP Nagar & Kanakapura Rd"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6015,
+          13.0425
+        ]
+      },
+      "properties": {
+        "id": "SCH_30",
+        "name": "Vidya Niketan School",
+        "category": "School",
+        "sub_category": "ICSE K-12",
+        "locality": "Hebbal / Kempapura",
+        "zone": "North",
+        "address": "30, Kempapura Main Rd, Coffee Board Layout, Hebbal, Bengaluru 560024",
+        "student_capacity": 2300,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "1:45 PM \u2013 3:30 PM (Dispersal)",
+        "synergy_score": 94,
+        "dessert_synergy_reason": "Prime residential academy adjacent to Hebbal flyover and lake.",
+        "nearest_hub": "Hebbal & Kempapura"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5685,
+          12.8715
+        ]
+      },
+      "properties": {
+        "id": "SCH_31",
+        "name": "Presidency School Bangalore South",
+        "category": "School",
+        "sub_category": "CBSE K-12",
+        "locality": "JP Nagar 9th Phase",
+        "zone": "South",
+        "address": "Bikasipura, Off Kanakapura Rd, JP Nagar 9th Phase, Bengaluru 560062",
+        "student_capacity": 3100,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "1:30 PM \u2013 3:30 PM (Dispersal)",
+        "synergy_score": 93,
+        "dessert_synergy_reason": "High residential density with multiple apartment complexes within 500m.",
+        "nearest_hub": "JP Nagar 24th Main"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7125,
+          12.9695
+        ]
+      },
+      "properties": {
+        "id": "SCH_32",
+        "name": "Ryan International School Kundalahalli",
+        "category": "School",
+        "sub_category": "ICSE / CBSE",
+        "locality": "Kundalahalli / Brookefield",
+        "zone": "East",
+        "address": "Kundalahalli Gate, Varthur Main Rd, Brookefield, Bengaluru 560037",
+        "student_capacity": 3600,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "1:30 PM \u2013 3:30 PM (Dispersal)",
+        "synergy_score": 95,
+        "dessert_synergy_reason": "Major road intersection with heavy after-school pedestrian activity.",
+        "nearest_hub": "Marathahalli Multiplex / Bridge"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7025,
+          12.9515
+        ]
+      },
+      "properties": {
+        "id": "SCH_33",
+        "name": "Vibgyor High Marathahalli",
+        "category": "School",
+        "sub_category": "ICSE / CBSE",
+        "locality": "Marathahalli",
+        "zone": "East",
+        "address": "Survey No. 60, Kadubisanahalli, Off Marathahalli-Sarjapur Ring Rd, Bengaluru 560037",
+        "student_capacity": 3200,
+        "target_age_group": "Kids & Teens (3\u201317 yrs)",
+        "peak_window": "1:45 PM \u2013 3:30 PM (Dispersal)",
+        "synergy_score": 94,
+        "dessert_synergy_reason": "Ecospace and Prestige Tech Park family catchment.",
+        "nearest_hub": "Bellandur & Outer Ring Rd"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7185,
+          12.8895
+        ]
+      },
+      "properties": {
+        "id": "SCH_34",
+        "name": "Harvest International School",
+        "category": "School",
+        "sub_category": "IB / CBSE",
+        "locality": "Kodathi / Sarjapur Rd",
+        "zone": "South-East",
+        "address": "Carmelaram Post, Kodathi Village, Off Sarjapur Rd, Bengaluru 560035",
+        "student_capacity": 2500,
+        "target_age_group": "Kids & Teens (4\u201317 yrs)",
+        "peak_window": "2:00 PM \u2013 3:45 PM (Dispersal)",
+        "synergy_score": 93,
+        "dessert_synergy_reason": "Direct feeder into Sarjapur-Carmelaram residential expansion.",
+        "nearest_hub": "Sarjapur - Varthur Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7198,
+          12.9785
+        ]
+      },
+      "properties": {
+        "id": "SCH_35",
+        "name": "EuroSchool Whitefield",
+        "category": "School",
+        "sub_category": "ICSE / CBSE",
+        "locality": "Whitefield / Seetharampalya",
+        "zone": "East",
+        "address": "36/1B, Hoodi Village, Seetharampalya, Whitefield, Bengaluru 560048",
+        "student_capacity": 2700,
+        "target_age_group": "Kids & Teens (3\u201317 yrs)",
+        "peak_window": "1:30 PM \u2013 3:30 PM (Dispersal)",
+        "synergy_score": 94,
+        "dessert_synergy_reason": "Metro Purple Line proximity; massive IT residential community.",
+        "nearest_hub": "Whitefield (ITPL & ECC Rd)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5742,
+          12.9438
+        ]
+      },
+      "properties": {
+        "id": "COL_01",
+        "name": "National College Basavanagudi",
+        "category": "College",
+        "sub_category": "PU & Autonomous Degree",
+        "locality": "Basavanagudi",
+        "zone": "South-Central",
+        "address": "Pampa Mahakavi Rd, Basavanagudi, Bengaluru 560004",
+        "student_capacity": 4500,
+        "target_age_group": "Teens & Youth (16\u201322 yrs)",
+        "peak_window": "12:30 PM \u2013 4:30 PM (College Exit & Lunch)",
+        "synergy_score": 98,
+        "dessert_synergy_reason": "Historic youth food hub; Gandhi Bazaar & Vidyarthi Bhavan circuit.",
+        "nearest_hub": "Basavanagudi (Gandhi Bazaar)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5815,
+          12.9245
+        ]
+      },
+      "properties": {
+        "id": "COL_02",
+        "name": "National College Jayanagar",
+        "category": "College",
+        "sub_category": "PU & Degree",
+        "locality": "Jayanagar 7th Block",
+        "zone": "South",
+        "address": "36th Cross, 2nd Main, 7th Block, Jayanagar, Bengaluru 560082",
+        "student_capacity": 3800,
+        "target_age_group": "Teens & Youth (16\u201322 yrs)",
+        "peak_window": "12:00 PM \u2013 4:00 PM (Afternoon Hangouts)",
+        "synergy_score": 97,
+        "dessert_synergy_reason": "Immediate proximity to Jayanagar 4th Block shopping and Cool Joint.",
+        "nearest_hub": "Jayanagar 4th Block"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5802,
+          12.9412
+        ]
+      },
+      "properties": {
+        "id": "COL_03",
+        "name": "Vijaya College",
+        "category": "College",
+        "sub_category": "PU & Degree College",
+        "locality": "Basavanagudi / RV Road",
+        "zone": "South",
+        "address": "RV Rd, Basavanagudi, Next to Lalbagh West Gate, Bengaluru 560004",
+        "student_capacity": 4200,
+        "target_age_group": "Teens & Youth (16\u201322 yrs)",
+        "peak_window": "12:30 PM \u2013 4:30 PM (Transit & Snack Window)",
+        "synergy_score": 97,
+        "dessert_synergy_reason": "Located right at Lalbagh West Gate Metro; massive teen transit volume.",
+        "nearest_hub": "Basavanagudi (Gandhi Bazaar)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5678,
+          13.0085
+        ]
+      },
+      "properties": {
+        "id": "COL_04",
+        "name": "MES Degree & PU College",
+        "category": "College",
+        "sub_category": "Arts, Commerce & Science",
+        "locality": "Malleshwaram 15th Cross",
+        "zone": "North-West",
+        "address": "Vidyasagara Prof. MPL Sastry Rd, 15th Cross, Malleshwaram, Bengaluru 560003",
+        "student_capacity": 5200,
+        "target_age_group": "Teens & Youth (16\u201322 yrs)",
+        "peak_window": "12:00 PM \u2013 4:30 PM (Campus Breaks)",
+        "synergy_score": 98,
+        "dessert_synergy_reason": "Iconic Malleshwaram teen congregation zone; intense ice cream & chaat demand.",
+        "nearest_hub": "Malleshwaram 8th Cross"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5912,
+          12.9915
+        ]
+      },
+      "properties": {
+        "id": "COL_05",
+        "name": "Mount Carmel College (MCC)",
+        "category": "College",
+        "sub_category": "Autonomous Women's College",
+        "locality": "Vasanth Nagar",
+        "zone": "Central",
+        "address": "58, Palace Rd, Abshot Layout, Vasanth Nagar, Bengaluru 560052",
+        "student_capacity": 6500,
+        "target_age_group": "Teens & Youth (16\u201322 yrs)",
+        "peak_window": "1:00 PM \u2013 5:00 PM (Dispersal & Social)",
+        "synergy_score": 99,
+        "dessert_synergy_reason": "One of India's premier women's colleges; unrivaled cafe and gourmet dessert footfall.",
+        "nearest_hub": "Central CBD & MG Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6035,
+          12.9612
+        ]
+      },
+      "properties": {
+        "id": "COL_06",
+        "name": "St. Joseph's University (SJU)",
+        "category": "College",
+        "sub_category": "Jesuit University Campus",
+        "locality": "Langford Road",
+        "zone": "Central",
+        "address": "36, Lalbagh Rd, Langford Gardens, Bengaluru 560027",
+        "student_capacity": 7500,
+        "target_age_group": "Youth & College (17\u201324 yrs)",
+        "peak_window": "12:30 PM \u2013 5:00 PM (Afternoon Flow)",
+        "synergy_score": 98,
+        "dessert_synergy_reason": "Massive youth footfall hub near Richmond Circle & Brigade Road.",
+        "nearest_hub": "Central CBD & MG Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6185,
+          12.9325
+        ]
+      },
+      "properties": {
+        "id": "COL_07",
+        "name": "Jyoti Nivas College (JNC)",
+        "category": "College",
+        "sub_category": "Autonomous Women's College",
+        "locality": "Koramangala 5th Block",
+        "zone": "South-East",
+        "address": "Hosur Rd, Koramangala 5th Block, Bengaluru 560095",
+        "student_capacity": 5500,
+        "target_age_group": "Teens & Youth (16\u201322 yrs)",
+        "peak_window": "1:00 PM \u2013 5:30 PM (Dispersal & Social)",
+        "synergy_score": 99,
+        "dessert_synergy_reason": "Immediate epicentre of Koramangala 5th Block cafes, dessert parlors, and youth culture.",
+        "nearest_hub": "Koramangala 5th Block"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6065,
+          12.9342
+        ]
+      },
+      "properties": {
+        "id": "COL_08",
+        "name": "Christ University (Main Campus)",
+        "category": "College",
+        "sub_category": "Deemed University",
+        "locality": "Hosur Road / Dairy Circle",
+        "zone": "South-East",
+        "address": "Hosur Main Rd, Bhavani Nagar, S.G. Palya, Bengaluru 560029",
+        "student_capacity": 18000,
+        "target_age_group": "Youth & Students (17\u201324 yrs)",
+        "peak_window": "12:00 PM \u2013 7:00 PM (Continuous Student Flow)",
+        "synergy_score": 100,
+        "dessert_synergy_reason": "Largest single university student density in south India; SG Palya is dessert paradise.",
+        "nearest_hub": "Koramangala 5th Block"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5992,
+          12.8795
+        ]
+      },
+      "properties": {
+        "id": "COL_09",
+        "name": "Christ University (Bannerghatta Road Campus)",
+        "category": "College",
+        "sub_category": "Deemed University",
+        "locality": "Hulimavu / Bannerghatta Rd",
+        "zone": "South",
+        "address": "Opp. Meenakshi Temple, Hulimavu, Bannerghatta Rd, Bengaluru 560076",
+        "student_capacity": 6500,
+        "target_age_group": "Youth & Students (17\u201324 yrs)",
+        "peak_window": "12:30 PM \u2013 6:00 PM (Continuous Flow)",
+        "synergy_score": 97,
+        "dessert_synergy_reason": "High-spending student demographic next to Royal Meenakshi Mall.",
+        "nearest_hub": "JP Nagar & Kanakapura Rd"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5658,
+          12.9415
+        ]
+      },
+      "properties": {
+        "id": "COL_10",
+        "name": "BMS College of Engineering (BMSCE)",
+        "category": "College",
+        "sub_category": "Engineering & Technology",
+        "locality": "Basavanagudi / Bull Temple Rd",
+        "zone": "South-Central",
+        "address": "Bull Temple Rd, Basavanagudi, Bengaluru 560019",
+        "student_capacity": 8500,
+        "target_age_group": "Youth & Engineers (18\u201323 yrs)",
+        "peak_window": "1:00 PM \u2013 6:00 PM (Evening Hangouts)",
+        "synergy_score": 98,
+        "dessert_synergy_reason": "Vibrant engineering student crowd dominating Bull Temple and Gandhi Bazaar eateries.",
+        "nearest_hub": "Basavanagudi (Gandhi Bazaar)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.4985,
+          12.9238
+        ]
+      },
+      "properties": {
+        "id": "COL_11",
+        "name": "RV College of Engineering (RVCE)",
+        "category": "College",
+        "sub_category": "Autonomous Engineering",
+        "locality": "Mysore Road / Kengeri",
+        "zone": "West",
+        "address": "Mysore Rd, RV Vidyaniketan Post, Bengaluru 560059",
+        "student_capacity": 7200,
+        "target_age_group": "Youth & Engineers (18\u201323 yrs)",
+        "peak_window": "1:00 PM \u2013 6:00 PM (Dispersal & Evening)",
+        "synergy_score": 96,
+        "dessert_synergy_reason": "Top-tier engineering talent with high disposable pocket money; Metro Purple Line.",
+        "nearest_hub": "Kengeri Satellite Town"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5342,
+          12.9352
+        ]
+      },
+      "properties": {
+        "id": "COL_12",
+        "name": "PES University (RR Campus)",
+        "category": "College",
+        "sub_category": "Private University",
+        "locality": "Banashankari / Outer Ring Rd",
+        "zone": "South-West",
+        "address": "100 Feet Ring Rd, BSK III Stage, Banashankari, Bengaluru 560085",
+        "student_capacity": 12000,
+        "target_age_group": "Youth & Engineers (17\u201323 yrs)",
+        "peak_window": "1:00 PM \u2013 6:30 PM (Evening Exit)",
+        "synergy_score": 99,
+        "dessert_synergy_reason": "Massive youth footfall corridor along 100ft Ring Road in Banashankari.",
+        "nearest_hub": "Banashankari 3rd Stage"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5645,
+          13.0305
+        ]
+      },
+      "properties": {
+        "id": "COL_13",
+        "name": "MS Ramaiah Institute of Technology (MSRIT)",
+        "category": "College",
+        "sub_category": "Engineering & Sciences",
+        "locality": "Mathikere / MSR Nagar",
+        "zone": "North-West",
+        "address": "MSR Nagar, MSRIT Post, Mathikere, Bengaluru 560054",
+        "student_capacity": 11000,
+        "target_age_group": "Youth & Medical/Engg (18\u201324 yrs)",
+        "peak_window": "12:30 PM \u2013 6:30 PM (Continuous Student Flow)",
+        "synergy_score": 99,
+        "dessert_synergy_reason": "Complete student township in Mathikere; hundreds of PGs and student apartments.",
+        "nearest_hub": "Malleshwaram 8th Cross"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5662,
+          12.9082
+        ]
+      },
+      "properties": {
+        "id": "COL_14",
+        "name": "Dayananda Sagar College of Engineering (DSCE)",
+        "category": "College",
+        "sub_category": "Autonomous Engineering & Dental",
+        "locality": "Kumaraswamy Layout",
+        "zone": "South",
+        "address": "Shavige Malleshwara Hills, Kumaraswamy Layout, Bengaluru 560078",
+        "student_capacity": 14000,
+        "target_age_group": "Youth & Students (17\u201323 yrs)",
+        "peak_window": "1:00 PM \u2013 6:30 PM (Dispersal & Evening)",
+        "synergy_score": 99,
+        "dessert_synergy_reason": "Massive multi-college campus; student footfall drives all retail on 50ft road.",
+        "nearest_hub": "JP Nagar 24th Main"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6912,
+          12.9345
+        ]
+      },
+      "properties": {
+        "id": "COL_15",
+        "name": "New Horizon College of Engineering",
+        "category": "College",
+        "sub_category": "Autonomous Engineering",
+        "locality": "Bellandur / Kadubeesanahalli",
+        "zone": "East",
+        "address": "Bellandur Main Rd, Near Marathahalli, Kaverappa Layout, Kadubeesanahalli, Bengaluru 560103",
+        "student_capacity": 6800,
+        "target_age_group": "Youth & Students (18\u201322 yrs)",
+        "peak_window": "1:00 PM \u2013 5:30 PM (Evening Exit)",
+        "synergy_score": 96,
+        "dessert_synergy_reason": "Located in the heart of Bellandur ORR tech and youth corridor.",
+        "nearest_hub": "Bellandur & Outer Ring Rd"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7128,
+          12.9668
+        ]
+      },
+      "properties": {
+        "id": "COL_16",
+        "name": "CMR Institute of Technology (CMRIT)",
+        "category": "College",
+        "sub_category": "Engineering & Technology",
+        "locality": "Kundalahalli / Whitefield",
+        "zone": "East",
+        "address": "132, AECS Layout, ITPL Main Rd, Kundalahalli, Bengaluru 560037",
+        "student_capacity": 5500,
+        "target_age_group": "Youth & Students (18\u201322 yrs)",
+        "peak_window": "1:00 PM \u2013 6:00 PM (Evening Hangouts)",
+        "synergy_score": 97,
+        "dessert_synergy_reason": "AECS Layout is a major student rental and casual dining destination.",
+        "nearest_hub": "Whitefield (ITPL & ECC Rd)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6195,
+          12.9312
+        ]
+      },
+      "properties": {
+        "id": "COL_17",
+        "name": "St. John's Medical College",
+        "category": "College",
+        "sub_category": "Medical & Nursing Institute",
+        "locality": "Koramangala / Sarjapur Rd",
+        "zone": "South-East",
+        "address": "Sarjapur - Marathahalli Rd, John Nagar, Koramangala, Bengaluru 560034",
+        "student_capacity": 3200,
+        "target_age_group": "Medical Students & Youth (18\u201326 yrs)",
+        "peak_window": "4:00 PM \u2013 9:00 PM (Evening Hospital/Campus Exit)",
+        "synergy_score": 96,
+        "dessert_synergy_reason": "Round-the-clock student & medical resident demand on 100ft road.",
+        "nearest_hub": "Koramangala 5th Block"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6515,
+          12.9125
+        ]
+      },
+      "properties": {
+        "id": "COL_18",
+        "name": "National Institute of Fashion Technology (NIFT)",
+        "category": "College",
+        "sub_category": "Fashion & Design University",
+        "locality": "HSR Layout Sector 1",
+        "zone": "South-East",
+        "address": "CA Site 21, 27th Main Rd, Sector 1, HSR Layout, Bengaluru 560102",
+        "student_capacity": 1800,
+        "target_age_group": "Creative Youth (18\u201323 yrs)",
+        "peak_window": "1:00 PM \u2013 8:00 PM (Continuous Creative Hangouts)",
+        "synergy_score": 98,
+        "dessert_synergy_reason": "Extremely high disposable income; anchors HSR 27th Main cafe culture.",
+        "nearest_hub": "HSR Layout Sector 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5735,
+          12.9515
+        ]
+      },
+      "properties": {
+        "id": "COL_19",
+        "name": "Bangalore Institute of Technology (BIT)",
+        "category": "College",
+        "sub_category": "Engineering College",
+        "locality": "VV Puram / KR Road",
+        "zone": "South-Central",
+        "address": "KR Rd, VV Puram, Vishweshwarapura, Basavanagudi, Bengaluru 560004",
+        "student_capacity": 4200,
+        "target_age_group": "Youth & Engineers (18\u201322 yrs)",
+        "peak_window": "1:00 PM \u2013 7:00 PM (VV Puram Food Street Access)",
+        "synergy_score": 98,
+        "dessert_synergy_reason": "Steps away from the iconic VV Puram Food Street.",
+        "nearest_hub": "Basavanagudi (Gandhi Bazaar)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6258,
+          13.1415
+        ]
+      },
+      "properties": {
+        "id": "COL_20",
+        "name": "Sir M. Visvesvaraya Institute of Technology (SMVIT)",
+        "category": "College",
+        "sub_category": "Engineering College",
+        "locality": "Hunasamaranahalli / Yelahanka",
+        "zone": "North",
+        "address": "International Airport Rd, Hunasamaranahalli, Yelahanka, Bengaluru 562157",
+        "student_capacity": 4800,
+        "target_age_group": "Youth & Students (18\u201323 yrs)",
+        "peak_window": "2:00 PM \u2013 5:30 PM (Evening Exit)",
+        "synergy_score": 90,
+        "dessert_synergy_reason": "Major engineering population on North Bengaluru highway corridor.",
+        "nearest_hub": "Yelahanka New Town"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5842,
+          12.9285
+        ]
+      },
+      "properties": {
+        "id": "COA_01",
+        "name": "Allen Career Institute - Jayanagar Campus",
+        "category": "Coaching Institute",
+        "sub_category": "JEE / NEET / Foundation",
+        "locality": "Jayanagar 4th Block",
+        "zone": "South",
+        "address": "No. 34, 11th Main Rd, 4th Block, Jayanagar, Bengaluru 560011",
+        "student_capacity": 4500,
+        "target_age_group": "Teens (14\u201319 yrs)",
+        "peak_window": "4:30 PM \u2013 8:00 PM (Class Dispersal & Snack Rush)",
+        "synergy_score": 100,
+        "dessert_synergy_reason": "Massive teen student footfall daily; students swarm nearby dessert shops between batches.",
+        "nearest_hub": "Jayanagar 4th Block"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6385,
+          12.9122
+        ]
+      },
+      "properties": {
+        "id": "COA_02",
+        "name": "Allen Career Institute - HSR Layout Campus",
+        "category": "Coaching Institute",
+        "sub_category": "JEE / NEET / Olympiad",
+        "locality": "HSR Layout 27th Main",
+        "zone": "South-East",
+        "address": "27th Main Rd, 1st Sector, HSR Layout, Bengaluru 560102",
+        "student_capacity": 3800,
+        "target_age_group": "Teens (14\u201319 yrs)",
+        "peak_window": "4:30 PM \u2013 8:00 PM (Class Breaks & Evening)",
+        "synergy_score": 99,
+        "dessert_synergy_reason": "Prime high-density coaching hub on 27th Main; high repeat teen customers.",
+        "nearest_hub": "HSR Layout Sector 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6235,
+          12.9365
+        ]
+      },
+      "properties": {
+        "id": "COA_03",
+        "name": "Allen Career Institute - Koramangala Campus",
+        "category": "Coaching Institute",
+        "sub_category": "JEE / NEET / Foundation",
+        "locality": "Koramangala 80ft Road",
+        "zone": "South-East",
+        "address": "80 Feet Rd, 7th Block, Koramangala, Bengaluru 560095",
+        "student_capacity": 2800,
+        "target_age_group": "Teens (14\u201319 yrs)",
+        "peak_window": "4:30 PM \u2013 7:30 PM (Evening Exit)",
+        "synergy_score": 97,
+        "dessert_synergy_reason": "Seamless connection with Koramangala dining circuit.",
+        "nearest_hub": "Koramangala 5th Block"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5855,
+          12.9315
+        ]
+      },
+      "properties": {
+        "id": "COA_04",
+        "name": "Aakash Institute - Jayanagar",
+        "category": "Coaching Institute",
+        "sub_category": "Medical (NEET) & Engineering",
+        "locality": "Jayanagar 3rd Block",
+        "zone": "South",
+        "address": "No. 11, 11th Main, 3rd Block, Jayanagar, Bengaluru 560011",
+        "student_capacity": 3200,
+        "target_age_group": "Teens (14\u201319 yrs)",
+        "peak_window": "4:00 PM \u2013 7:30 PM (Batch Transition)",
+        "synergy_score": 98,
+        "dessert_synergy_reason": "Hundreds of pre-medical students walking to 4th block shopping complex.",
+        "nearest_hub": "Jayanagar 4th Block"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6415,
+          12.9135
+        ]
+      },
+      "properties": {
+        "id": "COA_05",
+        "name": "Aakash Institute - HSR Layout",
+        "category": "Coaching Institute",
+        "sub_category": "NEET / JEE / Foundation",
+        "locality": "HSR Layout Sector 1",
+        "zone": "South-East",
+        "address": "19th Main, Sector 1, HSR Layout, Bengaluru 560102",
+        "student_capacity": 2900,
+        "target_age_group": "Teens (14\u201319 yrs)",
+        "peak_window": "4:00 PM \u2013 7:30 PM (Evening Rush)",
+        "synergy_score": 98,
+        "dessert_synergy_reason": "High-spending teen demographic living in nearby HSR sectors.",
+        "nearest_hub": "HSR Layout Sector 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5712,
+          13.0035
+        ]
+      },
+      "properties": {
+        "id": "COA_06",
+        "name": "Aakash Institute - Malleshwaram",
+        "category": "Coaching Institute",
+        "sub_category": "NEET & IIT-JEE Prep",
+        "locality": "Malleshwaram 8th Cross",
+        "zone": "North-West",
+        "address": "Sampige Rd, Near 8th Cross, Malleshwaram, Bengaluru 560003",
+        "student_capacity": 2600,
+        "target_age_group": "Teens (14\u201319 yrs)",
+        "peak_window": "4:30 PM \u2013 8:00 PM (Evening Exit)",
+        "synergy_score": 97,
+        "dessert_synergy_reason": "Malleshwaram 8th cross retail footfall multiplier.",
+        "nearest_hub": "Malleshwaram 8th Cross"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6482,
+          12.9142
+        ]
+      },
+      "properties": {
+        "id": "COA_07",
+        "name": "FIITJEE Bangalore - HSR Layout",
+        "category": "Coaching Institute",
+        "sub_category": "IIT-JEE Advanced Specialist",
+        "locality": "HSR Layout Sector 1",
+        "zone": "South-East",
+        "address": "No. 19th Main, Sector 1, HSR Layout, Bengaluru 560102",
+        "student_capacity": 2200,
+        "target_age_group": "Teens (14\u201318 yrs)",
+        "peak_window": "4:00 PM \u2013 7:30 PM (Class Breaks)",
+        "synergy_score": 96,
+        "dessert_synergy_reason": "Intense coaching schedule drives high demand for quick dessert & cold coffee.",
+        "nearest_hub": "HSR Layout Sector 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5925,
+          12.9185
+        ]
+      },
+      "properties": {
+        "id": "COA_08",
+        "name": "FIITJEE Bangalore - Jayanagar",
+        "category": "Coaching Institute",
+        "sub_category": "IIT-JEE Specialist",
+        "locality": "Jayanagar 9th Block",
+        "zone": "South",
+        "address": "9th Block, Jayanagar, East End Main Rd, Bengaluru 560069",
+        "student_capacity": 2100,
+        "target_age_group": "Teens (14\u201318 yrs)",
+        "peak_window": "4:00 PM \u2013 7:30 PM (Evening Break)",
+        "synergy_score": 95,
+        "dessert_synergy_reason": "High-density student PG zone in East End Jayanagar.",
+        "nearest_hub": "Jayanagar 4th Block"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5685,
+          12.9425
+        ]
+      },
+      "properties": {
+        "id": "COA_09",
+        "name": "BASE Educational Services",
+        "category": "Coaching Institute",
+        "sub_category": "CET / NEET / JEE Foundation",
+        "locality": "Basavanagudi",
+        "zone": "South-Central",
+        "address": "Bull Temple Rd, Next to BMSCE, Basavanagudi, Bengaluru 560019",
+        "student_capacity": 2800,
+        "target_age_group": "Teens (14\u201318 yrs)",
+        "peak_window": "4:30 PM \u2013 7:45 PM (Class Dispersal)",
+        "synergy_score": 96,
+        "dessert_synergy_reason": "Legacy coaching hub with thousands of PU students attending weekend & evening batches.",
+        "nearest_hub": "Basavanagudi (Gandhi Bazaar)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6402,
+          12.9105
+        ]
+      },
+      "properties": {
+        "id": "COA_10",
+        "name": "Narayana IIT / Olympiad Academy - HSR",
+        "category": "Coaching Institute",
+        "sub_category": "Integrated PU & IIT-JEE",
+        "locality": "HSR Layout Sector 2",
+        "zone": "South-East",
+        "address": "27th Main, Sector 2, HSR Layout, Bengaluru 560102",
+        "student_capacity": 2400,
+        "target_age_group": "Teens (13\u201318 yrs)",
+        "peak_window": "4:30 PM \u2013 7:30 PM (Evening Break)",
+        "synergy_score": 96,
+        "dessert_synergy_reason": "Full-day junior college + coaching setup with daily snack breaks.",
+        "nearest_hub": "HSR Layout Sector 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6985,
+          12.9552
+        ]
+      },
+      "properties": {
+        "id": "COA_11",
+        "name": "Sri Chaitanya Techno / IIT Academy",
+        "category": "Coaching Institute",
+        "sub_category": "NEET / JEE Integrated",
+        "locality": "Marathahalli",
+        "zone": "East",
+        "address": "Varthur Rd, Near Marathahalli Bridge, Bengaluru 560037",
+        "student_capacity": 3100,
+        "target_age_group": "Teens (13\u201318 yrs)",
+        "peak_window": "4:30 PM \u2013 7:30 PM (Dispersal)",
+        "synergy_score": 95,
+        "dessert_synergy_reason": "Major teen transit crossroad at Marathahalli bridge.",
+        "nearest_hub": "Marathahalli Multiplex / Bridge"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6198,
+          12.9348
+        ]
+      },
+      "properties": {
+        "id": "COA_12",
+        "name": "TIME Institute Koramangala",
+        "category": "Coaching Institute",
+        "sub_category": "CAT / IPMAT / CLAT / GRE",
+        "locality": "Koramangala 5th Block",
+        "zone": "South-East",
+        "address": "1st Floor, 80 Feet Rd, 5th Block, Koramangala, Bengaluru 560095",
+        "student_capacity": 1800,
+        "target_age_group": "Teens & Youth (16\u201323 yrs)",
+        "peak_window": "5:00 PM \u2013 8:30 PM (Evening Batches)",
+        "synergy_score": 95,
+        "dessert_synergy_reason": "High-disposable income college students preparing for entrance tests.",
+        "nearest_hub": "Koramangala 5th Block"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6795,
+          12.9068
+        ]
+      },
+      "properties": {
+        "id": "ACT_01",
+        "name": "Play Arena Sarjapur",
+        "category": "Activity & Sports",
+        "sub_category": "Multi-Sport, Skate & Arcade",
+        "locality": "Sarjapur Road / Kasavanahalli",
+        "zone": "South-East",
+        "address": "Silverwood Regency, Kasavanahalli, Central Jail Rd, Sarjapur Rd, Bengaluru 560035",
+        "student_capacity": 5000,
+        "target_age_group": "Kids & Teens (4\u201320 yrs)",
+        "peak_window": "4:00 PM \u2013 9:30 PM (Evening & Weekends)",
+        "synergy_score": 100,
+        "dessert_synergy_reason": "Premier weekend destination for 40,000+ tech family kids; post-game ice cream mandatory.",
+        "nearest_hub": "Sarjapur - Varthur Corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6385,
+          13.1685
+        ]
+      },
+      "properties": {
+        "id": "ACT_02",
+        "name": "Padukone-Dravid Centre for Sports Excellence (CSE)",
+        "category": "Activity & Sports",
+        "sub_category": "Elite Youth Sports Academy",
+        "locality": "Yelahanka / Bettahalasuru",
+        "zone": "North",
+        "address": "Survey No 336, Bettahalasuru, Jala Hobli, Yelahanka, Bengaluru 562157",
+        "student_capacity": 3500,
+        "target_age_group": "Kids & Teens (5\u201319 yrs)",
+        "peak_window": "4:00 PM \u2013 8:00 PM (Daily Training)",
+        "synergy_score": 94,
+        "dessert_synergy_reason": "Elite youth badminton, swimming, tennis, and cricket academy with affluent parents.",
+        "nearest_hub": "Yelahanka New Town"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6412,
+          12.9585
+        ]
+      },
+      "properties": {
+        "id": "ACT_03",
+        "name": "Girias Children's Explorium",
+        "category": "Activity & Sports",
+        "sub_category": "Children's Museum & Sensory Play",
+        "locality": "Domlur / Inner Ring Road",
+        "zone": "East",
+        "address": "526, Inner Ring Rd, Embassy Golf Links, Domlur, Bengaluru 560071",
+        "student_capacity": 2500,
+        "target_age_group": "Kids & Toddlers (1\u201312 yrs)",
+        "peak_window": "11:00 AM \u2013 7:30 PM (Weekend Family Peak)",
+        "synergy_score": 98,
+        "dessert_synergy_reason": "Dedicated children's discovery center; extremely high toddler/kid dessert conversion.",
+        "nearest_hub": "Indiranagar 100ft Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5965,
+          12.9752
+        ]
+      },
+      "properties": {
+        "id": "ACT_04",
+        "name": "Jawahar Bal Bhavan & Toy Train (Cubbon Park)",
+        "category": "Activity & Sports",
+        "sub_category": "Historic Children's Park & Recreation",
+        "locality": "Cubbon Park / Kasturba Rd",
+        "zone": "Central",
+        "address": "Kasturba Rd, Sampangi Rama Nagar, Bengaluru 560001",
+        "student_capacity": 8000,
+        "target_age_group": "Kids & Families (2\u201314 yrs)",
+        "peak_window": "10:30 AM \u2013 6:30 PM (Weekends & Holidays)",
+        "synergy_score": 99,
+        "dessert_synergy_reason": "Iconic picnic and toy train hub; parents buy ice creams by default.",
+        "nearest_hub": "Central CBD & MG Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5982,
+          12.9755
+        ]
+      },
+      "properties": {
+        "id": "ACT_05",
+        "name": "Visvesvaraya Industrial & Technological Museum (VITM)",
+        "category": "Activity & Sports",
+        "sub_category": "Science Museum & Dinosaur Enclave",
+        "locality": "Kasturba Road",
+        "zone": "Central",
+        "address": "Kasturba Rd, Near Cubbon Park, Bengaluru 560001",
+        "student_capacity": 6000,
+        "target_age_group": "School Kids & Teens (6\u201318 yrs)",
+        "peak_window": "11:00 AM \u2013 5:30 PM (Daily School Tours)",
+        "synergy_score": 97,
+        "dessert_synergy_reason": "Daily busloads of 50+ school excursion groups year-round.",
+        "nearest_hub": "Central CBD & MG Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5895,
+          12.9845
+        ]
+      },
+      "properties": {
+        "id": "ACT_06",
+        "name": "Jawaharlal Nehru Planetarium",
+        "category": "Activity & Sports",
+        "sub_category": "Astronomy & Science Edutainment",
+        "locality": "High Grounds / Sankey Rd",
+        "zone": "Central",
+        "address": "Sri T, Sankey Rd, High Grounds, Bengaluru 560001",
+        "student_capacity": 3500,
+        "target_age_group": "Kids & Teens (5\u201317 yrs)",
+        "peak_window": "11:30 AM \u2013 5:00 PM (Show Exit Times)",
+        "synergy_score": 95,
+        "dessert_synergy_reason": "Continuous school batches and weekend family shows.",
+        "nearest_hub": "Central CBD & MG Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7012,
+          12.9525
+        ]
+      },
+      "properties": {
+        "id": "ACT_07",
+        "name": "Torq03 Go-Karting & Bowling Arena",
+        "category": "Activity & Sports",
+        "sub_category": "Youth Go-Karting & Arcade",
+        "locality": "Marathahalli",
+        "zone": "East",
+        "address": "E-Zone Club, 23/24, Chinnappanahalli, Outer Ring Rd, Marathahalli, Bengaluru 560037",
+        "student_capacity": 2800,
+        "target_age_group": "Teens & Youth (14\u201324 yrs)",
+        "peak_window": "4:00 PM \u2013 10:00 PM (Evening & Night Rush)",
+        "synergy_score": 96,
+        "dessert_synergy_reason": "Go-karting and bowling attract high-spending college & teen peer groups.",
+        "nearest_hub": "Marathahalli Multiplex / Bridge"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6525,
+          13.0612
+        ]
+      },
+      "properties": {
+        "id": "ACT_08",
+        "name": "XLR8 Indoor Sports Arena",
+        "category": "Activity & Sports",
+        "sub_category": "Indoor Turf, Cricket & Futsal",
+        "locality": "Hennur Road",
+        "zone": "North-East",
+        "address": "Hennur Bagalur Main Rd, Next to Biozeen, Kothanur, Bengaluru 560077",
+        "student_capacity": 2200,
+        "target_age_group": "Teens & Youth (12\u201324 yrs)",
+        "peak_window": "4:00 PM \u2013 9:30 PM (Evening Play)",
+        "synergy_score": 94,
+        "dessert_synergy_reason": "Heavy evening teen sports tournaments and coaching batches.",
+        "nearest_hub": "Kammanahalli / Kalyan Nagar"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6985,
+          12.9092
+        ]
+      },
+      "properties": {
+        "id": "ACT_09",
+        "name": "Decathlon Sports Arena Sarjapur",
+        "category": "Activity & Sports",
+        "sub_category": "Sports Grounds & Play Zone",
+        "locality": "Sarjapur Road / Carmelaram",
+        "zone": "South-East",
+        "address": "Decathlon Sarjapur, 96, Carmelaram Post, Sarjapur Rd, Bengaluru 560035",
+        "student_capacity": 3800,
+        "target_age_group": "Kids & Families (4\u201320 yrs)",
+        "peak_window": "4:30 PM \u2013 9:00 PM (Weekend Family Sports)",
+        "synergy_score": 96,
+        "dessert_synergy_reason": "Outdoor community play area with constant family footfall.",
+        "nearest_hub": "Bellandur & Outer Ring Rd"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7425,
+          12.9875
+        ]
+      },
+      "properties": {
+        "id": "ACT_10",
+        "name": "Decathlon Sports Arena Whitefield",
+        "category": "Activity & Sports",
+        "sub_category": "Sports Grounds & Play Zone",
+        "locality": "Whitefield / ITPL",
+        "zone": "East",
+        "address": "Brigade Metropolis, Garudachar Palya, Mahadevapura, Bengaluru 560048",
+        "student_capacity": 3200,
+        "target_age_group": "Kids & Families (4\u201320 yrs)",
+        "peak_window": "4:30 PM \u2013 9:00 PM (Family Sports Rush)",
+        "synergy_score": 95,
+        "dessert_synergy_reason": "High-density residential catchment from Brigade Metropolis & Hoodi.",
+        "nearest_hub": "Whitefield (ITPL & ECC Rd)"
+      }
+    }
+  ]
+}

@@ -181,6 +181,10 @@ export default function MapViewport({
   selectedKidsCategory = 'ALL',
   selectedKidsAttraction,
   onSelectKidsAttraction,
+  educationPoisData,
+  selectedEducationCategory = 'ALL',
+  selectedEducationPoi,
+  onSelectEducationPoi,
   techParksData,
   officeFootprintsData,
   wardDemographicsData,
@@ -198,7 +202,8 @@ export default function MapViewport({
     kidsAttractions: true,
     techParks: false,
     officeFootprints: false,
-    hexDemographics: false
+    hexDemographics: false,
+    educationPois: true
   },
   selectedApsaraStore,
   onSelectApsaraStore,
@@ -258,6 +263,15 @@ export default function MapViewport({
     }
     return kidsAttractionsData.features.filter(f => f.properties?.category === selectedKidsCategory);
   }, [kidsAttractionsData, selectedKidsCategory]);
+
+  // Filter education & youth institutions by selected category
+  const filteredEducationPois = useMemo(() => {
+    if (!educationPoisData?.features) return [];
+    if (!selectedEducationCategory || selectedEducationCategory === 'ALL') {
+      return educationPoisData.features;
+    }
+    return educationPoisData.features.filter(f => f.properties?.category === selectedEducationCategory);
+  }, [educationPoisData, selectedEducationCategory]);
 
   // Deck.gl Layers
   const deckLayers = [
@@ -422,6 +436,56 @@ export default function MapViewport({
       lineWidthUnits: 'pixels',
       getLineWidth: 2.5,
       getLineColor: [244, 63, 94, 255], // Distinct vivid rose/pink halo
+      getPosition: f => f.geometry.coordinates
+    }),
+
+    // 2e. Educational & Youth Institutions (Schools, Colleges, Coaching, Activity Arenas)
+    activeLayers.educationPois && filteredEducationPois.length > 0 && new ScatterplotLayer({
+      id: 'education-youth-pois-layer',
+      data: filteredEducationPois,
+      pickable: true,
+      opacity: 0.95,
+      stroked: true,
+      filled: true,
+      radiusScale: 1,
+      radiusMinPixels: 8,
+      radiusMaxPixels: 16,
+      lineWidthUnits: 'pixels',
+      getLineWidth: f => selectedEducationPoi?.properties?.id === f.properties?.id ? 3.5 : 2,
+      getLineColor: f => selectedEducationPoi?.properties?.id === f.properties?.id ? [255, 255, 255, 255] : [255, 255, 255, 240],
+      getFillColor: f => {
+        const cat = f.properties?.category;
+        if (cat === 'School') return [245, 158, 11, 245]; // Amber / Gold
+        if (cat === 'College') return [99, 102, 241, 245]; // Indigo
+        if (cat === 'Coaching Institute') return [6, 182, 212, 245]; // Cyan / Teal
+        return [244, 63, 94, 245]; // Rose / Coral for Activity & Sports
+      },
+      getPosition: f => f.geometry.coordinates,
+      updateTriggers: {
+        getLineWidth: [selectedEducationPoi?.properties?.id],
+        getLineColor: [selectedEducationPoi?.properties?.id]
+      },
+      onHover: info => setHoverInfo(info),
+      onClick: info => {
+        if (info.object && onSelectEducationPoi) {
+          onSelectEducationPoi(info.object);
+        }
+      }
+    }),
+
+    // 2f. Pulsing Selection Ring for Selected Education Institution
+    activeLayers.educationPois && selectedEducationPoi?.geometry?.coordinates && new ScatterplotLayer({
+      id: 'education-poi-selected-pulse',
+      data: [selectedEducationPoi],
+      pickable: false,
+      stroked: true,
+      filled: false,
+      radiusScale: 1,
+      radiusMinPixels: 18,
+      radiusMaxPixels: 28,
+      lineWidthUnits: 'pixels',
+      getLineWidth: 2.5,
+      getLineColor: [245, 158, 11, 255], // Distinct vivid amber halo
       getPosition: f => f.geometry.coordinates
     }),
 
@@ -717,6 +781,51 @@ export default function MapViewport({
                       </div>
                       <div className="pt-0.5 text-[10px] text-emerald-800 font-medium italic border-t border-slate-100">
                         {p.ice_cream_synergy}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              // Case Education & Youth Institution (Schools, Colleges, Coaching Hubs, Sports Arenas)
+              if (p.id?.startsWith('SCH_') || p.id?.startsWith('COL_') || p.id?.startsWith('COA_') || p.id?.startsWith('ACT_') || p.student_capacity !== undefined) {
+                const badgeStyle = 
+                  p.category === 'School' ? 'text-amber-800 bg-amber-50 border-amber-300' :
+                  p.category === 'College' ? 'text-indigo-800 bg-indigo-50 border-indigo-300' :
+                  p.category === 'Coaching Institute' ? 'text-cyan-800 bg-cyan-50 border-cyan-300' :
+                  'text-rose-800 bg-rose-50 border-rose-300';
+
+                return (
+                  <div className="space-y-1.5 min-w-[270px]">
+                    <div className="flex justify-between items-center border-b border-slate-200 pb-1">
+                      <span className={`text-[10px] uppercase font-bold px-1.5 py-0.5 rounded border ${badgeStyle}`}>
+                        {p.category}
+                      </span>
+                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+                        Synergy: {p.synergy_score}/100
+                      </span>
+                    </div>
+                    <div className="text-xs font-extrabold text-slate-900">{p.name}</div>
+                    <div className="text-[10px] text-slate-600 font-semibold">
+                      {p.locality} {p.sub_category ? `• ${p.sub_category}` : ''}
+                    </div>
+                    <div className="text-[9px] text-slate-400 line-clamp-1">{p.address}</div>
+
+                    <div className="pt-1 border-t border-slate-100 space-y-0.5 text-[11px]">
+                      <div className="flex justify-between">
+                        <span className="text-slate-500">Student Capacity:</span>
+                        <span className="text-slate-900 font-bold">~{p.student_capacity?.toLocaleString()} students</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-500">Target Cohort:</span>
+                        <span className="text-slate-800 font-semibold">{p.target_age_group}</span>
+                      </div>
+                      <div className="flex justify-between text-[10px]">
+                        <span className="text-slate-400">Peak Dessert Window:</span>
+                        <span className="text-amber-800 font-semibold">{p.peak_window}</span>
+                      </div>
+                      <div className="pt-0.5 text-[10px] text-emerald-800 font-medium italic border-t border-slate-100">
+                        {p.dessert_synergy_reason}
                       </div>
                     </div>
                   </div>

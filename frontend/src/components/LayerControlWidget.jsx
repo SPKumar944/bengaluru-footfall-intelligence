@@ -12,7 +12,8 @@ import {
   Cpu,
   Building2,
   Users,
-  Hexagon
+  Hexagon,
+  GraduationCap
 } from 'lucide-react';
 
 export default function LayerControlWidget({
@@ -28,6 +29,11 @@ export default function LayerControlWidget({
   setSelectedKidsCategory,
   selectedKidsAttraction,
   onSelectKidsAttraction,
+  educationPoisData,
+  selectedEducationCategory = 'ALL',
+  setSelectedEducationCategory,
+  selectedEducationPoi,
+  onSelectEducationPoi,
   demographicGender = 'all',
   setDemographicGender,
   demographicAge = 'all',
@@ -79,6 +85,28 @@ export default function LayerControlWidget({
   }, [kidsAttractionsData, selectedKidsCategory]);
 
   const totalKidsCount = kidsAttractionsData?.features?.length || 116;
+
+  // Extract unique education POI categories and counts
+  const educationCategories = React.useMemo(() => {
+    if (!educationPoisData?.features) return [];
+    const counts = {};
+    educationPoisData.features.forEach(f => {
+      const c = f.properties?.category;
+      if (c) counts[c] = (counts[c] || 0) + 1;
+    });
+    return Object.entries(counts).map(([name, count]) => ({ name, count }));
+  }, [educationPoisData]);
+
+  // Institutions corresponding to selected education category
+  const correspondingEducationPois = React.useMemo(() => {
+    if (!educationPoisData?.features) return [];
+    const list = selectedEducationCategory === 'ALL' 
+      ? educationPoisData.features 
+      : educationPoisData.features.filter(f => f.properties?.category === selectedEducationCategory);
+    return [...list].sort((a, b) => (a.properties?.name || '').localeCompare(b.properties?.name || ''));
+  }, [educationPoisData, selectedEducationCategory]);
+
+  const totalEducationCount = educationPoisData?.features?.length || 102;
 
   const activeCount = Object.values(activeLayers).filter(Boolean).length;
 
@@ -505,24 +533,31 @@ export default function LayerControlWidget({
             </div>
           </div>
 
-          {/* Layer 8: Hexagon Demographics & Population Grid */}
+          {/* Layer 8: Demographics & Education / Youth Information */}
           <div 
             className={`p-2 rounded-lg transition-all border ${
-              (activeLayers.hexDemographics || activeLayers.wardDemographics)
+              (activeLayers.hexDemographics || activeLayers.educationPois)
                 ? 'bg-emerald-50/80 border-emerald-300 text-slate-900 shadow-2xs' 
                 : 'bg-slate-50/60 border-slate-200 text-slate-400 hover:bg-slate-100'
             }`}
           >
             <div 
-              onClick={() => toggleLayer('hexDemographics')}
+              onClick={() => {
+                const nextState = !(activeLayers.hexDemographics || activeLayers.educationPois);
+                setActiveLayers(prev => ({
+                  ...prev,
+                  hexDemographics: nextState,
+                  educationPois: nextState
+                }));
+              }}
               className="flex items-start gap-2.5 cursor-pointer"
             >
               <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
-                (activeLayers.hexDemographics || activeLayers.wardDemographics)
+                (activeLayers.hexDemographics || activeLayers.educationPois)
                   ? 'bg-emerald-600 border-emerald-700 text-white' 
                   : 'bg-white border-slate-300'
               }`}>
-                {(activeLayers.hexDemographics || activeLayers.wardDemographics) && <Check className="w-3 h-3 stroke-[3]" />}
+                {(activeLayers.hexDemographics || activeLayers.educationPois) && <Check className="w-3 h-3 stroke-[3]" />}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
@@ -530,103 +565,247 @@ export default function LayerControlWidget({
                     <Users className="w-3.5 h-3.5 text-emerald-600" />
                     Demographics Information
                   </span>
-                  <span className="w-2.5 h-2.5 rounded-xs bg-emerald-500/70 border border-emerald-600" />
+                  <div className="flex items-center gap-1">
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500 border border-white" title="Schools & Colleges (102)" />
+                    <span className="w-2.5 h-2.5 rounded-xs bg-emerald-500/70 border border-emerald-600" title="Hexagon Grid (19.5k)" />
+                  </div>
                 </div>
                 <p className="text-[9px] text-slate-500 mt-0.5">
-                  Census population, age & gender distribution
+                  Schools, colleges, coaching hubs & population density
                 </p>
               </div>
             </div>
 
-            {/* In-Panel Controls: Gender Toggle & Age Determination Filter */}
-            {(activeLayers.hexDemographics || activeLayers.wardDemographics) && (
+            {/* In-Panel Controls: Education/Youth POIs + Gender/Age Hexagon Demographics */}
+            {(activeLayers.hexDemographics || activeLayers.educationPois) && (
               <div 
-                className="mt-2.5 pt-2 border-t border-emerald-200/80 space-y-2"
+                className="mt-2.5 pt-2 border-t border-emerald-200/80 space-y-2.5"
                 onClick={(e) => e.stopPropagation()}
               >
-                {/* 1. Gender Segment Toggle */}
-                <div>
-                  <div className="flex justify-between items-center text-[10px] text-slate-700 font-semibold mb-1">
-                    <span>Gender Segment:</span>
-                    <span className="text-[9px] text-slate-500 font-mono">
-                      {demographicGender === 'male' ? '4.42M (50.7%)' : demographicGender === 'female' ? '4.29M (49.3%)' : '8.70M Total'}
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-3 gap-1 bg-white p-0.5 rounded border border-slate-200 text-[10px]">
+                {/* SUBSECTION A: YOUTH & STUDENT INSTITUTIONS (SCHOOLS, COLLEGES, COACHING) */}
+                <div className="bg-white/95 rounded-lg p-2 border border-emerald-200 shadow-2xs space-y-2">
+                  <div className="flex items-center justify-between pb-1 border-b border-emerald-100">
+                    <div className="flex items-center gap-1.5 font-bold text-[10px] text-emerald-950">
+                      <GraduationCap className="w-3.5 h-3.5 text-amber-600" />
+                      <span>Youth & Student POIs ({totalEducationCount})</span>
+                    </div>
+                    {/* Toggle Button for Education POIs */}
                     <button
                       type="button"
-                      onClick={() => setDemographicGender && setDemographicGender('all')}
-                      className={`py-1 rounded font-bold transition-all text-center ${
-                        demographicGender === 'all'
-                          ? 'bg-emerald-600 text-white shadow-2xs'
-                          : 'text-slate-600 hover:bg-slate-100'
+                      onClick={() => setActiveLayers(prev => ({ ...prev, educationPois: !prev.educationPois }))}
+                      className={`text-[9px] px-1.5 py-0.5 rounded font-bold transition flex items-center gap-1 border cursor-pointer ${
+                        activeLayers.educationPois
+                          ? 'bg-amber-100 text-amber-800 border-amber-300'
+                          : 'bg-slate-100 text-slate-500 border-slate-200 hover:bg-slate-200'
                       }`}
                     >
-                      All Pop
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setDemographicGender && setDemographicGender('male')}
-                      className={`py-1 rounded font-bold transition-all text-center ${
-                        demographicGender === 'male'
-                          ? 'bg-sky-600 text-white shadow-2xs'
-                          : 'text-slate-600 hover:bg-slate-100'
-                      }`}
-                    >
-                      Male
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setDemographicGender && setDemographicGender('female')}
-                      className={`py-1 rounded font-bold transition-all text-center ${
-                        demographicGender === 'female'
-                          ? 'bg-rose-500 text-white shadow-2xs'
-                          : 'text-slate-600 hover:bg-slate-100'
-                      }`}
-                    >
-                      Female
+                      {activeLayers.educationPois ? 'Visible' : 'Hidden'}
                     </button>
                   </div>
+
+                  {activeLayers.educationPois && (
+                    <>
+                      {/* 1. Category Filter Dropdown */}
+                      <div>
+                        <div className="flex items-center justify-between text-[10px] font-bold text-slate-700 mb-1">
+                          <span>Category Filter:</span>
+                          {selectedEducationCategory !== 'ALL' && (
+                            <button
+                              onClick={() => setSelectedEducationCategory && setSelectedEducationCategory('ALL')}
+                              className="text-[9px] text-emerald-600 hover:text-emerald-800 underline font-normal cursor-pointer"
+                            >
+                              Reset ({totalEducationCount})
+                            </button>
+                          )}
+                        </div>
+                        <select
+                          value={selectedEducationCategory}
+                          onChange={(e) => setSelectedEducationCategory && setSelectedEducationCategory(e.target.value)}
+                          className="w-full bg-amber-50/40 border border-amber-300 rounded px-2 py-1.5 text-xs font-bold text-amber-950 focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer shadow-2xs"
+                        >
+                          <option value="ALL">All Institutions ({totalEducationCount})</option>
+                          {educationCategories.map(c => (
+                            <option key={c.name} value={c.name}>
+                              {c.name === 'School' ? 'Schools & Academies' :
+                               c.name === 'College' ? 'Colleges & Universities' :
+                               c.name === 'Coaching Institute' ? 'Coaching & Test Prep' :
+                               c.name === 'Activity & Sports' ? 'Kids Activity & Sports Hubs' : c.name} ({c.count})
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+
+                      {/* 2. Institution Selector Dropdown */}
+                      <div>
+                        <label className="block text-[10px] font-bold text-slate-700 mb-1">
+                          {selectedEducationCategory === 'ALL'
+                            ? `Select Institution (${correspondingEducationPois.length}):`
+                            : `${selectedEducationCategory} (${correspondingEducationPois.length}):`}
+                        </label>
+                        <select
+                          value={selectedEducationPoi?.properties?.id || ''}
+                          onChange={(e) => {
+                            const match = educationPoisData?.features?.find(f => f.properties?.id === e.target.value);
+                            if (match && onSelectEducationPoi) {
+                              onSelectEducationPoi(match);
+                            }
+                          }}
+                          className="w-full bg-white border border-slate-300 rounded px-2 py-1.5 text-xs font-semibold text-slate-800 focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer shadow-2xs"
+                        >
+                          <option value="">
+                            {selectedEducationCategory === 'ALL' 
+                              ? 'Select school, college, coaching hub...' 
+                              : `Select ${selectedEducationCategory}...`}
+                          </option>
+                          {correspondingEducationPois.map(f => (
+                            <option key={f.properties?.id} value={f.properties?.id}>
+                              {f.properties?.name} — {f.properties?.locality} ({f.properties?.student_capacity?.toLocaleString()} students)
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+
+                      {/* 3. Selected Institution Detail Snapshot */}
+                      {selectedEducationPoi && (
+                        <div className="bg-amber-50/90 border border-amber-300 rounded-lg p-2 text-[10px] text-amber-950 space-y-1">
+                          <div className="font-extrabold flex items-center justify-between">
+                            <span className="truncate">{selectedEducationPoi.properties?.name}</span>
+                            <span className="text-emerald-700 shrink-0 font-bold ml-1 bg-emerald-100 px-1 rounded border border-emerald-300">
+                              Synergy: {selectedEducationPoi.properties?.synergy_score}/100
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-1.5 text-[9px] text-slate-600 font-semibold">
+                            <span className="px-1 py-0.2 rounded bg-amber-200 text-amber-900 font-bold">
+                              {selectedEducationPoi.properties?.category}
+                            </span>
+                            <span className="truncate">{selectedEducationPoi.properties?.locality}</span>
+                          </div>
+                          <div className="text-slate-600 line-clamp-1">{selectedEducationPoi.properties?.address}</div>
+                          <div className="text-slate-800 font-bold flex justify-between pt-0.5 border-t border-amber-200">
+                            <span>Capacity & Target:</span>
+                            <span>~{selectedEducationPoi.properties?.student_capacity?.toLocaleString()} ({selectedEducationPoi.properties?.target_age_group})</span>
+                          </div>
+                          <div className="text-[9px] text-amber-900 font-medium">
+                            <span className="font-bold">Peak Window:</span> {selectedEducationPoi.properties?.peak_window}
+                          </div>
+                          <div className="text-[9px] text-emerald-800 font-medium italic border-t border-amber-200/60 pt-0.5">
+                            {selectedEducationPoi.properties?.dessert_synergy_reason}
+                          </div>
+                        </div>
+                      )}
+                    </>
+                  )}
                 </div>
 
-                {/* 2. Age Determination Filter */}
-                <div>
-                  <div className="flex justify-between items-center text-[10px] text-slate-700 font-semibold mb-1">
-                    <span>Age Determination:</span>
-                    {demographicAge === 'kids' && (
-                      <span className="text-[9px] bg-amber-100 text-amber-800 px-1 rounded font-bold border border-amber-300">
-                        Primary Target
-                      </span>
-                    )}
+                {/* SUBSECTION B: H3 HEXAGON POPULATION GRID */}
+                <div className="bg-white/95 rounded-lg p-2 border border-emerald-200 shadow-2xs space-y-2">
+                  <div className="flex items-center justify-between pb-1 border-b border-emerald-100">
+                    <div className="flex items-center gap-1.5 font-bold text-[10px] text-emerald-950">
+                      <Hexagon className="w-3.5 h-3.5 text-emerald-600" />
+                      <span>H3 Hexagon Population Grid</span>
+                    </div>
+                    {/* Toggle Button for Hexagons */}
+                    <button
+                      type="button"
+                      onClick={() => setActiveLayers(prev => ({ ...prev, hexDemographics: !prev.hexDemographics }))}
+                      className={`text-[9px] px-1.5 py-0.5 rounded font-bold transition flex items-center gap-1 border cursor-pointer ${
+                        activeLayers.hexDemographics
+                          ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
+                          : 'bg-slate-100 text-slate-500 border-slate-200 hover:bg-slate-200'
+                      }`}
+                    >
+                      {activeLayers.hexDemographics ? 'Visible' : 'Hidden'}
+                    </button>
                   </div>
-                  <select
-                    value={demographicAge}
-                    onChange={(e) => setDemographicAge && setDemographicAge(e.target.value)}
-                    className="w-full text-[11px] font-semibold bg-white border border-slate-300 rounded px-2 py-1 text-slate-800 focus:outline-hidden focus:ring-1 focus:ring-emerald-500 cursor-pointer"
-                  >
-                    <option value="all">All Ages (0–90+ yrs) • 8.70M</option>
-                    <option value="kids">Kids & Children (0–14 yrs) • 1.72M [Ice Cream Target]</option>
-                    <option value="youth">Youth & Students (15–24 yrs) • 1.51M</option>
-                    <option value="adults">Working Adults (25–54 yrs) • 3.99M</option>
-                    <option value="seniors">Mature & Seniors (55+ yrs) • 1.48M</option>
-                  </select>
-                </div>
 
-                {/* 3. Active Metric Summary */}
-                <div className="bg-white/90 rounded p-1.5 border border-emerald-200 text-[10px] flex justify-between items-center">
-                  <span className="text-slate-500 font-medium">Selected Cohort:</span>
-                  <span className="font-bold text-emerald-800 font-mono">
-                    {(() => {
-                      const labels = {
-                        all: { all: '8.70M Residents', male: '4.42M Males', female: '4.29M Females' },
-                        kids: { all: '1.72M Kids (0–14)', male: '881k Male Kids', female: '840k Female Kids' },
-                        youth: { all: '1.51M Youth (15–24)', male: '782k Male Youth', female: '723k Female Youth' },
-                        adults: { all: '3.99M Adults (25–54)', male: '2.05M Male Adults', female: '1.94M Female Adults' },
-                        seniors: { all: '1.48M Seniors (55+)', male: '708k Male Seniors', female: '776k Female Seniors' }
-                      };
-                      return labels[demographicAge]?.[demographicGender] || '8.70M Total';
-                    })()}
-                  </span>
+                  {activeLayers.hexDemographics && (
+                    <>
+                      {/* Gender Segment Toggle */}
+                      <div>
+                        <div className="flex justify-between items-center text-[10px] text-slate-700 font-semibold mb-1">
+                          <span>Gender Segment:</span>
+                          <span className="text-[9px] text-slate-500 font-mono">
+                            {demographicGender === 'male' ? '4.42M (50.7%)' : demographicGender === 'female' ? '4.29M (49.3%)' : '8.70M Total'}
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-3 gap-1 bg-slate-50 p-0.5 rounded border border-slate-200 text-[10px]">
+                          <button
+                            type="button"
+                            onClick={() => setDemographicGender && setDemographicGender('all')}
+                            className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
+                              demographicGender === 'all'
+                                ? 'bg-emerald-600 text-white shadow-2xs'
+                                : 'text-slate-600 hover:bg-slate-100'
+                            }`}
+                          >
+                            All Pop
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setDemographicGender && setDemographicGender('male')}
+                            className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
+                              demographicGender === 'male'
+                                ? 'bg-sky-600 text-white shadow-2xs'
+                                : 'text-slate-600 hover:bg-slate-100'
+                            }`}
+                          >
+                            Male
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setDemographicGender && setDemographicGender('female')}
+                            className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
+                              demographicGender === 'female'
+                                ? 'bg-rose-500 text-white shadow-2xs'
+                                : 'text-slate-600 hover:bg-slate-100'
+                            }`}
+                          >
+                            Female
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Age Determination Filter */}
+                      <div>
+                        <div className="flex justify-between items-center text-[10px] text-slate-700 font-semibold mb-1">
+                          <span>Age Determination:</span>
+                          {demographicAge === 'kids' && (
+                            <span className="text-[9px] bg-amber-100 text-amber-800 px-1 rounded font-bold border border-amber-300">
+                              Primary Target
+                            </span>
+                          )}
+                        </div>
+                        <select
+                          value={demographicAge}
+                          onChange={(e) => setDemographicAge && setDemographicAge(e.target.value)}
+                          className="w-full text-[11px] font-semibold bg-white border border-slate-300 rounded px-2 py-1 text-slate-800 focus:outline-hidden focus:ring-1 focus:ring-emerald-500 cursor-pointer"
+                        >
+                          <option value="all">All Ages (0–90+ yrs) • 8.70M</option>
+                          <option value="kids">Kids & Children (0–14 yrs) • 1.72M [Ice Cream Target]</option>
+                          <option value="youth">Youth & Students (15–24 yrs) • 1.51M</option>
+                          <option value="adults">Working Adults (25–54 yrs) • 3.99M</option>
+                          <option value="seniors">Mature & Seniors (55+ yrs) • 1.48M</option>
+                        </select>
+                      </div>
+
+                      {/* Active Metric Summary */}
+                      <div className="bg-slate-50 rounded p-1.5 border border-slate-200 text-[10px] flex justify-between items-center">
+                        <span className="text-slate-500 font-medium">Selected Cohort:</span>
+                        <span className="font-bold text-emerald-800 font-mono">
+                          {(() => {
+                            const labels = {
+                              all: { all: '8.70M Residents', male: '4.42M Males', female: '4.29M Females' },
+                              kids: { all: '1.72M Kids (0–14)', male: '881k Male Kids', female: '840k Female Kids' },
+                              youth: { all: '1.51M Youth (15–24)', male: '782k Male Youth', female: '723k Female Youth' },
+                              adults: { all: '3.99M Adults (25–54)', male: '2.05M Male Adults', female: '1.94M Female Adults' },
+                              seniors: { all: '1.48M Seniors (55+)', male: '708k Male Seniors', female: '776k Female Seniors' }
+                            };
+                            return labels[demographicAge]?.[demographicGender] || '8.70M Total';
+                          })()}
+                        </span>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             )}
