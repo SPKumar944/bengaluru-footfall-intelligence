@@ -192,10 +192,7 @@ export default function MapViewport({
   activeDay = 'saturday',
   activeDayType = 'weekend',
   selectedFootfallRange = 'ALL',
-  scopeToRadiusCircle = true,
-  trafficIsochronesData,
-  selectedIsochroneDuration = 'ALL',
-  isochroneScopeStore = true
+  scopeToRadiusCircle = true
 }) {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
@@ -316,52 +313,6 @@ export default function MapViewport({
     activeDayType
   ]);
 
-  // Filter traffic isochrones by active day, duration, and selected store
-  const filteredIsochronesData = useMemo(() => {
-    if (!trafficIsochronesData?.features) return null;
-
-    const filtered = trafficIsochronesData.features.filter(f => {
-      const p = f.properties;
-      // 1. Day match
-      if (p.day !== activeDay) return false;
-
-      // 2. Duration filter
-      if (selectedIsochroneDuration && selectedIsochroneDuration !== 'ALL') {
-        if (Number(p.duration_min) !== Number(selectedIsochroneDuration)) return false;
-      }
-
-      // 3. Store scope filter
-      if (isochroneScopeStore && selectedApsaraStore) {
-        const targetSerial = selectedApsaraStore.serial_no || selectedApsaraStore.store_id;
-        const matchesStore = (
-          p.store_id === targetSerial ||
-          (p.locality && selectedApsaraStore.locality && p.locality.toLowerCase() === selectedApsaraStore.locality.toLowerCase())
-        );
-        if (!matchesStore) {
-          return false;
-        }
-      }
-
-      return true;
-    });
-
-    // Sort descending by duration_min (10m first, then 5m on top)
-    const sorted = [...filtered].sort((a, b) => (b.properties?.duration_min || 0) - (a.properties?.duration_min || 0));
-
-    return {
-      type: 'FeatureCollection',
-      features: sorted
-    };
-  }, [
-    trafficIsochronesData,
-    activeDay,
-    selectedIsochroneDuration,
-    isochroneScopeStore,
-    selectedApsaraStore?.serial_no,
-    selectedApsaraStore?.store_id,
-    selectedApsaraStore?.locality
-  ]);
-
   // Deck.gl Layers
   const deckLayers = [
     // 0a. Demographics Information (H3 Hexagon Grid with constant thin hairline border)
@@ -413,33 +364,6 @@ export default function MapViewport({
       onHover: info => setHoverInfo(info)
     }),
 
-    // 0c. Traffic-Based Dynamic Travel-Time Isochrones (5, 10, 20, 30 Mins for Mon-Sun)
-    (activeLayers.isochrones || activeLayers.catchments) && filteredIsochronesData?.features?.length > 0 && new GeoJsonLayer({
-      id: 'traffic-isochrones-layer',
-      data: filteredIsochronesData,
-      pickable: true,
-      stroked: true,
-      filled: true,
-      extruded: false, // Strict 2D
-      lineWidthUnits: 'pixels',
-      lineWidthMinPixels: 2,
-      getLineWidth: f => f.properties?.line_width ? Math.max(f.properties.line_width, 2) : 2.5,
-      getLineColor: f => {
-        const rgb = f.properties?.rgb || [16, 185, 129];
-        return [...rgb, 230]; // High-contrast, sharp outer contour border
-      },
-      getFillColor: f => {
-        const rgb = f.properties?.rgb || [16, 185, 129];
-        const alpha = Math.round((f.properties?.fill_opacity || 0.18) * 255);
-        return [...rgb, Math.max(alpha, 40)]; // Clearly discernible translucent fill
-      },
-      updateTriggers: {
-        getFillColor: [activeDay, selectedIsochroneDuration, isochroneScopeStore, selectedApsaraStore?.serial_no, selectedApsaraStore?.locality],
-        getLineColor: [activeDay, selectedIsochroneDuration, isochroneScopeStore, selectedApsaraStore?.serial_no, selectedApsaraStore?.locality],
-        getLineWidth: [activeDay, selectedIsochroneDuration, isochroneScopeStore, selectedApsaraStore?.serial_no, selectedApsaraStore?.locality]
-      },
-      onHover: info => setHoverInfo(info)
-    }),
 
     // 1. High-Density 350m Pedestrian Catchment Zones for all 13 Outlets
     activeLayers.catchments && catchmentsData?.features && new GeoJsonLayer({
@@ -1165,76 +1089,6 @@ export default function MapViewport({
                 );
               }
 
-              // Case H: Traffic Travel-Time Isochrone Catchment (5m, 10m)
-              if (p.duration_min && p.store_id) {
-                const badgeColors = {
-                  5: 'bg-emerald-500/15 text-emerald-800 border-emerald-500/30',
-                  10: 'bg-azure-500/15 text-azure-800 border-azure-500/30'
-                };
-                const badgeStyle = badgeColors[p.duration_min] || 'bg-azure-500/15 text-azure-800 border-azure-500/30';
-
-                return (
-                  <div className="space-y-2 min-w-[260px]">
-                    <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1.5">
-                      <div className="flex items-center gap-1.5">
-                        <span 
-                          className="w-3 h-3 rounded-full shrink-0 shadow-2xs"
-                          style={{ backgroundColor: p.color || '#3b82f6' }}
-                        />
-                        <span className="text-[10px] uppercase font-bold text-ink-950 font-mono tracking-tight">
-                          {p.duration_min}-Min Travel Catchment
-                        </span>
-                      </div>
-                      <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded border font-bold uppercase ${badgeStyle}`}>
-                        {p.day_name} Traffic
-                      </span>
-                    </div>
-
-                    <div>
-                      <div className="text-xs font-extrabold text-ink-950">{p.locality} Catchment</div>
-                      <div className="text-[10px] text-ink-500 font-medium">{p.store_name}</div>
-                    </div>
-
-                    <div 
-                      className="p-1.5 rounded-lg border flex items-center justify-between"
-                      style={{ 
-                        backgroundColor: `${p.color}14`,
-                        borderColor: `${p.color}40`
-                      }}
-                    >
-                      <div>
-                        <div className="text-[10px] font-bold text-ink-950">{p.tier_label}</div>
-                        <div className="text-[8.5px] text-ink-600 leading-tight">{p.traffic_condition}</div>
-                      </div>
-                      <div className="text-right shrink-0 pl-2">
-                        <div className="text-xs font-mono font-black text-ink-950">~{p.base_radius_km || (p.cutoff_distance_m ? (p.cutoff_distance_m / 1000).toFixed(1) : '1.0')} km</div>
-                        <div className="text-[8px] uppercase tracking-wider text-ink-400 font-mono">Radial Reach</div>
-                      </div>
-                    </div>
-
-                    <div className="space-y-1 pt-1 border-t border-ink-950/[0.06] text-[11px]">
-                      <div className="flex justify-between items-center">
-                        <span className="text-ink-500">Avg Driving Speed:</span>
-                        <span className="text-ink-900 font-bold font-mono">
-                          {p.avg_speed_kmh} km/h
-                        </span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-ink-500">Coverage Area:</span>
-                        <span className="text-azure-700 font-bold font-mono">
-                          ~{p.coverage_area_km2} km²
-                        </span>
-                      </div>
-                      <div className="flex justify-between items-center text-[10px]">
-                        <span className="text-ink-400">Congestion Level:</span>
-                        <span className={`font-semibold ${p.congestion_level === 'High' ? 'text-rose-700' : p.congestion_level === 'Low' ? 'text-emerald-700' : 'text-amber-700'}`}>
-                          {p.congestion_level} Traffic Density
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                );
-              }
 
               // Case G: Street Footfall Vector Segment
               const hrVal = p.hourly_footfall?.[activeHour] || 100;

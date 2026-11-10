@@ -83,30 +83,15 @@ export default function LayerControlWidget({
   selectedApsaraStore,
   activeHour = 21,
   activeDay = 'saturday',
-  activeDayType = 'weekend',
-  trafficIsochronesData,
-  selectedIsochroneDuration = 'ALL',
-  setSelectedIsochroneDuration,
-  isochroneScopeStore = true,
-  setIsochroneScopeStore
+  activeDayType = 'weekend'
 }) {
   const [isExpanded, setIsExpanded] = useState(true);
 
   const toggleLayer = (key) => {
-    setActiveLayers(prev => {
-      if (key === 'isochrones') {
-        const next = !prev.isochrones;
-        return {
-          ...prev,
-          isochrones: next,
-          catchments: next
-        };
-      }
-      return {
-        ...prev,
-        [key]: !prev[key]
-      };
-    });
+    setActiveLayers(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
   };
 
   // Extract unique competitor brands and counts
@@ -269,124 +254,34 @@ export default function LayerControlWidget({
             )}
           </div>
 
-          {/* Layer 2: Traffic Isochrones (5, 10, 20, 30 min) & Catchment Zones */}
+          {/* Layer 2: Apsara Store 350m Catchments */}
           <div 
-            className={`p-2 rounded-lg transition-all border ${
-              activeLayers.isochrones || activeLayers.catchments
+            onClick={() => toggleLayer('catchments')}
+            className={`flex items-start gap-2.5 p-2 rounded-lg cursor-pointer transition-all border ${
+              activeLayers.catchments 
                 ? 'bg-paper-50 border-ink-950/[0.14] text-ink-950 shadow-2xs' 
                 : 'bg-paper-50/70 border-ink-950/[0.08] text-ink-500 hover:bg-paper-100 hover:text-ink-800'
             }`}
           >
-            <div 
-              onClick={() => toggleLayer('isochrones')}
-              className="flex items-start gap-2.5 cursor-pointer"
-            >
-              <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
-                activeLayers.isochrones 
-                  ? 'bg-ink-950 border-ink-950 text-white' 
-                  : 'bg-white border-ink-950/[0.2]'
-              }`}>
-                {activeLayers.isochrones && <Check className="w-3 h-3 stroke-[3]" />}
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center justify-between">
-                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
-                    <CircleDot className="w-3.5 h-3.5 text-azure-600" />
-                    Traffic Isochrones (5m & 10m)
-                  </span>
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#10b981]" title="5 min walk / quick ride" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#3b82f6]" title="10 min primary delivery / drive" />
-                  </div>
-                </div>
-                <p className="text-[9px] text-ink-500 mt-0.5">
-                  5 & 10 min • Mon–Sun real traffic kinematics
-                </p>
-              </div>
+            <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
+              activeLayers.catchments 
+                ? 'bg-ink-950 border-ink-950 text-white' 
+                : 'bg-white border-ink-950/[0.2]'
+            }`}>
+              {activeLayers.catchments && <Check className="w-3 h-3 stroke-[3]" />}
             </div>
-
-            {/* Isochrone Sub-Controls when Active */}
-            {activeLayers.isochrones && (
-              <div 
-                onClick={(e) => e.stopPropagation()}
-                className="mt-2.5 pt-2 border-t border-ink-950/[0.08] space-y-2 text-xs font-mono"
-              >
-                {/* Duration Filter Buttons: All, 5m, 10m */}
-                <div>
-                  <div className="flex items-center justify-between text-[10px] font-bold text-ink-950 mb-1">
-                    <span>Travel Time Tiers:</span>
-                    <span className="text-[9px] text-azure-700 capitalize font-bold">{activeDay} traffic</span>
-                  </div>
-                  <div className="grid grid-cols-3 gap-1.5 text-[10px]">
-                    {[
-                      { id: 'ALL', label: 'All Tiers', color: '#0f172a' },
-                      { id: 5, label: '5m Walk/Ride', color: '#10b981' },
-                      { id: 10, label: '10m Drive', color: '#3b82f6' }
-                    ].map(btn => {
-                      const isSelected = selectedIsochroneDuration === btn.id;
-                      return (
-                        <button
-                          key={btn.id}
-                          onClick={() => setSelectedIsochroneDuration && setSelectedIsochroneDuration(btn.id)}
-                          className={`py-1 rounded font-bold transition-all cursor-pointer border ${
-                            isSelected
-                              ? 'text-white border-ink-950 shadow-2xs'
-                              : 'bg-white text-ink-700 border-ink-950/[0.12] hover:bg-paper-100'
-                          }`}
-                          style={isSelected ? { backgroundColor: btn.color, borderColor: btn.color } : {}}
-                        >
-                          {btn.label}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Scope Selection: Active Store vs All 31 Outlets */}
-                <div className="flex items-center justify-between text-[10px] pt-1 border-t border-ink-950/[0.06]">
-                  <span className="text-ink-600 font-semibold">Isochrone Scope:</span>
-                  <div className="flex items-center gap-1">
-                    <button
-                      onClick={() => setIsochroneScopeStore && setIsochroneScopeStore(true)}
-                      className={`px-1.5 py-0.5 rounded text-[9px] font-bold border transition-all cursor-pointer ${
-                        isochroneScopeStore
-                          ? 'bg-azure-600 text-white border-azure-600 shadow-2xs'
-                          : 'bg-white text-ink-600 border-ink-950/[0.1] hover:bg-paper-100'
-                      }`}
-                    >
-                      {selectedApsaraStore ? selectedApsaraStore.locality : 'Active Store'}
-                    </button>
-                    <button
-                      onClick={() => setIsochroneScopeStore && setIsochroneScopeStore(false)}
-                      className={`px-1.5 py-0.5 rounded text-[9px] font-bold border transition-all cursor-pointer ${
-                        !isochroneScopeStore
-                          ? 'bg-azure-600 text-white border-azure-600 shadow-2xs'
-                          : 'bg-white text-ink-600 border-ink-950/[0.1] hover:bg-paper-100'
-                      }`}
-                    >
-                      All 31 Outlets
-                    </button>
-                  </div>
-                </div>
-
-                {/* 350m Walkshed Toggle Checkbox */}
-                <div className="flex items-center justify-between text-[10px] pt-1 border-t border-ink-950/[0.06]">
-                  <label 
-                    onClick={() => toggleLayer('catchments')}
-                    className="flex items-center gap-1.5 cursor-pointer text-ink-800"
-                  >
-                    <input
-                      type="checkbox"
-                      checked={activeLayers.catchments}
-                      onChange={() => {}}
-                      className="w-3.5 h-3.5 accent-azure-600 rounded cursor-pointer"
-                    />
-                    <span>350m Pedestrian Walkshed</span>
-                  </label>
-                  <span className="w-2.5 h-2.5 rounded-full border border-amber-600 bg-amber-500/20" />
-                </div>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
+                  <CircleDot className="w-3.5 h-3.5 text-amber-600" />
+                  350m Store Catchment Perimeter
+                </span>
+                <span className="w-2.5 h-2.5 rounded-full border border-amber-600 bg-amber-500/30" />
               </div>
-            )}
+              <p className="text-[9px] text-ink-500 mt-0.5">
+                350m pedestrian buffer around Apsara stores
+              </p>
+            </div>
           </div>
 
           {/* Layer 3: Apsara Stores */}
