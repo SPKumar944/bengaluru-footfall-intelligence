@@ -18,6 +18,19 @@ import {
 } from 'lucide-react';
 import { 
   getSpectrumIcon,
+  getEducationIcon,
+  getKidsIcon,
+  IceCreamIcon,
+  SundaeIcon,
+  StoreIcon,
+  GiftIcon,
+  GamepadIcon,
+  TicketIcon,
+  TreesIcon,
+  SchoolIcon,
+  UniversityIcon,
+  BookOpenIcon,
+  TrophyIcon,
   MetroIcon, 
   ShoppingMallsIcon, 
   CinemasIcon, 
@@ -25,7 +38,8 @@ import {
   HotSpicyIcon,
   YouthFastCasualIcon,
   LateNightPubsIcon,
-  EveningTiffinIcon
+  EveningTiffinIcon,
+  BuildingIcon
 } from './IconMCP';
 
 export default function LayerControlWidget({
@@ -242,18 +256,20 @@ export default function LayerControlWidget({
           >
             <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
               activeLayers.apsaraStores 
-                ? 'bg-amber-600 border-amber-700 text-white' 
+                ? 'bg-slate-900 border-slate-950 text-white' 
                 : 'bg-white border-slate-300'
             }`}>
               {activeLayers.apsaraStores && <Check className="w-3 h-3 stroke-[3]" />}
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between">
-                <span className="font-bold text-[11px] flex items-center gap-1.5">
-                  <MapPin className="w-3 h-3 text-red-600" />
+                <span className="font-bold text-[11px] flex items-center gap-1.5 text-slate-900">
+                  <IceCreamIcon size={14} className="text-slate-900" />
                   Apsara Outlets (13)
                 </span>
-                <span className="w-2.5 h-2.5 rounded-full bg-red-600 border border-white" />
+                <span className="w-4 h-4 rounded-full border border-slate-700 bg-white flex items-center justify-center shadow-2xs">
+                  <IceCreamIcon size={9} className="text-slate-900" />
+                </span>
               </div>
               <p className="text-[9px] text-slate-500 mt-0.5">
                 Apsara Ice Cream verified pins
@@ -265,7 +281,7 @@ export default function LayerControlWidget({
           <div 
             className={`p-2 rounded-lg transition-all border ${
               activeLayers.competitors 
-                ? 'bg-purple-50/80 border-purple-300 text-slate-900 shadow-2xs' 
+                ? 'bg-slate-100/90 border-slate-300 text-slate-900 shadow-2xs' 
                 : 'bg-slate-50/60 border-slate-200 text-slate-400 hover:bg-slate-100'
             }`}
           >
@@ -276,7 +292,7 @@ export default function LayerControlWidget({
             >
               <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
                 activeLayers.competitors 
-                  ? 'bg-purple-600 border-purple-700 text-white' 
+                  ? 'bg-slate-900 border-slate-950 text-white' 
                   : 'bg-white border-slate-300'
               }`}>
                 {activeLayers.competitors && <Check className="w-3 h-3 stroke-[3]" />}
@@ -284,14 +300,12 @@ export default function LayerControlWidget({
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-[11px] flex items-center gap-1.5 text-slate-900">
-                    <Store className="w-3 h-3 text-purple-600" />
+                    <SundaeIcon size={14} className="text-slate-900" />
                     Competitor Parlors (108)
                   </span>
-                  <div className="flex -space-x-1">
-                    <span className="w-2.5 h-2.5 rounded-full bg-purple-600 border border-white" title="Corner House" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 border border-white" title="Naturals" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-cyan-500 border border-white" title="Polar Bear" />
-                  </div>
+                  <span className="w-4 h-4 rounded-full border border-slate-700 bg-white flex items-center justify-center shadow-2xs" title="Competitor Parlor">
+                    <SundaeIcon size={9} className="text-slate-900" />
+                  </span>
                 </div>
                 <p className="text-[9px] text-slate-500 mt-0.5">
                   Corner House, Naturals, Polar Bear, Milano...
@@ -364,15 +378,22 @@ export default function LayerControlWidget({
 
                 {/* 3. Selected Competitor Snapshot */}
                 {selectedCompetitor && (
-                  <div className="bg-purple-100/80 border border-purple-300 rounded-lg p-2 text-[10px] text-purple-950 space-y-1">
-                    <div className="font-extrabold flex items-center justify-between">
-                      <span className="truncate">{selectedCompetitor.properties?.store_name}</span>
-                      <span className="text-emerald-700 shrink-0 font-bold ml-1">Rating: {selectedCompetitor.properties?.rating_proxy}</span>
+                  <div className="bg-slate-100/90 border border-slate-300 rounded-lg p-2 text-[10px] text-slate-900 space-y-1.5 shadow-2xs">
+                    <div className="flex items-center justify-between gap-1 font-bold">
+                      <div className="flex items-center gap-1.5 truncate">
+                        <span className="p-1 rounded bg-white border border-slate-300 text-slate-900 shrink-0">
+                          <SundaeIcon size={12} className="shrink-0" />
+                        </span>
+                        <span className="truncate">{selectedCompetitor.properties?.store_name}</span>
+                      </div>
+                      <span className="text-slate-800 shrink-0 font-bold bg-white px-1.5 py-0.5 rounded border border-slate-300 text-[9px]">
+                        ★ {selectedCompetitor.properties?.rating_proxy}
+                      </span>
                     </div>
-                    <div className="text-slate-600 line-clamp-1">{selectedCompetitor.properties?.address}</div>
-                    <div className="text-purple-800 font-bold flex justify-between pt-0.5 border-t border-purple-200">
+                    <div className="text-slate-500 line-clamp-1">{selectedCompetitor.properties?.address}</div>
+                    <div className="text-slate-800 font-semibold flex justify-between pt-1 border-t border-slate-200">
                       <span>Monthly Volume:</span>
-                      <span>~{selectedCompetitor.properties?.monthly_cup_volume_est?.toLocaleString()} cups/mo</span>
+                      <span className="font-bold">~{selectedCompetitor.properties?.monthly_cup_volume_est?.toLocaleString()} cups/mo</span>
                     </div>
                   </div>
                 )}
@@ -395,7 +416,7 @@ export default function LayerControlWidget({
             >
               <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
                 activeLayers.complementaryBrands 
-                  ? 'bg-orange-600 border-orange-700 text-white' 
+                  ? 'bg-slate-900 border-slate-950 text-white' 
                   : 'bg-white border-slate-300'
               }`}>
                 {activeLayers.complementaryBrands && <Check className="w-3 h-3 stroke-[3]" />}
@@ -403,24 +424,24 @@ export default function LayerControlWidget({
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-[11px] flex items-center gap-1.5 text-slate-900">
-                    <UtensilsCrossed className="w-3.5 h-3.5 text-orange-600" />
+                    <StoreIcon size={14} className="text-slate-900" />
                     Complementary Brands ({totalComplementaryCount})
                   </span>
                   <div className="flex -space-x-1">
-                    <span className="w-4 h-4 rounded-full bg-sky-500 border border-white flex items-center justify-center text-white shadow-2xs" title="Metro & Transit">
-                      <MetroIcon size={10} />
+                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Metro & Transit">
+                      <MetroIcon size={9} />
                     </span>
-                    <span className="w-4 h-4 rounded-full bg-fuchsia-500 border border-white flex items-center justify-center text-white shadow-2xs" title="Shopping Malls">
-                      <ShoppingMallsIcon size={10} />
+                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Shopping Malls">
+                      <ShoppingMallsIcon size={9} />
                     </span>
-                    <span className="w-4 h-4 rounded-full bg-indigo-500 border border-white flex items-center justify-center text-white shadow-2xs" title="Cinemas & Auditoriums">
-                      <CinemasIcon size={10} />
+                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Cinemas & Auditoriums">
+                      <CinemasIcon size={9} />
                     </span>
-                    <span className="w-4 h-4 rounded-full bg-amber-500 border border-white flex items-center justify-center text-white shadow-2xs" title="Street Walkways">
-                      <WalkwaysIcon size={10} />
+                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Street Walkways">
+                      <WalkwaysIcon size={9} />
                     </span>
-                    <span className="w-4 h-4 rounded-full bg-red-500 border border-white flex items-center justify-center text-white shadow-2xs" title="Spicy Biryani">
-                      <HotSpicyIcon size={10} />
+                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Spicy Biryani">
+                      <HotSpicyIcon size={9} />
                     </span>
                   </div>
                 </div>
@@ -537,30 +558,35 @@ export default function LayerControlWidget({
 
                 {/* 4. Selected Complementary Venue Snapshot Card */}
                 {selectedComplementaryBrand && (
-                  <div className="bg-orange-100/90 border border-orange-300 rounded-lg p-2 text-[10px] text-orange-950 space-y-1">
-                    <div className="font-extrabold flex items-center justify-between">
-                      <span className="truncate">{selectedComplementaryBrand.properties?.name}</span>
-                      <span className="text-emerald-700 shrink-0 font-bold ml-1 bg-emerald-100 px-1 rounded border border-emerald-300">
+                  <div className="bg-slate-100/90 border border-slate-300 rounded-lg p-2 text-[10px] text-slate-900 space-y-1.5 shadow-2xs">
+                    <div className="flex items-center justify-between gap-1 font-bold">
+                      <div className="flex items-center gap-1.5 truncate">
+                        <span className="p-1 rounded bg-white border border-slate-300 text-slate-900 shrink-0">
+                          {getSpectrumIcon(selectedComplementaryBrand.properties?.spectrum_category, { size: 12, className: 'shrink-0' })}
+                        </span>
+                        <span className="truncate">{selectedComplementaryBrand.properties?.name}</span>
+                      </div>
+                      <span className="text-slate-800 shrink-0 font-bold bg-white px-1.5 py-0.5 rounded border border-slate-300 text-[9px]">
                         Synergy: {selectedComplementaryBrand.properties?.synergy_score}/100
                       </span>
                     </div>
                     <div className="flex items-center gap-1.5 text-[9px] text-slate-600 font-semibold">
-                      <span className="px-1.5 py-0.5 rounded bg-orange-200 text-orange-950 font-bold flex items-center gap-1">
+                      <span className="px-1.5 py-0.5 rounded bg-white border border-slate-300 text-slate-900 font-bold flex items-center gap-1">
                         {getSpectrumIcon(selectedComplementaryBrand.properties?.spectrum_category, { size: 11, className: 'shrink-0' })}
                         <span>{selectedComplementaryBrand.properties?.spectrum_category}</span>
                       </span>
                       <span className="truncate">{selectedComplementaryBrand.properties?.locality}</span>
                     </div>
-                    <div className="text-slate-600 line-clamp-1">{selectedComplementaryBrand.properties?.address}</div>
-                    <div className="text-slate-800 font-bold flex justify-between pt-0.5 border-t border-orange-200">
+                    <div className="text-slate-500 line-clamp-1">{selectedComplementaryBrand.properties?.address}</div>
+                    <div className="text-slate-800 font-semibold flex justify-between pt-1 border-t border-slate-200">
                       <span>Peak Spillover:</span>
-                      <span className="text-orange-900 font-extrabold">{selectedComplementaryBrand.properties?.peak_window}</span>
+                      <span className="font-bold">{selectedComplementaryBrand.properties?.peak_window}</span>
                     </div>
-                    <div className="text-[9px] text-slate-700 flex justify-between">
+                    <div className="text-[9px] text-slate-600 flex justify-between">
                       <span>Est. Daily Traffic:</span>
-                      <span>~{selectedComplementaryBrand.properties?.daily_customer_footfall?.toLocaleString()} diners/day</span>
+                      <span className="font-bold">~{selectedComplementaryBrand.properties?.daily_customer_footfall?.toLocaleString()} diners/day</span>
                     </div>
-                    <div className="text-[9px] text-emerald-800 font-medium italic border-t border-orange-200/60 pt-0.5">
+                    <div className="text-[9px] text-slate-700 font-medium italic border-t border-slate-200 pt-1">
                       {selectedComplementaryBrand.properties?.synergy_reason}
                     </div>
                   </div>
@@ -591,7 +617,7 @@ export default function LayerControlWidget({
             >
               <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
                 activeLayers.kidsAttractions 
-                  ? 'bg-pink-600 border-pink-700 text-white' 
+                  ? 'bg-slate-900 border-slate-950 text-white' 
                   : 'bg-white border-slate-300'
               }`}>
                 {activeLayers.kidsAttractions && <Check className="w-3 h-3 stroke-[3]" />}
@@ -599,14 +625,22 @@ export default function LayerControlWidget({
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-[11px] flex items-center gap-1.5 text-slate-900">
-                    <Sparkles className="w-3 h-3 text-pink-600" />
+                    <GamepadIcon size={14} className="text-slate-900" />
                     Kids & Family Magnets ({totalKidsCount})
                   </span>
                   <div className="flex -space-x-1">
-                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500 border border-white" title="Hamleys & Toys" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-pink-500 border border-white" title="Arcades & Play" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 border border-white" title="Theatres" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 border border-white" title="Parks & Lakes" />
+                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Hamleys & Toys">
+                      <GiftIcon size={9} />
+                    </span>
+                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Arcades & Play">
+                      <GamepadIcon size={9} />
+                    </span>
+                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Theatres">
+                      <TicketIcon size={9} />
+                    </span>
+                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Parks & Lakes">
+                      <TreesIcon size={9} />
+                    </span>
                   </div>
                 </div>
                 <p className="text-[9px] text-slate-500 mt-0.5">
@@ -680,20 +714,26 @@ export default function LayerControlWidget({
 
                 {/* 3. Selected Kids Attraction Snapshot */}
                 {selectedKidsAttraction && (
-                  <div className="bg-pink-100/80 border border-pink-300 rounded-lg p-2 text-[10px] text-pink-950 space-y-1">
-                    <div className="font-extrabold flex items-center justify-between">
-                      <span className="truncate">{selectedKidsAttraction.properties?.name}</span>
-                      <span className="text-emerald-700 shrink-0 font-bold ml-1">
+                  <div className="bg-slate-100/90 border border-slate-300 rounded-lg p-2 text-[10px] text-slate-900 space-y-1.5 shadow-2xs">
+                    <div className="flex items-center justify-between gap-1 font-bold">
+                      <div className="flex items-center gap-1.5 truncate">
+                        <span className="p-1 rounded bg-white border border-slate-300 text-slate-900 shrink-0">
+                          {getKidsIcon(selectedKidsAttraction.properties?.category, { size: 12, className: 'shrink-0' })}
+                        </span>
+                        <span className="truncate">{selectedKidsAttraction.properties?.name}</span>
+                      </div>
+                      <span className="text-slate-800 shrink-0 font-bold bg-white px-1.5 py-0.5 rounded border border-slate-300 text-[9px]">
                         Synergy: {selectedKidsAttraction.properties?.ice_cream_attraction_score}/100
                       </span>
                     </div>
-                    <div className="text-slate-600 line-clamp-1">{selectedKidsAttraction.properties?.address}</div>
-                    <div className="text-pink-800 font-bold flex justify-between pt-0.5 border-t border-pink-200">
+                    <div className="text-slate-500 line-clamp-1">{selectedKidsAttraction.properties?.address}</div>
+                    <div className="text-slate-800 font-semibold flex justify-between pt-1 border-t border-slate-200">
                       <span>Monthly Traffic:</span>
-                      <span>~{selectedKidsAttraction.properties?.est_monthly_family_footfall?.toLocaleString()} / mo</span>
+                      <span className="font-bold">~{selectedKidsAttraction.properties?.est_monthly_family_footfall?.toLocaleString()} / mo</span>
                     </div>
-                    <div className="text-[9px] text-amber-900 font-medium">
-                      Peak: {selectedKidsAttraction.properties?.peak_window}
+                    <div className="text-[9px] text-slate-600 font-medium flex items-center justify-between">
+                      <span>Category: {selectedKidsAttraction.properties?.category}</span>
+                      <span>Peak: {selectedKidsAttraction.properties?.peak_window}</span>
                     </div>
                   </div>
                 )}
@@ -712,18 +752,20 @@ export default function LayerControlWidget({
           >
             <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
               activeLayers.techParks 
-                ? 'bg-sky-600 border-sky-700 text-white' 
+                ? 'bg-slate-900 border-slate-950 text-white' 
                 : 'bg-white border-slate-300'
             }`}>
               {activeLayers.techParks && <Check className="w-3 h-3 stroke-[3]" />}
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between">
-                <span className="font-bold text-[11px] flex items-center gap-1.5">
-                  <Cpu className="w-3 h-3 text-sky-600" />
+                <span className="font-bold text-[11px] flex items-center gap-1.5 text-slate-900">
+                  <BuildingIcon size={14} className="text-slate-900" />
                   Tech Parks & IT Campuses (95)
                 </span>
-                <span className="w-2.5 h-2.5 rounded-full bg-sky-500 border border-white" />
+                <span className="w-4 h-4 rounded-full border border-slate-700 bg-white flex items-center justify-center shadow-2xs" title="Tech Park">
+                  <BuildingIcon size={9} className="text-slate-900" />
+                </span>
               </div>
               <p className="text-[9px] text-slate-500 mt-0.5">
                 Corporate hubs & daytime dessert demand
@@ -903,7 +945,7 @@ export default function LayerControlWidget({
             >
               <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
                 activeLayers.educationPois 
-                  ? 'bg-amber-600 border-amber-700 text-white' 
+                  ? 'bg-slate-900 border-slate-950 text-white' 
                   : 'bg-white border-slate-300'
               }`}>
                 {activeLayers.educationPois && <Check className="w-3 h-3 stroke-[3]" />}
@@ -911,13 +953,22 @@ export default function LayerControlWidget({
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-[11px] flex items-center gap-1.5 text-slate-900">
-                    <GraduationCap className="w-3.5 h-3.5 text-amber-600" />
+                    <UniversityIcon size={14} className="text-slate-900" />
                     Schools, Colleges & Coaching ({totalEducationCount})
                   </span>
                   <div className="flex -space-x-1">
-                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500 border border-white" title="Schools" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-indigo-600 border border-white" title="Colleges" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-cyan-500 border border-white" title="Coaching" />
+                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Schools">
+                      <SchoolIcon size={9} />
+                    </span>
+                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Colleges">
+                      <UniversityIcon size={9} />
+                    </span>
+                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Coaching">
+                      <BookOpenIcon size={9} />
+                    </span>
+                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Sports">
+                      <TrophyIcon size={9} />
+                    </span>
                   </div>
                 </div>
                 <p className="text-[9px] text-slate-500 mt-0.5">
@@ -994,28 +1045,35 @@ export default function LayerControlWidget({
 
                 {/* 3. Selected Institution Detail Snapshot */}
                 {selectedEducationPoi && (
-                  <div className="bg-amber-100/90 border border-amber-300 rounded-lg p-2 text-[10px] text-amber-950 space-y-1">
-                    <div className="font-extrabold flex items-center justify-between">
-                      <span className="truncate">{selectedEducationPoi.properties?.name}</span>
-                      <span className="text-emerald-700 shrink-0 font-bold ml-1 bg-emerald-100 px-1 rounded border border-emerald-300">
+                  <div className="bg-slate-100/90 border border-slate-300 rounded-lg p-2 text-[10px] text-slate-900 space-y-1.5 shadow-2xs">
+                    <div className="flex items-center justify-between gap-1 font-bold">
+                      <div className="flex items-center gap-1.5 truncate">
+                        <span className="p-1 rounded bg-white border border-slate-300 text-slate-900 shrink-0">
+                          {getEducationIcon(selectedEducationPoi.properties?.category, { size: 12, className: 'shrink-0' })}
+                        </span>
+                        <span className="truncate">{selectedEducationPoi.properties?.name}</span>
+                      </div>
+                      <span className="text-slate-800 shrink-0 font-bold bg-white px-1.5 py-0.5 rounded border border-slate-300 text-[9px]">
                         Synergy: {selectedEducationPoi.properties?.synergy_score}/100
                       </span>
                     </div>
                     <div className="flex items-center gap-1.5 text-[9px] text-slate-600 font-semibold">
-                      <span className="px-1 py-0.2 rounded bg-amber-200 text-amber-900 font-bold">
-                        {selectedEducationPoi.properties?.category}
+                      <span className="px-1.5 py-0.5 rounded bg-white border border-slate-300 text-slate-900 font-bold flex items-center gap-1">
+                        {getEducationIcon(selectedEducationPoi.properties?.category, { size: 11, className: 'shrink-0' })}
+                        <span>{selectedEducationPoi.properties?.category}</span>
                       </span>
                       <span className="truncate">{selectedEducationPoi.properties?.locality}</span>
                     </div>
-                    <div className="text-slate-600 line-clamp-1">{selectedEducationPoi.properties?.address}</div>
-                    <div className="text-slate-800 font-bold flex justify-between pt-0.5 border-t border-amber-200">
+                    <div className="text-slate-500 line-clamp-1">{selectedEducationPoi.properties?.address}</div>
+                    <div className="text-slate-800 font-semibold flex justify-between pt-1 border-t border-slate-200">
                       <span>Capacity & Target:</span>
-                      <span>~{selectedEducationPoi.properties?.student_capacity?.toLocaleString()} ({selectedEducationPoi.properties?.target_age_group})</span>
+                      <span className="font-bold">~{selectedEducationPoi.properties?.student_capacity?.toLocaleString()} ({selectedEducationPoi.properties?.target_age_group})</span>
                     </div>
-                    <div className="text-[9px] text-amber-900 font-medium">
-                      <span className="font-bold">Peak Window:</span> {selectedEducationPoi.properties?.peak_window}
+                    <div className="text-[9px] text-slate-600 font-medium flex items-center justify-between">
+                      <span className="font-bold">Peak Window:</span>
+                      <span>{selectedEducationPoi.properties?.peak_window}</span>
                     </div>
-                    <div className="text-[9px] text-emerald-800 font-medium italic border-t border-amber-200/60 pt-0.5">
+                    <div className="text-[9px] text-slate-700 font-medium italic border-t border-slate-200 pt-1">
                       {selectedEducationPoi.properties?.dessert_synergy_reason}
                     </div>
                   </div>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <filter id="pinShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <circle cx="32" cy="32" r="26" fill="#ffffff" stroke="#0f172a" stroke-width="2.2" filter="url(#pinShadow)"/>
+  
+  <g transform="translate(16, 16) scale(2)" color="#0f172a" fill="none" stroke="#0f172a" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2.25 11.75 L2.25 10.75 C2.25 9.922 2.922 9.25 3.75 9.25 L3.75 9.25 C4.578 9.25 5.25 8.578 5.25 7.75 L5.25 7.75 C5.25 6.922 5.922 6.25 6.75 6.25 L9.25 6.25 C10.078 6.25 10.75 6.922 10.75 7.75 L10.75 7.75 C10.75 8.578 11.422 9.25 12.25 9.25 L12.25 9.25 C13.078 9.25 13.75 9.922 13.75 10.75 L13.75 11.75 C13.75 12.855 12.855 13.75 11.75 13.75 L4.25 13.75 C3.145 13.75 2.25 12.855 2.25 11.75 Z"/>
+    <line x1="8" y1="6.25" x2="8" y2="1.75"/>
+    <path d="M8.805 2.043 L9.375 2.25 C9.842 2.42 9.842 3.08 9.375 3.25 L8.805 3.457 C8.414 3.6 8 3.31 8 2.893 L8 2.607 C8 2.19 8.414 1.9 8.805 2.043 Z"/>
+    <path d="M6.75 13.75 L6.75 11.8 C6.75 11.358 7.108 11 7.55 11 L8.45 11 C8.892 11 9.25 11.358 9.25 11.8 L9.25 13.75"/>
+  </g>
+</svg>

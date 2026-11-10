@@ -1,8 +1,15 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 import DeckGL from '@deck.gl/react';
 import { GeoJsonLayer, ScatterplotLayer, TextLayer, IconLayer } from '@deck.gl/layers';
-import { getComplementaryPinIcon } from '../utils/iconMcpPins';
-import { getSpectrumIcon } from './IconMCP';
+import { getOutlinePin } from '../utils/iconMcpPins';
+import { 
+  getSpectrumIcon, 
+  getEducationIcon, 
+  getKidsIcon, 
+  IceCreamIcon, 
+  SundaeIcon, 
+  BuildingIcon 
+} from './IconMCP';
 import { H3HexagonLayer } from '@deck.gl/geo-layers';
 import { Hexagon } from 'lucide-react';
 import maplibregl from 'maplibre-gl';
@@ -385,51 +392,37 @@ export default function MapViewport({
       onHover: info => setHoverInfo(info)
     }),
 
-    // 2b. Tech Parks & IT Campuses (95 Hubs across Bengaluru)
-    activeLayers.techParks && techParksData?.features && new ScatterplotLayer({
+    // 2b. Tech Parks & IT Campuses (IconMCP Black Outline Building Pins)
+    activeLayers.techParks && techParksData?.features && new IconLayer({
       id: 'tech-parks-layer',
       data: techParksData.features,
       pickable: true,
-      opacity: 0.95,
-      stroked: true,
-      filled: true,
-      radiusScale: 1,
-      radiusMinPixels: 7,
-      radiusMaxPixels: 14,
-      lineWidthUnits: 'pixels',
-      getLineWidth: 2,
-      getLineColor: [255, 255, 255, 240],
-      getFillColor: [14, 165, 233, 235], // Tech Sky Blue
       getPosition: f => f.geometry.coordinates,
+      getIcon: () => getOutlinePin('tech_park'),
+      getSize: 26,
+      sizeUnits: 'pixels',
+      sizeScale: 1,
       onHover: info => setHoverInfo(info)
     }),
 
-    // 2c. Kids & Family Footfall Magnets (Toy Stores, Play Arcades, Theatres, Parks)
-    activeLayers.kidsAttractions && filteredKidsAttractions.length > 0 && new ScatterplotLayer({
+    // 2c. Kids & Family Footfall Magnets (IconMCP Black Outline Pins: Toys, Arcades, Theatres, Parks)
+    activeLayers.kidsAttractions && filteredKidsAttractions.length > 0 && new IconLayer({
       id: 'kids-attractions-layer',
       data: filteredKidsAttractions,
       pickable: true,
-      opacity: 0.95,
-      stroked: true,
-      filled: true,
-      radiusScale: 1,
-      radiusMinPixels: 8,
-      radiusMaxPixels: 16,
-      lineWidthUnits: 'pixels',
-      getLineWidth: f => selectedKidsAttraction?.properties?.id === f.properties?.id ? 3.5 : 2,
-      getLineColor: f => selectedKidsAttraction?.properties?.id === f.properties?.id ? [255, 255, 255, 255] : [255, 255, 255, 240],
-      getFillColor: f => {
-        const cat = f.properties?.category || '';
-        if (cat.includes('Toy Store')) return [245, 158, 11, 245]; // Amber / Gold
-        if (cat.includes('Play Arena') || cat.includes('Theme Park')) return [236, 72, 153, 245]; // Pink / Magenta
-        if (cat.includes('Theatre') || cat.includes('Multiplex')) return [99, 102, 241, 245]; // Indigo
-        if (cat.includes('Park') || cat.includes('Garden') || cat.includes('Lake')) return [16, 185, 129, 245]; // Emerald
-        return [14, 165, 233, 245]; // Sky Blue (Science/Nature/Zoo)
-      },
       getPosition: f => f.geometry.coordinates,
+      getIcon: f => {
+        const cat = f.properties?.category || '';
+        if (cat.includes('Toy') || cat.includes('Hamleys')) return getOutlinePin('kids_toys');
+        if (cat.includes('Play') || cat.includes('Arcade') || cat.includes('Theme')) return getOutlinePin('kids_play');
+        if (cat.includes('Theatre') || cat.includes('Multiplex')) return getOutlinePin('kids_theatre');
+        return getOutlinePin('kids_parks');
+      },
+      getSize: f => selectedKidsAttraction?.properties?.id === f.properties?.id ? 36 : 28,
+      sizeUnits: 'pixels',
+      sizeScale: 1,
       updateTriggers: {
-        getLineWidth: [selectedKidsAttraction?.properties?.id],
-        getLineColor: [selectedKidsAttraction?.properties?.id]
+        getSize: [selectedKidsAttraction?.properties?.id]
       },
       onHover: info => setHoverInfo(info),
       onClick: info => {
@@ -447,39 +440,32 @@ export default function MapViewport({
       stroked: true,
       filled: false,
       radiusScale: 1,
-      radiusMinPixels: 18,
-      radiusMaxPixels: 28,
+      radiusMinPixels: 22,
+      radiusMaxPixels: 34,
       lineWidthUnits: 'pixels',
       getLineWidth: 2.5,
-      getLineColor: [244, 63, 94, 255], // Distinct vivid rose/pink halo
+      getLineColor: [15, 23, 42, 220],
       getPosition: f => f.geometry.coordinates
     }),
 
-    // 2e. Educational & Youth Institutions (Schools, Colleges, Coaching, Activity Arenas)
-    activeLayers.educationPois && filteredEducationPois.length > 0 && new ScatterplotLayer({
+    // 2e. Educational & Youth Institutions (IconMCP Black Outline Pins: Schools, Colleges, Coaching, Sports)
+    activeLayers.educationPois && filteredEducationPois.length > 0 && new IconLayer({
       id: 'education-youth-pois-layer',
       data: filteredEducationPois,
       pickable: true,
-      opacity: 0.95,
-      stroked: true,
-      filled: true,
-      radiusScale: 1,
-      radiusMinPixels: 8,
-      radiusMaxPixels: 16,
-      lineWidthUnits: 'pixels',
-      getLineWidth: f => selectedEducationPoi?.properties?.id === f.properties?.id ? 3.5 : 2,
-      getLineColor: f => selectedEducationPoi?.properties?.id === f.properties?.id ? [255, 255, 255, 255] : [255, 255, 255, 240],
-      getFillColor: f => {
-        const cat = f.properties?.category;
-        if (cat === 'School') return [245, 158, 11, 245]; // Amber / Gold
-        if (cat === 'College') return [99, 102, 241, 245]; // Indigo
-        if (cat === 'Coaching Institute') return [6, 182, 212, 245]; // Cyan / Teal
-        return [244, 63, 94, 245]; // Rose / Coral for Activity & Sports
-      },
       getPosition: f => f.geometry.coordinates,
+      getIcon: f => {
+        const cat = f.properties?.category;
+        if (cat === 'School') return getOutlinePin('school');
+        if (cat === 'College') return getOutlinePin('college');
+        if (cat === 'Coaching Institute') return getOutlinePin('coaching');
+        return getOutlinePin('sports');
+      },
+      getSize: f => selectedEducationPoi?.properties?.id === f.properties?.id ? 36 : 28,
+      sizeUnits: 'pixels',
+      sizeScale: 1,
       updateTriggers: {
-        getLineWidth: [selectedEducationPoi?.properties?.id],
-        getLineColor: [selectedEducationPoi?.properties?.id]
+        getSize: [selectedEducationPoi?.properties?.id]
       },
       onHover: info => setHoverInfo(info),
       onClick: info => {
@@ -497,21 +483,21 @@ export default function MapViewport({
       stroked: true,
       filled: false,
       radiusScale: 1,
-      radiusMinPixels: 18,
-      radiusMaxPixels: 28,
+      radiusMinPixels: 22,
+      radiusMaxPixels: 34,
       lineWidthUnits: 'pixels',
       getLineWidth: 2.5,
-      getLineColor: [245, 158, 11, 255], // Distinct vivid amber halo
+      getLineColor: [15, 23, 42, 220],
       getPosition: f => f.geometry.coordinates
     }),
 
-    // 2g. Complementary Brands & High-Footfall Transit / Retail Hubs (IconMCP Vector Pins)
+    // 2g. Complementary Brands & High-Footfall Transit / Retail Hubs (IconMCP Black Outline Pins)
     activeLayers.complementaryBrands && filteredComplementaryBrands.length > 0 && new IconLayer({
       id: 'complementary-brands-iconmcp-layer',
       data: filteredComplementaryBrands,
       pickable: true,
       getPosition: f => f.geometry.coordinates,
-      getIcon: f => getComplementaryPinIcon(f.properties?.spectrum_category),
+      getIcon: f => getOutlinePin(f.properties?.spectrum_category),
       getSize: f => selectedComplementaryBrand?.properties?.id === f.properties?.id ? 36 : 28,
       sizeUnits: 'pixels',
       sizeScale: 1,
@@ -535,48 +521,26 @@ export default function MapViewport({
       stroked: true,
       filled: false,
       radiusScale: 1,
-      radiusMinPixels: 18,
-      radiusMaxPixels: 28,
+      radiusMinPixels: 22,
+      radiusMaxPixels: 34,
       lineWidthUnits: 'pixels',
       getLineWidth: 2.5,
-      getLineColor: [249, 115, 22, 255], // Distinct vivid orange halo
+      getLineColor: [15, 23, 42, 220],
       getPosition: f => f.geometry.coordinates
     }),
 
-    // 3. Competitor Ice Cream Parlors Across Bengaluru (Filtered by Brand if selected)
-    activeLayers.competitors && filteredCompetitors.length > 0 && new ScatterplotLayer({
+    // 3. Competitor Ice Cream Parlors Across Bengaluru (IconMCP Black Outline Sundae Store Pins)
+    activeLayers.competitors && filteredCompetitors.length > 0 && new IconLayer({
       id: 'competitor-parlors-layer',
       data: filteredCompetitors,
       pickable: true,
-      opacity: 0.95,
-      stroked: true,
-      filled: true,
-      radiusScale: 1,
-      radiusMinPixels: 7,
-      radiusMaxPixels: 14,
-      lineWidthUnits: 'pixels',
-      getLineWidth: f => selectedCompetitor?.properties?.store_id === f.properties?.store_id ? 3 : 1.5,
-      getLineColor: f => selectedCompetitor?.properties?.store_id === f.properties?.store_id ? [255, 255, 255, 255] : [255, 255, 255, 230],
-      getFillColor: f => {
-        const b = (f.properties?.brand || '').toLowerCase();
-        if (b.includes('corner house')) return [147, 51, 234, 245]; // Purple
-        if (b.includes('natural')) return [16, 185, 129, 245]; // Emerald
-        if (b.includes('polar bear')) return [14, 165, 233, 245]; // Cyan
-        if (b.includes('milano')) return [245, 158, 11, 245]; // Amber
-        if (b.includes('cream stone') || b.includes('stoner')) return [249, 115, 22, 245]; // Orange
-        if (b.includes('baskin')) return [236, 72, 153, 245]; // Pink
-        if (b.includes('ibaco')) return [99, 102, 241, 245]; // Indigo
-        if (b.includes('arun')) return [239, 68, 68, 245]; // Red
-        if (b.includes('amul')) return [59, 130, 246, 245]; // Blue
-        if (b.includes('pabrai')) return [20, 184, 166, 245]; // Teal
-        if (b.includes('kwality')) return [217, 70, 239, 245]; // Fuchsia
-        if (b.includes('nic')) return [34, 197, 94, 245]; // Green
-        return [100, 116, 139, 220]; // Slate
-      },
       getPosition: f => f.geometry.coordinates,
+      getIcon: () => getOutlinePin('competitor'),
+      getSize: f => selectedCompetitor?.properties?.store_id === f.properties?.store_id ? 34 : 26,
+      sizeUnits: 'pixels',
+      sizeScale: 1,
       updateTriggers: {
-        getLineWidth: [selectedCompetitor?.properties?.store_id],
-        getLineColor: [selectedCompetitor?.properties?.store_id]
+        getSize: [selectedCompetitor?.properties?.store_id]
       },
       onHover: info => setHoverInfo(info),
       onClick: info => {
@@ -594,32 +558,26 @@ export default function MapViewport({
       stroked: true,
       filled: false,
       radiusScale: 1,
-      radiusMinPixels: 18,
-      radiusMaxPixels: 28,
+      radiusMinPixels: 22,
+      radiusMaxPixels: 34,
       lineWidthUnits: 'pixels',
       getLineWidth: 2.5,
-      getLineColor: [147, 51, 234, 255], // Distinct vivid purple halo
+      getLineColor: [15, 23, 42, 220],
       getPosition: f => f.geometry.coordinates
     }),
 
-    // 4. Apsara Ice Cream Outlets Across Bangalore
-    activeLayers.apsaraStores && apsaraStoresData.length > 0 && new ScatterplotLayer({
+    // 4. Apsara Ice Cream Outlets Across Bangalore (Hero Client Brand - Prominent IconMCP Outline Pin)
+    activeLayers.apsaraStores && apsaraStoresData.length > 0 && new IconLayer({
       id: 'apsara-icecream-stores-layer',
       data: apsaraStoresData,
       pickable: true,
-      opacity: 1,
-      stroked: true,
-      filled: true,
-      radiusScale: 1,
-      radiusMinPixels: 8,
-      radiusMaxPixels: 15,
-      lineWidthUnits: 'pixels',
-      getLineWidth: 2.5,
-      getLineColor: [255, 255, 255, 255],
-      getFillColor: d => selectedApsaraStore?.serial_no === d.serial_no ? [220, 38, 38, 255] : [245, 158, 11, 240],
       getPosition: d => [d.coordinates.lng, d.coordinates.lat],
+      getIcon: () => getOutlinePin('apsara'),
+      getSize: d => selectedApsaraStore?.serial_no === d.serial_no ? 40 : 32,
+      sizeUnits: 'pixels',
+      sizeScale: 1,
       updateTriggers: {
-        getFillColor: [selectedApsaraStore?.serial_no]
+        getSize: [selectedApsaraStore?.serial_no]
       },
       onHover: info => setHoverInfo(info),
       onClick: info => {
@@ -637,13 +595,13 @@ export default function MapViewport({
       stroked: true,
       filled: false,
       radiusScale: 1,
-      radiusMinPixels: 18,
-      radiusMaxPixels: 26,
+      radiusMinPixels: 24,
+      radiusMaxPixels: 36,
       lineWidthUnits: 'pixels',
-      getLineWidth: 2,
-      getLineColor: [220, 38, 38, 240],
+      getLineWidth: 3,
+      getLineColor: [15, 23, 42, 240],
       getPosition: d => [d.coordinates.lng, d.coordinates.lat]
-    })
+    }),
   ].filter(Boolean);
 
   return (
@@ -786,9 +744,10 @@ export default function MapViewport({
               if (p.store_id && p.brand) {
                 return (
                   <div className="space-y-1.5 min-w-[220px]">
-                    <div className="flex justify-between items-center border-b border-purple-200 pb-1">
-                      <span className="text-[10px] uppercase font-bold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded border border-purple-200">
-                        {p.brand}
+                    <div className="flex justify-between items-center border-b border-slate-200 pb-1">
+                      <span className="text-[10px] uppercase font-bold text-slate-900 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-300 flex items-center gap-1.5">
+                        <SundaeIcon size={12} className="text-slate-800 shrink-0" />
+                        <span>{p.brand}</span>
                       </span>
                       <span className="text-[10px] font-bold text-emerald-700">
                         Rating: {p.rating_proxy} / 5.0
@@ -798,7 +757,7 @@ export default function MapViewport({
                     <div className="text-[10px] text-slate-500 line-clamp-2">{p.address}</div>
                     <div className="pt-1 border-t border-slate-100 flex justify-between text-[11px]">
                       <span className="text-slate-500">Est. Monthly Volume:</span>
-                      <span className="text-purple-700 font-extrabold">~{p.monthly_cup_volume_est?.toLocaleString()} cups/mo</span>
+                      <span className="text-slate-900 font-extrabold">~{p.monthly_cup_volume_est?.toLocaleString()} cups/mo</span>
                     </div>
                   </div>
                 );
@@ -808,9 +767,10 @@ export default function MapViewport({
               if (p.id?.startsWith('KIDS_')) {
                 return (
                   <div className="space-y-1.5 min-w-[260px]">
-                    <div className="flex justify-between items-center border-b border-pink-200 pb-1">
-                      <span className="text-[10px] uppercase font-bold text-pink-700 bg-pink-50 px-1.5 py-0.5 rounded border border-pink-200">
-                        {p.category}
+                    <div className="flex justify-between items-center border-b border-slate-200 pb-1">
+                      <span className="text-[10px] uppercase font-bold text-slate-900 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-300 flex items-center gap-1.5">
+                        {getKidsIcon(p.category, { size: 12, className: 'text-slate-800 shrink-0' })}
+                        <span>{p.category}</span>
                       </span>
                       <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
                         Synergy: {p.ice_cream_attraction_score}/100
@@ -827,7 +787,7 @@ export default function MapViewport({
                       </div>
                       <div className="flex justify-between">
                         <span className="text-slate-500">Monthly Family Traffic:</span>
-                        <span className="text-pink-700 font-bold">~{p.est_monthly_family_footfall?.toLocaleString()} / mo</span>
+                        <span className="text-slate-900 font-bold">~{p.est_monthly_family_footfall?.toLocaleString()} / mo</span>
                       </div>
                       <div className="flex justify-between text-[10px]">
                         <span className="text-slate-400">Peak Footfall:</span>
@@ -843,17 +803,12 @@ export default function MapViewport({
 
               // Case Education & Youth Institution (Schools, Colleges, Coaching Hubs, Sports Arenas)
               if (p.id?.startsWith('SCH_') || p.id?.startsWith('COL_') || p.id?.startsWith('COA_') || p.id?.startsWith('ACT_') || p.student_capacity !== undefined) {
-                const badgeStyle = 
-                  p.category === 'School' ? 'text-amber-800 bg-amber-50 border-amber-300' :
-                  p.category === 'College' ? 'text-indigo-800 bg-indigo-50 border-indigo-300' :
-                  p.category === 'Coaching Institute' ? 'text-cyan-800 bg-cyan-50 border-cyan-300' :
-                  'text-rose-800 bg-rose-50 border-rose-300';
-
                 return (
                   <div className="space-y-1.5 min-w-[270px]">
                     <div className="flex justify-between items-center border-b border-slate-200 pb-1">
-                      <span className={`text-[10px] uppercase font-bold px-1.5 py-0.5 rounded border ${badgeStyle}`}>
-                        {p.category}
+                      <span className="text-[10px] uppercase font-bold text-slate-900 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-300 flex items-center gap-1.5">
+                        {getEducationIcon(p.category, { size: 12, className: 'text-slate-800 shrink-0' })}
+                        <span>{p.category}</span>
                       </span>
                       <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
                         Synergy: {p.synergy_score}/100
@@ -888,21 +843,11 @@ export default function MapViewport({
 
               // Case Complementary Brand / High-Footfall Hub (Synergy Spectrum)
               if (p.id?.startsWith('COMP_') || p.spectrum_category) {
-                const badgeStyle = 
-                  p.spectrum_category === 'Metro Stations & Transit Terminals' ? 'text-sky-800 bg-sky-50 border-sky-300' :
-                  p.spectrum_category === 'Shopping Malls & Retail Hubs' ? 'text-fuchsia-800 bg-fuchsia-50 border-fuchsia-300' :
-                  p.spectrum_category === 'Cinemas & Cultural Auditoriums' ? 'text-indigo-800 bg-indigo-50 border-indigo-300' :
-                  p.spectrum_category === 'Street Walkways & Buzzing Hotspots' ? 'text-amber-800 bg-amber-50 border-amber-300' :
-                  p.spectrum_category === 'Hot & Spicy Meals' ? 'text-red-800 bg-red-50 border-red-300' :
-                  p.spectrum_category === 'Youth Fast Casual' ? 'text-orange-800 bg-orange-50 border-orange-300' :
-                  p.spectrum_category === 'Late-Night Pubs & Breweries' ? 'text-purple-800 bg-purple-50 border-purple-300' :
-                  'text-emerald-800 bg-emerald-50 border-emerald-300';
-
                 return (
                   <div className="space-y-1.5 min-w-[280px]">
                     <div className="flex justify-between items-center border-b border-slate-200 pb-1">
-                      <span className={`text-[10px] uppercase font-bold px-1.5 py-0.5 rounded border flex items-center gap-1.5 ${badgeStyle}`}>
-                        {getSpectrumIcon(p.spectrum_category, { size: 12, className: 'shrink-0' })}
+                      <span className="text-[10px] uppercase font-bold text-slate-900 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-300 flex items-center gap-1.5">
+                        {getSpectrumIcon(p.spectrum_category, { size: 12, className: 'text-slate-800 shrink-0' })}
                         <span>{p.spectrum_category}</span>
                       </span>
                       <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
@@ -916,12 +861,12 @@ export default function MapViewport({
                     <div className="text-[9px] text-slate-400 line-clamp-1">{p.address}</div>
 
                     <div className="pt-1 border-t border-slate-100 space-y-0.5 text-[11px]">
-                      <div className="text-[10px] font-bold text-orange-900">
+                      <div className="text-[10px] font-bold text-slate-800">
                         Pillar: {p.spectrum_pillar}
                       </div>
                       <div className="flex justify-between">
                         <span className="text-slate-500">Peak Footfall / Spillover:</span>
-                        <span className="text-orange-900 font-bold">{p.peak_window}</span>
+                        <span className="text-slate-900 font-bold">{p.peak_window}</span>
                       </div>
                       <div className="flex justify-between text-[10px]">
                         <span className="text-slate-400">Daily Footfall Volume:</span>
@@ -939,11 +884,12 @@ export default function MapViewport({
               if (p.kind === 'park' && p.name) {
                 return (
                   <div className="space-y-1.5 min-w-[210px]">
-                    <div className="flex justify-between items-center border-b border-sky-200 pb-1">
-                      <span className="text-[10px] uppercase font-bold text-sky-800 bg-sky-50 px-1.5 py-0.5 rounded border border-sky-200">
-                        Tech Park & IT Campus
+                    <div className="flex justify-between items-center border-b border-slate-200 pb-1">
+                      <span className="text-[10px] uppercase font-bold text-slate-900 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-300 flex items-center gap-1.5">
+                        <BuildingIcon size={12} className="text-slate-800 shrink-0" />
+                        <span>Tech Park & IT Campus</span>
                       </span>
-                      <span className="text-[9px] font-bold text-sky-600">
+                      <span className="text-[9px] font-bold text-slate-600">
                         Corporate Hub
                       </span>
                     </div>
