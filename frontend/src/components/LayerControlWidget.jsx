@@ -164,20 +164,20 @@ export default function LayerControlWidget({
   const activeCount = Object.values(activeLayers).filter(Boolean).length;
 
   return (
-    <div className="observatory-card rounded-xl p-2.5 text-xs font-mono shadow-xl border border-slate-300 bg-white/95 backdrop-blur w-72 sm:w-80 transition-all select-none max-h-[calc(100vh-140px)] overflow-y-auto">
+    <div className="observatory-card rounded-xl p-2.5 text-xs font-mono border border-ink-950/[0.1] bg-white/95 backdrop-blur-md w-72 sm:w-80 shadow-[0_1px_2px_rgba(13,21,33,0.04),0_10px_28px_-20px_rgba(13,21,33,0.18)] transition-all select-none max-h-[calc(100vh-140px)] overflow-y-auto">
       {/* Header / Collapse Bar */}
       <div 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center justify-between cursor-pointer select-none pb-1.5 border-b border-slate-200"
+        className="flex items-center justify-between cursor-pointer select-none pb-1.5 border-b border-ink-950/[0.08]"
       >
         <div className="flex items-center gap-2">
-          <Layers className="w-4 h-4 text-slate-800" />
-          <span className="font-bold text-slate-900 text-xs tracking-tight">DATA LAYERS</span>
-          <span className="text-[10px] bg-amber-100 text-amber-800 font-bold px-1.5 py-0.2 rounded-full border border-amber-300">
+          <Layers className="w-4 h-4 text-ink-950" />
+          <span className="font-bold text-ink-950 text-xs tracking-tight">DATA LAYERS</span>
+          <span className="text-[10px] bg-azure-500/[0.08] text-azure-700 font-bold px-2 py-0.5 rounded-full border border-azure-500/30">
             {activeCount} Active
           </span>
         </div>
-        <button className="text-slate-400 hover:text-slate-700 transition-colors p-0.5">
+        <button className="text-ink-400 hover:text-ink-950 transition-colors p-0.5">
           {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
         </button>
       </div>
@@ -190,26 +190,26 @@ export default function LayerControlWidget({
             onClick={() => toggleLayer('streetFootfall')}
             className={`flex items-start gap-2.5 p-2 rounded-lg cursor-pointer transition-all border ${
               activeLayers.streetFootfall 
-                ? 'bg-amber-50/80 border-amber-300 text-slate-900 shadow-2xs' 
-                : 'bg-slate-50/60 border-slate-200 text-slate-400 hover:bg-slate-100'
+                ? 'bg-azure-50/70 border-azure-300 text-ink-950 shadow-2xs' 
+                : 'bg-paper-50/80 border-ink-950/[0.08] text-ink-500 hover:bg-paper-100 hover:text-ink-800'
             }`}
           >
             <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
               activeLayers.streetFootfall 
-                ? 'bg-amber-600 border-amber-700 text-white' 
-                : 'bg-white border-slate-300'
+                ? 'bg-ink-950 border-ink-950 text-white' 
+                : 'bg-white border-ink-950/[0.2]'
             }`}>
               {activeLayers.streetFootfall && <Check className="w-3 h-3 stroke-[3]" />}
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between">
-                <span className="font-bold text-[11px] flex items-center gap-1.5">
-                  <Footprints className="w-3 h-3 text-red-600" />
+                <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
+                  <Footprints className="w-3.5 h-3.5 text-azure-600" />
                   Street Footfall Flow
                 </span>
-                <span className="w-8 h-1.5 rounded-full bg-gradient-to-r from-yellow-300 via-orange-500 to-red-600" />
+                <span className="w-8 h-1.5 rounded-full bg-gradient-to-r from-azure-400 via-azure-500 to-violet-500" />
               </div>
-              <p className="text-[9px] text-slate-500 mt-0.5">
+              <p className="text-[9px] text-ink-500 mt-0.5">
                 47k real roads • 24-hr diurnal flow
               </p>
             </div>
@@ -220,26 +220,26 @@ export default function LayerControlWidget({
             onClick={() => toggleLayer('catchments')}
             className={`flex items-start gap-2.5 p-2 rounded-lg cursor-pointer transition-all border ${
               activeLayers.catchments 
-                ? 'bg-amber-50/80 border-amber-300 text-slate-900 shadow-2xs' 
-                : 'bg-slate-50/60 border-slate-200 text-slate-400 hover:bg-slate-100'
+                ? 'bg-azure-50/70 border-azure-300 text-ink-950 shadow-2xs' 
+                : 'bg-paper-50/80 border-ink-950/[0.08] text-ink-500 hover:bg-paper-100 hover:text-ink-800'
             }`}
           >
             <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
               activeLayers.catchments 
-                ? 'bg-amber-600 border-amber-700 text-white' 
-                : 'bg-white border-slate-300'
+                ? 'bg-ink-950 border-ink-950 text-white' 
+                : 'bg-white border-ink-950/[0.2]'
             }`}>
               {activeLayers.catchments && <Check className="w-3 h-3 stroke-[3]" />}
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between">
-                <span className="font-bold text-[11px] flex items-center gap-1.5">
-                  <CircleDot className="w-3 h-3 text-amber-600" />
+                <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
+                  <CircleDot className="w-3.5 h-3.5 text-azure-600" />
                   350m Catchment Zones
                 </span>
-                <span className="w-3 h-3 rounded-full border border-amber-500 bg-amber-400/30" />
+                <span className="w-3 h-3 rounded-full border border-azure-500 bg-azure-500/20" />
               </div>
-              <p className="text-[9px] text-slate-500 mt-0.5">
+              <p className="text-[9px] text-ink-500 mt-0.5">
                 High-density pedestrian walksheds
               </p>
             </div>
@@ -250,29 +250,29 @@ export default function LayerControlWidget({
             onClick={() => toggleLayer('apsaraStores')}
             className={`flex items-start gap-2.5 p-2 rounded-lg cursor-pointer transition-all border ${
               activeLayers.apsaraStores 
-                ? 'bg-amber-50/80 border-amber-300 text-slate-900 shadow-2xs' 
-                : 'bg-slate-50/60 border-slate-200 text-slate-400 hover:bg-slate-100'
+                ? 'bg-azure-50/70 border-azure-300 text-ink-950 shadow-2xs' 
+                : 'bg-paper-50/80 border-ink-950/[0.08] text-ink-500 hover:bg-paper-100 hover:text-ink-800'
             }`}
           >
             <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
               activeLayers.apsaraStores 
-                ? 'bg-slate-900 border-slate-950 text-white' 
-                : 'bg-white border-slate-300'
+                ? 'bg-ink-950 border-ink-950 text-white' 
+                : 'bg-white border-ink-950/[0.2]'
             }`}>
               {activeLayers.apsaraStores && <Check className="w-3 h-3 stroke-[3]" />}
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between">
-                <span className="font-bold text-[11px] flex items-center gap-1.5 text-slate-900">
-                  <IceCreamIcon size={14} className="text-slate-900" />
+                <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
+                  <IceCreamIcon size={14} className="text-ink-950" />
                   Apsara Outlets (13)
                 </span>
-                <span className="w-4 h-4 rounded-full border border-slate-700 bg-white flex items-center justify-center shadow-2xs">
-                  <IceCreamIcon size={9} className="text-slate-900" />
+                <span className="w-4 h-4 rounded-full border border-ink-950 bg-white flex items-center justify-center shadow-2xs">
+                  <IceCreamIcon size={9} className="text-ink-950" />
                 </span>
               </div>
-              <p className="text-[9px] text-slate-500 mt-0.5">
-                Apsara Ice Cream verified pins
+              <p className="text-[9px] text-ink-500 mt-0.5">
+                Apsara Ice Cream client anchors
               </p>
             </div>
           </div>
@@ -281,8 +281,8 @@ export default function LayerControlWidget({
           <div 
             className={`p-2 rounded-lg transition-all border ${
               activeLayers.competitors 
-                ? 'bg-slate-100/90 border-slate-300 text-slate-900 shadow-2xs' 
-                : 'bg-slate-50/60 border-slate-200 text-slate-400 hover:bg-slate-100'
+                ? 'bg-paper-50 border-ink-950/[0.14] text-ink-950 shadow-2xs' 
+                : 'bg-paper-50/70 border-ink-950/[0.08] text-ink-500 hover:bg-paper-100 hover:text-ink-800'
             }`}
           >
             {/* Clickable Header to Toggle Competitor Layer */}
@@ -292,22 +292,22 @@ export default function LayerControlWidget({
             >
               <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
                 activeLayers.competitors 
-                  ? 'bg-slate-900 border-slate-950 text-white' 
-                  : 'bg-white border-slate-300'
+                  ? 'bg-ink-950 border-ink-950 text-white' 
+                  : 'bg-white border-ink-950/[0.2]'
               }`}>
                 {activeLayers.competitors && <Check className="w-3 h-3 stroke-[3]" />}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-slate-900">
-                    <SundaeIcon size={14} className="text-slate-900" />
+                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
+                    <SundaeIcon size={14} className="text-ink-950" />
                     Competitor Parlors (108)
                   </span>
-                  <span className="w-4 h-4 rounded-full border border-slate-700 bg-white flex items-center justify-center shadow-2xs" title="Competitor Parlor">
-                    <SundaeIcon size={9} className="text-slate-900" />
+                  <span className="w-4 h-4 rounded-full border border-ink-950 bg-white flex items-center justify-center shadow-2xs" title="Competitor Parlor">
+                    <SundaeIcon size={9} className="text-ink-950" />
                   </span>
                 </div>
-                <p className="text-[9px] text-slate-500 mt-0.5">
+                <p className="text-[9px] text-ink-500 mt-0.5">
                   Corner House, Naturals, Polar Bear, Milano...
                 </p>
               </div>
@@ -317,16 +317,16 @@ export default function LayerControlWidget({
             {activeLayers.competitors && (
               <div 
                 onClick={(e) => e.stopPropagation()}
-                className="mt-2.5 pt-2 border-t border-purple-200 space-y-2 text-xs"
+                className="mt-2.5 pt-2 border-t border-ink-950/[0.08] space-y-2 text-xs"
               >
                 {/* 1. Brand Filter Selector */}
                 <div>
-                  <div className="flex items-center justify-between text-[10px] font-bold text-purple-900 mb-1">
+                  <div className="flex items-center justify-between text-[10px] font-bold text-ink-950 mb-1">
                     <span>Brand Filter:</span>
                     {selectedBrandFilter !== 'ALL' && (
                       <button
                         onClick={() => setSelectedBrandFilter && setSelectedBrandFilter('ALL')}
-                        className="text-[9px] text-purple-600 hover:text-purple-800 underline font-normal cursor-pointer"
+                        className="text-[9px] text-azure-600 hover:text-azure-800 underline font-normal cursor-pointer"
                       >
                         Reset All (108)
                       </button>
@@ -335,7 +335,7 @@ export default function LayerControlWidget({
                   <select
                     value={selectedBrandFilter}
                     onChange={(e) => setSelectedBrandFilter && setSelectedBrandFilter(e.target.value)}
-                    className="w-full bg-white border border-purple-300 rounded px-2 py-1.5 text-xs font-bold text-purple-900 focus:outline-none focus:ring-1 focus:ring-purple-500 cursor-pointer shadow-2xs"
+                    className="w-full bg-white border border-ink-950/[0.12] rounded px-2 py-1.5 text-xs font-bold text-ink-950 focus:outline-none focus:ring-1 focus:ring-azure-500 cursor-pointer shadow-2xs"
                   >
                     <option value="ALL">All Competitor Brands (108 Outlets)</option>
                     {competitorBrands.map(b => (
@@ -348,7 +348,7 @@ export default function LayerControlWidget({
 
                 {/* 2. Corresponding Stores for Selected Brand */}
                 <div>
-                  <label className="block text-[10px] font-bold text-slate-700 mb-1">
+                  <label className="block text-[10px] font-bold text-ink-700 mb-1">
                     {selectedBrandFilter === 'ALL' 
                       ? 'Select Store Location (108):' 
                       : `${selectedBrandFilter} Stores (${correspondingStores.length}):`}
@@ -361,7 +361,7 @@ export default function LayerControlWidget({
                         onSelectCompetitor(match);
                       }
                     }}
-                    className="w-full bg-white border border-slate-300 rounded px-2 py-1.5 text-xs font-semibold text-slate-800 focus:outline-none focus:ring-1 focus:ring-purple-500 cursor-pointer shadow-2xs"
+                    className="w-full bg-white border border-ink-950/[0.12] rounded px-2 py-1.5 text-xs font-semibold text-ink-900 focus:outline-none focus:ring-1 focus:ring-azure-500 cursor-pointer shadow-2xs"
                   >
                     <option value="">
                       {selectedBrandFilter === 'ALL' 
@@ -378,22 +378,22 @@ export default function LayerControlWidget({
 
                 {/* 3. Selected Competitor Snapshot */}
                 {selectedCompetitor && (
-                  <div className="bg-slate-100/90 border border-slate-300 rounded-lg p-2 text-[10px] text-slate-900 space-y-1.5 shadow-2xs">
+                  <div className="bg-paper-50 border border-ink-950/[0.1] rounded-lg p-2 text-[10px] text-ink-950 space-y-1.5 shadow-2xs">
                     <div className="flex items-center justify-between gap-1 font-bold">
                       <div className="flex items-center gap-1.5 truncate">
-                        <span className="p-1 rounded bg-white border border-slate-300 text-slate-900 shrink-0">
+                        <span className="p-1 rounded bg-white border border-ink-950/[0.1] text-ink-950 shrink-0">
                           <SundaeIcon size={12} className="shrink-0" />
                         </span>
                         <span className="truncate">{selectedCompetitor.properties?.store_name}</span>
                       </div>
-                      <span className="text-slate-800 shrink-0 font-bold bg-white px-1.5 py-0.5 rounded border border-slate-300 text-[9px]">
+                      <span className="text-azure-700 shrink-0 font-bold bg-white px-1.5 py-0.5 rounded border border-ink-950/[0.1] text-[9px] font-mono">
                         ★ {selectedCompetitor.properties?.rating_proxy}
                       </span>
                     </div>
-                    <div className="text-slate-500 line-clamp-1">{selectedCompetitor.properties?.address}</div>
-                    <div className="text-slate-800 font-semibold flex justify-between pt-1 border-t border-slate-200">
+                    <div className="text-ink-500 line-clamp-1">{selectedCompetitor.properties?.address}</div>
+                    <div className="text-ink-800 font-semibold flex justify-between pt-1 border-t border-ink-950/[0.08]">
                       <span>Monthly Volume:</span>
-                      <span className="font-bold">~{selectedCompetitor.properties?.monthly_cup_volume_est?.toLocaleString()} cups/mo</span>
+                      <span className="font-bold font-mono">~{selectedCompetitor.properties?.monthly_cup_volume_est?.toLocaleString()} cups/mo</span>
                     </div>
                   </div>
                 )}
@@ -405,8 +405,8 @@ export default function LayerControlWidget({
           <div 
             className={`p-2 rounded-lg transition-all border ${
               activeLayers.complementaryBrands 
-                ? 'bg-orange-50/80 border-orange-300 text-slate-900 shadow-2xs' 
-                : 'bg-slate-50/60 border-slate-200 text-slate-400 hover:bg-slate-100'
+                ? 'bg-paper-50 border-ink-950/[0.14] text-ink-950 shadow-2xs' 
+                : 'bg-paper-50/70 border-ink-950/[0.08] text-ink-500 hover:bg-paper-100 hover:text-ink-800'
             }`}
           >
             {/* Clickable Header to Toggle Complementary Brands */}
@@ -416,36 +416,36 @@ export default function LayerControlWidget({
             >
               <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
                 activeLayers.complementaryBrands 
-                  ? 'bg-slate-900 border-slate-950 text-white' 
-                  : 'bg-white border-slate-300'
+                  ? 'bg-ink-950 border-ink-950 text-white' 
+                  : 'bg-white border-ink-950/[0.2]'
               }`}>
                 {activeLayers.complementaryBrands && <Check className="w-3 h-3 stroke-[3]" />}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-slate-900">
-                    <StoreIcon size={14} className="text-slate-900" />
+                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
+                    <StoreIcon size={14} className="text-ink-950" />
                     Complementary Brands ({totalComplementaryCount})
                   </span>
                   <div className="flex -space-x-1">
-                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Metro & Transit">
+                    <span className="w-4 h-4 rounded-full bg-white border border-ink-950 flex items-center justify-center text-ink-950 shadow-2xs" title="Metro & Transit">
                       <MetroIcon size={9} />
                     </span>
-                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Shopping Malls">
+                    <span className="w-4 h-4 rounded-full bg-white border border-ink-950 flex items-center justify-center text-ink-950 shadow-2xs" title="Shopping Malls">
                       <ShoppingMallsIcon size={9} />
                     </span>
-                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Cinemas & Auditoriums">
+                    <span className="w-4 h-4 rounded-full bg-white border border-ink-950 flex items-center justify-center text-ink-950 shadow-2xs" title="Cinemas & Auditoriums">
                       <CinemasIcon size={9} />
                     </span>
-                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Street Walkways">
+                    <span className="w-4 h-4 rounded-full bg-white border border-ink-950 flex items-center justify-center text-ink-950 shadow-2xs" title="Street Walkways">
                       <WalkwaysIcon size={9} />
                     </span>
-                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Spicy Biryani">
+                    <span className="w-4 h-4 rounded-full bg-white border border-ink-950 flex items-center justify-center text-ink-950 shadow-2xs" title="Spicy Biryani">
                       <HotSpicyIcon size={9} />
                     </span>
                   </div>
                 </div>
-                <p className="text-[9px] text-slate-500 mt-0.5">
+                <p className="text-[9px] text-ink-500 mt-0.5">
                   Metro, Malls, Cinemas, Walkways, Biryani, Burgers & Pubs
                 </p>
               </div>
@@ -455,16 +455,16 @@ export default function LayerControlWidget({
             {activeLayers.complementaryBrands && (
               <div 
                 onClick={(e) => e.stopPropagation()}
-                className="mt-2.5 pt-2 border-t border-orange-200/80 space-y-2 text-xs"
+                className="mt-2.5 pt-2 border-t border-ink-950/[0.08] space-y-2 text-xs"
               >
                 {/* 1. Synergy Spectrum Pillar Selector */}
                 <div>
-                  <div className="flex items-center justify-between text-[10px] font-bold text-orange-950 mb-1">
+                  <div className="flex items-center justify-between text-[10px] font-bold text-ink-950 mb-1">
                     <span>Category / Hotspot Type:</span>
                     {selectedComplementarySpectrum !== 'ALL' && (
                       <button
                         onClick={() => setSelectedComplementarySpectrum && setSelectedComplementarySpectrum('ALL')}
-                        className="text-[9px] text-orange-700 hover:text-orange-900 underline font-normal cursor-pointer"
+                        className="text-[9px] text-azure-600 hover:text-azure-800 underline font-normal cursor-pointer"
                       >
                         Reset All ({totalComplementaryCount})
                       </button>
@@ -473,7 +473,7 @@ export default function LayerControlWidget({
                   <select
                     value={selectedComplementarySpectrum}
                     onChange={(e) => setSelectedComplementarySpectrum && setSelectedComplementarySpectrum(e.target.value)}
-                    className="w-full bg-white border border-orange-300 rounded px-2 py-1.5 text-xs font-bold text-orange-950 focus:outline-none focus:ring-1 focus:ring-orange-500 cursor-pointer shadow-2xs"
+                    className="w-full bg-white border border-ink-950/[0.12] rounded px-2 py-1.5 text-xs font-bold text-ink-950 focus:outline-none focus:ring-1 focus:ring-azure-500 cursor-pointer shadow-2xs"
                   >
                     <option value="ALL">All Categories & Hotspots ({totalComplementaryCount} Venues)</option>
                     <option value="Metro Stations & Transit Terminals">🚇 Metro & Transit Terminals ({complementarySpectrums.find(s => s[0] === 'Metro Stations & Transit Terminals')?.[1] || 47})</option>
@@ -488,9 +488,9 @@ export default function LayerControlWidget({
                 </div>
 
                 {/* 2. Visual Spectrum Pillar Explanation Badge */}
-                <div className="p-1.5 rounded bg-white/90 border border-orange-200 text-[10px] space-y-0.5">
-                  <div className="font-extrabold text-orange-950 flex items-center gap-1.5">
-                    <span className="shrink-0 text-orange-600">
+                <div className="p-1.5 rounded bg-white border border-ink-950/[0.1] text-[10px] space-y-0.5 shadow-2xs">
+                  <div className="font-extrabold text-ink-950 flex items-center gap-1.5">
+                    <span className="shrink-0 text-ink-900">
                       {getSpectrumIcon(selectedComplementarySpectrum, { size: 14 })}
                     </span>
                     <span>
@@ -505,7 +505,7 @@ export default function LayerControlWidget({
                        'High Dessert Synergy Landscape (8 Core Hub Pillars)'}
                     </span>
                   </div>
-                  <p className="text-[9px] text-slate-600 leading-tight">
+                  <p className="text-[9px] text-ink-600 leading-tight">
                     {selectedComplementarySpectrum === 'Metro Stations & Transit Terminals'
                       ? 'Namma metro stations, railway junctions & bus terminals funneling hundreds of thousands of commuters into grab-and-go dessert kiosks.' :
                      selectedComplementarySpectrum === 'Shopping Malls & Retail Hubs'
@@ -528,7 +528,7 @@ export default function LayerControlWidget({
 
                 {/* 3. Specific Brand / Venue Selector Dropdown */}
                 <div>
-                  <label className="block text-[10px] font-bold text-slate-700 mb-1">
+                  <label className="block text-[10px] font-bold text-ink-700 mb-1">
                     {selectedComplementarySpectrum === 'ALL'
                       ? `Select Complementary Venue (${correspondingComplementaryVenues.length}):`
                       : `${selectedComplementarySpectrum} (${correspondingComplementaryVenues.length}):`}
@@ -541,7 +541,7 @@ export default function LayerControlWidget({
                         onSelectComplementaryBrand(match);
                       }
                     }}
-                    className="w-full bg-white border border-slate-300 rounded px-2 py-1.5 text-xs font-semibold text-slate-800 focus:outline-none focus:ring-1 focus:ring-orange-500 cursor-pointer shadow-2xs"
+                    className="w-full bg-white border border-ink-950/[0.12] rounded px-2 py-1.5 text-xs font-semibold text-ink-900 focus:outline-none focus:ring-1 focus:ring-azure-500 cursor-pointer shadow-2xs"
                   >
                     <option value="">
                       {selectedComplementarySpectrum === 'ALL' 
@@ -597,7 +597,7 @@ export default function LayerControlWidget({
 
           {/* Section Divider: Market Influencers */}
           <div className="pt-2 pb-0.5 border-t border-slate-200">
-            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+            <span className="text-[10px] font-bold text-ink-500 uppercase tracking-wider font-mono">
               Market Influencers & Family Drivers
             </span>
           </div>
@@ -606,8 +606,8 @@ export default function LayerControlWidget({
           <div 
             className={`p-2 rounded-lg transition-all border ${
               activeLayers.kidsAttractions 
-                ? 'bg-pink-50/80 border-pink-300 text-slate-900 shadow-2xs' 
-                : 'bg-slate-50/60 border-slate-200 text-slate-400 hover:bg-slate-100'
+                ? 'bg-paper-50 border-ink-950/[0.14] text-ink-950 shadow-2xs' 
+                : 'bg-paper-50/70 border-ink-950/[0.08] text-ink-500 hover:bg-paper-100 hover:text-ink-800'
             }`}
           >
             {/* Clickable Header to Toggle Kids Layer */}
@@ -617,33 +617,33 @@ export default function LayerControlWidget({
             >
               <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
                 activeLayers.kidsAttractions 
-                  ? 'bg-slate-900 border-slate-950 text-white' 
-                  : 'bg-white border-slate-300'
+                  ? 'bg-ink-950 border-ink-950 text-white' 
+                  : 'bg-white border-ink-950/[0.2]'
               }`}>
                 {activeLayers.kidsAttractions && <Check className="w-3 h-3 stroke-[3]" />}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-slate-900">
-                    <GamepadIcon size={14} className="text-slate-900" />
+                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
+                    <GamepadIcon size={14} className="text-ink-950" />
                     Kids & Family Magnets ({totalKidsCount})
                   </span>
                   <div className="flex -space-x-1">
-                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Hamleys & Toys">
+                    <span className="w-4 h-4 rounded-full bg-white border border-ink-950 flex items-center justify-center text-ink-950 shadow-2xs" title="Hamleys & Toys">
                       <GiftIcon size={9} />
                     </span>
-                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Arcades & Play">
+                    <span className="w-4 h-4 rounded-full bg-white border border-ink-950 flex items-center justify-center text-ink-950 shadow-2xs" title="Arcades & Play">
                       <GamepadIcon size={9} />
                     </span>
-                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Theatres">
+                    <span className="w-4 h-4 rounded-full bg-white border border-ink-950 flex items-center justify-center text-ink-950 shadow-2xs" title="Theatres">
                       <TicketIcon size={9} />
                     </span>
-                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Parks & Lakes">
+                    <span className="w-4 h-4 rounded-full bg-white border border-ink-950 flex items-center justify-center text-ink-950 shadow-2xs" title="Parks & Lakes">
                       <TreesIcon size={9} />
                     </span>
                   </div>
                 </div>
-                <p className="text-[9px] text-slate-500 mt-0.5">
+                <p className="text-[9px] text-ink-500 mt-0.5">
                   Hamleys, Arcades, Theatres, Parks & Zoos
                 </p>
               </div>
@@ -653,16 +653,16 @@ export default function LayerControlWidget({
             {activeLayers.kidsAttractions && (
               <div 
                 onClick={(e) => e.stopPropagation()}
-                className="mt-2.5 pt-2 border-t border-pink-200 space-y-2 text-xs"
+                className="mt-2.5 pt-2 border-t border-ink-950/[0.08] space-y-2 text-xs"
               >
                 {/* 1. Category Filter Tabs / Selector */}
                 <div>
-                  <div className="flex items-center justify-between text-[10px] font-bold text-pink-900 mb-1">
+                  <div className="flex items-center justify-between text-[10px] font-bold text-ink-950 mb-1">
                     <span>Category Filter:</span>
                     {selectedKidsCategory !== 'ALL' && (
                       <button
                         onClick={() => setSelectedKidsCategory && setSelectedKidsCategory('ALL')}
-                        className="text-[9px] text-pink-600 hover:text-pink-800 underline font-normal cursor-pointer"
+                        className="text-[9px] text-azure-600 hover:text-azure-800 underline font-normal cursor-pointer"
                       >
                         Reset All ({totalKidsCount})
                       </button>
@@ -671,7 +671,7 @@ export default function LayerControlWidget({
                   <select
                     value={selectedKidsCategory}
                     onChange={(e) => setSelectedKidsCategory && setSelectedKidsCategory(e.target.value)}
-                    className="w-full bg-white border border-pink-300 rounded px-2 py-1.5 text-xs font-bold text-pink-900 focus:outline-none focus:ring-1 focus:ring-pink-500 cursor-pointer shadow-2xs"
+                    className="w-full bg-white border border-ink-950/[0.12] rounded px-2 py-1.5 text-xs font-bold text-ink-950 focus:outline-none focus:ring-1 focus:ring-azure-500 cursor-pointer shadow-2xs"
                   >
                     <option value="ALL">All Categories ({totalKidsCount} Hotspots)</option>
                     {kidsCategories.map(c => (
@@ -684,7 +684,7 @@ export default function LayerControlWidget({
 
                 {/* 2. Corresponding Attractions for Selected Category */}
                 <div>
-                  <label className="block text-[10px] font-bold text-slate-700 mb-1">
+                  <label className="block text-[10px] font-bold text-ink-700 mb-1">
                     {selectedKidsCategory === 'ALL' 
                       ? `Select Hotspot (${totalKidsCount}):` 
                       : `${selectedKidsCategory} (${correspondingKidsAttractions.length}):`}
@@ -697,7 +697,7 @@ export default function LayerControlWidget({
                         onSelectKidsAttraction(match);
                       }
                     }}
-                    className="w-full bg-white border border-slate-300 rounded px-2 py-1.5 text-xs font-semibold text-slate-800 focus:outline-none focus:ring-1 focus:ring-pink-500 cursor-pointer shadow-2xs"
+                    className="w-full bg-white border border-ink-950/[0.12] rounded px-2 py-1.5 text-xs font-semibold text-ink-900 focus:outline-none focus:ring-1 focus:ring-azure-500 cursor-pointer shadow-2xs"
                   >
                     <option value="">
                       {selectedKidsCategory === 'ALL' 
@@ -714,24 +714,24 @@ export default function LayerControlWidget({
 
                 {/* 3. Selected Kids Attraction Snapshot */}
                 {selectedKidsAttraction && (
-                  <div className="bg-slate-100/90 border border-slate-300 rounded-lg p-2 text-[10px] text-slate-900 space-y-1.5 shadow-2xs">
+                  <div className="bg-paper-50 border border-ink-950/[0.1] rounded-lg p-2 text-[10px] text-ink-950 space-y-1.5 shadow-2xs">
                     <div className="flex items-center justify-between gap-1 font-bold">
                       <div className="flex items-center gap-1.5 truncate">
-                        <span className="p-1 rounded bg-white border border-slate-300 text-slate-900 shrink-0">
+                        <span className="p-1 rounded bg-white border border-ink-950/[0.1] text-ink-950 shrink-0">
                           {getKidsIcon(selectedKidsAttraction.properties?.category, { size: 12, className: 'shrink-0' })}
                         </span>
                         <span className="truncate">{selectedKidsAttraction.properties?.name}</span>
                       </div>
-                      <span className="text-slate-800 shrink-0 font-bold bg-white px-1.5 py-0.5 rounded border border-slate-300 text-[9px]">
+                      <span className="text-azure-700 shrink-0 font-bold bg-white px-1.5 py-0.5 rounded border border-ink-950/[0.1] text-[9px] font-mono">
                         Synergy: {selectedKidsAttraction.properties?.ice_cream_attraction_score}/100
                       </span>
                     </div>
-                    <div className="text-slate-500 line-clamp-1">{selectedKidsAttraction.properties?.address}</div>
-                    <div className="text-slate-800 font-semibold flex justify-between pt-1 border-t border-slate-200">
+                    <div className="text-ink-500 line-clamp-1">{selectedKidsAttraction.properties?.address}</div>
+                    <div className="text-ink-800 font-semibold flex justify-between pt-1 border-t border-ink-950/[0.08]">
                       <span>Monthly Traffic:</span>
-                      <span className="font-bold">~{selectedKidsAttraction.properties?.est_monthly_family_footfall?.toLocaleString()} / mo</span>
+                      <span className="font-bold font-mono">~{selectedKidsAttraction.properties?.est_monthly_family_footfall?.toLocaleString()} / mo</span>
                     </div>
-                    <div className="text-[9px] text-slate-600 font-medium flex items-center justify-between">
+                    <div className="text-[9px] text-ink-600 font-medium flex items-center justify-between">
                       <span>Category: {selectedKidsAttraction.properties?.category}</span>
                       <span>Peak: {selectedKidsAttraction.properties?.peak_window}</span>
                     </div>
@@ -746,28 +746,28 @@ export default function LayerControlWidget({
             onClick={() => toggleLayer('techParks')}
             className={`flex items-start gap-2.5 p-2 rounded-lg cursor-pointer transition-all border ${
               activeLayers.techParks 
-                ? 'bg-sky-50/80 border-sky-300 text-slate-900 shadow-2xs' 
-                : 'bg-slate-50/60 border-slate-200 text-slate-400 hover:bg-slate-100'
+                ? 'bg-paper-50 border-ink-950/[0.14] text-ink-950 shadow-2xs' 
+                : 'bg-paper-50/70 border-ink-950/[0.08] text-ink-500 hover:bg-paper-100 hover:text-ink-800'
             }`}
           >
             <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
               activeLayers.techParks 
-                ? 'bg-slate-900 border-slate-950 text-white' 
-                : 'bg-white border-slate-300'
+                ? 'bg-ink-950 border-ink-950 text-white' 
+                : 'bg-white border-ink-950/[0.2]'
             }`}>
               {activeLayers.techParks && <Check className="w-3 h-3 stroke-[3]" />}
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between">
-                <span className="font-bold text-[11px] flex items-center gap-1.5 text-slate-900">
-                  <BuildingIcon size={14} className="text-slate-900" />
+                <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
+                  <BuildingIcon size={14} className="text-ink-950" />
                   Tech Parks & IT Campuses (95)
                 </span>
-                <span className="w-4 h-4 rounded-full border border-slate-700 bg-white flex items-center justify-center shadow-2xs" title="Tech Park">
-                  <BuildingIcon size={9} className="text-slate-900" />
+                <span className="w-4 h-4 rounded-full border border-ink-950 bg-white flex items-center justify-center shadow-2xs" title="Tech Park">
+                  <BuildingIcon size={9} className="text-ink-950" />
                 </span>
               </div>
-              <p className="text-[9px] text-slate-500 mt-0.5">
+              <p className="text-[9px] text-ink-500 mt-0.5">
                 Corporate hubs & daytime dessert demand
               </p>
             </div>
@@ -778,26 +778,26 @@ export default function LayerControlWidget({
             onClick={() => toggleLayer('officeFootprints')}
             className={`flex items-start gap-2.5 p-2 rounded-lg cursor-pointer transition-all border ${
               activeLayers.officeFootprints 
-                ? 'bg-indigo-50/80 border-indigo-300 text-slate-900 shadow-2xs' 
-                : 'bg-slate-50/60 border-slate-200 text-slate-400 hover:bg-slate-100'
+                ? 'bg-paper-50 border-ink-950/[0.14] text-ink-950 shadow-2xs' 
+                : 'bg-paper-50/70 border-ink-950/[0.08] text-ink-500 hover:bg-paper-100 hover:text-ink-800'
             }`}
           >
             <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
               activeLayers.officeFootprints 
-                ? 'bg-indigo-600 border-indigo-700 text-white' 
-                : 'bg-white border-slate-300'
+                ? 'bg-ink-950 border-ink-950 text-white' 
+                : 'bg-white border-ink-950/[0.2]'
             }`}>
               {activeLayers.officeFootprints && <Check className="w-3 h-3 stroke-[3]" />}
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between">
-                <span className="font-bold text-[11px] flex items-center gap-1.5">
-                  <Building2 className="w-3 h-3 text-indigo-600" />
+                <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
+                  <Building2 className="w-3 h-3 text-azure-600" />
                   Office Footprints (3.1k)
                 </span>
-                <span className="w-2.5 h-2.5 rounded-xs bg-indigo-500/80 border border-indigo-600" />
+                <span className="w-2.5 h-2.5 rounded-xs bg-ink-800 border border-ink-950" />
               </div>
-              <p className="text-[9px] text-slate-500 mt-0.5">
+              <p className="text-[9px] text-ink-500 mt-0.5">
                 Commercial buildings & workplace density
               </p>
             </div>
@@ -807,8 +807,8 @@ export default function LayerControlWidget({
           <div 
             className={`p-2 rounded-lg transition-all border ${
               activeLayers.hexDemographics 
-                ? 'bg-emerald-50/80 border-emerald-300 text-slate-900 shadow-2xs' 
-                : 'bg-slate-50/60 border-slate-200 text-slate-400 hover:bg-slate-100'
+                ? 'bg-paper-50 border-ink-950/[0.14] text-ink-950 shadow-2xs' 
+                : 'bg-paper-50/70 border-ink-950/[0.08] text-ink-500 hover:bg-paper-100 hover:text-ink-800'
             }`}
           >
             <div 
@@ -817,20 +817,20 @@ export default function LayerControlWidget({
             >
               <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
                 activeLayers.hexDemographics 
-                  ? 'bg-emerald-600 border-emerald-700 text-white' 
-                  : 'bg-white border-slate-300'
+                  ? 'bg-ink-950 border-ink-950 text-white' 
+                  : 'bg-white border-ink-950/[0.2]'
               }`}>
                 {activeLayers.hexDemographics && <Check className="w-3 h-3 stroke-[3]" />}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-slate-900">
-                    <Users className="w-3.5 h-3.5 text-emerald-600" />
+                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
+                    <Users className="w-3.5 h-3.5 text-azure-600" />
                     Demographics Information
                   </span>
-                  <span className="w-2.5 h-2.5 rounded-xs bg-emerald-500/70 border border-emerald-600" />
+                  <span className="w-2.5 h-2.5 rounded-xs bg-azure-500/70 border border-azure-600" />
                 </div>
-                <p className="text-[9px] text-slate-500 mt-0.5">
+                <p className="text-[9px] text-ink-500 mt-0.5">
                   Census population, age & gender distribution
                 </p>
               </div>
@@ -839,25 +839,25 @@ export default function LayerControlWidget({
             {/* In-Panel Controls: Gender Toggle & Age Determination Filter */}
             {activeLayers.hexDemographics && (
               <div 
-                className="mt-2.5 pt-2 border-t border-emerald-200/80 space-y-2"
+                className="mt-2.5 pt-2 border-t border-ink-950/[0.08] space-y-2"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* 1. Gender Segment Toggle */}
                 <div>
-                  <div className="flex justify-between items-center text-[10px] text-slate-700 font-semibold mb-1">
+                  <div className="flex justify-between items-center text-[10px] text-ink-700 font-semibold mb-1">
                     <span>Gender Segment:</span>
-                    <span className="text-[9px] text-slate-500 font-mono">
+                    <span className="text-[9px] text-ink-500 font-mono">
                       {demographicGender === 'male' ? '4.42M (50.7%)' : demographicGender === 'female' ? '4.29M (49.3%)' : '8.70M Total'}
                     </span>
                   </div>
-                  <div className="grid grid-cols-3 gap-1 bg-white p-0.5 rounded border border-slate-200 text-[10px]">
+                  <div className="grid grid-cols-3 gap-1 bg-paper-100 p-0.5 rounded border border-ink-950/[0.08] text-[10px]">
                     <button
                       type="button"
                       onClick={() => setDemographicGender && setDemographicGender('all')}
                       className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
                         demographicGender === 'all'
-                          ? 'bg-emerald-600 text-white shadow-2xs'
-                          : 'text-slate-600 hover:bg-slate-100'
+                          ? 'bg-ink-950 text-white shadow-2xs'
+                          : 'text-ink-600 hover:bg-white'
                       }`}
                     >
                       All Pop
@@ -867,8 +867,8 @@ export default function LayerControlWidget({
                       onClick={() => setDemographicGender && setDemographicGender('male')}
                       className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
                         demographicGender === 'male'
-                          ? 'bg-sky-600 text-white shadow-2xs'
-                          : 'text-slate-600 hover:bg-slate-100'
+                          ? 'bg-azure-600 text-white shadow-2xs'
+                          : 'text-ink-600 hover:bg-white'
                       }`}
                     >
                       Male
@@ -878,8 +878,8 @@ export default function LayerControlWidget({
                       onClick={() => setDemographicGender && setDemographicGender('female')}
                       className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
                         demographicGender === 'female'
-                          ? 'bg-rose-500 text-white shadow-2xs'
-                          : 'text-slate-600 hover:bg-slate-100'
+                          ? 'bg-violet-600 text-white shadow-2xs'
+                          : 'text-ink-600 hover:bg-white'
                       }`}
                     >
                       Female
@@ -889,10 +889,10 @@ export default function LayerControlWidget({
 
                 {/* 2. Age Determination Filter */}
                 <div>
-                  <div className="flex justify-between items-center text-[10px] text-slate-700 font-semibold mb-1">
+                  <div className="flex justify-between items-center text-[10px] text-ink-700 font-semibold mb-1">
                     <span>Age Determination:</span>
                     {demographicAge === 'kids' && (
-                      <span className="text-[9px] bg-amber-100 text-amber-800 px-1 rounded font-bold border border-amber-300">
+                      <span className="text-[9px] bg-azure-500/[0.08] text-azure-700 px-1.5 py-0.2 rounded font-bold border border-azure-500/30">
                         Primary Target
                       </span>
                     )}
@@ -900,7 +900,7 @@ export default function LayerControlWidget({
                   <select
                     value={demographicAge}
                     onChange={(e) => setDemographicAge && setDemographicAge(e.target.value)}
-                    className="w-full text-[11px] font-semibold bg-white border border-slate-300 rounded px-2 py-1 text-slate-800 focus:outline-hidden focus:ring-1 focus:ring-emerald-500 cursor-pointer"
+                    className="w-full text-[11px] font-semibold bg-white border border-ink-950/[0.12] rounded px-2 py-1 text-ink-900 focus:outline-hidden focus:ring-1 focus:ring-azure-500 cursor-pointer shadow-2xs"
                   >
                     <option value="all">All Ages (0–90+ yrs) • 8.70M</option>
                     <option value="kids">Kids & Children (0–14 yrs) • 1.72M [Ice Cream Target]</option>
@@ -911,9 +911,9 @@ export default function LayerControlWidget({
                 </div>
 
                 {/* 3. Active Metric Summary */}
-                <div className="bg-white/90 rounded p-1.5 border border-emerald-200 text-[10px] flex justify-between items-center">
-                  <span className="text-slate-500 font-medium">Selected Cohort:</span>
-                  <span className="font-bold text-emerald-800 font-mono">
+                <div className="bg-white rounded p-1.5 border border-ink-950/[0.1] text-[10px] flex justify-between items-center shadow-2xs">
+                  <span className="text-ink-500 font-medium">Selected Cohort:</span>
+                  <span className="font-bold text-azure-700 font-mono">
                     {(() => {
                       const labels = {
                         all: { all: '8.70M Residents', male: '4.42M Males', female: '4.29M Females' },
@@ -934,8 +934,8 @@ export default function LayerControlWidget({
           <div 
             className={`p-2 rounded-lg transition-all border ${
               activeLayers.educationPois 
-                ? 'bg-amber-50/80 border-amber-300 text-slate-900 shadow-2xs' 
-                : 'bg-slate-50/60 border-slate-200 text-slate-400 hover:bg-slate-100'
+                ? 'bg-paper-50 border-ink-950/[0.14] text-ink-950 shadow-2xs' 
+                : 'bg-paper-50/70 border-ink-950/[0.08] text-ink-500 hover:bg-paper-100 hover:text-ink-800'
             }`}
           >
             {/* Clickable Header to Toggle Layer */}
@@ -945,33 +945,33 @@ export default function LayerControlWidget({
             >
               <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
                 activeLayers.educationPois 
-                  ? 'bg-slate-900 border-slate-950 text-white' 
-                  : 'bg-white border-slate-300'
+                  ? 'bg-ink-950 border-ink-950 text-white' 
+                  : 'bg-white border-ink-950/[0.2]'
               }`}>
                 {activeLayers.educationPois && <Check className="w-3 h-3 stroke-[3]" />}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-slate-900">
-                    <UniversityIcon size={14} className="text-slate-900" />
+                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
+                    <UniversityIcon size={14} className="text-ink-950" />
                     Schools, Colleges & Coaching ({totalEducationCount})
                   </span>
                   <div className="flex -space-x-1">
-                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Schools">
+                    <span className="w-4 h-4 rounded-full bg-white border border-ink-950 flex items-center justify-center text-ink-950 shadow-2xs" title="Schools">
                       <SchoolIcon size={9} />
                     </span>
-                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Colleges">
+                    <span className="w-4 h-4 rounded-full bg-white border border-ink-950 flex items-center justify-center text-ink-950 shadow-2xs" title="Colleges">
                       <UniversityIcon size={9} />
                     </span>
-                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Coaching">
+                    <span className="w-4 h-4 rounded-full bg-white border border-ink-950 flex items-center justify-center text-ink-950 shadow-2xs" title="Coaching">
                       <BookOpenIcon size={9} />
                     </span>
-                    <span className="w-4 h-4 rounded-full bg-white border border-slate-700 flex items-center justify-center text-slate-800 shadow-2xs" title="Sports">
+                    <span className="w-4 h-4 rounded-full bg-white border border-ink-950 flex items-center justify-center text-ink-950 shadow-2xs" title="Sports">
                       <TrophyIcon size={9} />
                     </span>
                   </div>
                 </div>
-                <p className="text-[9px] text-slate-500 mt-0.5">
+                <p className="text-[9px] text-ink-500 mt-0.5">
                   Schools, colleges, tuition hubs & student footfall
                 </p>
               </div>
@@ -981,16 +981,16 @@ export default function LayerControlWidget({
             {activeLayers.educationPois && (
               <div 
                 onClick={(e) => e.stopPropagation()}
-                className="mt-2.5 pt-2 border-t border-amber-200/80 space-y-2 text-xs"
+                className="mt-2.5 pt-2 border-t border-ink-950/[0.08] space-y-2 text-xs"
               >
                 {/* 1. Category Filter Selector */}
                 <div>
-                  <div className="flex items-center justify-between text-[10px] font-bold text-amber-900 mb-1">
+                  <div className="flex items-center justify-between text-[10px] font-bold text-ink-950 mb-1">
                     <span>Institution Category:</span>
                     {selectedEducationCategory !== 'ALL' && (
                       <button
                         onClick={() => setSelectedEducationCategory && setSelectedEducationCategory('ALL')}
-                        className="text-[9px] text-amber-700 hover:text-amber-900 underline font-normal cursor-pointer"
+                        className="text-[9px] text-azure-600 hover:text-azure-800 underline font-normal cursor-pointer"
                       >
                         Reset All ({totalEducationCount})
                       </button>
@@ -999,7 +999,7 @@ export default function LayerControlWidget({
                   <select
                     value={selectedEducationCategory}
                     onChange={(e) => setSelectedEducationCategory && setSelectedEducationCategory(e.target.value)}
-                    className="w-full bg-white border border-amber-300 rounded px-2 py-1.5 text-xs font-bold text-amber-950 focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer shadow-2xs"
+                    className="w-full bg-white border border-ink-950/[0.12] rounded px-2 py-1.5 text-xs font-bold text-ink-950 focus:outline-none focus:ring-1 focus:ring-azure-500 cursor-pointer shadow-2xs"
                   >
                     <option value="ALL">All Educational Institutions ({totalEducationCount})</option>
                     {educationCategories.map(c => (
@@ -1015,7 +1015,7 @@ export default function LayerControlWidget({
 
                 {/* 2. Specific Institution Selector Dropdown */}
                 <div>
-                  <label className="block text-[10px] font-bold text-slate-700 mb-1">
+                  <label className="block text-[10px] font-bold text-ink-700 mb-1">
                     {selectedEducationCategory === 'ALL'
                       ? `Select Institution (${correspondingEducationPois.length}):`
                       : `${selectedEducationCategory} (${correspondingEducationPois.length}):`}
@@ -1028,7 +1028,7 @@ export default function LayerControlWidget({
                         onSelectEducationPoi(match);
                       }
                     }}
-                    className="w-full bg-white border border-slate-300 rounded px-2 py-1.5 text-xs font-semibold text-slate-800 focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer shadow-2xs"
+                    className="w-full bg-white border border-ink-950/[0.12] rounded px-2 py-1.5 text-xs font-semibold text-ink-900 focus:outline-none focus:ring-1 focus:ring-azure-500 cursor-pointer shadow-2xs"
                   >
                     <option value="">
                       {selectedEducationCategory === 'ALL' 
@@ -1045,35 +1045,35 @@ export default function LayerControlWidget({
 
                 {/* 3. Selected Institution Detail Snapshot */}
                 {selectedEducationPoi && (
-                  <div className="bg-slate-100/90 border border-slate-300 rounded-lg p-2 text-[10px] text-slate-900 space-y-1.5 shadow-2xs">
+                  <div className="bg-paper-50 border border-ink-950/[0.1] rounded-lg p-2 text-[10px] text-ink-950 space-y-1.5 shadow-2xs">
                     <div className="flex items-center justify-between gap-1 font-bold">
                       <div className="flex items-center gap-1.5 truncate">
-                        <span className="p-1 rounded bg-white border border-slate-300 text-slate-900 shrink-0">
+                        <span className="p-1 rounded bg-white border border-ink-950/[0.1] text-ink-950 shrink-0">
                           {getEducationIcon(selectedEducationPoi.properties?.category, { size: 12, className: 'shrink-0' })}
                         </span>
                         <span className="truncate">{selectedEducationPoi.properties?.name}</span>
                       </div>
-                      <span className="text-slate-800 shrink-0 font-bold bg-white px-1.5 py-0.5 rounded border border-slate-300 text-[9px]">
+                      <span className="text-azure-700 shrink-0 font-bold bg-white px-1.5 py-0.5 rounded border border-ink-950/[0.1] text-[9px] font-mono">
                         Synergy: {selectedEducationPoi.properties?.synergy_score}/100
                       </span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-[9px] text-slate-600 font-semibold">
-                      <span className="px-1.5 py-0.5 rounded bg-white border border-slate-300 text-slate-900 font-bold flex items-center gap-1">
+                    <div className="flex items-center gap-1.5 text-[9px] text-ink-600 font-semibold">
+                      <span className="px-1.5 py-0.5 rounded bg-white border border-ink-950/[0.1] text-ink-900 font-bold flex items-center gap-1">
                         {getEducationIcon(selectedEducationPoi.properties?.category, { size: 11, className: 'shrink-0' })}
                         <span>{selectedEducationPoi.properties?.category}</span>
                       </span>
                       <span className="truncate">{selectedEducationPoi.properties?.locality}</span>
                     </div>
-                    <div className="text-slate-500 line-clamp-1">{selectedEducationPoi.properties?.address}</div>
-                    <div className="text-slate-800 font-semibold flex justify-between pt-1 border-t border-slate-200">
+                    <div className="text-ink-500 line-clamp-1">{selectedEducationPoi.properties?.address}</div>
+                    <div className="text-ink-800 font-semibold flex justify-between pt-1 border-t border-ink-950/[0.08]">
                       <span>Capacity & Target:</span>
-                      <span className="font-bold">~{selectedEducationPoi.properties?.student_capacity?.toLocaleString()} ({selectedEducationPoi.properties?.target_age_group})</span>
+                      <span className="font-bold font-mono">~{selectedEducationPoi.properties?.student_capacity?.toLocaleString()} ({selectedEducationPoi.properties?.target_age_group})</span>
                     </div>
-                    <div className="text-[9px] text-slate-600 font-medium flex items-center justify-between">
+                    <div className="text-[9px] text-ink-600 font-medium flex items-center justify-between">
                       <span className="font-bold">Peak Window:</span>
                       <span>{selectedEducationPoi.properties?.peak_window}</span>
                     </div>
-                    <div className="text-[9px] text-slate-700 font-medium italic border-t border-slate-200 pt-1">
+                    <div className="text-[9px] text-ink-700 font-medium italic border-t border-ink-950/[0.08] pt-1">
                       {selectedEducationPoi.properties?.dessert_synergy_reason}
                     </div>
                   </div>

@@ -1,4 +1,4 @@
-import{c as N}from"./expression-Bl_GL2tO.js";import{g as f,c as v,r as m,f as k,A as M,d as V,e as L,b as S,G as z,h as y,i as R,C as $,j as _}from"./index-BMWHTF8C.js";import{k as fe}from"./index-BMWHTF8C.js";const B=`fn arithmetic_add(x: {TYPE}, y: {TYPE}) -> {TYPE} {
+import{c as N}from"./expression-Bl_GL2tO.js";import{g as f,c as v,r as m,f as k,A as M,d as V,e as L,b as S,G as z,h as y,i as R,C as $,j as _}from"./index-BOGBdygp.js";import{k as fe}from"./index-BOGBdygp.js";const B=`fn arithmetic_add(x: {TYPE}, y: {TYPE}) -> {TYPE} {
   return x + y;
 }
 

@@ -632,62 +632,62 @@ export default function MapViewport({
       />
 
       {/* 3. Floating Coordinate & Time HUD */}
-      <div className="absolute bottom-4 left-4 z-20 observatory-card px-3 py-1.5 rounded-lg text-[10px] font-mono text-slate-600 border border-slate-300 pointer-events-none shadow-sm bg-white/95 backdrop-blur">
+      <div className="absolute bottom-4 left-4 z-20 observatory-card px-3 py-1.5 rounded-lg text-[10px] font-mono text-ink-500 border border-ink-950/[0.1] pointer-events-none shadow-sm bg-white/95 backdrop-blur-md">
         <span>LAT: {viewState.latitude.toFixed(4)}°N</span>
-        <span className="mx-2">|</span>
+        <span className="mx-2 text-ink-300">|</span>
         <span>LON: {viewState.longitude.toFixed(4)}°E</span>
-        <span className="mx-2">|</span>
+        <span className="mx-2 text-ink-300">|</span>
         <span>ZOOM: {viewState.zoom.toFixed(1)}</span>
-        <span className="mx-2">|</span>
-        <span className="text-red-700 font-bold">TIME: {activeHour}:00 ({activeDayType})</span>
+        <span className="mx-2 text-ink-300">|</span>
+        <span className="text-azure-700 font-bold">TIME: {activeHour}:00 ({activeDayType})</span>
       </div>
 
       {/* 4. Inspection Tooltips */}
       {hoverInfo?.object && (
         <div
-          className="absolute z-30 pointer-events-none observatory-card p-3 rounded-xl shadow-2xl text-xs font-mono border border-slate-300 bg-white min-w-[240px]"
+          className="absolute z-30 pointer-events-none observatory-card p-3 rounded-xl shadow-[0_1px_2px_rgba(13,21,33,0.04),0_10px_28px_-20px_rgba(13,21,33,0.18)] text-xs font-mono border border-ink-950/[0.12] bg-white min-w-[240px]"
           style={{ left: hoverInfo.x + 14, top: hoverInfo.y + 14 }}
         >
           {/* Apsara Store Tooltip */}
           {hoverInfo.object.serial_no ? (
             <div className="space-y-1.5">
-              <div className="flex justify-between items-center border-b border-slate-200 pb-1">
-                <span className="text-[10px] uppercase font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">
+              <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1">
+                <span className="text-[10px] uppercase font-bold text-azure-700 bg-azure-500/[0.08] px-2 py-0.5 rounded border border-azure-500/30">
                   {hoverInfo.object.serial_no}
                 </span>
-                <span className="text-[10px] font-bold text-emerald-700">
+                <span className="text-[10px] font-bold text-azure-700">
                   Rating: {hoverInfo.object.google_rating} / 5.0 ({hoverInfo.object.google_review_count} reviews)
                 </span>
               </div>
-              <div className="text-sm font-extrabold text-slate-900">
+              <div className="text-sm font-extrabold text-ink-950">
                 Apsara Ice Creams — {hoverInfo.object.locality}
               </div>
-              <div className="text-[10px] text-slate-500 line-clamp-2">
+              <div className="text-[10px] text-ink-400 line-clamp-2">
                 {hoverInfo.object.address}
               </div>
 
-              <div className="pt-1.5 border-t border-slate-100 space-y-1">
+              <div className="pt-1.5 border-t border-ink-950/[0.08] space-y-1">
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Est. Daily Footfall:</span>
-                  <span className="text-red-700 font-extrabold text-xs">
+                  <span className="text-ink-500">Est. Daily Footfall:</span>
+                  <span className="text-azure-700 font-extrabold text-xs font-mono">
                     ~{hoverInfo.object.store_footfall.est_daily_cups} cups/day
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Monthly Customers:</span>
-                  <span className="text-slate-800 font-bold">
+                  <span className="text-ink-500">Monthly Customers:</span>
+                  <span className="text-ink-900 font-bold font-mono">
                     ~{hoverInfo.object.store_footfall.est_monthly_customers.toLocaleString()} / mo
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Prime Evening Flow:</span>
-                  <span className="text-amber-700 font-bold">
+                  <span className="text-ink-500">Prime Evening Flow:</span>
+                  <span className="text-ink-950 font-bold font-mono">
                     ~{hoverInfo.object.regional_footfall.peak_evening_hourly_flow.toLocaleString()} visitors/hr (7–11 PM)
                   </span>
                 </div>
                 <div className="flex justify-between text-[10px]">
-                  <span className="text-slate-400">Corridor Weekend Traffic:</span>
-                  <span className="text-slate-600 font-semibold">
+                  <span className="text-ink-400">Corridor Weekend Traffic:</span>
+                  <span className="text-ink-600 font-semibold font-mono">
                     ~{(hoverInfo.object.regional_footfall.weekend_daily_footfall / 1000).toFixed(1)}k / day
                   </span>
                 </div>
@@ -701,37 +701,37 @@ export default function MapViewport({
               if (p.weekend_daily_footfall && p.store_name) {
                 return (
                   <div className="space-y-1.5 min-w-[230px]">
-                    <div className="flex justify-between items-center border-b border-amber-200 pb-1">
-                      <span className="text-[10px] uppercase font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">
+                    <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1">
+                      <span className="text-[10px] uppercase font-bold text-azure-700 bg-azure-500/[0.08] px-2 py-0.5 rounded border border-azure-500/30">
                         350m Pedestrian Zone
                       </span>
-                      <span className="text-[10px] font-bold text-slate-800">
+                      <span className="text-[10px] font-bold text-ink-800">
                         {p.serial_no}
                       </span>
                     </div>
-                    <div className="text-xs font-extrabold text-slate-900">
+                    <div className="text-xs font-extrabold text-ink-950">
                       {p.store_name} — {p.locality}
                     </div>
-                    <div className="text-[10px] text-slate-500 line-clamp-1">
+                    <div className="text-[10px] text-ink-400 line-clamp-1">
                       {p.corridor_name}
                     </div>
 
-                    <div className="pt-1 border-t border-slate-100 space-y-0.5 text-[11px]">
+                    <div className="pt-1 border-t border-ink-950/[0.08] space-y-0.5 text-[11px]">
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Peak Evening Flow:</span>
-                        <span className="text-red-700 font-extrabold">
+                        <span className="text-ink-500">Peak Evening Flow:</span>
+                        <span className="text-azure-700 font-extrabold font-mono">
                           ~{p.peak_evening_hourly_flow?.toLocaleString()} visitors/hr
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Weekend Footfall:</span>
-                        <span className="text-amber-800 font-bold">
+                        <span className="text-ink-500">Weekend Footfall:</span>
+                        <span className="text-ink-900 font-bold font-mono">
                           ~{p.weekend_daily_footfall?.toLocaleString()} / day
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Est. Store Daily Cups:</span>
-                        <span className="text-emerald-700 font-bold">
+                        <span className="text-ink-500">Est. Store Daily Cups:</span>
+                        <span className="text-azure-700 font-bold font-mono">
                           ~{p.est_daily_cups} cups/day
                         </span>
                       </div>
@@ -744,20 +744,20 @@ export default function MapViewport({
               if (p.store_id && p.brand) {
                 return (
                   <div className="space-y-1.5 min-w-[220px]">
-                    <div className="flex justify-between items-center border-b border-slate-200 pb-1">
-                      <span className="text-[10px] uppercase font-bold text-slate-900 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-300 flex items-center gap-1.5">
-                        <SundaeIcon size={12} className="text-slate-800 shrink-0" />
+                    <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1">
+                      <span className="text-[10px] uppercase font-bold text-ink-950 bg-paper-100 px-2 py-0.5 rounded border border-ink-950/[0.1] flex items-center gap-1.5">
+                        <SundaeIcon size={12} className="text-ink-950 shrink-0" />
                         <span>{p.brand}</span>
                       </span>
-                      <span className="text-[10px] font-bold text-emerald-700">
+                      <span className="text-[10px] font-bold text-azure-700">
                         Rating: {p.rating_proxy} / 5.0
                       </span>
                     </div>
-                    <div className="text-xs font-extrabold text-slate-900">{p.store_name}</div>
-                    <div className="text-[10px] text-slate-500 line-clamp-2">{p.address}</div>
-                    <div className="pt-1 border-t border-slate-100 flex justify-between text-[11px]">
-                      <span className="text-slate-500">Est. Monthly Volume:</span>
-                      <span className="text-slate-900 font-extrabold">~{p.monthly_cup_volume_est?.toLocaleString()} cups/mo</span>
+                    <div className="text-xs font-extrabold text-ink-950">{p.store_name}</div>
+                    <div className="text-[10px] text-ink-400 line-clamp-2">{p.address}</div>
+                    <div className="pt-1 border-t border-ink-950/[0.08] flex justify-between text-[11px]">
+                      <span className="text-ink-500">Est. Monthly Volume:</span>
+                      <span className="text-ink-950 font-extrabold font-mono">~{p.monthly_cup_volume_est?.toLocaleString()} cups/mo</span>
                     </div>
                   </div>
                 );
@@ -767,33 +767,33 @@ export default function MapViewport({
               if (p.id?.startsWith('KIDS_')) {
                 return (
                   <div className="space-y-1.5 min-w-[260px]">
-                    <div className="flex justify-between items-center border-b border-slate-200 pb-1">
-                      <span className="text-[10px] uppercase font-bold text-slate-900 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-300 flex items-center gap-1.5">
-                        {getKidsIcon(p.category, { size: 12, className: 'text-slate-800 shrink-0' })}
+                    <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1">
+                      <span className="text-[10px] uppercase font-bold text-ink-950 bg-paper-100 px-1.5 py-0.5 rounded border border-ink-950/[0.1] flex items-center gap-1.5">
+                        {getKidsIcon(p.category, { size: 12, className: 'text-ink-950 shrink-0' })}
                         <span>{p.category}</span>
                       </span>
-                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+                      <span className="text-[10px] font-bold text-azure-700 bg-azure-500/[0.08] px-1.5 py-0.5 rounded border border-azure-500/30 font-mono">
                         Synergy: {p.ice_cream_attraction_score}/100
                       </span>
                     </div>
-                    <div className="text-xs font-extrabold text-slate-900">{p.name}</div>
-                    <div className="text-[10px] text-slate-500 font-semibold">{p.locality}</div>
-                    <div className="text-[9px] text-slate-400 line-clamp-1">{p.address}</div>
+                    <div className="text-xs font-extrabold text-ink-950">{p.name}</div>
+                    <div className="text-[10px] text-ink-500 font-semibold">{p.locality}</div>
+                    <div className="text-[9px] text-ink-400 line-clamp-1">{p.address}</div>
 
-                    <div className="pt-1 border-t border-slate-100 space-y-0.5 text-[11px]">
+                    <div className="pt-1 border-t border-ink-950/[0.06] space-y-0.5 text-[11px]">
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Target Audience:</span>
-                        <span className="text-slate-800 font-semibold">{p.target_audience}</span>
+                        <span className="text-ink-500">Target Audience:</span>
+                        <span className="text-ink-800 font-semibold">{p.target_audience}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Monthly Family Traffic:</span>
-                        <span className="text-slate-900 font-bold">~{p.est_monthly_family_footfall?.toLocaleString()} / mo</span>
+                        <span className="text-ink-500">Monthly Family Traffic:</span>
+                        <span className="text-ink-950 font-bold font-mono">~{p.est_monthly_family_footfall?.toLocaleString()} / mo</span>
                       </div>
                       <div className="flex justify-between text-[10px]">
-                        <span className="text-slate-400">Peak Footfall:</span>
-                        <span className="text-amber-800 font-semibold">{p.peak_window}</span>
+                        <span className="text-ink-400">Peak Footfall:</span>
+                        <span className="text-azure-700 font-semibold">{p.peak_window}</span>
                       </div>
-                      <div className="pt-0.5 text-[10px] text-emerald-800 font-medium italic border-t border-slate-100">
+                      <div className="pt-0.5 text-[10px] text-ink-700 font-medium italic border-t border-ink-950/[0.06]">
                         {p.ice_cream_synergy}
                       </div>
                     </div>
@@ -805,35 +805,35 @@ export default function MapViewport({
               if (p.id?.startsWith('SCH_') || p.id?.startsWith('COL_') || p.id?.startsWith('COA_') || p.id?.startsWith('ACT_') || p.student_capacity !== undefined) {
                 return (
                   <div className="space-y-1.5 min-w-[270px]">
-                    <div className="flex justify-between items-center border-b border-slate-200 pb-1">
-                      <span className="text-[10px] uppercase font-bold text-slate-900 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-300 flex items-center gap-1.5">
-                        {getEducationIcon(p.category, { size: 12, className: 'text-slate-800 shrink-0' })}
+                    <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1">
+                      <span className="text-[10px] uppercase font-bold text-ink-950 bg-paper-100 px-1.5 py-0.5 rounded border border-ink-950/[0.1] flex items-center gap-1.5">
+                        {getEducationIcon(p.category, { size: 12, className: 'text-ink-950 shrink-0' })}
                         <span>{p.category}</span>
                       </span>
-                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+                      <span className="text-[10px] font-bold text-azure-700 bg-azure-500/[0.08] px-1.5 py-0.5 rounded border border-azure-500/30 font-mono">
                         Synergy: {p.synergy_score}/100
                       </span>
                     </div>
-                    <div className="text-xs font-extrabold text-slate-900">{p.name}</div>
-                    <div className="text-[10px] text-slate-600 font-semibold">
+                    <div className="text-xs font-extrabold text-ink-950">{p.name}</div>
+                    <div className="text-[10px] text-ink-600 font-semibold">
                       {p.locality} {p.sub_category ? `• ${p.sub_category}` : ''}
                     </div>
-                    <div className="text-[9px] text-slate-400 line-clamp-1">{p.address}</div>
+                    <div className="text-[9px] text-ink-400 line-clamp-1">{p.address}</div>
 
-                    <div className="pt-1 border-t border-slate-100 space-y-0.5 text-[11px]">
+                    <div className="pt-1 border-t border-ink-950/[0.06] space-y-0.5 text-[11px]">
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Student Capacity:</span>
-                        <span className="text-slate-900 font-bold">~{p.student_capacity?.toLocaleString()} students</span>
+                        <span className="text-ink-500">Student Capacity:</span>
+                        <span className="text-ink-950 font-bold font-mono">~{p.student_capacity?.toLocaleString()} students</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Target Cohort:</span>
-                        <span className="text-slate-800 font-semibold">{p.target_age_group}</span>
+                        <span className="text-ink-500">Target Cohort:</span>
+                        <span className="text-ink-800 font-semibold">{p.target_age_group}</span>
                       </div>
                       <div className="flex justify-between text-[10px]">
-                        <span className="text-slate-400">Peak Dessert Window:</span>
-                        <span className="text-amber-800 font-semibold">{p.peak_window}</span>
+                        <span className="text-ink-400">Peak Dessert Window:</span>
+                        <span className="text-azure-700 font-semibold">{p.peak_window}</span>
                       </div>
-                      <div className="pt-0.5 text-[10px] text-emerald-800 font-medium italic border-t border-slate-100">
+                      <div className="pt-0.5 text-[10px] text-ink-700 font-medium italic border-t border-ink-950/[0.06]">
                         {p.dessert_synergy_reason}
                       </div>
                     </div>
@@ -845,34 +845,34 @@ export default function MapViewport({
               if (p.id?.startsWith('COMP_') || p.spectrum_category) {
                 return (
                   <div className="space-y-1.5 min-w-[280px]">
-                    <div className="flex justify-between items-center border-b border-slate-200 pb-1">
-                      <span className="text-[10px] uppercase font-bold text-slate-900 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-300 flex items-center gap-1.5">
-                        {getSpectrumIcon(p.spectrum_category, { size: 12, className: 'text-slate-800 shrink-0' })}
+                    <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1">
+                      <span className="text-[10px] uppercase font-bold text-ink-950 bg-paper-100 px-1.5 py-0.5 rounded border border-ink-950/[0.1] flex items-center gap-1.5">
+                        {getSpectrumIcon(p.spectrum_category, { size: 12, className: 'text-ink-950 shrink-0' })}
                         <span>{p.spectrum_category}</span>
                       </span>
-                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+                      <span className="text-[10px] font-bold text-azure-700 bg-azure-500/[0.08] px-1.5 py-0.5 rounded border border-azure-500/30 font-mono">
                         Synergy: {p.synergy_score}/100
                       </span>
                     </div>
-                    <div className="text-xs font-extrabold text-slate-900">{p.name}</div>
-                    <div className="text-[10px] text-slate-600 font-semibold">
+                    <div className="text-xs font-extrabold text-ink-950">{p.name}</div>
+                    <div className="text-[10px] text-ink-600 font-semibold">
                       {p.locality} {p.sub_category ? `• ${p.sub_category}` : ''}
                     </div>
-                    <div className="text-[9px] text-slate-400 line-clamp-1">{p.address}</div>
+                    <div className="text-[9px] text-ink-400 line-clamp-1">{p.address}</div>
 
-                    <div className="pt-1 border-t border-slate-100 space-y-0.5 text-[11px]">
-                      <div className="text-[10px] font-bold text-slate-800">
+                    <div className="pt-1 border-t border-ink-950/[0.06] space-y-0.5 text-[11px]">
+                      <div className="text-[10px] font-bold text-ink-800">
                         Pillar: {p.spectrum_pillar}
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Peak Footfall / Spillover:</span>
-                        <span className="text-slate-900 font-bold">{p.peak_window}</span>
+                        <span className="text-ink-500">Peak Footfall / Spillover:</span>
+                        <span className="text-ink-950 font-bold">{p.peak_window}</span>
                       </div>
                       <div className="flex justify-between text-[10px]">
-                        <span className="text-slate-400">Daily Footfall Volume:</span>
-                        <span className="text-slate-700 font-semibold">~{p.daily_customer_footfall?.toLocaleString()} / day</span>
+                        <span className="text-ink-400">Daily Footfall Volume:</span>
+                        <span className="text-ink-800 font-semibold font-mono">~{p.daily_customer_footfall?.toLocaleString()} / day</span>
                       </div>
-                      <div className="pt-0.5 text-[10px] text-emerald-800 font-medium italic border-t border-slate-100">
+                      <div className="pt-0.5 text-[10px] text-ink-700 font-medium italic border-t border-ink-950/[0.06]">
                         {p.synergy_reason}
                       </div>
                     </div>
@@ -884,19 +884,19 @@ export default function MapViewport({
               if (p.kind === 'park' && p.name) {
                 return (
                   <div className="space-y-1.5 min-w-[210px]">
-                    <div className="flex justify-between items-center border-b border-slate-200 pb-1">
-                      <span className="text-[10px] uppercase font-bold text-slate-900 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-300 flex items-center gap-1.5">
-                        <BuildingIcon size={12} className="text-slate-800 shrink-0" />
+                    <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1">
+                      <span className="text-[10px] uppercase font-bold text-ink-950 bg-paper-100 px-1.5 py-0.5 rounded border border-ink-950/[0.1] flex items-center gap-1.5">
+                        <BuildingIcon size={12} className="text-ink-950 shrink-0" />
                         <span>Tech Park & IT Campus</span>
                       </span>
-                      <span className="text-[9px] font-bold text-slate-600">
+                      <span className="text-[9px] font-mono font-bold text-ink-500">
                         Corporate Hub
                       </span>
                     </div>
-                    <div className="text-xs font-extrabold text-slate-900">
+                    <div className="text-xs font-extrabold text-ink-950">
                       {p.name}
                     </div>
-                    <div className="text-[10px] text-slate-500">
+                    <div className="text-[10px] text-ink-500">
                       High-density daytime corporate dessert & bulk catering demand
                     </div>
                   </div>
@@ -908,21 +908,21 @@ export default function MapViewport({
                 const estWorkers = Math.round(p.floor_m2 / 12); // ~12 sqm per desk standard
                 return (
                   <div className="space-y-1 min-w-[200px]">
-                    <div className="flex justify-between items-center border-b border-indigo-200 pb-1">
-                      <span className="text-[10px] uppercase font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-200">
+                    <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1">
+                      <span className="text-[10px] uppercase font-bold text-azure-700 bg-azure-500/[0.08] px-1.5 py-0.5 rounded border border-azure-500/30 font-mono">
                         Commercial Office
                       </span>
-                      <span className="text-[9px] font-mono text-indigo-800 font-bold">
+                      <span className="text-[9px] font-mono text-ink-800 font-bold">
                         {p.levels} Floors
                       </span>
                     </div>
                     <div className="flex justify-between pt-1">
-                      <span className="text-slate-500">Total Floor Space:</span>
-                      <span className="text-indigo-900 font-bold">{Math.round(p.floor_m2)?.toLocaleString()} m²</span>
+                      <span className="text-ink-500">Total Floor Space:</span>
+                      <span className="text-ink-950 font-bold font-mono">{Math.round(p.floor_m2)?.toLocaleString()} m²</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-500">Est. Desk Capacity:</span>
-                      <span className="text-emerald-700 font-bold">~{estWorkers.toLocaleString()} staff</span>
+                      <span className="text-ink-500">Est. Desk Capacity:</span>
+                      <span className="text-azure-700 font-bold font-mono">~{estWorkers.toLocaleString()} staff</span>
                     </div>
                   </div>
                 );
@@ -945,91 +945,91 @@ export default function MapViewport({
 
                 return (
                   <div className="space-y-2 min-w-[250px]">
-                    <div className="flex justify-between items-center border-b border-emerald-200 pb-1">
-                      <span className="text-[10px] uppercase font-bold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
-                        <Hexagon className="w-2.5 h-2.5 text-emerald-600" />
+                    <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1">
+                      <span className="text-[10px] uppercase font-bold text-azure-700 bg-azure-500/[0.08] px-1.5 py-0.5 rounded border border-azure-500/30 flex items-center gap-1">
+                        <Hexagon className="w-2.5 h-2.5 text-azure-600" />
                         H3 Res 9 Hexagon
                       </span>
-                      <span className="text-[10px] font-mono text-slate-400">
+                      <span className="text-[10px] font-mono text-ink-400">
                         {p.h.slice(0, 10)}...
                       </span>
                     </div>
 
                     <div>
-                      <div className="text-xs font-bold text-slate-900">
+                      <div className="text-xs font-bold text-ink-950">
                         {p.w_name ? `${p.w_name} Ward` : 'Greater Bengaluru Metropolitan Area'}
                       </div>
                       {p.corp && (
-                        <div className="text-[10px] text-slate-500 font-medium">
+                        <div className="text-[10px] text-ink-500 font-medium">
                           BBMP Corporation: {p.corp}
                         </div>
                       )}
                     </div>
 
                     {/* Active Filter Metric Highlight */}
-                    <div className="bg-emerald-50/70 border border-emerald-200 p-1.5 rounded text-[11px] flex justify-between items-center">
-                      <div className="text-emerald-950 font-medium">
+                    <div className="bg-paper-100 border border-ink-950/[0.1] p-1.5 rounded text-[11px] flex justify-between items-center">
+                      <div className="text-ink-950 font-medium">
                         <span>{ageLabels[demographicAge] || 'All Ages'}</span>
-                        <span className="text-slate-500 text-[10px]"> • {genderLabels[demographicGender] || 'All'}</span>
+                        <span className="text-ink-500 text-[10px]"> • {genderLabels[demographicGender] || 'All'}</span>
                       </div>
-                      <span className="font-extrabold text-emerald-700 text-xs">
+                      <span className="font-extrabold text-azure-700 text-xs font-mono">
                         {activeVal.toLocaleString()} residents
                       </span>
                     </div>
 
                     {/* Total Cell Population & Gender Breakdown */}
-                    <div className="space-y-1 pt-1 border-t border-slate-100 text-[11px]">
-                      <div className="flex justify-between font-bold text-slate-800">
+                    <div className="space-y-1 pt-1 border-t border-ink-950/[0.06] text-[11px]">
+                      <div className="flex justify-between font-bold text-ink-950">
                         <span>Total Cell Population:</span>
-                        <span>{p.pop.toLocaleString()}</span>
+                        <span className="font-mono">{p.pop.toLocaleString()}</span>
                       </div>
 
                       {/* Male / Female split bar */}
                       <div className="space-y-0.5">
                         <div className="flex justify-between text-[10px]">
-                          <span className="text-sky-700 font-semibold">Male: {p.m} ({pctMale}%)</span>
-                          <span className="text-rose-600 font-semibold">Female: {p.f} ({pctFemale}%)</span>
+                          <span className="text-azure-700 font-semibold font-mono">Male: {p.m} ({pctMale}%)</span>
+                          <span className="text-violet-600 font-semibold font-mono">Female: {p.f} ({pctFemale}%)</span>
                         </div>
-                        <div className="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden flex">
-                          <div className="bg-sky-500 h-full" style={{ width: `${pctMale}%` }} />
-                          <div className="bg-rose-400 h-full" style={{ width: `${pctFemale}%` }} />
+                        <div className="w-full h-1.5 bg-paper-200 rounded-full overflow-hidden flex">
+                          <div className="bg-azure-600 h-full" style={{ width: `${pctMale}%` }} />
+                          <div className="bg-violet-500 h-full" style={{ width: `${pctFemale}%` }} />
                         </div>
                       </div>
 
                       {/* Age Cohort Breakdown */}
                       <div className="pt-1.5 space-y-0.5 text-[10px]">
-                        <div className="flex justify-between text-slate-600">
+                        <div className="flex justify-between text-ink-600">
                           <span className="flex items-center gap-1 font-medium">
-                            <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-azure-500" />
                             Kids & Children (0–14):
                           </span>
-                          <span className="font-bold text-slate-800">{p.k} ({p.pop > 0 ? Math.round(p.k/p.pop*100) : 0}%)</span>
+                          <span className="font-bold text-ink-950 font-mono">{p.k} ({p.pop > 0 ? Math.round(p.k/p.pop*100) : 0}%)</span>
                         </div>
-                        <div className="flex justify-between text-slate-600">
+                        <div className="flex justify-between text-ink-600">
                           <span className="flex items-center gap-1 font-medium">
-                            <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-violet-500" />
                             Youth & Students (15–24):
                           </span>
-                          <span className="font-bold text-slate-800">{p.y} ({p.pop > 0 ? Math.round(p.y/p.pop*100) : 0}%)</span>
+                          <span className="font-bold text-ink-950 font-mono">{p.y} ({p.pop > 0 ? Math.round(p.y/p.pop*100) : 0}%)</span>
                         </div>
-                        <div className="flex justify-between text-slate-600">
+                        <div className="flex justify-between text-ink-600">
                           <span className="flex items-center gap-1 font-medium">
-                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-azure-700" />
                             Working Adults (25–54):
                           </span>
-                          <span className="font-bold text-slate-800">{p.w} ({p.pop > 0 ? Math.round(p.w/p.pop*100) : 0}%)</span>
+                          <span className="font-bold text-ink-950 font-mono">{p.w} ({p.pop > 0 ? Math.round(p.w/p.pop*100) : 0}%)</span>
                         </div>
-                        <div className="flex justify-between text-slate-600">
+                        <div className="flex justify-between text-ink-600">
                           <span className="flex items-center gap-1 font-medium">
-                            <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-ink-400" />
                             Mature & Seniors (55+):
                           </span>
-                          <span className="font-bold text-slate-800">{p.s} ({p.pop > 0 ? Math.round(p.s/p.pop*100) : 0}%)</span>
+                          <span className="font-bold text-ink-950 font-mono">{p.s} ({p.pop > 0 ? Math.round(p.s/p.pop*100) : 0}%)</span>
                         </div>
                       </div>
 
                       {p.k >= 80 && (
-                        <div className="mt-1 text-[9px] font-semibold text-amber-900 bg-amber-50 p-1 rounded border border-amber-200">
+                        <div className="mt-1 text-[9px] font-semibold text-azure-900 bg-azure-500/[0.08] p-1 rounded border border-azure-500/20">
                           High Child Density — Prime Target for Ice Cream Parlor & Kiosk
                         </div>
                       )}
