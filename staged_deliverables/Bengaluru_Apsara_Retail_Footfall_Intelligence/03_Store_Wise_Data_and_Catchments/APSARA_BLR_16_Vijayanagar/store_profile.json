@@ -1,0 +1,33 @@
+{
+  "serial_no": "APSARA_BLR_16",
+  "brand": "Apsara Ice Creams",
+  "store_name": "Apsara Ice Creams - Vijayanagar",
+  "locality": "Vijayanagar",
+  "corridor_name": "1st Main Rd & Vijayanagar Club Boulevard",
+  "zone": "West",
+  "google_place_id": "ChIJ_apsara_apsara_blr_16",
+  "google_rating": 4.4,
+  "google_review_count": 760,
+  "address": "Dr Nanjaiah Complex, 19/1, 1st Main Rd, opposite Vijayanagar Club, Hoshalli Extension, Vijayanagar, Bengaluru, Karnataka 560040",
+  "coordinates": {
+    "lat": 12.9705,
+    "lng": 77.5348
+  },
+  "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+  "store_footfall": {
+    "est_monthly_customers": 3400,
+    "est_daily_cups": 113,
+    "est_evening_peak_cups": 46,
+    "avg_ticket_size_inr": 175
+  },
+  "regional_footfall": {
+    "corridor_zone": "1st Main Rd & Vijayanagar Club Boulevard",
+    "annual_unique_visitors": 4336200,
+    "weekday_daily_footfall": 11200,
+    "weekend_daily_footfall": 16500,
+    "weekend_surge_pct": 47.3,
+    "peak_evening_hourly_flow": 1732,
+    "f_and_b_share_pct": 38.5,
+    "mean_dwell_time_mins": 55.0
+  }
+}

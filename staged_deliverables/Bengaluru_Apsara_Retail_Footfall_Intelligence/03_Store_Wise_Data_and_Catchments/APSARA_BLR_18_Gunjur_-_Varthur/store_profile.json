@@ -1,0 +1,33 @@
+{
+  "serial_no": "APSARA_BLR_18",
+  "brand": "Apsara Ice Creams",
+  "store_name": "Apsara Ice Creams - Gunjur / Varthur",
+  "locality": "Gunjur / Varthur",
+  "corridor_name": "Gunjur-Varthur Main Road Corridor",
+  "zone": "East",
+  "google_place_id": "ChIJ_apsara_apsara_blr_18",
+  "google_rating": 4.3,
+  "google_review_count": 430,
+  "address": "Ground Floor, Shop No 4, Sy No 141/3 Near IBO, Gunjur Village, Varthur, Bengaluru, Karnataka 560087",
+  "coordinates": {
+    "lat": 12.9256854,
+    "lng": 77.72855
+  },
+  "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+  "store_footfall": {
+    "est_monthly_customers": 2600,
+    "est_daily_cups": 87,
+    "est_evening_peak_cups": 35,
+    "avg_ticket_size_inr": 175
+  },
+  "regional_footfall": {
+    "corridor_zone": "Gunjur-Varthur Main Road Corridor",
+    "annual_unique_visitors": 3206160,
+    "weekday_daily_footfall": 8100,
+    "weekend_daily_footfall": 12200,
+    "weekend_surge_pct": 50.6,
+    "peak_evening_hourly_flow": 1281,
+    "f_and_b_share_pct": 38.5,
+    "mean_dwell_time_mins": 55.0
+  }
+}

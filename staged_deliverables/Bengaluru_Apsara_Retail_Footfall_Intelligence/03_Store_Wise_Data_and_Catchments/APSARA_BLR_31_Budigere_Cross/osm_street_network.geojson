@@ -1,0 +1,6074 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "serial_no": "APSARA_BLR_31",
+    "store_name": "Apsara Ice Creams - Budigere Cross",
+    "locality": "Budigere Cross",
+    "feature_count": 79
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0001",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Road",
+        "highway_type": "primary",
+        "corridor_tier": "Designated High-Street Commercial Spine",
+        "length_m": 195.0,
+        "daily_footfall": 15025,
+        "peak_hourly_footfall": 1385,
+        "hourly_footfall": [
+          145,
+          72,
+          43,
+          29,
+          29,
+          58,
+          175,
+          408,
+          758,
+          904,
+          700,
+          641,
+          846,
+          948,
+          758,
+          641,
+          729,
+          904,
+          1137,
+          1342,
+          1385,
+          1196,
+          758,
+          408
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 182.3,
+        "poi_synergy_boost": 1.25
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7503274,
+            13.0463157
+          ],
+          [
+            77.7502796,
+            13.0463969
+          ],
+          [
+            77.749442,
+            13.0478422
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0002",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Old Madras Road Flyover",
+        "highway_type": "trunk",
+        "corridor_tier": "Designated High-Street Commercial Spine",
+        "length_m": 1409.9,
+        "daily_footfall": 14504,
+        "peak_hourly_footfall": 1337,
+        "hourly_footfall": [
+          140,
+          70,
+          42,
+          28,
+          28,
+          56,
+          168,
+          394,
+          732,
+          873,
+          675,
+          619,
+          816,
+          915,
+          732,
+          619,
+          704,
+          873,
+          1098,
+          1295,
+          1337,
+          1154,
+          732,
+          394
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 343.8,
+        "poi_synergy_boost": 1.24
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7449521,
+            13.0423232
+          ],
+          [
+            77.7467303,
+            13.0435962
+          ],
+          [
+            77.747134,
+            13.0438852
+          ],
+          [
+            77.7476804,
+            13.04429
+          ],
+          [
+            77.7482223,
+            13.0446737
+          ],
+          [
+            77.7491268,
+            13.0453147
+          ],
+          [
+            77.7499855,
+            13.0459576
+          ],
+          [
+            77.7505156,
+            13.0463255
+          ],
+          [
+            77.7517953,
+            13.0472468
+          ],
+          [
+            77.752946,
+            13.0480369
+          ],
+          [
+            77.7540329,
+            13.048813
+          ],
+          [
+            77.7554513,
+            13.0498161
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0003",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Road",
+        "highway_type": "primary",
+        "corridor_tier": "Designated High-Street Commercial Spine",
+        "length_m": 35.4,
+        "daily_footfall": 14147,
+        "peak_hourly_footfall": 1304,
+        "hourly_footfall": [
+          137,
+          68,
+          41,
+          27,
+          27,
+          54,
+          164,
+          384,
+          714,
+          851,
+          659,
+          604,
+          796,
+          892,
+          714,
+          604,
+          686,
+          851,
+          1071,
+          1263,
+          1304,
+          1126,
+          714,
+          384
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 344.8,
+        "poi_synergy_boost": 1.24
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7505005,
+            13.0460456
+          ],
+          [
+            77.7503274,
+            13.0463157
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0004",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Old Madras Road Flyover",
+        "highway_type": "trunk",
+        "corridor_tier": "Designated High-Street Commercial Spine",
+        "length_m": 1398.9,
+        "daily_footfall": 14638,
+        "peak_hourly_footfall": 1350,
+        "hourly_footfall": [
+          142,
+          71,
+          42,
+          28,
+          28,
+          56,
+          170,
+          397,
+          739,
+          881,
+          682,
+          625,
+          824,
+          923,
+          739,
+          625,
+          710,
+          881,
+          1108,
+          1307,
+          1350,
+          1165,
+          739,
+          397
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 357.1,
+        "poi_synergy_boost": 1.25
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7554977,
+            13.049704
+          ],
+          [
+            77.7543873,
+            13.0489358
+          ],
+          [
+            77.7537113,
+            13.0484498
+          ],
+          [
+            77.7527546,
+            13.0477694
+          ],
+          [
+            77.7510434,
+            13.0465518
+          ],
+          [
+            77.7503908,
+            13.0460773
+          ],
+          [
+            77.7496612,
+            13.0455494
+          ],
+          [
+            77.7482968,
+            13.0445973
+          ],
+          [
+            77.7466142,
+            13.0433597
+          ],
+          [
+            77.7457379,
+            13.0427629
+          ],
+          [
+            77.7450674,
+            13.0422874
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0005",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Old Madras Road",
+        "highway_type": "primary",
+        "corridor_tier": "Designated High-Street Commercial Spine",
+        "length_m": 1285.6,
+        "daily_footfall": 15441,
+        "peak_hourly_footfall": 1424,
+        "hourly_footfall": [
+          149,
+          74,
+          44,
+          29,
+          29,
+          59,
+          179,
+          419,
+          779,
+          929,
+          719,
+          659,
+          869,
+          974,
+          779,
+          659,
+          749,
+          929,
+          1169,
+          1379,
+          1424,
+          1229,
+          779,
+          419
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 367.5,
+        "poi_synergy_boost": 1.26
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7498396,
+            13.0455585
+          ],
+          [
+            77.7486996,
+            13.0447182
+          ],
+          [
+            77.7483442,
+            13.0444562
+          ],
+          [
+            77.7481511,
+            13.0443191
+          ],
+          [
+            77.7480455,
+            13.0442442
+          ],
+          [
+            77.7474622,
+            13.0438304
+          ],
+          [
+            77.7474515,
+            13.0438228
+          ],
+          [
+            77.746133,
+            13.0428873
+          ],
+          [
+            77.7456565,
+            13.0425399
+          ],
+          [
+            77.7444565,
+            13.0416648
+          ],
+          [
+            77.7443991,
+            13.0416228
+          ],
+          [
+            77.7440415,
+            13.0413612
+          ],
+          [
+            77.7438068,
+            13.0411925
+          ],
+          [
+            77.7437619,
+            13.0411602
+          ],
+          [
+            77.7432558,
+            13.0407899
+          ],
+          [
+            77.7426372,
+            13.0403372
+          ],
+          [
+            77.7425082,
+            13.0402569
+          ],
+          [
+            77.7422678,
+            13.0400862
+          ],
+          [
+            77.7411957,
+            13.039335
+          ],
+          [
+            77.7406812,
+            13.0389594
+          ],
+          [
+            77.7404604,
+            13.038816
+          ],
+          [
+            77.7403882,
+            13.0387647
+          ],
+          [
+            77.7402885,
+            13.038698
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0006",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Arterial",
+        "highway_type": "primary",
+        "corridor_tier": "Primary Arterial Corridor",
+        "length_m": 1006.7,
+        "daily_footfall": 10632,
+        "peak_hourly_footfall": 980,
+        "hourly_footfall": [
+          103,
+          51,
+          30,
+          20,
+          20,
+          41,
+          123,
+          289,
+          536,
+          639,
+          495,
+          454,
+          598,
+          670,
+          536,
+          454,
+          516,
+          639,
+          805,
+          949,
+          980,
+          846,
+          536,
+          289
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 344.8,
+        "poi_synergy_boost": 1.25
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7503274,
+            13.0463157
+          ],
+          [
+            77.750393,
+            13.0463604
+          ],
+          [
+            77.7505035,
+            13.0464358
+          ],
+          [
+            77.7510565,
+            13.0468132
+          ],
+          [
+            77.7517242,
+            13.0472709
+          ],
+          [
+            77.7517709,
+            13.0473029
+          ],
+          [
+            77.7518217,
+            13.0473388
+          ],
+          [
+            77.7523525,
+            13.0477144
+          ],
+          [
+            77.7527101,
+            13.0479695
+          ],
+          [
+            77.7529245,
+            13.0481224
+          ],
+          [
+            77.7536853,
+            13.048663
+          ],
+          [
+            77.7538397,
+            13.0487727
+          ],
+          [
+            77.7540623,
+            13.0489308
+          ],
+          [
+            77.7547956,
+            13.0494616
+          ],
+          [
+            77.7553353,
+            13.0498523
+          ],
+          [
+            77.7554894,
+            13.0499638
+          ],
+          [
+            77.7557849,
+            13.0501926
+          ],
+          [
+            77.7560138,
+            13.0503698
+          ],
+          [
+            77.7566385,
+            13.0507872
+          ],
+          [
+            77.7566975,
+            13.0508266
+          ],
+          [
+            77.7569017,
+            13.0509613
+          ],
+          [
+            77.7570461,
+            13.0510565
+          ],
+          [
+            77.7570815,
+            13.0510767
+          ],
+          [
+            77.7574235,
+            13.0512718
+          ],
+          [
+            77.757909,
+            13.0515415
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0007",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Old Madras Road",
+        "highway_type": "primary",
+        "corridor_tier": "Designated High-Street Commercial Spine",
+        "length_m": 89.8,
+        "daily_footfall": 15739,
+        "peak_hourly_footfall": 1451,
+        "hourly_footfall": [
+          152,
+          76,
+          45,
+          30,
+          30,
+          61,
+          183,
+          427,
+          794,
+          947,
+          733,
+          672,
+          886,
+          993,
+          794,
+          672,
+          764,
+          947,
+          1191,
+          1405,
+          1451,
+          1253,
+          794,
+          427
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 367.5,
+        "poi_synergy_boost": 1.26
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7505005,
+            13.0460456
+          ],
+          [
+            77.7498396,
+            13.0455585
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0008",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Arterial",
+        "highway_type": "primary",
+        "corridor_tier": "Primary Arterial Corridor",
+        "length_m": 492.0,
+        "daily_footfall": 10249,
+        "peak_hourly_footfall": 945,
+        "hourly_footfall": [
+          99,
+          49,
+          29,
+          19,
+          19,
+          39,
+          119,
+          278,
+          517,
+          616,
+          477,
+          437,
+          577,
+          646,
+          517,
+          437,
+          497,
+          616,
+          776,
+          915,
+          945,
+          815,
+          517,
+          278
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 331.4,
+        "poi_synergy_boost": 1.24
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7466698,
+            13.0436922
+          ],
+          [
+            77.7480802,
+            13.0447041
+          ],
+          [
+            77.7481343,
+            13.0447429
+          ],
+          [
+            77.7483847,
+            13.0449217
+          ],
+          [
+            77.74927,
+            13.0455538
+          ],
+          [
+            77.7495637,
+            13.0457651
+          ],
+          [
+            77.7499312,
+            13.0460257
+          ],
+          [
+            77.7503274,
+            13.0463157
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0009",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 216.7,
+        "daily_footfall": 1072,
+        "peak_hourly_footfall": 98,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          54,
+          64,
+          49,
+          45,
+          60,
+          67,
+          54,
+          45,
+          52,
+          64,
+          81,
+          95,
+          98,
+          85,
+          54,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 305.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.743085,
+            13.0475045
+          ],
+          [
+            77.7431634,
+            13.047489
+          ],
+          [
+            77.7432874,
+            13.0474791
+          ],
+          [
+            77.7434358,
+            13.0474613
+          ],
+          [
+            77.7435761,
+            13.0474454
+          ],
+          [
+            77.7437427,
+            13.0474316
+          ],
+          [
+            77.7439237,
+            13.0474256
+          ],
+          [
+            77.7440761,
+            13.0474256
+          ],
+          [
+            77.7443485,
+            13.0474217
+          ],
+          [
+            77.7444725,
+            13.0474237
+          ],
+          [
+            77.7445294,
+            13.0474355
+          ],
+          [
+            77.7445844,
+            13.0474462
+          ],
+          [
+            77.7446515,
+            13.0474553
+          ],
+          [
+            77.7447454,
+            13.0474618
+          ],
+          [
+            77.7448191,
+            13.0474788
+          ],
+          [
+            77.7450249,
+            13.047501
+          ],
+          [
+            77.7450716,
+            13.0475169
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0010",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 222.5,
+        "daily_footfall": 1265,
+        "peak_hourly_footfall": 116,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          14,
+          34,
+          63,
+          76,
+          58,
+          54,
+          71,
+          79,
+          63,
+          54,
+          61,
+          76,
+          95,
+          112,
+          116,
+          100,
+          63,
+          34
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 206.7,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7450716,
+            13.0475169
+          ],
+          [
+            77.7450918,
+            13.0474568
+          ],
+          [
+            77.745104,
+            13.0473815
+          ],
+          [
+            77.7451081,
+            13.0472984
+          ],
+          [
+            77.7451081,
+            13.0472093
+          ],
+          [
+            77.7451121,
+            13.0471043
+          ],
+          [
+            77.7451142,
+            13.0469677
+          ],
+          [
+            77.7451162,
+            13.0468647
+          ],
+          [
+            77.7451162,
+            13.0467974
+          ],
+          [
+            77.7451395,
+            13.0467578
+          ],
+          [
+            77.7451722,
+            13.0467373
+          ],
+          [
+            77.7452563,
+            13.0467327
+          ],
+          [
+            77.7453637,
+            13.0467373
+          ],
+          [
+            77.7454454,
+            13.0467418
+          ],
+          [
+            77.7455131,
+            13.0467487
+          ],
+          [
+            77.7455668,
+            13.0467691
+          ],
+          [
+            77.7456065,
+            13.046801
+          ],
+          [
+            77.7456229,
+            13.046851
+          ],
+          [
+            77.7456275,
+            13.0468897
+          ],
+          [
+            77.7456404,
+            13.0469011
+          ],
+          [
+            77.7456696,
+            13.0469181
+          ],
+          [
+            77.7457116,
+            13.0469352
+          ],
+          [
+            77.745763,
+            13.0469557
+          ],
+          [
+            77.7459206,
+            13.0469943
+          ],
+          [
+            77.7461074,
+            13.047041
+          ],
+          [
+            77.7461833,
+            13.0470592
+          ],
+          [
+            77.7462753,
+            13.0470816
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0011",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 89.3,
+        "daily_footfall": 1067,
+        "peak_hourly_footfall": 98,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          53,
+          64,
+          49,
+          45,
+          60,
+          67,
+          53,
+          45,
+          51,
+          64,
+          80,
+          95,
+          98,
+          84,
+          53,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 289.0,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7450716,
+            13.0475169
+          ],
+          [
+            77.745095,
+            13.047551
+          ],
+          [
+            77.745109,
+            13.0476102
+          ],
+          [
+            77.7451043,
+            13.0477375
+          ],
+          [
+            77.7451043,
+            13.047799
+          ],
+          [
+            77.745123,
+            13.047899
+          ],
+          [
+            77.745137,
+            13.0479514
+          ],
+          [
+            77.7451347,
+            13.0480765
+          ],
+          [
+            77.74513,
+            13.048288
+          ],
+          [
+            77.7451297,
+            13.0483078
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0012",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 238.0,
+        "daily_footfall": 1079,
+        "peak_hourly_footfall": 99,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          54,
+          64,
+          50,
+          46,
+          60,
+          68,
+          54,
+          46,
+          52,
+          64,
+          81,
+          96,
+          99,
+          85,
+          54,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 289.5,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7451297,
+            13.0483078
+          ],
+          [
+            77.7451277,
+            13.0484654
+          ],
+          [
+            77.7451203,
+            13.0485493
+          ],
+          [
+            77.7451123,
+            13.0485663
+          ],
+          [
+            77.7450962,
+            13.0485806
+          ],
+          [
+            77.7450801,
+            13.0485859
+          ],
+          [
+            77.7450466,
+            13.0485898
+          ],
+          [
+            77.7450077,
+            13.048595
+          ],
+          [
+            77.7449795,
+            13.0486094
+          ],
+          [
+            77.7449621,
+            13.0486224
+          ],
+          [
+            77.7449513,
+            13.0486446
+          ],
+          [
+            77.7449446,
+            13.0486812
+          ],
+          [
+            77.7449379,
+            13.0487309
+          ],
+          [
+            77.7449299,
+            13.0488328
+          ],
+          [
+            77.7449285,
+            13.0489386
+          ],
+          [
+            77.7449278,
+            13.0490083
+          ],
+          [
+            77.7449272,
+            13.0490614
+          ],
+          [
+            77.7449218,
+            13.0491672
+          ],
+          [
+            77.7449239,
+            13.0493157
+          ],
+          [
+            77.7449259,
+            13.049494
+          ],
+          [
+            77.7449198,
+            13.0496484
+          ],
+          [
+            77.7449198,
+            13.0498445
+          ],
+          [
+            77.7449112,
+            13.0503368
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0013",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 264.9,
+        "daily_footfall": 430,
+        "peak_hourly_footfall": 39,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          21,
+          25,
+          20,
+          18,
+          24,
+          27,
+          21,
+          18,
+          20,
+          25,
+          32,
+          38,
+          39,
+          34,
+          21,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 196.0,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7496062,
+            13.0480956
+          ],
+          [
+            77.7497771,
+            13.0484076
+          ],
+          [
+            77.7499219,
+            13.0487397
+          ],
+          [
+            77.7500713,
+            13.0490537
+          ],
+          [
+            77.7501668,
+            13.0492638
+          ],
+          [
+            77.7501974,
+            13.0493312
+          ],
+          [
+            77.7503422,
+            13.0496314
+          ],
+          [
+            77.7504729,
+            13.0498634
+          ],
+          [
+            77.7504694,
+            13.0499094
+          ],
+          [
+            77.750448,
+            13.0499382
+          ],
+          [
+            77.7501449,
+            13.050108
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0014",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Road",
+        "highway_type": "primary",
+        "corridor_tier": "Designated High-Street Commercial Spine",
+        "length_m": 2139.9,
+        "daily_footfall": 15501,
+        "peak_hourly_footfall": 1429,
+        "hourly_footfall": [
+          150,
+          75,
+          45,
+          30,
+          30,
+          60,
+          180,
+          421,
+          782,
+          933,
+          722,
+          662,
+          872,
+          978,
+          782,
+          662,
+          752,
+          933,
+          1173,
+          1384,
+          1429,
+          1234,
+          782,
+          421
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 138.6,
+        "poi_synergy_boost": 1.26
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.749442,
+            13.0478422
+          ],
+          [
+            77.7493193,
+            13.0480661
+          ],
+          [
+            77.7492199,
+            13.0482474
+          ],
+          [
+            77.7488777,
+            13.0488716
+          ],
+          [
+            77.7485102,
+            13.0494911
+          ],
+          [
+            77.7484858,
+            13.0495323
+          ],
+          [
+            77.7484072,
+            13.0496777
+          ],
+          [
+            77.7482796,
+            13.0499136
+          ],
+          [
+            77.7482012,
+            13.0500584
+          ],
+          [
+            77.7479775,
+            13.050501
+          ],
+          [
+            77.7474667,
+            13.0513544
+          ],
+          [
+            77.7468772,
+            13.0524479
+          ],
+          [
+            77.7465695,
+            13.0529907
+          ],
+          [
+            77.7461913,
+            13.0536854
+          ],
+          [
+            77.7459896,
+            13.0540426
+          ],
+          [
+            77.7459112,
+            13.0541873
+          ],
+          [
+            77.7450967,
+            13.0556514
+          ],
+          [
+            77.7439891,
+            13.0576421
+          ],
+          [
+            77.7436065,
+            13.0583338
+          ],
+          [
+            77.7435596,
+            13.0584187
+          ],
+          [
+            77.743396,
+            13.0586812
+          ],
+          [
+            77.7432129,
+            13.0589873
+          ],
+          [
+            77.7429815,
+            13.0593889
+          ],
+          [
+            77.7429617,
+            13.0594234
+          ],
+          [
+            77.742734,
+            13.0598186
+          ],
+          [
+            77.7427179,
+            13.0598454
+          ],
+          [
+            77.7424342,
+            13.0603175
+          ],
+          [
+            77.7419046,
+            13.061207
+          ],
+          [
+            77.7418347,
+            13.0613214
+          ],
+          [
+            77.7417241,
+            13.0614309
+          ],
+          [
+            77.7415082,
+            13.061616
+          ],
+          [
+            77.741389,
+            13.0617182
+          ],
+          [
+            77.7412907,
+            13.0617843
+          ],
+          [
+            77.741239,
+            13.0618191
+          ],
+          [
+            77.7408083,
+            13.0621471
+          ],
+          [
+            77.7407653,
+            13.0621849
+          ],
+          [
+            77.7404721,
+            13.062443
+          ],
+          [
+            77.7404215,
+            13.0624902
+          ],
+          [
+            77.7403139,
+            13.062629
+          ],
+          [
+            77.7402359,
+            13.0627297
+          ],
+          [
+            77.7398006,
+            13.063273
+          ],
+          [
+            77.7394458,
+            13.0637212
+          ],
+          [
+            77.7391442,
+            13.0641212
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0015",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Old Madras Road",
+        "highway_type": "primary",
+        "corridor_tier": "Designated High-Street Commercial Spine",
+        "length_m": 853.4,
+        "daily_footfall": 15515,
+        "peak_hourly_footfall": 1430,
+        "hourly_footfall": [
+          150,
+          75,
+          45,
+          30,
+          30,
+          60,
+          180,
+          421,
+          783,
+          933,
+          723,
+          662,
+          873,
+          979,
+          783,
+          662,
+          753,
+          933,
+          1174,
+          1385,
+          1430,
+          1235,
+          783,
+          421
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 378.1,
+        "poi_synergy_boost": 1.26
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7569104,
+            13.0505045
+          ],
+          [
+            77.7568045,
+            13.0504375
+          ],
+          [
+            77.7567304,
+            13.0503906
+          ],
+          [
+            77.7562391,
+            13.0500795
+          ],
+          [
+            77.7556158,
+            13.0496702
+          ],
+          [
+            77.7553872,
+            13.0495201
+          ],
+          [
+            77.7546356,
+            13.0489792
+          ],
+          [
+            77.7544996,
+            13.0488814
+          ],
+          [
+            77.7544913,
+            13.0488754
+          ],
+          [
+            77.7542017,
+            13.048667
+          ],
+          [
+            77.7529257,
+            13.0477621
+          ],
+          [
+            77.7526698,
+            13.0475764
+          ],
+          [
+            77.7524001,
+            13.0473806
+          ],
+          [
+            77.7522288,
+            13.0472562
+          ],
+          [
+            77.751921,
+            13.0470328
+          ],
+          [
+            77.751801,
+            13.0469493
+          ],
+          [
+            77.7506815,
+            13.0461708
+          ],
+          [
+            77.7505626,
+            13.0460886
+          ],
+          [
+            77.7505005,
+            13.0460456
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0016",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 38.1,
+        "daily_footfall": 334,
+        "peak_hourly_footfall": 30,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          16,
+          20,
+          15,
+          14,
+          18,
+          21,
+          16,
+          14,
+          16,
+          20,
+          25,
+          29,
+          30,
+          26,
+          16,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 499.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7453958,
+            13.0440095
+          ],
+          [
+            77.7456774,
+            13.0442153
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0017",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 295.3,
+        "daily_footfall": 329,
+        "peak_hourly_footfall": 30,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          16,
+          19,
+          15,
+          14,
+          18,
+          20,
+          16,
+          14,
+          15,
+          19,
+          24,
+          29,
+          30,
+          26,
+          16,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 482.0,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7455755,
+            13.0434162
+          ],
+          [
+            77.7455799,
+            13.0435002
+          ],
+          [
+            77.7455843,
+            13.0435446
+          ],
+          [
+            77.7455827,
+            13.0435841
+          ],
+          [
+            77.7455716,
+            13.0436183
+          ],
+          [
+            77.7455188,
+            13.0437162
+          ],
+          [
+            77.7454441,
+            13.0438836
+          ],
+          [
+            77.7453958,
+            13.0440095
+          ],
+          [
+            77.7453136,
+            13.0441378
+          ],
+          [
+            77.7454073,
+            13.0442721
+          ],
+          [
+            77.7454223,
+            13.0443015
+          ],
+          [
+            77.7454253,
+            13.0443286
+          ],
+          [
+            77.7454104,
+            13.0443682
+          ],
+          [
+            77.7451279,
+            13.0447339
+          ],
+          [
+            77.7450866,
+            13.044765
+          ],
+          [
+            77.7450155,
+            13.0447782
+          ],
+          [
+            77.7449378,
+            13.0447707
+          ],
+          [
+            77.7447646,
+            13.0446802
+          ],
+          [
+            77.744704,
+            13.0446307
+          ],
+          [
+            77.7446812,
+            13.0445789
+          ],
+          [
+            77.7446786,
+            13.0445244
+          ],
+          [
+            77.7446925,
+            13.0444705
+          ],
+          [
+            77.7447773,
+            13.0443412
+          ],
+          [
+            77.7448538,
+            13.0442567
+          ],
+          [
+            77.7449926,
+            13.0441118
+          ],
+          [
+            77.7450392,
+            13.0440837
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0018",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 156.3,
+        "daily_footfall": 1024,
+        "peak_hourly_footfall": 94,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          27,
+          51,
+          61,
+          47,
+          43,
+          57,
+          64,
+          51,
+          43,
+          49,
+          61,
+          77,
+          91,
+          94,
+          81,
+          51,
+          27
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 452.0,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7442439,
+            13.0503261
+          ],
+          [
+            77.7441823,
+            13.0517306
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0019",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 155.6,
+        "daily_footfall": 1089,
+        "peak_hourly_footfall": 100,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          54,
+          65,
+          50,
+          46,
+          61,
+          68,
+          54,
+          46,
+          52,
+          65,
+          82,
+          97,
+          100,
+          86,
+          54,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 474.3,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7440081,
+            13.050333
+          ],
+          [
+            77.7439356,
+            13.0517306
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0020",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 187.4,
+        "daily_footfall": 342,
+        "peak_hourly_footfall": 31,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          17,
+          20,
+          15,
+          14,
+          19,
+          21,
+          17,
+          14,
+          16,
+          20,
+          25,
+          30,
+          31,
+          27,
+          17,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 519.6,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7465695,
+            13.0529907
+          ],
+          [
+            77.7465179,
+            13.0529656
+          ],
+          [
+            77.7451184,
+            13.0520742
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0021",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 524.7,
+        "daily_footfall": 1137,
+        "peak_hourly_footfall": 104,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          30,
+          57,
+          68,
+          52,
+          48,
+          64,
+          71,
+          57,
+          48,
+          55,
+          68,
+          86,
+          101,
+          104,
+          90,
+          57,
+          30
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 252.1,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7432825,
+            13.0503977
+          ],
+          [
+            77.7440081,
+            13.050333
+          ],
+          [
+            77.7441609,
+            13.0503285
+          ],
+          [
+            77.7442439,
+            13.0503261
+          ],
+          [
+            77.7443527,
+            13.0503278
+          ],
+          [
+            77.7445173,
+            13.0503305
+          ],
+          [
+            77.7446813,
+            13.0503331
+          ],
+          [
+            77.7449112,
+            13.0503368
+          ],
+          [
+            77.7453105,
+            13.0503567
+          ],
+          [
+            77.7456782,
+            13.0503751
+          ],
+          [
+            77.7458024,
+            13.0504
+          ],
+          [
+            77.7459365,
+            13.0504854
+          ],
+          [
+            77.7460384,
+            13.0505808
+          ],
+          [
+            77.7461028,
+            13.0506032
+          ],
+          [
+            77.7461645,
+            13.0505875
+          ],
+          [
+            77.7462208,
+            13.0505274
+          ],
+          [
+            77.7462972,
+            13.0504436
+          ],
+          [
+            77.7464662,
+            13.0504331
+          ],
+          [
+            77.7473305,
+            13.0504544
+          ],
+          [
+            77.7478285,
+            13.0504666
+          ],
+          [
+            77.7479775,
+            13.050501
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0022",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 116.9,
+        "daily_footfall": 336,
+        "peak_hourly_footfall": 30,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          16,
+          20,
+          15,
+          14,
+          18,
+          21,
+          16,
+          14,
+          16,
+          20,
+          25,
+          30,
+          30,
+          26,
+          16,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 410.9,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7441609,
+            13.0503285
+          ],
+          [
+            77.7441716,
+            13.0492771
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0023",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 330.2,
+        "daily_footfall": 395,
+        "peak_hourly_footfall": 36,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          19,
+          23,
+          18,
+          16,
+          22,
+          24,
+          19,
+          16,
+          19,
+          23,
+          29,
+          35,
+          36,
+          31,
+          19,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 222.8,
+        "poi_synergy_boost": 1.09
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7482442,
+            13.0501567
+          ],
+          [
+            77.7485713,
+            13.0509624
+          ],
+          [
+            77.7488252,
+            13.0515895
+          ],
+          [
+            77.7488977,
+            13.0518299
+          ],
+          [
+            77.7489715,
+            13.0530065
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0024",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 178.8,
+        "daily_footfall": 1028,
+        "peak_hourly_footfall": 94,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          27,
+          51,
+          61,
+          47,
+          43,
+          57,
+          64,
+          51,
+          43,
+          49,
+          61,
+          77,
+          91,
+          94,
+          81,
+          51,
+          27
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 491.7,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7509379,
+            13.0443138
+          ],
+          [
+            77.7513331,
+            13.0450727
+          ],
+          [
+            77.7516014,
+            13.0457829
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0025",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "living_street",
+        "corridor_tier": "Pedestrian Mixed-Use Lane",
+        "length_m": 152.6,
+        "daily_footfall": 2332,
+        "peak_hourly_footfall": 215,
+        "hourly_footfall": [
+          22,
+          12,
+          12,
+          12,
+          12,
+          12,
+          27,
+          63,
+          117,
+          140,
+          108,
+          99,
+          131,
+          147,
+          117,
+          99,
+          113,
+          140,
+          176,
+          208,
+          215,
+          185,
+          117,
+          63
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 446.0,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7505475,
+            13.044589
+          ],
+          [
+            77.7507484,
+            13.044942
+          ],
+          [
+            77.7507859,
+            13.0449945
+          ],
+          [
+            77.7509817,
+            13.0453916
+          ],
+          [
+            77.7510059,
+            13.0454386
+          ],
+          [
+            77.7510327,
+            13.0454988
+          ],
+          [
+            77.7511239,
+            13.0458337
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0026",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "living_street",
+        "corridor_tier": "Pedestrian Mixed-Use Lane",
+        "length_m": 131.3,
+        "daily_footfall": 2278,
+        "peak_hourly_footfall": 210,
+        "hourly_footfall": [
+          22,
+          12,
+          12,
+          12,
+          12,
+          12,
+          26,
+          61,
+          115,
+          137,
+          106,
+          97,
+          128,
+          143,
+          115,
+          97,
+          110,
+          137,
+          172,
+          203,
+          210,
+          181,
+          115,
+          61
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 406.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7507055,
+            13.0458902
+          ],
+          [
+            77.7502024,
+            13.0448157
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0027",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 77.3,
+        "daily_footfall": 1040,
+        "peak_hourly_footfall": 95,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          28,
+          52,
+          62,
+          48,
+          44,
+          58,
+          65,
+          52,
+          44,
+          50,
+          62,
+          78,
+          92,
+          95,
+          82,
+          52,
+          28
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 434.1,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7506775,
+            13.0452315
+          ],
+          [
+            77.7507509,
+            13.0453812
+          ],
+          [
+            77.7510006,
+            13.0458511
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0028",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 252.6,
+        "daily_footfall": 342,
+        "peak_hourly_footfall": 31,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          17,
+          20,
+          15,
+          14,
+          19,
+          21,
+          17,
+          14,
+          16,
+          20,
+          25,
+          30,
+          31,
+          27,
+          17,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 399.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7497149,
+            13.0427773
+          ],
+          [
+            77.7497764,
+            13.0430999
+          ],
+          [
+            77.7497764,
+            13.0431599
+          ],
+          [
+            77.7497559,
+            13.0432383
+          ],
+          [
+            77.7487478,
+            13.0446507
+          ],
+          [
+            77.7486996,
+            13.0447182
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0029",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 76.8,
+        "daily_footfall": 326,
+        "peak_hourly_footfall": 30,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          16,
+          19,
+          15,
+          13,
+          18,
+          20,
+          16,
+          13,
+          15,
+          19,
+          24,
+          29,
+          30,
+          25,
+          16,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 488.5,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7521952,
+            13.045919
+          ],
+          [
+            77.7517721,
+            13.0459749
+          ],
+          [
+            77.751704,
+            13.0459539
+          ],
+          [
+            77.7516538,
+            13.045919
+          ],
+          [
+            77.7516014,
+            13.0457829
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0030",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 91.5,
+        "daily_footfall": 1095,
+        "peak_hourly_footfall": 100,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          55,
+          65,
+          51,
+          46,
+          61,
+          69,
+          55,
+          46,
+          53,
+          65,
+          82,
+          97,
+          100,
+          87,
+          55,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 386.8,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7502197,
+            13.0451995
+          ],
+          [
+            77.7505343,
+            13.0459634
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0031",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 44.7,
+        "daily_footfall": 1051,
+        "peak_hourly_footfall": 96,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          28,
+          53,
+          63,
+          48,
+          44,
+          59,
+          66,
+          53,
+          44,
+          51,
+          63,
+          79,
+          93,
+          96,
+          83,
+          53,
+          28
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 512.1,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7498576,
+            13.0440539
+          ],
+          [
+            77.7502293,
+            13.0442281
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0032",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 35.8,
+        "daily_footfall": 1070,
+        "peak_hourly_footfall": 98,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          54,
+          64,
+          49,
+          45,
+          60,
+          67,
+          54,
+          45,
+          51,
+          64,
+          81,
+          95,
+          98,
+          85,
+          54,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 494.3,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7499312,
+            13.0442697
+          ],
+          [
+            77.7502287,
+            13.0444092
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0033",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 46.4,
+        "daily_footfall": 348,
+        "peak_hourly_footfall": 32,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          17,
+          20,
+          16,
+          14,
+          19,
+          21,
+          17,
+          14,
+          16,
+          20,
+          26,
+          31,
+          32,
+          27,
+          17,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 299.1,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7499786,
+            13.049852
+          ],
+          [
+            77.7503422,
+            13.0496314
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0034",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 123.4,
+        "daily_footfall": 396,
+        "peak_hourly_footfall": 36,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          19,
+          23,
+          18,
+          16,
+          22,
+          24,
+          19,
+          16,
+          19,
+          23,
+          29,
+          35,
+          36,
+          31,
+          19,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 252.5,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7495146,
+            13.0500714
+          ],
+          [
+            77.749697,
+            13.0495279
+          ],
+          [
+            77.7497211,
+            13.0494861
+          ],
+          [
+            77.749764,
+            13.0494469
+          ],
+          [
+            77.7501668,
+            13.0492638
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0035",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 160.4,
+        "daily_footfall": 1426,
+        "peak_hourly_footfall": 131,
+        "hourly_footfall": [
+          13,
+          12,
+          12,
+          12,
+          12,
+          12,
+          16,
+          38,
+          71,
+          85,
+          66,
+          60,
+          80,
+          89,
+          71,
+          60,
+          69,
+          85,
+          107,
+          127,
+          131,
+          113,
+          71,
+          38
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 156.0,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7465536,
+            13.0474968
+          ],
+          [
+            77.7456416,
+            13.0472564
+          ],
+          [
+            77.7451081,
+            13.0472093
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0036",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 142.2,
+        "daily_footfall": 1191,
+        "peak_hourly_footfall": 109,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          32,
+          60,
+          71,
+          55,
+          50,
+          67,
+          75,
+          60,
+          50,
+          57,
+          71,
+          90,
+          106,
+          109,
+          94,
+          60,
+          32
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 236.5,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7456696,
+            13.0469181
+          ],
+          [
+            77.7456449,
+            13.0471548
+          ],
+          [
+            77.7456416,
+            13.0472564
+          ],
+          [
+            77.7456916,
+            13.0473641
+          ],
+          [
+            77.7457197,
+            13.0474323
+          ],
+          [
+            77.7457301,
+            13.0475247
+          ],
+          [
+            77.745718,
+            13.0475426
+          ],
+          [
+            77.745689,
+            13.0475536
+          ],
+          [
+            77.7454556,
+            13.0475494
+          ],
+          [
+            77.7450716,
+            13.0475169
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0037",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 210.4,
+        "daily_footfall": 320,
+        "peak_hourly_footfall": 29,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          16,
+          19,
+          14,
+          13,
+          18,
+          20,
+          16,
+          13,
+          15,
+          19,
+          24,
+          28,
+          29,
+          25,
+          16,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 396.8,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7466698,
+            13.0436922
+          ],
+          [
+            77.7461359,
+            13.0445421
+          ],
+          [
+            77.7456558,
+            13.0453064
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0038",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 59.7,
+        "daily_footfall": 1084,
+        "peak_hourly_footfall": 99,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          54,
+          65,
+          50,
+          46,
+          61,
+          68,
+          54,
+          46,
+          52,
+          65,
+          82,
+          96,
+          99,
+          86,
+          54,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 506.4,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7438626,
+            13.0506558
+          ],
+          [
+            77.7433156,
+            13.0507243
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0039",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 143.1,
+        "daily_footfall": 1213,
+        "peak_hourly_footfall": 111,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          14,
+          32,
+          61,
+          73,
+          56,
+          51,
+          68,
+          76,
+          61,
+          51,
+          58,
+          73,
+          91,
+          108,
+          111,
+          96,
+          61,
+          32
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 242.3,
+        "poi_synergy_boost": 1.11
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7461679,
+            13.0460323
+          ],
+          [
+            77.7460832,
+            13.0466201
+          ],
+          [
+            77.7460656,
+            13.0468234
+          ],
+          [
+            77.745893,
+            13.0468038
+          ],
+          [
+            77.7457697,
+            13.0467907
+          ],
+          [
+            77.7455668,
+            13.0467691
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0040",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 95.9,
+        "daily_footfall": 1094,
+        "peak_hourly_footfall": 100,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          55,
+          65,
+          50,
+          46,
+          61,
+          69,
+          55,
+          46,
+          53,
+          65,
+          82,
+          97,
+          100,
+          87,
+          55,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 270.0,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7459608,
+            13.0459486
+          ],
+          [
+            77.7457697,
+            13.0467907
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0041",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 57.0,
+        "daily_footfall": 344,
+        "peak_hourly_footfall": 31,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          17,
+          20,
+          16,
+          14,
+          19,
+          21,
+          17,
+          14,
+          16,
+          20,
+          26,
+          30,
+          31,
+          27,
+          17,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 319.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7463267,
+            13.0510749
+          ],
+          [
+            77.7461645,
+            13.0505875
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0042",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 37.1,
+        "daily_footfall": 1068,
+        "peak_hourly_footfall": 98,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          53,
+          64,
+          49,
+          45,
+          60,
+          67,
+          53,
+          45,
+          51,
+          64,
+          80,
+          95,
+          98,
+          85,
+          53,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 257.0,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7454502,
+            13.047883
+          ],
+          [
+            77.7454556,
+            13.0475494
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0043",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 67.1,
+        "daily_footfall": 407,
+        "peak_hourly_footfall": 37,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          20,
+          24,
+          18,
+          17,
+          22,
+          25,
+          20,
+          17,
+          19,
+          24,
+          30,
+          36,
+          37,
+          32,
+          20,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 222.6,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7457484,
+            13.0483202
+          ],
+          [
+            77.74513,
+            13.048288
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0044",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 79.4,
+        "daily_footfall": 1282,
+        "peak_hourly_footfall": 118,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          14,
+          34,
+          64,
+          77,
+          59,
+          54,
+          72,
+          80,
+          64,
+          54,
+          62,
+          77,
+          97,
+          114,
+          118,
+          102,
+          64,
+          34
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 223.8,
+        "poi_synergy_boost": 1.11
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7457794,
+            13.0486183
+          ],
+          [
+            77.7450466,
+            13.0485898
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0045",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 111.5,
+        "daily_footfall": 377,
+        "peak_hourly_footfall": 34,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          19,
+          22,
+          17,
+          16,
+          21,
+          23,
+          19,
+          16,
+          18,
+          22,
+          28,
+          33,
+          34,
+          30,
+          19,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 276.2,
+        "poi_synergy_boost": 1.11
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7474144,
+            13.0457444
+          ],
+          [
+            77.7478597,
+            13.0448403
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0046",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 82.4,
+        "daily_footfall": 334,
+        "peak_hourly_footfall": 30,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          16,
+          20,
+          15,
+          14,
+          18,
+          21,
+          16,
+          14,
+          16,
+          20,
+          25,
+          29,
+          30,
+          26,
+          16,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 373.6,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7473098,
+            13.0445032
+          ],
+          [
+            77.7477899,
+            13.0448037
+          ],
+          [
+            77.7478355,
+            13.0448298
+          ],
+          [
+            77.7478597,
+            13.0448403
+          ],
+          [
+            77.7478771,
+            13.0448409
+          ],
+          [
+            77.747954,
+            13.0447891
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0047",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 100.6,
+        "daily_footfall": 364,
+        "peak_hourly_footfall": 33,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          18,
+          21,
+          16,
+          15,
+          20,
+          22,
+          18,
+          15,
+          17,
+          21,
+          27,
+          32,
+          33,
+          28,
+          18,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 252.1,
+        "poi_synergy_boost": 1.09
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7481681,
+            13.0459613
+          ],
+          [
+            77.748211,
+            13.0451565
+          ],
+          [
+            77.7482218,
+            13.0451316
+          ],
+          [
+            77.7482311,
+            13.045112
+          ],
+          [
+            77.748263,
+            13.0450725
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0048",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Connecting Avenue",
+        "highway_type": "tertiary",
+        "corridor_tier": "Mixed-Use Collector Avenue",
+        "length_m": 472.2,
+        "daily_footfall": 3901,
+        "peak_hourly_footfall": 359,
+        "hourly_footfall": [
+          37,
+          18,
+          12,
+          12,
+          12,
+          15,
+          45,
+          106,
+          196,
+          234,
+          181,
+          166,
+          219,
+          246,
+          196,
+          166,
+          189,
+          234,
+          295,
+          348,
+          359,
+          310,
+          196,
+          106
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 367.5,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7498396,
+            13.0455585
+          ],
+          [
+            77.7502024,
+            13.0448157
+          ],
+          [
+            77.7502974,
+            13.0445981
+          ],
+          [
+            77.7502287,
+            13.0444092
+          ],
+          [
+            77.7502293,
+            13.0442281
+          ],
+          [
+            77.7503552,
+            13.0440115
+          ],
+          [
+            77.7505095,
+            13.0438107
+          ],
+          [
+            77.7508786,
+            13.0433751
+          ],
+          [
+            77.7510182,
+            13.0432065
+          ],
+          [
+            77.7511273,
+            13.0429737
+          ],
+          [
+            77.7512367,
+            13.0426734
+          ],
+          [
+            77.7513395,
+            13.0423847
+          ],
+          [
+            77.7514391,
+            13.0420763
+          ],
+          [
+            77.7517688,
+            13.0420692
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0049",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Road",
+        "highway_type": "primary",
+        "corridor_tier": "Designated High-Street Commercial Spine",
+        "length_m": 3729.5,
+        "daily_footfall": 14385,
+        "peak_hourly_footfall": 1326,
+        "hourly_footfall": [
+          139,
+          69,
+          41,
+          27,
+          27,
+          55,
+          167,
+          391,
+          726,
+          865,
+          670,
+          614,
+          810,
+          907,
+          726,
+          614,
+          698,
+          865,
+          1089,
+          1284,
+          1326,
+          1145,
+          726,
+          391
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 149.2,
+        "poi_synergy_boost": 1.24
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7368278,
+            13.0780591
+          ],
+          [
+            77.7368338,
+            13.0775654
+          ],
+          [
+            77.7368737,
+            13.0770593
+          ],
+          [
+            77.7370314,
+            13.0750876
+          ],
+          [
+            77.737144,
+            13.0735212
+          ],
+          [
+            77.7371684,
+            13.0731824
+          ],
+          [
+            77.7372361,
+            13.0722579
+          ],
+          [
+            77.7372567,
+            13.0719766
+          ],
+          [
+            77.7372964,
+            13.0714338
+          ],
+          [
+            77.7373117,
+            13.071194
+          ],
+          [
+            77.7374285,
+            13.0697683
+          ],
+          [
+            77.7374683,
+            13.0691023
+          ],
+          [
+            77.7375484,
+            13.0679588
+          ],
+          [
+            77.73759,
+            13.0675674
+          ],
+          [
+            77.7377002,
+            13.0670177
+          ],
+          [
+            77.7378175,
+            13.0665298
+          ],
+          [
+            77.7379702,
+            13.06604
+          ],
+          [
+            77.7382667,
+            13.065453
+          ],
+          [
+            77.7383289,
+            13.065347
+          ],
+          [
+            77.7384299,
+            13.0651995
+          ],
+          [
+            77.7388493,
+            13.0646359
+          ],
+          [
+            77.7391823,
+            13.0642058
+          ],
+          [
+            77.7395061,
+            13.0637876
+          ],
+          [
+            77.739853,
+            13.0633254
+          ],
+          [
+            77.7401163,
+            13.0630119
+          ],
+          [
+            77.7404994,
+            13.0625557
+          ],
+          [
+            77.7408393,
+            13.0622387
+          ],
+          [
+            77.7412568,
+            13.0619227
+          ],
+          [
+            77.7413083,
+            13.0618838
+          ],
+          [
+            77.7414679,
+            13.0617734
+          ],
+          [
+            77.7415016,
+            13.061742
+          ],
+          [
+            77.74192,
+            13.0613541
+          ],
+          [
+            77.7425175,
+            13.0603569
+          ],
+          [
+            77.7426375,
+            13.060138
+          ],
+          [
+            77.7428054,
+            13.0598498
+          ],
+          [
+            77.7433482,
+            13.0589225
+          ],
+          [
+            77.7436205,
+            13.0584616
+          ],
+          [
+            77.7440664,
+            13.0576532
+          ],
+          [
+            77.7451687,
+            13.0556899
+          ],
+          [
+            77.7454383,
+            13.0551817
+          ],
+          [
+            77.7459918,
+            13.0542189
+          ],
+          [
+            77.7460613,
+            13.0540929
+          ],
+          [
+            77.7462729,
+            13.0536969
+          ],
+          [
+            77.746591,
+            13.05313
+          ],
+          [
+            77.746933,
+            13.0524858
+          ],
+          [
+            77.7475594,
+            13.0513681
+          ],
+          [
+            77.748038,
+            13.0505304
+          ],
+          [
+            77.7482442,
+            13.0501567
+          ],
+          [
+            77.7489719,
+            13.0489048
+          ],
+          [
+            77.7495147,
+            13.0479256
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0050",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 35.1,
+        "daily_footfall": 1035,
+        "peak_hourly_footfall": 95,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          28,
+          52,
+          62,
+          48,
+          44,
+          58,
+          65,
+          52,
+          44,
+          50,
+          62,
+          78,
+          92,
+          95,
+          82,
+          52,
+          28
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 440.7,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7482497,
+            13.0439993
+          ],
+          [
+            77.7482026,
+            13.0440578
+          ],
+          [
+            77.7481833,
+            13.0440819
+          ],
+          [
+            77.7480455,
+            13.0442442
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0051",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 16.6,
+        "daily_footfall": 334,
+        "peak_hourly_footfall": 30,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          16,
+          20,
+          15,
+          14,
+          18,
+          21,
+          16,
+          14,
+          16,
+          20,
+          25,
+          29,
+          30,
+          26,
+          16,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 379.6,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.747954,
+            13.0447891
+          ],
+          [
+            77.7480802,
+            13.0447041
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0052",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 21.3,
+        "daily_footfall": 323,
+        "peak_hourly_footfall": 29,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          16,
+          19,
+          15,
+          13,
+          18,
+          20,
+          16,
+          13,
+          15,
+          19,
+          24,
+          28,
+          29,
+          25,
+          16,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 351.4,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.748263,
+            13.0450725
+          ],
+          [
+            77.7483847,
+            13.0449217
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0053",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Konadasapura Village Road",
+        "highway_type": "tertiary",
+        "corridor_tier": "Mixed-Use Collector Avenue",
+        "length_m": 342.9,
+        "daily_footfall": 4266,
+        "peak_hourly_footfall": 393,
+        "hourly_footfall": [
+          41,
+          20,
+          12,
+          12,
+          12,
+          16,
+          49,
+          115,
+          215,
+          256,
+          198,
+          182,
+          240,
+          269,
+          215,
+          182,
+          207,
+          256,
+          323,
+          381,
+          393,
+          339,
+          215,
+          115
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 384.7,
+        "poi_synergy_boost": 1.11
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7505421,
+            13.0460018
+          ],
+          [
+            77.7505343,
+            13.0459634
+          ],
+          [
+            77.7505753,
+            13.0459343
+          ],
+          [
+            77.7507055,
+            13.0458902
+          ],
+          [
+            77.7510006,
+            13.0458511
+          ],
+          [
+            77.7511239,
+            13.0458337
+          ],
+          [
+            77.7516014,
+            13.0457829
+          ],
+          [
+            77.7519178,
+            13.0457492
+          ],
+          [
+            77.7519705,
+            13.0457436
+          ],
+          [
+            77.7523912,
+            13.045699
+          ],
+          [
+            77.7526074,
+            13.0456761
+          ],
+          [
+            77.7529845,
+            13.0456362
+          ],
+          [
+            77.7531636,
+            13.0456172
+          ],
+          [
+            77.7533315,
+            13.0455994
+          ],
+          [
+            77.7536237,
+            13.0455684
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0054",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Road",
+        "highway_type": "primary",
+        "corridor_tier": "Designated High-Street Commercial Spine",
+        "length_m": 198.4,
+        "daily_footfall": 14191,
+        "peak_hourly_footfall": 1308,
+        "hourly_footfall": [
+          137,
+          68,
+          41,
+          27,
+          27,
+          55,
+          165,
+          385,
+          716,
+          854,
+          661,
+          606,
+          799,
+          895,
+          716,
+          606,
+          688,
+          854,
+          1074,
+          1267,
+          1308,
+          1129,
+          716,
+          385
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 188.2,
+        "poi_synergy_boost": 1.24
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7495147,
+            13.0479256
+          ],
+          [
+            77.749867,
+            13.0473039
+          ],
+          [
+            77.7501318,
+            13.0468364
+          ],
+          [
+            77.7503434,
+            13.0464352
+          ],
+          [
+            77.750393,
+            13.0463604
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0055",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 21.3,
+        "daily_footfall": 437,
+        "peak_hourly_footfall": 40,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          22,
+          26,
+          20,
+          18,
+          24,
+          27,
+          22,
+          18,
+          21,
+          26,
+          33,
+          39,
+          40,
+          34,
+          22,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 188.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7495147,
+            13.0479256
+          ],
+          [
+            77.7496062,
+            13.0480956
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0056",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 43.0,
+        "daily_footfall": 1034,
+        "peak_hourly_footfall": 95,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          28,
+          52,
+          62,
+          48,
+          44,
+          58,
+          65,
+          52,
+          44,
+          50,
+          62,
+          78,
+          92,
+          95,
+          82,
+          52,
+          28
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 484.8,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7505915,
+            13.0443116
+          ],
+          [
+            77.7503882,
+            13.0446434
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0057",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 43.7,
+        "daily_footfall": 1018,
+        "peak_hourly_footfall": 93,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          27,
+          51,
+          61,
+          47,
+          43,
+          57,
+          64,
+          51,
+          43,
+          49,
+          61,
+          77,
+          90,
+          93,
+          81,
+          51,
+          27
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 505.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7509409,
+            13.0448413
+          ],
+          [
+            77.7507663,
+            13.0444872
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0058",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 82.4,
+        "daily_footfall": 1047,
+        "peak_hourly_footfall": 96,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          28,
+          52,
+          63,
+          48,
+          44,
+          58,
+          66,
+          52,
+          44,
+          50,
+          63,
+          79,
+          93,
+          96,
+          83,
+          52,
+          28
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 483.3,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7509379,
+            13.0443138
+          ],
+          [
+            77.7507663,
+            13.0444872
+          ],
+          [
+            77.7506403,
+            13.0445456
+          ],
+          [
+            77.7505475,
+            13.044589
+          ],
+          [
+            77.7504367,
+            13.0446254
+          ],
+          [
+            77.7503882,
+            13.0446434
+          ],
+          [
+            77.7502974,
+            13.0445981
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0059",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 52.4,
+        "daily_footfall": 1073,
+        "peak_hourly_footfall": 98,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          54,
+          64,
+          50,
+          45,
+          60,
+          67,
+          54,
+          45,
+          52,
+          64,
+          81,
+          95,
+          98,
+          85,
+          54,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 463.7,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7503882,
+            13.0446434
+          ],
+          [
+            77.750616,
+            13.0450593
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0060",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 81.3,
+        "daily_footfall": 1103,
+        "peak_hourly_footfall": 101,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          55,
+          66,
+          51,
+          47,
+          62,
+          69,
+          55,
+          47,
+          53,
+          66,
+          83,
+          98,
+          101,
+          87,
+          55,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 246.5,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7449278,
+            13.0490083
+          ],
+          [
+            77.7456786,
+            13.0490024
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0061",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 60.9,
+        "daily_footfall": 1003,
+        "peak_hourly_footfall": 92,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          27,
+          50,
+          60,
+          46,
+          42,
+          56,
+          63,
+          50,
+          42,
+          48,
+          60,
+          75,
+          89,
+          92,
+          79,
+          50,
+          27
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 411.5,
+        "poi_synergy_boost": 1.09
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7443527,
+            13.0503278
+          ],
+          [
+            77.7443655,
+            13.0497804
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0062",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 171.2,
+        "daily_footfall": 1036,
+        "peak_hourly_footfall": 95,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          28,
+          52,
+          62,
+          48,
+          44,
+          58,
+          65,
+          52,
+          44,
+          50,
+          62,
+          78,
+          92,
+          95,
+          82,
+          52,
+          28
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 450.5,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7430184,
+            13.0472257
+          ],
+          [
+            77.7432174,
+            13.0472301
+          ],
+          [
+            77.7434918,
+            13.0472361
+          ],
+          [
+            77.7436974,
+            13.0472406
+          ],
+          [
+            77.743756,
+            13.047213
+          ],
+          [
+            77.7437844,
+            13.0471475
+          ],
+          [
+            77.743788,
+            13.0465587
+          ],
+          [
+            77.7437889,
+            13.0464044
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0063",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 43.7,
+        "daily_footfall": 1095,
+        "peak_hourly_footfall": 100,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          55,
+          65,
+          51,
+          46,
+          61,
+          69,
+          55,
+          46,
+          53,
+          65,
+          82,
+          97,
+          100,
+          87,
+          55,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 431.1,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.743788,
+            13.0465587
+          ],
+          [
+            77.7440839,
+            13.0465639
+          ],
+          [
+            77.744191,
+            13.0465658
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0064",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 21.7,
+        "daily_footfall": 1036,
+        "peak_hourly_footfall": 95,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          28,
+          52,
+          62,
+          48,
+          44,
+          58,
+          65,
+          52,
+          44,
+          50,
+          62,
+          78,
+          92,
+          95,
+          82,
+          52,
+          28
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 441.7,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7440839,
+            13.0465639
+          ],
+          [
+            77.7440989,
+            13.0463691
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0065",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 123.5,
+        "daily_footfall": 1111,
+        "peak_hourly_footfall": 102,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          30,
+          56,
+          66,
+          51,
+          47,
+          62,
+          70,
+          56,
+          47,
+          53,
+          66,
+          84,
+          99,
+          102,
+          88,
+          56,
+          30
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 375.9,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7431918,
+            13.0482498
+          ],
+          [
+            77.7437344,
+            13.0482699
+          ],
+          [
+            77.7440352,
+            13.0482811
+          ],
+          [
+            77.7443315,
+            13.0482922
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0066",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 88.3,
+        "daily_footfall": 1029,
+        "peak_hourly_footfall": 94,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          27,
+          51,
+          61,
+          47,
+          43,
+          57,
+          64,
+          51,
+          43,
+          49,
+          61,
+          77,
+          91,
+          94,
+          81,
+          51,
+          27
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 375.9,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7443216,
+            13.0487542
+          ],
+          [
+            77.7443315,
+            13.0482922
+          ],
+          [
+            77.7443385,
+            13.04796
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0067",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 88.6,
+        "daily_footfall": 1027,
+        "peak_hourly_footfall": 94,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          27,
+          51,
+          61,
+          47,
+          43,
+          57,
+          64,
+          51,
+          43,
+          49,
+          61,
+          77,
+          91,
+          94,
+          81,
+          51,
+          27
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 407.5,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7440183,
+            13.0487414
+          ],
+          [
+            77.7440246,
+            13.0485705
+          ],
+          [
+            77.7440352,
+            13.0482811
+          ],
+          [
+            77.7440476,
+            13.0479448
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0068",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 37.1,
+        "daily_footfall": 1017,
+        "peak_hourly_footfall": 93,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          27,
+          51,
+          61,
+          47,
+          43,
+          57,
+          64,
+          51,
+          43,
+          49,
+          61,
+          77,
+          90,
+          93,
+          80,
+          51,
+          27
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 439.6,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7437344,
+            13.0482699
+          ],
+          [
+            77.7437511,
+            13.0479366
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0069",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 90.8,
+        "daily_footfall": 1105,
+        "peak_hourly_footfall": 101,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          30,
+          55,
+          66,
+          51,
+          47,
+          62,
+          69,
+          55,
+          47,
+          53,
+          66,
+          83,
+          98,
+          101,
+          87,
+          55,
+          30
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 427.3,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7445173,
+            13.0503305
+          ],
+          [
+            77.7445159,
+            13.0503926
+          ],
+          [
+            77.7445,
+            13.0511469
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0070",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 133.5,
+        "daily_footfall": 1097,
+        "peak_hourly_footfall": 101,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          55,
+          66,
+          51,
+          46,
+          61,
+          69,
+          55,
+          46,
+          53,
+          66,
+          83,
+          97,
+          101,
+          87,
+          55,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 348.8,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7446813,
+            13.0503331
+          ],
+          [
+            77.7447255,
+            13.0491329
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0071",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 124.5,
+        "daily_footfall": 1001,
+        "peak_hourly_footfall": 92,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          27,
+          50,
+          60,
+          46,
+          42,
+          56,
+          63,
+          50,
+          42,
+          48,
+          60,
+          75,
+          89,
+          92,
+          79,
+          50,
+          27
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 289.2,
+        "poi_synergy_boost": 1.09
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7453105,
+            13.0503567
+          ],
+          [
+            77.7453523,
+            13.0492381
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0072",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 22.4,
+        "daily_footfall": 1055,
+        "peak_hourly_footfall": 97,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          28,
+          53,
+          63,
+          49,
+          45,
+          59,
+          66,
+          53,
+          45,
+          51,
+          63,
+          79,
+          94,
+          97,
+          83,
+          53,
+          28
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 411.0,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7440246,
+            13.0485705
+          ],
+          [
+            77.7438179,
+            13.048569
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0073",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Road",
+        "highway_type": "primary",
+        "corridor_tier": "Designated High-Street Commercial Spine",
+        "length_m": 35.4,
+        "daily_footfall": 14653,
+        "peak_hourly_footfall": 1351,
+        "hourly_footfall": [
+          142,
+          71,
+          42,
+          28,
+          28,
+          56,
+          170,
+          398,
+          739,
+          882,
+          682,
+          625,
+          825,
+          924,
+          739,
+          625,
+          711,
+          882,
+          1109,
+          1308,
+          1351,
+          1166,
+          739,
+          398
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 347.5,
+        "poi_synergy_boost": 1.25
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.750393,
+            13.0463604
+          ],
+          [
+            77.7505626,
+            13.0460886
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0074",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 7.3,
+        "daily_footfall": 1065,
+        "peak_hourly_footfall": 98,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          28,
+          53,
+          64,
+          49,
+          45,
+          59,
+          67,
+          53,
+          45,
+          51,
+          64,
+          80,
+          95,
+          98,
+          84,
+          53,
+          28
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 256.6,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.748038,
+            13.0505304
+          ],
+          [
+            77.7479775,
+            13.050501
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0075",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Arterial",
+        "highway_type": "primary",
+        "corridor_tier": "Primary Arterial Corridor",
+        "length_m": 9.9,
+        "daily_footfall": 10164,
+        "peak_hourly_footfall": 937,
+        "hourly_footfall": [
+          98,
+          49,
+          29,
+          19,
+          19,
+          39,
+          118,
+          276,
+          513,
+          611,
+          473,
+          434,
+          572,
+          641,
+          513,
+          434,
+          493,
+          611,
+          769,
+          907,
+          937,
+          809,
+          513,
+          276
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 380.4,
+        "poi_synergy_boost": 1.24
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7505626,
+            13.0460886
+          ],
+          [
+            77.7505421,
+            13.0460018
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0076",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Arterial",
+        "highway_type": "primary",
+        "corridor_tier": "Primary Arterial Corridor",
+        "length_m": 6.6,
+        "daily_footfall": 10664,
+        "peak_hourly_footfall": 983,
+        "hourly_footfall": [
+          103,
+          51,
+          31,
+          20,
+          20,
+          41,
+          124,
+          289,
+          538,
+          641,
+          496,
+          455,
+          600,
+          672,
+          538,
+          455,
+          517,
+          641,
+          807,
+          952,
+          983,
+          848,
+          538,
+          289
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 378.1,
+        "poi_synergy_boost": 1.25
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7505421,
+            13.0460018
+          ],
+          [
+            77.7505005,
+            13.0460456
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0077",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 95.8,
+        "daily_footfall": 1024,
+        "peak_hourly_footfall": 94,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          27,
+          51,
+          61,
+          47,
+          43,
+          57,
+          64,
+          51,
+          43,
+          49,
+          61,
+          77,
+          91,
+          94,
+          81,
+          51,
+          27
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 483.3,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7518789,
+            13.0464392
+          ],
+          [
+            77.752733,
+            13.0462154
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0078",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 135.9,
+        "daily_footfall": 325,
+        "peak_hourly_footfall": 29,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          16,
+          19,
+          15,
+          13,
+          18,
+          20,
+          16,
+          13,
+          15,
+          19,
+          24,
+          29,
+          29,
+          25,
+          16,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 318.3,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7485713,
+            13.0509624
+          ],
+          [
+            77.7494792,
+            13.0506964
+          ],
+          [
+            77.7495674,
+            13.050982
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_31_0079",
+        "serial_no": "APSARA_BLR_31",
+        "locality": "Budigere Cross",
+        "corridor_name": "Old Madras Road - Budigere Cross Ferro Hub Mall",
+        "street_name": "Budigere Cross Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 34.8,
+        "daily_footfall": 1091,
+        "peak_hourly_footfall": 100,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          55,
+          65,
+          50,
+          46,
+          61,
+          68,
+          55,
+          46,
+          52,
+          65,
+          82,
+          97,
+          100,
+          86,
+          55,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 433.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7481511,
+            13.0443191
+          ],
+          [
+            77.7483047,
+            13.0441519
+          ],
+          [
+            77.7483263,
+            13.0441285
+          ],
+          [
+            77.7483655,
+            13.0440859
+          ]
+        ]
+      }
+    }
+  ]
+}

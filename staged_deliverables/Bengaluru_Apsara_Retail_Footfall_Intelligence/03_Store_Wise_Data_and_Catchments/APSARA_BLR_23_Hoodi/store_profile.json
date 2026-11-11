@@ -1,0 +1,33 @@
+{
+  "serial_no": "APSARA_BLR_23",
+  "brand": "Apsara Ice Creams",
+  "store_name": "Apsara Ice Creams - Hoodi",
+  "locality": "Hoodi",
+  "corridor_name": "Hoodi Main Road & Mahadevapura IT Corridor",
+  "zone": "East",
+  "google_place_id": "ChIJ_apsara_apsara_blr_23",
+  "google_rating": 4.3,
+  "google_review_count": 640,
+  "address": "278, First Cross, Hoodi, Opp. Ganesha Temple, Thigalarapalya, Mahadevapura, Bengaluru, Karnataka 560048",
+  "coordinates": {
+    "lat": 12.9928471,
+    "lng": 77.7170154
+  },
+  "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+  "store_footfall": {
+    "est_monthly_customers": 3100,
+    "est_daily_cups": 103,
+    "est_evening_peak_cups": 42,
+    "avg_ticket_size_inr": 180
+  },
+  "regional_footfall": {
+    "corridor_zone": "Hoodi Main Road & Mahadevapura IT Corridor",
+    "annual_unique_visitors": 3836880,
+    "weekday_daily_footfall": 9900,
+    "weekend_daily_footfall": 14600,
+    "weekend_surge_pct": 47.5,
+    "peak_evening_hourly_flow": 1533,
+    "f_and_b_share_pct": 38.5,
+    "mean_dwell_time_mins": 55.0
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "serial_no": "APSARA_BLR_25",
+  "brand": "Apsara Ice Creams",
+  "store_name": "Apsara Ice Creams - Electronic City Phase 2",
+  "locality": "Electronic City Phase 2",
+  "corridor_name": "Ananthnagar Main Road Commercial Strip",
+  "zone": "South",
+  "google_place_id": "ChIJ_apsara_apsara_blr_25",
+  "google_rating": 4.3,
+  "google_review_count": 550,
+  "address": "Shop no.1023, 1st Cross, Ananthnagar Main Road, near Vishal Mega Mart, Phase 2, Electronic City, Bengaluru, Karnataka 560100",
+  "coordinates": {
+    "lat": 12.8357333,
+    "lng": 77.6909428
+  },
+  "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+  "store_footfall": {
+    "est_monthly_customers": 2900,
+    "est_daily_cups": 97,
+    "est_evening_peak_cups": 39,
+    "avg_ticket_size_inr": 175
+  },
+  "regional_footfall": {
+    "corridor_zone": "Ananthnagar Main Road Commercial Strip",
+    "annual_unique_visitors": 3547800,
+    "weekday_daily_footfall": 9100,
+    "weekend_daily_footfall": 13500,
+    "weekend_surge_pct": 48.4,
+    "peak_evening_hourly_flow": 1417,
+    "f_and_b_share_pct": 38.5,
+    "mean_dwell_time_mins": 55.0
+  }
+}

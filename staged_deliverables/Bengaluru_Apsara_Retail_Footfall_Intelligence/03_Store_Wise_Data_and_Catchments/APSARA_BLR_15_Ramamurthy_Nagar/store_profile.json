@@ -1,0 +1,33 @@
+{
+  "serial_no": "APSARA_BLR_15",
+  "brand": "Apsara Ice Creams",
+  "store_name": "Apsara Ice Creams - Ramamurthy Nagar",
+  "locality": "Ramamurthy Nagar",
+  "corridor_name": "East of NGEF & Kempegowda Underpass Road",
+  "zone": "North East",
+  "google_place_id": "ChIJ_apsara_apsara_blr_15",
+  "google_rating": 4.3,
+  "google_review_count": 480,
+  "address": "No. 5M 408, Ground Floor, East of NGEF, BDA Layout, Kempegowda Underpass Road, Ramamurthy Nagar, Bengaluru, Karnataka 560016",
+  "coordinates": {
+    "lat": 13.0085,
+    "lng": 77.6655
+  },
+  "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+  "store_footfall": {
+    "est_monthly_customers": 2700,
+    "est_daily_cups": 90,
+    "est_evening_peak_cups": 36,
+    "avg_ticket_size_inr": 170
+  },
+  "regional_footfall": {
+    "corridor_zone": "East of NGEF & Kempegowda Underpass Road",
+    "annual_unique_visitors": 3363840,
+    "weekday_daily_footfall": 8400,
+    "weekend_daily_footfall": 12800,
+    "weekend_surge_pct": 52.4,
+    "peak_evening_hourly_flow": 1344,
+    "f_and_b_share_pct": 38.5,
+    "mean_dwell_time_mins": 55.0
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "serial_no": "APSARA_BLR_26",
+  "brand": "Apsara Ice Creams",
+  "store_name": "Apsara Ice Creams - Electronic City Phase 1",
+  "locality": "Electronic City Phase 1",
+  "corridor_name": "Celebrity Classic & Neeladri Road Tech Hub",
+  "zone": "South",
+  "google_place_id": "ChIJ_apsara_apsara_blr_26",
+  "google_rating": 4.4,
+  "google_review_count": 710,
+  "address": "110/4, Venkata's Oak Wood Apartment, Commercial Shop 1, Near Celebrity Classic Layout, Electronic City Phase 1, Bengaluru, Karnataka 560100",
+  "coordinates": {
+    "lat": 12.8479278,
+    "lng": 77.6440633
+  },
+  "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+  "store_footfall": {
+    "est_monthly_customers": 3350,
+    "est_daily_cups": 112,
+    "est_evening_peak_cups": 46,
+    "avg_ticket_size_inr": 185
+  },
+  "regional_footfall": {
+    "corridor_zone": "Celebrity Classic & Neeladri Road Tech Hub",
+    "annual_unique_visitors": 4152240,
+    "weekday_daily_footfall": 10800,
+    "weekend_daily_footfall": 15800,
+    "weekend_surge_pct": 46.3,
+    "peak_evening_hourly_flow": 1659,
+    "f_and_b_share_pct": 38.5,
+    "mean_dwell_time_mins": 55.0
+  }
+}

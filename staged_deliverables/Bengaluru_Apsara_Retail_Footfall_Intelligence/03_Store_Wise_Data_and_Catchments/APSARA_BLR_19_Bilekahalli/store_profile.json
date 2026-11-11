@@ -1,0 +1,33 @@
+{
+  "serial_no": "APSARA_BLR_19",
+  "brand": "Apsara Ice Creams",
+  "store_name": "Apsara Ice Creams - Bilekahalli",
+  "locality": "Bilekahalli",
+  "corridor_name": "Bannerghatta Rd - Vijaya Bank Layout Axis",
+  "zone": "South",
+  "google_place_id": "ChIJ_apsara_apsara_blr_19",
+  "google_rating": 4.3,
+  "google_review_count": 590,
+  "address": "1065B, Vijay Mansion, 5th Cross Rd, Vijaya Bank Layout, Bilekahalli, Bengaluru, Karnataka 560076",
+  "coordinates": {
+    "lat": 12.8937898,
+    "lng": 77.6110092
+  },
+  "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+  "store_footfall": {
+    "est_monthly_customers": 3050,
+    "est_daily_cups": 102,
+    "est_evening_peak_cups": 41,
+    "avg_ticket_size_inr": 175
+  },
+  "regional_footfall": {
+    "corridor_zone": "Bannerghatta Rd - Vijaya Bank Layout Axis",
+    "annual_unique_visitors": 3731760,
+    "weekday_daily_footfall": 9500,
+    "weekend_daily_footfall": 14200,
+    "weekend_surge_pct": 49.5,
+    "peak_evening_hourly_flow": 1491,
+    "f_and_b_share_pct": 38.5,
+    "mean_dwell_time_mins": 55.0
+  }
+}

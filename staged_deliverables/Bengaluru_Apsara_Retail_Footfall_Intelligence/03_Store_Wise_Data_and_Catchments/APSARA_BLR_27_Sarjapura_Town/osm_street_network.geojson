@@ -1,0 +1,7103 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "serial_no": "APSARA_BLR_27",
+    "store_name": "Apsara Ice Creams - Sarjapura Town",
+    "locality": "Sarjapura Town",
+    "feature_count": 96
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0001",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Road",
+        "highway_type": "primary",
+        "corridor_tier": "Designated High-Street Commercial Spine",
+        "length_m": 4227.9,
+        "daily_footfall": 17450,
+        "peak_hourly_footfall": 1609,
+        "hourly_footfall": [
+          169,
+          84,
+          50,
+          33,
+          33,
+          67,
+          203,
+          474,
+          880,
+          1050,
+          813,
+          745,
+          982,
+          1101,
+          880,
+          745,
+          847,
+          1050,
+          1321,
+          1558,
+          1609,
+          1389,
+          880,
+          474
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 28.0,
+        "poi_synergy_boost": 1.24
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7567623,
+            12.8818225
+          ],
+          [
+            77.7573103,
+            12.8816349
+          ],
+          [
+            77.7574296,
+            12.881593
+          ],
+          [
+            77.7576946,
+            12.8814515
+          ],
+          [
+            77.7578357,
+            12.8813761
+          ],
+          [
+            77.7579644,
+            12.8813069
+          ],
+          [
+            77.7580986,
+            12.8812348
+          ],
+          [
+            77.7583094,
+            12.8811214
+          ],
+          [
+            77.7591556,
+            12.8806666
+          ],
+          [
+            77.759918,
+            12.8802581
+          ],
+          [
+            77.7599992,
+            12.8802152
+          ],
+          [
+            77.7616207,
+            12.8793581
+          ],
+          [
+            77.7620862,
+            12.8791052
+          ],
+          [
+            77.7627916,
+            12.8787219
+          ],
+          [
+            77.7628477,
+            12.8786906
+          ],
+          [
+            77.7638845,
+            12.8781134
+          ],
+          [
+            77.7649146,
+            12.8775424
+          ],
+          [
+            77.7650777,
+            12.8774168
+          ],
+          [
+            77.7651893,
+            12.8772913
+          ],
+          [
+            77.7652328,
+            12.8771835
+          ],
+          [
+            77.7652837,
+            12.8770571
+          ],
+          [
+            77.7653028,
+            12.8769917
+          ],
+          [
+            77.7653037,
+            12.8769881
+          ],
+          [
+            77.7653292,
+            12.8768896
+          ],
+          [
+            77.7653576,
+            12.8767798
+          ],
+          [
+            77.7655708,
+            12.8759551
+          ],
+          [
+            77.7656199,
+            12.8757568
+          ],
+          [
+            77.7657733,
+            12.8750925
+          ],
+          [
+            77.7657795,
+            12.8750659
+          ],
+          [
+            77.7658569,
+            12.8747206
+          ],
+          [
+            77.7658967,
+            12.8745434
+          ],
+          [
+            77.7659158,
+            12.874458
+          ],
+          [
+            77.766091,
+            12.8738577
+          ],
+          [
+            77.766278,
+            12.8731328
+          ],
+          [
+            77.7663714,
+            12.8727856
+          ],
+          [
+            77.7665918,
+            12.8718125
+          ],
+          [
+            77.766665,
+            12.8714323
+          ],
+          [
+            77.766717,
+            12.8707518
+          ],
+          [
+            77.7667257,
+            12.8701532
+          ],
+          [
+            77.766728,
+            12.8699916
+          ],
+          [
+            77.7667315,
+            12.8697459
+          ],
+          [
+            77.7667333,
+            12.869415
+          ],
+          [
+            77.7667436,
+            12.8688243
+          ],
+          [
+            77.7667699,
+            12.8685982
+          ],
+          [
+            77.7668128,
+            12.8683992
+          ],
+          [
+            77.7669004,
+            12.8681505
+          ],
+          [
+            77.7669558,
+            12.8680313
+          ],
+          [
+            77.7670753,
+            12.8678711
+          ],
+          [
+            77.7672534,
+            12.8676476
+          ],
+          [
+            77.7677871,
+            12.8670218
+          ],
+          [
+            77.7681319,
+            12.8666157
+          ],
+          [
+            77.7689761,
+            12.8656602
+          ],
+          [
+            77.7690306,
+            12.865597
+          ],
+          [
+            77.7690888,
+            12.8655303
+          ],
+          [
+            77.7692648,
+            12.8653335
+          ],
+          [
+            77.7693789,
+            12.8652205
+          ],
+          [
+            77.7698712,
+            12.8646369
+          ],
+          [
+            77.7699351,
+            12.8645653
+          ],
+          [
+            77.7700961,
+            12.8643913
+          ],
+          [
+            77.770204,
+            12.8642637
+          ],
+          [
+            77.7708871,
+            12.8634791
+          ],
+          [
+            77.7711281,
+            12.8631968
+          ],
+          [
+            77.7720446,
+            12.8621166
+          ],
+          [
+            77.7721394,
+            12.8619965
+          ],
+          [
+            77.7723345,
+            12.8618667
+          ],
+          [
+            77.7726137,
+            12.8617588
+          ],
+          [
+            77.7733822,
+            12.8616074
+          ],
+          [
+            77.7740365,
+            12.8614909
+          ],
+          [
+            77.7741436,
+            12.8614693
+          ],
+          [
+            77.7748041,
+            12.8613421
+          ],
+          [
+            77.7757587,
+            12.8611597
+          ],
+          [
+            77.776576,
+            12.861033
+          ],
+          [
+            77.7774033,
+            12.8609407
+          ],
+          [
+            77.7780924,
+            12.8608639
+          ],
+          [
+            77.778258,
+            12.8608454
+          ],
+          [
+            77.7785602,
+            12.8608143
+          ],
+          [
+            77.779388,
+            12.8607292
+          ],
+          [
+            77.7794343,
+            12.8607277
+          ],
+          [
+            77.7796001,
+            12.8607224
+          ],
+          [
+            77.7797091,
+            12.8607253
+          ],
+          [
+            77.7799026,
+            12.8607255
+          ],
+          [
+            77.780099,
+            12.8607355
+          ],
+          [
+            77.7805597,
+            12.8607588
+          ],
+          [
+            77.7807001,
+            12.8607659
+          ],
+          [
+            77.7811272,
+            12.8607875
+          ],
+          [
+            77.7817708,
+            12.8608201
+          ],
+          [
+            77.7822991,
+            12.8608468
+          ],
+          [
+            77.7824262,
+            12.8608532
+          ],
+          [
+            77.7828932,
+            12.8608768
+          ],
+          [
+            77.7829692,
+            12.8608807
+          ],
+          [
+            77.7835456,
+            12.8609447
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0002",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 798.4,
+        "daily_footfall": 1181,
+        "peak_hourly_footfall": 108,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          32,
+          59,
+          71,
+          55,
+          50,
+          66,
+          74,
+          59,
+          50,
+          57,
+          71,
+          89,
+          105,
+          108,
+          94,
+          59,
+          32
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 429.8,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7832445,
+            12.863213
+          ],
+          [
+            77.782829,
+            12.8634233
+          ],
+          [
+            77.7825797,
+            12.8635843
+          ],
+          [
+            77.7822266,
+            12.8638079
+          ],
+          [
+            77.7817224,
+            12.864021
+          ],
+          [
+            77.7814048,
+            12.8641575
+          ],
+          [
+            77.7815443,
+            12.8645589
+          ],
+          [
+            77.7814745,
+            12.8648204
+          ],
+          [
+            77.7808104,
+            12.8650094
+          ],
+          [
+            77.7807192,
+            12.8651088
+          ],
+          [
+            77.7805905,
+            12.8653232
+          ],
+          [
+            77.7805948,
+            12.8653747
+          ],
+          [
+            77.7805519,
+            12.8655369
+          ],
+          [
+            77.7804617,
+            12.8657102
+          ],
+          [
+            77.7802793,
+            12.8657521
+          ],
+          [
+            77.7800111,
+            12.8657834
+          ],
+          [
+            77.7796088,
+            12.8659299
+          ],
+          [
+            77.7789693,
+            12.8661958
+          ],
+          [
+            77.778508,
+            12.8663945
+          ],
+          [
+            77.7782248,
+            12.8663901
+          ],
+          [
+            77.7780628,
+            12.8664364
+          ],
+          [
+            77.7776402,
+            12.8667352
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0003",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 133.0,
+        "daily_footfall": 1173,
+        "peak_hourly_footfall": 108,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          31,
+          59,
+          70,
+          54,
+          50,
+          66,
+          74,
+          59,
+          50,
+          56,
+          70,
+          88,
+          104,
+          108,
+          93,
+          59,
+          31
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 429.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7836215,
+            12.8630167
+          ],
+          [
+            77.7834405,
+            12.8624825
+          ],
+          [
+            77.7833866,
+            12.8622929
+          ],
+          [
+            77.7833778,
+            12.8622737
+          ],
+          [
+            77.7833636,
+            12.8622578
+          ],
+          [
+            77.7833453,
+            12.8622466
+          ],
+          [
+            77.7833245,
+            12.8622412
+          ],
+          [
+            77.7829654,
+            12.8622013
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0004",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 226.2,
+        "daily_footfall": 1443,
+        "peak_hourly_footfall": 133,
+        "hourly_footfall": [
+          14,
+          12,
+          12,
+          12,
+          12,
+          12,
+          16,
+          39,
+          72,
+          86,
+          67,
+          61,
+          81,
+          91,
+          72,
+          61,
+          70,
+          86,
+          109,
+          128,
+          133,
+          114,
+          72,
+          39
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 164.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7807264,
+            12.860708
+          ],
+          [
+            77.7807198,
+            12.8606602
+          ],
+          [
+            77.780647,
+            12.8602279
+          ],
+          [
+            77.7805222,
+            12.8597268
+          ],
+          [
+            77.7803823,
+            12.8587033
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0005",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 442.4,
+        "daily_footfall": 1093,
+        "peak_hourly_footfall": 100,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          55,
+          65,
+          50,
+          46,
+          61,
+          68,
+          55,
+          46,
+          53,
+          65,
+          82,
+          97,
+          100,
+          87,
+          55,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 486.9,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7833119,
+            12.8591039
+          ],
+          [
+            77.7840088,
+            12.8590892
+          ],
+          [
+            77.7840459,
+            12.8590915
+          ],
+          [
+            77.7845646,
+            12.8590972
+          ],
+          [
+            77.7846945,
+            12.8590617
+          ],
+          [
+            77.7848,
+            12.8589919
+          ],
+          [
+            77.7848102,
+            12.8587617
+          ],
+          [
+            77.7851611,
+            12.8587405
+          ],
+          [
+            77.7854513,
+            12.8587642
+          ],
+          [
+            77.785534,
+            12.8591663
+          ],
+          [
+            77.7855464,
+            12.8592147
+          ],
+          [
+            77.7855923,
+            12.8593658
+          ],
+          [
+            77.7856792,
+            12.8594566
+          ],
+          [
+            77.785811,
+            12.8595291
+          ],
+          [
+            77.7858534,
+            12.8595554
+          ],
+          [
+            77.786203,
+            12.8596112
+          ],
+          [
+            77.786251,
+            12.8596179
+          ],
+          [
+            77.7863278,
+            12.8596325
+          ],
+          [
+            77.7864473,
+            12.8596448
+          ],
+          [
+            77.7865701,
+            12.8596554
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0006",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 208.6,
+        "daily_footfall": 1156,
+        "peak_hourly_footfall": 106,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          31,
+          58,
+          69,
+          53,
+          49,
+          65,
+          72,
+          58,
+          49,
+          56,
+          69,
+          87,
+          103,
+          106,
+          92,
+          58,
+          31
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 429.3,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7747705,
+            12.8590588
+          ],
+          [
+            77.7747473,
+            12.8591576
+          ],
+          [
+            77.7748121,
+            12.8594741
+          ],
+          [
+            77.7749696,
+            12.8599676
+          ],
+          [
+            77.7751634,
+            12.8604866
+          ],
+          [
+            77.7751769,
+            12.8605228
+          ],
+          [
+            77.7751871,
+            12.86055
+          ],
+          [
+            77.7752683,
+            12.8608552
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0007",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 132.5,
+        "daily_footfall": 1328,
+        "peak_hourly_footfall": 122,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          15,
+          36,
+          67,
+          79,
+          61,
+          56,
+          74,
+          83,
+          67,
+          56,
+          64,
+          79,
+          100,
+          118,
+          122,
+          105,
+          67,
+          36
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 225.1,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7824531,
+            12.8612378
+          ],
+          [
+            77.7823275,
+            12.8612536
+          ],
+          [
+            77.7820438,
+            12.8612893
+          ],
+          [
+            77.7817769,
+            12.8613229
+          ],
+          [
+            77.781486,
+            12.8613594
+          ],
+          [
+            77.7812792,
+            12.8613854
+          ],
+          [
+            77.781261,
+            12.8613914
+          ],
+          [
+            77.7812465,
+            12.8614037
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0008",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 42.2,
+        "daily_footfall": 1113,
+        "peak_hourly_footfall": 102,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          30,
+          56,
+          66,
+          51,
+          47,
+          62,
+          70,
+          56,
+          47,
+          54,
+          66,
+          84,
+          99,
+          102,
+          88,
+          56,
+          30
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 307.9,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7820438,
+            12.8612893
+          ],
+          [
+            77.7820775,
+            12.86151
+          ],
+          [
+            77.7821145,
+            12.8616621
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0009",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 349.9,
+        "daily_footfall": 1198,
+        "peak_hourly_footfall": 110,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          32,
+          60,
+          72,
+          55,
+          51,
+          67,
+          75,
+          60,
+          51,
+          58,
+          72,
+          90,
+          107,
+          110,
+          95,
+          60,
+          32
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 397.3,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7828932,
+            12.8608768
+          ],
+          [
+            77.7828984,
+            12.8613107
+          ],
+          [
+            77.7828958,
+            12.861646
+          ],
+          [
+            77.7829506,
+            12.8621393
+          ],
+          [
+            77.7829654,
+            12.8622013
+          ],
+          [
+            77.7830422,
+            12.8625225
+          ],
+          [
+            77.7832445,
+            12.863213
+          ],
+          [
+            77.7833749,
+            12.8636816
+          ],
+          [
+            77.7834429,
+            12.8639582
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0010",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 348.0,
+        "daily_footfall": 1221,
+        "peak_hourly_footfall": 112,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          14,
+          33,
+          61,
+          73,
+          56,
+          52,
+          68,
+          77,
+          61,
+          52,
+          59,
+          73,
+          92,
+          109,
+          112,
+          97,
+          61,
+          33
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 243.3,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7797107,
+            12.8584872
+          ],
+          [
+            77.7797989,
+            12.8588108
+          ],
+          [
+            77.7803823,
+            12.8587033
+          ],
+          [
+            77.7804994,
+            12.8586929
+          ],
+          [
+            77.7807119,
+            12.8586793
+          ],
+          [
+            77.7812709,
+            12.8586149
+          ],
+          [
+            77.7816849,
+            12.8586588
+          ],
+          [
+            77.7818563,
+            12.8595829
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0011",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 121.6,
+        "daily_footfall": 1168,
+        "peak_hourly_footfall": 107,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          31,
+          58,
+          70,
+          54,
+          49,
+          65,
+          73,
+          58,
+          49,
+          56,
+          70,
+          88,
+          104,
+          107,
+          92,
+          58,
+          31
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 286.8,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7816911,
+            12.8596953
+          ],
+          [
+            77.7818697,
+            12.8607752
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0012",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 105.5,
+        "daily_footfall": 1361,
+        "peak_hourly_footfall": 125,
+        "hourly_footfall": [
+          13,
+          12,
+          12,
+          12,
+          12,
+          12,
+          15,
+          36,
+          68,
+          81,
+          63,
+          58,
+          76,
+          85,
+          68,
+          58,
+          66,
+          81,
+          103,
+          121,
+          125,
+          108,
+          68,
+          36
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 225.6,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7811313,
+            12.859807
+          ],
+          [
+            77.7812357,
+            12.8603038
+          ],
+          [
+            77.7813003,
+            12.8607413
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0013",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 93.1,
+        "daily_footfall": 1335,
+        "peak_hourly_footfall": 123,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          15,
+          36,
+          67,
+          80,
+          62,
+          57,
+          75,
+          84,
+          67,
+          57,
+          64,
+          80,
+          101,
+          119,
+          123,
+          106,
+          67,
+          36
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 196.3,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7810276,
+            12.8607255
+          ],
+          [
+            77.7809615,
+            12.8603554
+          ],
+          [
+            77.7808527,
+            12.8599062
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0014",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 276.4,
+        "daily_footfall": 1118,
+        "peak_hourly_footfall": 103,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          30,
+          56,
+          67,
+          52,
+          47,
+          62,
+          70,
+          56,
+          47,
+          54,
+          67,
+          84,
+          99,
+          103,
+          89,
+          56,
+          30
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 431.6,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.781154,
+            12.8567601
+          ],
+          [
+            77.7812145,
+            12.8570491
+          ],
+          [
+            77.781281,
+            12.8573345
+          ],
+          [
+            77.7813571,
+            12.8576465
+          ],
+          [
+            77.7817576,
+            12.8575753
+          ],
+          [
+            77.7820615,
+            12.8575256
+          ],
+          [
+            77.7828849,
+            12.8573911
+          ],
+          [
+            77.7829516,
+            12.85738
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0015",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 26.0,
+        "daily_footfall": 1143,
+        "peak_hourly_footfall": 105,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          31,
+          57,
+          68,
+          53,
+          48,
+          64,
+          72,
+          57,
+          48,
+          55,
+          68,
+          86,
+          102,
+          105,
+          90,
+          57,
+          31
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 481.9,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7814483,
+            12.856996
+          ],
+          [
+            77.7812145,
+            12.8570491
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0016",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 25.9,
+        "daily_footfall": 1188,
+        "peak_hourly_footfall": 109,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          32,
+          59,
+          71,
+          55,
+          50,
+          66,
+          74,
+          59,
+          50,
+          57,
+          71,
+          89,
+          106,
+          109,
+          94,
+          59,
+          32
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 457.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7815143,
+            12.857284
+          ],
+          [
+            77.781281,
+            12.8573345
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0017",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 154.7,
+        "daily_footfall": 1204,
+        "peak_hourly_footfall": 111,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          14,
+          32,
+          60,
+          72,
+          56,
+          51,
+          67,
+          75,
+          60,
+          51,
+          58,
+          72,
+          91,
+          107,
+          111,
+          95,
+          60,
+          32
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 506.1,
+        "poi_synergy_boost": 1.11
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7832003,
+            12.8585352
+          ],
+          [
+            77.7839486,
+            12.8584429
+          ],
+          [
+            77.7840459,
+            12.8590915
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0018",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 161.6,
+        "daily_footfall": 1200,
+        "peak_hourly_footfall": 110,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          32,
+          60,
+          72,
+          55,
+          51,
+          67,
+          75,
+          60,
+          51,
+          58,
+          72,
+          90,
+          107,
+          110,
+          95,
+          60,
+          32
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 422.6,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7831642,
+            12.858779
+          ],
+          [
+            77.7828129,
+            12.8588234
+          ],
+          [
+            77.7825896,
+            12.8588506
+          ],
+          [
+            77.7824985,
+            12.8588577
+          ],
+          [
+            77.7823756,
+            12.8580674
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0019",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 51.6,
+        "daily_footfall": 1430,
+        "peak_hourly_footfall": 131,
+        "hourly_footfall": [
+          13,
+          12,
+          12,
+          12,
+          12,
+          12,
+          16,
+          38,
+          72,
+          86,
+          66,
+          61,
+          80,
+          90,
+          72,
+          61,
+          69,
+          86,
+          108,
+          127,
+          131,
+          113,
+          72,
+          38
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 206.4,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7811272,
+            12.8607875
+          ],
+          [
+            77.7811992,
+            12.8612465
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0020",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 132.4,
+        "daily_footfall": 1093,
+        "peak_hourly_footfall": 100,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          55,
+          65,
+          50,
+          46,
+          61,
+          68,
+          55,
+          46,
+          53,
+          65,
+          82,
+          97,
+          100,
+          87,
+          55,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 315.9,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7821392,
+            12.8607899
+          ],
+          [
+            77.782057,
+            12.8602364
+          ],
+          [
+            77.7819642,
+            12.8596116
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0021",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 250.2,
+        "daily_footfall": 1245,
+        "peak_hourly_footfall": 114,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          14,
+          33,
+          62,
+          74,
+          58,
+          53,
+          70,
+          78,
+          62,
+          53,
+          60,
+          74,
+          94,
+          111,
+          114,
+          99,
+          62,
+          33
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 221.7,
+        "poi_synergy_boost": 1.09
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7803157,
+            12.8577611
+          ],
+          [
+            77.7805146,
+            12.8577251
+          ],
+          [
+            77.78061,
+            12.8581864
+          ],
+          [
+            77.7807119,
+            12.8586793
+          ],
+          [
+            77.7808766,
+            12.8597465
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0022",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 112.9,
+        "daily_footfall": 1172,
+        "peak_hourly_footfall": 108,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          31,
+          59,
+          70,
+          54,
+          50,
+          65,
+          73,
+          59,
+          50,
+          56,
+          70,
+          88,
+          104,
+          108,
+          93,
+          59,
+          31
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 253.8,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7814079,
+            12.8597559
+          ],
+          [
+            77.7815288,
+            12.8603619
+          ],
+          [
+            77.7815627,
+            12.8607583
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0023",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 137.1,
+        "daily_footfall": 1212,
+        "peak_hourly_footfall": 111,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          14,
+          32,
+          61,
+          72,
+          56,
+          51,
+          68,
+          76,
+          61,
+          51,
+          58,
+          72,
+          91,
+          108,
+          111,
+          96,
+          61,
+          32
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 284.0,
+        "poi_synergy_boost": 1.11
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7802608,
+            12.8574825
+          ],
+          [
+            77.7803157,
+            12.8577611
+          ],
+          [
+            77.7804051,
+            12.8582143
+          ],
+          [
+            77.7804994,
+            12.8586929
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0024",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 416.0,
+        "daily_footfall": 1132,
+        "peak_hourly_footfall": 104,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          30,
+          57,
+          68,
+          52,
+          48,
+          63,
+          71,
+          57,
+          48,
+          54,
+          68,
+          85,
+          101,
+          104,
+          90,
+          57,
+          30
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 276.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7764289,
+            12.8566999
+          ],
+          [
+            77.7764687,
+            12.8567017
+          ],
+          [
+            77.7765336,
+            12.8567138
+          ],
+          [
+            77.7766051,
+            12.8567349
+          ],
+          [
+            77.7767059,
+            12.8567779
+          ],
+          [
+            77.7768082,
+            12.8568602
+          ],
+          [
+            77.7769261,
+            12.8569756
+          ],
+          [
+            77.7770564,
+            12.8571112
+          ],
+          [
+            77.7771384,
+            12.8571702
+          ],
+          [
+            77.7772159,
+            12.8572056
+          ],
+          [
+            77.7773903,
+            12.8572618
+          ],
+          [
+            77.7774765,
+            12.8572927
+          ],
+          [
+            77.7775232,
+            12.8573217
+          ],
+          [
+            77.7775767,
+            12.8573636
+          ],
+          [
+            77.7776154,
+            12.8573873
+          ],
+          [
+            77.7776568,
+            12.8574033
+          ],
+          [
+            77.777717,
+            12.8574231
+          ],
+          [
+            77.7777586,
+            12.8574411
+          ],
+          [
+            77.7780506,
+            12.857606
+          ],
+          [
+            77.7783385,
+            12.8577728
+          ],
+          [
+            77.778384,
+            12.8577955
+          ],
+          [
+            77.7784267,
+            12.8578114
+          ],
+          [
+            77.7787951,
+            12.8579407
+          ],
+          [
+            77.7788309,
+            12.8579522
+          ],
+          [
+            77.778869,
+            12.8579615
+          ],
+          [
+            77.7791024,
+            12.8580406
+          ],
+          [
+            77.7792705,
+            12.8581218
+          ],
+          [
+            77.7792963,
+            12.8581342
+          ],
+          [
+            77.7793347,
+            12.8581533
+          ],
+          [
+            77.7793797,
+            12.8581723
+          ],
+          [
+            77.7794841,
+            12.8582152
+          ],
+          [
+            77.7795172,
+            12.8582347
+          ],
+          [
+            77.7795922,
+            12.8583111
+          ],
+          [
+            77.779627,
+            12.8583511
+          ],
+          [
+            77.7796527,
+            12.8583873
+          ],
+          [
+            77.7797107,
+            12.8584872
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0025",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 69.9,
+        "daily_footfall": 1840,
+        "peak_hourly_footfall": 169,
+        "hourly_footfall": [
+          17,
+          12,
+          12,
+          12,
+          12,
+          12,
+          21,
+          50,
+          92,
+          110,
+          85,
+          78,
+          103,
+          116,
+          92,
+          78,
+          89,
+          110,
+          139,
+          164,
+          169,
+          146,
+          92,
+          50
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 88.8,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.778429,
+            12.8607502
+          ],
+          [
+            77.7783583,
+            12.8601253
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0026",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 62.9,
+        "daily_footfall": 1831,
+        "peak_hourly_footfall": 168,
+        "hourly_footfall": [
+          17,
+          12,
+          12,
+          12,
+          12,
+          12,
+          21,
+          49,
+          92,
+          110,
+          85,
+          78,
+          103,
+          115,
+          92,
+          78,
+          88,
+          110,
+          138,
+          163,
+          168,
+          145,
+          92,
+          49
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 40.0,
+        "poi_synergy_boost": 1.09
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7788788,
+            12.8601362
+          ],
+          [
+            77.7789427,
+            12.8606983
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0027",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 62.6,
+        "daily_footfall": 1630,
+        "peak_hourly_footfall": 150,
+        "hourly_footfall": [
+          15,
+          12,
+          12,
+          12,
+          12,
+          12,
+          18,
+          44,
+          82,
+          98,
+          75,
+          69,
+          91,
+          102,
+          82,
+          69,
+          79,
+          98,
+          123,
+          145,
+          150,
+          129,
+          82,
+          44
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 117.3,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7780886,
+            12.8602239
+          ],
+          [
+            77.7781561,
+            12.8607831
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0028",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 82.0,
+        "daily_footfall": 1154,
+        "peak_hourly_footfall": 106,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          31,
+          58,
+          69,
+          53,
+          49,
+          64,
+          72,
+          58,
+          49,
+          56,
+          69,
+          87,
+          103,
+          106,
+          91,
+          58,
+          31
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 451.9,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.783167,
+            12.8595958
+          ],
+          [
+            77.7831176,
+            12.8594018
+          ],
+          [
+            77.7829846,
+            12.8588804
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0029",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 56.8,
+        "daily_footfall": 346,
+        "peak_hourly_footfall": 31,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          17,
+          20,
+          16,
+          14,
+          19,
+          21,
+          17,
+          14,
+          16,
+          20,
+          26,
+          30,
+          31,
+          27,
+          17,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 407.1,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.782622,
+            12.8593601
+          ],
+          [
+            77.7825932,
+            12.858886
+          ],
+          [
+            77.7825896,
+            12.8588506
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0030",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 47.7,
+        "daily_footfall": 1078,
+        "peak_hourly_footfall": 99,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          54,
+          64,
+          50,
+          46,
+          60,
+          68,
+          54,
+          46,
+          52,
+          64,
+          81,
+          96,
+          99,
+          85,
+          54,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 456.0,
+        "poi_synergy_boost": 1.09
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7821224,
+            12.8579508
+          ],
+          [
+            77.7820615,
+            12.8575256
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0031",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 42.2,
+        "daily_footfall": 1118,
+        "peak_hourly_footfall": 103,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          30,
+          56,
+          67,
+          52,
+          47,
+          62,
+          70,
+          56,
+          47,
+          54,
+          67,
+          84,
+          99,
+          103,
+          89,
+          56,
+          30
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 435.8,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7818391,
+            12.8579465
+          ],
+          [
+            77.7817576,
+            12.8575753
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0032",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 82.0,
+        "daily_footfall": 394,
+        "peak_hourly_footfall": 36,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          19,
+          23,
+          18,
+          16,
+          22,
+          24,
+          19,
+          16,
+          19,
+          23,
+          29,
+          35,
+          36,
+          31,
+          19,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 287.8,
+        "poi_synergy_boost": 1.11
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7766746,
+            12.8617638
+          ],
+          [
+            77.776576,
+            12.861033
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0033",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 91.3,
+        "daily_footfall": 1118,
+        "peak_hourly_footfall": 103,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          30,
+          56,
+          67,
+          52,
+          47,
+          62,
+          70,
+          56,
+          47,
+          54,
+          67,
+          84,
+          99,
+          103,
+          89,
+          56,
+          30
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 394.5,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7755946,
+            12.8611192
+          ],
+          [
+            77.775526,
+            12.861019
+          ],
+          [
+            77.7754596,
+            12.8609222
+          ],
+          [
+            77.7753926,
+            12.860838
+          ],
+          [
+            77.7752683,
+            12.8608552
+          ],
+          [
+            77.7751926,
+            12.8609749
+          ],
+          [
+            77.7751841,
+            12.8609925
+          ],
+          [
+            77.7751767,
+            12.8610208
+          ],
+          [
+            77.7751817,
+            12.8610734
+          ],
+          [
+            77.7751924,
+            12.861186
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0034",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 209.9,
+        "daily_footfall": 1183,
+        "peak_hourly_footfall": 109,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          32,
+          59,
+          71,
+          55,
+          50,
+          66,
+          74,
+          59,
+          50,
+          57,
+          71,
+          89,
+          105,
+          109,
+          94,
+          59,
+          32
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 415.9,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7753926,
+            12.860838
+          ],
+          [
+            77.775249,
+            12.8605317
+          ],
+          [
+            77.7752381,
+            12.8605028
+          ],
+          [
+            77.7751618,
+            12.8603001
+          ],
+          [
+            77.7750542,
+            12.8599478
+          ],
+          [
+            77.774892,
+            12.8594857
+          ],
+          [
+            77.7748339,
+            12.8591666
+          ],
+          [
+            77.7747705,
+            12.8590588
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0035",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 108.5,
+        "daily_footfall": 1158,
+        "peak_hourly_footfall": 106,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          31,
+          58,
+          69,
+          53,
+          49,
+          65,
+          73,
+          58,
+          49,
+          56,
+          69,
+          87,
+          103,
+          106,
+          92,
+          58,
+          31
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 331.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7829506,
+            12.8621393
+          ],
+          [
+            77.7821802,
+            12.862237
+          ],
+          [
+            77.7819577,
+            12.8622651
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0036",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 150.0,
+        "daily_footfall": 1130,
+        "peak_hourly_footfall": 104,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          30,
+          57,
+          68,
+          52,
+          48,
+          63,
+          71,
+          57,
+          48,
+          54,
+          68,
+          85,
+          100,
+          104,
+          89,
+          57,
+          30
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 351.6,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7821802,
+            12.862237
+          ],
+          [
+            77.7822094,
+            12.8624545
+          ],
+          [
+            77.7825651,
+            12.8635292
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0037",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 79.1,
+        "daily_footfall": 1521,
+        "peak_hourly_footfall": 140,
+        "hourly_footfall": [
+          14,
+          12,
+          12,
+          12,
+          12,
+          12,
+          17,
+          41,
+          76,
+          91,
+          70,
+          64,
+          85,
+          95,
+          76,
+          64,
+          73,
+          91,
+          115,
+          135,
+          140,
+          121,
+          76,
+          41
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 145.5,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7805597,
+            12.8607588
+          ],
+          [
+            77.780592,
+            12.8610451
+          ],
+          [
+            77.780624,
+            12.8614673
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0038",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 77.4,
+        "daily_footfall": 459,
+        "peak_hourly_footfall": 42,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          23,
+          27,
+          21,
+          19,
+          25,
+          28,
+          23,
+          19,
+          22,
+          27,
+          34,
+          40,
+          42,
+          36,
+          23,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 198.6,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7773975,
+            12.8608674
+          ],
+          [
+            77.7773631,
+            12.860634
+          ],
+          [
+            77.7771277,
+            12.8606687
+          ],
+          [
+            77.7771371,
+            12.8608964
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0039",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 508.8,
+        "daily_footfall": 1086,
+        "peak_hourly_footfall": 100,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          54,
+          65,
+          50,
+          46,
+          61,
+          68,
+          54,
+          46,
+          52,
+          65,
+          82,
+          97,
+          100,
+          86,
+          54,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 417.0,
+        "poi_synergy_boost": 1.09
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7748041,
+            12.8613421
+          ],
+          [
+            77.7748217,
+            12.8614275
+          ],
+          [
+            77.774942,
+            12.8620387
+          ],
+          [
+            77.7749681,
+            12.8622841
+          ],
+          [
+            77.775017,
+            12.8625567
+          ],
+          [
+            77.7751353,
+            12.8627441
+          ],
+          [
+            77.7752686,
+            12.862858
+          ],
+          [
+            77.7753611,
+            12.8629052
+          ],
+          [
+            77.7754841,
+            12.8629319
+          ],
+          [
+            77.775837,
+            12.8629059
+          ],
+          [
+            77.7759392,
+            12.8629089
+          ],
+          [
+            77.7760232,
+            12.8630009
+          ],
+          [
+            77.7761235,
+            12.8631927
+          ],
+          [
+            77.7763731,
+            12.8637336
+          ],
+          [
+            77.7766313,
+            12.8638855
+          ],
+          [
+            77.7766791,
+            12.8639656
+          ],
+          [
+            77.776711,
+            12.8648661
+          ],
+          [
+            77.7766993,
+            12.8649263
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0040",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Road",
+        "highway_type": "primary",
+        "corridor_tier": "Designated High-Street Commercial Spine",
+        "length_m": 1277.5,
+        "daily_footfall": 17428,
+        "peak_hourly_footfall": 1607,
+        "hourly_footfall": [
+          169,
+          84,
+          50,
+          33,
+          33,
+          67,
+          203,
+          473,
+          879,
+          1049,
+          812,
+          744,
+          981,
+          1099,
+          879,
+          744,
+          846,
+          1049,
+          1319,
+          1556,
+          1607,
+          1387,
+          879,
+          473
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 30.9,
+        "poi_synergy_boost": 1.24
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7835425,
+            12.8608864
+          ],
+          [
+            77.7829304,
+            12.8608334
+          ],
+          [
+            77.7828917,
+            12.8608301
+          ],
+          [
+            77.7825907,
+            12.860814
+          ],
+          [
+            77.7823516,
+            12.8608012
+          ],
+          [
+            77.7823046,
+            12.8607987
+          ],
+          [
+            77.7821392,
+            12.8607899
+          ],
+          [
+            77.7818697,
+            12.8607752
+          ],
+          [
+            77.7817745,
+            12.86077
+          ],
+          [
+            77.7815627,
+            12.8607583
+          ],
+          [
+            77.7813003,
+            12.8607413
+          ],
+          [
+            77.7810276,
+            12.8607255
+          ],
+          [
+            77.7807264,
+            12.860708
+          ],
+          [
+            77.7807051,
+            12.8607068
+          ],
+          [
+            77.780655,
+            12.8607039
+          ],
+          [
+            77.7805504,
+            12.8606966
+          ],
+          [
+            77.780159,
+            12.8606695
+          ],
+          [
+            77.7801065,
+            12.8606676
+          ],
+          [
+            77.7800401,
+            12.8606652
+          ],
+          [
+            77.7795948,
+            12.860649
+          ],
+          [
+            77.7793048,
+            12.860659
+          ],
+          [
+            77.7789427,
+            12.8606983
+          ],
+          [
+            77.7786974,
+            12.860723
+          ],
+          [
+            77.778429,
+            12.8607502
+          ],
+          [
+            77.778248,
+            12.860773
+          ],
+          [
+            77.7781561,
+            12.8607831
+          ],
+          [
+            77.7773975,
+            12.8608674
+          ],
+          [
+            77.7771371,
+            12.8608964
+          ],
+          [
+            77.7770143,
+            12.8609101
+          ],
+          [
+            77.7757492,
+            12.8610935
+          ],
+          [
+            77.7755946,
+            12.8611192
+          ],
+          [
+            77.7752956,
+            12.8611689
+          ],
+          [
+            77.7751924,
+            12.861186
+          ],
+          [
+            77.77412,
+            12.8613903
+          ],
+          [
+            77.7735245,
+            12.8614971
+          ],
+          [
+            77.7727363,
+            12.86165
+          ],
+          [
+            77.7725432,
+            12.8616878
+          ],
+          [
+            77.7723337,
+            12.8617626
+          ],
+          [
+            77.7721801,
+            12.8618728
+          ],
+          [
+            77.7720819,
+            12.8619433
+          ],
+          [
+            77.7719884,
+            12.8620647
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0041",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "primary_link",
+        "corridor_tier": "Primary Arterial Corridor",
+        "length_m": 7.4,
+        "daily_footfall": 11354,
+        "peak_hourly_footfall": 1047,
+        "hourly_footfall": [
+          110,
+          55,
+          33,
+          22,
+          22,
+          44,
+          132,
+          308,
+          573,
+          683,
+          529,
+          485,
+          639,
+          716,
+          573,
+          485,
+          551,
+          683,
+          859,
+          1014,
+          1047,
+          903,
+          573,
+          308
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 377.0,
+        "poi_synergy_boost": 1.25
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7757587,
+            12.8611597
+          ],
+          [
+            77.7757492,
+            12.8610935
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0042",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "primary_link",
+        "corridor_tier": "Primary Arterial Corridor",
+        "length_m": 8.1,
+        "daily_footfall": 13091,
+        "peak_hourly_footfall": 1207,
+        "hourly_footfall": [
+          127,
+          63,
+          38,
+          25,
+          25,
+          50,
+          152,
+          355,
+          660,
+          788,
+          610,
+          559,
+          737,
+          826,
+          660,
+          559,
+          635,
+          788,
+          991,
+          1169,
+          1207,
+          1042,
+          660,
+          355
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 105.6,
+        "poi_synergy_boost": 1.26
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.778248,
+            12.860773
+          ],
+          [
+            77.778258,
+            12.8608454
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0043",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Arterial",
+        "highway_type": "primary",
+        "corridor_tier": "Primary Arterial Corridor",
+        "length_m": 7.6,
+        "daily_footfall": 13013,
+        "peak_hourly_footfall": 1200,
+        "hourly_footfall": [
+          126,
+          63,
+          37,
+          25,
+          25,
+          50,
+          151,
+          353,
+          656,
+          783,
+          606,
+          555,
+          732,
+          821,
+          656,
+          555,
+          631,
+          783,
+          985,
+          1162,
+          1200,
+          1035,
+          656,
+          353
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 96.8,
+        "poi_synergy_boost": 1.25
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7801065,
+            12.8606676
+          ],
+          [
+            77.780099,
+            12.8607355
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0044",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 49.6,
+        "daily_footfall": 638,
+        "peak_hourly_footfall": 58,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          17,
+          32,
+          38,
+          29,
+          27,
+          35,
+          40,
+          32,
+          27,
+          30,
+          38,
+          48,
+          56,
+          58,
+          50,
+          32,
+          17
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 75.7,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7799026,
+            12.8607255
+          ],
+          [
+            77.7799237,
+            12.8608643
+          ],
+          [
+            77.779929,
+            12.86088
+          ],
+          [
+            77.7799399,
+            12.8608881
+          ],
+          [
+            77.7800489,
+            12.8608898
+          ],
+          [
+            77.7800612,
+            12.860887
+          ],
+          [
+            77.7800712,
+            12.8608744
+          ],
+          [
+            77.7800766,
+            12.8608594
+          ],
+          [
+            77.780081,
+            12.8608389
+          ],
+          [
+            77.780099,
+            12.8607355
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0045",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "primary_link",
+        "corridor_tier": "Primary Arterial Corridor",
+        "length_m": 5.4,
+        "daily_footfall": 10999,
+        "peak_hourly_footfall": 1014,
+        "hourly_footfall": [
+          106,
+          53,
+          32,
+          21,
+          21,
+          42,
+          128,
+          299,
+          555,
+          662,
+          512,
+          469,
+          619,
+          694,
+          555,
+          469,
+          533,
+          662,
+          832,
+          982,
+          1014,
+          875,
+          555,
+          299
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 333.0,
+        "poi_synergy_boost": 1.24
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7823046,
+            12.8607987
+          ],
+          [
+            77.7822991,
+            12.8608468
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0046",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "primary_link",
+        "corridor_tier": "Primary Arterial Corridor",
+        "length_m": 8.8,
+        "daily_footfall": 11262,
+        "peak_hourly_footfall": 1038,
+        "hourly_footfall": [
+          109,
+          54,
+          32,
+          21,
+          21,
+          43,
+          131,
+          306,
+          568,
+          677,
+          524,
+          481,
+          634,
+          710,
+          568,
+          481,
+          546,
+          677,
+          852,
+          1005,
+          1038,
+          896,
+          568,
+          306
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 482.5,
+        "poi_synergy_boost": 1.25
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7832803,
+            12.8589538
+          ],
+          [
+            77.7832004,
+            12.8589698
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0047",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "primary_link",
+        "corridor_tier": "Primary Arterial Corridor",
+        "length_m": 8.2,
+        "daily_footfall": 14287,
+        "peak_hourly_footfall": 1317,
+        "hourly_footfall": [
+          138,
+          69,
+          41,
+          27,
+          27,
+          55,
+          166,
+          388,
+          721,
+          859,
+          665,
+          610,
+          804,
+          901,
+          721,
+          610,
+          693,
+          859,
+          1081,
+          1276,
+          1317,
+          1137,
+          721,
+          388
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 46.3,
+        "poi_synergy_boost": 1.26
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7796001,
+            12.8607224
+          ],
+          [
+            77.7795948,
+            12.860649
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0048",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "primary_link",
+        "corridor_tier": "Primary Arterial Corridor",
+        "length_m": 5.6,
+        "daily_footfall": 10815,
+        "peak_hourly_footfall": 997,
+        "hourly_footfall": [
+          104,
+          52,
+          31,
+          21,
+          21,
+          42,
+          126,
+          294,
+          546,
+          651,
+          504,
+          462,
+          609,
+          682,
+          546,
+          462,
+          525,
+          651,
+          819,
+          965,
+          997,
+          861,
+          546,
+          294
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 275.9,
+        "poi_synergy_boost": 1.24
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7817708,
+            12.8608201
+          ],
+          [
+            77.7817745,
+            12.86077
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0049",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 289.7,
+        "daily_footfall": 1164,
+        "peak_hourly_footfall": 107,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          31,
+          58,
+          70,
+          54,
+          49,
+          65,
+          73,
+          58,
+          49,
+          56,
+          70,
+          88,
+          103,
+          107,
+          92,
+          58,
+          31
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 493.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7764662,
+            12.864451
+          ],
+          [
+            77.7756879,
+            12.8645741
+          ],
+          [
+            77.7757814,
+            12.8651385
+          ],
+          [
+            77.7758686,
+            12.865125
+          ],
+          [
+            77.7759718,
+            12.8656549
+          ],
+          [
+            77.7760288,
+            12.865948
+          ],
+          [
+            77.7760888,
+            12.8662844
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0050",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Arterial",
+        "highway_type": "primary",
+        "corridor_tier": "Primary Arterial Corridor",
+        "length_m": 799.8,
+        "daily_footfall": 11858,
+        "peak_hourly_footfall": 1093,
+        "hourly_footfall": [
+          115,
+          57,
+          34,
+          23,
+          23,
+          46,
+          138,
+          322,
+          598,
+          713,
+          552,
+          506,
+          667,
+          748,
+          598,
+          506,
+          575,
+          713,
+          897,
+          1059,
+          1093,
+          944,
+          598,
+          322
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 473.7,
+        "poi_synergy_boost": 1.26
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7836608,
+            12.8608159
+          ],
+          [
+            77.7835501,
+            12.860272
+          ],
+          [
+            77.7835206,
+            12.8601268
+          ],
+          [
+            77.7834075,
+            12.8595706
+          ],
+          [
+            77.7833119,
+            12.8591039
+          ],
+          [
+            77.7832803,
+            12.8589538
+          ],
+          [
+            77.7832003,
+            12.8585352
+          ],
+          [
+            77.7830823,
+            12.8579983
+          ],
+          [
+            77.7830224,
+            12.8577574
+          ],
+          [
+            77.7829853,
+            12.8575594
+          ],
+          [
+            77.7829659,
+            12.8574559
+          ],
+          [
+            77.7829516,
+            12.85738
+          ],
+          [
+            77.7826323,
+            12.8557546
+          ],
+          [
+            77.7826001,
+            12.8552996
+          ],
+          [
+            77.7825054,
+            12.853726
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0051",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Arterial",
+        "highway_type": "primary",
+        "corridor_tier": "Primary Arterial Corridor",
+        "length_m": 805.5,
+        "daily_footfall": 10804,
+        "peak_hourly_footfall": 996,
+        "hourly_footfall": [
+          104,
+          52,
+          31,
+          20,
+          20,
+          41,
+          125,
+          293,
+          545,
+          650,
+          503,
+          461,
+          608,
+          681,
+          545,
+          461,
+          524,
+          650,
+          818,
+          965,
+          996,
+          860,
+          545,
+          293
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 468.9,
+        "poi_synergy_boost": 1.24
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.782435,
+            12.8536938
+          ],
+          [
+            77.782456,
+            12.8544396
+          ],
+          [
+            77.7824906,
+            12.8551476
+          ],
+          [
+            77.7825628,
+            12.8557552
+          ],
+          [
+            77.782627,
+            12.8560777
+          ],
+          [
+            77.7826537,
+            12.8562116
+          ],
+          [
+            77.7826715,
+            12.8563009
+          ],
+          [
+            77.7827016,
+            12.856452
+          ],
+          [
+            77.7827594,
+            12.8567421
+          ],
+          [
+            77.7828849,
+            12.8573911
+          ],
+          [
+            77.7829035,
+            12.8574775
+          ],
+          [
+            77.7830118,
+            12.8580105
+          ],
+          [
+            77.7831031,
+            12.8584849
+          ],
+          [
+            77.7831642,
+            12.858779
+          ],
+          [
+            77.7832004,
+            12.8589698
+          ],
+          [
+            77.783286,
+            12.8593731
+          ],
+          [
+            77.7835505,
+            12.8607589
+          ],
+          [
+            77.7835742,
+            12.860837
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0052",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 47.3,
+        "daily_footfall": 1156,
+        "peak_hourly_footfall": 106,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          31,
+          58,
+          69,
+          53,
+          49,
+          65,
+          72,
+          58,
+          49,
+          56,
+          69,
+          87,
+          103,
+          106,
+          92,
+          58,
+          31
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 481.9,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7825814,
+            12.8580814
+          ],
+          [
+            77.7830118,
+            12.8580105
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0053",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 22.4,
+        "daily_footfall": 1107,
+        "peak_hourly_footfall": 102,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          30,
+          55,
+          66,
+          51,
+          47,
+          62,
+          69,
+          55,
+          47,
+          53,
+          66,
+          83,
+          98,
+          102,
+          88,
+          55,
+          30
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 327.5,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.78061,
+            12.8581864
+          ],
+          [
+            77.7804051,
+            12.8582143
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0054",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 115.2,
+        "daily_footfall": 1598,
+        "peak_hourly_footfall": 147,
+        "hourly_footfall": [
+          15,
+          12,
+          12,
+          12,
+          12,
+          12,
+          18,
+          43,
+          80,
+          96,
+          74,
+          68,
+          89,
+          100,
+          80,
+          68,
+          77,
+          96,
+          121,
+          142,
+          147,
+          127,
+          80,
+          43
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 127.3,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7794624,
+            12.8598049
+          ],
+          [
+            77.7805222,
+            12.8597268
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0055",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 50.3,
+        "daily_footfall": 637,
+        "peak_hourly_footfall": 58,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          17,
+          32,
+          38,
+          29,
+          27,
+          35,
+          40,
+          32,
+          27,
+          30,
+          38,
+          48,
+          56,
+          58,
+          50,
+          32,
+          17
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 71.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7781118,
+            12.8610229
+          ],
+          [
+            77.7785725,
+            12.8609706
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0056",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 49.4,
+        "daily_footfall": 640,
+        "peak_hourly_footfall": 59,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          17,
+          32,
+          38,
+          29,
+          27,
+          36,
+          40,
+          32,
+          27,
+          31,
+          38,
+          48,
+          57,
+          59,
+          50,
+          32,
+          17
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 73.1,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7781309,
+            12.86117
+          ],
+          [
+            77.7785841,
+            12.8611219
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0057",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 49.8,
+        "daily_footfall": 651,
+        "peak_hourly_footfall": 60,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          17,
+          32,
+          39,
+          30,
+          27,
+          36,
+          41,
+          32,
+          27,
+          31,
+          39,
+          49,
+          58,
+          60,
+          51,
+          32,
+          17
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 71.8,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7781219,
+            12.8611016
+          ],
+          [
+            77.778579,
+            12.8610547
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0058",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 207.6,
+        "daily_footfall": 605,
+        "peak_hourly_footfall": 55,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          16,
+          30,
+          36,
+          28,
+          25,
+          34,
+          38,
+          30,
+          25,
+          29,
+          36,
+          45,
+          54,
+          55,
+          48,
+          30,
+          16
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 71.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7780924,
+            12.8608639
+          ],
+          [
+            77.7781025,
+            12.8609446
+          ],
+          [
+            77.7781118,
+            12.8610229
+          ],
+          [
+            77.7781219,
+            12.8611016
+          ],
+          [
+            77.7781309,
+            12.86117
+          ],
+          [
+            77.7780805,
+            12.8611765
+          ],
+          [
+            77.7780954,
+            12.861311
+          ],
+          [
+            77.7780732,
+            12.8613132
+          ],
+          [
+            77.7781005,
+            12.8615197
+          ],
+          [
+            77.778609,
+            12.8614567
+          ],
+          [
+            77.7785889,
+            12.8611852
+          ],
+          [
+            77.7785841,
+            12.8611219
+          ],
+          [
+            77.778579,
+            12.8610547
+          ],
+          [
+            77.7785725,
+            12.8609706
+          ],
+          [
+            77.7785667,
+            12.8608946
+          ],
+          [
+            77.7785602,
+            12.8608143
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0059",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 16.8,
+        "daily_footfall": 577,
+        "peak_hourly_footfall": 53,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          15,
+          29,
+          34,
+          26,
+          24,
+          32,
+          36,
+          29,
+          24,
+          28,
+          34,
+          43,
+          51,
+          53,
+          45,
+          29,
+          15
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 127.6,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7780954,
+            12.861311
+          ],
+          [
+            77.7781182,
+            12.8613082
+          ],
+          [
+            77.7781335,
+            12.8614357
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0060",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 68.2,
+        "daily_footfall": 1106,
+        "peak_hourly_footfall": 102,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          30,
+          55,
+          66,
+          51,
+          47,
+          62,
+          69,
+          55,
+          47,
+          53,
+          66,
+          83,
+          98,
+          102,
+          88,
+          55,
+          30
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 453.5,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7828129,
+            12.8588234
+          ],
+          [
+            77.7827746,
+            12.8585369
+          ],
+          [
+            77.7831031,
+            12.8584849
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0061",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 18.5,
+        "daily_footfall": 1094,
+        "peak_hourly_footfall": 100,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          55,
+          65,
+          50,
+          46,
+          61,
+          69,
+          55,
+          46,
+          53,
+          65,
+          82,
+          97,
+          100,
+          87,
+          55,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 454.4,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7831176,
+            12.8594018
+          ],
+          [
+            77.783286,
+            12.8593731
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0062",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 78.5,
+        "daily_footfall": 1971,
+        "peak_hourly_footfall": 181,
+        "hourly_footfall": [
+          19,
+          12,
+          12,
+          12,
+          12,
+          12,
+          22,
+          53,
+          99,
+          118,
+          91,
+          84,
+          110,
+          124,
+          99,
+          84,
+          95,
+          118,
+          149,
+          176,
+          181,
+          156,
+          99,
+          53
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 61.8,
+        "poi_synergy_boost": 1.11
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7786294,
+            12.8600203
+          ],
+          [
+            77.7786974,
+            12.860723
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0063",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 32.2,
+        "daily_footfall": 1266,
+        "peak_hourly_footfall": 116,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          14,
+          34,
+          63,
+          76,
+          58,
+          54,
+          71,
+          79,
+          63,
+          54,
+          61,
+          76,
+          95,
+          113,
+          116,
+          100,
+          63,
+          34
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 240.0,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7770143,
+            12.8609101
+          ],
+          [
+            77.7769972,
+            12.8608037
+          ],
+          [
+            77.7769753,
+            12.8606228
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0064",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 346.6,
+        "daily_footfall": 1400,
+        "peak_hourly_footfall": 129,
+        "hourly_footfall": [
+          13,
+          12,
+          12,
+          12,
+          12,
+          12,
+          16,
+          38,
+          70,
+          84,
+          65,
+          59,
+          78,
+          88,
+          70,
+          59,
+          67,
+          84,
+          106,
+          125,
+          129,
+          111,
+          70,
+          38
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 214.4,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7769753,
+            12.8606228
+          ],
+          [
+            77.777001,
+            12.8606191
+          ],
+          [
+            77.7769591,
+            12.8603468
+          ],
+          [
+            77.7773619,
+            12.8602878
+          ],
+          [
+            77.7773209,
+            12.8600219
+          ],
+          [
+            77.776292,
+            12.8601725
+          ],
+          [
+            77.7763379,
+            12.8604702
+          ],
+          [
+            77.7766075,
+            12.8604307
+          ],
+          [
+            77.7766446,
+            12.8606713
+          ],
+          [
+            77.7769753,
+            12.8606228
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0065",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 247.2,
+        "daily_footfall": 1670,
+        "peak_hourly_footfall": 154,
+        "hourly_footfall": [
+          16,
+          12,
+          12,
+          12,
+          12,
+          12,
+          19,
+          45,
+          84,
+          100,
+          77,
+          71,
+          94,
+          105,
+          84,
+          71,
+          81,
+          100,
+          126,
+          149,
+          154,
+          132,
+          84,
+          45
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 113.1,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7807951,
+            12.8614456
+          ],
+          [
+            77.780624,
+            12.8614673
+          ],
+          [
+            77.7800464,
+            12.8615584
+          ],
+          [
+            77.7800922,
+            12.8619792
+          ],
+          [
+            77.7802306,
+            12.8618708
+          ],
+          [
+            77.7808407,
+            12.861716
+          ],
+          [
+            77.7807951,
+            12.8614456
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0066",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 259.9,
+        "daily_footfall": 1140,
+        "peak_hourly_footfall": 105,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          30,
+          57,
+          68,
+          53,
+          48,
+          64,
+          71,
+          57,
+          48,
+          55,
+          68,
+          86,
+          101,
+          105,
+          90,
+          57,
+          30
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 511.3,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.776601,
+            12.8568819
+          ],
+          [
+            77.7752766,
+            12.858416
+          ],
+          [
+            77.7750572,
+            12.8586702
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0067",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 79.9,
+        "daily_footfall": 1115,
+        "peak_hourly_footfall": 102,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          30,
+          56,
+          67,
+          51,
+          47,
+          62,
+          70,
+          56,
+          47,
+          54,
+          67,
+          84,
+          99,
+          102,
+          88,
+          56,
+          30
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 493.5,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.77476,
+            12.8584765
+          ],
+          [
+            77.7750528,
+            12.8584422
+          ],
+          [
+            77.7752766,
+            12.858416
+          ],
+          [
+            77.7754919,
+            12.8583907
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0068",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 159.6,
+        "daily_footfall": 1187,
+        "peak_hourly_footfall": 109,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          32,
+          59,
+          71,
+          55,
+          50,
+          66,
+          74,
+          59,
+          50,
+          57,
+          71,
+          89,
+          106,
+          109,
+          94,
+          59,
+          32
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 391.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7769385,
+            12.858207
+          ],
+          [
+            77.7755655,
+            12.8583354
+          ],
+          [
+            77.7754919,
+            12.8583907
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0069",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 156.6,
+        "daily_footfall": 1134,
+        "peak_hourly_footfall": 104,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          30,
+          57,
+          68,
+          52,
+          48,
+          63,
+          71,
+          57,
+          48,
+          55,
+          68,
+          85,
+          101,
+          104,
+          90,
+          57,
+          30
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 384.0,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7754919,
+            12.8583907
+          ],
+          [
+            77.7755633,
+            12.8584314
+          ],
+          [
+            77.775753,
+            12.8584113
+          ],
+          [
+            77.776919,
+            12.8583075
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0070",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 81.6,
+        "daily_footfall": 1142,
+        "peak_hourly_footfall": 105,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          31,
+          57,
+          68,
+          53,
+          48,
+          64,
+          72,
+          57,
+          48,
+          55,
+          68,
+          86,
+          102,
+          105,
+          90,
+          57,
+          31
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 413.1,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7758919,
+            12.8591324
+          ],
+          [
+            77.775753,
+            12.8584113
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0071",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 324.7,
+        "daily_footfall": 1102,
+        "peak_hourly_footfall": 101,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          55,
+          66,
+          51,
+          47,
+          62,
+          69,
+          55,
+          47,
+          53,
+          66,
+          83,
+          98,
+          101,
+          87,
+          55,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 507.1,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7749714,
+            12.8643033
+          ],
+          [
+            77.7750076,
+            12.8643317
+          ],
+          [
+            77.7752173,
+            12.8643563
+          ],
+          [
+            77.7752531,
+            12.8643333
+          ],
+          [
+            77.7752685,
+            12.8642918
+          ],
+          [
+            77.7752008,
+            12.8633893
+          ],
+          [
+            77.7751534,
+            12.8633334
+          ],
+          [
+            77.7751365,
+            12.8632901
+          ],
+          [
+            77.7751167,
+            12.863101
+          ],
+          [
+            77.7749342,
+            12.8631146
+          ],
+          [
+            77.7749579,
+            12.8642518
+          ],
+          [
+            77.7749714,
+            12.8643033
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0072",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 122.4,
+        "daily_footfall": 1080,
+        "peak_hourly_footfall": 99,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          54,
+          65,
+          50,
+          46,
+          60,
+          68,
+          54,
+          46,
+          52,
+          65,
+          81,
+          96,
+          99,
+          85,
+          54,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 493.2,
+        "poi_synergy_boost": 1.09
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7766527,
+            12.8655364
+          ],
+          [
+            77.7765203,
+            12.8647659
+          ],
+          [
+            77.7764662,
+            12.864451
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0073",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 5.2,
+        "daily_footfall": 1192,
+        "peak_hourly_footfall": 109,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          32,
+          60,
+          71,
+          55,
+          50,
+          67,
+          75,
+          60,
+          50,
+          57,
+          71,
+          90,
+          106,
+          109,
+          94,
+          60,
+          32
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 397.3,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7828917,
+            12.8608301
+          ],
+          [
+            77.7828932,
+            12.8608768
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0074",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 153.8,
+        "daily_footfall": 1161,
+        "peak_hourly_footfall": 107,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          31,
+          58,
+          69,
+          54,
+          49,
+          65,
+          73,
+          58,
+          49,
+          56,
+          69,
+          87,
+          103,
+          107,
+          92,
+          58,
+          31
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 399.4,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7826399,
+            12.85948
+          ],
+          [
+            77.7829054,
+            12.8606999
+          ],
+          [
+            77.7829304,
+            12.8608334
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0075",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Arterial",
+        "highway_type": "primary",
+        "corridor_tier": "Primary Arterial Corridor",
+        "length_m": 6.6,
+        "daily_footfall": 12359,
+        "peak_hourly_footfall": 1139,
+        "hourly_footfall": [
+          119,
+          59,
+          35,
+          23,
+          23,
+          47,
+          143,
+          335,
+          623,
+          743,
+          575,
+          527,
+          695,
+          779,
+          623,
+          527,
+          599,
+          743,
+          935,
+          1103,
+          1139,
+          983,
+          623,
+          335
+        ],
+        "is_prime_corridor": true,
+        "dist_to_store_m": 160.6,
+        "poi_synergy_boost": 1.26
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7807001,
+            12.8607659
+          ],
+          [
+            77.7807051,
+            12.8607068
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0076",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 115.0,
+        "daily_footfall": 553,
+        "peak_hourly_footfall": 51,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          15,
+          27,
+          33,
+          25,
+          23,
+          31,
+          34,
+          27,
+          23,
+          26,
+          33,
+          41,
+          49,
+          51,
+          44,
+          27,
+          15
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 124.9,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7802178,
+            12.8603508
+          ],
+          [
+            77.780183,
+            12.8601599
+          ],
+          [
+            77.7804465,
+            12.8601259
+          ],
+          [
+            77.7804847,
+            12.8602345
+          ],
+          [
+            77.7805504,
+            12.8606966
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0077",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 41.4,
+        "daily_footfall": 605,
+        "peak_hourly_footfall": 55,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          16,
+          30,
+          36,
+          28,
+          25,
+          34,
+          38,
+          30,
+          25,
+          29,
+          36,
+          45,
+          54,
+          55,
+          48,
+          30,
+          16
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 92.7,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.779957,
+            12.8603018
+          ],
+          [
+            77.7800401,
+            12.8606652
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0078",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 32.6,
+        "daily_footfall": 348,
+        "peak_hourly_footfall": 32,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          17,
+          20,
+          16,
+          14,
+          19,
+          21,
+          17,
+          14,
+          16,
+          20,
+          26,
+          31,
+          32,
+          27,
+          17,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 355.5,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7823093,
+            12.8596428
+          ],
+          [
+            77.7823441,
+            12.8597938
+          ],
+          [
+            77.7823287,
+            12.8598546
+          ],
+          [
+            77.7823368,
+            12.8599082
+          ],
+          [
+            77.7823549,
+            12.85992
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0079",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 118.4,
+        "daily_footfall": 336,
+        "peak_hourly_footfall": 30,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          16,
+          20,
+          15,
+          14,
+          18,
+          21,
+          16,
+          14,
+          16,
+          20,
+          25,
+          30,
+          30,
+          26,
+          16,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 316.1,
+        "poi_synergy_boost": 1.09
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.782057,
+            12.8602364
+          ],
+          [
+            77.7823254,
+            12.8602037
+          ],
+          [
+            77.7823663,
+            12.860137
+          ],
+          [
+            77.7823549,
+            12.85992
+          ],
+          [
+            77.7823783,
+            12.8598873
+          ],
+          [
+            77.7823837,
+            12.8598272
+          ],
+          [
+            77.7823884,
+            12.8597422
+          ],
+          [
+            77.7824293,
+            12.8596409
+          ],
+          [
+            77.7824662,
+            12.8595533
+          ],
+          [
+            77.7824327,
+            12.8594408
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0080",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 24.7,
+        "daily_footfall": 367,
+        "peak_hourly_footfall": 33,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          18,
+          22,
+          17,
+          15,
+          20,
+          23,
+          18,
+          15,
+          17,
+          22,
+          27,
+          32,
+          33,
+          29,
+          18,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 340.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.782578,
+            12.8606228
+          ],
+          [
+            77.78235,
+            12.8606169
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0081",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 37.4,
+        "daily_footfall": 372,
+        "peak_hourly_footfall": 34,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          18,
+          22,
+          17,
+          15,
+          20,
+          23,
+          18,
+          15,
+          18,
+          22,
+          28,
+          33,
+          34,
+          29,
+          18,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 338.9,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7823487,
+            12.8604648
+          ],
+          [
+            77.78235,
+            12.8606169
+          ],
+          [
+            77.7823516,
+            12.8608012
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0082",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 36.9,
+        "daily_footfall": 354,
+        "peak_hourly_footfall": 32,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          17,
+          21,
+          16,
+          15,
+          19,
+          22,
+          17,
+          15,
+          17,
+          21,
+          26,
+          31,
+          32,
+          28,
+          17,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 364.7,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7825907,
+            12.860814
+          ],
+          [
+            77.782578,
+            12.8606228
+          ],
+          [
+            77.7825687,
+            12.8604825
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0083",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 23.9,
+        "daily_footfall": 367,
+        "peak_hourly_footfall": 33,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          18,
+          22,
+          17,
+          15,
+          20,
+          23,
+          18,
+          15,
+          17,
+          22,
+          27,
+          32,
+          33,
+          29,
+          18,
+          12
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 342.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7825687,
+            12.8604825
+          ],
+          [
+            77.7823487,
+            12.8604648
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0084",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 7.0,
+        "daily_footfall": 1117,
+        "peak_hourly_footfall": 103,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          30,
+          56,
+          67,
+          52,
+          47,
+          62,
+          70,
+          56,
+          47,
+          54,
+          67,
+          84,
+          99,
+          103,
+          88,
+          56,
+          30
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 435.1,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7751769,
+            12.8605228
+          ],
+          [
+            77.7752381,
+            12.8605028
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0085",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 74.1,
+        "daily_footfall": 1196,
+        "peak_hourly_footfall": 110,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          32,
+          60,
+          71,
+          55,
+          51,
+          67,
+          75,
+          60,
+          51,
+          58,
+          71,
+          90,
+          106,
+          110,
+          95,
+          60,
+          32
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 443.4,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7745031,
+            12.8606596
+          ],
+          [
+            77.775055,
+            12.860515
+          ],
+          [
+            77.775101,
+            12.860503
+          ],
+          [
+            77.7751634,
+            12.8604866
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0086",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Commercial Service Lane",
+        "highway_type": "service",
+        "corridor_tier": "Commercial Access Lane",
+        "length_m": 69.0,
+        "daily_footfall": 698,
+        "peak_hourly_footfall": 64,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          18,
+          35,
+          42,
+          32,
+          29,
+          39,
+          44,
+          35,
+          29,
+          33,
+          42,
+          52,
+          62,
+          64,
+          55,
+          35,
+          18
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 31.4,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7794883,
+            12.8613458
+          ],
+          [
+            77.7794343,
+            12.8607277
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0087",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 68.2,
+        "daily_footfall": 1129,
+        "peak_hourly_footfall": 104,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          30,
+          56,
+          67,
+          52,
+          48,
+          63,
+          71,
+          56,
+          48,
+          54,
+          67,
+          85,
+          100,
+          104,
+          89,
+          56,
+          30
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 302.8,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7817816,
+            12.8620303
+          ],
+          [
+            77.7823837,
+            12.8618531
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0088",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 67.1,
+        "daily_footfall": 1096,
+        "peak_hourly_footfall": 101,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          55,
+          65,
+          51,
+          46,
+          61,
+          69,
+          55,
+          46,
+          53,
+          65,
+          82,
+          97,
+          101,
+          87,
+          55,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 337.9,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7823837,
+            12.8618531
+          ],
+          [
+            77.7823354,
+            12.8615798
+          ],
+          [
+            77.7823275,
+            12.8612536
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0089",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 33.6,
+        "daily_footfall": 1271,
+        "peak_hourly_footfall": 117,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          14,
+          34,
+          64,
+          76,
+          59,
+          54,
+          71,
+          80,
+          64,
+          54,
+          61,
+          76,
+          96,
+          113,
+          117,
+          101,
+          64,
+          34
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 224.7,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7812719,
+            12.8617021
+          ],
+          [
+            77.7812367,
+            12.8614392
+          ],
+          [
+            77.781238,
+            12.8614205
+          ],
+          [
+            77.7812465,
+            12.8614037
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0090",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 36.6,
+        "daily_footfall": 1279,
+        "peak_hourly_footfall": 117,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          14,
+          34,
+          64,
+          76,
+          59,
+          54,
+          72,
+          80,
+          64,
+          54,
+          62,
+          76,
+          96,
+          114,
+          117,
+          101,
+          64,
+          34
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 249.4,
+        "poi_synergy_boost": 1.11
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7815412,
+            12.8616843
+          ],
+          [
+            77.781486,
+            12.8613594
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0091",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 46.1,
+        "daily_footfall": 1173,
+        "peak_hourly_footfall": 108,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          31,
+          59,
+          70,
+          54,
+          50,
+          66,
+          74,
+          59,
+          50,
+          56,
+          70,
+          88,
+          104,
+          108,
+          93,
+          59,
+          31
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 279.8,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7817769,
+            12.8613229
+          ],
+          [
+            77.7818436,
+            12.8617327
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0092",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 42.9,
+        "daily_footfall": 1089,
+        "peak_hourly_footfall": 100,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          54,
+          65,
+          50,
+          46,
+          61,
+          68,
+          54,
+          46,
+          52,
+          65,
+          82,
+          97,
+          100,
+          86,
+          54,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 346.8,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7824262,
+            12.8608532
+          ],
+          [
+            77.7824531,
+            12.8612378
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0093",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 138.2,
+        "daily_footfall": 1077,
+        "peak_hourly_footfall": 99,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          54,
+          64,
+          50,
+          46,
+          60,
+          67,
+          54,
+          46,
+          52,
+          64,
+          81,
+          96,
+          99,
+          85,
+          54,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 340.7,
+        "poi_synergy_boost": 1.09
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7823059,
+            12.8636901
+          ],
+          [
+            77.7819224,
+            12.862505
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0094",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 147.0,
+        "daily_footfall": 1176,
+        "peak_hourly_footfall": 108,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          31,
+          59,
+          70,
+          54,
+          50,
+          66,
+          74,
+          59,
+          50,
+          57,
+          70,
+          89,
+          105,
+          108,
+          93,
+          59,
+          31
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 317.5,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7820431,
+            12.8638156
+          ],
+          [
+            77.7816336,
+            12.8625557
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0095",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 253.0,
+        "daily_footfall": 1095,
+        "peak_hourly_footfall": 100,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          29,
+          55,
+          65,
+          51,
+          46,
+          61,
+          69,
+          55,
+          46,
+          53,
+          65,
+          82,
+          97,
+          100,
+          87,
+          55,
+          29
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 293.4,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7817574,
+            12.8639254
+          ],
+          [
+            77.7813095,
+            12.8626127
+          ],
+          [
+            77.7816336,
+            12.8625557
+          ],
+          [
+            77.7819224,
+            12.862505
+          ],
+          [
+            77.7822094,
+            12.8624545
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "street_id": "ST_APSARA_BLR_27_0096",
+        "serial_no": "APSARA_BLR_27",
+        "locality": "Sarjapura Town",
+        "corridor_name": "Sarjapur Main Road next to D-Mart",
+        "street_name": "Sarjapura Town Cross Street",
+        "highway_type": "residential",
+        "corridor_tier": "Neighborhood Street",
+        "length_m": 46.3,
+        "daily_footfall": 1187,
+        "peak_hourly_footfall": 109,
+        "hourly_footfall": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          32,
+          59,
+          71,
+          55,
+          50,
+          66,
+          74,
+          59,
+          50,
+          57,
+          71,
+          89,
+          106,
+          109,
+          94,
+          59,
+          32
+        ],
+        "is_prime_corridor": false,
+        "dist_to_store_m": 504.2,
+        "poi_synergy_boost": 1.1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            77.7832445,
+            12.863213
+          ],
+          [
+            77.7836215,
+            12.8630167
+          ]
+        ]
+      }
+    }
+  ]
+}
