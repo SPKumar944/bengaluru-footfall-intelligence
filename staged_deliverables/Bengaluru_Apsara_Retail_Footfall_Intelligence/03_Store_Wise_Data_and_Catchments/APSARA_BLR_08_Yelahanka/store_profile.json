@@ -3,31 +3,31 @@
   "brand": "Apsara Ice Creams",
   "store_name": "Apsara Ice Creams - Yelahanka",
   "locality": "Yelahanka",
-  "corridor_name": "Mother Dairy Rd & Yelahanka Commercial Hub",
+  "corridor_name": "Mother Dairy Road (Yelahanka New Town)",
   "zone": "North",
-  "google_place_id": "ChIJ_apsara_apsara_blr_08",
-  "google_rating": 4.3,
-  "google_review_count": 780,
-  "address": "G.V.K. Castle, 800, M.I.G, Mother Dairy Rd, Yelahanka New Town, Bengaluru, Karnataka 560064",
+  "google_place_id": "ChIJawAKGBQZrjsRTecdaQZM9IY",
+  "google_rating": 4.6,
+  "google_review_count": 330,
+  "address": "G.V.K Castle, 800, M.I.G, Mother Dairy Road, Yelahanka Rd, Yelahanka New Town, Bengaluru, Karnataka 560064",
   "coordinates": {
-    "lat": 13.0953921,
-    "lng": 77.5831307
+    "lat": 13.099830299999999,
+    "lng": 77.5793059
   },
   "operating_hours": "11:00 AM - 11:30 PM (Daily)",
   "store_footfall": {
-    "est_monthly_customers": 3100,
-    "est_daily_cups": 103,
-    "est_evening_peak_cups": 41,
-    "avg_ticket_size_inr": 175
+    "est_monthly_customers": 858,
+    "est_daily_cups": 35,
+    "est_evening_peak_cups": 14,
+    "avg_ticket_size_inr": 180
   },
   "regional_footfall": {
-    "corridor_zone": "Mother Dairy Rd & Yelahanka Commercial Hub",
-    "annual_unique_visitors": 3810600,
-    "weekday_daily_footfall": 9800,
-    "weekend_daily_footfall": 14500,
-    "weekend_surge_pct": 48.0,
-    "peak_evening_hourly_flow": 1522,
-    "f_and_b_share_pct": 38.5,
-    "mean_dwell_time_mins": 55.0
+    "corridor_zone": "Mother Dairy Road (Yelahanka New Town)",
+    "annual_unique_visitors": 14200000,
+    "weekday_daily_footfall": 10115,
+    "weekend_daily_footfall": 14196,
+    "weekend_surge_pct": 40.3,
+    "peak_evening_hourly_flow": 1455,
+    "f_and_b_share_pct": 39.5,
+    "mean_dwell_time_mins": 65.0
   }
 }

@@ -1,0 +1,33 @@
+{
+  "serial_no": "APSARA_BLR_05",
+  "brand": "Apsara Ice Creams",
+  "store_name": "Apsara Ice Creams - Hennur / Kothanur",
+  "locality": "Hennur / Kothanur",
+  "corridor_name": "Hennur Main Road & Petra Complex Node",
+  "zone": "North East",
+  "google_place_id": "ChIJE3-Kw6oZrjsR-bxgzSWEWrg",
+  "google_rating": 4.5,
+  "google_review_count": 626,
+  "address": "Shop No, Petra Complex, G 8 & 9, Hennur Main Rd, Kothanur, Bengaluru, Karnataka 560077",
+  "coordinates": {
+    "lat": 13.062492899999999,
+    "lng": 77.64951099999999
+  },
+  "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+  "store_footfall": {
+    "est_monthly_customers": 1627,
+    "est_daily_cups": 54,
+    "est_evening_peak_cups": 22,
+    "avg_ticket_size_inr": 180
+  },
+  "regional_footfall": {
+    "corridor_zone": "Hennur Main Road & Petra Complex Node",
+    "annual_unique_visitors": 13400000,
+    "weekday_daily_footfall": 9545,
+    "weekend_daily_footfall": 13312,
+    "weekend_surge_pct": 39.5,
+    "peak_evening_hourly_flow": 1364,
+    "f_and_b_share_pct": 39.5,
+    "mean_dwell_time_mins": 65.0
+  }
+}

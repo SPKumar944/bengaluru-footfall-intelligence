@@ -3,31 +3,31 @@
   "brand": "Apsara Ice Creams",
   "store_name": "Apsara Ice Creams - Whitefield",
   "locality": "Whitefield",
-  "corridor_name": "Varthur Main Rd & ITPL Corridor",
-  "zone": "East",
-  "google_place_id": "ChIJ_apsara_apsara_blr_04",
-  "google_rating": 4.3,
-  "google_review_count": 890,
+  "corridor_name": "Varthur Main Rd & Siddhapura Commercial Node",
+  "zone": "East Outer",
+  "google_place_id": "ChIJY6d3QWwTrjsR2JPaB1U43I0",
+  "google_rating": 4.5,
+  "google_review_count": 809,
   "address": "Shop No.4, S.H.R. Complex, Siddhapura, Varthur Main Rd, Whitefield, Bengaluru, Karnataka 560066",
   "coordinates": {
-    "lat": 12.9561917,
-    "lng": 77.7297523
+    "lat": 12.9562441,
+    "lng": 77.72966269999999
   },
   "operating_hours": "11:00 AM - 11:30 PM (Daily)",
   "store_footfall": {
-    "est_monthly_customers": 3650,
-    "est_daily_cups": 121,
-    "est_evening_peak_cups": 48,
-    "avg_ticket_size_inr": 185
+    "est_monthly_customers": 2103,
+    "est_daily_cups": 70,
+    "est_evening_peak_cups": 28,
+    "avg_ticket_size_inr": 180
   },
   "regional_footfall": {
-    "corridor_zone": "Varthur Main Rd & ITPL Corridor",
-    "annual_unique_visitors": 4520160,
-    "weekday_daily_footfall": 11800,
-    "weekend_daily_footfall": 17200,
-    "weekend_surge_pct": 45.8,
-    "peak_evening_hourly_flow": 1806,
-    "f_and_b_share_pct": 38.5,
-    "mean_dwell_time_mins": 55.0
+    "corridor_zone": "Varthur Main Rd & Siddhapura Commercial Node",
+    "annual_unique_visitors": 24800000,
+    "weekday_daily_footfall": 17666,
+    "weekend_daily_footfall": 15548,
+    "weekend_surge_pct": -12.0,
+    "peak_evening_hourly_flow": 1594,
+    "f_and_b_share_pct": 39.5,
+    "mean_dwell_time_mins": 65.0
   }
 }

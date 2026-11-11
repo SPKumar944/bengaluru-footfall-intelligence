@@ -1,0 +1,33 @@
+{
+  "serial_no": "APSARA_BLR_03",
+  "brand": "Apsara Ice Creams",
+  "store_name": "Apsara Ice Creams - JP Nagar",
+  "locality": "JP Nagar",
+  "corridor_name": "24th Main Road Commercial Strip (Phase 5)",
+  "zone": "South",
+  "google_place_id": "ChIJ3-XsPQ0VrjsR1cnHonDZ6ZE",
+  "google_rating": 4.4,
+  "google_review_count": 918,
+  "address": "No 15/A, 24th main road katha no 311 JP Nagar 5th phase, B.B, Puttenahalli, M.P south, Bommanahalli, Bengaluru, Karnataka 560078",
+  "coordinates": {
+    "lat": 12.897316799999999,
+    "lng": 77.5860521
+  },
+  "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+  "store_footfall": {
+    "est_monthly_customers": 2386,
+    "est_daily_cups": 79,
+    "est_evening_peak_cups": 32,
+    "avg_ticket_size_inr": 180
+  },
+  "regional_footfall": {
+    "corridor_zone": "24th Main Road Commercial Strip (Phase 5)",
+    "annual_unique_visitors": 16100000,
+    "weekday_daily_footfall": 11468,
+    "weekend_daily_footfall": 15964,
+    "weekend_surge_pct": 39.2,
+    "peak_evening_hourly_flow": 1636,
+    "f_and_b_share_pct": 39.5,
+    "mean_dwell_time_mins": 65.0
+  }
+}

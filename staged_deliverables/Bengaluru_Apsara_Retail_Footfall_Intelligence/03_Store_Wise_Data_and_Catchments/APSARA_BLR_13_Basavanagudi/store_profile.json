@@ -1,0 +1,33 @@
+{
+  "serial_no": "APSARA_BLR_13",
+  "brand": "Apsara Ice Creams",
+  "store_name": "Apsara Ice Creams - Basavanagudi",
+  "locality": "Basavanagudi",
+  "corridor_name": "Gandhi Bazaar Main Road & Anjaneya Temple St",
+  "zone": "South Central",
+  "google_place_id": "ChIJzzN6KrUVrjsRc_ZIsKXQJwQ",
+  "google_rating": 4.9,
+  "google_review_count": 19,
+  "address": "No. 92, SNSKM Building, Shop No, 1 & 2(A, E Anjaneya Temple St, Gandhi Bazaar, Basavanagudi, Bengaluru, Karnataka 560004",
+  "coordinates": {
+    "lat": 12.9450896,
+    "lng": 77.57024179999999
+  },
+  "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+  "store_footfall": {
+    "est_monthly_customers": 49,
+    "est_daily_cups": 35,
+    "est_evening_peak_cups": 14,
+    "avg_ticket_size_inr": 180
+  },
+  "regional_footfall": {
+    "corridor_zone": "Gandhi Bazaar Main Road & Anjaneya Temple St",
+    "annual_unique_visitors": 15200000,
+    "weekday_daily_footfall": 10827,
+    "weekend_daily_footfall": 15444,
+    "weekend_surge_pct": 42.6,
+    "peak_evening_hourly_flow": 1583,
+    "f_and_b_share_pct": 39.5,
+    "mean_dwell_time_mins": 65.0
+  }
+}

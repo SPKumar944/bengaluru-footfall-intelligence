@@ -5,7 +5,7 @@
   "locality": "HSR Layout",
   "corridor_name": "19th Main & 27th Main High Street",
   "zone": "South East",
-  "google_place_id": "ChIJ_apsara_apsara_blr_01",
+  "google_place_id": "ChIJ532fHoUUrjsRsX5WXnMcBR8",
   "google_rating": 4.4,
   "google_review_count": 1556,
   "address": "1705, 19th Main Rd, Garden Layout, Sector 2, HSR Layout, Bengaluru, Karnataka 560102",
@@ -22,12 +22,12 @@
   },
   "regional_footfall": {
     "corridor_zone": "19th Main & 27th Main High Street",
-    "annual_unique_visitors": 4810291,
+    "annual_unique_visitors": 17900000,
     "weekday_daily_footfall": 12751,
     "weekend_daily_footfall": 18304,
-    "weekend_surge_pct": 43.5,
-    "peak_evening_hourly_flow": 1921,
-    "f_and_b_share_pct": 38.5,
-    "mean_dwell_time_mins": 55.0
+    "weekend_surge_pct": 43.6,
+    "peak_evening_hourly_flow": 1876,
+    "f_and_b_share_pct": 39.5,
+    "mean_dwell_time_mins": 65.0
   }
 }

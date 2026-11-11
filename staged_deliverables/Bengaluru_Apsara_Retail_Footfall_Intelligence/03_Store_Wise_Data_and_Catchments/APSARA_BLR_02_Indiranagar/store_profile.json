@@ -5,7 +5,7 @@
   "locality": "Indiranagar",
   "corridor_name": "100 Feet Rd & 12th Main Strip",
   "zone": "East Central",
-  "google_place_id": "ChIJ_apsara_apsara_blr_02",
+  "google_place_id": "ChIJO0NIGLsWrjsRsPXPM1e9D0k",
   "google_rating": 4.4,
   "google_review_count": 1243,
   "address": "100/1B, 2nd Main Road, 10th Cross Rd, Indira Nagar 1st Stage, Bengaluru, Karnataka 560038",
@@ -15,19 +15,19 @@
   },
   "operating_hours": "11:00 AM - 11:30 PM (Daily)",
   "store_footfall": {
-    "est_monthly_customers": 4510,
-    "est_daily_cups": 150,
-    "est_evening_peak_cups": 62,
-    "avg_ticket_size_inr": 195
+    "est_monthly_customers": 3231,
+    "est_daily_cups": 107,
+    "est_evening_peak_cups": 43,
+    "avg_ticket_size_inr": 180
   },
   "regional_footfall": {
     "corridor_zone": "100 Feet Rd & 12th Main Strip",
-    "annual_unique_visitors": 6149520,
-    "weekday_daily_footfall": 15200,
-    "weekend_daily_footfall": 23400,
-    "weekend_surge_pct": 53.9,
-    "peak_evening_hourly_flow": 2457,
-    "f_and_b_share_pct": 38.5,
-    "mean_dwell_time_mins": 55.0
+    "annual_unique_visitors": 18450000,
+    "weekday_daily_footfall": 13142,
+    "weekend_daily_footfall": 18824,
+    "weekend_surge_pct": 43.2,
+    "peak_evening_hourly_flow": 1929,
+    "f_and_b_share_pct": 39.5,
+    "mean_dwell_time_mins": 65.0
   }
 }

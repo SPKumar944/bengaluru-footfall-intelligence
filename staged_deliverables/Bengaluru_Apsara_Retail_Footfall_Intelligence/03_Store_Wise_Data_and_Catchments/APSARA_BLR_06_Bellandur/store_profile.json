@@ -1,0 +1,33 @@
+{
+  "serial_no": "APSARA_BLR_06",
+  "brand": "Apsara Ice Creams",
+  "store_name": "Apsara Ice Creams - Bellandur",
+  "locality": "Bellandur",
+  "corridor_name": "Green Glen Layout Dining Strip",
+  "zone": "South East",
+  "google_place_id": "ChIJNcPsF98TrjsRZnC9DXzBlgg",
+  "google_rating": 4.4,
+  "google_review_count": 615,
+  "address": "Sobha Lakeview Club House, 1134, road, Green Glen Layout, Bellandur, Bengaluru, Karnataka 560103",
+  "coordinates": {
+    "lat": 12.928492199999999,
+    "lng": 77.67188279999999
+  },
+  "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+  "store_footfall": {
+    "est_monthly_customers": 1599,
+    "est_daily_cups": 53,
+    "est_evening_peak_cups": 21,
+    "avg_ticket_size_inr": 180
+  },
+  "regional_footfall": {
+    "corridor_zone": "Green Glen Layout Dining Strip",
+    "annual_unique_visitors": 23500000,
+    "weekday_daily_footfall": 16740,
+    "weekend_daily_footfall": 13806,
+    "weekend_surge_pct": -17.5,
+    "peak_evening_hourly_flow": 1415,
+    "f_and_b_share_pct": 39.5,
+    "mean_dwell_time_mins": 65.0
+  }
+}

@@ -903,14 +903,14 @@ def build_slide_10_indiranagar(prs):
         p2.font.color.rgb = COLOR_SLATE
 
 # -----------------------------------------------------------------------------
-# Slide 11: Micro-Market Case Study: Koramangala (APSARA_BLR_03)
+# Slide 11: Micro-Market Case Study: Koramangala (APSARA_BLR_07)
 # -----------------------------------------------------------------------------
 def build_slide_11_koramangala(prs):
     slide = prs.slides.add_slide(prs.slide_layouts[6])
-    add_header(slide, "Micro-Market Deep Dive: Koramangala (APSARA_BLR_03)", "Store Case Study #3")
+    add_header(slide, "Micro-Market Deep Dive: Koramangala (APSARA_BLR_07)", "Store Case Study #3")
     add_footer(slide, 11)
 
-    map_path = os.path.join(FIG_DIR, "04_street_footfall_APSARA_BLR_03.png")
+    map_path = os.path.join(FIG_DIR, "04_street_footfall_APSARA_BLR_07.png")
     if os.path.exists(map_path):
         slide.shapes.add_picture(map_path, Inches(0.8), Inches(1.35), width=Inches(5.2), height=Inches(5.45))
 
@@ -982,14 +982,14 @@ def build_slide_11_koramangala(prs):
         p2.font.color.rgb = COLOR_SLATE
 
 # -----------------------------------------------------------------------------
-# Slide 12: Micro-Market Case Study: Jayanagar (APSARA_BLR_13)
+# Slide 12: Micro-Market Case Study: Jayanagar (APSARA_BLR_12)
 # -----------------------------------------------------------------------------
 def build_slide_12_jayanagar(prs):
     slide = prs.slides.add_slide(prs.slide_layouts[6])
-    add_header(slide, "Micro-Market Deep Dive: Jayanagar (APSARA_BLR_13)", "Store Case Study #4")
+    add_header(slide, "Micro-Market Deep Dive: Jayanagar (APSARA_BLR_12)", "Store Case Study #4")
     add_footer(slide, 12)
 
-    map_path = os.path.join(FIG_DIR, "04_street_footfall_APSARA_BLR_13.png")
+    map_path = os.path.join(FIG_DIR, "04_street_footfall_APSARA_BLR_12.png")
     if os.path.exists(map_path):
         slide.shapes.add_picture(map_path, Inches(0.8), Inches(1.35), width=Inches(5.2), height=Inches(5.45))
 

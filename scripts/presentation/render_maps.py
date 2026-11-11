@@ -441,7 +441,7 @@ if __name__ == "__main__":
     fig_network_overview()
     fig_competition()
     fig_magnets()
-    for sn in ["APSARA_BLR_01", "APSARA_BLR_02", "APSARA_BLR_03", "APSARA_BLR_13"]:
+    for sn in ["APSARA_BLR_01", "APSARA_BLR_02", "APSARA_BLR_07", "APSARA_BLR_12", "APSARA_BLR_13"]:
         fig_store_footfall(sn)
     fig_diurnal()
     fig_store_benchmark()

@@ -23,20 +23,20 @@
     "walkshed_peak_flow": 1799,
     "walkshed_segments": 258,
     "high_street_share_pct": 12.8,
-    "monthly_customers": 4510
+    "monthly_customers": 3231
   },
   {
     "serial_no": "APSARA_BLR_03",
-    "locality": "Koramangala",
-    "competitors": 2,
-    "fnb_synergy": 10,
-    "education": 5,
-    "kids_family": 5,
-    "tech_parks": 3,
+    "locality": "JP Nagar",
+    "competitors": 3,
+    "fnb_synergy": 3,
+    "education": 0,
+    "kids_family": 1,
+    "tech_parks": 0,
     "walkshed_peak_flow": 1512,
     "walkshed_segments": 464,
     "high_street_share_pct": 2.2,
-    "monthly_customers": 4680
+    "monthly_customers": 2386
   },
   {
     "serial_no": "APSARA_BLR_04",
@@ -49,46 +49,46 @@
     "walkshed_peak_flow": 2107,
     "walkshed_segments": 198,
     "high_street_share_pct": 20.2,
-    "monthly_customers": 3650
+    "monthly_customers": 2103
   },
   {
     "serial_no": "APSARA_BLR_05",
+    "locality": "Hennur / Kothanur",
+    "competitors": 0,
+    "fnb_synergy": 1,
+    "education": 2,
+    "kids_family": 0,
+    "tech_parks": 0,
+    "walkshed_peak_flow": 1299,
+    "walkshed_segments": 297,
+    "high_street_share_pct": 2.7,
+    "monthly_customers": 1627
+  },
+  {
+    "serial_no": "APSARA_BLR_06",
     "locality": "Bellandur",
-    "competitors": 1,
+    "competitors": 2,
     "fnb_synergy": 3,
     "education": 1,
     "kids_family": 0,
     "tech_parks": 1,
-    "walkshed_peak_flow": 1299,
-    "walkshed_segments": 297,
-    "high_street_share_pct": 2.7,
-    "monthly_customers": 3820
-  },
-  {
-    "serial_no": "APSARA_BLR_06",
-    "locality": "JP Nagar",
-    "competitors": 5,
-    "fnb_synergy": 8,
-    "education": 1,
-    "kids_family": 2,
-    "tech_parks": 0,
     "walkshed_peak_flow": 874,
     "walkshed_segments": 248,
     "high_street_share_pct": 0.0,
-    "monthly_customers": 3950
+    "monthly_customers": 1599
   },
   {
     "serial_no": "APSARA_BLR_07",
-    "locality": "Basavanagudi",
-    "competitors": 1,
-    "fnb_synergy": 4,
-    "education": 4,
-    "kids_family": 2,
-    "tech_parks": 0,
+    "locality": "Koramangala",
+    "competitors": 2,
+    "fnb_synergy": 10,
+    "education": 5,
+    "kids_family": 5,
+    "tech_parks": 3,
     "walkshed_peak_flow": 2293,
     "walkshed_segments": 271,
     "high_street_share_pct": 9.6,
-    "monthly_customers": 4200
+    "monthly_customers": 1544
   },
   {
     "serial_no": "APSARA_BLR_08",
@@ -101,71 +101,71 @@
     "walkshed_peak_flow": 1302,
     "walkshed_segments": 364,
     "high_street_share_pct": 1.4,
-    "monthly_customers": 3100
+    "monthly_customers": 858
   },
   {
     "serial_no": "APSARA_BLR_09",
+    "locality": "Malleshwaram",
+    "competitors": 0,
+    "fnb_synergy": 7,
+    "education": 1,
+    "kids_family": 4,
+    "tech_parks": 0,
+    "walkshed_peak_flow": 1606,
+    "walkshed_segments": 317,
+    "high_street_share_pct": 7.6,
+    "monthly_customers": 626
+  },
+  {
+    "serial_no": "APSARA_BLR_10",
     "locality": "Vidyaranyapura",
     "competitors": 0,
     "fnb_synergy": 0,
     "education": 0,
     "kids_family": 0,
     "tech_parks": 0,
-    "walkshed_peak_flow": 1606,
-    "walkshed_segments": 317,
-    "high_street_share_pct": 7.6,
-    "monthly_customers": 2950
-  },
-  {
-    "serial_no": "APSARA_BLR_10",
-    "locality": "Hennur / Kothanur",
-    "competitors": 0,
-    "fnb_synergy": 1,
-    "education": 2,
-    "kids_family": 0,
-    "tech_parks": 0,
     "walkshed_peak_flow": 563,
     "walkshed_segments": 386,
     "high_street_share_pct": 0.0,
-    "monthly_customers": 3250
+    "monthly_customers": 400
   },
   {
     "serial_no": "APSARA_BLR_11",
-    "locality": "Malleshwaram",
-    "competitors": 5,
-    "fnb_synergy": 8,
-    "education": 3,
-    "kids_family": 3,
+    "locality": "Banashankari",
+    "competitors": 1,
+    "fnb_synergy": 3,
+    "education": 1,
+    "kids_family": 0,
     "tech_parks": 0,
     "walkshed_peak_flow": 1424,
     "walkshed_segments": 381,
     "high_street_share_pct": 2.1,
-    "monthly_customers": 4350
+    "monthly_customers": 379
   },
   {
     "serial_no": "APSARA_BLR_12",
-    "locality": "Banashankari",
-    "competitors": 1,
-    "fnb_synergy": 8,
-    "education": 0,
-    "kids_family": 1,
+    "locality": "Jayanagar",
+    "competitors": 8,
+    "fnb_synergy": 12,
+    "education": 5,
+    "kids_family": 2,
     "tech_parks": 0,
     "walkshed_peak_flow": 1880,
     "walkshed_segments": 323,
     "high_street_share_pct": 15.8,
-    "monthly_customers": 3700
+    "monthly_customers": 301
   },
   {
     "serial_no": "APSARA_BLR_13",
-    "locality": "Jayanagar",
-    "competitors": 8,
-    "fnb_synergy": 10,
-    "education": 5,
-    "kids_family": 1,
+    "locality": "Basavanagudi",
+    "competitors": 1,
+    "fnb_synergy": 4,
+    "education": 4,
+    "kids_family": 2,
     "tech_parks": 0,
     "walkshed_peak_flow": 1614,
     "walkshed_segments": 410,
     "high_street_share_pct": 4.6,
-    "monthly_customers": 4600
+    "monthly_customers": 49
   }
 ]

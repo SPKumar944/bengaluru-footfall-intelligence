@@ -1,0 +1,33 @@
+{
+  "serial_no": "APSARA_BLR_09",
+  "brand": "Apsara Ice Creams",
+  "store_name": "Apsara Ice Creams - Malleshwaram",
+  "locality": "Malleshwaram",
+  "corridor_name": "Sampige Road & Margosa Road Strip",
+  "zone": "West Central",
+  "google_place_id": "ChIJnXuhLKQXrjsRwI5-38wA1KQ",
+  "google_rating": 4.4,
+  "google_review_count": 241,
+  "address": "2nd Main Road, Main Road, Sampige Rd, Opp Joyalukkas, Malleshwaram, Bengaluru, Karnataka 560003",
+  "coordinates": {
+    "lat": 12.994491499999999,
+    "lng": 77.5713988
+  },
+  "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+  "store_footfall": {
+    "est_monthly_customers": 626,
+    "est_daily_cups": 35,
+    "est_evening_peak_cups": 14,
+    "avg_ticket_size_inr": 180
+  },
+  "regional_footfall": {
+    "corridor_zone": "Sampige Road & Margosa Road Strip",
+    "annual_unique_visitors": 15800000,
+    "weekday_daily_footfall": 11255,
+    "weekend_daily_footfall": 15314,
+    "weekend_surge_pct": 36.1,
+    "peak_evening_hourly_flow": 1570,
+    "f_and_b_share_pct": 39.5,
+    "mean_dwell_time_mins": 65.0
+  }
+}

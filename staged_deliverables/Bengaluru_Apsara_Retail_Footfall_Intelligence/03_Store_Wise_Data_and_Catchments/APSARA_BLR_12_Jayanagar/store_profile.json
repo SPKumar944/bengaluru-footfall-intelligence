@@ -1,0 +1,33 @@
+{
+  "serial_no": "APSARA_BLR_12",
+  "brand": "Apsara Ice Creams",
+  "store_name": "Apsara Ice Creams - Jayanagar",
+  "locality": "Jayanagar",
+  "corridor_name": "30th Cross Road & 11th Main (4th Block Shopping Hub)",
+  "zone": "South Central",
+  "google_place_id": "ChIJMbSwQD0VrjsRhg-KHoJ1qVo",
+  "google_rating": 4.4,
+  "google_review_count": 116,
+  "address": "# 146/C, 6th C Main Road, 30th Cross Rd, opp. to Maiyas, 4th Block, Jayanagar, Bengaluru, Karnataka 560011",
+  "coordinates": {
+    "lat": 12.928948199999999,
+    "lng": 77.5816667
+  },
+  "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+  "store_footfall": {
+    "est_monthly_customers": 301,
+    "est_daily_cups": 35,
+    "est_evening_peak_cups": 14,
+    "avg_ticket_size_inr": 180
+  },
+  "regional_footfall": {
+    "corridor_zone": "30th Cross Road & 11th Main (4th Block Shopping Hub)",
+    "annual_unique_visitors": 16800000,
+    "weekday_daily_footfall": 11967,
+    "weekend_daily_footfall": 15236,
+    "weekend_surge_pct": 27.3,
+    "peak_evening_hourly_flow": 1562,
+    "f_and_b_share_pct": 39.5,
+    "mean_dwell_time_mins": 65.0
+  }
+}

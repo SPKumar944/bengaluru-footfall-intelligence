@@ -1,0 +1,33 @@
+{
+  "serial_no": "APSARA_BLR_07",
+  "brand": "Apsara Ice Creams",
+  "store_name": "Apsara Ice Creams - Koramangala",
+  "locality": "Koramangala",
+  "corridor_name": "1st A Main Rd & 80 Feet Road (7th Block)",
+  "zone": "South East",
+  "google_place_id": "ChIJv26l_CIVrjsRkX9qXoWgFCk",
+  "google_rating": 4.5,
+  "google_review_count": 594,
+  "address": "Building no 10, ground floor, 1st A Main Road, KHB Colony, 7th Block, Koramangala, Bengaluru, Karnataka 560095",
+  "coordinates": {
+    "lat": 12.9363338,
+    "lng": 77.61547999999999
+  },
+  "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+  "store_footfall": {
+    "est_monthly_customers": 1544,
+    "est_daily_cups": 51,
+    "est_evening_peak_cups": 20,
+    "avg_ticket_size_inr": 180
+  },
+  "regional_footfall": {
+    "corridor_zone": "1st A Main Rd & 80 Feet Road (7th Block)",
+    "annual_unique_visitors": 19200000,
+    "weekday_daily_footfall": 13677,
+    "weekend_daily_footfall": 19188,
+    "weekend_surge_pct": 40.3,
+    "peak_evening_hourly_flow": 1967,
+    "f_and_b_share_pct": 39.5,
+    "mean_dwell_time_mins": 65.0
+  }
+}

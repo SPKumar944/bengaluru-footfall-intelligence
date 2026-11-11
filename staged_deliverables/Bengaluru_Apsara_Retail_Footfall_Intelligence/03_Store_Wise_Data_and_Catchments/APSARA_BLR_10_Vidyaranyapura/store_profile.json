@@ -1,0 +1,33 @@
+{
+  "serial_no": "APSARA_BLR_10",
+  "brand": "Apsara Ice Creams",
+  "store_name": "Apsara Ice Creams - Vidyaranyapura",
+  "locality": "Vidyaranyapura",
+  "corridor_name": "Nanjappa - Thindlu Road (BEL Layout 2nd Block)",
+  "zone": "North West",
+  "google_place_id": "ChIJLz-MZGUjrjsRNnzhlh0TAs0",
+  "google_rating": 4.7,
+  "google_review_count": 154,
+  "address": "Ground Floor, Shop No 5, 1070 & 1071, Nanjappa - Thindlu Rd, BEL Layout 2nd Block, BEL Layout, Vidyaranyapura, Bengaluru, Karnataka 560097",
+  "coordinates": {
+    "lat": 13.069075199999999,
+    "lng": 77.55785
+  },
+  "operating_hours": "11:00 AM - 11:30 PM (Daily)",
+  "store_footfall": {
+    "est_monthly_customers": 400,
+    "est_daily_cups": 35,
+    "est_evening_peak_cups": 14,
+    "avg_ticket_size_inr": 180
+  },
+  "regional_footfall": {
+    "corridor_zone": "Nanjappa - Thindlu Road (BEL Layout 2nd Block)",
+    "annual_unique_visitors": 11800000,
+    "weekday_daily_footfall": 8405,
+    "weekend_daily_footfall": 11648,
+    "weekend_surge_pct": 38.6,
+    "peak_evening_hourly_flow": 1194,
+    "f_and_b_share_pct": 39.5,
+    "mean_dwell_time_mins": 65.0
+  }
+}

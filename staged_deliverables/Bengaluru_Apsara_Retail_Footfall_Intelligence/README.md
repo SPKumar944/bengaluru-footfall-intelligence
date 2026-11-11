@@ -145,17 +145,17 @@ The master Excel workbook (`01_Executive_Reports_and_Documentation/Apsara_Ice_Cr
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: |
 | **APSARA_BLR_01** | HSR Layout | South East | 19th Main & 27th Main High Street | 4,045 | 134 | +43.5% |
 | **APSARA_BLR_02** | Indiranagar | East | 100 Feet Road & 12th Main Commercial | 4,210 | 140 | +42.9% |
-| **APSARA_BLR_03** | Koramangala | South East | 80 Feet Road & 5th Block Food Spine | 4,120 | 137 | +44.1% |
+| **APSARA_BLR_03** | JP Nagar | South | 24th Main & Brigade Millennium Hub | 3,920 | 130 | +41.5% |
 | **APSARA_BLR_04** | Whitefield | East | Whitefield Main Rd & ITPL Corridor | 3,850 | 128 | +46.8% |
-| **APSARA_BLR_05** | Bellandur | South East | Green Glen Layout & Ecospace Outer | 3,690 | 123 | +48.2% |
-| **APSARA_BLR_06** | JP Nagar | South | 24th Main & Brigade Millennium Hub | 3,920 | 130 | +41.5% |
-| **APSARA_BLR_07** | Basavanagudi | South | DVG Road & Gandhi Bazaar Spine | 4,350 | 145 | +39.4% |
+| **APSARA_BLR_05** | Hennur / Kothanur | North East | Hennur Bagalur Main Commercial | 3,550 | 118 | +47.6% |
+| **APSARA_BLR_06** | Bellandur | South East | Green Glen Layout & Ecospace Outer | 3,690 | 123 | +48.2% |
+| **APSARA_BLR_07** | Koramangala | South East | 80 Feet Road & 5th Block Food Spine | 4,120 | 137 | +44.1% |
 | **APSARA_BLR_08** | Yelahanka | North | Major Sandeep Unnikrishnan Rd | 3,420 | 114 | +45.2% |
-| **APSARA_BLR_09** | Vidyaranyapura | North | Vidyaranyapura Main & BEL Layout | 3,310 | 110 | +42.1% |
-| **APSARA_BLR_10** | Hennur / Kothanur | North East | Hennur Bagalur Main Commercial | 3,550 | 118 | +47.6% |
-| **APSARA_BLR_11** | Malleshwaram | North West | Sampige Road & 8th Cross Spine | 4,480 | 149 | +38.8% |
-| **APSARA_BLR_12** | Banashankari | South | Kathreguppe 80ft Commercial Corridor | 3,740 | 124 | +43.0% |
-| **APSARA_BLR_13** | Jayanagar | South | 11th Main 4th Block Retail Heart | 4,620 | 154 | +37.5% |
+| **APSARA_BLR_09** | Malleshwaram | North West | Sampige Road & 8th Cross Spine | 4,480 | 149 | +38.8% |
+| **APSARA_BLR_10** | Vidyaranyapura | North | Vidyaranyapura Main & BEL Layout | 3,310 | 110 | +42.1% |
+| **APSARA_BLR_11** | Banashankari | South | Kathreguppe 80ft Commercial Corridor | 3,740 | 124 | +43.0% |
+| **APSARA_BLR_12** | Jayanagar | South | 11th Main 4th Block Retail Heart | 4,620 | 154 | +37.5% |
+| **APSARA_BLR_13** | Basavanagudi | South | DVG Road & Gandhi Bazaar Spine | 4,350 | 145 | +39.4% |
 
 ---
 
