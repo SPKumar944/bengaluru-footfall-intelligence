@@ -47,7 +47,7 @@ export default function HeaderBar({
               }}
               className="bg-white border border-ink-950/[0.12] rounded px-2 py-1 text-xs font-bold text-ink-950 focus:outline-none focus:ring-1 focus:ring-azure-500 cursor-pointer min-w-[170px] sm:min-w-[250px]"
             >
-              <option value="">Select Apsara Store (31 Outlets)...</option>
+              <option value="">Select Apsara Store ({apsaraStores?.length || 13} Outlets)...</option>
               {apsaraStores.map((s) => (
                 <option key={s.serial_no} value={s.serial_no}>
                   #{s.serial_no.split('_')[2]} {s.locality} • {s.zone} (★ {s.google_rating})

@@ -304,7 +304,7 @@ export default function LayerControlWidget({
               <div className="flex items-center justify-between">
                 <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
                   <IceCreamIcon size={14} className="text-ink-950" />
-                  Apsara Outlets (31)
+                  Apsara Outlets (13)
                 </span>
                 <span className="w-4 h-4 rounded-full border border-ink-950 bg-white flex items-center justify-center shadow-2xs">
                   <IceCreamIcon size={9} className="text-ink-950" />

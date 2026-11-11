@@ -73,7 +73,7 @@ def create_store_factors_sheet():
     ws["A2"].alignment = Alignment(horizontal="left", vertical="center")
 
     ws.merge_cells("A3:G3")
-    ws["A3"] = "Target City: Bengaluru, KA | Analyzed Stores: 31 Outlets | Data Engine: Real OSM Network + Diurnal Kinematics + Multi-Source POI Synergy | Date: November 2026"
+    ws["A3"] = "Target City: Bengaluru, KA | Analyzed Stores: 13 Core Outlets | Data Engine: Real OSM Network + Diurnal Kinematics + Multi-Source POI Synergy | Date: November 2026"
     ws["A3"].font = font_meta
     ws["A3"].alignment = Alignment(horizontal="left", vertical="center")
 
@@ -115,7 +115,7 @@ def create_store_factors_sheet():
             "24-Hour Diurnal Hourly Curve",
             "Hour-by-hour pedestrian flow across morning (06-11), afternoon (12-16), and evening dessert peak (18-23).",
             "Ice cream retail is heavily diurnal; 65%+ of high-margin walk-in consumption occurs between 7:00 PM and 11:30 PM. Locations lacking sustained post-dinner pedestrian movement underperform drastically regardless of daytime traffic.",
-            "Diurnal modeling in the dashboard applies normalized hourly coefficients peaking at 20:00-21:00 (weight 0.095). Validated against GPS mobility traces across all 31 stores.",
+            "Diurnal modeling in the dashboard applies normalized hourly coefficients peaking at 20:00-21:00 (weight 0.095). Validated against GPS mobility traces across all 13 core stores.",
             "Directly drives revenue per sq.ft. We must not sign prime high-rent leases in corridors where footfall collapses after 7:00 PM (e.g. government/pure office administrative zones).",
             "Dictates staffing shifts, freezer blast chilling schedules, and scooping station readiness. Staffing must peak between 7:30 PM and 11:00 PM to eliminate wait queues and avoid walkouts."
         ),
@@ -133,7 +133,7 @@ def create_store_factors_sheet():
             "Road Hierarchy & OSM Geometry Curvature",
             "Physical street classification (Primary Arterial, Secondary Commercial Spine, Collector, Residential Lane) and authentic road curvature extracted from OpenStreetMap.",
             "Primary high streets and designated commercial spines provide high natural visibility, steady pedestrian sidewalks, and minimal physical barriers for casual impulse visits.",
-            "Integrated 100% genuine OpenStreetMap road vectors for all 31 stores, eliminating artificial straight lines and correctly representing real sidewalk curvature and access corridors.",
+            "Integrated 100% genuine OpenStreetMap road vectors for all 13 stores, eliminating artificial straight lines and correctly representing real sidewalk curvature and access corridors.",
             "High-street frontage yields 2.4x customer acquisition over side lanes. Justifies a 30-40% rental premium on high-street commercial spines versus secondary link roads.",
             "Signage visibility, corner positioning, and ground-floor glass frontage directly depend on road alignment. Curving avenues allow approach sightlines from 80+ meters."
         ),
@@ -345,7 +345,7 @@ def create_store_factors_sheet():
             "High-Street Standalone vs Shopping Mall Retail Format",
             "Operational trade-off between standalone street retail parlors (independent hours, lower CAM) vs mall food court units (controlled footfall, high revenue share).",
             "Standalone high-street stores offer greater operational flexibility (extended hours till midnight), higher brand visibility, and lower fixed CAM expenses.",
-            "The 31-store expansion analysis predominantly validates high-street corridors, which provide higher operating margins and 24-hour delivery independence.",
+            "The 13-store network analysis predominantly validates high-street corridors, which provide higher operating margins and 24-hour delivery independence.",
             "High-street stores typically achieve breakeven in 6-9 months versus 12-16 months for high-capex mall food-court formats with restrictive leasing terms.",
             "High-street parlors allow direct customer engagement, neighborhood community identity, and complete autonomy over store operating hours during festive surges."
         ),

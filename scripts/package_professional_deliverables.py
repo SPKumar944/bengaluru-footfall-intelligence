@@ -72,6 +72,9 @@ def package_store_wise_data():
         catchments_fc = json.load(f)
 
     dest_root = os.path.join(BASE_DIR, "03_Store_Wise_Data_and_Catchments")
+    if os.path.exists(dest_root):
+        shutil.rmtree(dest_root)
+    os.makedirs(dest_root, exist_ok=True)
 
     # Group streets and catchments by serial_no
     streets_by_store = {}
@@ -156,7 +159,11 @@ def package_store_wise_data():
         })
 
     # Save Store Directory CSV
-    csv_path = os.path.join(BASE_DIR, "01_Executive_Reports_and_Documentation", "STORE_DIRECTORY_31_LOCATIONS.csv")
+    old_csv = os.path.join(BASE_DIR, "01_Executive_Reports_and_Documentation", "STORE_DIRECTORY_31_LOCATIONS.csv")
+    if os.path.exists(old_csv):
+        os.remove(old_csv)
+
+    csv_path = os.path.join(BASE_DIR, "01_Executive_Reports_and_Documentation", "STORE_DIRECTORY_13_LOCATIONS.csv")
     with open(csv_path, "w", newline="") as f_csv:
         writer = csv.DictWriter(f_csv, fieldnames=list(csv_rows[0].keys()))
         writer.writeheader()
@@ -175,9 +182,9 @@ def package_executive_reports():
     # Dataset catalogue
     cat_path = os.path.join(dest, "DATASET_CATALOGUE.csv")
     datasets = [
-        {"Dataset Name": "all_stores_street_footfall.geojson", "Type": "Vector GeoJSON (LineString)", "Features": "50,920", "Description": "Authentic OSM street networks for all 31 stores with 24-hr diurnal footfall curves and highway tiers.", "CRS": "EPSG:4326"},
-        {"Dataset Name": "apsara_store_footfall_catchments.geojson", "Type": "Vector GeoJSON (Polygon)", "Features": "31", "Description": "Calibrated 350m pedestrian walkshed circular catchment buffers centered on each outlet.", "CRS": "EPSG:4326"},
-        {"Dataset Name": "apsara_ice_cream_bangalore_footfall.json", "Type": "Structured JSON", "Features": "31", "Description": "Master store directory with operating hours, ticket size, regional corridor footfall, and Google Place metadata.", "CRS": "WGS84 Lat/Lng"},
+        {"Dataset Name": "all_stores_street_footfall.geojson", "Type": "Vector GeoJSON (LineString)", "Features": "47,980", "Description": "Authentic OSM street networks for 13 core stores with 24-hr diurnal footfall curves and highway tiers.", "CRS": "EPSG:4326"},
+        {"Dataset Name": "apsara_store_footfall_catchments.geojson", "Type": "Vector GeoJSON (Polygon)", "Features": "13", "Description": "Calibrated 350m pedestrian walkshed circular catchment buffers centered on each core outlet.", "CRS": "EPSG:4326"},
+        {"Dataset Name": "apsara_ice_cream_bangalore_footfall.json", "Type": "Structured JSON", "Features": "13", "Description": "Master store directory with operating hours, ticket size, regional corridor footfall, and Google Place metadata.", "CRS": "WGS84 Lat/Lng"},
         {"Dataset Name": "layer5_competitors.geojson", "Type": "Vector GeoJSON (Point)", "Features": "48+", "Description": "Direct competitor ice cream parlors (Naturals, Corner House, Polar Bear, Baskin Robbins, Milano, Haagen-Dazs).", "CRS": "EPSG:4326"},
         {"Dataset Name": "layer6_complementary_brands.geojson", "Type": "Vector GeoJSON (Point)", "Features": "120+", "Description": "Footfall magnet synergy brands (McDonald's, KFC, Burger King, Starbucks, Third Wave Coffee, Glen's, Domino's).", "CRS": "EPSG:4326"},
         {"Dataset Name": "education_youth_pois.geojson", "Type": "Vector GeoJSON (Point)", "Features": "85+", "Description": "Educational institutions, universities (Christ, RVCE, BMS), premier K-12 schools, and coaching clusters.", "CRS": "EPSG:4326"},
@@ -229,8 +236,8 @@ def package_web_dashboard():
     print("Packaging web dashboard distribution...")
     dest_dist = os.path.join(BASE_DIR, "06_Interactive_Web_Dashboard_Distribution")
     if os.path.exists("frontend/dist"):
-        # Copy dist contents
-        shutil.copytree("frontend/dist", dest_dist, dirs_exist_ok=True)
+        # Copy dist contents, excluding .git
+        shutil.copytree("frontend/dist", dest_dist, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', '.git*'))
         print("  ✓ Web dashboard distribution copied.")
 
 def main():

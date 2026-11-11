@@ -1,5 +1,5 @@
 # Bengaluru Retail Footfall Intelligence & Site Selection Platform
-## Spatial Analytics & Micro-Market Expansion Architecture for Apsara Ice Creams (31 Outlets)
+## Spatial Analytics & Micro-Market Expansion Architecture for Apsara Ice Creams (13 Core Outlets)
 
 ---
 
@@ -7,11 +7,11 @@
 
 This repository houses the end-to-end geospatial intelligence, pedestrian kinematics engine, and multi-layered retail site selection framework developed for **Apsara Ice Creams** across **Bengaluru Urban**.
 
-The platform captures, models, and visualizes urban footfall across **31 verified operating stores**, integrating **50,920 authentic OpenStreetMap (OSM) curved road vectors**, 24-hour diurnal pedestrian flow curves, competitive saturation metrics, and multi-source POI synergy clusters (QSRs, specialty cafes, tech parks, schools, and family leisure magnets).
+The platform captures, models, and visualizes urban footfall across **13 verified operating stores**, integrating **47,980 authentic OpenStreetMap (OSM) curved road vectors**, 24-hour diurnal pedestrian flow curves, competitive saturation metrics, and multi-source POI synergy clusters (QSRs, specialty cafes, tech parks, schools, and family leisure magnets).
 
 - **Live Interactive Dashboard**: [https://spkumar944.github.io/bengaluru-footfall-intelligence/](https://spkumar944.github.io/bengaluru-footfall-intelligence/)
 - **Target City**: Bengaluru, Karnataka, India
-- **Network Scope**: 31 Verified Outlets (HSR, Indiranagar, Koramangala, Whitefield, Thanisandra, Electronic City, Jayanagar, etc.)
+- **Network Scope**: 13 Verified Core Outlets (HSR Layout, Indiranagar, Koramangala, Whitefield, Bellandur, JP Nagar, Basavanagudi, Yelahanka, Vidyaranyapura, Hennur, Malleshwaram, Banashankari, Jayanagar)
 - **Primary Deliverable Package**: Staged for Google Drive upload under `Bengaluru_Apsara_Retail_Footfall_Intelligence/`
 
 ---
@@ -27,12 +27,12 @@ Bengaluru_Apsara_Retail_Footfall_Intelligence/
 │
 ├── 01_Executive_Reports_and_Documentation/
 │   ├── Apsara_Ice_Cream_Store_Location_Factors.xlsx       <- 7-Column Master Matrix (Prem, Gaurav, Gopal remarks)
-│   ├── STORE_DIRECTORY_31_LOCATIONS.csv                   <- Full tabular directory of all 31 stores with KPIs
+│   ├── STORE_DIRECTORY_13_LOCATIONS.csv                   <- Full tabular directory of all 13 stores with KPIs
 │   └── DATASET_CATALOGUE.csv                              <- Complete catalogue of all spatial layers & schemas
 │
 ├── 02_Master_Datasets_and_Layers/
-│   ├── all_stores_street_footfall.geojson                 <- 50,920 authentic OSM road vectors with 24-hr flow
-│   ├── apsara_store_footfall_catchments.geojson           <- 350m pedestrian walkshed circular polygon buffers
+│   ├── all_stores_street_footfall.geojson                 <- 47,980 authentic OSM road vectors with 24-hr flow
+│   ├── apsara_store_footfall_catchments.geojson           <- 350m pedestrian walkshed circular polygon buffers (13 stores)
 │   ├── apsara_ice_cream_bangalore_footfall.json           <- Master store metadata, operational hours, tickets
 │   ├── layer5_competitors.geojson                         <- Direct artisanal & gourmet ice cream competitors
 │   ├── layer6_complementary_brands.geojson                <- Footfall magnets (McDonald's, Starbucks, Glen's)
@@ -44,27 +44,25 @@ Bengaluru_Apsara_Retail_Footfall_Intelligence/
 │   ├── hexagon_demographics.json                          <- Uber H3 spatial demographic & mobility grid
 │   └── regional_hourly_footfall_matrix.json               <- 24-hour diurnal kinematics matrix
 │
-├── 03_Store_Wise_Data_and_Catchments/                     <- Individual store dossiers (31 dedicated folders)
+├── 03_Store_Wise_Data_and_Catchments/                     <- Individual store dossiers (13 dedicated folders)
 │   ├── APSARA_BLR_01_HSR_Layout/
 │   │   ├── store_profile.json                             <- Store-specific metadata & operating metrics
 │   │   ├── osm_street_network.geojson                     <- Filtered OSM road network around store
 │   │   └── pedestrian_catchment_350m.geojson              <- Exact 350m walkshed polygon
 │   ├── ...
-│   └── APSARA_BLR_31_Budigere_Cross/
+│   └── APSARA_BLR_13_Jayanagar/
 │
 ├── 04_Raw_Source_Data/
-│   ├── osm_raw_stores/                                    <- Raw OpenStreetMap API & Overpass GeoJSON extractions
-│   ├── scraped_blr_stores.json                            <- Raw scraped brand store locator records
+│   ├── osm_graphs/                                        <- GraphML network graphs for stores 1-13
+│   ├── scraped_blr_stores.json                            <- Raw brand store locator records
 │   └── gmaps_indiranagar_scraped.json                     <- Google Places raw payload verification
 │
 ├── 05_Pipelines_and_Analytics_Scripts/
-│   ├── build_full_authentic_osm_streets.py                <- Compiles real OSM vectors & diurnal curves
 │   ├── calibrate_pedestrian_footfall.py                   <- Calibrates pedestrian flow to realistic urban kinetics
 │   ├── build_education_youth_pois.py                      <- Assembles student & education POI layers
 │   ├── build_comprehensive_complementary_brands.py        <- Maps QSR, cafe, and dessert synergy anchors
-│   ├── fetch_real_osm_roads_for_stores_14_31.py           <- Automated Overpass extractor
-│   ├── fetch_remaining_stores_osm.py                      <- Direct OpenStreetMap API boundary extractor
-│   └── generate_store_factors_excel.py                    <- Generates the 7-column master Excel matrix
+│   ├── generate_store_factors_excel.py                    <- Generates the 7-column master Excel matrix
+│   └── revert_to_13_stores.py                             <- Script to maintain and verify the 13 core stores
 │
 └── 06_Interactive_Web_Dashboard_Distribution/              <- Standalone compiled production build (Vite/React)
     ├── index.html                                         <- Single-page application entry point
@@ -131,7 +129,7 @@ The dashboard evaluates every store location against an integrated 8-factor anal
 The master Excel workbook (`01_Executive_Reports_and_Documentation/Apsara_Ice_Cream_Store_Location_Factors.xlsx`) contains dedicated analytical evaluations for each sub-factor across three executive roles:
 
 1. **Prem Remarks (GIS & Spatial Analytics Lead)**:
-   - Focuses on spatial kinematics, distance decay curves, Uber H3 spatial indexing, Overpass OSM vector curvature verification, and quantitative diurnal flow modeling.
+   - Focuses on spatial kinematics, distance decay curves, Uber H3 spatial indexing, OSM vector curvature verification, and quantitative diurnal flow modeling.
 2. **Gaurav Remarks (Business Strategy & Real Estate Expansion Lead)**:
    - Focuses on lease economics, Capex efficiency, rental payback thresholds (target 6–9 months), cannibalization buffers, and unit EBITDA margins.
 3. **Gopal Remarks (Retail & Brand Operations Lead)**:
@@ -139,7 +137,7 @@ The master Excel workbook (`01_Executive_Reports_and_Documentation/Apsara_Ice_Cr
 
 ---
 
-### 31-Store Network Overview (Bengaluru Urban)
+### 13-Store Network Overview (Bengaluru Urban)
 
 | Store ID | Locality | Zone | Primary Commercial Spine | Est. Monthly Customers | Est. Daily Cups | Weekend Surge % |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: |
@@ -156,33 +154,15 @@ The master Excel workbook (`01_Executive_Reports_and_Documentation/Apsara_Ice_Cr
 | **APSARA_BLR_11** | Malleshwaram | North West | Sampige Road & 8th Cross Spine | 4,480 | 149 | +38.8% |
 | **APSARA_BLR_12** | Banashankari | South | Kathreguppe 80ft Commercial Corridor | 3,740 | 124 | +43.0% |
 | **APSARA_BLR_13** | Jayanagar | South | 11th Main 4th Block Retail Heart | 4,620 | 154 | +37.5% |
-| **APSARA_BLR_14** | Kanakapura Road | South | Kanakapura NH948 Metro Corridor | 2,850 | 95 | +50.6% |
-| **APSARA_BLR_15** | Ramamurthy Nagar | East | Ramamurthy Nagar Main Commercial | 2,780 | 92 | +48.5% |
-| **APSARA_BLR_16** | Vijayanagar | West | 1st Main Club Road Commercial Spine | 3,120 | 104 | +44.2% |
-| **APSARA_BLR_17** | Kasavanahalli | South East | Kasavanahalli Main & Amrita Link | 3,250 | 108 | +49.1% |
-| **APSARA_BLR_18** | Gunjur / Varthur | East | Gunjur-Varthur Main Transit Spine | 2,640 | 88 | +52.3% |
-| **APSARA_BLR_19** | Bilekahalli | South | Vijaya Bank Layout Commercial | 2,980 | 99 | +47.8% |
-| **APSARA_BLR_20** | Hebbal Kempapura | North | Coffee Board Layout & Bellary Outer | 3,050 | 101 | +46.5% |
-| **APSARA_BLR_21** | Kadugodi / Seegehalli | East | Whitefield-Hosakote Main Transit | 2,720 | 90 | +51.0% |
-| **APSARA_BLR_22** | Rajarajeshwari Nagar | West | BEML Layout Commercial Spine | 3,180 | 106 | +43.8% |
-| **APSARA_BLR_23** | Hoodi | East | Mahadevapura-ITPL Link Corridor | 2,890 | 96 | +49.5% |
-| **APSARA_BLR_24** | Kodathi Gate | South East | Sarjapur Road Corporate Corridor | 2,810 | 93 | +51.2% |
-| **APSARA_BLR_25** | Electronic City Phase 2 | South | Ananth Nagar Main Commercial | 2,750 | 91 | +53.4% |
-| **APSARA_BLR_26** | Electronic City Phase 1 | South | Neeladri Road Retail Spine | 3,380 | 112 | +50.8% |
-| **APSARA_BLR_27** | Sarjapura Town | South East | Sarjapura Circle Commercial Core | 2,520 | 84 | +54.1% |
-| **APSARA_BLR_28** | Thanisandra | North | Thanisandra Main & Manyata Outer | 2,850 | 95 | +49.4% |
-| **APSARA_BLR_29** | Mallathahalli | West | Papareddypalya Main Corridor | 2,910 | 97 | +45.6% |
-| **APSARA_BLR_30** | Hesaraghatta Road | North West | Chimney Hills Transit Spine | 2,690 | 89 | +48.0% |
-| **APSARA_BLR_31** | Budigere Cross | East | Old Madras Road (NH75) Growth Axis | 2,480 | 82 | +55.0% |
 
 ---
 
 ### Technical Methodology
 
 #### 1. Real OpenStreetMap Road Curvature Extraction
-Rather than mathematical straight lines or bounding box approximations, real road geometries were extracted directly via the OpenStreetMap API and Overpass endpoints:
-- Filtered to pedestrian and motorable corridors (`primary`, `secondary`, `tertiary`, `residential`, `living_street`, `service`).
-- Each road preserves multi-point coordinate vertices matching the vector tile basemap (e.g., *Thanisandra Main Road* preserves 78 curvature points).
+Rather than mathematical straight lines or bounding box approximations, real road geometries are preserved directly from OpenStreetMap:
+- Motorable and pedestrian corridors (`primary`, `secondary`, `tertiary`, `residential`, `living_street`, `service`).
+- Each road preserves multi-point coordinate vertices matching the vector tile basemap.
 
 #### 2. Calibrated 11-Step Footfall Color Palette
 Pedestrian flows are mapped to an 11-step hexadecimal ramp spanning from low access lanes to premier high streets:
@@ -222,9 +202,6 @@ python3 -m http.server 8080
 ```bash
 # Activate Python 3.10+ virtual environment
 source .venv/bin/activate
-
-# Regenerate OSM street network & footfall calibration
-python3 05_Pipelines_and_Analytics_Scripts/build_full_authentic_osm_streets.py
 
 # Regenerate 7-column Excel factor matrix
 python3 05_Pipelines_and_Analytics_Scripts/generate_store_factors_excel.py
