@@ -8,10 +8,15 @@ import {
   getKidsIcon, 
   IceCreamIcon, 
   SundaeIcon, 
-  BuildingIcon 
+  BuildingIcon,
+  HomeIcon,
+  FactoryIcon,
+  ScaleIcon,
+  ZapIcon,
+  LayersIcon
 } from './IconMCP';
 import { H3HexagonLayer } from '@deck.gl/geo-layers';
-import { cellToLatLng } from 'h3-js';
+import { cellToLatLng, latLngToCell } from 'h3-js';
 import { Hexagon } from 'lucide-react';
 import maplibregl from 'maplibre-gl';
 import { 
@@ -361,6 +366,17 @@ export default function MapViewport({
 
     return list;
   }, [h3HubsData, selectedHubTypeFilter, scopeHubsToRadius, selectedApsaraStore?.serial_no, selectedApsaraStore?.coordinates?.lat, selectedApsaraStore?.coordinates?.lng]);
+
+  // Fast O(1) map for H3 hexagon lookup on canvas clicks
+  const h3HexMap = useMemo(() => {
+    if (!h3HubsData?.hexagons) return new Map();
+    const map = new Map();
+    for (let i = 0; i < h3HubsData.hexagons.length; i++) {
+      const hex = h3HubsData.hexagons[i];
+      map.set(hex.h, hex);
+    }
+    return map;
+  }, [h3HubsData]);
 
   // Backward compatibility fallback for legacy polygon hubs if h3 data not ready
   const filteredHubsData = useMemo(() => {
@@ -822,6 +838,61 @@ export default function MapViewport({
     }),
   ].filter(Boolean);
 
+  // Universal DeckGL Canvas Click Handler
+  const handleDeckClick = (info) => {
+    if (!info) return;
+
+    // 1. Direct POI / Store Pins
+    if (info.object?.serial_no && onSelectApsaraStore) {
+      onSelectApsaraStore(info.object);
+      return;
+    }
+    if (info.object?.properties?.store_id && onSelectCompetitor) {
+      onSelectCompetitor(info.object);
+      return;
+    }
+    if (info.object?.properties?.brand_id && onSelectComplementaryBrand) {
+      onSelectComplementaryBrand(info.object);
+      return;
+    }
+    if (info.object?.properties?.poi_id && onSelectEducationPoi) {
+      onSelectEducationPoi(info.object);
+      return;
+    }
+    if (info.object?.properties?.attraction_id && onSelectKidsAttraction) {
+      onSelectKidsAttraction(info.object);
+      return;
+    }
+
+    // 2. Direct H3 Hexagon click (when picked directly from Deck.gl layer)
+    if (info.object?.h && onSelectHexagon) {
+      onSelectHexagon(info.object);
+      return;
+    }
+
+    // 3. Mathematical Coordinate Resolution for H3 Hexagons:
+    // Even if Deck.gl picked an overlapping Catchment circle (350m zone), street footfall line,
+    // or canvas area, resolve the clicked [lng, lat] to its H3 Res 9 index and immediately update selectedHexagon!
+    if (activeLayers.commercialResidentialHubs && info.coordinate && h3HexMap.size > 0) {
+      try {
+        const [lng, lat] = info.coordinate;
+        const cell = latLngToCell(lat, lng, 9);
+        const hex = h3HexMap.get(cell);
+        if (hex) {
+          onSelectHexagon?.(hex);
+          return;
+        }
+      } catch (err) {
+        console.error('Hexagon coordinate lookup error:', err);
+      }
+    }
+
+    // 4. Legacy polygon hub click
+    if (info.object?.properties?.hub_id && onSelectHub) {
+      onSelectHub(info.object);
+    }
+  };
+
   return (
     <div className="relative w-full h-full bg-[#EBF0F5] overflow-hidden">
       {/* 1. Underlying MapLibre GL Basemap */}
@@ -840,6 +911,7 @@ export default function MapViewport({
             bearing: 0
           });
         }}
+        onClick={handleDeckClick}
         controller={{
           dragRotate: false,
           touchRotate: false,
@@ -918,10 +990,10 @@ export default function MapViewport({
               // Case 0: H3 Commercial & Residential Land Use Hexagons (H3 Res 9)
               if (p.h && p.cls && p.res_idx !== undefined) {
                 const clsLabels = {
-                  commercial: { label: 'Commercial Hub', icon: '🏢', bg: 'bg-amber-500/10 text-amber-800 border-amber-500/30' },
-                  residential: { label: 'Residential Pocket', icon: '🏡', bg: 'bg-indigo-500/10 text-indigo-800 border-indigo-500/30' },
-                  industrial: { label: 'Industrial / Tech Corridor', icon: '🏭', bg: 'bg-purple-500/10 text-purple-800 border-purple-500/30' },
-                  mixed: { label: 'Mixed-Use High-Street', icon: '⚖️', bg: 'bg-cyan-500/10 text-cyan-800 border-cyan-500/30' }
+                  commercial: { label: 'Commercial Hub', icon: <BuildingIcon size={12} className="shrink-0 text-amber-800" />, bg: 'bg-amber-500/10 text-amber-800 border-amber-500/30' },
+                  residential: { label: 'Residential Pocket', icon: <HomeIcon size={12} className="shrink-0 text-indigo-800" />, bg: 'bg-indigo-500/10 text-indigo-800 border-indigo-500/30' },
+                  industrial: { label: 'Industrial / Tech Corridor', icon: <FactoryIcon size={12} className="shrink-0 text-purple-800" />, bg: 'bg-purple-500/10 text-purple-800 border-purple-500/30' },
+                  mixed: { label: 'Mixed-Use High-Street', icon: <ScaleIcon size={12} className="shrink-0 text-cyan-800" />, bg: 'bg-cyan-500/10 text-cyan-800 border-cyan-500/30' }
                 };
                 const clsMeta = clsLabels[p.cls] || clsLabels.residential;
 
@@ -930,7 +1002,8 @@ export default function MapViewport({
                     {/* Header */}
                     <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1.5">
                       <span className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded border flex items-center gap-1.5 ${clsMeta.bg}`}>
-                        <span>{clsMeta.icon} {clsMeta.label}</span>
+                        {clsMeta.icon}
+                        <span>{clsMeta.label}</span>
                       </span>
                       <span className="text-[10px] font-bold text-azure-700 bg-azure-500/[0.08] px-1.5 py-0.5 rounded border border-azure-500/30 font-mono">
                         Synergy: {p.syn_idx}/100
@@ -957,7 +1030,8 @@ export default function MapViewport({
                       <div>
                         <div className="flex justify-between text-[10px] mb-0.5">
                           <span className="text-indigo-800 font-semibold flex items-center gap-1">
-                            <span>🏡</span> Residential Index:
+                            <HomeIcon size={11} className="text-indigo-800 shrink-0" />
+                            <span>Residential Index:</span>
                           </span>
                           <span className="font-mono font-bold text-indigo-900">{p.res_idx} / 100</span>
                         </div>
@@ -970,7 +1044,8 @@ export default function MapViewport({
                       <div>
                         <div className="flex justify-between text-[10px] mb-0.5">
                           <span className="text-amber-800 font-semibold flex items-center gap-1">
-                            <span>🏢</span> Commercial / Tech:
+                            <BuildingIcon size={11} className="text-amber-800 shrink-0" />
+                            <span>Commercial / Tech:</span>
                           </span>
                           <span className="font-mono font-bold text-amber-900">{p.com_idx} / 100</span>
                         </div>
@@ -983,7 +1058,8 @@ export default function MapViewport({
                       <div>
                         <div className="flex justify-between text-[10px] mb-0.5">
                           <span className="text-azure-800 font-semibold flex items-center gap-1">
-                            <span>⚡</span> Retail Footfall Synergy:
+                            <ZapIcon size={11} className="text-azure-800 shrink-0" />
+                            <span>Retail Footfall Synergy:</span>
                           </span>
                           <span className="font-mono font-bold text-azure-900">{p.syn_idx} / 100</span>
                         </div>
@@ -1007,7 +1083,7 @@ export default function MapViewport({
                         </div>
                         <div>
                           <span className="text-ink-400 block text-[9px]">Kids / Youth:</span>
-                          <span className="font-bold text-ink-900 font-mono">{p.kids}k / {p.youth}y</span>
+                          <span className="font-bold text-ink-900 font-mono">{p.kids} kids • {p.youth} youth</span>
                         </div>
                         <div>
                           <span className="text-ink-400 block text-[9px]">Office Built-up:</span>
@@ -1049,7 +1125,8 @@ export default function MapViewport({
                           ? 'text-amber-800 bg-amber-500/10 border-amber-500/30' 
                           : 'text-indigo-800 bg-indigo-500/10 border-indigo-500/30'
                       }`}>
-                        <span>{isComm ? '🏢 COMMERCIAL HUB' : '🏡 RESIDENTIAL POCKET'}</span>
+                        {isComm ? <BuildingIcon size={12} className="text-amber-800 shrink-0" /> : <HomeIcon size={12} className="text-indigo-800 shrink-0" />}
+                        <span>{isComm ? 'COMMERCIAL HUB' : 'RESIDENTIAL POCKET'}</span>
                       </span>
                       <span className="text-[10px] font-bold text-azure-700 bg-azure-500/[0.08] px-1.5 py-0.5 rounded border border-azure-500/30 font-mono">
                         Synergy: {p.synergy_score}/100

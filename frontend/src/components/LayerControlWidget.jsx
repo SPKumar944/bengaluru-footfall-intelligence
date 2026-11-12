@@ -39,7 +39,14 @@ import {
   YouthFastCasualIcon,
   LateNightPubsIcon,
   EveningTiffinIcon,
-  BuildingIcon
+  BuildingIcon,
+  HomeIcon,
+  FactoryIcon,
+  ScaleIcon,
+  ZapIcon,
+  LayersIcon,
+  MapPinIcon,
+  GlobeIcon
 } from './IconMCP';
 import FootfallRangeSelector from './FootfallRangeSelector';
 import { 
@@ -385,14 +392,14 @@ export default function LayerControlWidget({
                     Land Use Hexagons ({totalH3HexCount.toLocaleString()})
                   </span>
                   <div className="flex -space-x-1">
-                    <span className="w-4 h-4 rounded-full bg-amber-500/20 border border-amber-600 flex items-center justify-center text-amber-800 shadow-2xs text-[9px]" title="Commercial Hubs">
-                      🏢
+                    <span className="w-4 h-4 rounded-full bg-amber-500/10 border border-amber-600/40 flex items-center justify-center text-amber-800 shadow-2xs" title="Commercial Hubs">
+                      <BuildingIcon size={10} />
                     </span>
-                    <span className="w-4 h-4 rounded-full bg-indigo-500/20 border border-indigo-600 flex items-center justify-center text-indigo-800 shadow-2xs text-[9px]" title="Residential Pockets">
-                      🏡
+                    <span className="w-4 h-4 rounded-full bg-indigo-500/10 border border-indigo-600/40 flex items-center justify-center text-indigo-800 shadow-2xs" title="Residential Pockets">
+                      <HomeIcon size={10} />
                     </span>
-                    <span className="w-4 h-4 rounded-full bg-purple-500/20 border border-purple-600 flex items-center justify-center text-purple-800 shadow-2xs text-[9px]" title="Industrial & Tech Corridors">
-                      🏭
+                    <span className="w-4 h-4 rounded-full bg-purple-500/10 border border-purple-600/40 flex items-center justify-center text-purple-800 shadow-2xs" title="Industrial & Tech Corridors">
+                      <FactoryIcon size={10} />
                     </span>
                   </div>
                 </div>
@@ -420,24 +427,26 @@ export default function LayerControlWidget({
                     <button
                       type="button"
                       onClick={() => setScopeHubsToRadius && setScopeHubsToRadius(true)}
-                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
+                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer flex items-center justify-center gap-1.5 ${
                         scopeHubsToRadius
                           ? 'bg-azure-600 text-white shadow-2xs'
                           : 'text-ink-600 hover:bg-white'
                       }`}
                     >
-                      📍 3.5km Catchment
+                      <MapPinIcon size={11} />
+                      <span>3.5km Catchment</span>
                     </button>
                     <button
                       type="button"
                       onClick={() => setScopeHubsToRadius && setScopeHubsToRadius(false)}
-                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
+                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer flex items-center justify-center gap-1.5 ${
                         !scopeHubsToRadius
                           ? 'bg-ink-950 text-white shadow-2xs'
                           : 'text-ink-600 hover:bg-white'
                       }`}
                     >
-                      🌐 Full City ({totalH3HexCount.toLocaleString()})
+                      <GlobeIcon size={11} />
+                      <span>Full City ({totalH3HexCount.toLocaleString()})</span>
                     </button>
                   </div>
                 </div>
@@ -469,50 +478,54 @@ export default function LayerControlWidget({
                     <button
                       type="button"
                       onClick={() => setSelectedHubTypeFilter && setSelectedHubTypeFilter('commercial')}
-                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
+                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer flex items-center justify-center gap-1 ${
                         selectedHubTypeFilter === 'commercial'
                           ? 'bg-amber-600 text-white shadow-2xs'
                           : 'text-ink-600 hover:bg-white'
                       }`}
                       title={`Commercial Hubs (${h3Counts.commercial})`}
                     >
-                      🏢 Comm
+                      <BuildingIcon size={10} />
+                      <span>Comm</span>
                     </button>
                     <button
                       type="button"
                       onClick={() => setSelectedHubTypeFilter && setSelectedHubTypeFilter('residential')}
-                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
+                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer flex items-center justify-center gap-1 ${
                         selectedHubTypeFilter === 'residential'
                           ? 'bg-indigo-600 text-white shadow-2xs'
                           : 'text-ink-600 hover:bg-white'
                       }`}
                       title={`Residential Pockets (${h3Counts.residential.toLocaleString()})`}
                     >
-                      🏡 Resid
+                      <HomeIcon size={10} />
+                      <span>Resid</span>
                     </button>
                     <button
                       type="button"
                       onClick={() => setSelectedHubTypeFilter && setSelectedHubTypeFilter('industrial')}
-                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
+                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer flex items-center justify-center gap-1 ${
                         selectedHubTypeFilter === 'industrial'
                           ? 'bg-purple-600 text-white shadow-2xs'
                           : 'text-ink-600 hover:bg-white'
                       }`}
                       title={`Tech & Industrial Corridors (${h3Counts.industrial})`}
                     >
-                      🏭 Tech
+                      <FactoryIcon size={10} />
+                      <span>Tech</span>
                     </button>
                     <button
                       type="button"
                       onClick={() => setSelectedHubTypeFilter && setSelectedHubTypeFilter('mixed')}
-                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
+                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer flex items-center justify-center gap-1 ${
                         selectedHubTypeFilter === 'mixed'
                           ? 'bg-cyan-600 text-white shadow-2xs'
                           : 'text-ink-600 hover:bg-white'
                       }`}
                       title={`Mixed-Use High-Streets (${h3Counts.mixed})`}
                     >
-                      ⚖️ Mixed
+                      <ScaleIcon size={10} />
+                      <span>Mixed</span>
                     </button>
                   </div>
                 </div>
@@ -533,7 +546,8 @@ export default function LayerControlWidget({
                       }`}
                       title="Color by Land Use Classification (Comm, Resid, Tech, Mixed)"
                     >
-                      <span>🎨</span> Land Use Types
+                      <LayersIcon size={11} />
+                      <span>Land Use Types</span>
                     </button>
                     <button
                       type="button"
@@ -545,7 +559,8 @@ export default function LayerControlWidget({
                       }`}
                       title="Color by Residential Index (Population, Built-up m², Volume m³)"
                     >
-                      <span>🏡</span> Residential Idx
+                      <HomeIcon size={11} />
+                      <span>Residential Idx</span>
                     </button>
                     <button
                       type="button"
@@ -557,7 +572,8 @@ export default function LayerControlWidget({
                       }`}
                       title="Color by Commercial Index (Daytime Workforce, Office Floor Area)"
                     >
-                      <span>🏢</span> Commercial Idx
+                      <BuildingIcon size={11} />
+                      <span>Commercial Idx</span>
                     </button>
                     <button
                       type="button"
@@ -569,7 +585,8 @@ export default function LayerControlWidget({
                       }`}
                       title="Color by Retail Footfall Synergy Score (0–100)"
                     >
-                      <span>⚡</span> Synergy Score
+                      <ZapIcon size={11} />
+                      <span>Synergy Score</span>
                     </button>
                   </div>
                 </div>
@@ -579,15 +596,15 @@ export default function LayerControlWidget({
                   <div className="bg-paper-50 border border-ink-950/[0.1] rounded-lg p-2 text-[10px] text-ink-950 space-y-1.5 shadow-2xs">
                     <div className="flex items-center justify-between gap-1 font-bold">
                       <div className="flex items-center gap-1.5 truncate">
-                        <span className={`p-1 rounded bg-white border text-[11px] shrink-0 ${
+                        <span className={`p-1 rounded bg-white border text-[11px] shrink-0 flex items-center justify-center ${
                           selectedHexagon.cls === 'commercial' ? 'border-amber-500/40 text-amber-700' :
                           selectedHexagon.cls === 'residential' ? 'border-indigo-500/40 text-indigo-700' :
                           selectedHexagon.cls === 'industrial' ? 'border-purple-500/40 text-purple-700' :
                           'border-cyan-500/40 text-cyan-700'
                         }`}>
-                          {selectedHexagon.cls === 'commercial' ? '🏢' :
-                           selectedHexagon.cls === 'residential' ? '🏡' :
-                           selectedHexagon.cls === 'industrial' ? '🏭' : '⚖️'}
+                          {selectedHexagon.cls === 'commercial' ? <BuildingIcon size={13} /> :
+                           selectedHexagon.cls === 'residential' ? <HomeIcon size={13} /> :
+                           selectedHexagon.cls === 'industrial' ? <FactoryIcon size={13} /> : <ScaleIcon size={13} />}
                         </span>
                         <span className="truncate">{selectedHexagon.ward || 'Bengaluru'}</span>
                       </div>
@@ -601,65 +618,83 @@ export default function LayerControlWidget({
 
                     <div className="flex items-center justify-between text-[9px] text-ink-500 font-mono">
                       <span>H3: {selectedHexagon.h.slice(0, 10)}...</span>
-                      <span className="text-azure-700 font-bold bg-white px-1 py-0.5 rounded border border-ink-950/[0.08]">
-                        Synergy: {selectedHexagon.syn_idx}/100
+                      <span className="text-azure-700 font-bold bg-white px-1.5 py-0.5 rounded border border-ink-950/[0.08] flex items-center gap-1">
+                        <ZapIcon size={10} className="text-azure-700" />
+                        <span>Synergy: {selectedHexagon.syn_idx}/100</span>
                       </span>
                     </div>
 
                     {/* Mini Index Progress Bars */}
-                    <div className="space-y-1 pt-1 border-t border-ink-950/[0.06]">
+                    <div className="space-y-1.5 pt-1.5 border-t border-ink-950/[0.06]">
                       <div>
-                        <div className="flex justify-between text-[9px]">
-                          <span className="text-indigo-800 font-semibold">🏡 Residential Index:</span>
+                        <div className="flex justify-between text-[9px] mb-0.5">
+                          <span className="text-indigo-800 font-semibold flex items-center gap-1">
+                            <HomeIcon size={10} className="text-indigo-800" />
+                            <span>Residential Index:</span>
+                          </span>
                           <span className="font-mono font-bold text-indigo-900">{selectedHexagon.res_idx}/100</span>
                         </div>
-                        <div className="w-full h-1 bg-paper-200 rounded-full overflow-hidden">
-                          <div className="bg-indigo-600 h-full rounded-full" style={{ width: `${Math.min(100, Math.max(4, selectedHexagon.res_idx))}%` }} />
+                        <div className="w-full h-1.5 bg-paper-200 rounded-full overflow-hidden">
+                          <div className="bg-gradient-to-r from-indigo-400 to-indigo-600 h-full rounded-full transition-all" style={{ width: `${Math.min(100, Math.max(4, selectedHexagon.res_idx))}%` }} />
                         </div>
                       </div>
                       <div>
-                        <div className="flex justify-between text-[9px]">
-                          <span className="text-amber-800 font-semibold">🏢 Commercial Index:</span>
+                        <div className="flex justify-between text-[9px] mb-0.5">
+                          <span className="text-amber-800 font-semibold flex items-center gap-1">
+                            <BuildingIcon size={10} className="text-amber-800" />
+                            <span>Commercial Index:</span>
+                          </span>
                           <span className="font-mono font-bold text-amber-900">{selectedHexagon.com_idx}/100</span>
                         </div>
-                        <div className="w-full h-1 bg-paper-200 rounded-full overflow-hidden">
-                          <div className="bg-amber-600 h-full rounded-full" style={{ width: `${Math.min(100, Math.max(4, selectedHexagon.com_idx))}%` }} />
+                        <div className="w-full h-1.5 bg-paper-200 rounded-full overflow-hidden">
+                          <div className="bg-gradient-to-r from-amber-400 to-amber-600 h-full rounded-full transition-all" style={{ width: `${Math.min(100, Math.max(4, selectedHexagon.com_idx))}%` }} />
                         </div>
                       </div>
                       <div>
-                        <div className="flex justify-between text-[9px]">
-                          <span className="text-azure-800 font-semibold">⚡ Synergy Index:</span>
+                        <div className="flex justify-between text-[9px] mb-0.5">
+                          <span className="text-azure-800 font-semibold flex items-center gap-1">
+                            <ZapIcon size={10} className="text-azure-800" />
+                            <span>Retail Synergy:</span>
+                          </span>
                           <span className="font-mono font-bold text-azure-900">{selectedHexagon.syn_idx}/100</span>
                         </div>
-                        <div className="w-full h-1 bg-paper-200 rounded-full overflow-hidden">
-                          <div className="bg-azure-600 h-full rounded-full" style={{ width: `${Math.min(100, Math.max(4, selectedHexagon.syn_idx))}%` }} />
+                        <div className="w-full h-1.5 bg-paper-200 rounded-full overflow-hidden">
+                          <div className="bg-gradient-to-r from-cyan-500 to-azure-600 h-full rounded-full transition-all" style={{ width: `${Math.min(100, Math.max(4, selectedHexagon.syn_idx))}%` }} />
                         </div>
                       </div>
                     </div>
 
                     {/* Numerical Data Grid */}
-                    <div className="grid grid-cols-2 gap-1 pt-1 border-t border-ink-950/[0.06] text-[9.5px]">
-                      <div>
-                        <span className="text-ink-400 block text-[8.5px]">Resident Pop:</span>
-                        <span className="font-bold text-ink-900 font-mono">{selectedHexagon.res_pop.toLocaleString()}</span>
+                    <div className="grid grid-cols-2 gap-1.5 pt-1.5 border-t border-ink-950/[0.06] text-[9.5px]">
+                      <div className="bg-white p-1.5 rounded border border-ink-950/[0.06]">
+                        <span className="text-ink-500 block text-[8px] uppercase tracking-wider font-semibold">Resident Pop:</span>
+                        <span className="font-bold text-ink-950 font-mono text-[10px]">{selectedHexagon.res_pop.toLocaleString()}</span>
                       </div>
-                      <div>
-                        <span className="text-ink-400 block text-[8.5px]">Daytime Workforce:</span>
-                        <span className="font-bold text-ink-900 font-mono">{selectedHexagon.com_workers ? selectedHexagon.com_workers.toLocaleString() : '—'}</span>
+                      <div className="bg-white p-1.5 rounded border border-ink-950/[0.06]">
+                        <span className="text-ink-500 block text-[8px] uppercase tracking-wider font-semibold">Daytime Workforce:</span>
+                        <span className="font-bold text-ink-950 font-mono text-[10px]">{selectedHexagon.com_workers ? selectedHexagon.com_workers.toLocaleString() : '0'}</span>
                       </div>
-                      <div>
-                        <span className="text-ink-400 block text-[8.5px]">Kids / Youth:</span>
-                        <span className="font-bold text-ink-900 font-mono">{selectedHexagon.kids}k / {selectedHexagon.youth}y</span>
+                      <div className="bg-white p-1.5 rounded border border-ink-950/[0.06]">
+                        <span className="text-ink-500 block text-[8px] uppercase tracking-wider font-semibold">Kids / Youth:</span>
+                        <span className="font-bold text-ink-950 font-mono text-[10px]">{selectedHexagon.kids} kids • {selectedHexagon.youth} youth</span>
                       </div>
-                      <div>
-                        <span className="text-ink-400 block text-[8.5px]">Office Built-up:</span>
-                        <span className="font-bold text-ink-900 font-mono">{selectedHexagon.off_m2 ? `${Math.round(selectedHexagon.off_m2).toLocaleString()} m²` : '—'}</span>
+                      <div className="bg-white p-1.5 rounded border border-ink-950/[0.06]">
+                        <span className="text-ink-500 block text-[8px] uppercase tracking-wider font-semibold">Office Built-up:</span>
+                        <span className="font-bold text-ink-950 font-mono text-[10px]">{selectedHexagon.off_m2 ? `${Math.round(selectedHexagon.off_m2).toLocaleString()} m²` : '0 m²'}</span>
+                      </div>
+                      <div className="bg-white p-1.5 rounded border border-ink-950/[0.06]">
+                        <span className="text-ink-500 block text-[8px] uppercase tracking-wider font-semibold">Residential Space:</span>
+                        <span className="font-bold text-ink-950 font-mono text-[10px]">{selectedHexagon.res_built_m2 ? `${Math.round(selectedHexagon.res_built_m2).toLocaleString()} m²` : '0 m²'}</span>
+                      </div>
+                      <div className="bg-white p-1.5 rounded border border-ink-950/[0.06]">
+                        <span className="text-ink-500 block text-[8px] uppercase tracking-wider font-semibold">Office Buildings:</span>
+                        <span className="font-bold text-ink-950 font-mono text-[10px]">{selectedHexagon.off_cnt ? `${selectedHexagon.off_cnt} buildings` : '0 buildings'}</span>
                       </div>
                     </div>
                   </div>
                 ) : (
                   <div className="bg-paper-100/70 border border-ink-950/[0.06] rounded-lg p-2 text-[9.5px] text-ink-500 leading-snug text-center">
-                    💡 Click any hexagon on the map to inspect its exact residential, commercial, office built-up and synergy metrics.
+                    Click any hexagon on the map to inspect its exact residential, commercial, office built-up and synergy metrics.
                   </div>
                 )}
               </div>
@@ -865,14 +900,14 @@ export default function LayerControlWidget({
                     className="w-full bg-white border border-ink-950/[0.12] rounded px-2 py-1.5 text-xs font-bold text-ink-950 focus:outline-none focus:ring-1 focus:ring-azure-500 cursor-pointer shadow-2xs"
                   >
                     <option value="ALL">All Categories & Hotspots ({totalComplementaryCount} Venues)</option>
-                    <option value="Metro Stations & Transit Terminals">🚇 Metro & Transit Terminals ({complementarySpectrums.find(s => s[0] === 'Metro Stations & Transit Terminals')?.[1] || 47})</option>
-                    <option value="Shopping Malls & Retail Hubs">🛍️ Shopping Malls & Retail Hubs ({complementarySpectrums.find(s => s[0] === 'Shopping Malls & Retail Hubs')?.[1] || 18})</option>
-                    <option value="Cinemas & Cultural Auditoriums">🎭 Cinemas & Cultural Auditoriums ({complementarySpectrums.find(s => s[0] === 'Cinemas & Cultural Auditoriums')?.[1] || 11})</option>
-                    <option value="Street Walkways & Buzzing Hotspots">🌟 Street Walkways & Hotspots ({complementarySpectrums.find(s => s[0] === 'Street Walkways & Buzzing Hotspots')?.[1] || 14})</option>
-                    <option value="Hot & Spicy Meals">🔥 Hot & Spicy Meals (Biryani) ({complementarySpectrums.find(s => s[0] === 'Hot & Spicy Meals')?.[1] || 21})</option>
-                    <option value="Youth Fast Casual">🍔 Youth Fast Casual (Burgers & Pizza) ({complementarySpectrums.find(s => s[0] === 'Youth Fast Casual')?.[1] || 80})</option>
-                    <option value="Late-Night Pubs & Breweries">🍺 Late-Night Pubs & Breweries ({complementarySpectrums.find(s => s[0] === 'Late-Night Pubs & Breweries')?.[1] || 17})</option>
-                    <option value="Evening Tiffin & Heritage Cafes">☕ Evening Tiffin & Heritage Cafes ({complementarySpectrums.find(s => s[0] === 'Evening Tiffin & Heritage Cafes')?.[1] || 53})</option>
+                    <option value="Metro Stations & Transit Terminals">Metro & Transit Terminals ({complementarySpectrums.find(s => s[0] === 'Metro Stations & Transit Terminals')?.[1] || 47})</option>
+                    <option value="Shopping Malls & Retail Hubs">Shopping Malls & Retail Hubs ({complementarySpectrums.find(s => s[0] === 'Shopping Malls & Retail Hubs')?.[1] || 18})</option>
+                    <option value="Cinemas & Cultural Auditoriums">Cinemas & Cultural Auditoriums ({complementarySpectrums.find(s => s[0] === 'Cinemas & Cultural Auditoriums')?.[1] || 11})</option>
+                    <option value="Street Walkways & Buzzing Hotspots">Street Walkways & Hotspots ({complementarySpectrums.find(s => s[0] === 'Street Walkways & Buzzing Hotspots')?.[1] || 14})</option>
+                    <option value="Hot & Spicy Meals">Hot & Spicy Meals (Biryani) ({complementarySpectrums.find(s => s[0] === 'Hot & Spicy Meals')?.[1] || 21})</option>
+                    <option value="Youth Fast Casual">Youth Fast Casual (Burgers & Pizza) ({complementarySpectrums.find(s => s[0] === 'Youth Fast Casual')?.[1] || 80})</option>
+                    <option value="Late-Night Pubs & Breweries">Late-Night Pubs & Breweries ({complementarySpectrums.find(s => s[0] === 'Late-Night Pubs & Breweries')?.[1] || 17})</option>
+                    <option value="Evening Tiffin & Heritage Cafes">Evening Tiffin & Heritage Cafes ({complementarySpectrums.find(s => s[0] === 'Evening Tiffin & Heritage Cafes')?.[1] || 53})</option>
                   </select>
                 </div>
 

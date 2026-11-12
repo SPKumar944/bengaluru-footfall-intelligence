@@ -474,6 +474,167 @@ export function BuildingIcon({ size = 18, className = "", ...props }) {
   );
 }
 
+export function HomeIcon({ size = 18, className = "", ...props }) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 16 16" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="1.2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      className={className}
+      {...props}
+    >
+      <g>
+        <path d="M2.5 6.5 L8 2 L13.5 6.5 V13 A1 1 0 0 1 12.5 14 H3.5 A1 1 0 0 1 2.5 13 Z"/>
+        <path d="M6 14 V9 H10 V14"/>
+      </g>
+    </svg>
+  );
+}
+
+export function FactoryIcon({ size = 18, className = "", ...props }) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 16 16" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="1.2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      className={className}
+      {...props}
+    >
+      <g>
+        <path d="M2 14 V6 L6 9 V6 L10 9 V3 L14 5 V14 Z"/>
+        <line x1="2" y1="14" x2="14" y2="14"/>
+        <circle cx="5" cy="11.5" r="0.75" fill="currentColor"/>
+        <circle cx="8" cy="11.5" r="0.75" fill="currentColor"/>
+        <circle cx="11" cy="11.5" r="0.75" fill="currentColor"/>
+      </g>
+    </svg>
+  );
+}
+
+export function ScaleIcon({ size = 18, className = "", ...props }) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 16 16" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="1.2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      className={className}
+      {...props}
+    >
+      <g>
+        <line x1="8" y1="2" x2="8" y2="14"/>
+        <line x1="2.5" y1="4.5" x2="13.5" y2="4.5"/>
+        <path d="M2.5 4.5 L1 9.5 C1.5 10.5 4.5 10.5 5 9.5 Z"/>
+        <path d="M13.5 4.5 L11 9.5 C11.5 10.5 14.5 10.5 15 9.5 Z"/>
+        <line x1="5.5" y1="14" x2="10.5" y2="14"/>
+      </g>
+    </svg>
+  );
+}
+
+export function ZapIcon({ size = 18, className = "", ...props }) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 16 16" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="1.2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      className={className}
+      {...props}
+    >
+      <g>
+        <polygon points="8.5 1.5 2 9 7.5 9 7.5 14.5 14 7 8.5 7 8.5 1.5"/>
+      </g>
+    </svg>
+  );
+}
+
+export function LayersIcon({ size = 18, className = "", ...props }) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 16 16" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="1.2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      className={className}
+      {...props}
+    >
+      <g>
+        <polygon points="8 2 14 5 8 8 2 5 8 2"/>
+        <path d="M2 8.5 L8 11.5 L14 8.5"/>
+        <path d="M2 12 L8 15 L14 12"/>
+      </g>
+    </svg>
+  );
+}
+
+export function MapPinIcon({ size = 18, className = "", ...props }) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 16 16" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="1.2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      className={className}
+      {...props}
+    >
+      <g>
+        <path d="M8 1.5 C5.239 1.5 3 3.739 3 6.5 C3 10.25 8 14.5 8 14.5 C8 14.5 13 10.25 13 6.5 C13 3.739 10.761 1.5 8 1.5 Z"/>
+        <circle cx="8" cy="6.5" r="2"/>
+      </g>
+    </svg>
+  );
+}
+
+export function GlobeIcon({ size = 18, className = "", ...props }) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 16 16" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="1.2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      className={className}
+      {...props}
+    >
+      <g>
+        <circle cx="8" cy="8" r="6"/>
+        <line x1="2" y1="8" x2="14" y2="8"/>
+        <ellipse cx="8" cy="8" rx="2.75" ry="6"/>
+      </g>
+    </svg>
+  );
+}
+
 
 export function getSpectrumIcon(category, props = {}) {
   switch (category) {
