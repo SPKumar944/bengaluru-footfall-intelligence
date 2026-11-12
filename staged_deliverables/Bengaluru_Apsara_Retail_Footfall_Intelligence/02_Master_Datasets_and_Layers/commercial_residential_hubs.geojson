@@ -1,0 +1,4614 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "title": "Bengaluru Commercial & Residential Hubs (Urban Pockets)",
+    "description": "Authoritative spatial polygon layers demarcating high-density commercial high streets / tech corridors vs affluent & high-density residential layouts.",
+    "total_pockets": 51,
+    "commercial_hubs": 22,
+    "residential_hubs": 29,
+    "generated_at": "2026-11-12T11:25:00+05:30"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_INDIRANAGAR_100FT",
+        "name": "Indiranagar 100ft Road & 12th Main High Street",
+        "hub_type": "commercial",
+        "locality": "Indiranagar",
+        "associated_store": "APSARA_BLR_02",
+        "category": "High Street Retail & Gourmet Dining",
+        "est_activity": 42000,
+        "daily_footfall": 52000,
+        "peak_window": "1:00 PM \u2013 3:30 PM & 7:30 PM \u2013 11:30 PM",
+        "synergy_score": 98,
+        "synergy_rationale": "Flagship fashion, cafes, and rooftop breweries create continuous pedestrian footfall; prime post-meal dessert impulse corridor.",
+        "dominant_profile": "Affluent Young Professionals, Tech Executives & Shoppers",
+        "anchors": [
+          "Toit Brewpub",
+          "Zara",
+          "Marks & Spencer",
+          "Glen's Bakehouse",
+          "Corner House",
+          "Starbucks"
+        ],
+        "summary": "Bengaluru's #1 lifestyle and dining high street with unmatched evening dessert demand.",
+        "centroid": [
+          77.6396,
+          12.9715
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.63288658872806,
+              12.969725769912325
+            ],
+            [
+              77.64946566832195,
+              12.96955743031162
+            ],
+            [
+              77.6491002209841,
+              12.97419107136095
+            ],
+            [
+              77.63376310293829,
+              12.97423394107926
+            ],
+            [
+              77.63288658872806,
+              12.969725769912325
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_INDIRANAGAR_CMH",
+        "name": "CMH Road & Indiranagar Metro Transit Commercial Hub",
+        "hub_type": "commercial",
+        "locality": "Indiranagar",
+        "associated_store": "APSARA_BLR_02",
+        "category": "Transit-Oriented Retail & Electronics District",
+        "est_activity": 28000,
+        "daily_footfall": 46000,
+        "peak_window": "11:00 AM \u2013 2:00 PM & 6:00 PM \u2013 9:30 PM",
+        "synergy_score": 93,
+        "synergy_rationale": "Massive daily commuter volume from Purple Line Metro station, jewellery stores, and electronics retail drives rapid grab-and-go walk-ins.",
+        "dominant_profile": "Daily Metro Commuters, Family Shoppers & Office Employees",
+        "anchors": [
+          "Indiranagar Metro Station",
+          "Tanishq",
+          "Croma",
+          "Reliance Digital",
+          "Kalyan Jewellers"
+        ],
+        "summary": "Dense transit retail arterial linking Indiranagar station directly to Old Madras Road.",
+        "centroid": [
+          77.639,
+          12.9785
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.645214,
+              12.977432
+            ],
+            [
+              77.643925,
+              12.979799
+            ],
+            [
+              77.641717,
+              12.982053
+            ],
+            [
+              77.637931,
+              12.981972
+            ],
+            [
+              77.63395,
+              12.981965
+            ],
+            [
+              77.633378,
+              12.979466
+            ],
+            [
+              77.633557,
+              12.977064
+            ],
+            [
+              77.636777,
+              12.975593
+            ],
+            [
+              77.640306,
+              12.974256
+            ],
+            [
+              77.643172,
+              12.975638
+            ],
+            [
+              77.645214,
+              12.977432
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_KORAMANGALA_5TH_BLOCK",
+        "name": "Koramangala 5th & 7th Block Gourmet High Street",
+        "hub_type": "commercial",
+        "locality": "Koramangala",
+        "associated_store": "APSARA_BLR_07",
+        "category": "Youth Fast-Casual & Nightlife District",
+        "est_activity": 38000,
+        "daily_footfall": 58000,
+        "peak_window": "1:00 PM \u2013 4:00 PM & 7:00 PM \u2013 12:00 AM",
+        "synergy_score": 99,
+        "synergy_rationale": "Epicenter of Bengaluru's startup, college, and casual dining scene; highest density of late-night dessert seekers in South Bangalore.",
+        "dominant_profile": "College Cohorts (JNC), Startup Founders, Young Couples",
+        "anchors": [
+          "Truffles",
+          "Empire Restaurant",
+          "The Black Pearl",
+          "Social Koramangala",
+          "Keventers"
+        ],
+        "summary": "Highest-velocity youth dining strip in South Bangalore with non-stop midnight footfall.",
+        "centroid": [
+          77.6234,
+          12.9342
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.61891774509668,
+              12.929835598696235
+            ],
+            [
+              77.62996885733,
+              12.929724419353992
+            ],
+            [
+              77.62980904645212,
+              12.940838016754068
+            ],
+            [
+              77.61958348645827,
+              12.940669956859843
+            ],
+            [
+              77.61891774509668,
+              12.929835598696235
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_KORAMANGALA_80FT",
+        "name": "Koramangala 80 Feet Road & Sony World Junction",
+        "hub_type": "commercial",
+        "locality": "Koramangala",
+        "associated_store": "APSARA_BLR_07",
+        "category": "Commercial Flagship & Showroom Spine",
+        "est_activity": 32000,
+        "daily_footfall": 44000,
+        "peak_window": "12:00 PM \u2013 3:30 PM & 6:30 PM \u2013 10:30 PM",
+        "synergy_score": 94,
+        "synergy_rationale": "High-visibility crossroads connecting Koramangala blocks with Inner Ring Road; showroom shoppers and corporate lunch crowd.",
+        "dominant_profile": "Corporate Professionals, Auto & Electronics Shoppers",
+        "anchors": [
+          "Sony Center",
+          "McDonald's",
+          "Fabindia",
+          "Kalyan Silks",
+          "Blue Tokai"
+        ],
+        "summary": "Major arterial junction connecting tech parks, dining corridors, and luxury residential.",
+        "centroid": [
+          77.628,
+          12.937
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.631648,
+              12.938294
+            ],
+            [
+              77.629576,
+              12.940878
+            ],
+            [
+              77.62713,
+              12.94291
+            ],
+            [
+              77.625356,
+              12.94115
+            ],
+            [
+              77.623442,
+              12.939401
+            ],
+            [
+              77.624699,
+              12.935829
+            ],
+            [
+              77.626258,
+              12.932714
+            ],
+            [
+              77.628711,
+              12.932165
+            ],
+            [
+              77.631232,
+              12.931928
+            ],
+            [
+              77.631765,
+              12.935016
+            ],
+            [
+              77.631648,
+              12.938294
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_HSR_27TH_MAIN",
+        "name": "HSR Layout 27th Main Commercial Spine",
+        "hub_type": "commercial",
+        "locality": "HSR Layout",
+        "associated_store": "APSARA_BLR_01",
+        "category": "High Street Food & Retail Strip",
+        "est_activity": 36000,
+        "daily_footfall": 48000,
+        "peak_window": "1:00 PM \u2013 3:30 PM & 7:00 PM \u2013 11:00 PM",
+        "synergy_score": 97,
+        "synergy_rationale": "The dining lifeline of HSR Layout; combines heavy weekday tech-worker lunches with weekend family dining and dessert strolling.",
+        "dominant_profile": "Tech Startup Workforce, Affluent Nuclear Families, College Youth",
+        "anchors": [
+          "Meghana Foods",
+          "Nagarjuna",
+          "Third Wave Coffee",
+          "Naturals Ice Cream",
+          "Brik Oven"
+        ],
+        "summary": "Premier South-East Bangalore high street with massive post-spicy meal ice cream capture.",
+        "centroid": [
+          77.6373,
+          12.9112
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.6305887001499,
+              12.909425298739867
+            ],
+            [
+              77.64716382761047,
+              12.909257873523783
+            ],
+            [
+              77.64679820095809,
+              12.913891521641258
+            ],
+            [
+              77.63146474680616,
+              12.913933544702694
+            ],
+            [
+              77.6305887001499,
+              12.909425298739867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_HSR_19TH_MAIN",
+        "name": "HSR Layout 19th & 14th Main Startup Tech Hub",
+        "hub_type": "commercial",
+        "locality": "HSR Layout",
+        "associated_store": "APSARA_BLR_01",
+        "category": "Co-Working & Startup Office Corridor",
+        "est_activity": 29000,
+        "daily_footfall": 32000,
+        "peak_window": "12:30 PM \u2013 4:00 PM & 6:00 PM \u2013 9:00 PM",
+        "synergy_score": 90,
+        "synergy_rationale": "Venture-backed startup offices, incubators, and co-working spaces drive strong afternoon beverage and dessert group orders.",
+        "dominant_profile": "Software Engineers, Product Managers, Founders",
+        "anchors": [
+          "WeWork HSR",
+          "BHIVE Workspace",
+          "Awfis",
+          "Starbucks HSR",
+          "Keventers"
+        ],
+        "summary": "Dense startup ecosystem generating heavy corporate team dessert and afternoon walkouts.",
+        "centroid": [
+          77.643,
+          12.915
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.64737,
+              12.917459
+            ],
+            [
+              77.64496,
+              12.918891
+            ],
+            [
+              77.642094,
+              12.919714
+            ],
+            [
+              77.639944,
+              12.917554
+            ],
+            [
+              77.637628,
+              12.915352
+            ],
+            [
+              77.639046,
+              12.912775
+            ],
+            [
+              77.640833,
+              12.910699
+            ],
+            [
+              77.643741,
+              12.911143
+            ],
+            [
+              77.646736,
+              12.911878
+            ],
+            [
+              77.647438,
+              12.914709
+            ],
+            [
+              77.64737,
+              12.917459
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_JAYANAGAR_4TH_BLOCK",
+        "name": "Jayanagar 4th Block Shopping Complex & 11th Main",
+        "hub_type": "commercial",
+        "locality": "Jayanagar",
+        "associated_store": "APSARA_BLR_12",
+        "category": "Heritage Family Market & Modern High Street",
+        "est_activity": 31000,
+        "daily_footfall": 65000,
+        "peak_window": "4:00 PM \u2013 10:30 PM (Evening Shopping Peak)",
+        "synergy_score": 98,
+        "synergy_rationale": "South Bangalore's ultimate family retail hub; multi-generational shopping rituals followed by ice cream at Cool Joint and Apsara.",
+        "dominant_profile": "Multi-generational Families, Shoppers, Students (National College)",
+        "anchors": [
+          "Jayanagar BDA Complex",
+          "Cool Joint",
+          "Maiyas",
+          "Nalli Silks",
+          "Costa Coffee"
+        ],
+        "summary": "Historic high-footfall family retail district with unmatched weekend evening crowds.",
+        "centroid": [
+          77.5822,
+          12.9288
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.5777185956591,
+              12.924434523641587
+            ],
+            [
+              77.58876983391718,
+              12.924325133329667
+            ],
+            [
+              77.58860814694499,
+              12.935439056888821
+            ],
+            [
+              77.57838251620278,
+              12.93526933169674
+            ],
+            [
+              77.5777185956591,
+              12.924434523641587
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_BASAVANAGUDI_GANDHI_BAZAAR",
+        "name": "Gandhi Bazaar & DVG Road Heritage Market Corridor",
+        "hub_type": "commercial",
+        "locality": "Basavanagudi",
+        "associated_store": "APSARA_BLR_13",
+        "category": "Heritage Pedestrian Market & Traditional Street Food",
+        "est_activity": 24000,
+        "daily_footfall": 54000,
+        "peak_window": "4:30 PM \u2013 10:30 PM (Evening Walker Peak)",
+        "synergy_score": 96,
+        "synergy_rationale": "Centuries-old pedestrian shopping promenade; high evening walker density, cultural pride, and immense vegetarian dessert appetite.",
+        "dominant_profile": "Traditional Kannadiga Families, Heritage Food Walkers, College Youth",
+        "anchors": [
+          "Vidyarthi Bhavan",
+          "Subbamma Stores",
+          "Mahalakshmi Tiffin Room",
+          "Apsara Basavanagudi"
+        ],
+        "summary": "Iconic cultural and food district where evening ice cream strolls are a decades-old family ritual.",
+        "centroid": [
+          77.5705,
+          12.9445
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.574706,
+              12.945223
+            ],
+            [
+              77.573173,
+              12.947653
+            ],
+            [
+              77.571707,
+              12.950356
+            ],
+            [
+              77.569604,
+              12.949451
+            ],
+            [
+              77.567588,
+              12.949157
+            ],
+            [
+              77.566882,
+              12.946572
+            ],
+            [
+              77.566294,
+              12.943777
+            ],
+            [
+              77.567968,
+              12.941513
+            ],
+            [
+              77.569293,
+              12.938644
+            ],
+            [
+              77.571445,
+              12.939274
+            ],
+            [
+              77.573412,
+              12.939843
+            ],
+            [
+              77.573928,
+              12.942537
+            ],
+            [
+              77.574706,
+              12.945223
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_JP_NAGAR_24TH_MAIN",
+        "name": "JP Nagar 24th Main Commercial District (Phases 2 & 7)",
+        "hub_type": "commercial",
+        "locality": "JP Nagar",
+        "associated_store": "APSARA_BLR_03",
+        "category": "Neighborhood High Street & Dining Hub",
+        "est_activity": 26000,
+        "daily_footfall": 41000,
+        "peak_window": "1:00 PM \u2013 3:30 PM & 7:00 PM \u2013 10:30 PM",
+        "synergy_score": 93,
+        "synergy_rationale": "High-density neighborhood dining strip serving affluent residential phases; dense concentration of bakeries, cafes, and restaurants.",
+        "dominant_profile": "Established Resident Families, Software Engineers, Retired Executives",
+        "anchors": [
+          "Brewsky",
+          "Taaza Thindi",
+          "Polar Bear",
+          "Naturals",
+          "California Burrito"
+        ],
+        "summary": "Primary lifestyle corridor for South Bangalore's affluent planned residential phases.",
+        "centroid": [
+          77.5839,
+          12.9059
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.57718901003192,
+              12.904123475337668
+            ],
+            [
+              77.59376449744332,
+              12.903959501946625
+            ],
+            [
+              77.5933978586004,
+              12.90859326428571
+            ],
+            [
+              77.57806409598615,
+              12.908632088384028
+            ],
+            [
+              77.57718901003192,
+              12.904123475337668
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_WHITEFIELD_ITPL_EPIP",
+        "name": "Whitefield ITPL & EPIP Tech-Corporate Corridor",
+        "hub_type": "commercial",
+        "locality": "Whitefield",
+        "associated_store": "APSARA_BLR_04",
+        "category": "Corporate IT Hub & Premium Mall District",
+        "est_activity": 85000,
+        "daily_footfall": 72000,
+        "peak_window": "12:30 PM \u2013 3:30 PM & 6:30 PM \u2013 10:00 PM",
+        "synergy_score": 95,
+        "synergy_rationale": "Massive daytime IT workforce combined with Nexus Shantiniketan mall entertainment traffic drives both corporate lunch and weekend family footfall.",
+        "dominant_profile": "Global IT Professionals, Expat Families, Corporate Teams",
+        "anchors": [
+          "ITPL",
+          "Nexus Shantiniketan",
+          "TCS",
+          "SAP Labs",
+          "Forum South Bengaluru"
+        ],
+        "summary": "India's pioneer tech corridor generating immense corporate daytime and weekend retail spend.",
+        "centroid": [
+          77.7483,
+          12.9694
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.74158642557487,
+              12.967629420108365
+            ],
+            [
+              77.75816387636354,
+              12.96745418538063
+            ],
+            [
+              77.75780047151711,
+              12.972087582330138
+            ],
+            [
+              77.74246481154431,
+              12.972136842492153
+            ],
+            [
+              77.74158642557487,
+              12.967629420108365
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_BELLANDUR_ORR_ECOSPACE",
+        "name": "Bellandur Outer Ring Road (ORR) IT Corridor & Ecospace",
+        "hub_type": "commercial",
+        "locality": "Bellandur",
+        "associated_store": "APSARA_BLR_06",
+        "category": "High-Density IT Corridor & Corporate Parks",
+        "est_activity": 110000,
+        "daily_footfall": 95000,
+        "peak_window": "12:00 PM \u2013 4:00 PM & 6:30 PM \u2013 9:30 PM",
+        "synergy_score": 96,
+        "synergy_rationale": "Highest daytime office worker density in Karnataka; massive lunch break, evening tea break, and group catering dessert demand.",
+        "dominant_profile": "Fortune 500 Tech Employees, Financial Analysts, Young Migrants",
+        "anchors": [
+          "RMZ Ecospace",
+          "RMZ Ecoworld",
+          "Intel",
+          "Cisco",
+          "Central Mall Bellandur"
+        ],
+        "summary": "Mega tech corridor driving unrivaled corporate weekday volume and team orders.",
+        "centroid": [
+          77.6749,
+          12.9247
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.6692214196695,
+              12.919296070449988
+            ],
+            [
+              77.6830341494075,
+              12.91915447491502
+            ],
+            [
+              77.6828372388737,
+              12.933045948918226
+            ],
+            [
+              77.67005615649407,
+              12.932838345494506
+            ],
+            [
+              77.6692214196695,
+              12.919296070449988
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_MALLESHWARAM_8TH_CROSS",
+        "name": "Malleshwaram 8th Cross & Sampige Road Heritage Strip",
+        "hub_type": "commercial",
+        "locality": "Malleshwaram",
+        "associated_store": "APSARA_BLR_09",
+        "category": "Traditional Shopping Promenade & Food Heritage",
+        "est_activity": 27000,
+        "daily_footfall": 62000,
+        "peak_window": "4:00 PM \u2013 10:00 PM (Evening Footfall Peak)",
+        "synergy_score": 97,
+        "synergy_rationale": "High-density shopping street with dense foot traffic for jewellery, silk sarees, and festive shopping; iconic CTR tiffin crowd converts directly into dessert sales.",
+        "dominant_profile": "Traditional Multi-gen Families, Heritage Food Enthusiasts, Women Shoppers",
+        "anchors": [
+          "CTR (Shri Sagar)",
+          "Veena Stores",
+          "8th Cross Shopping Street",
+          "Sampige Theatre Mall"
+        ],
+        "summary": "North-West Bangalore's crown jewel of traditional retail footfall and evening walking culture.",
+        "centroid": [
+          77.5685,
+          13.0027
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.56178566771261,
+              13.00092357579001
+            ],
+            [
+              77.57836775817141,
+              13.00075937790648
+            ],
+            [
+              77.57800103929755,
+              13.005393168197005
+            ],
+            [
+              77.56266116452723,
+              13.005432199196713
+            ],
+            [
+              77.56178566771261,
+              13.00092357579001
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_HENNUR_KOTHANUR_MAIN",
+        "name": "Hennur Main Road & Kothanur Commercial High Street",
+        "hub_type": "commercial",
+        "locality": "Hennur / Kothanur",
+        "associated_store": "APSARA_BLR_05",
+        "category": "Emerging Growth Corridor & Lifestyle Retail",
+        "est_activity": 21000,
+        "daily_footfall": 34000,
+        "peak_window": "5:30 PM \u2013 10:30 PM (Evening Family Outings)",
+        "synergy_score": 91,
+        "synergy_rationale": "Booming residential highway connecting ORR to international airport; rapidly filling with multi-cuisine dining, hypermarkets, and young family dessert parlors.",
+        "dominant_profile": "Airport Corridor Commuters, Gated Community Families, Expat Groups",
+        "anchors": [
+          "Byg Brewski Hennur",
+          "Decathlon Hennur",
+          "Bio Miracle Mall",
+          "The Fisherman's Wharf"
+        ],
+        "summary": "Fastest-growing North-East arterial with expanding family dining and leisure footprints.",
+        "centroid": [
+          77.648,
+          13.058
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.651939,
+              13.059028
+            ],
+            [
+              77.649921,
+              13.062251
+            ],
+            [
+              77.647472,
+              13.064888
+            ],
+            [
+              77.645481,
+              13.063091
+            ],
+            [
+              77.643344,
+              13.061324
+            ],
+            [
+              77.644436,
+              13.05707
+            ],
+            [
+              77.645877,
+              13.053301
+            ],
+            [
+              77.648432,
+              13.052365
+            ],
+            [
+              77.651078,
+              13.051778
+            ],
+            [
+              77.651846,
+              13.055254
+            ],
+            [
+              77.651939,
+              13.059028
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_YELAHANKA_NEW_TOWN",
+        "name": "Yelahanka New Town (Major Sandeep Unnikrishnan Rd)",
+        "hub_type": "commercial",
+        "locality": "Yelahanka",
+        "associated_store": "APSARA_BLR_08",
+        "category": "Planned Township Commercial Center",
+        "est_activity": 24000,
+        "daily_footfall": 42000,
+        "peak_window": "5:00 PM \u2013 10:30 PM (Evening Leisure Peak)",
+        "synergy_score": 92,
+        "synergy_rationale": "Spacious planned layout with high school and academy density; evening parks and dining venues draw steady middle-class family dessert crowds.",
+        "dominant_profile": "Defense & Public Sector Officers, Aviation Tech Families, Students",
+        "anchors": [
+          "RMZ Galleria Mall",
+          "Yelahanka BDA Complex",
+          "Udupi Grand",
+          "KFC Yelahanka"
+        ],
+        "summary": "Self-contained planned northern satellite commercial center with loyal family patronage.",
+        "centroid": [
+          77.5952,
+          13.0997
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.59071381985316,
+              13.095335638535099
+            ],
+            [
+              77.60177251444412,
+              13.095224271084472
+            ],
+            [
+              77.60161279206625,
+              13.10633798325738
+            ],
+            [
+              77.59138020544026,
+              13.106170093852963
+            ],
+            [
+              77.59071381985316,
+              13.095335638535099
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_VIDYARANYAPURA_MAIN",
+        "name": "Vidyaranyapura Main Road Commercial Corridor",
+        "hub_type": "commercial",
+        "locality": "Vidyaranyapura",
+        "associated_store": "APSARA_BLR_10",
+        "category": "Dense Neighborhood Retail & Fast Food Spine",
+        "est_activity": 19000,
+        "daily_footfall": 36000,
+        "peak_window": "5:00 PM \u2013 10:00 PM (Evening Neighborhood Footfall)",
+        "synergy_score": 90,
+        "synergy_rationale": "High-density linear bazaar serving BEL, HMT, and residential blocks; street food vendors and bakeries create steady post-dinner dessert demand.",
+        "dominant_profile": "PSU Retirees, Nuclear Families, Local College Youth",
+        "anchors": [
+          "BEL Circle Complex",
+          "Vidyaranyapura Bus Stand Market",
+          "Nandhini Deluxe",
+          "Apsara Vidyaranyapura"
+        ],
+        "summary": "Bustling community retail spine with high pedestrian frequency and local brand loyalty.",
+        "centroid": [
+          77.558,
+          13.0695
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.561634,
+              13.068876
+            ],
+            [
+              77.56127,
+              13.072412
+            ],
+            [
+              77.560319,
+              13.075609
+            ],
+            [
+              77.557972,
+              13.074829
+            ],
+            [
+              77.555518,
+              13.074131
+            ],
+            [
+              77.554712,
+              13.070065
+            ],
+            [
+              77.554386,
+              13.066282
+            ],
+            [
+              77.556103,
+              13.064501
+            ],
+            [
+              77.558034,
+              13.062986
+            ],
+            [
+              77.56005,
+              13.065674
+            ],
+            [
+              77.561634,
+              13.068876
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_BANASHANKARI_3RD_STAGE",
+        "name": "Banashankari 3rd Stage (Kathriguppe & BDA Complex) Commercial Hub",
+        "hub_type": "commercial",
+        "locality": "Banashankari",
+        "associated_store": "APSARA_BLR_11",
+        "category": "Neighborhood Commercial Center & Transit Node",
+        "est_activity": 31000,
+        "daily_footfall": 51000,
+        "peak_window": "4:30 PM \u2013 10:30 PM (Evening Market Peak)",
+        "synergy_score": 94,
+        "synergy_rationale": "Dense commercial junction connecting Banashankari to Ring Road; massive retail shopping and dining footprint serving South-West Bangalore.",
+        "dominant_profile": "Traditional Kannadiga Families, Transit Commuters, College Students (PES)",
+        "anchors": [
+          "Banashankari BDA Complex",
+          "Kamath Bugle Rock",
+          "Nandhana Palace",
+          "Pizza Hut Kathriguppe"
+        ],
+        "summary": "Major South-West retail nexus blending transit traffic with deep family residential spending.",
+        "centroid": [
+          77.5458,
+          12.9245
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.54131933644031,
+              12.920133578876097
+            ],
+            [
+              77.55237070203711,
+              12.920025764161961
+            ],
+            [
+              77.55220736266467,
+              12.931139970796517
+            ],
+            [
+              77.54198165446866,
+              12.930968779075865
+            ],
+            [
+              77.54131933644031,
+              12.920133578876097
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_MG_ROAD_CBD",
+        "name": "MG Road / Brigade Road / Church Street Central Business District",
+        "hub_type": "commercial",
+        "locality": "CBD / Central",
+        "associated_store": null,
+        "category": "Central Business District & Iconic Tourist High Street",
+        "est_activity": 95000,
+        "daily_footfall": 120000,
+        "peak_window": "1:00 PM \u2013 11:30 PM (All-Day Footfall Magnet)",
+        "synergy_score": 99,
+        "synergy_rationale": "Bengaluru's legendary pedestrian promenade and nightlife center; Church Street weekend pedestrianization creates off-the-charts ice cream impulse buying.",
+        "dominant_profile": "Tourists, Cosmopolitan Youth, Expats, Corporate Executives",
+        "anchors": [
+          "Blossom Book House",
+          "Empire Church Street",
+          "Hard Rock Cafe",
+          "Metro MG Road Station"
+        ],
+        "summary": "The premier citywide entertainment spine with unmatched pedestrian density.",
+        "centroid": [
+          77.6066,
+          12.973
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.60058422267414,
+              12.969357114225147
+            ],
+            [
+              77.61532155533021,
+              12.96920936400359
+            ],
+            [
+              77.61504993265375,
+              12.978472160614649
+            ],
+            [
+              77.60141504897499,
+              12.978383106162578
+            ],
+            [
+              77.60058422267414,
+              12.969357114225147
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_ELECTRONIC_CITY_PHASE_1",
+        "name": "Electronic City Phase 1 & Neeladri Road IT Hub",
+        "hub_type": "commercial",
+        "locality": "Electronic City",
+        "associated_store": null,
+        "category": "Corporate IT Hub & Young Resident High Street",
+        "est_activity": 125000,
+        "daily_footfall": 85000,
+        "peak_window": "12:00 PM \u2013 3:30 PM & 7:00 PM \u2013 11:00 PM",
+        "synergy_score": 93,
+        "synergy_rationale": "Global tech campuses (Infosys, Wipro) flank Neeladri Road high street; tech employees dine out late and drive massive weekend food delivery.",
+        "dominant_profile": "IT Engineers, Young Migrant Batchelors, Nuclear Tech Families",
+        "anchors": [
+          "Infosys Campus",
+          "Wipro EC",
+          "Neeladri High Street",
+          "The Oterra Hotel"
+        ],
+        "summary": "South Bangalore's massive technology hub with dedicated youth lifestyle strip.",
+        "centroid": [
+          77.6589,
+          12.8439
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.65322443714018,
+              12.83849508542062
+            ],
+            [
+              77.66703292285936,
+              12.838355200400887
+            ],
+            [
+              77.66683428026516,
+              12.852246899310916
+            ],
+            [
+              77.65405717306466,
+              12.852037706187307
+            ],
+            [
+              77.65322443714018,
+              12.83849508542062
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_MARATHAHALLI_ORR",
+        "name": "Marathahalli Multiplex & Outer Ring Road Commercial Hub",
+        "hub_type": "commercial",
+        "locality": "Marathahalli",
+        "associated_store": null,
+        "category": "Factory Outlet Hub & Transit Exchange",
+        "est_activity": 48000,
+        "daily_footfall": 75000,
+        "peak_window": "3:00 PM \u2013 10:30 PM (Weekend Shopping Surge)",
+        "synergy_score": 92,
+        "synergy_rationale": "Famous discount brand outlets and cinema multiplexes generate heavy foot traffic across Eastern Bangalore tech corridors.",
+        "dominant_profile": "Bargain Shoppers, Cinemagoers, Young Tech Workers",
+        "anchors": [
+          "Kalamandir Marathahalli",
+          "Innovative Multiplex",
+          "Brand Factory",
+          "Meghana Foods"
+        ],
+        "summary": "High-volume East Bangalore shopping and entertainment crossroads.",
+        "centroid": [
+          77.7,
+          12.9552
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.69551587668214,
+              12.95083765889148
+            ],
+            [
+              77.70656722242211,
+              12.950723054457756
+            ],
+            [
+              77.70641099703894,
+              12.961836023252044
+            ],
+            [
+              77.69618513278925,
+              12.961671151596796
+            ],
+            [
+              77.69551587668214,
+              12.95083765889148
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_KALYAN_NAGAR_80FT",
+        "name": "Kalyan Nagar / HRBR Layout 80ft Road High Street",
+        "hub_type": "commercial",
+        "locality": "Kalyan Nagar",
+        "associated_store": null,
+        "category": "Gourmet Dining & Lifestyle High Street",
+        "est_activity": 25000,
+        "daily_footfall": 42000,
+        "peak_window": "6:00 PM \u2013 11:30 PM (Evening Dining Hub)",
+        "synergy_score": 95,
+        "synergy_rationale": "Known as the 'Indiranagar of North Bangalore'; tree-lined food street packed with Korean bakeries, cafes, and late-night dessert joints.",
+        "dominant_profile": "Cosmopolitan Families, College Students, Expat Communities",
+        "anchors": [
+          "Truffles Kalyan Nagar",
+          "Stories Brewery",
+          "The Local",
+          "Corner House Kalyan Nagar"
+        ],
+        "summary": "North-East Bengaluru's premier food and leisure high street with heavy evening crowds.",
+        "centroid": [
+          77.6421,
+          13.0149
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.63761527479694,
+              13.01053645256851
+            ],
+            [
+              77.64866978291344,
+              13.010423795476342
+            ],
+            [
+              77.64851147205209,
+              13.021537192980265
+            ],
+            [
+              77.63828272924951,
+              13.02137050647741
+            ],
+            [
+              77.63761527479694,
+              13.01053645256851
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_RAJAJINAGAR_DR_RAJKUMAR",
+        "name": "Rajajinagar Dr. Rajkumar Road & Orion Mall Node",
+        "hub_type": "commercial",
+        "locality": "Rajajinagar",
+        "associated_store": null,
+        "category": "Premium Mall, Office Tower & Healthcare Hub",
+        "est_activity": 45000,
+        "daily_footfall": 68000,
+        "peak_window": "2:00 PM \u2013 10:30 PM (Mall & Office Weekend Surges)",
+        "synergy_score": 96,
+        "synergy_rationale": "Orion Mall lake promenade and Brigade Gateway offices create steady high-spending family leisure and dessert traffic.",
+        "dominant_profile": "Affluent Traditional Families, Corporate Employees, Mall Shoppers",
+        "anchors": [
+          "Orion Mall",
+          "World Trade Center Bangalore",
+          "Manipal Hospital",
+          "Sheraton Grand"
+        ],
+        "summary": "High-capital commercial development anchoring North-West Bangalore retail.",
+        "centroid": [
+          77.5519,
+          12.9972
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.54741730738071,
+              12.992834062111063
+            ],
+            [
+              77.55847182641374,
+              12.992725392275071
+            ],
+            [
+              77.55830933692587,
+              13.00383950535924
+            ],
+            [
+              77.54808068646744,
+              13.003669107692001
+            ],
+            [
+              77.54741730738071,
+              12.992834062111063
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "COMM_BTM_LAYOUT_100FT",
+        "name": "BTM Layout 100ft Road & 7th Main Commercial Corridor",
+        "hub_type": "commercial",
+        "locality": "BTM Layout",
+        "associated_store": null,
+        "category": "Student Fast Food & Coaching Institute Hub",
+        "est_activity": 28000,
+        "daily_footfall": 49000,
+        "peak_window": "5:00 PM \u2013 11:00 PM (Student Evening Rush)",
+        "synergy_score": 94,
+        "synergy_rationale": "Extremely high concentration of coaching centers, IT job seekers, and affordable eateries; dessert parlors enjoy relentless small-group footfall.",
+        "dominant_profile": "Competitive Exam Students, IT Trainees, Young Techies",
+        "anchors": [
+          "Udupi Grand BTM",
+          "Empire BTM",
+          "Naturals Ice Cream",
+          "BTM Lake Walkway"
+        ],
+        "summary": "Student and coaching capital of South Bangalore with constant evening snacking traffic.",
+        "centroid": [
+          77.61,
+          12.9165
+        ],
+        "theme_color": "#f97316",
+        "fill_color": [
+          249,
+          115,
+          22,
+          50
+        ],
+        "line_color": [
+          234,
+          88,
+          12,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.614013,
+              12.917924
+            ],
+            [
+              77.611807,
+              12.920567
+            ],
+            [
+              77.609182,
+              12.922629
+            ],
+            [
+              77.607205,
+              12.920761
+            ],
+            [
+              77.605077,
+              12.918901
+            ],
+            [
+              77.606369,
+              12.915212
+            ],
+            [
+              77.608002,
+              12.912004
+            ],
+            [
+              77.610669,
+              12.911485
+            ],
+            [
+              77.613416,
+              12.911293
+            ],
+            [
+              77.614067,
+              12.914517
+            ],
+            [
+              77.614013,
+              12.917924
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_INDIRANAGAR_DEFENCE_COLONY",
+        "name": "Indiranagar Defence Colony & Leafy Enclave",
+        "hub_type": "residential",
+        "locality": "Indiranagar",
+        "associated_store": "APSARA_BLR_02",
+        "category": "Ultra-Affluent Colonial & Executive Enclave",
+        "est_activity": 28000,
+        "household_density": "High (Upper-Tier Residential)",
+        "affluence_tier": "Ultra-High",
+        "family_kids_density": 88,
+        "peak_window": "6:30 PM \u2013 10:30 PM (Evening Walks & Family Dinner)",
+        "synergy_score": 97,
+        "synergy_rationale": "High per-capita disposable income; residents walk to 100ft Rd and 12th Main for premium artisanal ice cream treats.",
+        "dominant_profile": "Retired Armed Forces Officers, C-Suite Tech Leaders, Old Bangalore Elites",
+        "anchors": [
+          "Defence Colony Park",
+          "Indiranagar Club",
+          "Spurthy Hospital",
+          "Leafy Tree Canopies"
+        ],
+        "summary": "One of Bangalore's most prestigious and highest-spending residential neighbourhoods.",
+        "centroid": [
+          77.643,
+          12.975
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.647971,
+              12.975854
+            ],
+            [
+              77.646422,
+              12.978282
+            ],
+            [
+              77.644656,
+              12.980688
+            ],
+            [
+              77.642054,
+              12.980226
+            ],
+            [
+              77.639609,
+              12.979575
+            ],
+            [
+              77.638632,
+              12.976944
+            ],
+            [
+              77.637555,
+              12.974064
+            ],
+            [
+              77.639758,
+              12.971891
+            ],
+            [
+              77.641344,
+              12.969312
+            ],
+            [
+              77.643946,
+              12.969774
+            ],
+            [
+              77.646391,
+              12.970425
+            ],
+            [
+              77.647368,
+              12.973056
+            ],
+            [
+              77.647971,
+              12.975854
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_INDIRANAGAR_HAL_STAGE_2_3",
+        "name": "HAL 2nd & 3rd Stage Planned Residential Layout",
+        "hub_type": "residential",
+        "locality": "Indiranagar",
+        "associated_store": "APSARA_BLR_02",
+        "category": "Planned Family Layout & Modern Apartments",
+        "est_activity": 36000,
+        "household_density": "Very High",
+        "affluence_tier": "High",
+        "family_kids_density": 92,
+        "peak_window": "6:00 PM \u2013 10:00 PM (Family Leisure & Dessert Walks)",
+        "synergy_score": 96,
+        "synergy_rationale": "Dense family catchment with top ICSE/CBSE schools nearby; steady weekend evening walking traffic into Apsara Indiranagar.",
+        "dominant_profile": "Nuclear Tech Families, Senior Defense Personnel, School Children",
+        "anchors": [
+          "National Public School (NPS) Indiranagar",
+          "HAL Hospital",
+          "Kodihalli Playgrounds"
+        ],
+        "summary": "High-density affluent family residential heartland adjacent to 100ft Road.",
+        "centroid": [
+          77.647,
+          12.966
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.652898,
+              12.966
+            ],
+            [
+              77.651411,
+              12.968782
+            ],
+            [
+              77.650083,
+              12.971832
+            ],
+            [
+              77.647,
+              12.97127
+            ],
+            [
+              77.644185,
+              12.971325
+            ],
+            [
+              77.642589,
+              12.968782
+            ],
+            [
+              77.641102,
+              12.966
+            ],
+            [
+              77.642821,
+              12.963365
+            ],
+            [
+              77.643917,
+              12.960168
+            ],
+            [
+              77.647,
+              12.960437
+            ],
+            [
+              77.649815,
+              12.960675
+            ],
+            [
+              77.651179,
+              12.963365
+            ],
+            [
+              77.652898,
+              12.966
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_INDIRANAGAR_APPAREDDIPALYA",
+        "name": "Appareddipalya & Doopanahalli Residential Pocket",
+        "hub_type": "residential",
+        "locality": "Indiranagar",
+        "associated_store": "APSARA_BLR_02",
+        "category": "Dense Urban Residential & Apartment Enclave",
+        "est_activity": 31000,
+        "household_density": "Extremely High",
+        "affluence_tier": "Upper-Middle",
+        "family_kids_density": 89,
+        "peak_window": "7:00 PM \u2013 11:00 PM (Late Evening Walkouts)",
+        "synergy_score": 94,
+        "synergy_rationale": "Directly behind Corner House and 100ft Road; residents walk down to 8th Cross and main road for late evening ice cream.",
+        "dominant_profile": "Young Working Tenants, Long-time Residents, Student Groups",
+        "anchors": [
+          "Corner House 8th Cross",
+          "Appareddipalya Park",
+          "Shri Krishna Temple"
+        ],
+        "summary": "Compact, walkable residential pocket providing continuous walk-in ice cream customers.",
+        "centroid": [
+          77.636,
+          12.971
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.639831,
+              12.972359
+            ],
+            [
+              77.637957,
+              12.974264
+            ],
+            [
+              77.635652,
+              12.975691
+            ],
+            [
+              77.633686,
+              12.974118
+            ],
+            [
+              77.631579,
+              12.972543
+            ],
+            [
+              77.632534,
+              12.969771
+            ],
+            [
+              77.633837,
+              12.967393
+            ],
+            [
+              77.636284,
+              12.967162
+            ],
+            [
+              77.638828,
+              12.967189
+            ],
+            [
+              77.639652,
+              12.969726
+            ],
+            [
+              77.639831,
+              12.972359
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_KORAMANGALA_BLOCK_3_4",
+        "name": "Koramangala 3rd & 4th Block Elite Residential Enclave",
+        "hub_type": "residential",
+        "locality": "Koramangala",
+        "associated_store": "APSARA_BLR_07",
+        "category": "Billionaires' Boulevard & Ultra-Luxury Mansions",
+        "est_activity": 22000,
+        "household_density": "Low Density / Ultra-High Wealth",
+        "affluence_tier": "Ultra-High",
+        "family_kids_density": 85,
+        "peak_window": "7:00 PM \u2013 10:30 PM (Private Family Dining)",
+        "synergy_score": 95,
+        "synergy_rationale": "Home to India's top tech titans and venture capitalists; high propensity for family bulk tubs and premium flavour catering.",
+        "dominant_profile": "Tech Billionaires, Angel Investors, Business Magnates",
+        "anchors": [
+          "Koramangala Club",
+          "Wipro Chairman Residence",
+          "3rd Block Boulevard",
+          "Koramangala Post Office Park"
+        ],
+        "summary": "India's highest net-worth residential sector with massive gourmet food spending.",
+        "centroid": [
+          77.628,
+          12.931
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.633211,
+              12.933932
+            ],
+            [
+              77.63059,
+              12.935818
+            ],
+            [
+              77.627736,
+              12.93759
+            ],
+            [
+              77.625014,
+              12.93604
+            ],
+            [
+              77.622537,
+              12.934358
+            ],
+            [
+              77.622424,
+              12.931222
+            ],
+            [
+              77.622292,
+              12.927788
+            ],
+            [
+              77.625546,
+              12.926436
+            ],
+            [
+              77.628264,
+              12.92441
+            ],
+            [
+              77.630986,
+              12.92596
+            ],
+            [
+              77.633463,
+              12.927642
+            ],
+            [
+              77.633576,
+              12.930778
+            ],
+            [
+              77.633211,
+              12.933932
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_KORAMANGALA_BLOCK_6_8",
+        "name": "Koramangala 6th & 8th Block Residential Layout",
+        "hub_type": "residential",
+        "locality": "Koramangala",
+        "associated_store": "APSARA_BLR_07",
+        "category": "Cosmopolitan Residential Blocks & Mid-Rise Flats",
+        "est_activity": 34000,
+        "household_density": "Very High",
+        "affluence_tier": "High",
+        "family_kids_density": 90,
+        "peak_window": "6:30 PM \u2013 11:00 PM (Evening Dining Walk-ins)",
+        "synergy_score": 96,
+        "synergy_rationale": "Bordering 5th Block food street; young tech couples and families step out onto 80ft and 100ft roads for post-dinner desserts.",
+        "dominant_profile": "Tech Founders, Consulting Couples, Long-term Resident Families",
+        "anchors": [
+          "Koramangala 6th Block Park",
+          "Regional Passport Office",
+          "Indoor Stadium"
+        ],
+        "summary": "High-density residential neighborhood with direct pedestrian access to Koramangala's top food strips.",
+        "centroid": [
+          77.62,
+          12.941
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.625304,
+              12.942385
+            ],
+            [
+              77.623262,
+              12.944599
+            ],
+            [
+              77.621295,
+              12.947097
+            ],
+            [
+              77.618665,
+              12.945856
+            ],
+            [
+              77.61612,
+              12.945245
+            ],
+            [
+              77.615329,
+              12.942527
+            ],
+            [
+              77.614696,
+              12.939615
+            ],
+            [
+              77.616909,
+              12.937591
+            ],
+            [
+              77.618705,
+              12.934903
+            ],
+            [
+              77.621409,
+              12.935875
+            ],
+            [
+              77.62388,
+              12.936755
+            ],
+            [
+              77.624426,
+              12.939554
+            ],
+            [
+              77.625304,
+              12.942385
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_HSR_SECTORS_1_2_3",
+        "name": "HSR Layout Sectors 1, 2 & 3 Planned Residential Sectors",
+        "hub_type": "residential",
+        "locality": "HSR Layout",
+        "associated_store": "APSARA_BLR_01",
+        "category": "Planned Family BDA Layout & Independent Houses",
+        "est_activity": 48000,
+        "household_density": "High",
+        "affluence_tier": "High",
+        "family_kids_density": 95,
+        "peak_window": "5:30 PM \u2013 10:00 PM (Park Walks & Evening Ice Cream)",
+        "synergy_score": 98,
+        "synergy_rationale": "High density of young children, schools, and family parks; strong weekend tradition of after-dinner family ice cream trips.",
+        "dominant_profile": "Upper-Middle Class Tech Families, School Children, Grandparents",
+        "anchors": [
+          "HSR Sector 2 BDA Complex",
+          "Freedom International School",
+          "Sector 3 Park"
+        ],
+        "summary": "The family residential core of HSR Layout with massive demand for fruit and kulfi scoops.",
+        "centroid": [
+          77.648,
+          12.915
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.654304,
+              12.915
+            ],
+            [
+              77.652467,
+              12.917919
+            ],
+            [
+              77.651295,
+              12.92146
+            ],
+            [
+              77.648,
+              12.921162
+            ],
+            [
+              77.644991,
+              12.920898
+            ],
+            [
+              77.643533,
+              12.917919
+            ],
+            [
+              77.641696,
+              12.915
+            ],
+            [
+              77.643285,
+              12.911919
+            ],
+            [
+              77.644705,
+              12.90854
+            ],
+            [
+              77.648,
+              12.909162
+            ],
+            [
+              77.651009,
+              12.909102
+            ],
+            [
+              77.652715,
+              12.911919
+            ],
+            [
+              77.654304,
+              12.915
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_HSR_SECTORS_4_6_7",
+        "name": "HSR Layout Sectors 4, 6 & 7 Tree-Lined Enclave",
+        "hub_type": "residential",
+        "locality": "HSR Layout",
+        "associated_store": "APSARA_BLR_01",
+        "category": "Quiet Residential Layout & Modern Gated Apartments",
+        "est_activity": 42000,
+        "household_density": "High",
+        "affluence_tier": "High",
+        "family_kids_density": 93,
+        "peak_window": "6:00 PM \u2013 10:30 PM (Evening Strolls to 27th Main)",
+        "synergy_score": 97,
+        "synergy_rationale": "Flanks 27th Main food spine; residents walk to restaurants and conclude dinner with Apsara natural fruit ice creams.",
+        "dominant_profile": "Software Architects, Senior Managers, Young Couples with Kids",
+        "anchors": [
+          "HSR Club",
+          "Sector 7 Park",
+          "Lawrence High School",
+          "Agara Lake Promenade"
+        ],
+        "summary": "Affluent leafy sectors directly feeding into 27th Main high-street retail.",
+        "centroid": [
+          77.636,
+          12.903
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.641543,
+              12.903953
+            ],
+            [
+              77.639825,
+              12.906612
+            ],
+            [
+              77.637864,
+              12.909246
+            ],
+            [
+              77.635018,
+              12.90843
+            ],
+            [
+              77.631878,
+              12.908487
+            ],
+            [
+              77.631138,
+              12.905119
+            ],
+            [
+              77.630457,
+              12.902047
+            ],
+            [
+              77.632376,
+              12.899578
+            ],
+            [
+              77.634136,
+              12.896754
+            ],
+            [
+              77.637037,
+              12.897269
+            ],
+            [
+              77.639764,
+              12.89799
+            ],
+            [
+              77.640862,
+              12.900881
+            ],
+            [
+              77.641543,
+              12.903953
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_JAYANAGAR_BLOCK_3_4T",
+        "name": "Jayanagar 3rd & 4th 'T' Block Heritage Residential Enclave",
+        "hub_type": "residential",
+        "locality": "Jayanagar",
+        "associated_store": "APSARA_BLR_12",
+        "category": "Heritage Affluent Bungalows & Joint Families",
+        "est_activity": 35000,
+        "household_density": "Medium-High / Multi-Gen Households",
+        "affluence_tier": "High to Ultra-High",
+        "family_kids_density": 91,
+        "peak_window": "5:30 PM \u2013 10:00 PM (Park Walks & Cultural Outings)",
+        "synergy_score": 97,
+        "synergy_rationale": "Deep cultural affinity for natural, vegetarian milk-fat ice creams; multiple generations walk together after temple visits and shopping.",
+        "dominant_profile": "Traditional Kannadiga Families, Doctors, Business Owners, Grandparents",
+        "anchors": [
+          "Madhavan Park",
+          "Jayanagar 4th 'T' Block Grounds",
+          "Sanjay Gandhi Hospital"
+        ],
+        "summary": "Historic, leafy South Bangalore enclave with loyal patronage for authentic fruit desserts.",
+        "centroid": [
+          77.589,
+          12.924
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.594241,
+              12.924
+            ],
+            [
+              77.593106,
+              12.926653
+            ],
+            [
+              77.591745,
+              12.929321
+            ],
+            [
+              77.589,
+              12.929306
+            ],
+            [
+              77.58638,
+              12.929079
+            ],
+            [
+              77.584894,
+              12.926653
+            ],
+            [
+              77.58326,
+              12.924
+            ],
+            [
+              77.58511,
+              12.921486
+            ],
+            [
+              77.586255,
+              12.918679
+            ],
+            [
+              77.589,
+              12.918694
+            ],
+            [
+              77.59162,
+              12.918921
+            ],
+            [
+              77.593106,
+              12.921347
+            ],
+            [
+              77.594241,
+              12.924
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_JAYANAGAR_BLOCK_5_7",
+        "name": "Jayanagar 5th, 7th & 8th Block Residential Layout",
+        "hub_type": "residential",
+        "locality": "Jayanagar",
+        "associated_store": "APSARA_BLR_12",
+        "category": "Established Residential Colony & Garden Streets",
+        "est_activity": 46000,
+        "household_density": "High",
+        "affluence_tier": "High",
+        "family_kids_density": 94,
+        "peak_window": "6:00 PM \u2013 10:30 PM (Evening Leisure)",
+        "synergy_score": 96,
+        "synergy_rationale": "High concentration of vegetarian households seeking pure, preservative-free artisanal ice creams like guava with chilli.",
+        "dominant_profile": "Multi-generational Families, Software Professionals, College Students",
+        "anchors": [
+          "Ragigudda Anjaneya Temple",
+          "Jayanagar 5th Block Park",
+          "SSMRV College"
+        ],
+        "summary": "Dense residential block forming the southern catchment of Jayanagar retail.",
+        "centroid": [
+          77.578,
+          12.918
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.584304,
+              12.918
+            ],
+            [
+              77.582715,
+              12.92091
+            ],
+            [
+              77.581295,
+              12.924101
+            ],
+            [
+              77.578,
+              12.923514
+            ],
+            [
+              77.574991,
+              12.923571
+            ],
+            [
+              77.573285,
+              12.92091
+            ],
+            [
+              77.571696,
+              12.918
+            ],
+            [
+              77.573533,
+              12.915243
+            ],
+            [
+              77.574705,
+              12.911899
+            ],
+            [
+              77.578,
+              12.91218
+            ],
+            [
+              77.581009,
+              12.912429
+            ],
+            [
+              77.582467,
+              12.915243
+            ],
+            [
+              77.584304,
+              12.918
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_BASAVANAGUDI_NR_COLONY",
+        "name": "NR Colony, Bugle Rock & Bull Temple Heritage Enclave",
+        "hub_type": "residential",
+        "locality": "Basavanagudi",
+        "associated_store": "APSARA_BLR_13",
+        "category": "Cultural Heritage & Academic Residential District",
+        "est_activity": 38000,
+        "household_density": "High",
+        "affluence_tier": "Upper-Middle to High",
+        "family_kids_density": 90,
+        "peak_window": "5:00 PM \u2013 10:00 PM (Temple & Park Walks)",
+        "synergy_score": 96,
+        "synergy_rationale": "High intellectual and cultural heritage; evening walkers in Bugle Rock Park naturally flow onto DVG Road for sweet treats.",
+        "dominant_profile": "Academicians, Writers, Retired Scientists, Heritage Families",
+        "anchors": [
+          "Bugle Rock Park",
+          "Bull Temple (Dodda Basavana Gudi)",
+          "BMS College of Engineering"
+        ],
+        "summary": "The cultural epicenter of Old Bangalore with deep family roots and walking culture.",
+        "centroid": [
+          77.568,
+          12.94
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.57297,
+              12.940854
+            ],
+            [
+              77.571407,
+              12.943366
+            ],
+            [
+              77.569625,
+              12.945857
+            ],
+            [
+              77.567024,
+              12.945394
+            ],
+            [
+              77.564581,
+              12.944736
+            ],
+            [
+              77.563617,
+              12.942028
+            ],
+            [
+              77.562556,
+              12.939064
+            ],
+            [
+              77.564773,
+              12.936811
+            ],
+            [
+              77.566375,
+              12.934143
+            ],
+            [
+              77.568976,
+              12.934606
+            ],
+            [
+              77.571419,
+              12.935264
+            ],
+            [
+              77.572383,
+              12.937972
+            ],
+            [
+              77.57297,
+              12.940854
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_BASAVANAGUDI_SHANKARAPURAM",
+        "name": "Shankarapuram & Visvesvarapuram Residential Pocket",
+        "hub_type": "residential",
+        "locality": "Basavanagudi",
+        "associated_store": "APSARA_BLR_13",
+        "category": "Historic Traditional Brahmin Residential Settlement",
+        "est_activity": 32000,
+        "household_density": "Very High",
+        "affluence_tier": "Upper-Middle",
+        "family_kids_density": 92,
+        "peak_window": "6:00 PM \u2013 10:30 PM (VV Puram Food Street Surges)",
+        "synergy_score": 95,
+        "synergy_rationale": "Directly borders VV Puram Thindi Beedi (Food Street); massive pedestrian sweet cravings following savory dosas and bhajjis.",
+        "dominant_profile": "Traditional Families, Food Pilgrims, Students",
+        "anchors": [
+          "VV Puram Food Street",
+          "Sringeri Shankara Math",
+          "National College Basavanagudi"
+        ],
+        "summary": "Legendary food and residential precinct driving huge evening dessert demand.",
+        "centroid": [
+          77.572,
+          12.951
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.576659,
+              12.951
+            ],
+            [
+              77.57541,
+              12.953767
+            ],
+            [
+              77.573508,
+              12.956184
+            ],
+            [
+              77.570766,
+              12.955241
+            ],
+            [
+              77.567872,
+              12.954349
+            ],
+            [
+              77.567785,
+              12.951
+            ],
+            [
+              77.568231,
+              12.947942
+            ],
+            [
+              77.570766,
+              12.946759
+            ],
+            [
+              77.573508,
+              12.945816
+            ],
+            [
+              77.57541,
+              12.948233
+            ],
+            [
+              77.576659,
+              12.951
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_JP_NAGAR_PHASE_1_2_3",
+        "name": "JP Nagar 1st, 2nd & 3rd Phase Planned Layouts",
+        "hub_type": "residential",
+        "locality": "JP Nagar",
+        "associated_store": "APSARA_BLR_03",
+        "category": "Planned Residential Layout & Family Bungalows",
+        "est_activity": 44000,
+        "household_density": "High",
+        "affluence_tier": "High",
+        "family_kids_density": 93,
+        "peak_window": "6:00 PM \u2013 10:30 PM (Evening Walks & Dinners)",
+        "synergy_score": 95,
+        "synergy_rationale": "Established residential phases with peaceful avenues; strong household demand for after-dinner ice cream take-home tubs.",
+        "dominant_profile": "Established Resident Families, Government Officers, Software Leads",
+        "anchors": [
+          "Mini Forest JP Nagar",
+          "Ranga Shankara Theatre",
+          "JP Nagar Club"
+        ],
+        "summary": "Planned, affluent South Bangalore family enclave with high evening leisure activity.",
+        "centroid": [
+          77.578,
+          12.91
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.584303,
+              12.91
+            ],
+            [
+              77.582715,
+              12.91291
+            ],
+            [
+              77.581295,
+              12.916101
+            ],
+            [
+              77.578,
+              12.915514
+            ],
+            [
+              77.574992,
+              12.915571
+            ],
+            [
+              77.573285,
+              12.91291
+            ],
+            [
+              77.571697,
+              12.91
+            ],
+            [
+              77.573534,
+              12.907243
+            ],
+            [
+              77.574705,
+              12.903899
+            ],
+            [
+              77.578,
+              12.90418
+            ],
+            [
+              77.581008,
+              12.904429
+            ],
+            [
+              77.582466,
+              12.907243
+            ],
+            [
+              77.584303,
+              12.91
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_JP_NAGAR_DOLLARS_COLONY",
+        "name": "JP Nagar 6th & 7th Phase (Dollars Colony) Gated Enclave",
+        "hub_type": "residential",
+        "locality": "JP Nagar",
+        "associated_store": "APSARA_BLR_03",
+        "category": "Luxury Villa & Gated Community Belt",
+        "est_activity": 36000,
+        "household_density": "Medium Density / High Wealth",
+        "affluence_tier": "Ultra-High",
+        "family_kids_density": 88,
+        "peak_window": "7:00 PM \u2013 11:00 PM (Family Leisure & Delivery)",
+        "synergy_score": 96,
+        "synergy_rationale": "High concentration of luxury villas and gated communities; strong purchasing power and high average order value (AOV).",
+        "dominant_profile": "Entrepreneurs, Tech Executives, NRI Returned Families",
+        "anchors": [
+          "Dollars Colony Park",
+          "Brigade Millennium",
+          "Elita Promenade"
+        ],
+        "summary": "Ultra-wealthy residential pocket with high demand for premium scoops and family sundae packs.",
+        "centroid": [
+          77.589,
+          12.895
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.594289,
+              12.896876
+            ],
+            [
+              77.592168,
+              12.899084
+            ],
+            [
+              77.589813,
+              12.901225
+            ],
+            [
+              77.587151,
+              12.899952
+            ],
+            [
+              77.584057,
+              12.899453
+            ],
+            [
+              77.58388,
+              12.896143
+            ],
+            [
+              77.583711,
+              12.893124
+            ],
+            [
+              77.585999,
+              12.891131
+            ],
+            [
+              77.588187,
+              12.888775
+            ],
+            [
+              77.590952,
+              12.889772
+            ],
+            [
+              77.593513,
+              12.890934
+            ],
+            [
+              77.59412,
+              12.893857
+            ],
+            [
+              77.594289,
+              12.896876
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_WHITEFIELD_PRESTIGE_SHANTINIKETAN",
+        "name": "Prestige Shantiniketan & High-Rise Tech Township",
+        "hub_type": "residential",
+        "locality": "Whitefield",
+        "associated_store": "APSARA_BLR_04",
+        "category": "Integrated Mega-Township & Gated Towers",
+        "est_activity": 52000,
+        "household_density": "Ultra-Dense Vertical Living",
+        "affluence_tier": "High",
+        "family_kids_density": 96,
+        "peak_window": "6:00 PM \u2013 11:00 PM (Weekend Family Waves)",
+        "synergy_score": 99,
+        "synergy_rationale": "Over 3,000 apartment units in a single gated township; enormous concentration of young tech children and weekend mall visitors.",
+        "dominant_profile": "Tech Couples, Young Children, Dual-Income Households",
+        "anchors": [
+          "Prestige Shantiniketan",
+          "Nexus Shantiniketan Mall",
+          "Manipal Hospital Whitefield"
+        ],
+        "summary": "India's highest-density tech apartment township generating unstoppable weekend dessert demand.",
+        "centroid": [
+          77.728,
+          12.988
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.733298,
+              12.992332
+            ],
+            [
+              77.72993,
+              12.9936
+            ],
+            [
+              77.726508,
+              12.995213
+            ],
+            [
+              77.724149,
+              12.992472
+            ],
+            [
+              77.721581,
+              12.990451
+            ],
+            [
+              77.722005,
+              12.987121
+            ],
+            [
+              77.722221,
+              12.983275
+            ],
+            [
+              77.726172,
+              12.982695
+            ],
+            [
+              77.729427,
+              12.981101
+            ],
+            [
+              77.732065,
+              12.98328
+            ],
+            [
+              77.734419,
+              12.985549
+            ],
+            [
+              77.733679,
+              12.988833
+            ],
+            [
+              77.733298,
+              12.992332
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_WHITEFIELD_PALM_MEADOWS",
+        "name": "Palm Meadows & Whitefield Luxury Villa Communities",
+        "hub_type": "residential",
+        "locality": "Whitefield",
+        "associated_store": "APSARA_BLR_04",
+        "category": "Ultra-Luxury Gated Villa Enclaves",
+        "est_activity": 25000,
+        "household_density": "Low Density / Elite Wealth",
+        "affluence_tier": "Ultra-High",
+        "family_kids_density": 86,
+        "peak_window": "7:00 PM \u2013 10:30 PM (Weekend Family Outings)",
+        "synergy_score": 94,
+        "synergy_rationale": "Expatriates and senior MNC leaders; high home delivery volume and party catering orders.",
+        "dominant_profile": "C-Suite Corporate Leaders, Expat Families, Tech Founders",
+        "anchors": [
+          "Palm Meadows Club",
+          "Adarsh Palm Meadows",
+          "Windmills Craftworks"
+        ],
+        "summary": "Bangalore's original gated luxury villa enclave with top-tier disposable income.",
+        "centroid": [
+          77.742,
+          12.96
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.747927,
+              12.961018
+            ],
+            [
+              77.746125,
+              12.963664
+            ],
+            [
+              77.744065,
+              12.966281
+            ],
+            [
+              77.741018,
+              12.96543
+            ],
+            [
+              77.737667,
+              12.965451
+            ],
+            [
+              77.736838,
+              12.962068
+            ],
+            [
+              77.736073,
+              12.958982
+            ],
+            [
+              77.738092,
+              12.956529
+            ],
+            [
+              77.739935,
+              12.953719
+            ],
+            [
+              77.743037,
+              12.954269
+            ],
+            [
+              77.745956,
+              12.955023
+            ],
+            [
+              77.747162,
+              12.957932
+            ],
+            [
+              77.747927,
+              12.961018
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_WHITEFIELD_HOPE_FARM",
+        "name": "Hope Farm & Channasandra Rapid Growth Residential Belt",
+        "hub_type": "residential",
+        "locality": "Whitefield",
+        "associated_store": "APSARA_BLR_04",
+        "category": "Modern Apartment Complexes & Metro Connected Housing",
+        "est_activity": 46000,
+        "household_density": "Very High",
+        "affluence_tier": "Upper-Middle",
+        "family_kids_density": 95,
+        "peak_window": "6:30 PM \u2013 10:30 PM (Post-Work Dinner Outings)",
+        "synergy_score": 95,
+        "synergy_rationale": "Terminus of the Purple Line Metro extension; massive wave of newly occupied high-rise apartments with young families.",
+        "dominant_profile": "First-time Homebuyer Tech Couples, Toddlers, Commuters",
+        "anchors": [
+          "Whitefield Metro Terminus",
+          "Hope Farm Junction",
+          "MVJ College of Engineering"
+        ],
+        "summary": "Rapidly urbanising residential belt packed with young children and working parents.",
+        "centroid": [
+          77.756,
+          12.983
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.762385,
+              12.981333
+            ],
+            [
+              77.7613,
+              12.984638
+            ],
+            [
+              77.761054,
+              12.988368
+            ],
+            [
+              77.757637,
+              12.988952
+            ],
+            [
+              77.754519,
+              12.989493
+            ],
+            [
+              77.752251,
+              12.987001
+            ],
+            [
+              77.749615,
+              12.984667
+            ],
+            [
+              77.750406,
+              12.981271
+            ],
+            [
+              77.750946,
+              12.977632
+            ],
+            [
+              77.754449,
+              12.977361
+            ],
+            [
+              77.757481,
+              12.976507
+            ],
+            [
+              77.759957,
+              12.978777
+            ],
+            [
+              77.762385,
+              12.981333
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_BELLANDUR_GREEN_GLEN",
+        "name": "Green Glen Layout & Bellandur Lake Residential Enclave",
+        "hub_type": "residential",
+        "locality": "Bellandur",
+        "associated_store": "APSARA_BLR_06",
+        "category": "Dense Tech Apartment Township & Walkable Pockets",
+        "est_activity": 49000,
+        "household_density": "Extremely High",
+        "affluence_tier": "High",
+        "family_kids_density": 94,
+        "peak_window": "7:00 PM \u2013 11:30 PM (Late Night Tech Deliveries & Walks)",
+        "synergy_score": 98,
+        "synergy_rationale": "Walking distance from ORR tech parks; young tech couples with immense disposable income dine out daily and consume ice cream late into the night.",
+        "dominant_profile": "IT Engineers, Fintech Professionals, Young Parents",
+        "anchors": [
+          "Sobha Quartz",
+          "Prestige Green Gables",
+          "Green Glen Park",
+          "Bellandur Central"
+        ],
+        "summary": "Vibrant, tech-centric residential hub with one of India's highest dessert delivery frequencies.",
+        "centroid": [
+          77.674,
+          12.926
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.678925,
+              12.927747
+            ],
+            [
+              77.676898,
+              12.929942
+            ],
+            [
+              77.674652,
+              12.932077
+            ],
+            [
+              77.672078,
+              12.931147
+            ],
+            [
+              77.669698,
+              12.930053
+            ],
+            [
+              77.66918,
+              12.927205
+            ],
+            [
+              77.668606,
+              12.924087
+            ],
+            [
+              77.671255,
+              12.922265
+            ],
+            [
+              77.673348,
+              12.919923
+            ],
+            [
+              77.675922,
+              12.920853
+            ],
+            [
+              77.678302,
+              12.921947
+            ],
+            [
+              77.67882,
+              12.924795
+            ],
+            [
+              77.678925,
+              12.927747
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_MALLESHWARAM_RESIDENTIAL_BLOCKS",
+        "name": "Malleshwaram 1st to 18th Cross Traditional Residential Blocks",
+        "hub_type": "residential",
+        "locality": "Malleshwaram",
+        "associated_store": "APSARA_BLR_09",
+        "category": "Centuries-Old Traditional Family Colony",
+        "est_activity": 43000,
+        "household_density": "High",
+        "affluence_tier": "Upper-Middle to High",
+        "family_kids_density": 89,
+        "peak_window": "5:30 PM \u2013 10:00 PM (Evening Temple & Cultural Walks)",
+        "synergy_score": 96,
+        "synergy_rationale": "Multi-generational families with deep cultural pride; high demand for pure vegetarian, traditional faloodas, and real fruit sorbets.",
+        "dominant_profile": "Traditional Kannadiga Families, Teachers, Artists, Businessmen",
+        "anchors": [
+          "Kadu Malleshwara Temple",
+          "Sankey Tank Promenade",
+          "MES College Malleshwaram"
+        ],
+        "summary": "Heritage North-West Bangalore family bastion with high loyalty to authentic culinary brands.",
+        "centroid": [
+          77.571,
+          13.003
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.576289,
+              13.003
+            ],
+            [
+              77.574956,
+              13.006081
+            ],
+            [
+              77.573765,
+              13.00946
+            ],
+            [
+              77.571,
+              13.008838
+            ],
+            [
+              77.568476,
+              13.008898
+            ],
+            [
+              77.567044,
+              13.006081
+            ],
+            [
+              77.565711,
+              13.003
+            ],
+            [
+              77.567253,
+              13.000081
+            ],
+            [
+              77.568235,
+              12.99654
+            ],
+            [
+              77.571,
+              12.996838
+            ],
+            [
+              77.573524,
+              12.997102
+            ],
+            [
+              77.574747,
+              13.000081
+            ],
+            [
+              77.576289,
+              13.003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_SADASHIVANAGAR_ELITE",
+        "name": "Sadashivanagar Elite VIP Residential Enclave",
+        "hub_type": "residential",
+        "locality": "Sadashivanagar / Central",
+        "associated_store": null,
+        "category": "VIP Mansions, Political Leaders & Industrialists",
+        "est_activity": 18000,
+        "household_density": "Low Density / Extreme Wealth",
+        "affluence_tier": "Ultra-High",
+        "family_kids_density": 82,
+        "peak_window": "7:00 PM \u2013 10:00 PM (Private Catering & Dinners)",
+        "synergy_score": 93,
+        "synergy_rationale": "Bangalore's most exclusive address; high volume of private party catering and premium bulk takeaway orders.",
+        "dominant_profile": "Ministers, Judges, Industrialists, Senior Doctors",
+        "anchors": [
+          "Sankey Tank",
+          "Sadashivanagar Club",
+          "Sir C.V. Raman Research Institute"
+        ],
+        "summary": "Bangalore's traditional power address commanding the city's highest household net worth.",
+        "centroid": [
+          77.581,
+          13.011
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.586631,
+              13.011
+            ],
+            [
+              77.585412,
+              13.013782
+            ],
+            [
+              77.58395,
+              13.016578
+            ],
+            [
+              77.581,
+              13.01627
+            ],
+            [
+              77.577916,
+              13.016832
+            ],
+            [
+              77.576588,
+              13.013782
+            ],
+            [
+              77.575369,
+              13.011
+            ],
+            [
+              77.57682,
+              13.008365
+            ],
+            [
+              77.57805,
+              13.005422
+            ],
+            [
+              77.581,
+              13.005437
+            ],
+            [
+              77.583816,
+              13.005675
+            ],
+            [
+              77.585412,
+              13.008218
+            ],
+            [
+              77.586631,
+              13.011
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_HENNUR_GARDENS_HRBR_EXT",
+        "name": "Hennur Gardens & HRBR Extension Residential Enclave",
+        "hub_type": "residential",
+        "locality": "Hennur / Kothanur",
+        "associated_store": "APSARA_BLR_05",
+        "category": "Established Residential Colony & International Schools",
+        "est_activity": 39000,
+        "household_density": "High",
+        "affluence_tier": "High",
+        "family_kids_density": 94,
+        "peak_window": "6:00 PM \u2013 10:30 PM (Evening Leisure)",
+        "synergy_score": 95,
+        "synergy_rationale": "High density of international schools and NRI returnees; parents prioritize premium fruit ice creams for weekend family outings.",
+        "dominant_profile": "NRI Families, Academic Faculty, Corporate Executives",
+        "anchors": [
+          "HMR International School",
+          "Hennur Lake Park",
+          "Royal Care Hospital"
+        ],
+        "summary": "Cosmopolitan North-East family layout with high disposable spending.",
+        "centroid": [
+          77.643,
+          13.032
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.64881,
+              13.032998
+            ],
+            [
+              77.646827,
+              13.035612
+            ],
+            [
+              77.64495,
+              13.03853
+            ],
+            [
+              77.642017,
+              13.03743
+            ],
+            [
+              77.639234,
+              13.03701
+            ],
+            [
+              77.638136,
+              13.034119
+            ],
+            [
+              77.63719,
+              13.031002
+            ],
+            [
+              77.639375,
+              13.028578
+            ],
+            [
+              77.64105,
+              13.02547
+            ],
+            [
+              77.644037,
+              13.026269
+            ],
+            [
+              77.646766,
+              13.02699
+            ],
+            [
+              77.647608,
+              13.029992
+            ],
+            [
+              77.64881,
+              13.032998
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_KOTHANUR_BYRATHI_TOWNSHIP",
+        "name": "Kothanur, Geddalahalli & Byrathi Apartment Township Belt",
+        "hub_type": "residential",
+        "locality": "Hennur / Kothanur",
+        "associated_store": "APSARA_BLR_05",
+        "category": "Gated High-Rise Communities & Villa Enclaves",
+        "est_activity": 47000,
+        "household_density": "Very High",
+        "affluence_tier": "Upper-Middle",
+        "family_kids_density": 96,
+        "peak_window": "6:30 PM \u2013 10:30 PM (Family Evening Surges)",
+        "synergy_score": 94,
+        "synergy_rationale": "Large gated townships (Mantri Webcity, Purva) with thousands of young children; high weekend parlor visit rates.",
+        "dominant_profile": "Young IT Couples, Tech Park Commuters, School Students",
+        "anchors": [
+          "Mantri Webcity",
+          "Kristu Jayanti College",
+          "Byrathi Cross Market"
+        ],
+        "summary": "Vast family residential expansion belt directly anchoring Apsara Hennur.",
+        "centroid": [
+          77.653,
+          13.064
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.658721,
+              13.066599
+            ],
+            [
+              77.65609,
+              13.068945
+            ],
+            [
+              77.653204,
+              13.071195
+            ],
+            [
+              77.650362,
+              13.069511
+            ],
+            [
+              77.646948,
+              13.068676
+            ],
+            [
+              77.647125,
+              13.064873
+            ],
+            [
+              77.647279,
+              13.061401
+            ],
+            [
+              77.650073,
+              13.059315
+            ],
+            [
+              77.652796,
+              13.056805
+            ],
+            [
+              77.655785,
+              13.058182
+            ],
+            [
+              77.658526,
+              13.059731
+            ],
+            [
+              77.658875,
+              13.063127
+            ],
+            [
+              77.658721,
+              13.066599
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_YELAHANKA_NEW_TOWN_SECTORS",
+        "name": "Yelahanka New Town Planned Residential Sectors (A, B & 4th Phase)",
+        "hub_type": "residential",
+        "locality": "Yelahanka",
+        "associated_store": "APSARA_BLR_08",
+        "category": "Planned Township Sectors, Defense & PSU Enclaves",
+        "est_activity": 51000,
+        "household_density": "High",
+        "affluence_tier": "Upper-Middle",
+        "family_kids_density": 93,
+        "peak_window": "5:30 PM \u2013 10:00 PM (Township Evening Leisure)",
+        "synergy_score": 93,
+        "synergy_rationale": "Wide tree-lined avenues with sports grounds and defense colonies; strong family dining and dessert culture on weekends.",
+        "dominant_profile": "Air Force & Defense Personnel, Rail Wheel Engineers, Families",
+        "anchors": [
+          "Allalasandra Lake Park",
+          "Air Force Station Yelahanka",
+          "Seshadripuram College"
+        ],
+        "summary": "Organized northern residential community with deep family roots and sports recreation.",
+        "centroid": [
+          77.585,
+          13.104
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.591512,
+              13.104
+            ],
+            [
+              77.58987,
+              13.107081
+            ],
+            [
+              77.588404,
+              13.11046
+            ],
+            [
+              77.585,
+              13.109838
+            ],
+            [
+              77.581892,
+              13.109898
+            ],
+            [
+              77.58013,
+              13.107081
+            ],
+            [
+              77.578488,
+              13.104
+            ],
+            [
+              77.580386,
+              13.101081
+            ],
+            [
+              77.581596,
+              13.09754
+            ],
+            [
+              77.585,
+              13.097838
+            ],
+            [
+              77.588108,
+              13.098102
+            ],
+            [
+              77.589614,
+              13.101081
+            ],
+            [
+              77.591512,
+              13.104
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_YELAHANKA_JUDICIAL_LAYOUT",
+        "name": "Judicial Layout & Kogilu Road Gated Communities",
+        "hub_type": "residential",
+        "locality": "Yelahanka",
+        "associated_store": "APSARA_BLR_08",
+        "category": "Affluent Gated Villas & Judicial Officers Colony",
+        "est_activity": 31000,
+        "household_density": "Medium-High",
+        "affluence_tier": "High",
+        "family_kids_density": 90,
+        "peak_window": "6:30 PM \u2013 10:30 PM (Evening Leisure)",
+        "synergy_score": 94,
+        "synergy_rationale": "Prestigious judicial and bureaucratic community with top private school connections; high disposable income for artisanal desserts.",
+        "dominant_profile": "Judicial Officers, Lawyers, Senior Executives, Aviation Professionals",
+        "anchors": [
+          "Judicial Layout Park",
+          "Canadian International School",
+          "Kogilu Lake"
+        ],
+        "summary": "Affluent, tranquil residential enclave in North Bangalore.",
+        "centroid": [
+          77.604,
+          13.091
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.609293,
+              13.092876
+            ],
+            [
+              77.607126,
+              13.095205
+            ],
+            [
+              77.604723,
+              13.097467
+            ],
+            [
+              77.602064,
+              13.096181
+            ],
+            [
+              77.598959,
+              13.095706
+            ],
+            [
+              77.598831,
+              13.092264
+            ],
+            [
+              77.598707,
+              13.089124
+            ],
+            [
+              77.601039,
+              13.087017
+            ],
+            [
+              77.603277,
+              13.084533
+            ],
+            [
+              77.606044,
+              13.085531
+            ],
+            [
+              77.608603,
+              13.086704
+            ],
+            [
+              77.609169,
+              13.089736
+            ],
+            [
+              77.609293,
+              13.092876
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_VIDYARANYAPURA_BLOCKS_1_5",
+        "name": "Vidyaranyapura Residential Blocks 1 to 5 & BEL Layout",
+        "hub_type": "residential",
+        "locality": "Vidyaranyapura",
+        "associated_store": "APSARA_BLR_10",
+        "category": "Peaceful Family BDA Layout & Public Sector Retirees",
+        "est_activity": 46000,
+        "household_density": "High",
+        "affluence_tier": "Upper-Middle",
+        "family_kids_density": 92,
+        "peak_window": "5:30 PM \u2013 10:00 PM (Neighborhood Evening Footfall)",
+        "synergy_score": 92,
+        "synergy_rationale": "High concentration of retired scientists and middle-class nuclear families; strong weekend evening demand for natural fruit ice creams.",
+        "dominant_profile": "BEL & ISRO Engineers, University Faculty, Middle-Class Families",
+        "anchors": [
+          "Vidyaranyapura Park",
+          "Chamundeshwari Temple",
+          "Sambhar Restaurant"
+        ],
+        "summary": "Well-established family neighborhood with quiet residential streets.",
+        "centroid": [
+          77.56,
+          13.074
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.565901,
+              13.074
+            ],
+            [
+              77.564413,
+              13.077081
+            ],
+            [
+              77.563084,
+              13.08046
+            ],
+            [
+              77.56,
+              13.079838
+            ],
+            [
+              77.557184,
+              13.079898
+            ],
+            [
+              77.555587,
+              13.077081
+            ],
+            [
+              77.554099,
+              13.074
+            ],
+            [
+              77.555819,
+              13.071081
+            ],
+            [
+              77.556916,
+              13.06754
+            ],
+            [
+              77.56,
+              13.067838
+            ],
+            [
+              77.562816,
+              13.068102
+            ],
+            [
+              77.564181,
+              13.071081
+            ],
+            [
+              77.565901,
+              13.074
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_BANASHANKARI_STAGE_2",
+        "name": "Banashankari 2nd Stage & Padmanabhanagar Residential Enclave",
+        "hub_type": "residential",
+        "locality": "Banashankari",
+        "associated_store": "APSARA_BLR_11",
+        "category": "Traditional Family Stronghold & Temple Precinct",
+        "est_activity": 54000,
+        "household_density": "Very High",
+        "affluence_tier": "Upper-Middle to High",
+        "family_kids_density": 94,
+        "peak_window": "6:00 PM \u2013 10:30 PM (Temple Visits & Family Outings)",
+        "synergy_score": 96,
+        "synergy_rationale": "Devagiri temple complex draws tens of thousands of weekend devotees; strong post-prayer sweet indulgence tradition.",
+        "dominant_profile": "Traditional Families, Business Families, PES University Students",
+        "anchors": [
+          "Devagiri Venkateshwara Temple",
+          "Padmanabhanagar Park",
+          "PES University"
+        ],
+        "summary": "South-West Bangalore's cultural anchor with immense weekend family footfall.",
+        "centroid": [
+          77.562,
+          12.922
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.568017,
+              12.922
+            ],
+            [
+              77.566715,
+              12.92491
+            ],
+            [
+              77.565152,
+              12.927836
+            ],
+            [
+              77.562,
+              12.927514
+            ],
+            [
+              77.558705,
+              12.928101
+            ],
+            [
+              77.557285,
+              12.92491
+            ],
+            [
+              77.555983,
+              12.922
+            ],
+            [
+              77.557533,
+              12.919243
+            ],
+            [
+              77.558848,
+              12.916164
+            ],
+            [
+              77.562,
+              12.91618
+            ],
+            [
+              77.565009,
+              12.916429
+            ],
+            [
+              77.566715,
+              12.91909
+            ],
+            [
+              77.568017,
+              12.922
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_BTM_LAYOUT_STAGE_1_2",
+        "name": "BTM Layout 1st & 2nd Stage Residential Enclave",
+        "hub_type": "residential",
+        "locality": "BTM Layout",
+        "associated_store": null,
+        "category": "Dense Youth & Tech Apartment District",
+        "est_activity": 58000,
+        "household_density": "Ultra-High",
+        "affluence_tier": "Upper-Middle",
+        "family_kids_density": 87,
+        "peak_window": "7:00 PM \u2013 12:00 AM (Late-Night Youth Walkouts)",
+        "synergy_score": 95,
+        "synergy_rationale": "Immense density of young IT employees and students living in shared apartments; unmatched late-night dessert delivery velocity.",
+        "dominant_profile": "Junior Software Engineers, Tech Students, Young Bachelors",
+        "anchors": [
+          "Madiwala Lake Promenade",
+          "BTM 2nd Stage BDA Park",
+          "Gangothri Hospital"
+        ],
+        "summary": "High-velocity youth housing zone generating continuous nighttime delivery orders.",
+        "centroid": [
+          77.614,
+          12.913
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.619407,
+              12.913929
+            ],
+            [
+              77.617362,
+              12.916254
+            ],
+            [
+              77.615787,
+              12.919229
+            ],
+            [
+              77.613009,
+              12.918479
+            ],
+            [
+              77.610471,
+              12.9178
+            ],
+            [
+              77.609699,
+              12.914937
+            ],
+            [
+              77.608593,
+              12.912071
+            ],
+            [
+              77.610452,
+              12.909566
+            ],
+            [
+              77.612213,
+              12.906771
+            ],
+            [
+              77.614939,
+              12.90781
+            ],
+            [
+              77.617529,
+              12.9082
+            ],
+            [
+              77.618539,
+              12.910956
+            ],
+            [
+              77.619407,
+              12.913929
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_SAHAKARNAGAR_ENCLAVE",
+        "name": "Sahakarnagar & Judicial Layout Residential Enclave",
+        "hub_type": "residential",
+        "locality": "Hebbal / North",
+        "associated_store": null,
+        "category": "Affluent Northern Layout & Executive Homes",
+        "est_activity": 41000,
+        "household_density": "High",
+        "affluence_tier": "High",
+        "family_kids_density": 93,
+        "peak_window": "6:00 PM \u2013 10:30 PM (Evening Food Street)",
+        "synergy_score": 95,
+        "synergy_rationale": "High-spending North Bangalore residential community with bustling dining streets and family leisure activities.",
+        "dominant_profile": "Senior Corporate Managers, Tech Leaders, Doctors",
+        "anchors": [
+          "Sahakarnagar 60ft Road",
+          "Esteem Mall",
+          "Columbia Asia Hospital"
+        ],
+        "summary": "Premier North Bangalore residential pocket with strong family food culture.",
+        "centroid": [
+          77.592,
+          13.061
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.597632,
+              13.061
+            ],
+            [
+              77.596413,
+              13.06391
+            ],
+            [
+              77.59495,
+              13.066836
+            ],
+            [
+              77.592,
+              13.066514
+            ],
+            [
+              77.588916,
+              13.067101
+            ],
+            [
+              77.587587,
+              13.06391
+            ],
+            [
+              77.586368,
+              13.061
+            ],
+            [
+              77.587819,
+              13.058243
+            ],
+            [
+              77.58905,
+              13.055164
+            ],
+            [
+              77.592,
+              13.05518
+            ],
+            [
+              77.594816,
+              13.055429
+            ],
+            [
+              77.596413,
+              13.05809
+            ],
+            [
+              77.597632,
+              13.061
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_COOKES_TOWN_FRASER",
+        "name": "Cookes Town, Richards Town & Fraser Town Residential Enclave",
+        "hub_type": "residential",
+        "locality": "Cantonment / Central",
+        "associated_store": null,
+        "category": "Colonial Heritage Enclave & Gourmet Food Culture",
+        "est_activity": 36000,
+        "household_density": "High",
+        "affluence_tier": "High",
+        "family_kids_density": 88,
+        "peak_window": "6:00 PM \u2013 11:00 PM (Heritage Dining Walks)",
+        "synergy_score": 96,
+        "synergy_rationale": "Historic Anglo-Indian and cosmopolitan enclaves famous for meat delicacies and bakeries; natural affinity for premium desserts.",
+        "dominant_profile": "Old Bangalore Cosmopolitans, Expatriates, Food Connoisseurs",
+        "anchors": [
+          "Richards Park",
+          "Albert Bakery",
+          "Thom's Bakery",
+          "Clarence High School"
+        ],
+        "summary": "Charm-filled heritage cantonment neighborhood with high appreciation for culinary quality.",
+        "centroid": [
+          77.618,
+          12.996
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.623501,
+              12.997436
+            ],
+            [
+              77.621387,
+              12.99972
+            ],
+            [
+              77.61935,
+              13.002297
+            ],
+            [
+              77.616622,
+              13.001012
+            ],
+            [
+              77.613982,
+              13.000379
+            ],
+            [
+              77.613158,
+              12.997571
+            ],
+            [
+              77.612499,
+              12.994564
+            ],
+            [
+              77.614791,
+              12.992476
+            ],
+            [
+              77.61665,
+              12.989703
+            ],
+            [
+              77.619455,
+              12.990709
+            ],
+            [
+              77.622018,
+              12.991621
+            ],
+            [
+              77.622587,
+              12.994512
+            ],
+            [
+              77.623501,
+              12.997436
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "hub_id": "RES_SARJAPUR_ROAD_APARTMENTS",
+        "name": "Sarjapur Road High-Rise Apartment Belt (Kaikondrahalli & Carmelaram)",
+        "hub_type": "residential",
+        "locality": "Sarjapur Road / South-East",
+        "associated_store": null,
+        "category": "High-Rise Tech Family Communities & School Hub",
+        "est_activity": 62000,
+        "household_density": "Ultra-High Gated Apartments",
+        "affluence_tier": "High",
+        "family_kids_density": 98,
+        "peak_window": "6:00 PM \u2013 10:30 PM (Family Evening Surges)",
+        "synergy_score": 97,
+        "synergy_rationale": "Highest concentration of international schools and gated residential towers in East Bangalore; massive children and family dessert market.",
+        "dominant_profile": "Tech Leads, Young Parents, Toddlers and Pre-teens",
+        "anchors": [
+          "Kaikondrahalli Lake",
+          "Prestige Ferns Residency",
+          "Total Mall Sarjapur Rd"
+        ],
+        "summary": "Immense family residential growth corridor packed with young tech-worker families.",
+        "centroid": [
+          77.688,
+          12.908
+        ],
+        "theme_color": "#6366f1",
+        "fill_color": [
+          99,
+          102,
+          241,
+          50
+        ],
+        "line_color": [
+          79,
+          70,
+          229,
+          220
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77.694201,
+              12.9058
+            ],
+            [
+              77.693985,
+              12.909292
+            ],
+            [
+              77.693507,
+              12.912896
+            ],
+            [
+              77.690134,
+              12.913714
+            ],
+            [
+              77.686965,
+              12.915528
+            ],
+            [
+              77.684267,
+              12.91274
+            ],
+            [
+              77.681799,
+              12.9102
+            ],
+            [
+              77.68233,
+              12.906776
+            ],
+            [
+              77.682493,
+              12.903104
+            ],
+            [
+              77.685748,
+              12.901968
+            ],
+            [
+              77.688945,
+              12.901126
+            ],
+            [
+              77.691733,
+              12.90326
+            ],
+            [
+              77.694201,
+              12.9058
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

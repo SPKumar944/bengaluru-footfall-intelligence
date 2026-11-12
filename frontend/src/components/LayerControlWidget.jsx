@@ -51,6 +51,11 @@ import {
 export default function LayerControlWidget({
   activeLayers,
   setActiveLayers,
+  commercialResidentialHubsData,
+  selectedHubTypeFilter = 'ALL',
+  setSelectedHubTypeFilter,
+  selectedHub,
+  onSelectHub,
   competitorsData,
   selectedBrandFilter = 'ALL',
   setSelectedBrandFilter,
@@ -175,6 +180,27 @@ export default function LayerControlWidget({
   }, [complementaryBrandsData, selectedComplementarySpectrum]);
 
   const totalComplementaryCount = complementaryBrandsData?.features?.length || 171;
+
+  // Extract commercial vs residential hubs and counts
+  const totalHubsCount = commercialResidentialHubsData?.features?.length || 51;
+  const commercialCount = React.useMemo(() => {
+    if (!commercialResidentialHubsData?.features) return 22;
+    return commercialResidentialHubsData.features.filter(f => f.properties?.hub_type === 'commercial').length;
+  }, [commercialResidentialHubsData]);
+
+  const residentialCount = React.useMemo(() => {
+    if (!commercialResidentialHubsData?.features) return 29;
+    return commercialResidentialHubsData.features.filter(f => f.properties?.hub_type === 'residential').length;
+  }, [commercialResidentialHubsData]);
+
+  // Hubs corresponding to selected pocket classification filter
+  const correspondingHubs = React.useMemo(() => {
+    if (!commercialResidentialHubsData?.features) return [];
+    const list = selectedHubTypeFilter === 'ALL'
+      ? commercialResidentialHubsData.features
+      : commercialResidentialHubsData.features.filter(f => f.properties?.hub_type === selectedHubTypeFilter);
+    return [...list].sort((a, b) => (a.properties?.name || '').localeCompare(b.properties?.name || ''));
+  }, [commercialResidentialHubsData, selectedHubTypeFilter]);
 
   const activeCount = Object.values(activeLayers).filter(Boolean).length;
 
@@ -314,6 +340,207 @@ export default function LayerControlWidget({
                 Apsara Ice Cream client anchors
               </p>
             </div>
+          </div>
+
+          {/* Layer: Commercial & Residential Urban Pockets (Google Maps / Landuse Hubs) */}
+          <div 
+            className={`p-2 rounded-lg transition-all border ${
+              activeLayers.commercialResidentialHubs 
+                ? 'bg-paper-50 border-ink-950/[0.14] text-ink-950 shadow-2xs' 
+                : 'bg-paper-50/70 border-ink-950/[0.08] text-ink-500 hover:bg-paper-100 hover:text-ink-800'
+            }`}
+          >
+            {/* Clickable Header to Toggle Layer */}
+            <div 
+              onClick={() => toggleLayer('commercialResidentialHubs')}
+              className="flex items-start gap-2.5 cursor-pointer"
+            >
+              <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
+                activeLayers.commercialResidentialHubs 
+                  ? 'bg-ink-950 border-ink-950 text-white' 
+                  : 'bg-white border-ink-950/[0.2]'
+              }`}>
+                {activeLayers.commercialResidentialHubs && <Check className="w-3 h-3 stroke-[3]" />}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
+                    <Building2 className="w-3.5 h-3.5 text-amber-600" />
+                    Commercial & Residential Hubs ({totalHubsCount})
+                  </span>
+                  <div className="flex -space-x-1">
+                    <span className="w-4 h-4 rounded-full bg-amber-500/20 border border-amber-600 flex items-center justify-center text-amber-800 shadow-2xs text-[9px]" title="Commercial Hubs">
+                      🏢
+                    </span>
+                    <span className="w-4 h-4 rounded-full bg-indigo-500/20 border border-indigo-600 flex items-center justify-center text-indigo-800 shadow-2xs text-[9px]" title="Residential Pockets">
+                      🏡
+                    </span>
+                  </div>
+                </div>
+                <p className="text-[9px] text-ink-500 mt-0.5">
+                  High streets, tech corridors & residential layouts
+                </p>
+              </div>
+            </div>
+
+            {/* When Layer is enabled, show Pocket Type filter and Pocket Selector */}
+            {activeLayers.commercialResidentialHubs && (
+              <div 
+                onClick={(e) => e.stopPropagation()}
+                className="mt-2.5 pt-2 border-t border-ink-950/[0.08] space-y-2 text-xs"
+              >
+                {/* 1. Hub Type Selector Filter (All | Commercial | Residential) */}
+                <div>
+                  <div className="flex justify-between items-center text-[10px] text-ink-700 font-semibold mb-1">
+                    <span>Pocket Classification:</span>
+                    <span className="text-[9px] text-ink-500 font-mono">
+                      {selectedHubTypeFilter === 'commercial' ? `${commercialCount} Commercial` : selectedHubTypeFilter === 'residential' ? `${residentialCount} Residential` : `${totalHubsCount} Total`}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-3 gap-1 bg-paper-100 p-0.5 rounded border border-ink-950/[0.08] text-[10px]">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedHubTypeFilter && setSelectedHubTypeFilter('ALL')}
+                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
+                        selectedHubTypeFilter === 'ALL'
+                          ? 'bg-ink-950 text-white shadow-2xs'
+                          : 'text-ink-600 hover:bg-white'
+                      }`}
+                    >
+                      All ({totalHubsCount})
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedHubTypeFilter && setSelectedHubTypeFilter('commercial')}
+                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
+                        selectedHubTypeFilter === 'commercial'
+                          ? 'bg-amber-600 text-white shadow-2xs'
+                          : 'text-ink-600 hover:bg-white'
+                      }`}
+                    >
+                      🏢 Comm ({commercialCount})
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedHubTypeFilter && setSelectedHubTypeFilter('residential')}
+                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
+                        selectedHubTypeFilter === 'residential'
+                          ? 'bg-indigo-600 text-white shadow-2xs'
+                          : 'text-ink-600 hover:bg-white'
+                      }`}
+                    >
+                      🏡 Resid ({residentialCount})
+                    </button>
+                  </div>
+                </div>
+
+                {/* 2. Specific Hub Selector Dropdown */}
+                <div>
+                  <div className="flex items-center justify-between text-[10px] font-bold text-ink-700 mb-1">
+                    <span>
+                      {selectedHubTypeFilter === 'ALL' 
+                        ? `Select Urban Pocket (${correspondingHubs.length}):` 
+                        : selectedHubTypeFilter === 'commercial' 
+                        ? `Commercial Hubs (${correspondingHubs.length}):` 
+                        : `Residential Pockets (${correspondingHubs.length}):`}
+                    </span>
+                    {selectedHub && (
+                      <button
+                        onClick={() => onSelectHub && onSelectHub(null)}
+                        className="text-[9px] text-azure-600 hover:text-azure-800 underline font-normal cursor-pointer"
+                      >
+                        Clear Selection
+                      </button>
+                    )}
+                  </div>
+                  <select
+                    value={selectedHub?.properties?.hub_id || ''}
+                    onChange={(e) => {
+                      const match = commercialResidentialHubsData?.features?.find(f => f.properties?.hub_id === e.target.value);
+                      if (onSelectHub) {
+                        onSelectHub(match || null);
+                      }
+                    }}
+                    className="w-full bg-white border border-ink-950/[0.12] rounded px-2 py-1.5 text-xs font-semibold text-ink-900 focus:outline-none focus:ring-1 focus:ring-azure-500 cursor-pointer shadow-2xs"
+                  >
+                    <option value="">
+                      {selectedHubTypeFilter === 'ALL' 
+                        ? 'Select commercial or residential pocket...' 
+                        : selectedHubTypeFilter === 'commercial' 
+                        ? 'Select commercial hub...' 
+                        : 'Select residential pocket...'}
+                    </option>
+                    {correspondingHubs.map(f => {
+                      const p = f.properties;
+                      const icon = p.hub_type === 'commercial' ? '🏢' : '🏡';
+                      return (
+                        <option key={p.hub_id} value={p.hub_id}>
+                          {icon} {p.name} ({p.locality})
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+
+                {/* 3. Selected Hub Executive Snapshot */}
+                {selectedHub && (
+                  <div className="bg-paper-50 border border-ink-950/[0.1] rounded-lg p-2 text-[10px] text-ink-950 space-y-1.5 shadow-2xs">
+                    <div className="flex items-center justify-between gap-1 font-bold">
+                      <div className="flex items-center gap-1.5 truncate">
+                        <span className={`p-1 rounded bg-white border text-[11px] shrink-0 ${
+                          selectedHub.properties?.hub_type === 'commercial' 
+                            ? 'border-amber-500/40 text-amber-700' 
+                            : 'border-indigo-500/40 text-indigo-700'
+                        }`}>
+                          {selectedHub.properties?.hub_type === 'commercial' ? '🏢' : '🏡'}
+                        </span>
+                        <span className="truncate">{selectedHub.properties?.name}</span>
+                      </div>
+                      <span className="text-azure-700 shrink-0 font-bold bg-white px-1.5 py-0.5 rounded border border-ink-950/[0.1] text-[9px] font-mono">
+                        Synergy: {selectedHub.properties?.synergy_score}/100
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-1.5 text-[9px] text-ink-600 font-semibold">
+                      <span className={`px-1.5 py-0.5 rounded uppercase font-bold text-[8.5px] border ${
+                        selectedHub.properties?.hub_type === 'commercial'
+                          ? 'bg-amber-50 border-amber-300 text-amber-800'
+                          : 'bg-indigo-50 border-indigo-300 text-indigo-800'
+                      }`}>
+                        {selectedHub.properties?.hub_type === 'commercial' ? 'Commercial Hub' : 'Residential Pocket'}
+                      </span>
+                      <span>{selectedHub.properties?.category}</span>
+                    </div>
+
+                    <div className="text-ink-500 line-clamp-1">{selectedHub.properties?.summary}</div>
+
+                    <div className="pt-1 border-t border-ink-950/[0.08] space-y-0.5 text-[10px]">
+                      <div className="flex justify-between">
+                        <span className="text-ink-500">
+                          {selectedHub.properties?.hub_type === 'commercial' ? 'Est. Daytime Workforce:' : 'Est. Resident Population:'}
+                        </span>
+                        <span className="font-bold text-ink-950 font-mono">
+                          {selectedHub.properties?.est_activity?.toLocaleString()} {selectedHub.properties?.hub_type === 'commercial' ? 'workers' : 'residents'}
+                        </span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-ink-500">Peak Window:</span>
+                        <span className="text-azure-700 font-semibold">{selectedHub.properties?.peak_window}</span>
+                      </div>
+                      {selectedHub.properties?.anchors && (
+                        <div className="pt-0.5 flex flex-wrap gap-1 text-[8.5px]">
+                          {selectedHub.properties.anchors.slice(0, 3).map((a, i) => (
+                            <span key={i} className="bg-white px-1 py-0.2 rounded border border-ink-950/[0.08] text-ink-800">
+                              {a}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           {/* Layer 4: Competitor Parlors with In-Panel Brand & Store Selector */}

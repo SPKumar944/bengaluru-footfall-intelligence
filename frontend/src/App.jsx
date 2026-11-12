@@ -33,6 +33,9 @@ export default function App() {
   const [hexDemographicsData, setHexDemographicsData] = useState(null);
   const [educationPoisData, setEducationPoisData] = useState(null);
   const [complementaryBrandsData, setComplementaryBrandsData] = useState(null);
+  const [commercialResidentialHubsData, setCommercialResidentialHubsData] = useState(null);
+  const [selectedHubTypeFilter, setSelectedHubTypeFilter] = useState('ALL'); // 'ALL' | 'commercial' | 'residential'
+  const [selectedHub, setSelectedHub] = useState(null);
   const [demographicGender, setDemographicGender] = useState('all'); // 'all' | 'male' | 'female'
   const [demographicAge, setDemographicAge] = useState('all'); // 'all' | 'kids' | 'youth' | 'adults' | 'seniors'
 
@@ -41,6 +44,7 @@ export default function App() {
     streetFootfall: true,
     catchments: true,           // 350m High-Density Pedestrian Walksheds
     apsaraStores: true,
+    commercialResidentialHubs: true, // Urban Pockets: Commercial & Residential Hubs
     competitors: false,
     kidsAttractions: true,      // 116 Kids & Family Footfall Magnets
     complementaryBrands: true,  // 171 Complementary Dining Brands (Biryani, Burgers, Breweries, Tiffins)
@@ -62,6 +66,20 @@ export default function App() {
   const [selectedEducationPoi, setSelectedEducationPoi] = useState(null);
   const [selectedComplementarySpectrum, setSelectedComplementarySpectrum] = useState('ALL');
   const [selectedComplementaryBrand, setSelectedComplementaryBrand] = useState(null);
+
+  const handleSelectHub = (hub) => {
+    setSelectedHub(hub);
+    if (hub?.properties?.centroid) {
+      const [lng, lat] = hub.properties.centroid;
+      setViewState(prev => ({
+        ...prev,
+        latitude: lat,
+        longitude: lng,
+        zoom: Math.max(prev.zoom, 14.2),
+        transitionDuration: 800
+      }));
+    }
+  };
 
   // Footfall Range Level Filter & Radius Circle Scope
   const [selectedFootfallRange, setSelectedFootfallRange] = useState('ALL');
@@ -91,7 +109,7 @@ export default function App() {
       try {
         setLoading(true);
         const b = import.meta.env.BASE_URL;
-        const [streetRes, catchmentsRes, apsaraRes, competitorsRes, tpRes, kidsRes, eduRes, compRes] = await Promise.all([
+        const [streetRes, catchmentsRes, apsaraRes, competitorsRes, tpRes, kidsRes, eduRes, compRes, hubsRes] = await Promise.all([
           fetch(`${b}data/all_stores_street_footfall.geojson`).then(r => r.json()),
           fetch(`${b}data/apsara_store_footfall_catchments.geojson`).then(r => r.json()),
           fetch(`${b}data/apsara_ice_cream_bangalore_footfall.json`).then(r => r.json()),
@@ -99,7 +117,8 @@ export default function App() {
           fetch(`${b}data/mapped_tech_parks.geojson`).then(r => r.json()).catch(() => null),
           fetch(`${b}data/kids_family_attractions.geojson`).then(r => r.json()).catch(() => null),
           fetch(`${b}data/education_youth_pois.geojson`).then(r => r.json()).catch(() => null),
-          fetch(`${b}data/layer6_complementary_brands.geojson`).then(r => r.json()).catch(() => null)
+          fetch(`${b}data/layer6_complementary_brands.geojson`).then(r => r.json()).catch(() => null),
+          fetch(`${b}data/commercial_residential_hubs.geojson`).then(r => r.json()).catch(() => null)
         ]);
 
         setStreetFootfallData(streetRes);
@@ -110,6 +129,7 @@ export default function App() {
         if (kidsRes) setKidsAttractionsData(kidsRes);
         if (eduRes) setEducationPoisData(eduRes);
         if (compRes) setComplementaryBrandsData(compRes);
+        if (hubsRes) setCommercialResidentialHubsData(hubsRes);
 
         if (apsaraRes && apsaraRes.length > 0) {
           // Default selection to Indiranagar outlet
@@ -373,6 +393,10 @@ export default function App() {
           hexDemographicsData={hexDemographicsData}
           demographicGender={demographicGender}
           demographicAge={demographicAge}
+          commercialResidentialHubsData={commercialResidentialHubsData}
+          selectedHubTypeFilter={selectedHubTypeFilter}
+          selectedHub={selectedHub}
+          onSelectHub={handleSelectHub}
           selectedBrandFilter={selectedBrandFilter}
           selectedCompetitor={selectedCompetitor}
           onSelectCompetitor={handleSelectCompetitor}
@@ -394,6 +418,11 @@ export default function App() {
           <LayerControlWidget
             activeLayers={activeLayers}
             setActiveLayers={setActiveLayers}
+            commercialResidentialHubsData={commercialResidentialHubsData}
+            selectedHubTypeFilter={selectedHubTypeFilter}
+            setSelectedHubTypeFilter={setSelectedHubTypeFilter}
+            selectedHub={selectedHub}
+            onSelectHub={handleSelectHub}
             competitorsData={competitorsData}
             selectedBrandFilter={selectedBrandFilter}
             setSelectedBrandFilter={handleSelectBrandFilter}

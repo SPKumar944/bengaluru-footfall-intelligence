@@ -167,6 +167,10 @@ export default function MapViewport({
   officeFootprintsData,
   wardDemographicsData,
   hexDemographicsData,
+  commercialResidentialHubsData,
+  selectedHubTypeFilter = 'ALL',
+  selectedHub,
+  onSelectHub,
   demographicGender = 'all',
   demographicAge = 'all',
   selectedBrandFilter = 'ALL',
@@ -176,6 +180,7 @@ export default function MapViewport({
     streetFootfall: true,
     catchments: true,
     apsaraStores: true,
+    commercialResidentialHubs: true,
     competitors: false,
     kidsAttractions: true,
     complementaryBrands: true,
@@ -263,6 +268,20 @@ export default function MapViewport({
     }
     return educationPoisData.features.filter(f => f.properties?.category === selectedEducationCategory);
   }, [educationPoisData, selectedEducationCategory]);
+
+  // Filter commercial & residential urban pockets by selected type filter
+  const filteredHubsData = useMemo(() => {
+    if (!commercialResidentialHubsData?.features) return null;
+    if (!selectedHubTypeFilter || selectedHubTypeFilter === 'ALL') {
+      return commercialResidentialHubsData;
+    }
+    return {
+      type: 'FeatureCollection',
+      features: commercialResidentialHubsData.features.filter(
+        f => f.properties?.hub_type === selectedHubTypeFilter
+      )
+    };
+  }, [commercialResidentialHubsData, selectedHubTypeFilter]);
 
   // Filter street footfall data by selected footfall index level and 350m radius circle
   const filteredStreetFootfallData = useMemo(() => {
@@ -364,6 +383,74 @@ export default function MapViewport({
       onHover: info => setHoverInfo(info)
     }),
 
+    // 0c. Urban Pockets: Commercial & Residential Hubs (Polygons)
+    activeLayers.commercialResidentialHubs && filteredHubsData?.features && new GeoJsonLayer({
+      id: 'commercial-residential-hubs-layer',
+      data: filteredHubsData,
+      pickable: true,
+      stroked: true,
+      filled: true,
+      extruded: false,
+      lineWidthUnits: 'pixels',
+      getLineWidth: f => {
+        const isSelected = selectedHub && f.properties.hub_id === selectedHub.properties.hub_id;
+        return isSelected ? 3.5 : 2.0;
+      },
+      getLineColor: f => {
+        const isSelected = selectedHub && f.properties.hub_id === selectedHub.properties.hub_id;
+        if (isSelected) return [13, 21, 33, 255]; // High-contrast black focus outline
+        return f.properties.line_color || (f.properties.hub_type === 'commercial' ? [234, 88, 12, 220] : [79, 70, 229, 220]);
+      },
+      getFillColor: f => {
+        const isSelected = selectedHub && f.properties.hub_id === selectedHub.properties.hub_id;
+        const isComm = f.properties.hub_type === 'commercial';
+        if (isSelected) {
+          return isComm ? [249, 115, 22, 110] : [99, 102, 241, 110];
+        }
+        return isComm ? [249, 115, 22, 45] : [99, 102, 241, 45];
+      },
+      updateTriggers: {
+        getLineWidth: [selectedHub?.properties?.hub_id],
+        getLineColor: [selectedHub?.properties?.hub_id],
+        getFillColor: [selectedHub?.properties?.hub_id]
+      },
+      onHover: info => setHoverInfo(info),
+      onClick: info => {
+        if (info?.object && onSelectHub) {
+          onSelectHub(info.object);
+        }
+      }
+    }),
+
+    // 0d. Floating Centroid Badges for Urban Pockets
+    activeLayers.commercialResidentialHubs && filteredHubsData?.features && new TextLayer({
+      id: 'commercial-residential-hubs-labels',
+      data: filteredHubsData.features,
+      pickable: true,
+      getPosition: f => f.properties.centroid,
+      getText: f => {
+        const prefix = f.properties.hub_type === 'commercial' ? '🏢 ' : '🏡 ';
+        const words = f.properties.name.split(' ');
+        return prefix + words.slice(0, 3).join(' ');
+      },
+      getSize: 10,
+      getColor: f => (f.properties.hub_type === 'commercial' ? [194, 65, 12, 255] : [67, 56, 202, 255]),
+      getTextAnchor: 'middle',
+      getAlignmentBaseline: 'center',
+      fontFamily: 'ui-sans-serif, system-ui, -apple-system, sans-serif',
+      fontWeight: 800,
+      background: true,
+      getBackgroundColor: [255, 255, 255, 225],
+      backgroundPadding: [5, 3],
+      getBorderColor: f => (f.properties.hub_type === 'commercial' ? [249, 115, 22, 180] : [99, 102, 241, 180]),
+      borderWidth: 1,
+      onHover: info => setHoverInfo(info),
+      onClick: info => {
+        if (info?.object && onSelectHub) {
+          onSelectHub(info.object);
+        }
+      }
+    }),
 
     // 1. High-Density 350m Pedestrian Catchment Zones for all 13 Outlets
     activeLayers.catchments && catchmentsData?.features && new GeoJsonLayer({
@@ -748,6 +835,65 @@ export default function MapViewport({
             (() => {
               const p = hoverInfo.object.properties;
               
+              // Case 0: Commercial & Residential Urban Pockets (Hubs)
+              if (p.hub_id) {
+                const isComm = p.hub_type === 'commercial';
+                return (
+                  <div className="space-y-1.5 min-w-[270px] max-w-[320px]">
+                    <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1">
+                      <span className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded border flex items-center gap-1.5 ${
+                        isComm 
+                          ? 'text-amber-800 bg-amber-500/10 border-amber-500/30' 
+                          : 'text-indigo-800 bg-indigo-500/10 border-indigo-500/30'
+                      }`}>
+                        <span>{isComm ? '🏢 COMMERCIAL HUB' : '🏡 RESIDENTIAL POCKET'}</span>
+                      </span>
+                      <span className="text-[10px] font-bold text-azure-700 bg-azure-500/[0.08] px-1.5 py-0.5 rounded border border-azure-500/30 font-mono">
+                        Synergy: {p.synergy_score}/100
+                      </span>
+                    </div>
+                    <div className="text-xs font-extrabold text-ink-950 leading-snug">{p.name}</div>
+                    <div className="text-[10px] text-ink-500 font-semibold">{p.locality} • {p.category}</div>
+                    
+                    <div className="pt-1 border-t border-ink-950/[0.06] space-y-0.5 text-[11px]">
+                      <div className="flex justify-between">
+                        <span className="text-ink-500">{isComm ? 'Est. Daytime Workforce:' : 'Est. Resident Population:'}</span>
+                        <span className="text-ink-950 font-bold font-mono">
+                          {p.est_activity ? p.est_activity.toLocaleString() : 'N/A'} {isComm ? 'workers' : 'residents'}
+                        </span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-ink-500">{isComm ? 'Daily Footfall Flow:' : 'Household Density:'}</span>
+                        <span className="text-ink-800 font-semibold">
+                          {isComm ? `${Math.round(p.daily_footfall).toLocaleString()} pedestrians` : p.household_density}
+                        </span>
+                      </div>
+                      <div className="flex justify-between text-[10px]">
+                        <span className="text-ink-400">Peak Demand Window:</span>
+                        <span className="text-azure-700 font-semibold">{p.peak_window}</span>
+                      </div>
+                      <div className="flex justify-between text-[10px]">
+                        <span className="text-ink-400">Target Cohort:</span>
+                        <span className="text-ink-800 font-medium truncate max-w-[170px]" title={p.dominant_profile}>{p.dominant_profile}</span>
+                      </div>
+                      {p.anchors && p.anchors.length > 0 && (
+                        <div className="pt-1 text-[9px] text-ink-500 flex flex-wrap gap-1 border-t border-ink-950/[0.06]">
+                          <span className="font-bold text-ink-700">Anchors:</span>
+                          {p.anchors.slice(0, 3).map((a, i) => (
+                            <span key={i} className="bg-paper-100 px-1 py-0.2 rounded border border-ink-950/[0.08] text-ink-800 font-medium">
+                              {a}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      <div className="pt-0.5 text-[10px] text-ink-700 font-medium italic border-t border-ink-950/[0.06]">
+                        {p.synergy_rationale}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
               // Case A: 350m High-Density Footfall Catchment Zone
               if (p.weekend_daily_footfall && p.store_name) {
                 return (

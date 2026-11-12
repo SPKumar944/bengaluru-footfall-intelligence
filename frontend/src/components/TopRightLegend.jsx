@@ -177,8 +177,20 @@ export default function TopRightLegend({
         </div>
       )}
 
+      {/* Pocket Category Legend Guide */}
+      <div className="flex items-center justify-between text-[9px] pt-1.5 mt-2 border-t border-ink-950/[0.08] text-ink-600 font-semibold">
+        <span className="flex items-center gap-1">
+          <span className="w-2.5 h-2.5 rounded-xs bg-amber-500/30 border border-amber-600 inline-block" />
+          <span>Commercial Hubs</span>
+        </span>
+        <span className="flex items-center gap-1">
+          <span className="w-2.5 h-2.5 rounded-xs bg-indigo-500/30 border border-indigo-600 inline-block" />
+          <span>Residential Pockets</span>
+        </span>
+      </div>
+
       {/* Geographic Coordinates & Zoom Readout */}
-      <div className="flex items-center justify-between text-[9px] text-ink-400 pt-1.5 mt-2 border-t border-ink-950/[0.08]">
+      <div className="flex items-center justify-between text-[9px] text-ink-400 pt-1.5 mt-1.5 border-t border-ink-950/[0.08]">
         <span>Lat: {viewState.latitude.toFixed(4)}°N</span>
         <span>Lon: {viewState.longitude.toFixed(4)}°E</span>
         <span className="text-ink-950 font-bold font-mono">Z: {viewState.zoom.toFixed(1)}</span>

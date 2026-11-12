@@ -39,6 +39,7 @@ def package_master_datasets():
         "all_stores_street_footfall.geojson",
         "apsara_store_footfall_catchments.geojson",
         "apsara_ice_cream_bangalore_footfall.json",
+        "commercial_residential_hubs.geojson",
         "layer5_competitors.geojson",
         "layer6_complementary_brands.geojson",
         "education_youth_pois.geojson",
