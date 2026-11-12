@@ -1,0 +1,370 @@
+{
+  "type": "FeatureCollection",
+  "name": "Apsara_New_Store_Expansion_Candidates_Ranked",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7011,
+          12.9562
+        ]
+      },
+      "properties": {
+        "candidate_id": "LOC_NEW_04",
+        "rank": 1,
+        "name": "Marathahalli",
+        "corridor": "Spice Garden & Outer Ring Road Multiplex Hub",
+        "locality": "Marathahalli",
+        "zone": "East Transit Corridor",
+        "corridor_type": "High-Density IT Bachelor & Young Professional Hub",
+        "analog_benchmark": "Bellandur (Ecospace Strip)",
+        "benchmark_serial": "APSARA_BLR_06",
+        "min_distance_km": 3.1,
+        "nearest_store_locality": "Whitefield",
+        "nearest_store_serial": "APSARA_BLR_04",
+        "cannibalization_risk_pct": 0.5,
+        "overall_suitability_score": 77.9,
+        "demographic_score": 64.7,
+        "commercial_score": 96.4,
+        "synergy_score": 72.5,
+        "white_space_score": 79.6,
+        "projected_daily_cups": 158,
+        "projected_monthly_revenue_lakhs": 8.89,
+        "projected_monthly_customers": 4563,
+        "est_payback_months": 9.6,
+        "walkshed_pop_15k": 100777,
+        "kids_cohort_15k": 15416,
+        "youth_cohort_15k": 13482,
+        "workforce_15k": 52456,
+        "office_floor_m2": 678837,
+        "competitor_count_15k": 6,
+        "competitor_brands": [
+          "Cream Stone",
+          "Ibaco",
+          "Kwality Wall's Swirl's",
+          "Amul Ice Cream Lounge"
+        ],
+        "total_dining_transit": 7,
+        "kids_family_attractions": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6432,
+          13.0159
+        ]
+      },
+      "properties": {
+        "candidate_id": "LOC_NEW_01",
+        "rank": 2,
+        "name": "Kammanahalli / Kalyan Nagar",
+        "corridor": "CMR Road & HRBR Layout 80ft Road High-Street",
+        "locality": "Kammanahalli / Kalyan Nagar",
+        "zone": "North-East",
+        "corridor_type": "Cosmopolitan Dining, Cafe & Youth Promenade",
+        "analog_benchmark": "Indiranagar (100ft Rd)",
+        "benchmark_serial": "APSARA_BLR_02",
+        "min_distance_km": 3.78,
+        "nearest_store_locality": "Indiranagar",
+        "nearest_store_serial": "APSARA_BLR_02",
+        "cannibalization_risk_pct": 0.5,
+        "overall_suitability_score": 70.6,
+        "demographic_score": 82.0,
+        "commercial_score": 5.8,
+        "synergy_score": 83.5,
+        "white_space_score": 93.2,
+        "projected_daily_cups": 175,
+        "projected_monthly_revenue_lakhs": 9.84,
+        "projected_monthly_customers": 5054,
+        "est_payback_months": 8.7,
+        "walkshed_pop_15k": 200644,
+        "kids_cohort_15k": 16766,
+        "youth_cohort_15k": 14665,
+        "workforce_15k": 3505,
+        "office_floor_m2": 45361,
+        "competitor_count_15k": 9,
+        "competitor_brands": [
+          "Kwality Wall's Swirl's",
+          "Arun Icecreams",
+          "Polar Bear",
+          "Natural Ice Cream",
+          "Ibaco",
+          "Cream Stone"
+        ],
+        "total_dining_transit": 11,
+        "kids_family_attractions": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5891,
+          13.0621
+        ]
+      },
+      "properties": {
+        "candidate_id": "LOC_NEW_03",
+        "rank": 3,
+        "name": "Sahakara Nagar / Hebbal",
+        "corridor": "60 Feet Road Commercial Promenade & Manyata Gateway",
+        "locality": "Sahakara Nagar",
+        "zone": "North Gateway",
+        "corridor_type": "Affluent Residential & IT Corporate Spillover",
+        "analog_benchmark": "HSR Layout (Sector 2)",
+        "benchmark_serial": "APSARA_BLR_01",
+        "min_distance_km": 3.47,
+        "nearest_store_locality": "Vidyaranyapura",
+        "nearest_store_serial": "APSARA_BLR_10",
+        "cannibalization_risk_pct": 0.5,
+        "overall_suitability_score": 66.9,
+        "demographic_score": 56.5,
+        "commercial_score": 100.0,
+        "synergy_score": 42.5,
+        "white_space_score": 62.4,
+        "projected_daily_cups": 158,
+        "projected_monthly_revenue_lakhs": 8.89,
+        "projected_monthly_customers": 4563,
+        "est_payback_months": 9.6,
+        "walkshed_pop_15k": 106152,
+        "kids_cohort_15k": 12775,
+        "youth_cohort_15k": 11167,
+        "workforce_15k": 60214,
+        "office_floor_m2": 779204,
+        "competitor_count_15k": 0,
+        "competitor_brands": [],
+        "total_dining_transit": 1,
+        "kids_family_attractions": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5342,
+          12.9698
+        ]
+      },
+      "properties": {
+        "candidate_id": "LOC_NEW_07",
+        "rank": 4,
+        "name": "Vijayanagar / RPC Layout",
+        "corridor": "Chord Road, Club Road & MC Layout Bazaar Strip",
+        "locality": "Vijayanagar",
+        "zone": "West Central",
+        "corridor_type": "Traditional High-Density Commercial & Family Bazaar",
+        "analog_benchmark": "Malleshwaram (8th Cross)",
+        "benchmark_serial": "APSARA_BLR_09",
+        "min_distance_km": 4.78,
+        "nearest_store_locality": "Basavanagudi",
+        "nearest_store_serial": "APSARA_BLR_13",
+        "cannibalization_risk_pct": 0.5,
+        "overall_suitability_score": 64.6,
+        "demographic_score": 100.0,
+        "commercial_score": 15.8,
+        "synergy_score": 40.5,
+        "white_space_score": 75.5,
+        "projected_daily_cups": 175,
+        "projected_monthly_revenue_lakhs": 9.84,
+        "projected_monthly_customers": 5054,
+        "est_payback_months": 8.7,
+        "walkshed_pop_15k": 413362,
+        "kids_cohort_15k": 17727,
+        "youth_cohort_15k": 15498,
+        "workforce_15k": 8359,
+        "office_floor_m2": 108187,
+        "competitor_count_15k": 0,
+        "competitor_brands": [],
+        "total_dining_transit": 3,
+        "kids_family_attractions": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.6133,
+          12.9968
+        ]
+      },
+      "properties": {
+        "candidate_id": "LOC_NEW_02",
+        "rank": 5,
+        "name": "Frazer Town / Pulakeshinagar",
+        "corridor": "Coles Road & Mosque Road Gastronomy Spine",
+        "locality": "Frazer Town",
+        "zone": "Central North",
+        "corridor_type": "Heritage Family Dining & Evening Walk-in Corridor",
+        "analog_benchmark": "Basavanagudi (Gandhi Bazaar)",
+        "benchmark_serial": "APSARA_BLR_13",
+        "min_distance_km": 3.18,
+        "nearest_store_locality": "Indiranagar",
+        "nearest_store_serial": "APSARA_BLR_02",
+        "cannibalization_risk_pct": 0.5,
+        "overall_suitability_score": 58.1,
+        "demographic_score": 93.4,
+        "commercial_score": 22.9,
+        "synergy_score": 25.0,
+        "white_space_score": 67.2,
+        "projected_daily_cups": 175,
+        "projected_monthly_revenue_lakhs": 9.84,
+        "projected_monthly_customers": 5054,
+        "est_payback_months": 8.7,
+        "walkshed_pop_15k": 312405,
+        "kids_cohort_15k": 15879,
+        "youth_cohort_15k": 13879,
+        "workforce_15k": 13910,
+        "office_floor_m2": 180016,
+        "competitor_count_15k": 1,
+        "competitor_brands": [
+          "Polar Bear"
+        ],
+        "total_dining_transit": 0,
+        "kids_family_attractions": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5186,
+          12.9238
+        ]
+      },
+      "properties": {
+        "candidate_id": "LOC_NEW_06",
+        "rank": 6,
+        "name": "Rajarajeshwari Nagar (RR Nagar)",
+        "corridor": "60 Feet Road Commercial Promenade & BEML 3rd Stage",
+        "locality": "RR Nagar",
+        "zone": "South-West",
+        "corridor_type": "Established Family Suburb & Student University Hub",
+        "analog_benchmark": "Banashankari (Kathriguppe)",
+        "benchmark_serial": "APSARA_BLR_11",
+        "min_distance_km": 4.51,
+        "nearest_store_locality": "Banashankari",
+        "nearest_store_serial": "APSARA_BLR_11",
+        "cannibalization_risk_pct": 0.5,
+        "overall_suitability_score": 43.3,
+        "demographic_score": 56.7,
+        "commercial_score": 5.2,
+        "synergy_score": 23.5,
+        "white_space_score": 62.5,
+        "projected_daily_cups": 110,
+        "projected_monthly_revenue_lakhs": 6.19,
+        "projected_monthly_customers": 3177,
+        "est_payback_months": 13.8,
+        "walkshed_pop_15k": 57441,
+        "kids_cohort_15k": 14695,
+        "youth_cohort_15k": 12851,
+        "workforce_15k": 1940,
+        "office_floor_m2": 25107,
+        "competitor_count_15k": 0,
+        "competitor_brands": [],
+        "total_dining_transit": 1,
+        "kids_family_attractions": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.5992,
+          12.8685
+        ]
+      },
+      "properties": {
+        "candidate_id": "LOC_NEW_05",
+        "rank": 7,
+        "name": "Bannerghatta Road (Hulimavu / Gottigere)",
+        "corridor": "Royal Meenakshi Mall & Hulimavu Gate Strip",
+        "locality": "Hulimavu / Bannerghatta Rd",
+        "zone": "South Arterial Corridor",
+        "corridor_type": "Mall Anchor & Premium Gated Community Axis",
+        "analog_benchmark": "JP Nagar (Phase 2)",
+        "benchmark_serial": "APSARA_BLR_03",
+        "min_distance_km": 3.51,
+        "nearest_store_locality": "JP Nagar",
+        "nearest_store_serial": "APSARA_BLR_03",
+        "cannibalization_risk_pct": 0.5,
+        "overall_suitability_score": 42.3,
+        "demographic_score": 49.9,
+        "commercial_score": 1.6,
+        "synergy_score": 31.5,
+        "white_space_score": 60.5,
+        "projected_daily_cups": 110,
+        "projected_monthly_revenue_lakhs": 6.19,
+        "projected_monthly_customers": 3177,
+        "est_payback_months": 13.8,
+        "walkshed_pop_15k": 68955,
+        "kids_cohort_15k": 12245,
+        "youth_cohort_15k": 10709,
+        "workforce_15k": 1001,
+        "office_floor_m2": 12949,
+        "competitor_count_15k": 0,
+        "competitor_brands": [],
+        "total_dining_transit": 1,
+        "kids_family_attractions": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.7012,
+          12.9025
+        ]
+      },
+      "properties": {
+        "candidate_id": "LOC_NEW_08",
+        "rank": 8,
+        "name": "Sarjapur Road (Carmelaram / Wipro SEZ)",
+        "corridor": "Carmelaram Junction & Wipro Corporate Gateway",
+        "locality": "Sarjapur Road (Carmelaram)",
+        "zone": "South-East Growth Corridor",
+        "corridor_type": "Rapidly Growing Tech Township & Modern Gated Estates",
+        "analog_benchmark": "Whitefield (ITPL Axis)",
+        "benchmark_serial": "APSARA_BLR_04",
+        "min_distance_km": 4.3,
+        "nearest_store_locality": "Bellandur",
+        "nearest_store_serial": "APSARA_BLR_06",
+        "cannibalization_risk_pct": 0.5,
+        "overall_suitability_score": 41.4,
+        "demographic_score": 24.3,
+        "commercial_score": 52.4,
+        "synergy_score": 23.0,
+        "white_space_score": 52.8,
+        "projected_daily_cups": 110,
+        "projected_monthly_revenue_lakhs": 6.19,
+        "projected_monthly_customers": 3177,
+        "est_payback_months": 13.8,
+        "walkshed_pop_15k": 10109,
+        "kids_cohort_15k": 6854,
+        "youth_cohort_15k": 5995,
+        "workforce_15k": 28145,
+        "office_floor_m2": 364220,
+        "competitor_count_15k": 0,
+        "competitor_brands": [],
+        "total_dining_transit": 0,
+        "kids_family_attractions": 0
+      }
+    }
+  ]
+}
