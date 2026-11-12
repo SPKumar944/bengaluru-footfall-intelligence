@@ -46,7 +46,8 @@ import {
   ZapIcon,
   LayersIcon,
   MapPinIcon,
-  GlobeIcon
+  GlobeIcon,
+  TargetIcon
 } from './IconMCP';
 import FootfallRangeSelector from './FootfallRangeSelector';
 import { 
@@ -94,6 +95,16 @@ export default function LayerControlWidget({
   setDemographicGender,
   demographicAge = 'all',
   setDemographicAge,
+  h3SuitabilityData,
+  candidateSitesData,
+  selectedSuitabilityTier = 'ALL',
+  setSelectedSuitabilityTier,
+  scopeSuitabilityToGoldenBand = true,
+  setScopeSuitabilityToGoldenBand,
+  selectedSuitabilityHex,
+  setSelectedSuitabilityHex,
+  selectedCandidateHub,
+  onSelectCandidateHub,
   selectedFootfallRange = 'ALL',
   setSelectedFootfallRange,
   scopeToRadiusCircle = true,
@@ -224,6 +235,36 @@ export default function LayerControlWidget({
       : commercialResidentialHubsData.features.filter(f => f.properties?.hub_type === selectedHubTypeFilter);
     return [...list].sort((a, b) => (a.properties?.name || '').localeCompare(b.properties?.name || ''));
   }, [commercialResidentialHubsData, selectedHubTypeFilter]);
+
+  // Extract H3 New Store Expansion Suitability metrics
+  const totalSuitabilityCount = h3SuitabilityData?.metadata?.total_scored_hexagons || 13375;
+  const goldenBandCount = h3SuitabilityData?.metadata?.golden_band_hexagons || 2734;
+  const suitabilityCounts = h3SuitabilityData?.metadata?.counts || {
+    prime: 11,
+    high: 35,
+    moderate: 149,
+    suboptimal: 2539
+  };
+
+  const candidateCorridors = React.useMemo(() => {
+    if (candidateSitesData?.features?.length) {
+      return candidateSitesData.features.map(f => ({
+        ...(f.properties || {}),
+        geometry: f.geometry,
+        coordinates: f.geometry?.coordinates
+      }));
+    }
+    return [
+      { candidate_id: 'LOC_NEW_01', rank: 1, name: 'Marathahalli', corridor: 'Spice Garden & Outer Ring Road Multiplex Hub', suitability_score: 77.9, min_distance_km: 3.1, nearest_store_locality: 'Whitefield', coordinates: [77.7011, 12.9562] },
+      { candidate_id: 'LOC_NEW_02', rank: 2, name: 'Kammanahalli / Kalyan Nagar', corridor: 'CMR High Street Food Strip', suitability_score: 70.6, min_distance_km: 3.8, nearest_store_locality: 'Indiranagar', coordinates: [77.6378, 13.0094] },
+      { candidate_id: 'LOC_NEW_03', rank: 3, name: 'Sahakara Nagar / Hebbal', corridor: 'F&B Main Road & Aster Tech Corridors', suitability_score: 66.9, min_distance_km: 3.5, nearest_store_locality: 'Vidyaranyapura', coordinates: [77.5912, 13.0623] },
+      { candidate_id: 'LOC_NEW_04', rank: 4, name: 'Vijayanagar / RPC Layout', corridor: 'Service Road & Chord Road Hub', suitability_score: 64.6, min_distance_km: 4.8, nearest_store_locality: 'Basavanagudi', coordinates: [77.5342, 12.9642] },
+      { candidate_id: 'LOC_NEW_05', rank: 5, name: 'Frazer Town', corridor: 'MM Road / Mosque Road Dining Hub', suitability_score: 58.1, min_distance_km: 3.2, nearest_store_locality: 'Indiranagar', coordinates: [77.6143, 12.9981] },
+      { candidate_id: 'LOC_NEW_06', rank: 6, name: 'RR Nagar', corridor: 'Ideal Homes Township / 80 Feet Road', suitability_score: 43.3, min_distance_km: 4.5, nearest_store_locality: 'Banashankari', coordinates: [77.5212, 12.9234] },
+      { candidate_id: 'LOC_NEW_07', rank: 7, name: 'Bannerghatta Rd', corridor: 'Arekere / Meenakshi Mall Commercial Strip', suitability_score: 42.3, min_distance_km: 3.5, nearest_store_locality: 'JP Nagar', coordinates: [77.5982, 12.8943] },
+      { candidate_id: 'LOC_NEW_08', rank: 8, name: 'Sarjapur Rd', corridor: 'Kaikondrahalli Lake / Carmelaram Tech Spine', suitability_score: 41.4, min_distance_km: 4.3, nearest_store_locality: 'Bellandur', coordinates: [77.6845, 12.9102] }
+    ];
+  }, [candidateSitesData]);
 
   const activeCount = Object.values(activeLayers).filter(Boolean).length;
 
@@ -363,6 +404,289 @@ export default function LayerControlWidget({
                 Apsara Ice Cream client anchors
               </p>
             </div>
+          </div>
+
+          {/* Layer: New Store Expansion Suitability (H3 Hexagons & Top Corridors) */}
+          <div 
+            className={`p-2 rounded-lg transition-all border ${
+              activeLayers.newStoreSuitability 
+                ? 'bg-paper-50 border-ink-950/[0.14] text-ink-950 shadow-2xs' 
+                : 'bg-paper-50/70 border-ink-950/[0.08] text-ink-500 hover:bg-paper-100 hover:text-ink-800'
+            }`}
+          >
+            {/* Clickable Header to Toggle Layer */}
+            <div 
+              onClick={() => toggleLayer('newStoreSuitability')}
+              className="flex items-start gap-2.5 cursor-pointer"
+            >
+              <div className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors border ${
+                activeLayers.newStoreSuitability 
+                  ? 'bg-ink-950 border-ink-950 text-white' 
+                  : 'bg-white border-ink-950/[0.2]'
+              }`}>
+                {activeLayers.newStoreSuitability && <Check className="w-3 h-3 stroke-[3]" />}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
+                    <TargetIcon size={14} className="text-emerald-700" />
+                    New Store Expansion ({goldenBandCount.toLocaleString()})
+                  </span>
+                  <div className="flex -space-x-1">
+                    <span className="w-4 h-4 rounded-full bg-emerald-500/10 border border-emerald-600/40 flex items-center justify-center text-emerald-800 shadow-2xs" title="Prime Expansion (75-100)">
+                      <TargetIcon size={10} />
+                    </span>
+                    <span className="w-4 h-4 rounded-full bg-azure-500/10 border border-azure-600/40 flex items-center justify-center text-azure-800 shadow-2xs" title="High Potential (60-74)">
+                      <TargetIcon size={10} />
+                    </span>
+                    <span className="w-4 h-4 rounded-full bg-rose-500/10 border border-rose-600/40 flex items-center justify-center text-rose-800 shadow-2xs" title="Cannibalization Risk (<3km)">
+                      <TargetIcon size={10} />
+                    </span>
+                  </div>
+                </div>
+                <p className="text-[9px] text-ink-500 mt-0.5">
+                  H3 Res 9 • 3.0–5.5km Golden Band • Suitability (0–100)
+                </p>
+              </div>
+            </div>
+
+            {/* When Layer is enabled, show Golden Band switch, Tier filter chips, Top 8 corridors & Selected Hexagon */}
+            {activeLayers.newStoreSuitability && (
+              <div 
+                onClick={(e) => e.stopPropagation()}
+                className="mt-2.5 pt-2 border-t border-ink-950/[0.08] space-y-2 text-xs"
+              >
+                {/* 1. Spatial Boundary Switch (3.0km – 5.5km Golden Band vs All Scored) */}
+                <div>
+                  <div className="flex justify-between items-center text-[10px] text-ink-700 font-semibold mb-1">
+                    <span>Spatial Constraint:</span>
+                    <span className="text-[9px] text-emerald-700 font-mono font-bold">
+                      {scopeSuitabilityToGoldenBand ? `3.0–5.5km Band (${goldenBandCount.toLocaleString()})` : `Full Metro (${totalSuitabilityCount.toLocaleString()})`}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-1 bg-paper-100 p-0.5 rounded border border-ink-950/[0.08] text-[10px]">
+                    <button
+                      type="button"
+                      onClick={() => setScopeSuitabilityToGoldenBand && setScopeSuitabilityToGoldenBand(true)}
+                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer flex items-center justify-center gap-1.5 ${
+                        scopeSuitabilityToGoldenBand
+                          ? 'bg-emerald-700 text-white shadow-2xs'
+                          : 'text-ink-600 hover:bg-white'
+                      }`}
+                    >
+                      <TargetIcon size={11} />
+                      <span>3.0–5.5km Golden Band</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setScopeSuitabilityToGoldenBand && setScopeSuitabilityToGoldenBand(false)}
+                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer flex items-center justify-center gap-1.5 ${
+                        !scopeSuitabilityToGoldenBand
+                          ? 'bg-ink-950 text-white shadow-2xs'
+                          : 'text-ink-600 hover:bg-white'
+                      }`}
+                    >
+                      <GlobeIcon size={11} />
+                      <span>All Scored ({totalSuitabilityCount.toLocaleString()})</span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* 2. Suitability Tier Filter Chips */}
+                <div>
+                  <div className="flex justify-between items-center text-[10px] text-ink-700 font-semibold mb-1">
+                    <span>Suitability Tiers:</span>
+                    <span className="text-[9px] text-ink-500 font-mono">H3 Res 9 Index</span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-1 text-[10px]">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedSuitabilityTier && setSelectedSuitabilityTier('ALL')}
+                      className={`px-2 py-1 rounded text-left font-semibold transition-all border flex items-center justify-between cursor-pointer ${
+                        selectedSuitabilityTier === 'ALL'
+                          ? 'bg-paper-200 border-ink-950 text-ink-950 font-bold shadow-2xs'
+                          : 'bg-white border-ink-950/[0.08] text-ink-600 hover:bg-paper-100'
+                      }`}
+                    >
+                      <span>All Hexagons</span>
+                      <span className="text-[9px] font-mono text-ink-400">
+                        {scopeSuitabilityToGoldenBand ? goldenBandCount : totalSuitabilityCount}
+                      </span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setSelectedSuitabilityTier && setSelectedSuitabilityTier('PRIME')}
+                      className={`px-2 py-1 rounded text-left font-semibold transition-all border flex items-center justify-between cursor-pointer ${
+                        selectedSuitabilityTier === 'PRIME'
+                          ? 'bg-emerald-500/15 border-emerald-600 text-emerald-900 font-bold shadow-2xs'
+                          : 'bg-white border-ink-950/[0.08] text-emerald-800 hover:bg-emerald-50/50'
+                      }`}
+                    >
+                      <span className="flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                        <span>Prime (75–100)</span>
+                      </span>
+                      <span className="text-[9px] font-mono text-emerald-700 font-bold">{suitabilityCounts.prime}</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setSelectedSuitabilityTier && setSelectedSuitabilityTier('HIGH')}
+                      className={`px-2 py-1 rounded text-left font-semibold transition-all border flex items-center justify-between cursor-pointer ${
+                        selectedSuitabilityTier === 'HIGH'
+                          ? 'bg-azure-500/15 border-azure-600 text-azure-900 font-bold shadow-2xs'
+                          : 'bg-white border-ink-950/[0.08] text-azure-800 hover:bg-azure-50/50'
+                      }`}
+                    >
+                      <span className="flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-azure-500" />
+                        <span>High (60–74)</span>
+                      </span>
+                      <span className="text-[9px] font-mono text-azure-700 font-bold">{suitabilityCounts.high}</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setSelectedSuitabilityTier && setSelectedSuitabilityTier('MODERATE')}
+                      className={`px-2 py-1 rounded text-left font-semibold transition-all border flex items-center justify-between cursor-pointer ${
+                        selectedSuitabilityTier === 'MODERATE'
+                          ? 'bg-indigo-500/15 border-indigo-600 text-indigo-900 font-bold shadow-2xs'
+                          : 'bg-white border-ink-950/[0.08] text-indigo-800 hover:bg-indigo-50/50'
+                      }`}
+                    >
+                      <span className="flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+                        <span>Moderate (45–59)</span>
+                      </span>
+                      <span className="text-[9px] font-mono text-indigo-700 font-bold">{suitabilityCounts.moderate}</span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* 3. Top 8 Ranked Expansion Corridors Jump Grid */}
+                <div>
+                  <div className="flex justify-between items-center text-[10px] text-ink-700 font-semibold mb-1">
+                    <span className="flex items-center gap-1">
+                      <TargetIcon size={11} className="text-amber-800" />
+                      <span>Top 8 Expansion Corridors:</span>
+                    </span>
+                    <span className="text-[9px] text-amber-700 font-mono font-bold">Separation &ge; 3.0km</span>
+                  </div>
+                  <div className="max-h-36 overflow-y-auto space-y-1 bg-paper-100 p-1 rounded border border-ink-950/[0.08]">
+                    {candidateCorridors.map((hub) => {
+                      const isSelected = selectedCandidateHub?.properties?.candidate_id === hub.candidate_id || selectedCandidateHub?.candidate_id === hub.candidate_id;
+                      return (
+                        <div
+                          key={hub.candidate_id || hub.rank}
+                          onClick={() => onSelectCandidateHub && onSelectCandidateHub(hub)}
+                          className={`p-1.5 rounded cursor-pointer transition-all border flex items-center justify-between text-[10px] ${
+                            isSelected
+                              ? 'bg-amber-50 border-amber-500 text-ink-950 font-bold shadow-2xs'
+                              : 'bg-white border-ink-950/[0.06] text-ink-700 hover:bg-paper-50 hover:text-ink-950'
+                          }`}
+                        >
+                          <div className="flex items-center gap-1.5 min-w-0">
+                            <span className="w-4 h-4 rounded-full bg-amber-500/15 text-amber-900 border border-amber-500/30 font-bold text-[9px] flex items-center justify-center shrink-0 font-mono">
+                              {hub.rank}
+                            </span>
+                            <div className="truncate">
+                              <span className="font-bold text-ink-950 block truncate">{hub.name}</span>
+                              <span className="text-[9px] text-ink-400 block font-normal truncate">
+                                {hub.min_distance_km}km from {hub.nearest_store_locality}
+                              </span>
+                            </div>
+                          </div>
+                          <div className="text-right shrink-0 pl-1">
+                            <span className="font-mono font-extrabold text-azure-700 block text-[10px]">
+                              {hub.suitability_score || hub.score}
+                            </span>
+                            <span className="text-[8.5px] text-emerald-700 font-bold block">
+                              PASS
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* 4. Dynamic Selected Hexagon Inspector Card */}
+                {selectedSuitabilityHex ? (
+                  <div className="bg-white p-2 rounded-lg border border-ink-950/[0.14] space-y-1.5 shadow-xs">
+                    <div className="flex justify-between items-start border-b border-ink-950/[0.08] pb-1">
+                      <div>
+                        <span className="text-[9px] uppercase font-bold text-azure-700 bg-azure-500/[0.08] px-1.5 py-0.2 rounded border border-azure-500/30 font-mono">
+                          H3 Res 9 Selected
+                        </span>
+                        <div className="text-xs font-black text-ink-950 mt-0.5">
+                          {selectedSuitabilityHex.corridor ? `${selectedSuitabilityHex.corridor} Corridor` : selectedSuitabilityHex.ward}
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setSelectedSuitabilityHex && setSelectedSuitabilityHex(null)}
+                        className="text-[9px] text-ink-400 hover:text-ink-950 underline cursor-pointer"
+                      >
+                        Clear
+                      </button>
+                    </div>
+
+                    {/* Cannibalization & Separation Status */}
+                    <div className={`p-1 rounded border text-[9.5px] flex items-center justify-between font-mono ${
+                      selectedSuitabilityHex.dist_km >= 3.0
+                        ? 'bg-emerald-500/[0.08] border-emerald-500/30 text-emerald-800'
+                        : 'bg-rose-500/[0.08] border-rose-500/30 text-rose-800'
+                    }`}>
+                      <span className="font-semibold">Nearest: {selectedSuitabilityHex.nearest_store}</span>
+                      <span className="font-extrabold">{selectedSuitabilityHex.dist_km} km ({selectedSuitabilityHex.dist_km >= 3.0 ? 'SAFE' : 'ALERT'})</span>
+                    </div>
+
+                    {/* Suitability Score Gauge */}
+                    <div className="bg-paper-100 p-1.5 rounded border border-ink-950/[0.06] space-y-1 text-[10px]">
+                      <div className="flex justify-between font-bold">
+                        <span>Suitability Score:</span>
+                        <span className="font-mono text-azure-700">{selectedSuitabilityHex.suit_score} / 100</span>
+                      </div>
+                      <div className="w-full h-1.5 bg-paper-200 rounded-full overflow-hidden">
+                        <div 
+                          className="bg-gradient-to-r from-cyan-500 to-emerald-500 h-full rounded-full transition-all" 
+                          style={{ width: `${Math.min(100, Math.max(5, selectedSuitabilityHex.suit_score))}%` }} 
+                        />
+                      </div>
+                      <div className="flex justify-between text-[9px] text-ink-500 font-mono pt-0.5">
+                        <span>Projected: ~{selectedSuitabilityHex.proj_cups} cups/day</span>
+                        <span>Est: ₹{selectedSuitabilityHex.proj_rev} L/yr</span>
+                      </div>
+                    </div>
+
+                    {/* Numerical Demographic Breakdowns (Live Changing Numbers!) */}
+                    <div className="grid grid-cols-2 gap-1 text-[9px] font-mono bg-paper-50 p-1 rounded border border-ink-950/[0.06]">
+                      <div>
+                        <span className="text-ink-400 block text-[8.5px]">Residents:</span>
+                        <span className="font-bold text-ink-900">{selectedSuitabilityHex.res_pop?.toLocaleString()}</span>
+                      </div>
+                      <div>
+                        <span className="text-ink-400 block text-[8.5px]">Workforce:</span>
+                        <span className="font-bold text-ink-900">{selectedSuitabilityHex.com_workers ? selectedSuitabilityHex.com_workers.toLocaleString() : '—'}</span>
+                      </div>
+                      <div>
+                        <span className="text-ink-400 block text-[8.5px]">Kids & Youth:</span>
+                        <span className="font-bold text-ink-900">{selectedSuitabilityHex.kids} kids • {selectedSuitabilityHex.youth} youth</span>
+                      </div>
+                      <div>
+                        <span className="text-ink-400 block text-[8.5px]">Built-up Space:</span>
+                        <span className="font-bold text-ink-900">{selectedSuitabilityHex.res_built_m2 ? `${Math.round(selectedSuitabilityHex.res_built_m2 / 1000)}k m²` : '—'}</span>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="p-2 rounded bg-paper-100 border border-ink-950/[0.08] text-[9.5px] text-ink-500 text-center italic">
+                    Click any hexagon on the map to inspect live suitability score, cannibalization rule check, and projected cup turnover.
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           {/* Layer: Commercial & Residential Land Use Hexagons (H3 Res 9) */}

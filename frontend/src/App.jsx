@@ -44,6 +44,7 @@ export default function App() {
 
   // Active Layers Toggle State (with real market influencer layers)
   const [activeLayers, setActiveLayers] = useState({
+    newStoreSuitability: true,  // H3 New Store Expansion Suitability (3.0 - 5.5km Golden Band)
     streetFootfall: true,
     catchments: true,           // 350m High-Density Pedestrian Walksheds
     apsaraStores: true,
@@ -56,6 +57,18 @@ export default function App() {
     officeFootprints: false,    // 3,137 Commercial Office Buildings
     hexDemographics: false      // 19.5k H3 Hexagon Demographics & Density
   });
+
+  // New Store Expansion Layer State
+  const [h3SuitabilityData, setH3SuitabilityData] = useState(null);
+  const [candidateSitesData, setCandidateSitesData] = useState(null);
+  const [selectedSuitabilityTier, setSelectedSuitabilityTier] = useState('ALL'); // 'ALL' | 'PRIME' | 'HIGH' | 'MODERATE'
+  const [scopeSuitabilityToGoldenBand, setScopeSuitabilityToGoldenBand] = useState(true);
+  const [selectedSuitabilityHex, setSelectedSuitabilityHex] = useState(null);
+  const [selectedCandidateHub, setSelectedCandidateHub] = useState(null);
+
+  const handleSelectSuitabilityHex = (hex) => {
+    setSelectedSuitabilityHex(hex);
+  };
 
   // Selected Entities
   const [selectedApsaraStore, setSelectedApsaraStore] = useState(null);
@@ -173,6 +186,28 @@ export default function App() {
         .catch(err => console.error('Failed to load H3 land use hexagons:', err));
     }
   }, [activeLayers.commercialResidentialHubs, h3HubsData]);
+
+  // On-demand lazy load for H3 New Store Expansion Suitability (13.3k cells)
+  useEffect(() => {
+    if (activeLayers.newStoreSuitability && !h3SuitabilityData) {
+      const b = import.meta.env.BASE_URL;
+      fetch(`${b}data/h3_new_store_suitability.json`)
+        .then(r => r.json())
+        .then(d => setH3SuitabilityData(d))
+        .catch(err => console.error('Failed to load H3 expansion suitability:', err));
+    }
+  }, [activeLayers.newStoreSuitability, h3SuitabilityData]);
+
+  // On-demand lazy load for Top Candidate Expansion Hubs GeoJSON
+  useEffect(() => {
+    if (activeLayers.newStoreSuitability && !candidateSitesData) {
+      const b = import.meta.env.BASE_URL;
+      fetch(`${b}data/new_store_candidates_ranked.geojson`)
+        .then(r => r.json())
+        .then(d => setCandidateSitesData(d))
+        .catch(err => console.error('Failed to load candidate sites GeoJSON:', err));
+    }
+  }, [activeLayers.newStoreSuitability, candidateSitesData]);
 
   // Automatic 24-Hour Diurnal Timeline Animation Loop
   useEffect(() => {
@@ -321,6 +356,24 @@ export default function App() {
     }
   };
 
+  // Select an expansion candidate hub and fly to its location
+  const handleSelectCandidateHub = (hub) => {
+    setSelectedCandidateHub(hub);
+    setActiveLayers(prev => ({ ...prev, newStoreSuitability: true }));
+    const coords = hub?.geometry?.coordinates || (hub?.lat && [hub.lng, hub.lat]);
+    if (coords) {
+      setViewState(prev => ({
+        ...prev,
+        longitude: coords[0],
+        latitude: coords[1],
+        zoom: 14.8,
+        pitch: 0,
+        bearing: 0,
+        transitionDuration: 850
+      }));
+    }
+  };
+
   // Reset to Bangalore City View showing all stores
   const resetCityView = () => {
     setViewState({
@@ -403,6 +456,14 @@ export default function App() {
           scopeHubsToRadius={scopeHubsToRadius}
           selectedHexagon={selectedHexagon}
           onSelectHexagon={handleSelectHexagon}
+          h3SuitabilityData={h3SuitabilityData}
+          candidateSitesData={candidateSitesData}
+          selectedSuitabilityTier={selectedSuitabilityTier}
+          scopeSuitabilityToGoldenBand={scopeSuitabilityToGoldenBand}
+          selectedSuitabilityHex={selectedSuitabilityHex}
+          onSelectSuitabilityHex={handleSelectSuitabilityHex}
+          selectedCandidateHub={selectedCandidateHub}
+          onSelectCandidateHub={handleSelectCandidateHub}
           selectedBrandFilter={selectedBrandFilter}
           selectedCompetitor={selectedCompetitor}
           onSelectCompetitor={handleSelectCompetitor}
@@ -457,6 +518,16 @@ export default function App() {
             setDemographicGender={setDemographicGender}
             demographicAge={demographicAge}
             setDemographicAge={setDemographicAge}
+            h3SuitabilityData={h3SuitabilityData}
+            candidateSitesData={candidateSitesData}
+            selectedSuitabilityTier={selectedSuitabilityTier}
+            setSelectedSuitabilityTier={setSelectedSuitabilityTier}
+            scopeSuitabilityToGoldenBand={scopeSuitabilityToGoldenBand}
+            setScopeSuitabilityToGoldenBand={setScopeSuitabilityToGoldenBand}
+            selectedSuitabilityHex={selectedSuitabilityHex}
+            setSelectedSuitabilityHex={setSelectedSuitabilityHex}
+            selectedCandidateHub={selectedCandidateHub}
+            onSelectCandidateHub={handleSelectCandidateHub}
             selectedFootfallRange={selectedFootfallRange}
             setSelectedFootfallRange={setSelectedFootfallRange}
             scopeToRadiusCircle={scopeToRadiusCircle}

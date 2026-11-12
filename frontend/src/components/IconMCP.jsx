@@ -635,6 +635,32 @@ export function GlobeIcon({ size = 18, className = "", ...props }) {
   );
 }
 
+export function TargetIcon({ size = 18, className = "", ...props }) {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 16 16" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="1.2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      className={className}
+      {...props}
+    >
+      <g>
+        <circle cx="8" cy="8" r="6.25"/>
+        <circle cx="8" cy="8" r="2.5"/>
+        <line x1="8" y1="1" x2="8" y2="3.5"/>
+        <line x1="8" y1="12.5" x2="8" y2="15"/>
+        <line x1="1" y1="8" x2="3.5" y2="8"/>
+        <line x1="12.5" y1="8" x2="15" y2="8"/>
+      </g>
+    </svg>
+  );
+}
+
 
 export function getSpectrumIcon(category, props = {}) {
   switch (category) {

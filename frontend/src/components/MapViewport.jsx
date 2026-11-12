@@ -13,8 +13,21 @@ import {
   FactoryIcon,
   ScaleIcon,
   ZapIcon,
-  LayersIcon
+  LayersIcon,
+  TargetIcon
 } from './IconMCP';
+
+// Color scale for H3 New Store Expansion Suitability Hexagons (0 to 100)
+export function getSuitabilityHexColor(d) {
+  if (!d) return [148, 163, 184, 50];
+  // Strict Cannibalization Alert: Within 3.0km of any of the 13 canonical Apsara Outlets
+  if (d.dist_km < 3.0) return [244, 63, 94, 75]; // Translucent Crimson for Cannibalization Risk (<3km)
+  const score = d.suit_score || 0;
+  if (score >= 75) return [16, 185, 129, 215]; // Prime Expansion (Emerald 500)
+  if (score >= 60) return [14, 165, 233, 175]; // High Potential (Azure 500)
+  if (score >= 45) return [99, 102, 241, 130]; // Moderate Viability (Indigo 500)
+  return [148, 163, 184, 60];                  // Sub-Optimal (Slate 400)
+}
 import { H3HexagonLayer } from '@deck.gl/geo-layers';
 import { cellToLatLng, latLngToCell } from 'h3-js';
 import { Hexagon } from 'lucide-react';
@@ -243,6 +256,14 @@ export default function MapViewport({
   onSelectHub,
   demographicGender = 'all',
   demographicAge = 'all',
+  h3SuitabilityData,
+  candidateSitesData,
+  selectedSuitabilityTier = 'ALL',
+  scopeSuitabilityToGoldenBand = true,
+  selectedSuitabilityHex,
+  onSelectSuitabilityHex,
+  selectedCandidateHub,
+  onSelectCandidateHub,
   selectedBrandFilter = 'ALL',
   selectedCompetitor,
   onSelectCompetitor,
@@ -251,6 +272,7 @@ export default function MapViewport({
     catchments: true,
     apsaraStores: true,
     commercialResidentialHubs: true,
+    newStoreSuitability: true,
     competitors: false,
     kidsAttractions: true,
     complementaryBrands: true,
@@ -377,6 +399,43 @@ export default function MapViewport({
     }
     return map;
   }, [h3HubsData]);
+
+  // Filter H3 New Store Suitability Hexagons (Res 9)
+  const filteredSuitabilityHexagons = useMemo(() => {
+    if (!h3SuitabilityData?.hexagons) return [];
+    let list = h3SuitabilityData.hexagons;
+
+    // 1. Golden Band constraint (3.0km – 5.5km from 13 canonical stores)
+    if (scopeSuitabilityToGoldenBand) {
+      list = list.filter(h => h.in_golden_band);
+    }
+
+    // 2. Suitability Tier filter
+    if (selectedSuitabilityTier && selectedSuitabilityTier !== 'ALL') {
+      if (selectedSuitabilityTier === 'PRIME') {
+        list = list.filter(h => h.suit_score >= 75);
+      } else if (selectedSuitabilityTier === 'HIGH') {
+        list = list.filter(h => h.suit_score >= 60 && h.suit_score < 75);
+      } else if (selectedSuitabilityTier === 'MODERATE') {
+        list = list.filter(h => h.suit_score >= 45 && h.suit_score < 60);
+      } else if (selectedSuitabilityTier === 'CANNIBALIZATION') {
+        list = list.filter(h => h.dist_km < 3.0);
+      }
+    }
+
+    return list;
+  }, [h3SuitabilityData, scopeSuitabilityToGoldenBand, selectedSuitabilityTier]);
+
+  // Fast O(1) map for H3 Suitability hexagon lookup on canvas clicks
+  const h3SuitabilityMap = useMemo(() => {
+    if (!h3SuitabilityData?.hexagons) return new Map();
+    const map = new Map();
+    for (let i = 0; i < h3SuitabilityData.hexagons.length; i++) {
+      const hex = h3SuitabilityData.hexagons[i];
+      map.set(hex.h, hex);
+    }
+    return map;
+  }, [h3SuitabilityData]);
 
   // Backward compatibility fallback for legacy polygon hubs if h3 data not ready
   const filteredHubsData = useMemo(() => {
@@ -546,6 +605,79 @@ export default function MapViewport({
           onSelectHub(info.object);
         }
       }
+    }),
+
+    // 0e. H3 New Store Expansion Suitability Layer (H3 Res 9)
+    activeLayers.newStoreSuitability && filteredSuitabilityHexagons?.length > 0 && new H3HexagonLayer({
+      id: 'h3-expansion-suitability-layer',
+      data: filteredSuitabilityHexagons,
+      pickable: true,
+      wireframe: false,
+      filled: true,
+      stroked: true,
+      extruded: false,
+      coverage: 0.95,
+      lineWidthUnits: 'pixels',
+      lineWidthMinPixels: 0.6,
+      lineWidthMaxPixels: 3.5,
+      getLineWidth: d => (selectedSuitabilityHex && d.h === selectedSuitabilityHex.h ? 3.2 : 0.8),
+      getLineColor: d => (selectedSuitabilityHex && d.h === selectedSuitabilityHex.h ? [15, 23, 42, 255] : (d.dist_km < 3.0 ? [244, 63, 94, 180] : [255, 255, 255, 120])),
+      getHexagon: d => d.h,
+      getFillColor: d => getSuitabilityHexColor(d),
+      updateTriggers: {
+        getFillColor: [selectedSuitabilityTier, scopeSuitabilityToGoldenBand],
+        getLineWidth: [selectedSuitabilityHex?.h],
+        getLineColor: [selectedSuitabilityHex?.h]
+      },
+      onHover: info => {
+        if (!info?.object) {
+          setHoverInfo(null);
+        } else {
+          setHoverInfo(info);
+        }
+      },
+      onClick: info => {
+        if (info?.object && onSelectSuitabilityHex) {
+          onSelectSuitabilityHex(info.object);
+        }
+      }
+    }),
+
+    // 0f. Top 8 Expansion Candidate Corridors / Hub Pins (IconMCP Target Pin)
+    activeLayers.newStoreSuitability && candidateSitesData?.features && new IconLayer({
+      id: 'candidate-expansion-hubs-pin-layer',
+      data: candidateSitesData.features,
+      pickable: true,
+      getPosition: f => f.geometry.coordinates,
+      getIcon: () => getOutlinePin('expansion_hub'),
+      getSize: f => (selectedCandidateHub?.properties?.candidate_id === f.properties?.candidate_id ? 42 : 34),
+      sizeUnits: 'pixels',
+      sizeScale: 1,
+      updateTriggers: {
+        getSize: [selectedCandidateHub?.properties?.candidate_id]
+      },
+      onHover: info => setHoverInfo(info),
+      onClick: info => {
+        if (info.object && onSelectCandidateHub) {
+          onSelectCandidateHub(info.object);
+        }
+      }
+    }),
+
+    // 0g. Pulsing Selection Ring for Selected Candidate Expansion Hub
+    activeLayers.newStoreSuitability && selectedCandidateHub?.geometry?.coordinates && new ScatterplotLayer({
+      id: 'candidate-hub-selected-pulse',
+      data: [selectedCandidateHub],
+      pickable: false,
+      stroked: true,
+      filled: false,
+      radiusScale: 1,
+      radiusMinPixels: 26,
+      radiusMaxPixels: 40,
+      lineWidthUnits: 'pixels',
+      getLineWidth: 3,
+      getLineColor: [245, 158, 11, 255],
+      getPosition: f => f.geometry.coordinates
     }),
 
     // 1. High-Density 350m Pedestrian Catchment Zones for all 13 Outlets
@@ -863,11 +995,36 @@ export default function MapViewport({
       onSelectKidsAttraction(info.object);
       return;
     }
+    if ((info.object?.properties?.candidate_id || info.object?.candidate_id) && onSelectCandidateHub) {
+      onSelectCandidateHub(info.object);
+      return;
+    }
 
-    // 2. Direct H3 Hexagon click (when picked directly from Deck.gl layer)
+    // 2. Direct H3 Suitability Hexagon click
+    if (info.object?.suit_score !== undefined && onSelectSuitabilityHex) {
+      onSelectSuitabilityHex(info.object);
+      return;
+    }
+
+    // 2b. Direct H3 Land Use Hexagon click (when picked directly from Deck.gl layer)
     if (info.object?.h && onSelectHexagon) {
       onSelectHexagon(info.object);
       return;
+    }
+
+    // 3. Mathematical Coordinate Resolution for H3 Expansion Suitability Hexagons:
+    if (activeLayers.newStoreSuitability && info.coordinate && h3SuitabilityMap.size > 0) {
+      try {
+        const [lng, lat] = info.coordinate;
+        const cell = latLngToCell(lat, lng, 9);
+        const hex = h3SuitabilityMap.get(cell);
+        if (hex) {
+          onSelectSuitabilityHex?.(hex);
+          return;
+        }
+      } catch (err) {
+        console.error('Suitability hexagon coordinate lookup error:', err);
+      }
     }
 
     // 3. Mathematical Coordinate Resolution for H3 Hexagons:
@@ -983,10 +1140,153 @@ export default function MapViewport({
                 </div>
               </div>
             </div>
-          ) : (hoverInfo.object.properties || hoverInfo.object.h) ? (
+          ) : (hoverInfo.object.properties || hoverInfo.object.h || hoverInfo.object.suit_score !== undefined) ? (
             (() => {
               const p = hoverInfo.object.properties || hoverInfo.object;
-              
+
+              // Case Expansion Candidate Corridor Hub Pin (Top 8 Ranked Sites)
+              if (p.candidate_id && p.name) {
+                return (
+                  <div className="space-y-2 min-w-[280px] max-w-[340px]">
+                    <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1.5">
+                      <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded border flex items-center gap-1.5 bg-amber-500/10 text-amber-800 border-amber-500/30">
+                        <TargetIcon size={12} className="shrink-0 text-amber-800" />
+                        <span>Candidate Corridor #{p.rank}</span>
+                      </span>
+                      <span className="text-[10px] font-bold text-azure-700 bg-azure-500/[0.08] px-1.5 py-0.5 rounded border border-azure-500/30 font-mono">
+                        Suitability: {p.suitability_score}/100
+                      </span>
+                    </div>
+
+                    <div>
+                      <div className="text-xs font-black text-ink-950">{p.name}</div>
+                      <div className="text-[10px] text-ink-500 mt-0.5 font-medium">{p.corridor}</div>
+                      <div className="text-[10px] text-ink-500 flex items-center justify-between mt-0.5 font-mono">
+                        <span>Separation: {p.min_distance_km}km from {p.nearest_store_locality}</span>
+                        <span className="text-emerald-700 font-bold">Rule: PASS (Safe)</span>
+                      </div>
+                    </div>
+
+                    <div className="bg-paper-100 p-2 rounded-lg border border-ink-950/[0.08] space-y-1 text-[10px]">
+                      <div className="flex justify-between items-center">
+                        <span className="text-ink-600 font-semibold">Projected Daily Volume:</span>
+                        <span className="text-azure-700 font-extrabold font-mono text-xs">{p.projected_metrics?.daily_cups_mid} cups / day</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-ink-600 font-semibold">Annual Turnover:</span>
+                        <span className="text-ink-950 font-bold font-mono">₹{p.projected_metrics?.annual_turnover_lakhs_mid} Lakhs / yr</span>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-x-2 gap-y-1 bg-white p-1.5 rounded border border-ink-950/[0.06] text-[10px]">
+                      <div>
+                        <span className="text-ink-400 block text-[9px]">1.5km Walkshed Pop:</span>
+                        <span className="font-bold text-ink-900 font-mono">{p.demographics?.walkshed_pop_15k?.toLocaleString()}</span>
+                      </div>
+                      <div>
+                        <span className="text-ink-400 block text-[9px]">Kids / Youth (1.5km):</span>
+                        <span className="font-bold text-ink-900 font-mono">{((p.demographics?.kids_cohort_15k || 0) + (p.demographics?.youth_cohort_15k || 0))?.toLocaleString()}</span>
+                      </div>
+                      <div>
+                        <span className="text-ink-400 block text-[9px]">Workforce (1.5km):</span>
+                        <span className="font-bold text-ink-900 font-mono">{p.commercial?.workforce_15k?.toLocaleString()}</span>
+                      </div>
+                      <div>
+                        <span className="text-ink-400 block text-[9px]">Analog Benchmark:</span>
+                        <span className="font-bold text-ink-900 truncate" title={p.analog_benchmark}>{p.analog_benchmark}</span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              // Case H3 New Store Expansion Suitability Hexagons (Res 9 with suit_score)
+              if (p.h && p.suit_score !== undefined) {
+                const isCannibal = p.dist_km < 3.0;
+                const tierClass = isCannibal 
+                  ? 'bg-rose-500/10 text-rose-800 border-rose-500/30'
+                  : p.suit_score >= 75
+                  ? 'bg-emerald-500/10 text-emerald-800 border-emerald-500/30'
+                  : p.suit_score >= 60
+                  ? 'bg-azure-500/10 text-azure-800 border-azure-500/30'
+                  : p.suit_score >= 45
+                  ? 'bg-indigo-500/10 text-indigo-800 border-indigo-500/30'
+                  : 'bg-slate-500/10 text-slate-700 border-slate-400/30';
+
+                return (
+                  <div className="space-y-2 min-w-[280px] max-w-[340px]">
+                    {/* Header */}
+                    <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1.5">
+                      <span className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded border flex items-center gap-1.5 ${tierClass}`}>
+                        <TargetIcon size={12} className="shrink-0" />
+                        <span>{isCannibal ? 'Cannibalization Risk' : p.tier || 'Expansion Hex'}</span>
+                      </span>
+                      <span className="text-[10px] font-bold text-azure-700 bg-azure-500/[0.08] px-1.5 py-0.5 rounded border border-azure-500/30 font-mono">
+                        Suitability: {p.suit_score}/100
+                      </span>
+                    </div>
+
+                    {/* Ward & Expansion Corridor */}
+                    <div>
+                      <div className="text-xs font-black text-ink-950">
+                        {p.corridor ? `${p.corridor} Corridor` : p.ward}
+                        {p.corridor_rank && (
+                          <span className="ml-1.5 text-[9px] font-bold bg-amber-500/10 text-amber-800 border border-amber-500/30 px-1.5 py-0.2 rounded font-mono">
+                            Rank #{p.corridor_rank}
+                          </span>
+                        )}
+                      </div>
+                      <div className="text-[10px] text-ink-500 flex items-center justify-between mt-0.5 font-mono">
+                        <span>H3: {p.h.slice(0, 10)}... ({p.cls})</span>
+                        <span className="font-bold text-ink-700">{p.dist_km}km from {p.nearest_store}</span>
+                      </div>
+                    </div>
+
+                    {/* Cannibalization Rule Status Badge */}
+                    <div className={`p-1.5 rounded border text-[10px] flex items-center justify-between font-mono ${
+                      !isCannibal 
+                        ? 'bg-emerald-500/[0.08] border-emerald-500/30 text-emerald-800' 
+                        : 'bg-rose-500/[0.08] border-rose-500/30 text-rose-800'
+                    }`}>
+                      <span className="font-bold">3.0–5.5km Golden Band:</span>
+                      <span className="font-extrabold">{!isCannibal ? 'PASS (0.0% Risk)' : 'ALERT (<3.0km)'}</span>
+                    </div>
+
+                    {/* Projected Daily Cups & Revenue */}
+                    <div className="bg-paper-100 p-2 rounded-lg border border-ink-950/[0.08] space-y-1 text-[10px]">
+                      <div className="flex justify-between items-center">
+                        <span className="text-ink-600 font-semibold">Projected Volume:</span>
+                        <span className="text-azure-700 font-extrabold font-mono text-xs">~{p.proj_cups} cups / day</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-ink-600 font-semibold">Est. Annual Revenue:</span>
+                        <span className="text-ink-950 font-bold font-mono">₹{p.proj_rev} Lakhs / yr</span>
+                      </div>
+                    </div>
+
+                    {/* Numerical Data Grid */}
+                    <div className="grid grid-cols-2 gap-x-2 gap-y-1 bg-white p-1.5 rounded border border-ink-950/[0.06] text-[10px]">
+                      <div>
+                        <span className="text-ink-400 block text-[9px]">Resident Pop:</span>
+                        <span className="font-bold text-ink-900 font-mono">{p.res_pop.toLocaleString()}</span>
+                      </div>
+                      <div>
+                        <span className="text-ink-400 block text-[9px]">Kids / Youth:</span>
+                        <span className="font-bold text-ink-900 font-mono">{p.kids} kids • {p.youth} youth</span>
+                      </div>
+                      <div>
+                        <span className="text-ink-400 block text-[9px]">Daytime Workforce:</span>
+                        <span className="font-bold text-ink-900 font-mono">{p.com_workers ? p.com_workers.toLocaleString() : '—'}</span>
+                      </div>
+                      <div>
+                        <span className="text-ink-400 block text-[9px]">Competitors / Dining:</span>
+                        <span className="font-bold text-ink-900 font-mono">{p.comp_count} comps • {p.dining_count} dining</span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
               // Case 0: H3 Commercial & Residential Land Use Hexagons (H3 Res 9)
               if (p.h && p.cls && p.res_idx !== undefined) {
                 const clsLabels = {
