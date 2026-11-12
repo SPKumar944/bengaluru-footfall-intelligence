@@ -34,8 +34,11 @@ export default function App() {
   const [educationPoisData, setEducationPoisData] = useState(null);
   const [complementaryBrandsData, setComplementaryBrandsData] = useState(null);
   const [commercialResidentialHubsData, setCommercialResidentialHubsData] = useState(null);
-  const [selectedHubTypeFilter, setSelectedHubTypeFilter] = useState('ALL'); // 'ALL' | 'commercial' | 'residential'
-  const [selectedHub, setSelectedHub] = useState(null);
+  const [h3HubsData, setH3HubsData] = useState(null);
+  const [selectedHubTypeFilter, setSelectedHubTypeFilter] = useState('ALL'); // 'ALL' | 'commercial' | 'residential' | 'industrial' | 'mixed'
+  const [selectedHubMetricView, setSelectedHubMetricView] = useState('pockets'); // 'pockets' | 'residential' | 'commercial' | 'synergy'
+  const [scopeHubsToRadius, setScopeHubsToRadius] = useState(false);
+  const [selectedHexagon, setSelectedHexagon] = useState(null);
   const [demographicGender, setDemographicGender] = useState('all'); // 'all' | 'male' | 'female'
   const [demographicAge, setDemographicAge] = useState('all'); // 'all' | 'kids' | 'youth' | 'adults' | 'seniors'
 
@@ -44,7 +47,7 @@ export default function App() {
     streetFootfall: true,
     catchments: true,           // 350m High-Density Pedestrian Walksheds
     apsaraStores: true,
-    commercialResidentialHubs: true, // Urban Pockets: Commercial & Residential Hubs
+    commercialResidentialHubs: true, // Urban Pockets: Commercial & Residential H3 Hexagons
     competitors: false,
     kidsAttractions: true,      // 116 Kids & Family Footfall Magnets
     complementaryBrands: true,  // 171 Complementary Dining Brands (Biryani, Burgers, Breweries, Tiffins)
@@ -67,18 +70,8 @@ export default function App() {
   const [selectedComplementarySpectrum, setSelectedComplementarySpectrum] = useState('ALL');
   const [selectedComplementaryBrand, setSelectedComplementaryBrand] = useState(null);
 
-  const handleSelectHub = (hub) => {
-    setSelectedHub(hub);
-    if (hub?.properties?.centroid) {
-      const [lng, lat] = hub.properties.centroid;
-      setViewState(prev => ({
-        ...prev,
-        latitude: lat,
-        longitude: lng,
-        zoom: Math.max(prev.zoom, 14.2),
-        transitionDuration: 800
-      }));
-    }
+  const handleSelectHexagon = (hex) => {
+    setSelectedHexagon(hex);
   };
 
   // Footfall Range Level Filter & Radius Circle Scope
@@ -169,6 +162,17 @@ export default function App() {
         .catch(err => console.error('Failed to load hex demographics:', err));
     }
   }, [activeLayers.hexDemographics, hexDemographicsData]);
+
+  // On-demand lazy load for H3 Commercial & Residential Land Use Hexagons (15.5k cells)
+  useEffect(() => {
+    if (activeLayers.commercialResidentialHubs && !h3HubsData) {
+      const b = import.meta.env.BASE_URL;
+      fetch(`${b}data/h3_commercial_residential_indices.json`)
+        .then(r => r.json())
+        .then(d => setH3HubsData(d))
+        .catch(err => console.error('Failed to load H3 land use hexagons:', err));
+    }
+  }, [activeLayers.commercialResidentialHubs, h3HubsData]);
 
   // Automatic 24-Hour Diurnal Timeline Animation Loop
   useEffect(() => {
@@ -393,10 +397,12 @@ export default function App() {
           hexDemographicsData={hexDemographicsData}
           demographicGender={demographicGender}
           demographicAge={demographicAge}
-          commercialResidentialHubsData={commercialResidentialHubsData}
+          h3HubsData={h3HubsData}
           selectedHubTypeFilter={selectedHubTypeFilter}
-          selectedHub={selectedHub}
-          onSelectHub={handleSelectHub}
+          selectedHubMetricView={selectedHubMetricView}
+          scopeHubsToRadius={scopeHubsToRadius}
+          selectedHexagon={selectedHexagon}
+          onSelectHexagon={handleSelectHexagon}
           selectedBrandFilter={selectedBrandFilter}
           selectedCompetitor={selectedCompetitor}
           onSelectCompetitor={handleSelectCompetitor}
@@ -418,11 +424,15 @@ export default function App() {
           <LayerControlWidget
             activeLayers={activeLayers}
             setActiveLayers={setActiveLayers}
-            commercialResidentialHubsData={commercialResidentialHubsData}
+            h3HubsData={h3HubsData}
             selectedHubTypeFilter={selectedHubTypeFilter}
             setSelectedHubTypeFilter={setSelectedHubTypeFilter}
-            selectedHub={selectedHub}
-            onSelectHub={handleSelectHub}
+            selectedHubMetricView={selectedHubMetricView}
+            setSelectedHubMetricView={setSelectedHubMetricView}
+            scopeHubsToRadius={scopeHubsToRadius}
+            setScopeHubsToRadius={setScopeHubsToRadius}
+            selectedHexagon={selectedHexagon}
+            setSelectedHexagon={setSelectedHexagon}
             competitorsData={competitorsData}
             selectedBrandFilter={selectedBrandFilter}
             setSelectedBrandFilter={handleSelectBrandFilter}

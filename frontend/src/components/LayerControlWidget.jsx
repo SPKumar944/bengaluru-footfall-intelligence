@@ -51,9 +51,16 @@ import {
 export default function LayerControlWidget({
   activeLayers,
   setActiveLayers,
-  commercialResidentialHubsData,
+  h3HubsData,
   selectedHubTypeFilter = 'ALL',
   setSelectedHubTypeFilter,
+  selectedHubMetricView = 'pockets',
+  setSelectedHubMetricView,
+  scopeHubsToRadius = true,
+  setScopeHubsToRadius,
+  selectedHexagon,
+  setSelectedHexagon,
+  commercialResidentialHubsData,
   selectedHub,
   onSelectHub,
   competitorsData,
@@ -181,7 +188,16 @@ export default function LayerControlWidget({
 
   const totalComplementaryCount = complementaryBrandsData?.features?.length || 171;
 
-  // Extract commercial vs residential hubs and counts
+  // Extract H3 Commercial & Residential Land Use Hexagons counts
+  const totalH3HexCount = h3HubsData?.metadata?.total_hexagons || h3HubsData?.hexagons?.length || 15514;
+  const h3Counts = h3HubsData?.metadata?.counts || {
+    commercial: 775,
+    residential: 13828,
+    industrial: 560,
+    mixed: 351
+  };
+
+  // Extract commercial vs residential hubs and counts (legacy fallback)
   const totalHubsCount = commercialResidentialHubsData?.features?.length || 51;
   const commercialCount = React.useMemo(() => {
     if (!commercialResidentialHubsData?.features) return 22;
@@ -342,7 +358,7 @@ export default function LayerControlWidget({
             </div>
           </div>
 
-          {/* Layer: Commercial & Residential Urban Pockets (Google Maps / Landuse Hubs) */}
+          {/* Layer: Commercial & Residential Land Use Hexagons (H3 Res 9) */}
           <div 
             className={`p-2 rounded-lg transition-all border ${
               activeLayers.commercialResidentialHubs 
@@ -365,8 +381,8 @@ export default function LayerControlWidget({
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-[11px] flex items-center gap-1.5 text-ink-950">
-                    <Building2 className="w-3.5 h-3.5 text-amber-600" />
-                    Commercial & Residential Hubs ({totalHubsCount})
+                    <Hexagon className="w-3.5 h-3.5 text-amber-600 fill-amber-500/20" />
+                    Land Use Hexagons ({totalH3HexCount.toLocaleString()})
                   </span>
                   <div className="flex -space-x-1">
                     <span className="w-4 h-4 rounded-full bg-amber-500/20 border border-amber-600 flex items-center justify-center text-amber-800 shadow-2xs text-[9px]" title="Commercial Hubs">
@@ -375,29 +391,69 @@ export default function LayerControlWidget({
                     <span className="w-4 h-4 rounded-full bg-indigo-500/20 border border-indigo-600 flex items-center justify-center text-indigo-800 shadow-2xs text-[9px]" title="Residential Pockets">
                       🏡
                     </span>
+                    <span className="w-4 h-4 rounded-full bg-purple-500/20 border border-purple-600 flex items-center justify-center text-purple-800 shadow-2xs text-[9px]" title="Industrial & Tech Corridors">
+                      🏭
+                    </span>
                   </div>
                 </div>
                 <p className="text-[9px] text-ink-500 mt-0.5">
-                  High streets, tech corridors & residential layouts
+                  H3 Res 9 (~210m diam) • Residential, Commercial & Synergy indices
                 </p>
               </div>
             </div>
 
-            {/* When Layer is enabled, show Pocket Type filter and Pocket Selector */}
+            {/* When Layer is enabled, show Radius Scope, Pocket Type filter, Metric Mode & Selected Hexagon */}
             {activeLayers.commercialResidentialHubs && (
               <div 
                 onClick={(e) => e.stopPropagation()}
                 className="mt-2.5 pt-2 border-t border-ink-950/[0.08] space-y-2 text-xs"
               >
-                {/* 1. Hub Type Selector Filter (All | Commercial | Residential) */}
+                {/* 1. Radius Scope Switch (3.5km Store Catchment vs Full City) */}
+                <div>
+                  <div className="flex justify-between items-center text-[10px] text-ink-700 font-semibold mb-1">
+                    <span>Spatial Boundary:</span>
+                    <span className="text-[9px] text-azure-700 font-mono font-bold">
+                      {scopeHubsToRadius ? `3.5km Catchment (${selectedApsaraStore?.locality || 'Store'})` : `Full Bengaluru Metro (${totalH3HexCount.toLocaleString()})`}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-1 bg-paper-100 p-0.5 rounded border border-ink-950/[0.08] text-[10px]">
+                    <button
+                      type="button"
+                      onClick={() => setScopeHubsToRadius && setScopeHubsToRadius(true)}
+                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
+                        scopeHubsToRadius
+                          ? 'bg-azure-600 text-white shadow-2xs'
+                          : 'text-ink-600 hover:bg-white'
+                      }`}
+                    >
+                      📍 3.5km Catchment
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setScopeHubsToRadius && setScopeHubsToRadius(false)}
+                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
+                        !scopeHubsToRadius
+                          ? 'bg-ink-950 text-white shadow-2xs'
+                          : 'text-ink-600 hover:bg-white'
+                      }`}
+                    >
+                      🌐 Full City ({totalH3HexCount.toLocaleString()})
+                    </button>
+                  </div>
+                </div>
+
+                {/* 2. Land Use Pocket Classification Filter */}
                 <div>
                   <div className="flex justify-between items-center text-[10px] text-ink-700 font-semibold mb-1">
                     <span>Pocket Classification:</span>
                     <span className="text-[9px] text-ink-500 font-mono">
-                      {selectedHubTypeFilter === 'commercial' ? `${commercialCount} Commercial` : selectedHubTypeFilter === 'residential' ? `${residentialCount} Residential` : `${totalHubsCount} Total`}
+                      {selectedHubTypeFilter === 'commercial' ? `${h3Counts.commercial} Comm` : 
+                       selectedHubTypeFilter === 'residential' ? `${h3Counts.residential.toLocaleString()} Resid` : 
+                       selectedHubTypeFilter === 'industrial' ? `${h3Counts.industrial} Tech` : 
+                       selectedHubTypeFilter === 'mixed' ? `${h3Counts.mixed} Mixed` : 'All 15.5k'}
                     </span>
                   </div>
-                  <div className="grid grid-cols-3 gap-1 bg-paper-100 p-0.5 rounded border border-ink-950/[0.08] text-[10px]">
+                  <div className="grid grid-cols-5 gap-0.5 bg-paper-100 p-0.5 rounded border border-ink-950/[0.08] text-[9.5px]">
                     <button
                       type="button"
                       onClick={() => setSelectedHubTypeFilter && setSelectedHubTypeFilter('ALL')}
@@ -406,8 +462,9 @@ export default function LayerControlWidget({
                           ? 'bg-ink-950 text-white shadow-2xs'
                           : 'text-ink-600 hover:bg-white'
                       }`}
+                      title="All Land Use Types"
                     >
-                      All ({totalHubsCount})
+                      All
                     </button>
                     <button
                       type="button"
@@ -417,8 +474,9 @@ export default function LayerControlWidget({
                           ? 'bg-amber-600 text-white shadow-2xs'
                           : 'text-ink-600 hover:bg-white'
                       }`}
+                      title={`Commercial Hubs (${h3Counts.commercial})`}
                     >
-                      🏢 Comm ({commercialCount})
+                      🏢 Comm
                     </button>
                     <button
                       type="button"
@@ -428,115 +486,180 @@ export default function LayerControlWidget({
                           ? 'bg-indigo-600 text-white shadow-2xs'
                           : 'text-ink-600 hover:bg-white'
                       }`}
+                      title={`Residential Pockets (${h3Counts.residential.toLocaleString()})`}
                     >
-                      🏡 Resid ({residentialCount})
+                      🏡 Resid
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedHubTypeFilter && setSelectedHubTypeFilter('industrial')}
+                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
+                        selectedHubTypeFilter === 'industrial'
+                          ? 'bg-purple-600 text-white shadow-2xs'
+                          : 'text-ink-600 hover:bg-white'
+                      }`}
+                      title={`Tech & Industrial Corridors (${h3Counts.industrial})`}
+                    >
+                      🏭 Tech
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedHubTypeFilter && setSelectedHubTypeFilter('mixed')}
+                      className={`py-1 rounded font-bold transition-all text-center cursor-pointer ${
+                        selectedHubTypeFilter === 'mixed'
+                          ? 'bg-cyan-600 text-white shadow-2xs'
+                          : 'text-ink-600 hover:bg-white'
+                      }`}
+                      title={`Mixed-Use High-Streets (${h3Counts.mixed})`}
+                    >
+                      ⚖️ Mixed
                     </button>
                   </div>
                 </div>
 
-                {/* 2. Specific Hub Selector Dropdown */}
+                {/* 3. Metric Visualization View Mode Selector */}
                 <div>
-                  <div className="flex items-center justify-between text-[10px] font-bold text-ink-700 mb-1">
-                    <span>
-                      {selectedHubTypeFilter === 'ALL' 
-                        ? `Select Urban Pocket (${correspondingHubs.length}):` 
-                        : selectedHubTypeFilter === 'commercial' 
-                        ? `Commercial Hubs (${correspondingHubs.length}):` 
-                        : `Residential Pockets (${correspondingHubs.length}):`}
-                    </span>
-                    {selectedHub && (
-                      <button
-                        onClick={() => onSelectHub && onSelectHub(null)}
-                        className="text-[9px] text-azure-600 hover:text-azure-800 underline font-normal cursor-pointer"
-                      >
-                        Clear Selection
-                      </button>
-                    )}
+                  <div className="flex justify-between items-center text-[10px] text-ink-700 font-semibold mb-1">
+                    <span>Hexagon Metric View Mode:</span>
                   </div>
-                  <select
-                    value={selectedHub?.properties?.hub_id || ''}
-                    onChange={(e) => {
-                      const match = commercialResidentialHubsData?.features?.find(f => f.properties?.hub_id === e.target.value);
-                      if (onSelectHub) {
-                        onSelectHub(match || null);
-                      }
-                    }}
-                    className="w-full bg-white border border-ink-950/[0.12] rounded px-2 py-1.5 text-xs font-semibold text-ink-900 focus:outline-none focus:ring-1 focus:ring-azure-500 cursor-pointer shadow-2xs"
-                  >
-                    <option value="">
-                      {selectedHubTypeFilter === 'ALL' 
-                        ? 'Select commercial or residential pocket...' 
-                        : selectedHubTypeFilter === 'commercial' 
-                        ? 'Select commercial hub...' 
-                        : 'Select residential pocket...'}
-                    </option>
-                    {correspondingHubs.map(f => {
-                      const p = f.properties;
-                      const icon = p.hub_type === 'commercial' ? '🏢' : '🏡';
-                      return (
-                        <option key={p.hub_id} value={p.hub_id}>
-                          {icon} {p.name} ({p.locality})
-                        </option>
-                      );
-                    })}
-                  </select>
+                  <div className="grid grid-cols-2 gap-1 bg-paper-100 p-0.5 rounded border border-ink-950/[0.08] text-[9.5px]">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedHubMetricView && setSelectedHubMetricView('pockets')}
+                      className={`py-1 px-1 rounded font-bold transition-all text-center cursor-pointer flex items-center justify-center gap-1 ${
+                        selectedHubMetricView === 'pockets'
+                          ? 'bg-ink-950 text-white shadow-2xs'
+                          : 'text-ink-600 hover:bg-white'
+                      }`}
+                      title="Color by Land Use Classification (Comm, Resid, Tech, Mixed)"
+                    >
+                      <span>🎨</span> Land Use Types
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedHubMetricView && setSelectedHubMetricView('residential')}
+                      className={`py-1 px-1 rounded font-bold transition-all text-center cursor-pointer flex items-center justify-center gap-1 ${
+                        selectedHubMetricView === 'residential'
+                          ? 'bg-indigo-600 text-white shadow-2xs'
+                          : 'text-ink-600 hover:bg-white'
+                      }`}
+                      title="Color by Residential Index (Population, Built-up m², Volume m³)"
+                    >
+                      <span>🏡</span> Residential Idx
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedHubMetricView && setSelectedHubMetricView('commercial')}
+                      className={`py-1 px-1 rounded font-bold transition-all text-center cursor-pointer flex items-center justify-center gap-1 ${
+                        selectedHubMetricView === 'commercial'
+                          ? 'bg-amber-600 text-white shadow-2xs'
+                          : 'text-ink-600 hover:bg-white'
+                      }`}
+                      title="Color by Commercial Index (Daytime Workforce, Office Floor Area)"
+                    >
+                      <span>🏢</span> Commercial Idx
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedHubMetricView && setSelectedHubMetricView('synergy')}
+                      className={`py-1 px-1 rounded font-bold transition-all text-center cursor-pointer flex items-center justify-center gap-1 ${
+                        selectedHubMetricView === 'synergy'
+                          ? 'bg-azure-600 text-white shadow-2xs'
+                          : 'text-ink-600 hover:bg-white'
+                      }`}
+                      title="Color by Retail Footfall Synergy Score (0–100)"
+                    >
+                      <span>⚡</span> Synergy Score
+                    </button>
+                  </div>
                 </div>
 
-                {/* 3. Selected Hub Executive Snapshot */}
-                {selectedHub && (
+                {/* 4. Selected Hexagon Inspection Snapshot */}
+                {selectedHexagon ? (
                   <div className="bg-paper-50 border border-ink-950/[0.1] rounded-lg p-2 text-[10px] text-ink-950 space-y-1.5 shadow-2xs">
                     <div className="flex items-center justify-between gap-1 font-bold">
                       <div className="flex items-center gap-1.5 truncate">
                         <span className={`p-1 rounded bg-white border text-[11px] shrink-0 ${
-                          selectedHub.properties?.hub_type === 'commercial' 
-                            ? 'border-amber-500/40 text-amber-700' 
-                            : 'border-indigo-500/40 text-indigo-700'
+                          selectedHexagon.cls === 'commercial' ? 'border-amber-500/40 text-amber-700' :
+                          selectedHexagon.cls === 'residential' ? 'border-indigo-500/40 text-indigo-700' :
+                          selectedHexagon.cls === 'industrial' ? 'border-purple-500/40 text-purple-700' :
+                          'border-cyan-500/40 text-cyan-700'
                         }`}>
-                          {selectedHub.properties?.hub_type === 'commercial' ? '🏢' : '🏡'}
+                          {selectedHexagon.cls === 'commercial' ? '🏢' :
+                           selectedHexagon.cls === 'residential' ? '🏡' :
+                           selectedHexagon.cls === 'industrial' ? '🏭' : '⚖️'}
                         </span>
-                        <span className="truncate">{selectedHub.properties?.name}</span>
+                        <span className="truncate">{selectedHexagon.ward || 'Bengaluru'}</span>
                       </div>
-                      <span className="text-azure-700 shrink-0 font-bold bg-white px-1.5 py-0.5 rounded border border-ink-950/[0.1] text-[9px] font-mono">
-                        Synergy: {selectedHub.properties?.synergy_score}/100
+                      <button
+                        onClick={() => setSelectedHexagon && setSelectedHexagon(null)}
+                        className="text-[9px] text-azure-600 hover:text-azure-800 underline font-normal cursor-pointer"
+                      >
+                        Clear
+                      </button>
+                    </div>
+
+                    <div className="flex items-center justify-between text-[9px] text-ink-500 font-mono">
+                      <span>H3: {selectedHexagon.h.slice(0, 10)}...</span>
+                      <span className="text-azure-700 font-bold bg-white px-1 py-0.5 rounded border border-ink-950/[0.08]">
+                        Synergy: {selectedHexagon.syn_idx}/100
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-1.5 text-[9px] text-ink-600 font-semibold">
-                      <span className={`px-1.5 py-0.5 rounded uppercase font-bold text-[8.5px] border ${
-                        selectedHub.properties?.hub_type === 'commercial'
-                          ? 'bg-amber-50 border-amber-300 text-amber-800'
-                          : 'bg-indigo-50 border-indigo-300 text-indigo-800'
-                      }`}>
-                        {selectedHub.properties?.hub_type === 'commercial' ? 'Commercial Hub' : 'Residential Pocket'}
-                      </span>
-                      <span>{selectedHub.properties?.category}</span>
-                    </div>
-
-                    <div className="text-ink-500 line-clamp-1">{selectedHub.properties?.summary}</div>
-
-                    <div className="pt-1 border-t border-ink-950/[0.08] space-y-0.5 text-[10px]">
-                      <div className="flex justify-between">
-                        <span className="text-ink-500">
-                          {selectedHub.properties?.hub_type === 'commercial' ? 'Est. Daytime Workforce:' : 'Est. Resident Population:'}
-                        </span>
-                        <span className="font-bold text-ink-950 font-mono">
-                          {selectedHub.properties?.est_activity?.toLocaleString()} {selectedHub.properties?.hub_type === 'commercial' ? 'workers' : 'residents'}
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-ink-500">Peak Window:</span>
-                        <span className="text-azure-700 font-semibold">{selectedHub.properties?.peak_window}</span>
-                      </div>
-                      {selectedHub.properties?.anchors && (
-                        <div className="pt-0.5 flex flex-wrap gap-1 text-[8.5px]">
-                          {selectedHub.properties.anchors.slice(0, 3).map((a, i) => (
-                            <span key={i} className="bg-white px-1 py-0.2 rounded border border-ink-950/[0.08] text-ink-800">
-                              {a}
-                            </span>
-                          ))}
+                    {/* Mini Index Progress Bars */}
+                    <div className="space-y-1 pt-1 border-t border-ink-950/[0.06]">
+                      <div>
+                        <div className="flex justify-between text-[9px]">
+                          <span className="text-indigo-800 font-semibold">🏡 Residential Index:</span>
+                          <span className="font-mono font-bold text-indigo-900">{selectedHexagon.res_idx}/100</span>
                         </div>
-                      )}
+                        <div className="w-full h-1 bg-paper-200 rounded-full overflow-hidden">
+                          <div className="bg-indigo-600 h-full rounded-full" style={{ width: `${Math.min(100, Math.max(4, selectedHexagon.res_idx))}%` }} />
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex justify-between text-[9px]">
+                          <span className="text-amber-800 font-semibold">🏢 Commercial Index:</span>
+                          <span className="font-mono font-bold text-amber-900">{selectedHexagon.com_idx}/100</span>
+                        </div>
+                        <div className="w-full h-1 bg-paper-200 rounded-full overflow-hidden">
+                          <div className="bg-amber-600 h-full rounded-full" style={{ width: `${Math.min(100, Math.max(4, selectedHexagon.com_idx))}%` }} />
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex justify-between text-[9px]">
+                          <span className="text-azure-800 font-semibold">⚡ Synergy Index:</span>
+                          <span className="font-mono font-bold text-azure-900">{selectedHexagon.syn_idx}/100</span>
+                        </div>
+                        <div className="w-full h-1 bg-paper-200 rounded-full overflow-hidden">
+                          <div className="bg-azure-600 h-full rounded-full" style={{ width: `${Math.min(100, Math.max(4, selectedHexagon.syn_idx))}%` }} />
+                        </div>
+                      </div>
                     </div>
+
+                    {/* Numerical Data Grid */}
+                    <div className="grid grid-cols-2 gap-1 pt-1 border-t border-ink-950/[0.06] text-[9.5px]">
+                      <div>
+                        <span className="text-ink-400 block text-[8.5px]">Resident Pop:</span>
+                        <span className="font-bold text-ink-900 font-mono">{selectedHexagon.res_pop.toLocaleString()}</span>
+                      </div>
+                      <div>
+                        <span className="text-ink-400 block text-[8.5px]">Daytime Workforce:</span>
+                        <span className="font-bold text-ink-900 font-mono">{selectedHexagon.com_workers ? selectedHexagon.com_workers.toLocaleString() : '—'}</span>
+                      </div>
+                      <div>
+                        <span className="text-ink-400 block text-[8.5px]">Kids / Youth:</span>
+                        <span className="font-bold text-ink-900 font-mono">{selectedHexagon.kids}k / {selectedHexagon.youth}y</span>
+                      </div>
+                      <div>
+                        <span className="text-ink-400 block text-[8.5px]">Office Built-up:</span>
+                        <span className="font-bold text-ink-900 font-mono">{selectedHexagon.off_m2 ? `${Math.round(selectedHexagon.off_m2).toLocaleString()} m²` : '—'}</span>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="bg-paper-100/70 border border-ink-950/[0.06] rounded-lg p-2 text-[9.5px] text-ink-500 leading-snug text-center">
+                    💡 Click any hexagon on the map to inspect its exact residential, commercial, office built-up and synergy metrics.
                   </div>
                 )}
               </div>

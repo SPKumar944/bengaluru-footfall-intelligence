@@ -11,6 +11,7 @@ import {
   BuildingIcon 
 } from './IconMCP';
 import { H3HexagonLayer } from '@deck.gl/geo-layers';
+import { cellToLatLng } from 'h3-js';
 import { Hexagon } from 'lucide-react';
 import maplibregl from 'maplibre-gl';
 import { 
@@ -146,6 +147,65 @@ export function getHexDemographicColor(d, genderFilter = 'all', ageFilter = 'all
 
 
 
+// Great-circle Haversine distance in meters
+function getDistanceMeters(lat1, lon1, lat2, lon2) {
+  const R = 6371000;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+// Color scale for H3 Commercial & Residential Land Use Hexagons (H3 Res 9)
+export function getH3HubFillColor(d, viewMode = 'pockets') {
+  if (viewMode === 'residential') {
+    // 0 - 100 Residential Index (Indigo/Blue scale)
+    const score = d.res_idx || 0;
+    if (score > 60) return [67, 56, 202, 195];   // Deep Royal Indigo
+    if (score > 35) return [79, 70, 229, 160];  // Vibrant Indigo
+    if (score > 15) return [129, 140, 248, 120]; // Medium Indigo
+    if (score > 5)  return [165, 180, 252, 80];  // Soft Lavender
+    return [224, 231, 255, 45];                 // Light Tint
+  }
+
+  if (viewMode === 'commercial') {
+    // 0 - 100 Commercial/Tech Office Index (Amber/Orange scale)
+    const score = d.com_idx || 0;
+    if (score > 60) return [217, 119, 6, 200];   // Deep Amber/Gold
+    if (score > 35) return [245, 158, 11, 165];  // Bright Amber
+    if (score > 15) return [251, 191, 36, 125];  // Golden Yellow
+    if (score > 5)  return [253, 230, 138, 85];  // Pale Gold
+    return [254, 243, 199, 45];                 // Tint
+  }
+
+  if (viewMode === 'synergy') {
+    // 0 - 100 Retail Footfall Synergy Index (Emerald/Cyan to Violet)
+    const score = d.syn_idx || 0;
+    if (score > 75) return [16, 185, 129, 200];  // Prime Emerald
+    if (score > 55) return [14, 165, 233, 165];  // Bright Azure
+    if (score > 40) return [99, 102, 241, 130];  // Indigo
+    if (score > 25) return [168, 85, 247, 95];   // Purple
+    return [203, 213, 225, 50];                 // Neutral Base
+  }
+
+  // Default: 'pockets' (Land Use Classification)
+  const cls = d.cls || 'residential';
+  if (cls === 'commercial') {
+    return [245, 158, 11, 150]; // Amber 500
+  }
+  if (cls === 'industrial') {
+    return [168, 85, 247, 145]; // Purple 500 (Tech / Industrial Park corridors)
+  }
+  if (cls === 'mixed') {
+    return [14, 165, 233, 150]; // Azure / Cyan 500 (Mixed-Use Commercial High-Street + Residences)
+  }
+  // Residential:
+  return [79, 70, 229, 120]; // Indigo 600
+}
+
 export default function MapViewport({
   streetFootfallData,
   catchmentsData,
@@ -167,8 +227,13 @@ export default function MapViewport({
   officeFootprintsData,
   wardDemographicsData,
   hexDemographicsData,
+  h3HubsData,
   commercialResidentialHubsData,
   selectedHubTypeFilter = 'ALL',
+  selectedHubMetricView = 'pockets',
+  scopeHubsToRadius = true,
+  selectedHexagon,
+  onSelectHexagon,
   selectedHub,
   onSelectHub,
   demographicGender = 'all',
@@ -269,7 +334,35 @@ export default function MapViewport({
     return educationPoisData.features.filter(f => f.properties?.category === selectedEducationCategory);
   }, [educationPoisData, selectedEducationCategory]);
 
-  // Filter commercial & residential urban pockets by selected type filter
+  // Filter H3 Commercial & Residential Land Use Hexagons (H3 Res 9)
+  const filteredH3Hubs = useMemo(() => {
+    if (!h3HubsData?.hexagons) return [];
+    let list = h3HubsData.hexagons;
+
+    // 1. Classification Filter
+    if (selectedHubTypeFilter && selectedHubTypeFilter !== 'ALL') {
+      list = list.filter(h => h.cls === selectedHubTypeFilter);
+    }
+
+    // 2. Catchment Scope (Within 3.5km of selected Apsara Store)
+    if (scopeHubsToRadius && selectedApsaraStore?.coordinates) {
+      const sLat = selectedApsaraStore.coordinates.lat;
+      const sLng = selectedApsaraStore.coordinates.lng;
+      list = list.filter(h => {
+        if (h.store === selectedApsaraStore.serial_no && h.dist <= 3500) return true;
+        try {
+          const [cLat, cLng] = cellToLatLng(h.h);
+          return getDistanceMeters(cLat, cLng, sLat, sLng) <= 3500;
+        } catch {
+          return false;
+        }
+      });
+    }
+
+    return list;
+  }, [h3HubsData, selectedHubTypeFilter, scopeHubsToRadius, selectedApsaraStore?.serial_no, selectedApsaraStore?.coordinates?.lat, selectedApsaraStore?.coordinates?.lng]);
+
+  // Backward compatibility fallback for legacy polygon hubs if h3 data not ready
   const filteredHubsData = useMemo(() => {
     if (!commercialResidentialHubsData?.features) return null;
     if (!selectedHubTypeFilter || selectedHubTypeFilter === 'ALL') {
@@ -383,8 +476,44 @@ export default function MapViewport({
       onHover: info => setHoverInfo(info)
     }),
 
-    // 0c. Urban Pockets: Commercial & Residential Hubs (Polygons)
-    activeLayers.commercialResidentialHubs && filteredHubsData?.features && new GeoJsonLayer({
+    // 0c. Commercial & Residential Land Use Hexagons (H3 Res 9)
+    activeLayers.commercialResidentialHubs && filteredH3Hubs?.length > 0 && new H3HexagonLayer({
+      id: 'h3-commercial-residential-layer',
+      data: filteredH3Hubs,
+      pickable: true,
+      wireframe: false,
+      filled: true,
+      stroked: true,
+      extruded: false,
+      coverage: 0.96,
+      lineWidthUnits: 'pixels',
+      lineWidthMinPixels: 0.5,
+      lineWidthMaxPixels: 3.0,
+      getLineWidth: d => (selectedHexagon && d.h === selectedHexagon.h ? 3.0 : 0.8),
+      getLineColor: d => (selectedHexagon && d.h === selectedHexagon.h ? [13, 21, 33, 255] : [255, 255, 255, 110]),
+      getHexagon: d => d.h,
+      getFillColor: d => getH3HubFillColor(d, selectedHubMetricView),
+      updateTriggers: {
+        getFillColor: [selectedHubMetricView],
+        getLineWidth: [selectedHexagon?.h],
+        getLineColor: [selectedHexagon?.h]
+      },
+      onHover: info => {
+        if (!info?.object) {
+          setHoverInfo(null);
+        } else {
+          setHoverInfo(info);
+        }
+      },
+      onClick: info => {
+        if (info?.object && onSelectHexagon) {
+          onSelectHexagon(info.object);
+        }
+      }
+    }),
+
+    // 0d. Fallback: Polygon Hubs if H3 data is still loading
+    activeLayers.commercialResidentialHubs && (!filteredH3Hubs || filteredH3Hubs.length === 0) && filteredHubsData?.features && new GeoJsonLayer({
       id: 'commercial-residential-hubs-layer',
       data: filteredHubsData,
       pickable: true,
@@ -392,58 +521,9 @@ export default function MapViewport({
       filled: true,
       extruded: false,
       lineWidthUnits: 'pixels',
-      getLineWidth: f => {
-        const isSelected = selectedHub && f.properties.hub_id === selectedHub.properties.hub_id;
-        return isSelected ? 3.5 : 2.0;
-      },
-      getLineColor: f => {
-        const isSelected = selectedHub && f.properties.hub_id === selectedHub.properties.hub_id;
-        if (isSelected) return [13, 21, 33, 255]; // High-contrast black focus outline
-        return f.properties.line_color || (f.properties.hub_type === 'commercial' ? [234, 88, 12, 220] : [79, 70, 229, 220]);
-      },
-      getFillColor: f => {
-        const isSelected = selectedHub && f.properties.hub_id === selectedHub.properties.hub_id;
-        const isComm = f.properties.hub_type === 'commercial';
-        if (isSelected) {
-          return isComm ? [249, 115, 22, 110] : [99, 102, 241, 110];
-        }
-        return isComm ? [249, 115, 22, 45] : [99, 102, 241, 45];
-      },
-      updateTriggers: {
-        getLineWidth: [selectedHub?.properties?.hub_id],
-        getLineColor: [selectedHub?.properties?.hub_id],
-        getFillColor: [selectedHub?.properties?.hub_id]
-      },
-      onHover: info => setHoverInfo(info),
-      onClick: info => {
-        if (info?.object && onSelectHub) {
-          onSelectHub(info.object);
-        }
-      }
-    }),
-
-    // 0d. Floating Centroid Badges for Urban Pockets
-    activeLayers.commercialResidentialHubs && filteredHubsData?.features && new TextLayer({
-      id: 'commercial-residential-hubs-labels',
-      data: filteredHubsData.features,
-      pickable: true,
-      getPosition: f => f.properties.centroid,
-      getText: f => {
-        const prefix = f.properties.hub_type === 'commercial' ? '🏢 ' : '🏡 ';
-        const words = f.properties.name.split(' ');
-        return prefix + words.slice(0, 3).join(' ');
-      },
-      getSize: 10,
-      getColor: f => (f.properties.hub_type === 'commercial' ? [194, 65, 12, 255] : [67, 56, 202, 255]),
-      getTextAnchor: 'middle',
-      getAlignmentBaseline: 'center',
-      fontFamily: 'ui-sans-serif, system-ui, -apple-system, sans-serif',
-      fontWeight: 800,
-      background: true,
-      getBackgroundColor: [255, 255, 255, 225],
-      backgroundPadding: [5, 3],
-      getBorderColor: f => (f.properties.hub_type === 'commercial' ? [249, 115, 22, 180] : [99, 102, 241, 180]),
-      borderWidth: 1,
+      getLineWidth: 2.0,
+      getLineColor: f => (f.properties?.hub_type === 'commercial' ? [234, 88, 12, 220] : [79, 70, 229, 220]),
+      getFillColor: f => (f.properties?.hub_type === 'commercial' ? [249, 115, 22, 45] : [99, 102, 241, 45]),
       onHover: info => setHoverInfo(info),
       onClick: info => {
         if (info?.object && onSelectHub) {
@@ -831,11 +911,134 @@ export default function MapViewport({
                 </div>
               </div>
             </div>
-          ) : hoverInfo.object.properties ? (
+          ) : (hoverInfo.object.properties || hoverInfo.object.h) ? (
             (() => {
-              const p = hoverInfo.object.properties;
+              const p = hoverInfo.object.properties || hoverInfo.object;
               
-              // Case 0: Commercial & Residential Urban Pockets (Hubs)
+              // Case 0: H3 Commercial & Residential Land Use Hexagons (H3 Res 9)
+              if (p.h && p.cls && p.res_idx !== undefined) {
+                const clsLabels = {
+                  commercial: { label: 'Commercial Hub', icon: '🏢', bg: 'bg-amber-500/10 text-amber-800 border-amber-500/30' },
+                  residential: { label: 'Residential Pocket', icon: '🏡', bg: 'bg-indigo-500/10 text-indigo-800 border-indigo-500/30' },
+                  industrial: { label: 'Industrial / Tech Corridor', icon: '🏭', bg: 'bg-purple-500/10 text-purple-800 border-purple-500/30' },
+                  mixed: { label: 'Mixed-Use High-Street', icon: '⚖️', bg: 'bg-cyan-500/10 text-cyan-800 border-cyan-500/30' }
+                };
+                const clsMeta = clsLabels[p.cls] || clsLabels.residential;
+
+                return (
+                  <div className="space-y-2 min-w-[280px] max-w-[340px]">
+                    {/* Header */}
+                    <div className="flex justify-between items-center border-b border-ink-950/[0.08] pb-1.5">
+                      <span className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded border flex items-center gap-1.5 ${clsMeta.bg}`}>
+                        <span>{clsMeta.icon} {clsMeta.label}</span>
+                      </span>
+                      <span className="text-[10px] font-bold text-azure-700 bg-azure-500/[0.08] px-1.5 py-0.5 rounded border border-azure-500/30 font-mono">
+                        Synergy: {p.syn_idx}/100
+                      </span>
+                    </div>
+
+                    {/* Ward & Location Details */}
+                    <div>
+                      <div className="text-xs font-black text-ink-950">{p.ward}</div>
+                      <div className="text-[10px] text-ink-500 flex items-center justify-between mt-0.5 font-mono">
+                        <span>H3 Res 9: {p.h.slice(0, 10)}...</span>
+                        <span>{Math.round(p.dist)}m from {p.store}</span>
+                      </div>
+                    </div>
+
+                    {/* Index Progress Bar Charts */}
+                    <div className="bg-paper-100 p-2 rounded-lg border border-ink-950/[0.08] space-y-1.5 text-[10px]">
+                      <div className="font-bold text-ink-900 border-b border-ink-950/[0.06] pb-0.5 flex justify-between">
+                        <span>Index Indicators (0–100)</span>
+                        <span className="text-ink-500 text-[9px] font-normal">H3 Res 9 (210m diam)</span>
+                      </div>
+                      
+                      {/* Residential Index Bar */}
+                      <div>
+                        <div className="flex justify-between text-[10px] mb-0.5">
+                          <span className="text-indigo-800 font-semibold flex items-center gap-1">
+                            <span>🏡</span> Residential Index:
+                          </span>
+                          <span className="font-mono font-bold text-indigo-900">{p.res_idx} / 100</span>
+                        </div>
+                        <div className="w-full h-1.5 bg-paper-200 rounded-full overflow-hidden">
+                          <div className="bg-gradient-to-r from-indigo-400 to-indigo-600 h-full rounded-full transition-all" style={{ width: `${Math.min(100, Math.max(4, p.res_idx))}%` }} />
+                        </div>
+                      </div>
+
+                      {/* Commercial / Tech Index Bar */}
+                      <div>
+                        <div className="flex justify-between text-[10px] mb-0.5">
+                          <span className="text-amber-800 font-semibold flex items-center gap-1">
+                            <span>🏢</span> Commercial / Tech:
+                          </span>
+                          <span className="font-mono font-bold text-amber-900">{p.com_idx} / 100</span>
+                        </div>
+                        <div className="w-full h-1.5 bg-paper-200 rounded-full overflow-hidden">
+                          <div className="bg-gradient-to-r from-amber-400 to-amber-600 h-full rounded-full transition-all" style={{ width: `${Math.min(100, Math.max(4, p.com_idx))}%` }} />
+                        </div>
+                      </div>
+
+                      {/* Synergy Score Bar */}
+                      <div>
+                        <div className="flex justify-between text-[10px] mb-0.5">
+                          <span className="text-azure-800 font-semibold flex items-center gap-1">
+                            <span>⚡</span> Retail Footfall Synergy:
+                          </span>
+                          <span className="font-mono font-bold text-azure-900">{p.syn_idx} / 100</span>
+                        </div>
+                        <div className="w-full h-1.5 bg-paper-200 rounded-full overflow-hidden">
+                          <div className="bg-gradient-to-r from-cyan-500 to-azure-600 h-full rounded-full transition-all" style={{ width: `${Math.min(100, Math.max(4, p.syn_idx))}%` }} />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Numerical Data Grid */}
+                    <div className="pt-1 border-t border-ink-950/[0.08] space-y-1 text-[10px]">
+                      <div className="font-bold text-ink-900 text-[10px]">Numerical Metrics:</div>
+                      <div className="grid grid-cols-2 gap-x-2 gap-y-1 bg-white p-1.5 rounded border border-ink-950/[0.06]">
+                        <div>
+                          <span className="text-ink-400 block text-[9px]">Resident Pop:</span>
+                          <span className="font-bold text-ink-900 font-mono">{p.res_pop.toLocaleString()}</span>
+                        </div>
+                        <div>
+                          <span className="text-ink-400 block text-[9px]">Daytime Workforce:</span>
+                          <span className="font-bold text-ink-900 font-mono">{p.com_workers ? p.com_workers.toLocaleString() : '—'}</span>
+                        </div>
+                        <div>
+                          <span className="text-ink-400 block text-[9px]">Kids / Youth:</span>
+                          <span className="font-bold text-ink-900 font-mono">{p.kids}k / {p.youth}y</span>
+                        </div>
+                        <div>
+                          <span className="text-ink-400 block text-[9px]">Office Built-up:</span>
+                          <span className="font-bold text-ink-900 font-mono">{p.off_m2 ? `${Math.round(p.off_m2).toLocaleString()} m²` : '—'}</span>
+                        </div>
+                        <div>
+                          <span className="text-ink-400 block text-[9px]">Residential Space:</span>
+                          <span className="font-bold text-ink-900 font-mono">{p.res_built_m2 ? `${Math.round(p.res_built_m2).toLocaleString()} m²` : '—'}</span>
+                        </div>
+                        <div>
+                          <span className="text-ink-400 block text-[9px]">Office Buildings:</span>
+                          <span className="font-bold text-ink-900 font-mono">{p.off_cnt ? `${p.off_cnt} bldgs` : '—'}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Strategic Rationale */}
+                    <div className="pt-0.5 text-[9.5px] text-ink-600 font-medium italic border-t border-ink-950/[0.06]">
+                      {p.cls === 'commercial' 
+                        ? 'High-density daytime corporate footfall driver. Peak dessert demand during lunch and 4 PM–7 PM post-work hours.'
+                        : p.cls === 'mixed'
+                        ? 'Balanced mixed-use synergy: steady daytime office flow transitioning into peak evening & weekend family ice cream walk-ins.'
+                        : p.cls === 'industrial'
+                        ? 'Major tech park / industrial campus corridor. High potential for corporate catering, bulk gifting & delivery orders.'
+                        : 'Dense residential neighborhood catchment. Prime generator for 7 PM–11 PM evening family dessert strolls and home delivery.'}
+                    </div>
+                  </div>
+                );
+              }
+
+              // Case 0b: Legacy Polygon Urban Pockets (Hubs fallback)
               if (p.hub_id) {
                 const isComm = p.hub_type === 'commercial';
                 return (
